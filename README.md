@@ -68,8 +68,8 @@
 - [ ] upgradable
 
 - [ ] applications
-  - [ ] subscription (TODO)
-  - [ ] dividends (TODO)
+  - [ ] subscription
+  - [ ] dividends
   - [ ] multisig wallet
   - [ ] escrow
   - [ ] decentralized exchange
