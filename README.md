@@ -80,3 +80,8 @@
   - [ ] token
   - [ ] plasma
   - [ ] casper
+
+### Memo
+```
+bundle exec jekyll serve
+```
