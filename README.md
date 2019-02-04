@@ -86,6 +86,7 @@
 bundle exec jekyll serve
 ```
 
+TODO CI
 TODO footer
 TODO footer icons
 TODO license
