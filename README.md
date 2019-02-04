@@ -1,5 +1,11 @@
 # solidity-by-example.github.io
 
+[Solidity By Example](https://solidity-by-example.org)
+
+### License
+
+[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+
 ## Roadmap
 - [ ] hello world
 - [ ] simple storage
@@ -87,7 +93,3 @@ bundle exec jekyll serve
 ```
 
 TODO CI
-TODO footer
-TODO footer icons
-TODO license
-TODO twitter
