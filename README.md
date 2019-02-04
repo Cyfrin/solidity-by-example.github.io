@@ -85,3 +85,8 @@
 ```
 bundle exec jekyll serve
 ```
+
+TODO footer
+TODO footer icons
+TODO license
+TODO twitter
