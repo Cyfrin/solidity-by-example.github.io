@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
+import Footer from './Footer'
 
 class Home extends Component {
   render() {
@@ -19,9 +20,7 @@ class Home extends Component {
           <li><a href="/hello-world">Hello World</a></li>
 
         </ul>
-        <p className="footer">
-          <a href="mailto:soliditybyexample@gmail.com">soliditybyexample@gmail.com</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io#license">license</a>
-        </p>
+        <Footer />
       </div>
     )
   }

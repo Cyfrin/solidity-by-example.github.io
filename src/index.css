@@ -92,12 +92,6 @@ div.example table {
 p.next {
     margin-bottom: 20px;
 }
-p.footer {
-    color: grey;
-}
-p.footer a, p.footer a:visited {
-    color: grey;
-}
 div#intro {
     width: 420px;
     min-width: 420px;
