@@ -1,11 +1,8 @@
 .App {
-  text-align: center;
+}
+
+.App-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 120px;
 }
