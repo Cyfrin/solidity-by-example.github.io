@@ -1,0 +1,9 @@
+.Home-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Home-logo {
+  width: 150px;
+}
