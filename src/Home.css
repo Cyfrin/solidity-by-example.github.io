@@ -1,9 +1,9 @@
-.Home-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.Home {
+  width: 420px;
 }
-
-.Home-logo {
-  width: 150px;
+.Home-header a {
+  text-decoration: none;
+}
+.Home ul {
+  padding: 0;
 }
