@@ -11,8 +11,7 @@ class Home extends Component {
         </h1>
         <div className="Home-main">
           <p>
-            <em>Solidity by Example</em> is an introduction
-            to <a href="https://solidity.readthedocs.io">Solidity</a> using example programs.
+            an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> using example programs
           </p>
 
           <ul>
