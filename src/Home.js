@@ -6,20 +6,12 @@ class Home extends Component {
     return (
       <div id="intro">
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-          <img src={logo} width="120px" />
+          <img src={logo} alt="logo" width="120px" />
           <h2><a href="./">Solidity by Example</a></h2>
         </div>
         <p>
-          <a href="https://solidity.readthedocs.io">Solidity</a> is an
-          object-oriented, high-level language for implementing smart contracts.
-          Smart contracts are programs which govern the behaviour of accounts
-          within the Ethereum state.
-        </p>
-
-        <p>
           <em>Solidity by Example</em> is a hands-on introduction
-          to Solidity using annotated example programs. Check out
-          the examples below.
+          to <a href="https://solidity.readthedocs.io">Solidity</a> using example programs.
         </p>
 
         <ul>
