@@ -3,8 +3,12 @@
 [Solidity By Example](https://solidity-by-example.org)
 
 ### License
+[MIT License](LICENSE)
 
-[Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
+## Memo
+```shell
+npx marked Solidity.sol
+```
 
 ## Roadmap
 - [ ] hello world

@@ -5,7 +5,6 @@
   "dependencies": {
     "highlight.js": "^9.14.2",
     "highlightjs-solidity": "^1.0.6",
-    "marked": "^0.6.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -26,5 +25,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "marked": "^0.6.0"
+  }
 }
