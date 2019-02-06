@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="App-main">
-          <Router>
+          <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route path="/hello-world" component={HelloWorld} />
               <Route path="/" component={Home} />
