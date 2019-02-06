@@ -7,6 +7,12 @@
 
 ## Memo
 ```shell
+# deploy
+npm run build
+npm run deploy
+
+# solidity to html
+# TODO adding markdown to Solidity files
 npx marked Solidity.sol
 ```
 
