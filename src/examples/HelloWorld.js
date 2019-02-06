@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
-import Code from '../Code'
+import Example from '../Example'
 
 class HelloWorld extends Component {
   render() {
     return (
       <div>
-        <h3>Hello world</h3>
-
-        <Code code={code} />
+        <Example
+          title="Hello World"
+          code={code}
+        />
       </div>
     )
   }
 }
 
 const code = `
-<pre><code class="language-solidity">contract Solidity {
+<pre><code class="language-solidity">
+# Compiler version
+pragma solidity ^0.4.24;
+
+contract Solidity {
   function foo() public {
 
   }
