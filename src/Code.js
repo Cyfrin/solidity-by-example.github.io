@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/github-gist.css'
+import 'highlight.js/styles/foundation.css'
 import hljsDefineSolidity from 'highlightjs-solidity'
 
 class Code extends Component {

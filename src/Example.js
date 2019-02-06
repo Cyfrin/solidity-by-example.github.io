@@ -11,6 +11,8 @@ class Example extends Component {
 
         <Code code={this.props.code} />
 
+        <p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p>
+
         <Footer />
       </div>
     )

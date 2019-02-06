@@ -10,6 +10,11 @@ body {
   line-height: 20px;
   color: #252519;
 }
+pre {
+  padding: 20px;
+  margin: 0;
+  background: #eee;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
