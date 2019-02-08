@@ -4,6 +4,7 @@ import './App.css'
 import Header from './Header'
 import Home from './Home'
 import HelloWorld from './examples/HelloWorld'
+import SimpleStorage from './examples/SimpleStorage'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route path="/hello-world" component={HelloWorld} />
+              <Route path="/simple-storage" component={SimpleStorage} />
               <Route path="/" component={Home} />
             </Switch>
           </Router>

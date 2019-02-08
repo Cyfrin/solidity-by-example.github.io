@@ -17,9 +17,8 @@ npx marked Solidity.sol
 ```
 
 ## Roadmap
-- [ ] hello world
-- [ ] simple storage
-  - [ ] state variables
+- [x] hello world
+- [x] simple storage
 - [ ] deployment
 - [ ] testing
 - [ ] types
@@ -104,6 +103,7 @@ bundle exec jekyll serve
 
 TODO CI
 TODO donate
+TODO replace code with markdown
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
