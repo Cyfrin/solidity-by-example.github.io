@@ -17,6 +17,7 @@ class Home extends Component {
           <ul>
             <li><a href="/hello-world">Hello World</a></li>
             <li><a href="/simple-storage">Simple Storage</a></li>
+            <li><a href="/safe-math">Safe Math</a></li>
           </ul>
         </div>
 
