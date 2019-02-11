@@ -1,11 +1,11 @@
+State variables are variables which are permanently stored on the blockchain.
+
 ```solidity
 pragma solidity ^0.5.3;
 
-// State variables are values which are permanently stored on the blockchain.
-
 contract SimpleStorage {
-    // State variables are declared here, inside the contract but outside the
-    // functions.
+    // Variables declared here, inside the contract but outside the
+    // functions will be stored on the blockchain.
     string public text;
 
     // Function to get text.

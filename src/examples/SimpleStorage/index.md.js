@@ -1,25 +1,10 @@
-import React, { Component } from 'react'
-import Example from '../Example'
-
-class SimpleStorage extends Component {
-  render() {
-    return (
-      <Example
-        title="Simple Storage"
-        code={code}
-      />
-    )
-  }
-}
-
-const code = `
+const html = `
+<p>State variables are variables which are permanently stored on the blockchain.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
-// State variables are values which are permanently stored on the blockchain.
-
 contract SimpleStorage {
-    // State variables are declared here, inside the contract but outside the
-    // functions.
+    // Variables declared here, inside the contract but outside the
+    // functions will be stored on the blockchain.
     string public text;
 
     // Function to get text.
@@ -37,4 +22,4 @@ contract SimpleStorage {
 }</code></pre>
 `
 
-export default SimpleStorage
+export default html

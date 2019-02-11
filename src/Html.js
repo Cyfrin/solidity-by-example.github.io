@@ -4,7 +4,7 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/foundation.css'
 import hljsDefineSolidity from 'highlightjs-solidity'
 
-class Code extends Component {
+class Html extends Component {
   componentDidMount() {
     hljsDefineSolidity(hljs)
     hljs.initHighlightingOnLoad()
@@ -12,14 +12,14 @@ class Code extends Component {
 
   render() {
     return (
-      <div dangerouslySetInnerHTML={{__html: this.props.code}}>
+      <div dangerouslySetInnerHTML={{__html: this.props.html}}>
       </div>
     )
   }
 }
 
-Code.propTypes = {
-  code: PropTypes.string.isRequired
+Html.propTypes = {
+  html: PropTypes.string.isRequired
 }
 
-export default Code
+export default Html

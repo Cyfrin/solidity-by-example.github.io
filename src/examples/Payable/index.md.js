@@ -1,4 +1,4 @@
-const markdown = `
+const html = `
 <p>Functions declared <code>payable</code> can receive <code>ether</code> for the contract.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
@@ -28,4 +28,4 @@ contract ReceiveEther {
 }</code></pre>
 `
 
-export default markdown
+export default html

@@ -1,9 +1,9 @@
+Solidity overflow integers as if nothing is wrong. It would be nice if it threw an error.
+
+So we use `SafeMath` library by [OpenZeppelin](https://openzeppelin.org/).
+
 ```solidity
 pragma solidity ^0.5.3;
-
-// Solidity overflow integers as if nothing is wrong.
-// It would be nice if it threw an error.
-// So we use SafeMath library by OpenZeppelin.
 
 // Import SafeMath library from github (this import only works on Remix).
 import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";

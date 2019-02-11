@@ -1,18 +1,4 @@
-import React, { Component } from 'react'
-import Example from '../Example'
-
-class HelloWorld extends Component {
-  render() {
-    return (
-      <Example
-        title="Hello World"
-        code={code}
-      />
-    )
-  }
-}
-
-const code = `
+const html = `
 <pre><code class="language-solidity">/*
 pragma specifies what versions of Solidity this file can work on.
 This file will not compile with a compiler earlier than version 0.5.3
@@ -27,4 +13,4 @@ contract HelloWorld {
 }</code></pre>
 `
 
-export default HelloWorld
+export default html

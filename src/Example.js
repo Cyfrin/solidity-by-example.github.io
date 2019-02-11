@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Code from './Code'
+import Html from './Html'
 import Footer from './Footer'
 
 class Example extends Component {
@@ -9,7 +9,7 @@ class Example extends Component {
       <div>
         <h2>{this.props.title}</h2>
 
-        <Code code={this.props.code} />
+        <Html html={this.props.html} />
 
         <p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p>
 
@@ -21,7 +21,7 @@ class Example extends Component {
 
 Example.propTypes = {
   title: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
+  html: PropTypes.string.isRequired,
 }
 
 export default Example
