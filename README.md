@@ -14,13 +14,17 @@ npm run deploy
 # solidity to html
 # TODO adding markdown to Solidity files
 npx marked Solidity.sol
+# TODO auto generate markdown to js file
+# TODO import solidity inside markdown
 ```
 
 ## Roadmap
 - [x] hello world
 - [x] simple storage
+- [x] safe math
 - [ ] deployment
 - [ ] testing
+- [ ] sending ether to another contract
 - [ ] types
   - values types
     - [ ] boolean
