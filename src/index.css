@@ -16,8 +16,8 @@ pre {
   background: #eee;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  color: rgb(231, 76, 60);
 }
 a, a:visited {
     color: #261a3b;
