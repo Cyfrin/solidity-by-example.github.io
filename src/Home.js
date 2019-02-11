@@ -14,10 +14,11 @@ class Home extends Component {
             an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> using example programs
           </p>
 
-          <ul>
+          <ul className="Home-list">
             <li><a href="/hello-world">Hello World</a></li>
             <li><a href="/simple-storage">Simple Storage</a></li>
             <li><a href="/safe-math">Safe Math</a></li>
+            <li><a href="/events">Events</a></li>
             <li><a href="/payable">Payable</a></li>
           </ul>
         </div>

@@ -15,6 +15,7 @@ npm run deploy
 # TODO adding markdown to Solidity files
 npx marked Solidity.sol
 # TODO auto generate markdown to js file
+# TODO embed youtube
 # TODO import solidity inside markdown
 # TODO automate markdown to component
   - copy paste solidity into markdown
