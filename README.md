@@ -16,6 +16,9 @@ npm run deploy
 npx marked Solidity.sol
 # TODO auto generate markdown to js file
 # TODO import solidity inside markdown
+# TODO automate markdown to component
+  - copy paste solidity into markdown
+  - output markdown to js string
 ```
 
 ## Roadmap
