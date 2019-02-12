@@ -12,14 +12,11 @@ npm run build
 npm run deploy
 
 # solidity to html
-# TODO adding markdown to Solidity files
-npx marked Solidity.sol
-# TODO auto generate markdown to js file
+# TODO solc
 # TODO embed youtube
-# TODO import solidity inside markdown
-# TODO automate markdown to component
-  - copy paste solidity into markdown
-  - output markdown to js string
+# use gen-html
+
+npm run gen-html -- src/examples/HelloWorld
 ```
 
 ## Roadmap

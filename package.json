@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b master -d build",
+    "gen-html": "node ./template/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +34,7 @@
   "devDependencies": {
     "gh-pages": "^2.0.1",
     "marked": "^0.6.0",
+    "mustache": "^3.0.1",
     "react-snap": "^1.23.0"
   }
 }
