@@ -1,9 +1,9 @@
-`Events` allow logging to the Ethereum blockchain. Some use cass for events are:
-* Listening for events and updating user interface
-* A cheap form of storage
-
-```solidity
-pragma solidity ^0.5.3;
+const html = `<p><code>Events</code> allow logging to the Ethereum blockchain. Some use cass for events are:</p>
+<ul>
+<li>Listening for events and updating user interface</li>
+<li>A cheap form of storage</li>
+</ul>
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract Event {
     // Event declaration
@@ -18,4 +18,7 @@ contract Event {
         emit AnotherLog();
     }
 }
-```
+</code></pre>
+`
+
+export default html
