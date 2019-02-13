@@ -1,4 +1,3 @@
-```solidity
 pragma solidity ^0.5.3;
 
 contract SimpleStorage {
@@ -19,4 +18,3 @@ contract SimpleStorage {
         text = _text;
     }
 }
-```
