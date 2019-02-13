@@ -26,6 +26,8 @@ npm run gen-html -- src/examples/HelloWorld
 - [ ] deployment
 - [ ] testing
 - [ ] sending ether to another contract
+- [ ] initializing other contracts
+- [ ] calling other contracts
 - [ ] types
   - values types
     - [ ] boolean

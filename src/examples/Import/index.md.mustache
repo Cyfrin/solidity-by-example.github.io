@@ -1,0 +1,29 @@
+You can import local and external files in Solidity.
+
+### Local
+Here is our folder structure.
+
+```
+├── Import.sol
+└── Foo.sol
+```
+
+Foo.sol
+```solidity
+{{{Foo}}}
+```
+
+Import.sol
+```solidity
+{{{Import}}}
+```
+
+### External
+
+You can also import from [GitHub](https://github.com), but you need to drop `blob/<branch name>` from the URL.
+
+```solidity
+// https://github.com/owner/repo/blob/master/path/to/Contract.sol
+
+import "github.com/owner/repo/path/to/Contract.sol"
+```
