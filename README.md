@@ -25,9 +25,11 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] safe math
 - [ ] deployment
 - [ ] testing
-- [ ] sending ether to another contract
+- [ ] sending ether to another contract (send, transfer, call)
 - [ ] initializing other contracts
 - [ ] calling other contracts
+- [ ] address
+  - [ ] methods
 - [ ] types
   - values types
     - [ ] boolean
@@ -35,8 +37,6 @@ npm run gen-html -- src/examples/HelloWorld
       - [ ] operations
         - [ ] bit op
         - [ ] add, sub, mul, div, mod, exponential
-    - [ ] address
-      - [ ] methods
     - [ ] contract
     - [ ] fixed-size byte arrays
     - [ ] dynamically-sized byte array

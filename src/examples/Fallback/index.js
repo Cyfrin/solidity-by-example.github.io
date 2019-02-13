@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Example from '../../Example'
-import html from './index.md.js'
+import html from './index.html.js'
 
 class Fallback extends Component {
   render() {

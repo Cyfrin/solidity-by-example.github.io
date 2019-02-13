@@ -7,6 +7,7 @@ import HelloWorld from './examples/HelloWorld'
 import SimpleStorage from './examples/SimpleStorage'
 import SafeMath from './examples/SafeMath'
 import Payable from './examples/Payable'
+import Fallback from './examples/Fallback'
 import Events from './examples/Events'
 import Import from './examples/Import'
 
@@ -20,11 +21,12 @@ class App extends Component {
             <Switch>
               <Route path="/hello-world" component={HelloWorld} />
               <Route path="/simple-storage" component={SimpleStorage} />
-              <Route path="/Import" component={Import} />
+              <Route path="/import" component={Import} />
               <Route path="/safe-math" component={SafeMath} />
-              <Route path="/payable" component={Payable} />
               <Route path="/events" component={Events} />
-              <Route path="/" component={Home} />
+              <Route path="/payable" component={Payable} />
+              <Route path="/fallback" component={Fallback} />
+              <Route component={Home} />
             </Switch>
           </Router>
         </div>

@@ -21,6 +21,7 @@ class Home extends Component {
             <li><a href="/safe-math">Safe Math</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/payable">Payable</a></li>
+            <li><a href="/fallback">Fallback</a></li>
           </ul>
         </div>
 
