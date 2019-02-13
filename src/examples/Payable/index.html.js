@@ -1,7 +1,5 @@
-Functions declared `payable` can receive `ether` for the contract.
-
-```solidity
-pragma solidity ^0.5.3;
+const html = `<p>Functions declared <code>payable</code> can receive <code>ether</code> for the contract.</p>
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract ReceiveEther {
     event Received(address sender, uint amount, uint balance);
@@ -27,4 +25,7 @@ contract ReceiveEther {
         selfdestruct(msg.sender);
     }
 }
-```
+</code></pre>
+`
+
+export default html
