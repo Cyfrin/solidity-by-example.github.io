@@ -8,6 +8,7 @@ import SimpleStorage from './examples/SimpleStorage'
 import SafeMath from './examples/SafeMath'
 import Payable from './examples/Payable'
 import Fallback from './examples/Fallback'
+import FallbackGasLimit from './examples/FallbackGasLimit'
 import Events from './examples/Events'
 import Import from './examples/Import'
 
@@ -26,6 +27,7 @@ class App extends Component {
               <Route path="/events" component={Events} />
               <Route path="/payable" component={Payable} />
               <Route path="/fallback" component={Fallback} />
+              <Route path="/fallback-gas-limit" component={FallbackGasLimit} />
               <Route component={Home} />
             </Switch>
           </Router>
