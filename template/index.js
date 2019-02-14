@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const util = require('util')
 const readFile = util.promisify(fs.readFile)
+const writeFile = util.promisify(fs.writeFile)
 const readdir = util.promisify(fs.readdir)
 
 const mustache = require('mustache')
@@ -22,6 +23,7 @@ async function main() {
   const args = process.argv.slice(2)
   const dir = args[0] || '.'
 
+  // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
   let codes = {}
@@ -29,15 +31,18 @@ async function main() {
     codes[removeExt(fileName)] = (await readFile(path.join(dir, fileName))).toString()
   }
 
+  // render solidity inside markdown
   const mdTemplate = (await readFile(path.join(dir, 'index.md.mustache'))).toString()
 
   const markdown = mustache.render(mdTemplate, codes)
   const html = marked(markdown).replace(/&quot;/g, `"`)
 
+  // render markdown to html
   const jsTemplate = (await readFile(path.join(__dirname, './index.html.js.mustache'))).toString()
   const js = mustache.render(jsTemplate, { html })
 
-  console.log(js)
+  console.log(`Writing file to ${path.join(dir, 'index.html.js')}`)
+  writeFile(path.join(dir, 'index.html.js'), js)
 }
 
 main()
