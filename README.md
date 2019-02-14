@@ -25,6 +25,7 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] safe math
 - [ ] looping
 - [x] payable
+- [x] different ways to send ether (send, transfer, call)
 - [x] fallback
 - [x] fallback gas limit
 - [ ] re-entrancy
