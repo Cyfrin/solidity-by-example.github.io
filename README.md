@@ -8,14 +8,14 @@
 ## Memo
 ```shell
 # deploy
-npm run build
 npm run deploy
 
 # solidity to html
+# TODO fix license link
 # TODO solc
 # TODO embed youtube
-# use gen-html
 
+# use gen-html
 npm run gen-html -- src/examples/HelloWorld
 ```
 
@@ -23,9 +23,14 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] hello world
 - [x] simple storage
 - [x] safe math
+- [ ] looping
+- [x] payable
+- [x] fallback
+- [x] fallback gas limit
+- [ ] re-entrancy
+- [ ] Forcing Ether (selfdestruct)
 - [ ] deployment
 - [ ] testing
-- [ ] sending ether to another contract (send, transfer, call)
 - [ ] initializing other contracts
 - [ ] calling other contracts
 - [ ] address
