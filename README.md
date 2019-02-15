@@ -28,7 +28,7 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
 - [x] fallback gas limit
-- [ ] re-entrancy
+- [x] re-entrancy
 - [ ] Forcing Ether (selfdestruct)
 - [ ] deployment
 - [ ] testing

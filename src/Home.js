@@ -24,6 +24,7 @@ class Home extends Component {
             <li><a href="/sending-ether">Sending Ether</a></li>
             <li><a href="/fallback">Fallback</a></li>
             <li><a href="/fallback-gas-limit">Fallback Gas Limit</a></li>
+            <li><a href="/re-entrancy">ReEntrancy</a></li>
           </ul>
         </div>
 
