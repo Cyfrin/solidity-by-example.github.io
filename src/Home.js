@@ -17,7 +17,6 @@ class Home extends Component {
           <ul className="Home-list">
             <li><a href="/hello-world">Hello World</a></li>
             <li><a href="/simple-storage">Simple Storage</a></li>
-            <li><a href="/import">Import</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/error">Error</a></li>
             <li><a href="/payable">Payable</a></li>
@@ -26,6 +25,7 @@ class Home extends Component {
             <li><a href="/fallback-gas-limit">Fallback Gas Limit</a></li>
             <li><a href="/re-entrancy">Re-Entrancy</a></li>
             <li><a href="/self-destruct">Self Destruct</a></li>
+            <li><a href="/import">Import</a></li>
             <li><a href="/safe-math">Safe Math</a></li>
           </ul>
         </div>
