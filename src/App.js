@@ -11,6 +11,7 @@ import SendingEther from './examples/SendingEther'
 import Fallback from './examples/Fallback'
 import FallbackGasLimit from './examples/FallbackGasLimit'
 import ReEntrancy from './examples/ReEntrancy'
+import SelfDestruct from './examples/SelfDestruct'
 import Events from './examples/Events'
 import Import from './examples/Import'
 
@@ -32,6 +33,7 @@ class App extends Component {
               <Route path="/fallback" component={Fallback} />
               <Route path="/fallback-gas-limit" component={FallbackGasLimit} />
               <Route path="/re-entrancy" component={ReEntrancy} />
+              <Route path="/self-destruct" component={SelfDestruct} />
               <Route component={Home} />
             </Switch>
           </Router>

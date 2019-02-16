@@ -25,6 +25,7 @@ class Home extends Component {
             <li><a href="/fallback">Fallback</a></li>
             <li><a href="/fallback-gas-limit">Fallback Gas Limit</a></li>
             <li><a href="/re-entrancy">Re-Entrancy</a></li>
+            <li><a href="/self-destruct">Self Destruct</a></li>
           </ul>
         </div>
 
