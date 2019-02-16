@@ -24,12 +24,13 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] simple storage
 - [x] safe math
 - [ ] looping
+  - [ ] error (assert, require, revert)
 - [x] payable
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
 - [x] fallback gas limit
 - [x] re-entrancy
-- [ ] Forcing Ether (selfdestruct)
+- [x] Forcing Ether (selfdestruct)
 - [ ] deployment
 - [ ] testing
 - [ ] initializing other contracts
@@ -57,11 +58,8 @@ npm run gen-html -- src/examples/HelloWorld
       - [ ] operators (delete)
 - [ ] functions
   - [ ] returning multiple values
-  - [ ] fallback
-  - [ ] overloading
 - [ ] visibility
 - [ ] function modifiers
-- [ ] events
 - [ ] inheritance
 - [ ] interface
 - [ ] libraries
@@ -72,9 +70,6 @@ npm run gen-html -- src/examples/HelloWorld
     - [ ] named calls
     - [ ] creating other contracts
   - [ ] destructuring assignment
-  - [ ] error (assert, require, revert)
-- [ ] sending ether
-- [ ] selfdestruct
 - [ ] signing
 - [ ] call, delegatecall, staticcall
 - [ ] memory vs storage

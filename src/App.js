@@ -13,6 +13,7 @@ import FallbackGasLimit from './examples/FallbackGasLimit'
 import ReEntrancy from './examples/ReEntrancy'
 import SelfDestruct from './examples/SelfDestruct'
 import Events from './examples/Events'
+import Error from './examples/Error'
 import Import from './examples/Import'
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
               <Route path="/import" component={Import} />
               <Route path="/safe-math" component={SafeMath} />
               <Route path="/events" component={Events} />
+              <Route path="/error" component={Error} />
               <Route path="/sending-ether" component={SendingEther} />
               <Route path="/payable" component={Payable} />
               <Route path="/fallback" component={Fallback} />
