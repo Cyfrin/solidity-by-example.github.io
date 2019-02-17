@@ -10,10 +10,10 @@
 # deploy
 npm run deploy
 
-# solidity to html
 # TODO fix license link
 # TODO solc
 # TODO embed youtube
+# twitter
 
 # use gen-html
 npm run gen-html -- src/examples/HelloWorld
@@ -22,15 +22,22 @@ npm run gen-html -- src/examples/HelloWorld
 ## Roadmap
 - [x] hello world
 - [x] simple storage
-- [x] safe math
+- [ ] function
+- [ ] function modifiers
+- [ ] visibility
+- [x] events
+- [x] error (assert, require, revert)
 - [ ] looping
-  - [ ] error (assert, require, revert)
 - [x] payable
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
 - [x] fallback gas limit
 - [x] re-entrancy
-- [x] Forcing Ether (selfdestruct)
+- [x] Self Destruct
+- [x] imports
+- [x] safe math
+- [ ] external calls (payable, non payable)
+
 - [ ] deployment
 - [ ] testing
 - [ ] initializing other contracts
@@ -56,10 +63,6 @@ npm run gen-html -- src/examples/HelloWorld
       - [ ] structs
       - [ ] mapping
       - [ ] operators (delete)
-- [ ] functions
-  - [ ] returning multiple values
-- [ ] visibility
-- [ ] function modifiers
 - [ ] inheritance
 - [ ] interface
 - [ ] libraries

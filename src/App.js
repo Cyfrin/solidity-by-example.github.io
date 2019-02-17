@@ -15,6 +15,7 @@ import SelfDestruct from './examples/SelfDestruct'
 import Events from './examples/Events'
 import Error from './examples/Error'
 import Import from './examples/Import'
+import Function from './examples/Function'
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
               <Route path="/fallback-gas-limit" component={FallbackGasLimit} />
               <Route path="/re-entrancy" component={ReEntrancy} />
               <Route path="/self-destruct" component={SelfDestruct} />
+              <Route path="/function" component={Function} />
               <Route component={Home} />
             </Switch>
           </Router>
