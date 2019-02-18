@@ -17,6 +17,7 @@ import Error from './examples/Error'
 import Import from './examples/Import'
 import Function from './examples/Function'
 import FunctionModifier from './examples/FunctionModifier'
+import ViewAndPureFunctions from './examples/ViewAndPureFunctions'
 
 class App extends Component {
   render() {
@@ -40,6 +41,7 @@ class App extends Component {
               <Route path="/self-destruct" component={SelfDestruct} />
               <Route path="/function" component={Function} />
               <Route path="/function-modifier" component={FunctionModifier} />
+              <Route path="/view-and-pure-functions" component={ViewAndPureFunctions} />
               <Route component={Home} />
             </Switch>
           </Router>
