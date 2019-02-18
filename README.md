@@ -13,6 +13,7 @@ npm run deploy
 # TODO fix license link
 # TODO solc
 # TODO embed youtube
+# TODO SEO
 # twitter
 
 # use gen-html
@@ -22,8 +23,10 @@ npm run gen-html -- src/examples/HelloWorld
 ## Roadmap
 - [x] hello world
 - [x] simple storage
-- [ ] function
-- [ ] function modifiers
+- [x] function
+- [x] function modifiers
+- [ ] view and pure
+- [ ] inheritance
 - [ ] visibility
 - [x] events
 - [x] error (assert, require, revert)
