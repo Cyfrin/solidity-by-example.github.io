@@ -18,6 +18,7 @@ class Home extends Component {
             <li><a href="/hello-world">Hello World</a></li>
             <li><a href="/simple-storage">Simple Storage</a></li>
             <li><a href="/function">Function</a></li>
+            <li><a href="/function-modifier">Function Modifier</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/error">Error</a></li>
             <li><a href="/payable">Payable</a></li>
