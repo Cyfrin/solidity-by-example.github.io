@@ -18,6 +18,7 @@ import Import from './examples/Import'
 import Function from './examples/Function'
 import FunctionModifier from './examples/FunctionModifier'
 import ViewAndPureFunctions from './examples/ViewAndPureFunctions'
+import Constructor from './examples/Constructor'
 
 class App extends Component {
   render() {
@@ -42,6 +43,7 @@ class App extends Component {
               <Route path="/function" component={Function} />
               <Route path="/function-modifier" component={FunctionModifier} />
               <Route path="/view-and-pure-functions" component={ViewAndPureFunctions} />
+              <Route path="/constructor" component={Constructor} />
               <Route component={Home} />
             </Switch>
           </Router>
