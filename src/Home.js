@@ -20,6 +20,7 @@ class Home extends Component {
             <li><a href="/function">Function</a></li>
             <li><a href="/function-modifier">Function Modifier</a></li>
             <li><a href="/view-and-pure-functions">View and Pure Functions</a></li>
+            <li><a href="/inheritance">Inheritance</a></li>
             <li><a href="/constructor">Constructor</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/error">Error</a></li>

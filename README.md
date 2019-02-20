@@ -25,8 +25,10 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] simple storage
 - [x] function
 - [x] function modifiers
-- [ ] view and pure
+- [x] view and pure
 - [ ] inheritance
+- [ ] super
+- [x] constructor
 - [ ] visibility
 - [x] events
 - [x] error (assert, require, revert)
