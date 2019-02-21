@@ -3,9 +3,11 @@
 [Solidity By Example](https://solidity-by-example.org)
 
 ### License
+
 [MIT License](LICENSE)
 
 ## Memo
+
 ```shell
 # deploy
 npm run deploy
@@ -20,13 +22,17 @@ npm run deploy
 npm run gen-html -- src/examples/HelloWorld
 ```
 
+- [ ] TODO match compiler version to Remix
+
 ## Roadmap
+
 - [x] hello world
 - [x] simple storage
 - [x] function
 - [x] function modifiers
 - [x] view and pure
-- [ ] inheritance
+- [x] inheritance
+- [x] shadow
 - [ ] super
 - [x] constructor
 - [ ] visibility
@@ -63,11 +69,11 @@ npm run gen-html -- src/examples/HelloWorld
     - [ ] enums
     - [ ] function
   - reference types
-      - [ ] memory, storage, calldata
-      - [ ] array
-      - [ ] structs
-      - [ ] mapping
-      - [ ] operators (delete)
+    - [ ] memory, storage, calldata
+    - [ ] array
+    - [ ] structs
+    - [ ] mapping
+    - [ ] operators (delete)
 - [ ] inheritance
 - [ ] interface
 - [ ] libraries
@@ -113,6 +119,7 @@ npm run gen-html -- src/examples/HelloWorld
   - [ ] casper
 
 ### Memo
+
 ```
 bundle exec jekyll serve
 ```

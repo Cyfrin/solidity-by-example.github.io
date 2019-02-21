@@ -1,25 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import './App.css'
-import Header from './Header'
-import Home from './Home'
-import HelloWorld from './examples/HelloWorld'
-import SimpleStorage from './examples/SimpleStorage'
-import SafeMath from './examples/SafeMath'
-import Payable from './examples/Payable'
-import SendingEther from './examples/SendingEther'
-import Fallback from './examples/Fallback'
-import FallbackGasLimit from './examples/FallbackGasLimit'
-import ReEntrancy from './examples/ReEntrancy'
-import SelfDestruct from './examples/SelfDestruct'
-import Events from './examples/Events'
-import Error from './examples/Error'
-import Import from './examples/Import'
-import Function from './examples/Function'
-import FunctionModifier from './examples/FunctionModifier'
-import ViewAndPureFunctions from './examples/ViewAndPureFunctions'
-import Inheritance from './examples/Inheritance'
-import Constructor from './examples/Constructor'
+import "./App.css"
+import Header from "./Header"
+import Home from "./Home"
+import HelloWorld from "./examples/HelloWorld"
+import SimpleStorage from "./examples/SimpleStorage"
+import SafeMath from "./examples/SafeMath"
+import Payable from "./examples/Payable"
+import SendingEther from "./examples/SendingEther"
+import Fallback from "./examples/Fallback"
+import FallbackGasLimit from "./examples/FallbackGasLimit"
+import ReEntrancy from "./examples/ReEntrancy"
+import SelfDestruct from "./examples/SelfDestruct"
+import Events from "./examples/Events"
+import Error from "./examples/Error"
+import Import from "./examples/Import"
+import Function from "./examples/Function"
+import FunctionModifier from "./examples/FunctionModifier"
+import ViewAndPureFunctions from "./examples/ViewAndPureFunctions"
+import Inheritance from "./examples/Inheritance"
+import Shadow from "./examples/Shadow"
+import Constructor from "./examples/Constructor"
 
 class App extends Component {
   render() {
@@ -43,8 +44,15 @@ class App extends Component {
               <Route path="/self-destruct" component={SelfDestruct} />
               <Route path="/function" component={Function} />
               <Route path="/function-modifier" component={FunctionModifier} />
-              <Route path="/view-and-pure-functions" component={ViewAndPureFunctions} />
+              <Route
+                path="/view-and-pure-functions"
+                component={ViewAndPureFunctions}
+              />
               <Route path="/inheritance" component={Inheritance} />
+              <Route
+                path="/shadowing-inherited-state-variables"
+                component={Shadow}
+              />
               <Route path="/constructor" component={Constructor} />
               <Route component={Home} />
             </Switch>
