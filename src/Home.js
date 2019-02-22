@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./Home.css";
-import Footer from "./Footer";
+import React, { Component } from "react"
+import "./Home.css"
+import Footer from "./Footer"
 
 class Home extends Component {
   render() {
@@ -44,6 +44,9 @@ class Home extends Component {
               <a href="/constructor">Constructor</a>
             </li>
             <li>
+              <a href="/super">Calling Parent Contracts</a>
+            </li>
+            <li>
               <a href="/events">Events</a>
             </li>
             <li>
@@ -78,8 +81,8 @@ class Home extends Component {
 
         <Footer />
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

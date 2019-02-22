@@ -21,6 +21,7 @@ import ViewAndPureFunctions from "./examples/ViewAndPureFunctions"
 import Inheritance from "./examples/Inheritance"
 import Shadow from "./examples/Shadow"
 import Constructor from "./examples/Constructor"
+import Super from "./examples/Super"
 
 class App extends Component {
   render() {
@@ -54,6 +55,7 @@ class App extends Component {
                 component={Shadow}
               />
               <Route path="/constructor" component={Constructor} />
+              <Route path="/super" component={Super} />
               <Route component={Home} />
             </Switch>
           </Router>
