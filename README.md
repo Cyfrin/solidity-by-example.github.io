@@ -33,7 +33,7 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] view and pure
 - [x] inheritance
 - [x] shadow
-- [ ] super
+- [x] super
 - [x] constructor
 - [ ] visibility
 - [x] events

@@ -47,6 +47,9 @@ class Home extends Component {
               <a href="/super">Calling Parent Contracts</a>
             </li>
             <li>
+              <a href="/visibility">Visibility</a>
+            </li>
+            <li>
               <a href="/events">Events</a>
             </li>
             <li>
