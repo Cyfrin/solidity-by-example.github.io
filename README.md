@@ -38,7 +38,11 @@ npm run gen-html -- src/examples/HelloWorld
 - [ ] visibility
 - [x] events
 - [x] error (assert, require, revert)
-- [ ] looping
+- [x] looping
+- [ ] Enum
+- [ ] structs
+- [ ] mapping
+- [ ] array
 - [x] payable
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
@@ -71,7 +75,6 @@ npm run gen-html -- src/examples/HelloWorld
   - reference types
     - [ ] memory, storage, calldata
     - [ ] array
-    - [ ] structs
     - [ ] mapping
     - [ ] operators (delete)
 - [ ] inheritance

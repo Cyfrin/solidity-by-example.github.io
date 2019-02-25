@@ -4,7 +4,7 @@ import "./App.css"
 import Header from "./Header"
 import Home from "./Home"
 import HelloWorld from "./examples/HelloWorld"
-import SimpleStorage from "./examples/SimpleStorage"
+import StateVariables from "./examples/StateVariables"
 import SafeMath from "./examples/SafeMath"
 import Payable from "./examples/Payable"
 import SendingEther from "./examples/SendingEther"
@@ -24,6 +24,7 @@ import Constructor from "./examples/Constructor"
 import Super from "./examples/Super"
 import Visibility from "./examples/Visibility"
 import Loop from "./examples/Loop"
+import Enum from "./examples/Enum"
 
 class App extends Component {
   render() {
@@ -34,7 +35,7 @@ class App extends Component {
           <Router basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route path="/hello-world" component={HelloWorld} />
-              <Route path="/simple-storage" component={SimpleStorage} />
+              <Route path="/state-variables" component={StateVariables} />
               <Route path="/import" component={Import} />
               <Route path="/safe-math" component={SafeMath} />
               <Route path="/events" component={Events} />
@@ -60,6 +61,7 @@ class App extends Component {
               <Route path="/super" component={Super} />
               <Route path="/visibility" component={Visibility} />
               <Route path="/loop" component={Loop} />
+              <Route path="/enum" component={Enum} />
               <Route component={Home} />
             </Switch>
           </Router>
