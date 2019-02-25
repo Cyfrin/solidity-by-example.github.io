@@ -21,7 +21,7 @@ class Home extends Component {
               <a href="/hello-world">Hello World</a>
             </li>
             <li>
-              <a href="/simple-storage">Simple Storage</a>
+              <a href="/state-variables">State Variables</a>
             </li>
             <li>
               <a href="/function">Function</a>
@@ -57,6 +57,9 @@ class Home extends Component {
             </li>
             <li>
               <a href="/loop">Loop</a>
+            </li>
+            <li>
+              <a href="/enum">Enum</a>
             </li>
             <li>
               <a href="/payable">Payable</a>
