@@ -56,6 +56,9 @@ class Home extends Component {
               <a href="/error">Error</a>
             </li>
             <li>
+              <a href="/loop">Loop</a>
+            </li>
+            <li>
               <a href="/payable">Payable</a>
             </li>
             <li>

@@ -23,6 +23,7 @@ import Shadow from "./examples/Shadow"
 import Constructor from "./examples/Constructor"
 import Super from "./examples/Super"
 import Visibility from "./examples/Visibility"
+import Loop from "./examples/Loop"
 
 class App extends Component {
   render() {
@@ -58,6 +59,7 @@ class App extends Component {
               <Route path="/constructor" component={Constructor} />
               <Route path="/super" component={Super} />
               <Route path="/visibility" component={Visibility} />
+              <Route path="/loop" component={Loop} />
               <Route component={Home} />
             </Switch>
           </Router>
