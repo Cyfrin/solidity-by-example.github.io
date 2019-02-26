@@ -25,6 +25,7 @@ import Super from "./examples/Super"
 import Visibility from "./examples/Visibility"
 import Loop from "./examples/Loop"
 import Enum from "./examples/Enum"
+import Mapping from "./examples/Mapping"
 
 class App extends Component {
   render() {
@@ -62,6 +63,7 @@ class App extends Component {
               <Route path="/visibility" component={Visibility} />
               <Route path="/loop" component={Loop} />
               <Route path="/enum" component={Enum} />
+              <Route path="/mapping" component={Mapping} />
               <Route component={Home} />
             </Switch>
           </Router>
