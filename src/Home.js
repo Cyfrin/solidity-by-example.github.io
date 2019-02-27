@@ -65,6 +65,9 @@ class Home extends Component {
               <a href="/mapping">Mapping</a>
             </li>
             <li>
+              <a href="/array">Array</a>
+            </li>
+            <li>
               <a href="/payable">Payable</a>
             </li>
             <li>

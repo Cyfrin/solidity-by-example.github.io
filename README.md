@@ -35,14 +35,14 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] shadow
 - [x] super
 - [x] constructor
-- [ ] visibility
 - [x] events
 - [x] error (assert, require, revert)
 - [x] looping
-- [ ] Enum
-- [ ] structs
-- [ ] mapping
+- [x] Enum
+- [x] mapping
 - [ ] array
+- [ ] structs
+- [ ] storage and memory
 - [x] payable
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
