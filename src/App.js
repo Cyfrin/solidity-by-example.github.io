@@ -26,6 +26,7 @@ import Visibility from "./examples/Visibility"
 import Loop from "./examples/Loop"
 import Enum from "./examples/Enum"
 import Mapping from "./examples/Mapping"
+import Array from "./examples/Array"
 
 class App extends Component {
   render() {
@@ -64,6 +65,7 @@ class App extends Component {
               <Route path="/loop" component={Loop} />
               <Route path="/enum" component={Enum} />
               <Route path="/mapping" component={Mapping} />
+              <Route path="/array" component={Array} />
               <Route component={Home} />
             </Switch>
           </Router>
