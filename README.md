@@ -40,7 +40,7 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] looping
 - [x] Enum
 - [x] mapping
-- [ ] array
+- [x] array
 - [ ] structs
 - [ ] storage and memory
 - [x] payable
