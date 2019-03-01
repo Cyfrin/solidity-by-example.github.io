@@ -27,6 +27,7 @@ import Loop from "./examples/Loop"
 import Enum from "./examples/Enum"
 import Mapping from "./examples/Mapping"
 import Array from "./examples/Array"
+import Structs from "./examples/Structs"
 
 class App extends Component {
   render() {
@@ -66,6 +67,7 @@ class App extends Component {
               <Route path="/enum" component={Enum} />
               <Route path="/mapping" component={Mapping} />
               <Route path="/array" component={Array} />
+              <Route path="/structs" component={Structs} />
               <Route component={Home} />
             </Switch>
           </Router>
