@@ -21,8 +21,10 @@ contract CompactArray {
         // Move the last element into the place to delete
         addresses[index] = addresses[addresses.length - 1];
 
+        // Remove the last element
+        addresses.pop();
         // This has the same effect has deleting the last element.
-        addresses.length--;
+        // addresses.length--;
     }
 
     function test() public {
