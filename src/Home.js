@@ -71,6 +71,9 @@ class Home extends Component {
               <a href="/structs">Structs</a>
             </li>
             <li>
+              <a href="/new-contract">Creating Contract from Other Contract</a>
+            </li>
+            <li>
               <a href="/payable">Payable</a>
             </li>
             <li>

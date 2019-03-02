@@ -28,6 +28,7 @@ import Enum from "./examples/Enum"
 import Mapping from "./examples/Mapping"
 import Array from "./examples/Array"
 import Structs from "./examples/Structs"
+import NewContract from "./examples/NewContract"
 
 class App extends Component {
   render() {
@@ -68,6 +69,7 @@ class App extends Component {
               <Route path="/mapping" component={Mapping} />
               <Route path="/array" component={Array} />
               <Route path="/structs" component={Structs} />
+              <Route path="/new-contract" component={NewContract} />
               <Route component={Home} />
             </Switch>
           </Router>
