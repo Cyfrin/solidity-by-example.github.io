@@ -41,8 +41,10 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] Enum
 - [x] mapping
 - [x] array
-- [ ] structs
-- [ ] storage and memory
+- [x] structs
+- [x] creating contracts
+- [xx calling contracts
+- [ ] call, delegatecall and staticcall
 - [x] payable
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
@@ -51,60 +53,20 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] Self Destruct
 - [x] imports
 - [x] safe math
-- [ ] external calls (payable, non payable)
 
 - [ ] deployment
 - [ ] testing
-- [ ] initializing other contracts
-- [ ] calling other contracts
-- [ ] address
-  - [ ] methods
-- [ ] types
-  - values types
-    - [ ] boolean
-    - [ ] integer
-      - [ ] operations
-        - [ ] bit op
-        - [ ] add, sub, mul, div, mod, exponential
-    - [ ] contract
-    - [ ] fixed-size byte arrays
-    - [ ] dynamically-sized byte array
-    - [ ] string
-    - [ ] enums
-    - [ ] function
-  - reference types
-    - [ ] memory, storage, calldata
-    - [ ] array
-    - [ ] mapping
-    - [ ] operators (delete)
-- [ ] inheritance
-- [ ] interface
+- [ ] debugging
 - [ ] libraries
-- [ ] expression and control structure
-  - [ ] function calls
-    - [ ] internal
-    - [ ] external
-    - [ ] named calls
-    - [ ] creating other contracts
-  - [ ] destructuring assignment
-- [ ] signing
-- [ ] call, delegatecall, staticcall
-- [ ] memory vs storage
+- [ ] signature
 - [ ] units
   - [ ] wei
   - [ ] time
 - [ ] global
 - [ ] gas, gas price
-- [ ] importing other source in Remix
-- [ ] security
+- [ ] randomness
 - [ ] debugging
-- [ ] looping
-  - [x] var and uint
-  - [ ] gas limit
-- [ ] call stack
-- [ ] solc optimizer
 - [ ] erc 20
-- [ ] signature
 - [ ] upgradable
 
 - [ ] applications

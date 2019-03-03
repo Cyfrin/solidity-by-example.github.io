@@ -74,6 +74,9 @@ class Home extends Component {
               <a href="/new-contract">Creating Contract from Other Contract</a>
             </li>
             <li>
+              <a href="/calling-contract">Calling Other Contract</a>
+            </li>
+            <li>
               <a href="/payable">Payable</a>
             </li>
             <li>
