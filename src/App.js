@@ -30,6 +30,7 @@ import Array from "./examples/Array"
 import Structs from "./examples/Structs"
 import NewContract from "./examples/NewContract"
 import CallingContract from "./examples/CallingContract"
+import Call from "./examples/Call"
 
 class App extends Component {
   render() {
@@ -72,6 +73,7 @@ class App extends Component {
               <Route path="/structs" component={Structs} />
               <Route path="/new-contract" component={NewContract} />
               <Route path="/calling-contract" component={CallingContract} />
+              <Route path="/call" component={Call} />
               <Route component={Home} />
             </Switch>
           </Router>
