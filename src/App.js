@@ -31,6 +31,7 @@ import Structs from "./examples/Structs"
 import NewContract from "./examples/NewContract"
 import CallingContract from "./examples/CallingContract"
 import Call from "./examples/Call"
+import Delegatecall from "./examples/Delegatecall"
 
 class App extends Component {
   render() {
@@ -74,6 +75,7 @@ class App extends Component {
               <Route path="/new-contract" component={NewContract} />
               <Route path="/calling-contract" component={CallingContract} />
               <Route path="/call" component={Call} />
+              <Route path="/delegatecall" component={Delegatecall} />
               <Route component={Home} />
             </Switch>
           </Router>
