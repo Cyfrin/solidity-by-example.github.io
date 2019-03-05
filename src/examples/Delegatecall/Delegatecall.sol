@@ -1,7 +1,7 @@
 pragma solidity ^0.5.3;
 
 // Firts deploy this contract
-contract A {
+contract B {
   uint public n;
   address public sender;
   uint public value;
@@ -13,14 +13,14 @@ contract A {
   }
 }
 
-contract B {
+contract A {
   uint public n;
   address public sender;
   uint public value;
 
-  function delegatecallSetN(address a, uint _n) public payable {
-    // B's storage is set, A is not modified.
-    (bool success, bytes memory returnData) = a.delegatecall(
+  function delegatecallSetN(address b, uint _n) public payable {
+    // A's storage is set, B is not modified.
+    (bool success, bytes memory returnData) = b.delegatecall(
       abi.encodeWithSignature("setN(uint256)", _n)
     );
   }
