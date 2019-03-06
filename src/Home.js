@@ -83,6 +83,9 @@ class Home extends Component {
               <a href="/delegatecall">Delegatecall</a>
             </li>
             <li>
+              <a href="/Library">Library</a>
+            </li>
+            <li>
               <a href="/payable">Payable</a>
             </li>
             <li>
