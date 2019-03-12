@@ -24,6 +24,9 @@ class Home extends Component {
               <a href="/state-variables">State Variables</a>
             </li>
             <li>
+              <a href="/gas">Gas</a>
+            </li>
+            <li>
               <a href="/function">Function</a>
             </li>
             <li>

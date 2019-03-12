@@ -1,6 +1,4 @@
 const html = `<p>You can interact with a smart contract by calling the functions defined in the contract.</p>
-<p>Functions that change state variables cost Ether.</p>
-<p>Functions that do not change the state is free when it is called by an account.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract Function {
