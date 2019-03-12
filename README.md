@@ -44,28 +44,28 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] structs
 - [x] creating contracts
 - [xx calling contracts
-- [ ] call, delegatecall and staticcall
+- [x] call
+- [x] delegatecall
+- [x] library
 - [x] payable
 - [x] different ways to send ether (send, transfer, call)
 - [x] fallback
 - [x] fallback gas limit
 - [x] re-entrancy
 - [x] Self Destruct
+- [ ] signature
 - [x] imports
 - [x] safe math
+- [x] wei
+- [ ] gas, gas price
+- [ ] global
 
+- [ ] randomness
 - [ ] deployment
 - [ ] testing
 - [ ] debugging
-- [ ] libraries
-- [ ] signature
-- [ ] units
-  - [ ] wei
-  - [ ] time
-- [ ] global
-- [ ] gas, gas price
-- [ ] randomness
 - [ ] debugging
+- [ ] assembly
 - [ ] erc 20
 - [ ] upgradable
 

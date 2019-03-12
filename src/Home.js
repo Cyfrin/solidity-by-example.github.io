@@ -109,6 +109,9 @@ class Home extends Component {
             <li>
               <a href="/safe-math">Safe Math</a>
             </li>
+            <li>
+              <a href="/wei">Wei and Ether</a>
+            </li>
           </ul>
         </div>
 
