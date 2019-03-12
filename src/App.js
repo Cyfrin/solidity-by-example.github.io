@@ -34,6 +34,7 @@ import Call from "./examples/Call"
 import Delegatecall from "./examples/Delegatecall"
 import Library from "./examples/Library"
 import Wei from "./examples/Wei"
+import Gas from "./examples/Gas"
 
 class App extends Component {
   render() {
@@ -80,6 +81,7 @@ class App extends Component {
               <Route path="/delegatecall" component={Delegatecall} />
               <Route path="/library" component={Library} />
               <Route path="/wei" component={Wei} />
+              <Route path="/gas" component={Gas} />
               <Route component={Home} />
             </Switch>
           </Router>
