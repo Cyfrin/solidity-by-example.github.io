@@ -33,6 +33,7 @@ import CallingContract from "./examples/CallingContract"
 import Call from "./examples/Call"
 import Delegatecall from "./examples/Delegatecall"
 import Library from "./examples/Library"
+import Wei from "./examples/Wei"
 
 class App extends Component {
   render() {
@@ -78,6 +79,7 @@ class App extends Component {
               <Route path="/call" component={Call} />
               <Route path="/delegatecall" component={Delegatecall} />
               <Route path="/library" component={Library} />
+              <Route path="/wei" component={Wei} />
               <Route component={Home} />
             </Switch>
           </Router>
