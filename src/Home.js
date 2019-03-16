@@ -107,6 +107,9 @@ class Home extends Component {
               <a href="/self-destruct">Self Destruct</a>
             </li>
             <li>
+              <a href="/hashing">Hashing with Keccak256</a>
+            </li>
+            <li>
               <a href="/import">Import</a>
             </li>
             <li>

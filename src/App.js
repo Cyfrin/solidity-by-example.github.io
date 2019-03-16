@@ -35,6 +35,7 @@ import Delegatecall from "./examples/Delegatecall"
 import Library from "./examples/Library"
 import Wei from "./examples/Wei"
 import Gas from "./examples/Gas"
+import Keccak256 from "./examples/Keccak256"
 
 class App extends Component {
   render() {
@@ -82,6 +83,7 @@ class App extends Component {
               <Route path="/library" component={Library} />
               <Route path="/wei" component={Wei} />
               <Route path="/gas" component={Gas} />
+              <Route path="/hashing" component={Keccak256} />
               <Route component={Home} />
             </Switch>
           </Router>

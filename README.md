@@ -16,6 +16,7 @@ npm run deploy
 # TODO solc
 # TODO embed youtube
 # TODO SEO
+# TODO translation
 
 # use gen-html
 npm run gen-html -- src/examples/HelloWorld
@@ -53,31 +54,17 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] fallback gas limit
 - [x] re-entrancy
 - [x] Self Destruct
+- [x] hashing
 - [ ] signature
 - [x] imports
 - [x] safe math
 - [x] wei
-- [ ] global
 
-- [ ] randomness
-- [ ] deployment
-- [ ] testing
-- [ ] debugging
-- [ ] debugging
-- [ ] assembly
-- [ ] erc 20
-- [ ] upgradable
+- [ ] deployment (video)
 
 - [ ] applications
-  - [ ] subscription
-  - [ ] dividends
   - [ ] multisig wallet
-  - [ ] escrow
-  - [ ] decentralized exchange
-  - [ ] crowdfunding
-  - [ ] auction (vickerey)
+  - [ ] dividends (split payment)
   - [ ] payment channel
-  - [ ] bounty
-  - [ ] token
-  - [ ] plasma
-  - [ ] casper
+  - [ ] escrow (?)
+  - [ ] auction (vickrey)
