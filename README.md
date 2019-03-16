@@ -54,7 +54,7 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] fallback gas limit
 - [x] re-entrancy
 - [x] Self Destruct
-- [ ] hashing
+- [x] hashing
 - [ ] signature
 - [x] imports
 - [x] safe math
