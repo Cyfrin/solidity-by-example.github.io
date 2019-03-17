@@ -119,6 +119,13 @@ class Home extends Component {
               <a href="/wei">Wei and Ether</a>
             </li>
           </ul>
+
+          <h3>Applications</h3>
+          <ul>
+            <li>
+              <a href="/multi-sig-wallet">Multi-Sig Wallet</a>
+            </li>
+          </ul>
         </div>
 
         <Footer />
