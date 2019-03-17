@@ -1,145 +1,185 @@
-const html = `<p>Let&#39;s create an multi-sig wallet.</p>
+const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specifications.</p>
+<p>The wallet owners can</p>
+<ul>
+<li>create transaction</li>
+<li>sign and unsign pending transcations</li>
+</ul>
+<p>Anyone can process process a transcation after enough owners has signed it.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
-// TODO verify
 contract MultiSigWallet {
-    event TxCreated(
-        uint indexed txId,
-        address indexed owner,
-        address indexed to,
-        uint value
+  event Deposit(address indexed sender, uint value);
+  event TxCreated(
+    uint indexed txId,
+    address indexed owner,
+    address indexed to,
+    uint value
+  );
+  event TxSigned(uint indexed txId, address indexed signer);
+  event TxUnsigned(uint indexed txId, address indexed signer);
+  event TxExecuted(uint indexed txId, address indexed caller);
+
+  mapping(address =&gt; bool) public isOwner;
+  address[] public owners;
+  uint public numSigsRequired;
+
+  struct Tx {
+    address payable to;
+    uint value;
+    bytes data;
+  }
+
+  uint public txCount;
+  // mapping from txId to Tx
+  mapping(uint =&gt; Tx) public transactions;
+
+  // mapping from txId -&gt; owner address -&gt; bool
+  // set to true after a owner has signed a transaction
+  mapping(uint =&gt; mapping(address =&gt; bool)) public signed;
+  // mapping from txId to signature count
+  mapping(uint =&gt; uint) public sigCount;
+  // mapping from txId to boolean value set to true after a transaction has
+  // been executed
+  mapping(uint =&gt; bool) public executed;
+
+  constructor(address[] memory _owners, uint _numSigsRequired) public {
+    require(_numSigsRequired &gt; 0, "number of signatures required must be &gt; 0");
+    require(
+      _owners.length &gt;= _numSigsRequired,
+      "owners must be &gt; number of required signatures"
     );
-    event TxSigned(uint indexed txId, address indexed signer);
-    event TxUnsigned(uint indexed txId, address indexed signer);
-    event TxExecuted(uint indexed txId, address indexed caller);
 
-    mapping(address =&gt; bool) public isOwner;
-    address[] public owners;
-    uint public numSigsRequired;
+    for (uint i = 0; i &lt; _owners.length; i++) {
+      require(!isOwner[_owners[i]], "Duplicate owner");
+      require(_owners[i] != address(0), "Invalid owner");
 
-    struct Tx {
-        address payable to;
-        uint value;
-        bytes data;
+      isOwner[_owners[i]] = true;
     }
 
-    uint public txCount;
-    mapping(uint =&gt; Tx) public transactions;
+    owners = _owners;
+    numSigsRequired = _numSigsRequired;
+  }
 
-    mapping(uint =&gt; mapping(address =&gt; bool)) public signed;
-    mapping(uint =&gt; uint) public sigCount;
-    mapping(uint =&gt; bool) public executed;
+  modifier onlyOwner() {
+    require(isOwner[msg.sender], "Not owner");
+    _;
+  }
 
-    constructor(address[] memory _owners, uint _numSigsRequired) public {
-        for (uint i = 0; i &lt; _owners.length; i++) {
-            isOwner[_owners[i]] = true;
-        }
+  modifier onlyExisting(uint txId) {
+    require(txExists(txId), "Tx does not exist");
+    _;
+  }
 
-        owners = _owners;
-        numSigsRequired = _numSigsRequired;
+  modifier notExecuted(uint txId) {
+    require(!executed[txId], "Tx already executed");
+    _;
+  }
+
+  modifier notSigned(uint txId) {
+    require(!signed[txId][msg.sender], "Tx already signed");
+    _;
+  }
+
+  function () external payable {
+    if (msg.value &gt; 0) {
+      emit Deposit(msg.sender, msg.value);
+    }
+  }
+
+  function createTx(address payable to, uint value, bytes memory data) public onlyOwner {
+    require(to != address(0), "Invalid address");
+
+    require(txCount + 1 &gt; txCount, "txCount uint overflow");
+    txCount += 1;
+
+    transactions[txCount] = Tx({
+      to: to,
+      value: value,
+      data: data
+    });
+
+    emit TxCreated(txCount, msg.sender, to, value);
+  }
+
+  function txExists(uint txId) public view returns (bool) {
+    return transactions[txId].to != address(0);
+  }
+
+  function getTx(uint txId)
+    public
+    view
+    onlyExisting(txId)
+    returns (address to, uint value, bytes memory data)
+  {
+    // &#39;tx&#39; is global variable so we name ours &#39;txn&#39;
+    Tx storage txn = transactions[txId];
+
+    return (txn.to, txn.value, txn.data);
+  }
+
+  function getSigCount(uint txId)
+    public
+    view
+    onlyExisting(txId)
+    returns (uint)
+  {
+    uint count;
+
+    for (uint i = 0; i &lt; owners.length; i++) {
+      if (signed[txId][owners[i]]) {
+        count += 1;
+      }
     }
 
-    modifier onlyOwner() {
-        require(isOwner[msg.sender], "Not owner");
-        _;
-    }
+    return count;
+  }
 
-    modifier onlyExisting(uint txId) {
-        require(txExists(txId), "Tx does not exist");
-        _;
-    }
+  function signTx(uint txId)
+    public
+    onlyOwner
+    onlyExisting(txId)
+    notExecuted(txId)
+    notSigned(txId)
+  {
+    signed[txId][msg.sender] = true;
+    sigCount[txId] += 1;
 
-    modifier notExecuted(uint txId) {
-        require(!executed[txId], "Tx already executed");
-        _;
-    }
+    emit TxSigned(txId, msg.sender);
+  }
 
-    modifier notSigned(uint txId) {
-        require(!signed[txId][msg.sender], "Tx already signed");
-        _;
-    }
+  function unsignTx(uint txId)
+    public
+    onlyOwner
+    onlyExisting(txId)
+    notExecuted(txId)
+  {
+    require(signed[txId][msg.sender], "Tx not signed");
 
-    function () external payable {}
+    signed[txId][msg.sender] = false;
+    sigCount[txId] -= 1;
 
-    function createTx(address payable to, uint value, bytes memory data) public onlyOwner {
-        require(to != address(0), "Invalid address");
+    emit TxUnsigned(txId, msg.sender);
+  }
 
-        require(txCount + 1 &gt; txCount, "txCount uint overflow");
-        txCount += 1;
+  function canExecuteTx(uint txId) public view returns (bool) {
+    return sigCount[txId] &gt;= numSigsRequired;
+  }
 
-        transactions[txCount] = Tx({
-            to: to,
-            value: value,
-            data: data
-        });
+  function executeTx(uint txId)
+    public
+    onlyExisting(txId)
+    notExecuted(txId)
+  {
+    require(canExecuteTx(txId), "Cannot execute tx yet");
 
-        emit TxCreated(txCount, msg.sender, to, value);
-    }
+    Tx storage txn = transactions[txId];
+    executed[txId] = true;
 
-    function txExists(uint txId) public view returns (bool) {
-        return transactions[txId].to != address(0);
-    }
+    (bool success,) = txn.to.call.value(txn.value)(txn.data);
+    require(success, "Failed to execute transaction");
 
-    // TODO is this needed?
-    function getTx(uint txId)
-        public
-        view
-        onlyExisting(txId)
-        returns (address to, uint value, bytes memory data)
-    {
-        // &#39;tx&#39; is global variable so we name ours &#39;txn&#39;
-        Tx storage txn = transactions[txId];
-
-        return (txn.to, txn.value, txn.data);
-    }
-
-    function signTx(uint txId)
-        public
-        onlyOwner
-        onlyExisting(txId)
-        notExecuted(txId)
-        notSigned(txId)
-    {
-        signed[txId][msg.sender] = true;
-        sigCount[txId] += 1;
-
-        emit TxSigned(txId, msg.sender);
-    }
-
-    function unsignTx(uint txId)
-        public
-        onlyOwner
-        onlyExisting(txId)
-        notExecuted(txId)
-    {
-        require(signed[txId][msg.sender], "Tx not signed");
-
-        signed[txId][msg.sender] = false;
-        sigCount[txId] -= 1;
-
-        emit TxUnsigned(txId, msg.sender);
-    }
-
-    function canExecuteTx(uint txId) public view returns (bool) {
-        return sigCount[txId] &gt;= numSigsRequired;
-    }
-
-    function executeTx(uint txId)
-        public
-        onlyExisting(txId)
-        notExecuted(txId)
-    {
-        require(canExecuteTx(txId), "Cannot execute tx yet");
-
-        Tx storage txn = transactions[txId];
-        executed[txId] = true;
-
-        // TODO what is call data?
-        (bool success,) = txn.to.call.value(txn.value)(txn.data);
-        require(success, "Failed to execute transaction");
-
-        emit TxExecuted(txId, msg.sender);
-    }
+    emit TxExecuted(txId, msg.sender);
+  }
 }
 </code></pre>
 `
