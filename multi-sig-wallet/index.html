@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link href="/favicon.ico" rel="shortcut icon"><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"><meta content="#000000" name="theme-color"><link href="/manifest.json" rel="manifest"><title>Solidity By Example</title><script src="https://www.google-analytics.com/analytics.js" async type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-133759045-1" async></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-133759045-1")</script><link href="/static/css/1.dfbde23c.chunk.css" rel="stylesheet"><link href="/static/css/main.7462769c.chunk.css" rel="stylesheet"><link href="https://www.googletagmanager.com" rel="preconnect"><link href="https://www.google-analytics.com" rel="preconnect"><link href="/static/js/1.866e0a71.chunk.js" rel="preload" as="script"><link href="/static/js/main.cc04f9ff.chunk.js" rel="preload" as="script"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><div class="Header"><a href="/"><img alt="logo" class="Header-logo" src="/static/media/logo.da793b47.svg"></a><h3><a href="/">Solidity by Example</a></h3></div><div class="App-main"><div><h2>Multi-Sig Wallet</h2><div><p>Let's create an multi-sig wallet. Here are the specifications.</p><p>The wallet owners can</p><ul><li>create transaction</li><li>sign and unsign pending transcations</li></ul><p>Anyone can process process a transcation after enough owners has signed it.</p><pre><code class="language-solidity hljs">pragma solidity ^<span class="hljs-number">0.5</span><span class="hljs-number">.3</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MultiSigWallet</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Deposit</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> sender, <span class="hljs-keyword">uint</span> value</span>)</span>;
+  <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TxCreated</span>(<span class="hljs-params">
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">indexed</span> txId,
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner,
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to,
+    <span class="hljs-keyword">uint</span> value
+  </span>)</span>;
+  <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TxSigned</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> <span class="hljs-keyword">indexed</span> txId, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> signer</span>)</span>;
+  <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TxUnsigned</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> <span class="hljs-keyword">indexed</span> txId, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> signer</span>)</span>;
+  <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TxExecuted</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> <span class="hljs-keyword">indexed</span> txId, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> caller</span>)</span>;
+
+  <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> => <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> isOwner;
+  <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">public</span> owners;
+  <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> numSigsRequired;
+
+  <span class="hljs-keyword">struct</span> Tx {
+    <span class="hljs-keyword">address</span> payable to;
+    <span class="hljs-keyword">uint</span> value;
+    <span class="hljs-keyword">bytes</span> data;
+  }
+
+  <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> txCount;
+  <span class="hljs-comment">// mapping from txId to Tx</span>
+  <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> => Tx) <span class="hljs-keyword">public</span> transactions;
+
+  <span class="hljs-comment">// mapping from txId -> owner address -> bool</span>
+  <span class="hljs-comment">// set to true after a owner has signed a transaction</span>
+  <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> => <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> => <span class="hljs-keyword">bool</span>)) <span class="hljs-keyword">public</span> signed;
+  <span class="hljs-comment">// mapping from txId to signature count</span>
+  <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> => <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> sigCount;
+  <span class="hljs-comment">// mapping from txId to boolean value set to true after a transaction has</span>
+  <span class="hljs-comment">// been executed</span>
+  <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> => <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> executed;
+
+  constructor(<span class="hljs-keyword">address</span>[] <span class="hljs-keyword">memory</span> _owners, <span class="hljs-keyword">uint</span> _numSigsRequired) <span class="hljs-keyword">public</span> {
+    <span class="hljs-keyword">require</span>(_numSigsRequired > <span class="hljs-number">0</span>, <span class="hljs-string">"number of signatures required must be > 0"</span>);
+    <span class="hljs-keyword">require</span>(
+      _owners.<span class="hljs-built_in">length</span> >= _numSigsRequired,
+      <span class="hljs-string">"owners must be > number of required signatures"</span>
+    );
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _owners.<span class="hljs-built_in">length</span>; i++) {
+      <span class="hljs-keyword">require</span>(!isOwner[_owners[i]], <span class="hljs-string">"Duplicate owner"</span>);
+      <span class="hljs-keyword">require</span>(_owners[i] != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"Invalid owner"</span>);
+
+      isOwner[_owners[i]] = <span class="hljs-literal">true</span>;
+    }
+
+    owners = _owners;
+    numSigsRequired = _numSigsRequired;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">onlyOwner</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">require</span>(isOwner[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"Not owner"</span>);
+    _;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">onlyExisting</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>) </span>{
+    <span class="hljs-keyword">require</span>(txExists(txId), <span class="hljs-string">"Tx does not exist"</span>);
+    _;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">notExecuted</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>) </span>{
+    <span class="hljs-keyword">require</span>(!executed[txId], <span class="hljs-string">"Tx already executed"</span>);
+    _;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">notSigned</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>) </span>{
+    <span class="hljs-keyword">require</span>(!signed[txId][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"Tx already signed"</span>);
+    _;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">payable</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">msg</span>.value > <span class="hljs-number">0</span>) {
+      emit Deposit(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">msg</span>.value);
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createTx</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> payable to, <span class="hljs-keyword">uint</span> value, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyOwner</span> </span>{
+    <span class="hljs-keyword">require</span>(to != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"Invalid address"</span>);
+
+    <span class="hljs-keyword">require</span>(txCount + <span class="hljs-number">1</span> > txCount, <span class="hljs-string">"txCount uint overflow"</span>);
+    txCount += <span class="hljs-number">1</span>;
+
+    transactions[txCount] = Tx({
+      to: to,
+      value: value,
+      data: data
+    });
+
+    emit TxCreated(txCount, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, to, value);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">txExists</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+    <span class="hljs-keyword">return</span> transactions[txId].to != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTx</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+    <span class="hljs-title"><span class="hljs-keyword">view</span></span>
+    <span class="hljs-title">onlyExisting</span>(<span class="hljs-params">txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> to, <span class="hljs-keyword">uint</span> value, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data</span>)
+  </span>{
+    <span class="hljs-comment">// 'tx' is global variable so we name ours 'txn'</span>
+    Tx <span class="hljs-keyword">storage</span> txn = transactions[txId];
+
+    <span class="hljs-keyword">return</span> (txn.to, txn.<span class="hljs-built_in">value</span>, txn.data);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSigCount</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+    <span class="hljs-title"><span class="hljs-keyword">view</span></span>
+    <span class="hljs-title">onlyExisting</span>(<span class="hljs-params">txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)
+  </span>{
+    <span class="hljs-keyword">uint</span> count;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; owners.<span class="hljs-built_in">length</span>; i++) {
+      <span class="hljs-keyword">if</span> (signed[txId][owners[i]]) {
+        count += <span class="hljs-number">1</span>;
+      }
+    }
+
+    <span class="hljs-keyword">return</span> count;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signTx</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+    <span class="hljs-title">onlyOwner</span>
+    <span class="hljs-title">onlyExisting</span>(<span class="hljs-params">txId</span>)
+    <span class="hljs-title">notExecuted</span>(<span class="hljs-params">txId</span>)
+    <span class="hljs-title">notSigned</span>(<span class="hljs-params">txId</span>)
+  </span>{
+    signed[txId][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-literal">true</span>;
+    sigCount[txId] += <span class="hljs-number">1</span>;
+
+    emit TxSigned(txId, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unsignTx</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+    <span class="hljs-title">onlyOwner</span>
+    <span class="hljs-title">onlyExisting</span>(<span class="hljs-params">txId</span>)
+    <span class="hljs-title">notExecuted</span>(<span class="hljs-params">txId</span>)
+  </span>{
+    <span class="hljs-keyword">require</span>(signed[txId][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"Tx not signed"</span>);
+
+    signed[txId][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-literal">false</span>;
+    sigCount[txId] -= <span class="hljs-number">1</span>;
+
+    emit TxUnsigned(txId, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">canExecuteTx</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+    <span class="hljs-keyword">return</span> sigCount[txId] >= numSigsRequired;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">executeTx</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> txId</span>)
+    <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+    <span class="hljs-title">onlyExisting</span>(<span class="hljs-params">txId</span>)
+    <span class="hljs-title">notExecuted</span>(<span class="hljs-params">txId</span>)
+  </span>{
+    <span class="hljs-keyword">require</span>(canExecuteTx(txId), <span class="hljs-string">"Cannot execute tx yet"</span>);
+
+    Tx <span class="hljs-keyword">storage</span> txn = transactions[txId];
+    executed[txId] = <span class="hljs-literal">true</span>;
+
+    (<span class="hljs-keyword">bool</span> success,) = txn.to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(txn.<span class="hljs-built_in">value</span>)(txn.data);
+    <span class="hljs-keyword">require</span>(success, <span class="hljs-string">"Failed to execute transaction"</span>);
+
+    emit TxExecuted(txId, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+  }
+}
+</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p><p class="footer"><a href="mailto:soliditybyexample@gmail.com">soliditybyexample@gmail.com</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io#license">license</a></p></div></div></div></div><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={2:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/static/js/1.866e0a71.chunk.js"></script><script src="/static/js/main.cc04f9ff.chunk.js"></script></body></html>
