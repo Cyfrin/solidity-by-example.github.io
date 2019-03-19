@@ -37,6 +37,7 @@ import Wei from "./examples/Wei"
 import Gas from "./examples/Gas"
 import Keccak256 from "./examples/Keccak256"
 import MultiSigWallet from "./examples/MultiSigWallet"
+import Dividend from "./examples/Dividend"
 
 class App extends Component {
   render() {
@@ -86,6 +87,7 @@ class App extends Component {
               <Route path="/gas" component={Gas} />
               <Route path="/hashing" component={Keccak256} />
               <Route path="/multi-sig-wallet" component={MultiSigWallet} />
+              <Route path="/dividend" component={Dividend} />
               <Route component={Home} />
             </Switch>
           </Router>
