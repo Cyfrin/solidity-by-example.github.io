@@ -125,6 +125,9 @@ class Home extends Component {
             <li>
               <a href="/multi-sig-wallet">Multi-Sig Wallet</a>
             </li>
+            <li>
+              <a href="/dividend">Dividend</a>
+            </li>
           </ul>
         </div>
 
