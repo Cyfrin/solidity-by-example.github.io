@@ -4,7 +4,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
 <li>create transaction</li>
 <li>sign and unsign pending transcations</li>
 </ul>
-<p>Anyone can process process a transcation after enough owners has signed it.</p>
+<p>Anyone can process a transcation after enough owners has signed it.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract MultiSigWallet {
