@@ -13,10 +13,10 @@
 npm run deploy
 
 # TODO fix license link
-# TODO solc
-# TODO embed youtube
+# TODO sollc version mathc remix default
 # TODO SEO
-# TODO translation
+# TODO embed youtube
+# TODO ? translation
 
 # use gen-html
 npm run gen-html -- src/examples/HelloWorld
