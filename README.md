@@ -55,7 +55,7 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] re-entrancy
 - [x] Self Destruct
 - [x] hashing
-- [ ] signature
+- [x] signature
 - [x] imports
 - [x] safe math
 - [x] wei
@@ -63,8 +63,8 @@ npm run gen-html -- src/examples/HelloWorld
 - [ ] deployment (video)
 
 - [ ] applications
-  - [ ] multisig wallet
-  - [ ] dividends (split payment)
+  - [x] multisig wallet
+        // TODO verify with (mythril and klabs)
+        // TODO review gnosis multi sig wallet
+  - [x] dividends (split payment)
   - [ ] payment channel
-  - [ ] escrow (?)
-  - [ ] auction (vickrey)

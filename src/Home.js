@@ -110,6 +110,9 @@ class Home extends Component {
               <a href="/hashing">Hashing with Keccak256</a>
             </li>
             <li>
+              <a href="/signature">Verifying Signature</a>
+            </li>
+            <li>
               <a href="/import">Import</a>
             </li>
             <li>
