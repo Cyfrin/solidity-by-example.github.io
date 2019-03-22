@@ -39,6 +39,7 @@ import Keccak256 from "./examples/Keccak256"
 import Signature from "./examples/Signature"
 import MultiSigWallet from "./examples/MultiSigWallet"
 import Dividend from "./examples/Dividend"
+import PaymentChannel from "./examples/PaymentChannel"
 
 class App extends Component {
   render() {
@@ -90,6 +91,7 @@ class App extends Component {
               <Route path="/signature" component={Signature} />
               <Route path="/multi-sig-wallet" component={MultiSigWallet} />
               <Route path="/dividend" component={Dividend} />
+              <Route path="/payment-channel" component={PaymentChannel} />
               <Route component={Home} />
             </Switch>
           </Router>

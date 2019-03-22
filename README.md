@@ -13,10 +13,10 @@
 npm run deploy
 
 # TODO fix license link
-# TODO solc
-# TODO embed youtube
+# TODO sollc version mathc remix default
 # TODO SEO
-# TODO translation
+# TODO embed youtube
+# TODO ? translation
 
 # use gen-html
 npm run gen-html -- src/examples/HelloWorld
@@ -60,11 +60,9 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] safe math
 - [x] wei
 
-- [ ] deployment (video)
-
-- [ ] applications
+- [x] applications
   - [x] multisig wallet
         // TODO verify with (mythril and klabs)
         // TODO review gnosis multi sig wallet
   - [x] dividends (split payment)
-  - [ ] payment channel
+  - [x] payment channel

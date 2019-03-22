@@ -131,6 +131,9 @@ class Home extends Component {
             <li>
               <a href="/dividend">Dividend</a>
             </li>
+            <li>
+              <a href="/payment-channel">PaymentChannel</a>
+            </li>
           </ul>
         </div>
 
