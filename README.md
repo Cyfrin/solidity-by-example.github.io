@@ -60,11 +60,9 @@ npm run gen-html -- src/examples/HelloWorld
 - [x] safe math
 - [x] wei
 
-- [ ] deployment (video)
-
-- [ ] applications
+- [x] applications
   - [x] multisig wallet
         // TODO verify with (mythril and klabs)
         // TODO review gnosis multi sig wallet
   - [x] dividends (split payment)
-  - [ ] payment channel
+  - [x] payment channel
