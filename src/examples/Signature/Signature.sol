@@ -1,4 +1,4 @@
-pragma solidity 0.5.3;
+pragma solidity 0.5.1;
 
 contract VerifySignature {
   // Signature is produced by signing a hash with the following format:

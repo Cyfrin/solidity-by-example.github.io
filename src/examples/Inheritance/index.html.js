@@ -1,6 +1,6 @@
 const html = `<p>Solidity supports multiple inheritance. Order of inheritance is important.</p>
 <p>Let&#39;s examine.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 contract A {
     function foo() public view returns (string memory) {

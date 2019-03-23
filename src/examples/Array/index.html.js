@@ -2,7 +2,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <p>Solidity creates a <code>getter</code> for <code>public</code> arrays.</p>
 <p>Deleting an element creates a gap in the array. One trick to keep the array</p>
 <p>compact is to move the last element into the place to delete.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 contract Array {
     // Several ways to initialize an array

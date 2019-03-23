@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.1;
 
 contract Gas {
   // Transactions spend gas even if it does nothing.

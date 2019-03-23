@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.1;
 
 // Bank is a contract vulnerable to re-entrancy attack. Let's see why.
 // To illustrate this attack, we will use 2 accounts.

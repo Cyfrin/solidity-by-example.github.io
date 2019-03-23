@@ -1,7 +1,7 @@
 const html = `<p>Here is the setup. Contract <code>A</code> calls contract <code>B</code>.</p>
 <p>The <code>re-entracy</code> exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes
 it&#39;s execution.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 // Bank is a contract vulnerable to re-entrancy attack. Let&#39;s see why.
 // To illustrate this attack, we will use 2 accounts.
