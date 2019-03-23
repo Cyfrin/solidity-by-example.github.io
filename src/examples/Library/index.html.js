@@ -1,6 +1,6 @@
 const html = `<p>Libraries are similar to contracts, but they are deployed only once at a</p>
 <p>specific address and their code is reused using the <code>delegatecall</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 library MyLib {
     function incrementBy(uint i, uint val) public pure returns (uint) {

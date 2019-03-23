@@ -10,7 +10,8 @@ gas limit, causing your contract to stall.</p>
 <li>Transcation gas limit, set by the caller.</li>
 <li>Block gas limit</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
+<p>Try to avoid writing loops that you cannot estimate the gas consumption.</p>
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.1;
 
 contract Loop {
     uint public count;

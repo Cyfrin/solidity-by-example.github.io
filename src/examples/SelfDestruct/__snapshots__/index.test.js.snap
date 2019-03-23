@@ -7,7 +7,7 @@ exports[`it renders 1`] = `
 designated address.</p>
 <p>A malicious contract can use <code>selfdestruct</code> to
 force send Ether to any contract.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.1;
 
 // To demonstrate how to force sending Ether to another contract:
 // 1. Deploy the SelfDestruct contract, funding 1 Ether.

@@ -1,5 +1,5 @@
 const html = `<p>Solidity supports enumerables and they are useful to keep track of state.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 contract Shipping {
     // Order matters

@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.1;
 
 // Import SafeMath library from github (this import only works on Remix).
 import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";

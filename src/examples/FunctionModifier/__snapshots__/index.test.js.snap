@@ -9,7 +9,7 @@ exports[`it renders 1`] = `
 <li>Check contract state</li>
 <li>Restrict access</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.1;
 
 contract Modifier {
     // We will use these variables to demonstrate how to use

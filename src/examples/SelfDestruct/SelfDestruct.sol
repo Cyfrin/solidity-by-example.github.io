@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.1;
 
 // To demonstrate how to force sending Ether to another contract:
 // 1. Deploy the SelfDestruct contract, funding 1 Ether.

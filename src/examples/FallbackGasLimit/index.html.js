@@ -1,5 +1,5 @@
 const html = `<p><code>Fallback</code> functions have a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 contract FallbackGasLimit {
     event BurnGas(uint gasLeft);

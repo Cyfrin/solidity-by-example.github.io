@@ -1,5 +1,5 @@
 const html = `<p>State variables are variables which are permanently stored on the blockchain.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.1;
 
 contract SimpleStorage {
     // Variables declared here, inside the contract but outside the
