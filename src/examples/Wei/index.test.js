@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import App from "./App"
+import Wei from "./index"
 
 test("it renders", () => {
-  const component = shallow(<App />)
+  const component = shallow(<Wei />)
 
   expect(component).toMatchSnapshot()
 })
