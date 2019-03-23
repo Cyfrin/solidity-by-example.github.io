@@ -6,23 +6,9 @@
 
 [MIT License](LICENSE)
 
-## Memo
-
-```shell
-# deploy
-npm run deploy
-
-# TODO fix license link
-# TODO embed youtube
-
-# use gen-html
-npm run gen-html -- src/examples/HelloWorld
-```
-
-- [ ] TODO match compiler version to Remix
-
 ## Roadmap
 
+- [ ] YouTube
 - [x] hello world
 - [x] simple storage
 - [x] gas
@@ -63,3 +49,17 @@ npm run gen-html -- src/examples/HelloWorld
         // TODO review gnosis multi sig wallet
   - [x] dividends (split payment)
   - [x] payment channel
+
+## TODO
+
+- [ ] embed YouTube
+
+## Dev memo
+
+```shell
+# deploy
+npm run deploy
+
+# use gen-html
+npm run gen-html -- src/examples/HelloWorld
+```
