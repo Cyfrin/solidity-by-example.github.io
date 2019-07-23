@@ -166,5 +166,10 @@ exports[`it renders 1`] = `
       </Switch>
     </BrowserRouter>
   </div>
+  <div
+    className="App-footer"
+  >
+    <Footer />
+  </div>
 </div>
 `;

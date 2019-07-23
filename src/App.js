@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import "./App.css"
 import Header from "./Header"
+import Footer from "./Footer"
 import Home from "./Home"
 import HelloWorld from "./examples/HelloWorld"
 import StateVariables from "./examples/StateVariables"
@@ -95,6 +96,9 @@ class App extends Component {
               <Route component={Home} />
             </Switch>
           </Router>
+        </div>
+        <div className="App-footer">
+          <Footer />
         </div>
       </div>
     )

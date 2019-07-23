@@ -5,8 +5,8 @@ class Footer extends Component {
   render() {
     return (
       <p className="footer">
-        <a href="mailto:soliditybyexample@gmail.com">
-          soliditybyexample@gmail.com
+        <a href="mailto:contact@solidity-by-example.org">
+          contact@solidity-by-example.org
         </a>{" "}
         |{" "}
         <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">

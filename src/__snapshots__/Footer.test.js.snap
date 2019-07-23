@@ -5,9 +5,9 @@ exports[`it renders 1`] = `
   className="footer"
 >
   <a
-    href="mailto:soliditybyexample@gmail.com"
+    href="mailto:contact@solidity-by-example.org"
   >
-    soliditybyexample@gmail.com
+    contact@solidity-by-example.org
   </a>
    
   |

@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Html from './Html'
-import Footer from './Footer'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import Html from "./Html"
 
 class Example extends Component {
   render() {
@@ -11,9 +10,12 @@ class Example extends Component {
 
         <Html html={this.props.html} />
 
-        <p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p>
-
-        <Footer />
+        <p>
+          Try on{" "}
+          <a href="https://remix.ethereum.org" target="__blank">
+            Remix
+          </a>
+        </p>
       </div>
     )
   }
