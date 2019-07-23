@@ -11,8 +11,10 @@ class Header extends Component {
         </a>
 
         <h3>
-          <a href="/">Solidity by Example</a>
-          <div style={{ color: "lightgrey" }}>version 0.5.1</div>
+          <a href="/">
+            <div>Solidity by Example</div>
+            <div style={{ color: "lightgrey" }}>version 0.5.1</div>
+          </a>
         </h3>
       </div>
     )

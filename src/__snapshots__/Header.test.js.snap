@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders 1`] = `
+<div
+  className="Header"
+>
+  <a
+    href="/"
+  >
+    <img
+      alt="logo"
+      className="Header-logo"
+      src="logo.svg"
+    />
+  </a>
+  <h3>
+    <a
+      href="/"
+    >
+      <div>
+        Solidity by Example
+      </div>
+      <div
+        style={
+          Object {
+            "color": "lightgrey",
+          }
+        }
+      >
+        version 0.5.1
+      </div>
+    </a>
+  </h3>
+</div>
+`;
