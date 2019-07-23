@@ -53,6 +53,10 @@
 ## TODO
 
 - [ ] embed YouTube
+- [ ] SEO
+- [ ] DEX ?
+- [ ] Plasma ?
+- [ ] Casper ?
 
 ## Dev memo
 
