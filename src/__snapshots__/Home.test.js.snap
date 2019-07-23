@@ -24,7 +24,7 @@ exports[`it renders 1`] = `
       >
         Solidity
       </a>
-       using example programs
+       using examples
     </p>
     <ul
       className="Home-list"
