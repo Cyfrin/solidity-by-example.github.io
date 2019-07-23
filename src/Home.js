@@ -12,8 +12,8 @@ class Home extends Component {
         <div className="Home-main">
           <p>
             an introduction to{" "}
-            <a href="https://solidity.readthedocs.io">Solidity</a> using example
-            programs
+            <a href="https://solidity.readthedocs.io">Solidity</a> using
+            examples
           </p>
 
           <ul className="Home-list">
