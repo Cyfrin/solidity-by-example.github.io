@@ -1,24 +1,23 @@
-import React, { Component } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import Html from "./Html"
+import "./Example.css"
 
-class Example extends Component {
-  render() {
-    return (
-      <div>
-        <h2>{this.props.title}</h2>
+function Example(props) {
+  return (
+    <div className="Example">
+      <h2>{props.title}</h2>
 
-        <Html html={this.props.html} />
+      <Html html={props.html} />
 
-        <p>
-          Try on{" "}
-          <a href="https://remix.ethereum.org" target="__blank">
-            Remix
-          </a>
-        </p>
-      </div>
-    )
-  }
+      <p>
+        Try on{" "}
+        <a href="https://remix.ethereum.org" target="__blank">
+          Remix
+        </a>
+      </p>
+    </div>
+  )
 }
 
 Example.propTypes = {
