@@ -1,5 +1,5 @@
 const html = `<p>You can send Ether to other contracts by <code>send</code>, <code>transfer</code>, or <code>call</code></p>
-<pre><code class="language-solidity">pragma solidity ^0.5.1;
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 // Contract to receive Ether
 contract Receiver {

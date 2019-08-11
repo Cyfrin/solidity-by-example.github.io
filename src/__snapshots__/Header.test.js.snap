@@ -27,7 +27,7 @@ exports[`it renders 1`] = `
           }
         }
       >
-        version 0.5.1
+        version 0.5.3
       </div>
     </a>
   </h3>

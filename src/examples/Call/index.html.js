@@ -1,7 +1,7 @@
 const html = `<p><code>call</code> is a low level function to interact with other contracts.</p>
 <p>This is not the recommend way, but this might be the only way if your contract</p>
 <p>does not have the ABI for the other contract.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.1;
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract A {
     event Received(address caller, uint amount, string message);

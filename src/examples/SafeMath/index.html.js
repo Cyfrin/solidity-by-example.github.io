@@ -1,6 +1,6 @@
 const html = `<p>Solidity overflow integers as if nothing is wrong. It would be nice if it threw an error.</p>
 <p>So we use <code>SafeMath</code> library by <a href="https://openzeppelin.org/">OpenZeppelin</a>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.1;
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 // Import SafeMath library from github (this import only works on Remix).
 import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";

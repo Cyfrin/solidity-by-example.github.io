@@ -9,7 +9,7 @@ exports[`it renders 1`] = `
 <li>sign and unsign pending transcations</li>
 </ul>
 <p>Anyone can process a transcation after enough owners has signed it.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.1;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
 
 contract MultiSigWallet {
   event Deposit(address indexed sender, uint value);

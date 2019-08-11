@@ -1,4 +1,4 @@
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.3;
 
 contract Modifier {
     // We will use these variables to demonstrate how to use

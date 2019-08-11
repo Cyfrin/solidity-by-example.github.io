@@ -3,7 +3,7 @@
 exports[`it renders 1`] = `
 <Example
   html="<p>You can interact with a smart contract by calling the functions defined in the contract.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.1;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
 
 contract Function {
     uint counter;
