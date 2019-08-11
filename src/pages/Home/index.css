@@ -1,0 +1,11 @@
+.Home {
+  max-width: 420px;
+  /* background-color: green; */
+}
+.Home-header a {
+  text-decoration: none;
+}
+.Home ul {
+  list-style: none;
+  padding: 0;
+}
