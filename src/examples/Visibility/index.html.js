@@ -1,5 +1,5 @@
 const html = `<p>Functions have to specified as one of <code>external</code>, <code>public</code>, <code>internal</code> or <code>private</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.1;
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract Base {
     event Log(string visibility);

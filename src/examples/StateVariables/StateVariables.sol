@@ -1,4 +1,4 @@
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.3;
 
 contract SimpleStorage {
     // Variables declared here, inside the contract but outside the

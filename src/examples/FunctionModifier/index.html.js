@@ -5,7 +5,7 @@ const html = `<p>Modifiers are code that can be run before and / or after a func
 <li>Check contract state</li>
 <li>Restrict access</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.1;
+<pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract Modifier {
     // We will use these variables to demonstrate how to use
