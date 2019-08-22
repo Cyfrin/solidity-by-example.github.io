@@ -65,5 +65,5 @@
 npm run deploy
 
 # use gen-html
-npm run gen-html -- src/examples/HelloWorld
+npm run gen-html -- src/pages/HelloWorld
 ```

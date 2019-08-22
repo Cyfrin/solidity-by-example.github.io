@@ -18,7 +18,9 @@ function Home() {
             <a href="/hello-world">Hello World</a>
           </li>
           <li>
-            <a href="/state-variables">State Variables</a>
+            <a href="/getting-and-setting-variables">
+              Getting and Setting Variables
+            </a>
           </li>
           <li>
             <a href="/gas">Gas</a>
