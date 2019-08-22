@@ -2,12 +2,14 @@ const html = `<p>Variables declared inside the contract but outside functions ar
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract SimpleStorage {
-    // This varaible will be stored on the blockchain.
-    string public text;
+    // These varaibles will be stored on the blockchain.
+    string public text = "Hello";
+    uint public i = 123;
 
     function doSomething() public {
-        // This variable will not be stored on the blockchain.
-        string text = "Test";
+        // These variables will not be stored on the blockchain.
+        string memory text = "Test";
+        uint i = 456;
     }
 
     // Function to set text.
