@@ -5,7 +5,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import HelloWorld from "./pages/HelloWorld"
-import StateVariables from "./pages/StateVariables"
+import GettingAndSettingVariables from "./pages/GettingAndSettingVariables"
 import SafeMath from "./pages/SafeMath"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
@@ -50,7 +50,10 @@ function App(props) {
         <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route path="/hello-world" component={HelloWorld} />
-            <Route path="/state-variables" component={StateVariables} />
+            <Route
+              path="/getting-and-setting-variables"
+              component={GettingAndSettingVariables}
+            />
             <Route path="/import" component={Import} />
             <Route path="/safe-math" component={SafeMath} />
             <Route path="/events" component={Events} />
