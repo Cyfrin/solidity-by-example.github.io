@@ -8,6 +8,8 @@
 
 ## Roadmap
 
+- [ ] storage vs memory
+
 - [ ] YouTube
 - [x] hello world
 - [x] simple storage
