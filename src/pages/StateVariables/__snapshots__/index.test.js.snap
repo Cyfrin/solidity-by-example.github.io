@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders 1`] = `
+<Example
+  html="<p>Variables declared inside the contract but outside functions are stored on the blockchain.</p>
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
+
+contract SimpleStorage {
+    // These varaibles will be stored on the blockchain.
+    string public text = \\"Hello\\";
+    uint public i = 123;
+
+    function doSomething() public {
+        // These variables will not be stored on the blockchain.
+        string memory text = \\"Test\\";
+        uint i = 456;
+    }
+
+    // Function to set text.
+    function set(string memory _text) public {
+        text = _text;
+    }
+
+    // Function to get text.
+    // Actually we don&#39;t need this function. The compiler automatically
+    // creates getter functions for all public variables.
+    function get() public view returns (string memory) {
+        return text;
+    }
+}
+</code></pre>
+"
+  title="State Variables"
+/>
+`;
