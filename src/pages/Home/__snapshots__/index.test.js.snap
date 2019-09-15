@@ -45,6 +45,13 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
+          href="/wei"
+        >
+          Ether and Wei
+        </a>
+      </li>
+      <li>
+        <a
           href="/gas"
         >
           Gas
@@ -258,13 +265,6 @@ exports[`it renders 1`] = `
           href="/safe-math"
         >
           Safe Math
-        </a>
-      </li>
-      <li>
-        <a
-          href="/wei"
-        >
-          Wei and Ether
         </a>
       </li>
     </ul>

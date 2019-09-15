@@ -21,6 +21,9 @@ function Home() {
             <a href="/state-variables">State Variables</a>
           </li>
           <li>
+            <a href="/wei">Ether and Wei</a>
+          </li>
+          <li>
             <a href="/gas">Gas</a>
           </li>
           <li>
@@ -114,9 +117,6 @@ function Home() {
           </li>
           <li>
             <a href="/safe-math">Safe Math</a>
-          </li>
-          <li>
-            <a href="/wei">Wei and Ether</a>
           </li>
         </ul>
 
