@@ -4,7 +4,7 @@ import html from "./index.html.js"
 
 class Wei extends Component {
   render() {
-    return <Example title="Wei and Ether" html={html} />
+    return <Example title="Ether and Wei" html={html} />
   }
 }
 
