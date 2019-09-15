@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of payment channels in Solidity"
   html="<p>Payment channels allow participants to repeatedly transfer Ether off chain.</p>
 <p>Here is how this contract is used:</p>
 <ul>

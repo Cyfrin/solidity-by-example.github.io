@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import Example from '../../components/Example'
-import html from './index.html.js'
+import React from "react"
+import Example from "../../components/Example"
+import html from "./index.html.js"
 
-class Function extends Component {
-  render() {
-    return (
-      <Example
-        title="Function"
-        html={html}
-      />
-    )
-  }
+function Function(props) {
+  return (
+    <Example
+      title="Function"
+      description="Example of how to write functions in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Function

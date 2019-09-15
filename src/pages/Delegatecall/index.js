@@ -1,11 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Delegatecall extends Component {
-  render() {
-    return <Example title="Delegatecall" html={html} />
-  }
+function Delegatecall(props) {
+  return (
+    <Example
+      title="Delegatecall"
+      description="Example of how to use deletegatecall in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Delegatecall

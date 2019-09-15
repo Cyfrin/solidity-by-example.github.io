@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of how to use fallback in Solidity"
   html="<p>A <code>fallback function</code> is an anonymous function that does not take any arguments and does not return anything.</p>
 <p>Fallback functions are executed when</p>
 <ul>

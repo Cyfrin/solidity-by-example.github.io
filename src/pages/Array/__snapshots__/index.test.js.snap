@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Learn about arrays in Solidity"
   html="<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <p>Solidity creates a <code>getter</code> for <code>public</code> arrays.</p>
 <p>Deleting an element creates a gap in the array. One trick to keep the array</p>

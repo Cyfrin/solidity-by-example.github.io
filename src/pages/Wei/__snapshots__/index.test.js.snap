@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of Ether and Wei in Solidity"
   html="<p>One dollar is equal to 100 cent.</p>
 <p>Similarly, One <code>Ether</code> is equal to 10^18 <code>wei</code>.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;

@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import Example from '../../components/Example'
-import html from './index.html.js'
+import React from "react"
+import Example from "../../components/Example"
+import html from "./index.html.js"
 
-class Inheritance extends Component {
-  render() {
-    return (
-      <Example
-        title="Inheritance"
-        html={html}
-      />
-    )
-  }
+function Inheritance(props) {
+  return (
+    <Example
+      title="Inheritance"
+      description="Example of inheritance in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Inheritance

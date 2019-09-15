@@ -1,11 +1,15 @@
-import React, { Component } from "react";
-import Example from "../../components/Example";
-import html from "./index.html.js";
+import React from "react"
+import Example from "../../components/Example"
+import html from "./index.html.js"
 
-class Shadow extends Component {
-  render() {
-    return <Example title="Shadowing Inherited State Variables" html={html} />;
-  }
+function Shadow(props) {
+  return (
+    <Example
+      title="Shadowing Inherited State Variables"
+      description="An example of shadowing state variables by inheritance"
+      html={html}
+    />
+  )
 }
 
-export default Shadow;
+export default Shadow

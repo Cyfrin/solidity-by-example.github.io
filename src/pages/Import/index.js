@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import Example from '../../components/Example'
-import html from './index.html.js'
+import React from "react"
+import Example from "../../components/Example"
+import html from "./index.html.js"
 
-class Events extends Component {
-  render() {
-    return (
-      <Example
-        title="Import"
-        html={html}
-      />
-    )
-  }
+function Events(props) {
+  return (
+    <Example
+      title="Import"
+      description="Learn how to import other Solidity files"
+      html={html}
+    />
+  )
 }
 
 export default Events

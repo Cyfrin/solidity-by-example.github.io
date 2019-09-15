@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of how to emit events in Solidity"
   html="<p><code>Events</code> allow logging to the Ethereum blockchain. Some use cass for events are:</p>
 <ul>
 <li>Listening for events and updating user interface</li>

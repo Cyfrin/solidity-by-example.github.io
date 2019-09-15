@@ -1,11 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class NewContract extends Component {
-  render() {
-    return <Example title="Creating Contract from Other Contract" html={html} />
-  }
+function NewContract(props) {
+  return (
+    <Example
+      title="Creating Contract from Other Contract"
+      description="Learn how to create new contract from inside a contract with Solidity"
+      html={html}
+    />
+  )
 }
 
 export default NewContract

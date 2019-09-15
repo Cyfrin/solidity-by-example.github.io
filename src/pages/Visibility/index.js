@@ -1,11 +1,13 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Visibility extends Component {
-  render() {
-    return <Example title="Visibility" html={html} />
-  }
+export default function(props) {
+  return (
+    <Example
+      title="Visibility"
+      description="An example of external, internal, private and public functions in Solidity"
+      html={html}
+    />
+  )
 }
-
-export default Visibility

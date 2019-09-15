@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of inheritance in Solidity"
   html="<p>Solidity supports multiple inheritance. Order of inheritance is important.</p>
 <p>Let&#39;s examine.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
