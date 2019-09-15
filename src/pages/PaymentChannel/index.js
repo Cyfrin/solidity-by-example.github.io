@@ -1,11 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class PaymentChannel extends Component {
-  render() {
-    return <Example title="Payment Channel" html={html} />
-  }
+function PaymentChannel(props) {
+  return (
+    <Example
+      title="Payment Channel"
+      description="An example of payment channels in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default PaymentChannel

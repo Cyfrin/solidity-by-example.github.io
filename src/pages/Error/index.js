@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import Example from '../../components/Example'
-import html from './index.html.js'
+import React from "react"
+import Example from "../../components/Example"
+import html from "./index.html.js"
 
-class Error extends Component {
-  render() {
-    return (
-      <Example
-        title="Error"
-        html={html}
-      />
-    )
-  }
+function Error(props) {
+  return (
+    <Example
+      title="Error"
+      description="Example of how to throw errors in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Error

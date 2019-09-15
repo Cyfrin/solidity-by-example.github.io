@@ -1,12 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SEO from "./SEO"
 import Html from "./Html"
 import "./Example.css"
 
 function Example(props) {
+  const { title } = props
+
   return (
     <div className="Example">
-      <h2>{props.title}</h2>
+      <SEO {...props} title={`${title} | Learn Solidity by Example`} />
+      <h2>{title}</h2>
 
       <Html html={props.html} />
 

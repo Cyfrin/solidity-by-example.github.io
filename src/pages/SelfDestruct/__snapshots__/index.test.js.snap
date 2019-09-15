@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of how to delete your smart contract by calling seldestruct in Solidity"
   html="<p>Contracts can be deleted from the blockchain by calling <code>selfdestruct</code>.</p>
 <p><code>selfdestruct</code> sends all remainig Ether stored in the contract to an
 designated address.</p>

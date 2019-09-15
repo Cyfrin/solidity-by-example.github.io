@@ -11,14 +11,9 @@ function SEO({ title, description }) {
   )
 }
 
-SEO.defaultProps = {
-  title: "Solidity by Example",
-  description: "Learn smart contract programming using Solidity",
-}
-
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  description: PropTypes.string.isRequired,
 }
 
 export default SEO

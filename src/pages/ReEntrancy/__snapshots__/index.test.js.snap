@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of re-entrancy attack in Solidity"
   html="<p>Here is the setup. Contract <code>A</code> calls contract <code>B</code>.</p>
 <p>The <code>re-entracy</code> exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes
 it&#39;s execution.</p>

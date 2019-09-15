@@ -1,11 +1,13 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Wei extends Component {
-  render() {
-    return <Example title="Ether and Wei" html={html} />
-  }
+export default function(props) {
+  return (
+    <Example
+      title="Ether and Wei"
+      description="An example of Ether and Wei in Solidity"
+      html={html}
+    />
+  )
 }
-
-export default Wei

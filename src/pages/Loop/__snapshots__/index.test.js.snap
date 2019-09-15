@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of looping in Solidity"
   html="<p>Looping in Solidity is tricky.</p>
 <p>The number of iteration in a loop can grow and spend more gas than the
 gas limit, causing your contract to stall.</p>

@@ -1,11 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Mapping extends Component {
-  render() {
-    return <Example title="Mapping" html={html} />
-  }
+function Mapping(props) {
+  return (
+    <Example
+      title="Mapping"
+      description="Example of using mapping in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Mapping

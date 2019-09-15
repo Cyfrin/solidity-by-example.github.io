@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Dividend"
   html="<p>A contract that pays dividend to shareholders should</p>
 <ul>
 <li>receive payment</li>

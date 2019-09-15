@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of shadowing state variables by inheritance"
   html="<p>Unlike functions, state variables cannot be overridden by re-declaring it
 in the child contract.</p>
 <p>Let&#39;s learn how to correctly override inherited state variables.</p>

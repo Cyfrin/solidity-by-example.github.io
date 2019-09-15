@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of calling parent contracts in Solidity"
   html="<p>Parent contracts can be called directly, or by using the keyword <code>super</code>.</p>
 <p>By using the keyword <code>super</code>, all of the immediate parent contracts will be called.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;

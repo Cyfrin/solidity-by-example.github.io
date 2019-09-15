@@ -1,9 +1,14 @@
 import React from "react"
+import SEO from "../../components/SEO"
 import "./index.css"
 
 function Home() {
   return (
     <div className="Home">
+      <SEO
+        title="Solidity by Example"
+        description="Learn smart contract programming using Solidity"
+      />
       <h1 className="Home-header">
         <a href="/">Solidity by Example</a>
       </h1>

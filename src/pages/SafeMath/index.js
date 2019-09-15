@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import Example from '../../components/Example'
-import html from './index.html.js'
+import React from "react"
+import Example from "../../components/Example"
+import html from "./index.html.js"
 
-class SafeMath extends Component {
-  render() {
-    return (
-      <Example
-        title="Safe Math"
-        html={html}
-      />
-    )
-  }
+function SafeMath(props) {
+  return (
+    <Example
+      title="Safe Math"
+      description="An example of how to use SafeMath in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default SafeMath

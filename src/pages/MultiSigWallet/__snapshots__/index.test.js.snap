@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="An example of multi-sig wallet in Solidity"
   html="<p>Let&#39;s create an multi-sig wallet. Here are the specifications.</p>
 <p>The wallet owners can</p>
 <ul>

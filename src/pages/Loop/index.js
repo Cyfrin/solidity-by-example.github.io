@@ -1,11 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Loop extends Component {
-  render() {
-    return <Example title="Loop" html={html} />
-  }
+function Loop(props) {
+  return (
+    <Example
+      title="Loop"
+      description="Example of looping in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Loop

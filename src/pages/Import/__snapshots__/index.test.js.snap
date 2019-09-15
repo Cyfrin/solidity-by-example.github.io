@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Learn how to import other Solidity files"
   html="<p>You can import local and external files in Solidity.</p>
 <h3 id=\\"local\\">Local</h3>
 <p>Here is our folder structure.</p>

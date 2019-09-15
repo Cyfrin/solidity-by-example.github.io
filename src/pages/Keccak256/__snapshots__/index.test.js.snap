@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of hashing using Keccak256 in Solidity"
   html="<p><code>keccak256</code> computes the Keccak-256 hash of the input.</p>
 <p>Some use cases are:</p>
 <ul>

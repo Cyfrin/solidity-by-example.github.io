@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of how to write functions in Solidity"
   html="<p>You can interact with a smart contract by calling the functions defined in the contract.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
 

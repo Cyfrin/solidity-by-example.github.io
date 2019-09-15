@@ -4,6 +4,10 @@ exports[`it renders 1`] = `
 <div
   className="Home"
 >
+  <SEO
+    description="Learn smart contract programming using Solidity"
+    title="Solidity by Example"
+  />
   <h1
     className="Home-header"
   >

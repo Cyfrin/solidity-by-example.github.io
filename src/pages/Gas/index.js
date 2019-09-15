@@ -1,11 +1,13 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Gas extends Component {
-  render() {
-    return <Example title="Gas" html={html} />
-  }
+export default function(props) {
+  return (
+    <Example
+      title="Gas"
+      description="An example of gas and gas limit in Solidity"
+      html={html}
+    />
+  )
 }
-
-export default Gas

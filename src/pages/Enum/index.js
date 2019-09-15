@@ -1,11 +1,15 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class Enum extends Component {
-  render() {
-    return <Example title="Enum" html={html} />
-  }
+function Enum(props) {
+  return (
+    <Example
+      title="Enum"
+      description="Example of enums in Solidity"
+      html={html}
+    />
+  )
 }
 
 export default Enum

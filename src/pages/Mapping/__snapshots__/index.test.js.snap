@@ -2,6 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
+  description="Example of using mapping in Solidity"
   html="<p>Maps are created with the syntax <code>mapping(keyType =&gt; valueType)</code>.</p>
 <p><code>keyType</code> can be value types such as <code>uint</code>, <code>address</code> or <code>bytes</code>.</p>
 <p><code>valueType</code> can be any type.</p>

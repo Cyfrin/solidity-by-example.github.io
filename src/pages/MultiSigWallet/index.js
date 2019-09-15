@@ -1,11 +1,13 @@
-import React, { Component } from "react"
+import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-class MultiSigWallet extends Component {
-  render() {
-    return <Example title="Multi-Sig Wallet" html={html} />
-  }
+export default function(props) {
+  return (
+    <Example
+      title="Multi-Sig Wallet"
+      description="An example of multi-sig wallet in Solidity"
+      html={html}
+    />
+  )
 }
-
-export default MultiSigWallet
