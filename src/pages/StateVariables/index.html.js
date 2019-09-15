@@ -1,4 +1,5 @@
-const html = `<p>Variables declared inside the contract but outside functions are stored on the blockchain.</p>
+const html = `<p>Variables stored on the blockchain are called <code>state variables</code>.</p>
+<p><code>State variables</code> are declared inside a contract, but outside functions.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract SimpleStorage {
