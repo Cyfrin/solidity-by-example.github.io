@@ -20,13 +20,7 @@ exports[`it renders 1`] = `
       <div>
         Solidity by Example
       </div>
-      <div
-        style={
-          Object {
-            "color": "lightgrey",
-          }
-        }
-      >
+      <div>
         version 0.5.3
       </div>
     </a>
