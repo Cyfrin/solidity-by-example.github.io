@@ -8,6 +8,10 @@
 
 ## Roadmap
 
+TODO
+
+- [ ] enum and escrow
+
 - [ ] storage vs memory
 
 - [ ] YouTube

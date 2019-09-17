@@ -1,6 +1,7 @@
 p.footer {
-    color: grey;
+  color: #261a3b;
 }
-p.footer a, p.footer a:visited {
-    color: grey;
+p.footer a,
+p.footer a:visited {
+  color: #261a3b;
 }
