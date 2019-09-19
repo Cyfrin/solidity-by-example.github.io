@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link href="/favicon.ico" rel="shortcut icon"><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"><meta content="#000000" name="theme-color"><link href="/manifest.json" rel="manifest"><title>Payment Channel | Learn Solidity by Example</title><script src="https://www.google-analytics.com/analytics.js" async type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-133759045-1" async></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-133759045-1")</script><link href="/static/css/2.706b70fc.chunk.css" rel="stylesheet"><link href="/static/css/main.6eb19102.chunk.css" rel="stylesheet"><link href="https://www.googletagmanager.com" rel="preconnect"><meta content="An example of payment channels in Solidity" name="Description" data-react-helmet="true"><link href="https://www.google-analytics.com" rel="preconnect"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><div class="Header"><a href="/"><img alt="logo" class="Header-logo" src="/static/media/logo.da793b47.svg"></a><h3><a href="/"><div>Solidity by Example</div><div>version 0.5.3</div></a></h3></div><div class="App-main"><div class="Example"><h2>Payment Channel</h2><div><p>Payment channels allow participants to repeatedly transfer Ether off chain.</p><p>Here is how this contract is used:</p><ul><li><code>Alice</code> deploys the contract, funding it with some Ether.</li><li><code>Alice</code> authorises a payment by signing a message (off chain) and sends the signed message to <code>Bob</code>.</li><li><code>Bob</code> claims his payment by presenting the signed message to the smart contract.</li></ul><pre><code class="language-solidity hljs">pragma solidity ^<span class="hljs-number">0.5</span><span class="hljs-number">.3</span>;
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link href="/favicon.ico" rel="shortcut icon"><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"><meta content="#000000" name="theme-color"><link href="/manifest.json" rel="manifest"><title>Payment Channel | Learn Solidity by Example</title><script src="https://www.google-analytics.com/analytics.js" async type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-133759045-1" async></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-133759045-1")</script><link href="/static/css/2.706b70fc.chunk.css" rel="stylesheet"><link href="/static/css/main.6eb19102.chunk.css" rel="stylesheet"><link href="https://www.googletagmanager.com" rel="preconnect"><link href="https://www.google-analytics.com" rel="preconnect"><meta content="An example of payment channels in Solidity" name="Description" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><div class="Header"><a href="/"><img alt="logo" class="Header-logo" src="/static/media/logo.da793b47.svg"></a><h3><a href="/"><div>Solidity by Example</div><div>version 0.5.3</div></a></h3></div><div class="App-main"><div class="Example"><h2>Payment Channel</h2><div><p>Payment channels allow participants to repeatedly transfer Ether off chain.</p><p>Here is how this contract is used:</p><ul><li><code>Alice</code> deploys the contract, funding it with some Ether.</li><li><code>Alice</code> authorises a payment by signing a message (off chain) and sends the signed message to <code>Bob</code>.</li><li><code>Bob</code> claims his payment by presenting the signed message to the smart contract.</li></ul><pre><code class="language-solidity hljs"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">PaymentChannel</span> </span>{
-  <span class="hljs-keyword">address</span> payable <span class="hljs-keyword">public</span> sender;
-  <span class="hljs-keyword">address</span> payable <span class="hljs-keyword">public</span> recipient;
+  <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> sender;
+  <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> recipient;
   <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> expiration;
 
-  constructor(<span class="hljs-keyword">address</span> payable _recipient, <span class="hljs-keyword">uint</span> duration) <span class="hljs-keyword">public</span> payable {
+  <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _recipient, <span class="hljs-keyword">uint</span> duration</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
     sender = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     recipient = _recipient;
     expiration = <span class="hljs-built_in">now</span> + duration;
@@ -16,7 +16,7 @@
     <span class="hljs-title"><span class="hljs-keyword">view</span></span>
     <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)
   </span>{
-    <span class="hljs-keyword">bytes32</span> message = prefixed(keccak256(abi.encodePacked(<span class="hljs-built_in">this</span>, amount)));
+    <span class="hljs-keyword">bytes32</span> message = prefixed(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-built_in">this</span>, amount)));
 
     <span class="hljs-keyword">return</span> recoverSigner(message, signature) == sender;
   }
@@ -25,17 +25,17 @@
   <span class="hljs-comment">// signed amount from the sender. The recipient will be sent that amount,</span>
   <span class="hljs-comment">// and the remainder will go back to the sender</span>
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">close</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amount, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> signature</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-    <span class="hljs-keyword">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == recipient);
-    <span class="hljs-keyword">require</span>(isValidSignature(amount, signature));
+    <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == recipient);
+    <span class="hljs-built_in">require</span>(isValidSignature(amount, signature));
 
-    recipient.transfer(amount);
+    recipient.<span class="hljs-built_in">transfer</span>(amount);
     <span class="hljs-built_in">selfdestruct</span>(sender);
   }
 
   <span class="hljs-comment">// Sender can extend the expiration at any time</span>
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">extend</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> newExpiration</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-    <span class="hljs-keyword">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == sender);
-    <span class="hljs-keyword">require</span>(newExpiration > expiration);
+    <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == sender);
+    <span class="hljs-built_in">require</span>(newExpiration > expiration);
 
     expiration = newExpiration;
   }
@@ -43,7 +43,7 @@
   <span class="hljs-comment">// If the timeout is reached without the recipient closing the channel,</span>
   <span class="hljs-comment">// then the Ether is released back to the sender.</span>
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">claimTimeout</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-    <span class="hljs-keyword">require</span>(<span class="hljs-built_in">now</span> >= expiration);
+    <span class="hljs-built_in">require</span>(<span class="hljs-built_in">now</span> >= expiration);
     <span class="hljs-built_in">selfdestruct</span>(sender);
   }
 
@@ -56,12 +56,12 @@
 
     <span class="hljs-comment">// If you are using Remix IDE, you may need to hard code</span>
     <span class="hljs-comment">// v = 0x1b, due to a bug</span>
-    <span class="hljs-keyword">return</span> ecrecover(message, v, r, s);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">ecrecover</span>(message, v, r, s);
   }
 
   <span class="hljs-comment">/// builds a prefixed hash to mimic the behavior of eth_sign.</span>
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">prefixed</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span></span>) </span>{
-    <span class="hljs-keyword">return</span> keccak256(abi.encodePacked(<span class="hljs-string">"\x19Ethereum Signed Message:\n32"</span>, hash));
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-string">"\x19Ethereum Signed Message:\n32"</span>, hash));
   }
 
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">splitSignature</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> sig</span>)
@@ -69,18 +69,18 @@
     <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
     <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint8</span> v, <span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> s</span>)
   </span>{
-    <span class="hljs-keyword">require</span>(sig.<span class="hljs-built_in">length</span> == <span class="hljs-number">65</span>);
+    <span class="hljs-built_in">require</span>(sig.<span class="hljs-built_in">length</span> == <span class="hljs-number">65</span>);
 
     <span class="hljs-keyword">assembly</span> {
       <span class="hljs-comment">// first 32 bytes, after the length prefix</span>
-      r := mload(add(sig, <span class="hljs-number">32</span>))
+      r := <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">32</span>))
       <span class="hljs-comment">// second 32 bytes</span>
-      s := mload(add(sig, <span class="hljs-number">64</span>))
+      s := <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">64</span>))
       <span class="hljs-comment">// final byte (first byte of the next 32 bytes)</span>
-      v := <span class="hljs-keyword">byte</span>(<span class="hljs-number">0</span>, mload(add(sig, <span class="hljs-number">96</span>)))
+      v := <span class="hljs-built_in">byte</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">96</span>)))
     }
 
     <span class="hljs-keyword">return</span> (v, r, s);
   }
 }
-</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p></div></div><div class="App-footer"><p class="footer"><a href="mailto:contact@solidity-by-example.org">contact@solidity-by-example.org</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license">license</a></p></div></div></div><script>!function(l){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],f=0,i=[];f<n.length;f++)t=n[f],p[t]&&i.push(p[t][0]),p[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(l[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),a()}function a(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==p[u]&&(n=!1)}n&&(c.splice(r--,1),e=f(f.s=t[0]))}return e}var t={},p={1:0},c=[];function f(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return l[e].call(r.exports,r,r.exports,f),r.l=!0,r.exports}f.m=l,f.c=t,f.d=function(e,r,t){f.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},f.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},f.t=function(r,e){if(1&e&&(r=f(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(f.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)f.d(t,n,function(e){return r[e]}.bind(null,n));return t},f.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return f.d(r,"a",r),r},f.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},f.p="/";var r=window.webpackJsonp=window.webpackJsonp||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;a()}([])</script><script src="/static/js/2.3a85c3f7.chunk.js"></script><script src="/static/js/main.0aec5e61.chunk.js"></script></body></html>
+</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p></div></div><div class="App-footer"><p class="footer"><a href="mailto:contact@solidity-by-example.org">contact@solidity-by-example.org</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license">license</a></p></div></div></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,i=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(f,t)&&f[t]&&i.push(f[t][0]),f[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),p()}function p(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==f[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},f={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=a,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonpsolidity-by-example"]=window["webpackJsonpsolidity-by-example"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;p()}([])</script><script src="/static/js/2.b35a82cf.chunk.js"></script><script src="/static/js/main.447dc6dd.chunk.js"></script></body></html>
