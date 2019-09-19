@@ -134,7 +134,7 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          path="/wei"
+          path="/ether-units"
         />
         <Route
           component={[Function]}
