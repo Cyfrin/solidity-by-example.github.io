@@ -4,14 +4,14 @@
   "private": true,
   "homepage": "https://solidity-by-example.org",
   "dependencies": {
-    "highlight.js": "^9.15.8",
-    "highlightjs-solidity": "^1.0.6",
+    "highlight.js": "^9.15.10",
+    "highlightjs-solidity": "^1.0.7",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,10 +35,10 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
-    "gh-pages": "^2.0.1",
+    "enzyme-to-json": "^3.4.0",
+    "gh-pages": "^2.1.1",
     "marked": "^0.7.0",
-    "mustache": "^3.0.1",
+    "mustache": "^3.1.0",
     "react-snap": "^1.23.0"
   },
   "jest": {
