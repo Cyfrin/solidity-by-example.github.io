@@ -34,7 +34,7 @@ import CallingContract from "./pages/CallingContract"
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
 import Library from "./pages/Library"
-import Wei from "./pages/Wei"
+import EtherUnits from "./pages/EtherUnits"
 import Gas from "./pages/Gas"
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
@@ -85,7 +85,7 @@ function App(props) {
             <Route path="/call" component={Call} />
             <Route path="/delegatecall" component={Delegatecall} />
             <Route path="/library" component={Library} />
-            <Route path="/wei" component={Wei} />
+            <Route path="/ether-units" component={EtherUnits} />
             <Route path="/gas" component={Gas} />
             <Route path="/hashing" component={Keccak256} />
             <Route path="/signature" component={Signature} />

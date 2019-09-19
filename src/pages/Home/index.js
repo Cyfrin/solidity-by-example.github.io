@@ -26,7 +26,7 @@ function Home() {
             <a href="/state-variables">State Variables</a>
           </li>
           <li>
-            <a href="/wei">Ether and Wei</a>
+            <a href="/ether-units">Ether and Wei</a>
           </li>
           <li>
             <a href="/gas">Gas</a>
