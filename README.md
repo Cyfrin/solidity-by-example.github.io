@@ -62,6 +62,10 @@ TODO
 - [ ] SEO
 - [ ] DEX ?
 - [ ] Plasma ?
+  - [ ] merkle tree
+  - [ ] rlp
+  - [ ] slicing bytes with assembly
+  - [ ] priority queue
 - [ ] Casper ?
 
 ## Dev memo

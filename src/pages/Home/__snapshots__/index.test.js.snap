@@ -58,7 +58,7 @@ exports[`it renders 1`] = `
         <a
           href="/gas"
         >
-          Gas
+          Gas and Gas Price
         </a>
       </li>
       <li>
