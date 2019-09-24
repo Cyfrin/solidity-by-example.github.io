@@ -13,8 +13,21 @@ contract Gas {
   // Transactions spend gas even if it does nothing.
   function doNothing() public {}
 
-  // Getter functions cost no gas when called by an external account.
+  // Getter functions cost no gas when called by either
+  // - an external account
+  // - other getter functions inside this contract
+  // - other getter functions from another contract
   function getNothing() public pure {}
+
+  // In a transaction, you pay for the total gas used by the function.
+  // If a function calls two other functions,
+  // - a getter function and
+  // - a function to create a transaction,
+  // then you pay for the total gas used by the two functions.
+  function getNothingAndDoNothing() public {
+    getNothing();
+    doNothing();
+  }
 
   // Transaction costs in ether = gas price * gas used
   // Unspent gas are refunded.

@@ -29,7 +29,7 @@ function Home() {
             <a href="/ether-units">Ether and Wei</a>
           </li>
           <li>
-            <a href="/gas">Gas</a>
+            <a href="/gas">Gas and Gas Price</a>
           </li>
           <li>
             <a href="/function">Function</a>
