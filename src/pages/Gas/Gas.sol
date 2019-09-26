@@ -30,8 +30,8 @@ contract Gas {
   // Gas spent are not refunded.
   uint public i = 0;
 
-  function burn() public {
-    while(gasleft() > 0) {
+  function forever() public {
+    while(true) {
       i += 1;
     }
   }
