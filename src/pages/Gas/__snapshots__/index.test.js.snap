@@ -7,10 +7,10 @@ exports[`it renders 1`] = `
 <p>You specify the gas price.</p>
 <p>Transactions with higher gas price will be processed faster.</p>
 <p>Unspent gas will be refunded.</p>
-<p>There are two upper bounds to the amount of gas you can spend</p>
+<p>There are 2 upper bounds to the amount of gas you can spend</p>
 <ul>
-<li>gas limit set by you (how much you are willing to pay for the transaction)</li>
-<li>maximum amount of gas allowed in a block set by the network</li>
+<li><code>gas limit</code> (max amount of gas your willing to use for your transaction, set by you)</li>
+<li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
 
