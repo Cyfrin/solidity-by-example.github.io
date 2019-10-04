@@ -1,5 +1,4 @@
-const html = `<p>In Solidity, public functions cannot accept certain data types as input,
-and you also cannot return certain data types as outputs.</p>
+const html = `<p>In Solidity, public functions cannot accept certain data types as inputs or outputs</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract Function {
