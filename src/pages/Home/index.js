@@ -35,10 +35,10 @@ function Home() {
             <a href="/function">Function</a>
           </li>
           <li>
-            <a href="/function-modifier">Function Modifier</a>
+            <a href="/view-and-pure-functions">View and Pure Functions</a>
           </li>
           <li>
-            <a href="/view-and-pure-functions">View and Pure Functions</a>
+            <a href="/function-modifier">Function Modifier</a>
           </li>
           <li>
             <a href="/inheritance">Inheritance</a>

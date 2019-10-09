@@ -4,12 +4,12 @@ contract ViewAndPure {
     uint public x = 1;
 
     // Promise not to modify the state.
-    function increment(uint a) public view returns (uint) {
-        return x + a;
+    function addToX(uint y) public view returns (uint) {
+        return x + y;
     }
 
-    // Promise not to read from or modify the state.
-    function add(uint a, uint b) public pure returns (uint) {
-        return a + b;
+    // Promise not to modify or read from the state.
+    function add(uint i, uint j) public pure returns (uint) {
+        return i + j;
     }
 }

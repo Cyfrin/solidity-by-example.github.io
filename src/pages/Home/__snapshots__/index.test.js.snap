@@ -70,16 +70,16 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/function-modifier"
+          href="/view-and-pure-functions"
         >
-          Function Modifier
+          View and Pure Functions
         </a>
       </li>
       <li>
         <a
-          href="/view-and-pure-functions"
+          href="/function-modifier"
         >
-          View and Pure Functions
+          Function Modifier
         </a>
       </li>
       <li>

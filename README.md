@@ -67,6 +67,7 @@ TODO
   - [ ] slicing bytes with assembly
   - [ ] priority queue
 - [ ] Casper ?
+- [ ] black hole
 
 ## Dev memo
 
