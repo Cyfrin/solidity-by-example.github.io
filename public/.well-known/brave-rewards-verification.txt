@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: solidity-by-example.org
+Token: ec4c880f0d9212e0b0291545744567aa004a91c5285b2522369cd3ab9b93f523
