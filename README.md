@@ -59,6 +59,7 @@ TODO
 ## TODO
 
 - [ ] embed YouTube
+- [ ] erc20
 - [ ] SEO
 - [ ] DEX ?
 - [ ] Plasma ?
