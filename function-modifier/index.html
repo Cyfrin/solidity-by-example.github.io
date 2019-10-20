@@ -1,13 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link href="/favicon.ico" rel="shortcut icon"><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"><meta content="#000000" name="theme-color"><link href="/manifest.json" rel="manifest"><title>Function Modifier | Learn Solidity by Example</title><script src="https://www.google-analytics.com/analytics.js" async type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-133759045-1" async></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-133759045-1")</script><link href="/static/css/2.706b70fc.chunk.css" rel="stylesheet"><link href="/static/css/main.6eb19102.chunk.css" rel="stylesheet"><link href="https://www.googletagmanager.com" rel="preconnect"><link href="https://www.google-analytics.com" rel="preconnect"><meta content="Example of function modifiers in Solidity" name="Description" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><div class="Header"><a href="/"><img alt="logo" class="Header-logo" src="/static/media/logo.da793b47.svg"></a><h3><a href="/"><div>Solidity by Example</div><div>version 0.5.3</div></a></h3></div><div class="App-main"><div class="Example"><h2>Function Modifier</h2><div><p>Modifiers are code that can be run before and / or after a function call.</p><p>Modifiers can be used to:</p><ul><li>Validate inputs</li><li>Check contract state</li><li>Restrict access</li></ul><pre><code class="language-solidity hljs"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.3;</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link href="/favicon.ico" rel="shortcut icon"><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"><meta content="#000000" name="theme-color"><link href="/manifest.json" rel="manifest"><title>Function Modifier | Learn Solidity by Example</title><script src="https://www.google-analytics.com/analytics.js" async type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-133759045-1" async></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-133759045-1")</script><link href="https://www.googletagmanager.com" rel="preconnect"><link href="/static/css/2.706b70fc.chunk.css" rel="stylesheet"><link href="/static/css/main.6eb19102.chunk.css" rel="stylesheet"><link href="https://www.google-analytics.com" rel="preconnect"><meta content="Example of function modifiers in Solidity" name="Description" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><div class="Header"><a href="/"><img alt="logo" class="Header-logo" src="/static/media/logo.da793b47.svg"></a><h3><a href="/"><div>Solidity by Example</div><div>version 0.5.3</div></a></h3></div><div class="App-main"><div class="Example"><h2>Function Modifier</h2><div><p>Modifiers are code that can be run before and / or after a function call.</p><p>Modifiers can be used to:</p><ul><li>Restrict access</li><li>Validate inputs</li><li>Guard against reentrancy hack</li></ul><pre><code class="language-solidity hljs"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.3;</span>
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Modifier</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FunctionModifier</span> </span>{
     <span class="hljs-comment">// We will use these variables to demonstrate how to use</span>
     <span class="hljs-comment">// modifiers.</span>
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x;
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x = <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> locked;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-comment">// Set the owner of the contract.</span>
+        <span class="hljs-comment">// Set the transaction sender as the owner of the contract.</span>
         owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 
@@ -15,45 +16,44 @@
     <span class="hljs-comment">// the contract.</span>
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">onlyOwner</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner, <span class="hljs-string">"Not owner"</span>);
-        <span class="hljs-comment">// Execute the function if the validation above passes.</span>
+        <span class="hljs-comment">// Underscore is a special character only used inside</span>
+        <span class="hljs-comment">// a function modifier and it tells Solidity to</span>
+        <span class="hljs-comment">// execute the rest of the code.</span>
         <span class="hljs-keyword">_</span>;
     }
 
     <span class="hljs-comment">// Modifiers can take inputs. This modifier checks that the</span>
     <span class="hljs-comment">// address passed in is not the zero address.</span>
-    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">validAddress</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> addr</span>) </span>{
-        <span class="hljs-built_in">require</span>(addr != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"Invalid address"</span>);
+    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">validAddress</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _addr</span>) </span>{
+        <span class="hljs-built_in">require</span>(_addr != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"Not valid address"</span>);
         <span class="hljs-keyword">_</span>;
     }
 
-    <span class="hljs-comment">// Modifiers can be run before and / or after the function.</span>
-    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">sandwich</span>(<span class="hljs-params"></span>) </span>{
-        x += <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">_</span>;
-        x += <span class="hljs-number">1</span>;
-    }
-
-    <span class="hljs-comment">// You can attach multiple modifiers to a function.</span>
-    <span class="hljs-comment">// In this case the two modifiers onlyOwner and validAddress</span>
-    <span class="hljs-comment">// will be executed before this function.</span>
-    <span class="hljs-comment">// Try:</span>
-    <span class="hljs-comment">// - call this function from an account that did not create</span>
-    <span class="hljs-comment">//   this contract</span>
-    <span class="hljs-comment">// - call this function with the zero address:</span>
-    <span class="hljs-comment">//   0x0000000000000000000000000000000000000000</span>
-    <span class="hljs-comment">// Both cases will throw an error.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeOwner</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> newOwner</span>)
-        <span class="hljs-title">onlyOwner</span>
-        <span class="hljs-title">validAddress</span>(<span class="hljs-params">newOwner</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeOwner</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _newOwner</span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+        <span class="hljs-title">onlyOwner</span>
+        <span class="hljs-title">validAddress</span>(<span class="hljs-params">_newOwner</span>)
     </span>{
-        owner = newOwner;
+        owner = _newOwner;
     }
 
-    <span class="hljs-comment">// The modifier 'sandwich' executes code before and after</span>
-    <span class="hljs-comment">// this function. As a result, 'x' will be incremented by 3.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callMe</span>(<span class="hljs-params"></span>) <span class="hljs-title">sandwich</span> <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        x += <span class="hljs-number">1</span>;
+    <span class="hljs-comment">// Modifiers can be called before and / or after a function.</span>
+    <span class="hljs-comment">// This modifier prevents a function from being called while</span>
+    <span class="hljs-comment">// it is still executing.</span>
+    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">noReentrancy</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">require</span>(!locked, <span class="hljs-string">"No reentrancy"</span>);
+
+        locked = <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">_</span>;
+        locked = <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decrement</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">noReentrancy</span> </span>{
+        x -= i;
+
+        <span class="hljs-keyword">if</span> (i > <span class="hljs-number">1</span>) {
+            decrement(i - <span class="hljs-number">1</span>);
+        }
     }
 }
-</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p></div></div><div class="App-footer"><p class="footer"><a href="mailto:contact@solidity-by-example.org">contact@solidity-by-example.org</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license">license</a></p></div></div></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,i=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(f,t)&&f[t]&&i.push(f[t][0]),f[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),p()}function p(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==f[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},f={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=a,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonpsolidity-by-example"]=window["webpackJsonpsolidity-by-example"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;p()}([])</script><script src="/static/js/2.b35a82cf.chunk.js"></script><script src="/static/js/main.944e7a86.chunk.js"></script></body></html>
+</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p></div></div><div class="App-footer"><p class="footer"><a href="mailto:contact@solidity-by-example.org">contact@solidity-by-example.org</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license">license</a></p></div></div></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,i=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(f,t)&&f[t]&&i.push(f[t][0]),f[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),p()}function p(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==f[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},f={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=a,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonpsolidity-by-example"]=window["webpackJsonpsolidity-by-example"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;p()}([])</script><script src="/static/js/2.b35a82cf.chunk.js"></script><script src="/static/js/main.ac4558f0.chunk.js"></script></body></html>
