@@ -1,13 +1,14 @@
 pragma solidity ^0.5.3;
 
-contract Modifier {
+contract FunctionModifier {
     // We will use these variables to demonstrate how to use
     // modifiers.
-    uint public x;
     address public owner;
+    uint public x = 10;
+    bool public locked;
 
     constructor() public {
-        // Set the owner of the contract.
+        // Set the transaction sender as the owner of the contract.
         owner = msg.sender;
     }
 
@@ -15,44 +16,43 @@ contract Modifier {
     // the contract.
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
-        // Execute the function if the validation above passes.
+        // Underscore is a special character only used inside
+        // a function modifier and it tells Solidity to
+        // execute the rest of the code.
         _;
     }
 
     // Modifiers can take inputs. This modifier checks that the
     // address passed in is not the zero address.
-    modifier validAddress(address addr) {
-        require(addr != address(0), "Invalid address");
+    modifier validAddress(address _addr) {
+        require(_addr != address(0), "Not valid address");
         _;
     }
 
-    // Modifiers can be run before and / or after the function.
-    modifier sandwich() {
-        x += 1;
-        _;
-        x += 1;
-    }
-
-    // You can attach multiple modifiers to a function.
-    // In this case the two modifiers onlyOwner and validAddress
-    // will be executed before this function.
-    // Try:
-    // - call this function from an account that did not create
-    //   this contract
-    // - call this function with the zero address:
-    //   0x0000000000000000000000000000000000000000
-    // Both cases will throw an error.
-    function changeOwner(address newOwner)
-        onlyOwner
-        validAddress(newOwner)
+    function changeOwner(address _newOwner)
         public
+        onlyOwner
+        validAddress(_newOwner)
     {
-        owner = newOwner;
+        owner = _newOwner;
     }
 
-    // The modifier 'sandwich' executes code before and after
-    // this function. As a result, 'x' will be incremented by 3.
-    function callMe() sandwich public {
-        x += 1;
+    // Modifiers can be called before and / or after a function.
+    // This modifier prevents a function from being called while
+    // it is still executing.
+    modifier noReentrancy() {
+        require(!locked, "No reentrancy");
+
+        locked = true;
+        _;
+        locked = false;
+    }
+
+    function decrement(uint i) public noReentrancy {
+        x -= i;
+
+        if (i > 1) {
+            decrement(i - 1);
+        }
     }
 }
