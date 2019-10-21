@@ -69,6 +69,11 @@ TODO
   - [ ] priority queue
 - [ ] Casper ?
 - [ ] black hole
+- [ ] hacks
+  - [ ] reentrancy
+  - [ ] writing to storage
+  - [ ] uint overflow
+  - [ ] selfdestruct
 
 ## Dev memo
 
