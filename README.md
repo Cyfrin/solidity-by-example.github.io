@@ -60,6 +60,7 @@ TODO
 
 - [ ] embed YouTube
 - [ ] erc20
+  - Can you make tutorial how to integrate Smart token in a website as payment.need web3.js
 - [ ] SEO
 - [ ] DEX ?
 - [ ] Plasma ?
@@ -69,6 +70,12 @@ TODO
   - [ ] priority queue
 - [ ] Casper ?
 - [ ] black hole
+- [ ] hacks
+  - [ ] reentrancy
+  - [ ] writing to storage
+  - [ ] uint overflow
+  - [ ] selfdestruct
+  - [ ] blockhash
 
 ## Dev memo
 
