@@ -41,18 +41,18 @@ function Home() {
             <a href="/function-modifier">Function Modifier</a>
           </li>
           <li>
+            <a href="/constructor">Constructor</a>
+          </li>
+          <li>
             <a href="/inheritance">Inheritance</a>
+          </li>
+          <li>
+            <a href="/super">Calling Parent Contracts</a>
           </li>
           <li>
             <a href="/shadowing-inherited-state-variables">
               Shadowing Inherited State Variables
             </a>
-          </li>
-          <li>
-            <a href="/constructor">Constructor</a>
-          </li>
-          <li>
-            <a href="/super">Calling Parent Contracts</a>
           </li>
           <li>
             <a href="/visibility">Visibility</a>
