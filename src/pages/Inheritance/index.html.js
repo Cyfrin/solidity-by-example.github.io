@@ -1,9 +1,10 @@
-const html = `<p>Solidity supports multiple inheritance. Order of inheritance is important.</p>
-<p>Let&#39;s examine.</p>
+const html = `<p>Solidity supports multiple inheritance.</p>
+<p>Order of inheritance is important</p>
+<p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.3;
 
 contract A {
-    function foo() public view returns (string memory) {
+    function foo() public pure returns (string memory) {
         return "A";
     }
 }
@@ -11,29 +12,31 @@ contract A {
 // Contracts can inherit other contracts by using the keyword &#39;is&#39;.
 contract B is A {
     // Override A.foo()
-    function foo() public view returns (string memory) {
+    function foo() public pure returns (string memory) {
         return "B";
     }
 }
 
 contract C is A {
     // Override A.foo()
-    function foo() public view returns (string memory) {
+    function foo() public pure returns (string memory) {
         return "C";
     }
 }
 
 // Contracts can inherit from multiple parent contracts.
-contract D is B, C {
-    // When a function is called that is defined multiple times in
-    // different contracts, parent contracts are searched from
-    // right to left.
+// When a function is called that is defined multiple times in
+// different contracts, parent contracts are searched from
+// right to left, and in depth-first manner.
 
+contract D is B, C {
     // D.foo() returns "C"
+    // since C is the right most parent contract with function foo()
 }
 
 contract E is C, B {
     // E.foo() returns "B"
+    // since B is the right most parent contract with function foo()
 }
 
 // Inheritance must be ordered from “most base-like” to “most derived”.
