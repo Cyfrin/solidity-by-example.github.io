@@ -6,42 +6,43 @@ contract A {
     // In our case, this will be useful for tracing function calls.
     event Log(string message);
 
-    function doSomething() public {
-        emit Log("A.doSomething called");
+    function foo() public {
+        emit Log("A.foo called");
     }
 
-    function doSomethingElse() public {
-        emit Log("A.doSomethingElse called");
+    function bar() public {
+        emit Log("A.bar called");
     }
 }
 
 contract B is A {
-    function doSomething() public {
-        emit Log("B.doSomething called");
-        A.doSomething();
+    function foo() public {
+        emit Log("B.foo called");
+        A.foo();
     }
-    function doSomethingElse() public {
-        emit Log("B.doSomethingElse called");
-        super.doSomethingElse();
+    function bar() public {
+        emit Log("B.bar called");
+        super.bar();
     }
 }
 
 contract C is A {
-    function doSomething() public {
-        emit Log("C.doSomething called");
-        A.doSomething();
+    function foo() public {
+        emit Log("C.foo called");
+        A.foo();
     }
 
-    function doSomethingElse() public {
-        emit Log("C.doSomethingElse called");
-        super.doSomethingElse();
+    function bar() public {
+        emit Log("C.bar called");
+        super.bar();
     }
 }
 
 contract D is B, C {
     // Try:
-    // - Call D.doSomething and check the transaction logs.
+    // - Call D.foo and check the transaction logs.
     //   Although D inherits A, B and C, it only called C and then A.
-    // - Call D.doSomethingElse and check the transaction logs
-    //   D called C, then B, and finally A as expected.
+    // - Call D.bar and check the transaction logs
+    //   D called C, then B, and finally A.
+    //   Although super was called twice (by B and C) it only called A once. 
 }
