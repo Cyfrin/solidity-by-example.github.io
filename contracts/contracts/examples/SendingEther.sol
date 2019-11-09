@@ -56,5 +56,3 @@ contract TestCall {
         emit Log(sent);
     }
 }
-
-// TODO example calling function and sending ether
