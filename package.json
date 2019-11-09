@@ -22,7 +22,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
     "cp-contracts": "node scripts/cp-contracts.js",
-    "gen-html": "node scripts/gen-html.js"
+    "gen-html-pages": "node scripts/gen-html-pages.js",
+    "gen-html-page": "node scripts/gen-html-page.js"
   },
   "eslintConfig": {
     "extends": "react-app"
