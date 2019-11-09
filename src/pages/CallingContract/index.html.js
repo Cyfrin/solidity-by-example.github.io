@@ -28,7 +28,7 @@ contract C {
     // low-level way to call another contract
     // This method is useful when you want to call an arbitrary contract.
     (bool success, bytes memory returnData) = address(a).call(
-      abi.encodeWithSignature("setX(uint256)", x);
+      abi.encodeWithSignature("setX(uint256)", x)
     );
     require(success);
 
