@@ -22,10 +22,7 @@ function removeExt(fileName) {
 }
 
 // convert index.md.mustache -> index.html.js
-async function main() {
-  const args = process.argv.slice(2)
-  const dir = args[0] || "."
-
+async function toHTML(dir) {
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
@@ -56,4 +53,6 @@ async function main() {
   writeFile(path.join(dir, "index.html.js"), js)
 }
 
-main()
+module.exports = {
+  toHTML,
+}

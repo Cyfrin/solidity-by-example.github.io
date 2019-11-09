@@ -5,7 +5,7 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
 <li><code>Alice</code> authorises a payment by signing a message (off chain) and sends the signed message to <code>Bob</code>.</li>
 <li><code>Bob</code> claims his payment by presenting the signed message to the smart contract.</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.11;
 
 contract PaymentChannel {
   address payable public sender;

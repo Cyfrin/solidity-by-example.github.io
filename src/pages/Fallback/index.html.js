@@ -4,7 +4,7 @@ const html = `<p>A <code>fallback function</code> is an anonymous function that 
 <li>calling a function that does not exist</li>
 <li>sending Ether directly to a contract</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.11;
 
 contract Fallback {
     event EtherReceived(address sender, uint amount);

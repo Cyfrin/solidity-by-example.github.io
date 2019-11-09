@@ -2,7 +2,7 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
 <p>The easiest way to is to just call it, like <code>A.foo(x, y, z)</code>.</p>
 <p>Another way to call other contracts is to use the low-level <code>call</code>.</p>
 <p>This method is not recommended.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.11;
 
 contract A {
     uint public x;
@@ -28,7 +28,7 @@ contract C {
     // low-level way to call another contract
     // This method is useful when you want to call an arbitrary contract.
     (bool success, bytes memory returnData) = address(a).call(
-      abi.encodeWithSignature("setX(uint256)", x);
+      abi.encodeWithSignature("setX(uint256)", x)
     );
     require(success);
 

@@ -1,7 +1,7 @@
 const html = `<p>Unlike functions, state variables cannot be overridden by re-declaring it
 in the child contract.</p>
 <p>Let&#39;s learn how to correctly override inherited state variables.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.11;
 
 contract A {
     string public name = "Contract A";

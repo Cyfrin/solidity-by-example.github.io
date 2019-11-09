@@ -4,7 +4,7 @@ exports[`it renders 1`] = `
 <Example
   description="Learn how to create new contract from inside a contract with Solidity"
   html="<p>Contracts can be created by other contracts using the <code>new</code> keyword.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.3;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.11;
 
 contract Car {
     address public owner;
