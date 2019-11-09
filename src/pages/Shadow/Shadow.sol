@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.11;
 
 contract A {
     string public name = "Contract A";

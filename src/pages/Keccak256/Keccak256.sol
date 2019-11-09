@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.11;
 
 contract Keccak256 {
   struct Todo {

@@ -1,6 +1,6 @@
 const html = `<p>You can throw an error by calling <code>assert</code>, <code>require</code> or <code>revert</code>.</p>
 <p>An error will undo all changes made to the state during a transaction.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.3;
+<pre><code class="language-solidity">pragma solidity ^0.5.11;
 
 contract Error {
     uint public i;

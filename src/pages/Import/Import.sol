@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.11;
 
 // import Foo.sol from current directory
 import "./Foo.sol";

@@ -6,57 +6,14 @@
 
 [MIT License](LICENSE)
 
-## Roadmap
+## TODO
 
-TODO
+mobile friendly code (scale to mobile width?)
+Sending ether - example calling function and sending ether
 
 - [ ] enum and escrow
 
 - [ ] storage vs memory
-
-- [ ] YouTube
-- [x] hello world
-- [x] simple storage
-- [x] gas
-- [x] function
-- [x] function modifiers
-- [x] view and pure
-- [x] inheritance
-- [x] shadow
-- [x] super
-- [x] constructor
-- [x] events
-- [x] error (assert, require, revert)
-- [x] looping
-- [x] Enum
-- [x] mapping
-- [x] array
-- [x] structs
-- [x] creating contracts
-- [xx calling contracts
-- [x] call
-- [x] delegatecall
-- [x] library
-- [x] payable
-- [x] different ways to send ether (send, transfer, call)
-- [x] fallback
-- [x] fallback gas limit
-- [x] re-entrancy
-- [x] Self Destruct
-- [x] hashing
-- [x] signature
-- [x] imports
-- [x] safe math
-- [x] wei
-
-- [x] applications
-  - [x] multisig wallet
-        // TODO verify with (mythril and klabs)
-        // TODO review gnosis multi sig wallet
-  - [x] dividends (split payment)
-  - [x] payment channel
-
-## TODO
 
 - [ ] embed YouTube
 - [ ] erc20
@@ -71,11 +28,19 @@ TODO
 - [ ] Casper ?
 - [ ] black hole
 - [ ] hacks
+
   - [ ] reentrancy
   - [ ] writing to storage
   - [ ] uint overflow
   - [ ] selfdestruct
   - [ ] blockhash
+
+- [x] applications
+  - [x] multisig wallet
+        // TODO verify with (mythril and klabs)
+        // TODO review gnosis multi sig wallet
+  - [x] dividends (split payment)
+  - [x] payment channel
 
 ## Dev memo
 
@@ -83,6 +48,14 @@ TODO
 # deploy
 npm run deploy
 
-# use gen-html
-npm run gen-html -- src/pages/HelloWorld
+# compile and copy files
+cd contracts
+truffle compile
+
+npm run gen-pages
+
+# compile SafeMath and Import on remix
+# generate single page
+npm run gen-html-page -- SafeMath
+npm run gen-html-page -- Import
 ```

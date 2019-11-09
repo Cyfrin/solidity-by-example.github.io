@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.11;
 
 library MyLib {
     function incrementBy(uint i, uint val) public pure returns (uint) {

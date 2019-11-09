@@ -21,7 +21,7 @@ exports[`it renders 1`] = `
         Solidity by Example
       </div>
       <div>
-        version 0.5.3
+        version 0.5.11
       </div>
     </a>
   </h3>
