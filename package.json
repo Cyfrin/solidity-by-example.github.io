@@ -21,6 +21,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
+    "cp-contracts": "node scripts/cp-contracts.js",
     "gen-html": "node ./template/index.js"
   },
   "eslintConfig": {
