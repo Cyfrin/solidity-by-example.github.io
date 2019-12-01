@@ -1,28 +1,40 @@
 pragma solidity ^0.5.11;
 
-contract Error {
-    uint public i;
+contract Account {
+    uint public balance;
+    uint public constant MAX_UINT = 2 ** 256 - 1;
 
-    // Require should be used to validate conditions such as:
-    // - inputs
-    // - return values from calls to other functions
-    // - return values from calls to other contracts
-    function testRequire(uint j) public {
-        require(j > 100, "j must be greater than 100");
-        i += j;
+    function deposit(uint _amount) public {
+        uint oldBalance = balance;
+        uint newBalance = balance + _amount;
+
+        // Require should be used to validate conditions such as:
+        // - inputs
+        // - conditions before execution
+        // - return values from calls to other functions
+        // balance + _amount does not overflow if balance + _amount >= balance
+        require(newBalance >= oldBalance, "Overflow");
+
+        balance = newBalance;
+
+        // Assert should only be used to test for internal errors,
+        // and to check invariants.
+        assert(balance >= oldBalance);
     }
 
-    // Assert should only be used to test for internal errors,
-    // and to check invariants.
-    // Try: testAssert(-1)
-    function testAssert(uint j) public {
-        i += j;
-        assert(i >= j);
-    }
+    function withdraw(uint _amount) public {
+        uint oldBalance = balance;
 
-    // Revert can be used to throw an error.
-    function testRevert(uint j) public {
-        i += j;
-        revert("Undoing state changes");
+        // balance - _amount does not underflow if balance >= _amount
+        require(balance >= _amount, "Underflow");
+
+        // Revert can be used to throw an error.
+        if (balance < _amount) {
+            revert("Underflow");
+        }
+
+        balance -= _amount;
+
+        assert(balance <= oldBalance);
     }
 }
