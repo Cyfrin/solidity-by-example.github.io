@@ -140,9 +140,9 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/enum"
+          href="/array"
         >
-          Enum
+          Array
         </a>
       </li>
       <li>
@@ -154,9 +154,9 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/array"
+          href="/enum"
         >
-          Array
+          Enum
         </a>
       </li>
       <li>

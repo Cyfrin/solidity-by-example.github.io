@@ -67,13 +67,13 @@ function Home() {
             <a href="/loop">Loop</a>
           </li>
           <li>
-            <a href="/enum">Enum</a>
+            <a href="/array">Array</a>
           </li>
           <li>
             <a href="/mapping">Mapping</a>
           </li>
           <li>
-            <a href="/array">Array</a>
+            <a href="/enum">Enum</a>
           </li>
           <li>
             <a href="/structs">Structs</a>
