@@ -11,6 +11,8 @@
 mobile friendly code (scale to mobile width?)
 Sending ether - example calling function and sending ether
 
+- [ ] multisig book
+  - [ ] reorganize subjects
 - [ ] enum and escrow
 
 - [ ] storage vs memory
