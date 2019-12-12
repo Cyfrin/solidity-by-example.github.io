@@ -36,6 +36,8 @@ contract TestMyLib {
         // array should now be ["foo", "abc"]
     }
 }
+
+// TODO example MyLib.func()
 </code></pre>
 `
 
