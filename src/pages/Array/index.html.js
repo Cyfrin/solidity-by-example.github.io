@@ -6,41 +6,62 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 
 contract Array {
     // Several ways to initialize an array
-    uint[] public myArr;
-    uint[] public myArr2 = [1,2,3];
+    uint[] public myArray;
+    uint[] public myArray2 = [1,2,3];
+    uint[10] public myFixedSizeArray;
 
-    uint[10] public myFixedArr;
+    function get(uint i) public view returns (uint) {
+      return myArray[i];
+    }
 
-    function arrayFuncs() public returns (uint) {
-        // Append 1 to the array
-        myArr.push(1);
-        return myArr[myArr.length - 1];
+    function push(uint i) public {
+        myArray.push(i);
+    }
+
+    function pop() public {
+        myArray.pop();
+    }
+
+    function getLength() public view returns (uint) {
+        return myArray.length;
+    }
+
+    function remove(uint index) public {
+        delete myArray[index];
     }
 }
 
 contract CompactArray {
-    address[] public addresses;
+    uint[] public myArray;
 
     function remove(uint index) public {
         // Move the last element into the place to delete
-        addresses[index] = addresses[addresses.length - 1];
-
+        myArray[index] = myArray[myArray.length - 1];
         // Remove the last element
-        addresses.pop();
-        // This has the same effect has deleting the last element.
-        // addresses.length--;
+        myArray.pop();
     }
 
     function test() public {
-        addresses.push(address(1));
-        addresses.push(address(2));
-        addresses.push(address(3));
+        myArray.push(1);
+        myArray.push(2);
+        myArray.push(3);
+        myArray.push(4);
+        // [1, 2, 3, 4]
 
         remove(1);
+        // [1, 4, 3]
 
-        assert(addresses.length == 2);
-        assert(addresses[0] == address(1));
-        assert(addresses[1] == address(3));
+        assert(myArray.length == 3);
+        assert(myArray[0] == 1);
+        assert(myArray[1] == 4);
+        assert(myArray[2] == 3);
+
+        remove(2);
+        // [1, 4]
+
+        assert(myArray.length == 2);
+        assert(myArray[0] == 1);
+        assert(myArray[1] == 4);
     }
 }
 </code></pre>
