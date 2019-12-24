@@ -162,6 +162,10 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          path="/merkle-tree"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>

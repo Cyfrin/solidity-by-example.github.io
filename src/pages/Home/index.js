@@ -134,7 +134,10 @@ function Home() {
             <a href="/dividend">Dividend</a>
           </li>
           <li>
-            <a href="/payment-channel">PaymentChannel</a>
+            <a href="/payment-channel">Payment Channel</a>
+          </li>
+          <li>
+            <a href="/merkle-tree">Merkle Tree</a>
           </li>
         </ul>
       </div>
