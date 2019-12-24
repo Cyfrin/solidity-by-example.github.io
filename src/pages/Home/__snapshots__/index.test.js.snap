@@ -294,7 +294,14 @@ exports[`it renders 1`] = `
         <a
           href="/payment-channel"
         >
-          PaymentChannel
+          Payment Channel
+        </a>
+      </li>
+      <li>
+        <a
+          href="/merkle-tree"
+        >
+          Merkle Tree
         </a>
       </li>
     </ul>

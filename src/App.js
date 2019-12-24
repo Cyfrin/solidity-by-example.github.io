@@ -41,6 +41,7 @@ import Signature from "./pages/Signature"
 import MultiSigWallet from "./pages/MultiSigWallet"
 import Dividend from "./pages/Dividend"
 import PaymentChannel from "./pages/PaymentChannel"
+import MerkleTree from "./pages/MerkleTree"
 
 function App(props) {
   return (
@@ -92,6 +93,7 @@ function App(props) {
             <Route path="/multi-sig-wallet" component={MultiSigWallet} />
             <Route path="/dividend" component={Dividend} />
             <Route path="/payment-channel" component={PaymentChannel} />
+            <Route path="/merkle-tree" component={MerkleTree} />
             <Route component={Home} />
           </Switch>
         </Router>
