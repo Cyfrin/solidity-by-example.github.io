@@ -21,10 +21,9 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
-    "cp-contracts": "node scripts/cp-contracts.js",
     "gen-html-pages": "node scripts/gen-html-pages.js",
     "gen-html-page": "node scripts/gen-html-page.js",
-    "gen-pages": "npm run cp-contracts && npm run gen-html-pages"
+    "gen-pages": "npm run gen-html-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
