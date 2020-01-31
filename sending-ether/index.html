@@ -1,59 +1,45 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link href="/favicon.ico" rel="shortcut icon"><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"><meta content="#000000" name="theme-color"><link href="/manifest.json" rel="manifest"><title>Sending Ether (send, transfer, call) | Learn Solidity by Example</title><script src="https://www.google-analytics.com/analytics.js" async type="text/javascript"></script><script src="https://www.googletagmanager.com/gtag/js?id=UA-133759045-1" async></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-133759045-1")</script><link href="/static/css/2.706b70fc.chunk.css" rel="stylesheet"><link href="/static/css/main.6eb19102.chunk.css" rel="stylesheet"><link href="https://www.googletagmanager.com" rel="preconnect"><link href="https://www.google-analytics.com" rel="preconnect"><meta content="An example of sending Ether in Solidity" name="Description" data-react-helmet="true"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="App"><div class="Header"><a href="/"><img alt="logo" class="Header-logo" src="/static/media/logo.da793b47.svg"></a><h3><a href="/"><div>Solidity by Example</div><div>version 0.5.11</div></a></h3></div><div class="App-main"><div class="Example"><h2>Sending Ether (send, transfer, call)</h2><div><p>You can send Ether to other contracts by <code>send</code>, <code>transfer</code>, or <code>call</code></p><pre><code class="language-solidity hljs"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.11;</span>
 
-<span class="hljs-comment">// Contract to receive Ether</span>
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Receiver</span> </span>{
+<span class="hljs-comment">/*
+3 ways to send ether from a contract to another contract
+- transfer (2300 gas, throws error)
+- send     (2300 gas, returns bool)
+- call     (forward all gas or set gas, returns bool)
+
+<span class="hljs-doctag">NOTE:</span> recommended method after 2019 Dec (use call and guard against re-entrancy)
+      guard against re-entrancy by
+      - making all state changes before calling other contracts
+      - using re-entrancy guard modifier
+*/</span>
+
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ReceiveEther</span> </span>{
     <span class="hljs-comment">// This is a special function called the fallback.</span>
     <span class="hljs-comment">// The fallback function declared payable enables other contracts to</span>
     <span class="hljs-comment">// send Ether by send, transfer, or call.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
-    <span class="hljs-comment">// Helper function to check balance</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBalance</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestSend</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">bool</span> sent</span>)</span>;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">SendEther</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendViaTransfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        <span class="hljs-comment">// This function is no longer recommended for sending Ether.</span>
+        _to.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
+    }
 
-    <span class="hljs-comment">// Try:</span>
-    <span class="hljs-comment">// Call this function with the address of the Receiver contract as input.</span>
-    <span class="hljs-comment">// Also send some Ether when calling this function.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> addr</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendViaSend</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-comment">// Send returns a boolean value indicating success or failure.</span>
         <span class="hljs-comment">// This function is not recommended for sending Ether.</span>
-        <span class="hljs-keyword">bool</span> sent = addr.<span class="hljs-built_in">send</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
-
-        <span class="hljs-comment">// Check the result of send by looking into the transaction logs.</span>
-        <span class="hljs-keyword">emit</span> Log(sent);
+        <span class="hljs-keyword">bool</span> sent = _to.<span class="hljs-built_in">send</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
-}
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestTransfer</span> </span>{
-    <span class="hljs-comment">// Try:</span>
-    <span class="hljs-comment">// Call this function with the address of the Receiver contract as input.</span>
-    <span class="hljs-comment">// Also send some Ether when calling this function.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> addr</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-comment">// Transfer will throw an error if it fails sending Ether.</span>
-        <span class="hljs-comment">// This is the safest way (out of send, transfer and call) to send Ether.</span>
-        addr.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
-    }
-}
-
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestCall</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">bool</span> sent</span>)</span>;
-
-    <span class="hljs-comment">// Try:</span>
-    <span class="hljs-comment">// Call this function with the address of the Receiver contract as input.</span>
-    <span class="hljs-comment">// Also send some Ether when calling this function.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> addr</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendViaCall</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-comment">// Call returns a boolean value indicating success or failure.</span>
-        <span class="hljs-comment">// We ignore the second value returned.</span>
-        (<span class="hljs-keyword">bool</span> sent,) = addr.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>)(<span class="hljs-string">""</span>);
-
-        <span class="hljs-comment">// Check the result of call by looking into the transaction logs.</span>
-        <span class="hljs-keyword">emit</span> Log(sent);
+        (<span class="hljs-keyword">bool</span> sent, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data) = _to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>)(<span class="hljs-string">""</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
-</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p></div></div><div class="App-footer"><p class="footer"><a href="mailto:contact@solidity-by-example.org">contact@solidity-by-example.org</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license">license</a></p></div></div></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,i=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(f,t)&&f[t]&&i.push(f[t][0]),f[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),p()}function p(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==f[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},f={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=a,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonpsolidity-by-example"]=window["webpackJsonpsolidity-by-example"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;p()}([])</script><script src="/static/js/2.b35a82cf.chunk.js"></script><script src="/static/js/main.b4aa527e.chunk.js"></script></body></html>
+</code></pre></div><p>Try on <a href="https://remix.ethereum.org" target="__blank">Remix</a></p></div></div><div class="App-footer"><p class="footer"><a href="mailto:contact@solidity-by-example.org">contact@solidity-by-example.org</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io">source</a> | <a href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license">license</a></p></div></div></div><script>!function(a){function e(e){for(var r,t,n=e[0],o=e[1],u=e[2],l=0,i=[];l<n.length;l++)t=n[l],Object.prototype.hasOwnProperty.call(f,t)&&f[t]&&i.push(f[t][0]),f[t]=0;for(r in o)Object.prototype.hasOwnProperty.call(o,r)&&(a[r]=o[r]);for(s&&s(e);i.length;)i.shift()();return c.push.apply(c,u||[]),p()}function p(){for(var e,r=0;r<c.length;r++){for(var t=c[r],n=!0,o=1;o<t.length;o++){var u=t[o];0!==f[u]&&(n=!1)}n&&(c.splice(r--,1),e=l(l.s=t[0]))}return e}var t={},f={1:0},c=[];function l(e){if(t[e])return t[e].exports;var r=t[e]={i:e,l:!1,exports:{}};return a[e].call(r.exports,r,r.exports,l),r.l=!0,r.exports}l.m=a,l.c=t,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(r,e){if(1&e&&(r=l(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var n in r)l.d(t,n,function(e){return r[e]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var r=window["webpackJsonpsolidity-by-example"]=window["webpackJsonpsolidity-by-example"]||[],n=r.push.bind(r);r.push=e,r=r.slice();for(var o=0;o<r.length;o++)e(r[o]);var s=n;p()}([])</script><script src="/static/js/2.b35a82cf.chunk.js"></script><script src="/static/js/main.9a1303d8.chunk.js"></script></body></html>
