@@ -44,6 +44,9 @@ Sending ether - example calling function and sending ether
         // TODO review gnosis multi sig wallet
   - [x] dividends (split payment)
   - [x] payment channel
+    - [ ] unidirectional
+    - [ ] bidirectional
+    - [ ] payment hub
 
 ## Dev memo
 
