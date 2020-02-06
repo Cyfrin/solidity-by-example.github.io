@@ -10,7 +10,6 @@ import SafeMath from "./pages/SafeMath"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
-import FallbackGasLimit from "./pages/FallbackGasLimit"
 import ReEntrancy from "./pages/ReEntrancy"
 import SelfDestruct from "./pages/SelfDestruct"
 import Events from "./pages/Events"
@@ -59,7 +58,6 @@ function App(props) {
             <Route path="/sending-ether" component={SendingEther} />
             <Route path="/payable" component={Payable} />
             <Route path="/fallback" component={Fallback} />
-            <Route path="/fallback-gas-limit" component={FallbackGasLimit} />
             <Route path="/re-entrancy" component={ReEntrancy} />
             <Route path="/self-destruct" component={SelfDestruct} />
             <Route path="/function" component={Function} />

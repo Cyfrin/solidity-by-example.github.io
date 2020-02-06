@@ -4,14 +4,17 @@ const html = `<p>A <code>fallback function</code> is an anonymous function that 
 <li>calling a function that does not exist</li>
 <li>sending Ether directly to a contract</li>
 </ul>
+<p><code>Fallback</code> functions have a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.11;
 
 contract Fallback {
-    event EtherReceived(address sender, uint amount);
+    event Log(uint gas);
 
     // Fallback function must be declared as external.
     function () external payable {
-        emit EtherReceived(msg.sender, msg.value);
+        // send / transfer (forwards 2300 gas to this fallback function)
+        // call (forwards all of the gas)
+        emit Log(gasleft());
     }
 
     // Helper function to check the balance of this contract
@@ -20,16 +23,14 @@ contract Fallback {
     }
 }
 
-contract TestFallback {
-    // Try calling test(address of the Fallback contract)
-    function test(Fallback fallback) public payable {
-        // Send Ether to the Fallback contract.
-        address(fallback).transfer(address(this).balance);
+contract SendToFallback {
+    function transferToFallback(address payable _to) public payable {
+        _to.transfer(msg.value);
+    }
 
-        // Calling a function that does not exist in Fallback contract
-        address(fallback).call(abi.encodeWithSignature("nonExistingFunction()"));
-
-        // Check the transaction logs. You will see the event "EtherReceived" emitted twice.
+    function callFallback(address payable _to) public payable {
+        (bool sent,) = _to.call.value(msg.value)("");
+        require(sent, "Failed to send Ether");
     }
 }
 </code></pre>
