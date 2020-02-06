@@ -31,3 +31,6 @@ contract C {
     return returnData;
   }
 }
+
+// TODO call a function and send ether
+// https://ethereum.stackexchange.com/questions/9705/how-can-you-call-a-payable-function-in-another-contract-with-arguments-and-send
