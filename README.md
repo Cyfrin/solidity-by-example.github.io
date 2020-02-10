@@ -39,14 +39,17 @@ Sending ether - example calling function and sending ether
   - [ ] blockhash
 
 - [x] applications
+
   - [x] multisig wallet
-        // TODO verify with (mythril and klabs)
-        // TODO review gnosis multi sig wallet
   - [x] dividends (split payment)
   - [x] payment channel
     - [ ] unidirectional
     - [ ] bidirectional
     - [ ] payment hub
+
+- [ ] TODO sending ether to payable function
+- [ ] TODO minimal proxy contract
+- [ ] TODO counterfactual
 
 ## Dev memo
 
