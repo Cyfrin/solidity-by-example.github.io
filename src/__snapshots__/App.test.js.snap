@@ -50,10 +50,6 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          path="/fallback-gas-limit"
-        />
-        <Route
-          component={[Function]}
           path="/re-entrancy"
         />
         <Route
