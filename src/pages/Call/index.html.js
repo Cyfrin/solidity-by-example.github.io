@@ -3,41 +3,41 @@ const html = `<p><code>call</code> is a low level function to interact with othe
 <p>does not have the ABI for the other contract.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.11;
 
-contract A {
+contract Receiver {
     event Received(address caller, uint amount, string message);
 
     function () external payable {
-        emit Received(msg.sender, msg.value, "Called fallback");
+        emit Received(msg.sender, msg.value, "Fallback was called");
     }
 
-    function callMe(string memory message) public payable {
-        emit Received(msg.sender, msg.value, message);
+    function foo(string memory _message, uint _x) public payable returns (uint) {
+        emit Received(msg.sender, msg.value, _message);
+
+        return _x + 1;
     }
 }
 
-contract B {
-    event Response(bool success, bytes returnedData);
+contract Caller {
+    event Response(bool success, bytes data);
 
     // Let&#39;s imagine that contract B does not have the source code for
     // contract A, but we do know the address of A and the function to call.
-    function callA(address a) public payable {
+    function testCallFoo(address payable _addr) public payable {
         // You can send ether and specify a custom gas amount
-         (bool success, bytes memory returnData) = a.call
-            .value(address(this).balance)
-            .gas(5000)(
-                abi.encodeWithSignature("callMe(string)", "Call me back")
-            );
+        (bool success, bytes memory data) = _addr.call.value(msg.value).gas(5000)(
+            abi.encodeWithSignature("foo(string,uint256)", "call foo", 123)
+        );
 
-         emit Response(success, returnData);
+        emit Response(success, data);
     }
 
     // Calling a function that does not exist triggers the fallback function.
-    function callDoesNotExist(address a) public payable {
-         (bool success, bytes memory returnData) = a.call(
-                abi.encodeWithSignature("doesNotExist()")
-            );
+    function testCallDoesNotExist(address _addr) public {
+        (bool success, bytes memory data) = _addr.call(
+            abi.encodeWithSignature("doesNotExist()")
+        );
 
-         emit Response(success, returnData);
+        emit Response(success, data);
     }
 }
 </code></pre>
