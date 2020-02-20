@@ -79,10 +79,13 @@ function Home() {
             <a href="/structs">Structs</a>
           </li>
           <li>
-            <a href="/new-contract">Creating Contract from Other Contract</a>
+            <a href="/payable">Payable</a>
           </li>
           <li>
-            <a href="/calling-contract">Calling Other Contract</a>
+            <a href="/sending-ether">Sending Ether</a>
+          </li>
+          <li>
+            <a href="/fallback">Fallback</a>
           </li>
           <li>
             <a href="/call">Call</a>
@@ -94,16 +97,10 @@ function Home() {
             <a href="/Library">Library</a>
           </li>
           <li>
-            <a href="/payable">Payable</a>
+            <a href="/new-contract">Creating Contract from Other Contract</a>
           </li>
           <li>
-            <a href="/sending-ether">Sending Ether</a>
-          </li>
-          <li>
-            <a href="/fallback">Fallback</a>
-          </li>
-          <li>
-            <a href="/re-entrancy">Re-Entrancy</a>
+            <a href="/calling-contract">Calling Other Contract</a>
           </li>
           <li>
             <a href="/self-destruct">Self Destruct</a>
@@ -119,6 +116,13 @@ function Home() {
           </li>
           <li>
             <a href="/safe-math">Safe Math</a>
+          </li>
+        </ul>
+
+        <h3>Hacks</h3>
+        <ul>
+          <li>
+            <a href="/re-entrancy">Re-Entrancy</a>
           </li>
         </ul>
 
