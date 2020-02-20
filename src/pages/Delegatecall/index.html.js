@@ -3,30 +3,31 @@ const html = `<p><code>delegatecall</code> is a low level function similar to <c
 <p>with contract <code>A</code>&#39;s storage, <code>msg.sender</code> and <code>msg.value</code>.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.11;
 
-// Firts deploy this contract
+// NOTE: Firts deploy this contract
 contract B {
-  uint public n;
-  address public sender;
-  uint public value;
+    // NOTE: storage layout must be the same as contract A
+    uint public num;
+    address public sender;
+    uint public value;
 
-  function setN(uint _n) public payable {
-    n = _n;
-    sender = msg.sender;
-    value = msg.value;
-  }
+    function setVars(uint _num) public payable {
+        num = _num;
+        sender = msg.sender;
+        value = msg.value;
+    }
 }
 
 contract A {
-  uint public n;
-  address public sender;
-  uint public value;
+    uint public num;
+    address public sender;
+    uint public value;
 
-  function delegatecallSetN(address b, uint _n) public payable {
-    // A&#39;s storage is set, B is not modified.
-    (bool success, bytes memory returnData) = b.delegatecall(
-      abi.encodeWithSignature("setN(uint256)", _n)
-    );
-  }
+    function setVars(address _contract, uint _num) public payable {
+        // A&#39;s storage is set, B is not modified.
+        (bool success, bytes memory data) = _contract.delegatecall(
+            abi.encodeWithSignature("setVars(uint256)", _num)
+        );
+    }
 }
 </code></pre>
 `

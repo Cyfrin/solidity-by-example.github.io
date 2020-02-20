@@ -168,16 +168,23 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/new-contract"
+          href="/payable"
         >
-          Creating Contract from Other Contract
+          Payable
         </a>
       </li>
       <li>
         <a
-          href="/calling-contract"
+          href="/sending-ether"
         >
-          Calling Other Contract
+          Sending Ether
+        </a>
+      </li>
+      <li>
+        <a
+          href="/fallback"
+        >
+          Fallback
         </a>
       </li>
       <li>
@@ -203,37 +210,16 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/payable"
+          href="/new-contract"
         >
-          Payable
+          Creating Contract from Other Contract
         </a>
       </li>
       <li>
         <a
-          href="/sending-ether"
+          href="/calling-contract"
         >
-          Sending Ether
-        </a>
-      </li>
-      <li>
-        <a
-          href="/fallback"
-        >
-          Fallback
-        </a>
-      </li>
-      <li>
-        <a
-          href="/fallback-gas-limit"
-        >
-          Fallback Gas Limit
-        </a>
-      </li>
-      <li>
-        <a
-          href="/re-entrancy"
-        >
-          Re-Entrancy
+          Calling Other Contract
         </a>
       </li>
       <li>
@@ -269,6 +255,18 @@ exports[`it renders 1`] = `
           href="/safe-math"
         >
           Safe Math
+        </a>
+      </li>
+    </ul>
+    <h3>
+      Hacks
+    </h3>
+    <ul>
+      <li>
+        <a
+          href="/re-entrancy"
+        >
+          Re-Entrancy
         </a>
       </li>
     </ul>
