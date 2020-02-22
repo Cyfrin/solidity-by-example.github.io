@@ -8,48 +8,28 @@
 
 ## TODO
 
-mobile friendly code (scale to mobile width?)
 Sending ether - example calling function and sending ether
 
-- [ ] iterable map library
-- [ ] multisig book
-  - [ ] reorganize subjects
-- [ ] enum and escrow
+- [ ] email subscription
+- [ ] archive 0.5
+- [ ] sending ether to payable function
 
-- [ ] storage vs memory
+hacks
 
-- [ ] embed YouTube
-- [ ] erc20
-  - Can you make tutorial how to integrate Smart token in a website as payment.need web3.js
-- [ ] SEO
-- [ ] DEX ?
-- [ ] Plasma ?
-  - [ ] merkle tree
-  - [ ] rlp
-  - [ ] slicing bytes with assembly
-  - [ ] priority queue
-- [ ] Casper ?
-- [ ] black hole
-- [ ] hacks
+- [ ] reentrancy
+- [ ] writing to storage
+- [ ] uint overflow
+- [ ] selfdestruct
+- [ ] blockhash
 
-  - [ ] reentrancy
-  - [ ] writing to storage
-  - [ ] uint overflow
-  - [ ] selfdestruct
-  - [ ] blockhash
+applications
 
-- [x] applications
-
-  - [x] multisig wallet
-  - [x] dividends (split payment)
-  - [x] payment channel
-    - [ ] unidirectional
-    - [ ] bidirectional
-    - [ ] payment hub
-
-- [ ] TODO sending ether to payable function
-- [ ] TODO minimal proxy contract
-- [ ] TODO counterfactual
+- [ ] multisig wallet
+- [ ] unidirectional
+- [ ] bidirectional
+- [ ] payment hub
+- [ ] counterfactual
+- [ ] minimal proxy contract
 
 ## Dev memo
 
