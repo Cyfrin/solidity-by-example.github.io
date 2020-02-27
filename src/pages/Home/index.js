@@ -94,13 +94,13 @@ function Home() {
             <a href="/delegatecall">Delegatecall</a>
           </li>
           <li>
+            <a href="/calling-contract">Calling Other Contract</a>
+          </li>
+          <li>
             <a href="/Library">Library</a>
           </li>
           <li>
             <a href="/new-contract">Creating Contract from Other Contract</a>
-          </li>
-          <li>
-            <a href="/calling-contract">Calling Other Contract</a>
           </li>
           <li>
             <a href="/self-destruct">Self Destruct</a>

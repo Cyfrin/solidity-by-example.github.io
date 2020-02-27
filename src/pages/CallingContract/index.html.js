@@ -4,36 +4,36 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
 <p>This method is not recommended.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.11;
 
-contract A {
+contract Callee {
     uint public x;
+    uint public value;
 
     function setX(uint _x) public returns (uint) {
         x = _x;
         return x;
     }
-}
 
-contract B {
-    function setX(A a, uint x) public returns (uint) {
-        return a.setX(x);
-    }
+    function setXandSendEther(uint _x) public payable returns (uint, uint) {
+        x = _x;
+        value = msg.value;
 
-    function getX(A a) public view returns (uint) {
-        return a.x();
+        return (x, value);
     }
 }
 
-contract C {
-  function setX(A a, uint x) public returns (bytes memory) {
-    // low-level way to call another contract
-    // This method is useful when you want to call an arbitrary contract.
-    (bool success, bytes memory returnData) = address(a).call(
-      abi.encodeWithSignature("setX(uint256)", x)
-    );
-    require(success);
+contract Caller {
+    function setX(Callee _callee, uint _x) public {
+        uint x = _callee.setX(_x);
+    }
 
-    return returnData;
-  }
+    function setXFromAddress(address _addr, uint _x) public {
+        Callee callee = Callee(_addr);
+        callee.setX(_x);
+    }
+
+    function setXandSendEther(Callee _callee, uint _x) public payable {
+        (uint x, uint value) = _callee.setXandSendEther.value(msg.value)(_x);
+    }
 }
 </code></pre>
 `

@@ -8,48 +8,32 @@
 
 ## TODO
 
-mobile friendly code (scale to mobile width?)
 Sending ether - example calling function and sending ether
 
-- [ ] iterable map library
-- [ ] multisig book
-  - [ ] reorganize subjects
-- [ ] enum and escrow
+- [ ] email subscription
+- [ ] archive 0.5
+- [ ] sending ether to payable function
+- [ ] build multisig step by step
+- [ ] assembly
 
-- [ ] storage vs memory
+hacks
 
-- [ ] embed YouTube
-- [ ] erc20
-  - Can you make tutorial how to integrate Smart token in a website as payment.need web3.js
-- [ ] SEO
-- [ ] DEX ?
-- [ ] Plasma ?
-  - [ ] merkle tree
-  - [ ] rlp
-  - [ ] slicing bytes with assembly
-  - [ ] priority queue
-- [ ] Casper ?
-- [ ] black hole
-- [ ] hacks
+- [ ] reentrancy
+- [ ] writing to storage
+- [ ] uint overflow
+- [ ] selfdestruct
+- [ ] blockhash
 
-  - [ ] reentrancy
-  - [ ] writing to storage
-  - [ ] uint overflow
-  - [ ] selfdestruct
-  - [ ] blockhash
+applications
 
-- [x] applications
+- [ ] multisig wallet
+- [ ] unidirectional
+- [ ] bidirectional
+- [ ] payment hub
+- [ ] counterfactual
+- [ ] minimal proxy contract
 
-  - [x] multisig wallet
-  - [x] dividends (split payment)
-  - [x] payment channel
-    - [ ] unidirectional
-    - [ ] bidirectional
-    - [ ] payment hub
-
-- [ ] TODO sending ether to payable function
-- [ ] TODO minimal proxy contract
-- [ ] TODO counterfactual
+patterns
 
 ## Dev memo
 
@@ -68,3 +52,54 @@ npm run gen-pages
 npm run gen-html-page -- SafeMath
 npm run gen-html-page -- Import
 ```
+
+# Topics
+
+## basics
+
+- [x] Hello World
+- [ ] Primitive types (uint, bool, address)
+- [ ] Variables (local, state, global)
+- [ ] conditional
+- [ ] loops
+- [ ] storage, memory, calldata
+- [ ] string?
+- [ ] array
+- [ ] mapping
+- [ ] enum
+- [ ] struct
+- [ ] contract
+- [ ] special variables
+- [ ] Ether and Wei
+- [ ] Gas and Gas Price (prereq: loops and collection)
+
+## intermediate
+
+- [ ] Function
+- [ ] Error
+- [ ] Function Modifier
+- [ ] View and Pure Functions
+
+- [ ] Sending Ether
+  - [ ] Payable
+  - [ ] Fallback
+- [ ] Call
+- [ ] Delegatecall
+- [ ] Calling Other Contract
+
+- [ ] Constructor
+- [ ] Inheritance
+- [ ] Calling Parent Contracts
+- [ ] Shadowing Inherited State Variables
+- [ ] Visibility
+- [ ] Creating Contract from Other Contract
+
+- [ ] Events
+- [ ] Library
+- [ ] Self Destruct
+- [ ] Hashing with Keccak256
+- [ ] Verifying Signature
+- [ ] Import
+- [ ] interface
+- [ ] assembly (call, delegatecall, signature)
+- [ ] patterns
