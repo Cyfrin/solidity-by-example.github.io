@@ -68,6 +68,7 @@ npm run gen-html-page -- Import
 - [ ] mapping
 - [ ] enum
 - [ ] struct
+- [ ] contract
 - [ ] special variables
 - [ ] Ether and Wei
 - [ ] Gas and Gas Price (prereq: loops and collection)
@@ -100,5 +101,5 @@ npm run gen-html-page -- Import
 - [ ] Verifying Signature
 - [ ] Import
 - [ ] interface
-- [ ] assembly
+- [ ] assembly (call, delegatecall, signature)
 - [ ] patterns
