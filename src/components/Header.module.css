@@ -1,14 +1,14 @@
-.Header {
+.component {
   text-align: left;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.Header a {
+.component a {
   text-decoration: none;
 }
 
-.Header-logo {
+.logo {
   width: 80px;
 }

@@ -1,7 +1,7 @@
 const html = `<p>Solidity supports multiple inheritance.</p>
 <p>Order of inheritance is important</p>
 <p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract A {
     function foo() public pure returns (string memory) {

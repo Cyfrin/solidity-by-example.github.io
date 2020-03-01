@@ -5,7 +5,7 @@ const html = `<p>A <code>fallback function</code> is an anonymous function that 
 <li>sending Ether directly to a contract</li>
 </ul>
 <p><code>Fallback</code> functions have a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Fallback {
     event Log(uint gas);

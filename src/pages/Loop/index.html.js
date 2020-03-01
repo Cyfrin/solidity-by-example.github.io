@@ -7,7 +7,7 @@ gas limit, causing your contract to stall.</p>
 <li>Block gas limit</li>
 </ul>
 <p>Try to avoid writing loops that you cannot estimate the gas consumption.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Loop {
     uint public count;

@@ -1,12 +1,13 @@
 import React from "react"
 import SEO from "../../components/SEO"
+import { SOL_VERSION } from "../../constants"
 import styles from "./index.module.css"
 
 function Home() {
   return (
     <div className={styles.component}>
       <SEO
-        title="Solidity by Example"
+        title={`Solidity by Example | ${SOL_VERSION}`}
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>

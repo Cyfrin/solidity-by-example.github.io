@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import "./Footer.css"
+import styles from "./Footer.module.css"
 
 class Footer extends Component {
   render() {
     return (
-      <p className="footer">
+      <p className={styles.component}>
         <a href="mailto:contact@solidity-by-example.org">
           contact@solidity-by-example.org
         </a>{" "}

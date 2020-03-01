@@ -1,7 +1,7 @@
 const html = `<p>Functions and state variables have to specify whether they can be accessed by other contracts.</p>
 <p>Fucntions can be declared as <code>public</code>, <code>private</code>, <code>internal</code> or <code>external</code>.</p>
 <p>State variables can be declared as <code>public</code>, <code>private</code>, or <code>internal</code> but not <code>external</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Base {
     // Private function can only be called

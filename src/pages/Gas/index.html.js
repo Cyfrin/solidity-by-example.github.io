@@ -7,7 +7,7 @@ const html = `<p>Transactions run on <code>gas</code>. You pay <code>gas price *
 <li><code>gas limit</code> (max amount of gas your willing to use for your transaction, set by you)</li>
 <li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Gas {
   // Transactions spend gas even if it does nothing.

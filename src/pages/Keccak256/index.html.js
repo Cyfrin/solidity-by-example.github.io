@@ -5,7 +5,7 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
 <li>Commit-Reveal scheme</li>
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Keccak256 {
   struct Todo {

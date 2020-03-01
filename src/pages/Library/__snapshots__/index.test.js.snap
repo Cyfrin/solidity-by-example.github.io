@@ -5,7 +5,7 @@ exports[`it renders 1`] = `
   description="Example of how to write and use libraries in your Solidity code"
   html="<p>Libraries are similar to contracts, but they are deployed only once at a</p>
 <p>specific address and their code is reused using the <code>delegatecall</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.11;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
 library MyLib {
     function incrementBy(uint i, uint val) public pure returns (uint) {
@@ -41,6 +41,8 @@ contract TestMyLib {
         // array should now be [\\"foo\\", \\"abc\\"]
     }
 }
+
+// TODO example MyLib.func()
 </code></pre>
 "
   title="Library"

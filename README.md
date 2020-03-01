@@ -6,35 +6,6 @@
 
 [MIT License](LICENSE)
 
-## TODO
-
-Sending ether - example calling function and sending ether
-
-- [ ] email subscription
-- [ ] archive 0.5
-- [ ] sending ether to payable function
-- [ ] build multisig step by step
-- [ ] assembly
-
-hacks
-
-- [ ] reentrancy
-- [ ] writing to storage
-- [ ] uint overflow
-- [ ] selfdestruct
-- [ ] blockhash
-
-applications
-
-- [ ] multisig wallet
-- [ ] unidirectional
-- [ ] bidirectional
-- [ ] payment hub
-- [ ] counterfactual
-- [ ] minimal proxy contract
-
-patterns
-
 ## Dev memo
 
 ```shell
@@ -103,3 +74,34 @@ npm run gen-html-page -- Import
 - [ ] interface
 - [ ] assembly (call, delegatecall, signature)
 - [ ] patterns
+
+## TODO
+
+Sending ether - example calling function and sending ether
+
+- [ ] mobile friendly
+- [ ] email subscription
+- [ ] archive 0.5
+- [ ] assembly
+- [ ] interface?
+
+hacks
+
+- [ ] reentrancy
+- [ ] writing to storage
+- [ ] uint overflow
+- [ ] selfdestruct
+- [ ] blockhash
+
+applications
+
+- [ ] multisig wallet
+- [ ] unidirectional
+- [ ] bidirectional
+- [ ] payment hub
+- [ ] counterfactual
+- [ ] minimal proxy contract
+
+patterns
+next video please : how to use erc20 in our contracts , example a smart contract that when it gets eth it throws back usdc to the same address or the reverse
+thanks in advance :)
