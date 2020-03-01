@@ -103,3 +103,6 @@ npm run gen-html-page -- Import
 - [ ] interface
 - [ ] assembly (call, delegatecall, signature)
 - [ ] patterns
+
+next video please : how to use erc20 in our contracts , example a smart contract that when it gets eth it throws back usdc to the same address or the reverse
+thanks in advance :)

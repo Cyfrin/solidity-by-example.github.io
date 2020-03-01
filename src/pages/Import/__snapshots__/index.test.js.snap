@@ -8,14 +8,14 @@ exports[`it renders 1`] = `
 <p>Here is our folder structure.</p>
 <pre><code>├── Import.sol
 └── Foo.sol</code></pre><p>Foo.sol</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.11;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
 contract Foo {
     string public name = \\"Foo\\";
 }
 </code></pre>
 <p>Import.sol</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.11;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
 // import Foo.sol from current directory
 import \\"./Foo.sol\\";

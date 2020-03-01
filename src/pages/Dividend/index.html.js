@@ -5,7 +5,7 @@ const html = `<p>A contract that pays dividend to shareholders should</p>
 <li>shareholders can withdraw dividend at any time</li>
 </ul>
 <p>We let the user withdraw their dividend. For more information about <code>Push vs Pull</code> contract design, check out <a href="https://consensys.github.io/smart-contract-best-practices/recommendations/#favor-pull-over-push-for-external-calls">here</a></p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Dividend {
     event AddShareholder(address indexed account, uint shares);

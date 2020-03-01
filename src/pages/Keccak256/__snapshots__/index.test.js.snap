@@ -10,7 +10,7 @@ exports[`it renders 1`] = `
 <li>Commit-Reveal scheme</li>
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.11;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
 contract Keccak256 {
   struct Todo {

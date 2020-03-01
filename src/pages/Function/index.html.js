@@ -1,5 +1,5 @@
 const html = `<p>In Solidity, public functions cannot accept certain data types as inputs or outputs</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Function {
     // cannot use map for inputs

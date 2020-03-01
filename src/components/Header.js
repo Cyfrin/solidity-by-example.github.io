@@ -12,7 +12,7 @@ function Header(props) {
       <h3>
         <a href="/">
           <div>Solidity by Example</div>
-          <div>version 0.5.11</div>
+          <div>version 0.5.16</div>
         </a>
       </h3>
     </div>

@@ -1,6 +1,6 @@
 const html = `<p>Variables stored on the blockchain are called <code>state variables</code>.</p>
 <p><code>State variables</code> are declared inside a contract, but outside functions.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.11;
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract SimpleStorage {
     // These varaibles will be stored on the blockchain.
