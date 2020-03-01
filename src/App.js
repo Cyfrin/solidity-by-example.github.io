@@ -1,6 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import "./App.css"
+import styles from "./App.module.css"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
@@ -44,9 +44,9 @@ import MerkleTree from "./pages/MerkleTree"
 
 function App(props) {
   return (
-    <div className="App">
+    <div className={styles.component}>
       <Header />
-      <div className="App-main">
+      <div className={styles.main}>
         <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route path="/hello-world" component={HelloWorld} />
@@ -96,7 +96,7 @@ function App(props) {
           </Switch>
         </Router>
       </div>
-      <div className="App-footer">
+      <div className={styles.footer}>
         <Footer />
       </div>
     </div>
