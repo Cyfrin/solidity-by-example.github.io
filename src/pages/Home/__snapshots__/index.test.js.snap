@@ -2,14 +2,14 @@
 
 exports[`it renders 1`] = `
 <div
-  className="Home"
+  className="component"
 >
   <SEO
     description="Learn smart contract programming using Solidity"
     title="Solidity by Example"
   />
   <h1
-    className="Home-header"
+    className="header"
   >
     <a
       href="/"
@@ -18,7 +18,7 @@ exports[`it renders 1`] = `
     </a>
   </h1>
   <div
-    className="Home-main"
+    className="main"
   >
     <p>
       an introduction to
@@ -28,10 +28,10 @@ exports[`it renders 1`] = `
       >
         Solidity
       </a>
-       using examples
+       with simple examples
     </p>
     <ul
-      className="Home-list"
+      className="list"
     >
       <li>
         <a
@@ -203,20 +203,6 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/Library"
-        >
-          Library
-        </a>
-      </li>
-      <li>
-        <a
-          href="/new-contract"
-        >
-          Creating Contract from Other Contract
-        </a>
-      </li>
-      <li>
-        <a
           href="/calling-contract"
         >
           Calling Other Contract
@@ -224,9 +210,16 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/self-destruct"
+          href="/new-contract"
         >
-          Self Destruct
+          Contract that Create other Contracts
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Library"
+        >
+          Library
         </a>
       </li>
       <li>
@@ -245,6 +238,13 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
+          href="/self-destruct"
+        >
+          Self Destruct
+        </a>
+      </li>
+      <li>
+        <a
           href="/import"
         >
           Import
@@ -255,18 +255,6 @@ exports[`it renders 1`] = `
           href="/safe-math"
         >
           Safe Math
-        </a>
-      </li>
-    </ul>
-    <h3>
-      Hacks
-    </h3>
-    <ul>
-      <li>
-        <a
-          href="/re-entrancy"
-        >
-          Re-Entrancy
         </a>
       </li>
     </ul>
@@ -300,6 +288,18 @@ exports[`it renders 1`] = `
           href="/merkle-tree"
         >
           Merkle Tree
+        </a>
+      </li>
+    </ul>
+    <h3>
+      Hacks
+    </h3>
+    <ul>
+      <li>
+        <a
+          href="/re-entrancy"
+        >
+          Re-Entrancy
         </a>
       </li>
     </ul>

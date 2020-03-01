@@ -1,24 +1,25 @@
 import React from "react"
 import SEO from "../../components/SEO"
-import "./index.css"
+import styles from "./index.module.css"
 
 function Home() {
   return (
-    <div className="Home">
+    <div className={styles.component}>
       <SEO
         title="Solidity by Example"
         description="Learn smart contract programming using Solidity"
       />
-      <h1 className="Home-header">
+      <h1 className={styles.header}>
         <a href="/">Solidity by Example</a>
       </h1>
-      <div className="Home-main">
+      <div className={styles.main}>
         <p>
           an introduction to{" "}
-          <a href="https://solidity.readthedocs.io">Solidity</a> using examples
+          <a href="https://solidity.readthedocs.io">Solidity</a> with simple
+          examples
         </p>
 
-        <ul className="Home-list">
+        <ul className={styles.list}>
           <li>
             <a href="/hello-world">Hello World</a>
           </li>
@@ -97,13 +98,10 @@ function Home() {
             <a href="/calling-contract">Calling Other Contract</a>
           </li>
           <li>
-            <a href="/Library">Library</a>
-          </li>
-          <li>
             <a href="/new-contract">Contract that Create other Contracts</a>
           </li>
           <li>
-            <a href="/self-destruct">Self Destruct</a>
+            <a href="/Library">Library</a>
           </li>
           <li>
             <a href="/hashing">Hashing with Keccak256</a>
@@ -112,17 +110,13 @@ function Home() {
             <a href="/signature">Verifying Signature</a>
           </li>
           <li>
+            <a href="/self-destruct">Self Destruct</a>
+          </li>
+          <li>
             <a href="/import">Import</a>
           </li>
           <li>
             <a href="/safe-math">Safe Math</a>
-          </li>
-        </ul>
-
-        <h3>Hacks</h3>
-        <ul>
-          <li>
-            <a href="/re-entrancy">Re-Entrancy</a>
           </li>
         </ul>
 
@@ -139,6 +133,13 @@ function Home() {
           </li>
           <li>
             <a href="/merkle-tree">Merkle Tree</a>
+          </li>
+        </ul>
+
+        <h3>Hacks</h3>
+        <ul>
+          <li>
+            <a href="/re-entrancy">Re-Entrancy</a>
           </li>
         </ul>
       </div>
