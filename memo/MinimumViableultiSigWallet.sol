@@ -13,9 +13,9 @@ contract MinimumViableMultiSigWallet {
     mapping(bytes32 => bool) isExecuted;
 
     // NOTE: N / N multisig wallet
-    constructor(address[] memory _owners) public {
-        owners = _owners;
-    }
+    // constructor(address[] memory _owners) public {
+    //     owners = _owners;
+    // }
 
     function () external payable {}
 
@@ -32,6 +32,7 @@ contract MinimumViableMultiSigWallet {
         returns (bytes32)
     {
         // TODO: learn why bytes 0x19
+        // TODO: include contract address?
         return keccak256(abi.encodePacked(
             byte(0x19),
             owners,
@@ -52,6 +53,7 @@ contract MinimumViableMultiSigWallet {
     {
         bytes32 transactionHash = getTransactionHash(_to, _value, _data);
 
+        // NOTE: this guards against re-entrancy
         require(!isExecuted[transactionHash], "Transaction has already been executed");
 
         for (uint i = 0; i < owners.length; i++) {
@@ -66,49 +68,70 @@ contract MinimumViableMultiSigWallet {
         execute(_to, _value, _data);
     }
 
+    // TODO: what does this comment mean?
+    // call has been separated into its own function in order to take advantage
+    // of the Solidity's code generator to produce a loop that copies tx.data into memory.
+
     function execute(address _to, uint _value, bytes memory _data) internal {
         bool success;
 
         // TODO: learn assembly
-        // call(g, a, v, in, insize, out, outsize)
-        // g - gas to forward
-        // a - address to be called
-        // v - amount of Ether to transfer
-        // in - memory position of insize bytes where call data is stored
-        // insize - size of bytes of calldata
-        // out - where return data will be stored
-        // outsize - size of return data
-
         /*
+        call(g, a, v, in, insize, out, outsize)
+        g - gas to forward
+        a - address to be called
+        v - amount of Ether to transfer (wei)
+        in - memory position of insize bytes where call data is stored
+        insize - size of bytes of calldata
+        out - where return data will be stored
+        outsize - size of return data
+
         call contract at address a with
         input mem[in…(in+insize))
         providing g gas and v wei
         and output area mem[out…(out+outsize))
         returning 0 on error (eg. out of gas) and 1 on success
+
+        https://ethereum.stackexchange.com/questions/6354/how-do-i-construct-a-call-to-another-contract-using-inline-assembly
         */
 
         /*
+        add(_data, 0x20)
+
+        The first 32 bytes of the dynamically-sized byte array bytes contain the length of the bytes instance.
+        So when we say add(data, 32), what we do is adding 32 to the pointer that points
+        toward the memory address of our data variable. This essentially means: skip the first 32 bytes.
+
+        // TODO add example
+        */
+
+        /*
+        mload(_data)
+
+        mload(0x40)  Allocate memory for output (0x40 is where "free memory" pointer is stored by convention)
+        mload(_data) loads the length (first 32 bytes)
+
         https://ethereum.stackexchange.com/questions/9603/understanding-mload-assembly-function
-        m:=mload(0x40) instruction reads the 32 bytes of memory starting at position 0x40.
-In solidity, the 0x40 slot in memory is special: it contains the "free memory pointer" which points to the end of the currently allocated memory.
+
+        TODO: mload example
         */
 
-        // add(_data, 0x20) First 32 bytes are the padded length of data, so exclude that
-        /*
-        The first 32 bytes of the dynamically-sized byte array bytes contain the length of the bytes instance. So when we say add(data, 32), what we do is adding 32 to the pointer that points toward the memory address of our data variable. This essentially means: skip the first 32 bytes.
-        */
-
-        // TODO:  sub(gas, 34710)?
-        // call
-        // https://ethereum.stackexchange.com/questions/6354/how-do-i-construct-a-call-to-another-contract-using-inline-assembly
-
-            // mload(_data) Load the length (first 32 bytes)
+        // TODO: sub(gas, 34710)?
+        // TODO: why not use addr.call?
         assembly {
-            success := call(gas, _to, _value, add(_data, 0x20), mload(_data), 0, 0)
+            success := call(gas, _to, _value, add(_data, 0x20), mload(_data), mload(0x40), 0)
         }
 
         require(success, "Transaction failed");
     }
 
-    // TODO: delegate call?
+    function test() public returns (uint) {
+        uint i;
+
+        assembly {
+            i := add(1, 2)
+        }
+
+        return i;
+    }
 }
