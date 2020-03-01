@@ -100,7 +100,7 @@ function Home() {
             <a href="/Library">Library</a>
           </li>
           <li>
-            <a href="/new-contract">Creating Contract from Other Contract</a>
+            <a href="/new-contract">Contract that Create other Contracts</a>
           </li>
           <li>
             <a href="/self-destruct">Self Destruct</a>

@@ -5,7 +5,7 @@ import html from "./index.html.js"
 function NewContract(props) {
   return (
     <Example
-      title="Creating Contract from Other Contract"
+      title="Contract that Create other Contracts"
       description="Learn how to create new contract from inside a contract with Solidity"
       html={html}
     />
