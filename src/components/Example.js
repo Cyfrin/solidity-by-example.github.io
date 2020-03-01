@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { SOL_VERSION } from "../constants"
 import SEO from "./SEO"
 import Html from "./Html"
 import styles from "./Example.module.css"
@@ -9,7 +10,10 @@ function Example(props) {
 
   return (
     <div className={styles.component}>
-      <SEO {...props} title={`${title} | Learn Solidity by Example`} />
+      <SEO
+        {...props}
+        title={`${title} | Solidity by Example | ${SOL_VERSION}`}
+      />
       <h2>{title}</h2>
 
       <Html html={props.html} />

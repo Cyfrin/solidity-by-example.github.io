@@ -8,42 +8,42 @@ exports[`it renders 1`] = `
 
 contract Car {
     address public owner;
-    string public name;
+    string public model;
 
-    constructor(address _owner, string memory _name) public payable {
+    constructor(address _owner, string memory _model) public payable {
         owner = _owner;
-        name = _name;
+        model = _model;
     }
 }
 
 contract CarFactory {
-    Car public car = new Car(msg.sender, \\"Carol\\");
-
     Car[] public cars;
 
-    function create(string memory name) public {
-        Car c = new Car(msg.sender, name);
-        cars.push(c);
+    function create(address _owner, string memory _model) public {
+        Car car = new Car(_owner, _model);
+        cars.push(car);
     }
 
-    function createAndSendEther(string memory name) public payable {
-        // Send ether along with the creation
-        Car c = (new Car).value(msg.value)(msg.sender, name);
-        cars.push(c);
-    }
-
-    function getCar(uint index)
-      public
-      view
-      returns (address owner, string memory name, uint balance)
+    function createAndSendEther(address _owner, string memory _model)
+        public
+        payable
     {
-        Car c = cars[index];
+        Car car = (new Car).value(msg.value)(_owner, _model);
+        cars.push(car);
+    }
 
-        return (c.owner(), c.name(), address(c).balance);
+    function getCar(uint _index)
+        public
+        view
+        returns (address owner, string memory model, uint balance)
+    {
+        Car car = cars[_index];
+
+        return (car.owner(), car.model(), address(car).balance);
     }
 }
 </code></pre>
 "
-  title="Creating Contract from Other Contract"
+  title="Contract that Create other Contracts"
 />
 `;

@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
 >
   <SEO
     description="Learn smart contract programming using Solidity"
-    title="Solidity by Example"
+    title="Solidity by Example | 0.5.16"
   />
   <h1
     className="header"
