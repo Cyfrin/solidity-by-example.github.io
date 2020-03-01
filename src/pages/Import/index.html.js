@@ -26,10 +26,13 @@ contract Import {
 }
 </code></pre>
 <h3 id="external">External</h3>
-<p>You can also import from <a href="https://github.com">GitHub</a>, but you need to drop <code>blob/&lt;branch name&gt;</code> from the URL.</p>
-<pre><code class="language-solidity">// https://github.com/owner/repo/blob/master/path/to/Contract.sol
+<p>You can also import from <a href="https://github.com">GitHub</a> by simply dropping the <code>https://</code> from the url</p>
+<pre><code class="language-solidity">// https://github.com/owner/repo/blob/branch/path/to/Contract.sol
+import "github.com/owner/repo/blob/branch/path/to/Contract.sol";
 
-import "github.com/owner/repo/path/to/Contract.sol"</code></pre>
+// Example import ECDSA.sol from openzeppelin-contract repo, release-v2.5.0 branch
+// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";</code></pre>
 `
 
 export default html
