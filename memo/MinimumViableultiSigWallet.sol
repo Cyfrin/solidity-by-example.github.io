@@ -1,27 +1,23 @@
-
 pragma solidity ^0.5.11;
-// TODO not needed for 0.6?
 pragma experimental ABIEncoderV2;
 
+// TODO copy paste ECDSA contract here?
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
 
 contract MinimumViableMultiSigWallet {
     using ECDSA for bytes32;
-    // executeTransaction
 
     address[] public owners;
     mapping(bytes32 => bool) isExecuted;
 
-    // NOTE: N / N multisig wallet
-    // constructor(address[] memory _owners) public {
-    //     owners = _owners;
-    // }
+    // NOTE: N / N multisig wallet (does not check if owners are unique)
+    constructor(address[] memory _owners) public payable {
+        require(owners.length > 0, "Owners required");
+        owners = _owners;
+    }
 
     function () external payable {}
 
-    /*
-    NOTE two transactions with identical values of (to, value, data) are not distinguished.
-    */
     function getTransactionHash(
         address _to,
         uint _value,
@@ -31,10 +27,8 @@ contract MinimumViableMultiSigWallet {
         view
         returns (bytes32)
     {
-        // TODO: learn why bytes 0x19
-        // TODO: include contract address?
         return keccak256(abi.encodePacked(
-            byte(0x19),
+            address(this),
             owners,
             _to,
             _value,
@@ -42,7 +36,7 @@ contract MinimumViableMultiSigWallet {
         ));
     }
 
-    // TODO example
+    // TODO example (send / withdraw ether and call other contract)
     function executeTransaction(
         address _to,
         uint _value,
@@ -55,6 +49,7 @@ contract MinimumViableMultiSigWallet {
 
         // NOTE: this guards against re-entrancy
         require(!isExecuted[transactionHash], "Transaction has already been executed");
+        isExecuted[transactionHash] = true;
 
         for (uint i = 0; i < owners.length; i++) {
             require(
@@ -63,19 +58,15 @@ contract MinimumViableMultiSigWallet {
             );
         }
 
-        isExecuted[transactionHash] = true;
-
-        execute(_to, _value, _data);
+        // NOTE: _to does not need to be payable even if we send Ether
+        (bool success,) = _to.call.value(_value)(_data);
+        require(success, "Transaction failed");
+        // execute(_to, _value, _data);
     }
-
-    // TODO: what does this comment mean?
-    // call has been separated into its own function in order to take advantage
-    // of the Solidity's code generator to produce a loop that copies tx.data into memory.
 
     function execute(address _to, uint _value, bytes memory _data) internal {
         bool success;
 
-        // TODO: learn assembly
         /*
         call(g, a, v, in, insize, out, outsize)
         g - gas to forward
@@ -116,22 +107,11 @@ contract MinimumViableMultiSigWallet {
         TODO: mload example
         */
 
-        // TODO: sub(gas, 34710)?
-        // TODO: why not use addr.call?
+        // NOTE: equivalent to _to.call.value(_value)(_data)
         assembly {
             success := call(gas, _to, _value, add(_data, 0x20), mload(_data), mload(0x40), 0)
         }
 
         require(success, "Transaction failed");
-    }
-
-    function test() public returns (uint) {
-        uint i;
-
-        assembly {
-            i := add(1, 2)
-        }
-
-        return i;
     }
 }
