@@ -212,7 +212,14 @@ exports[`it renders 1`] = `
         <a
           href="/new-contract"
         >
-          Contract that Create other Contracts
+          CCreating Contracts from a Contract
+        </a>
+      </li>
+      <li>
+        <a
+          href="/import"
+        >
+          Import
         </a>
       </li>
       <li>
@@ -241,13 +248,6 @@ exports[`it renders 1`] = `
           href="/self-destruct"
         >
           Self Destruct
-        </a>
-      </li>
-      <li>
-        <a
-          href="/import"
-        >
-          Import
         </a>
       </li>
       <li>
