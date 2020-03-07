@@ -99,7 +99,10 @@ function Home() {
             <a href="/calling-contract">Calling Other Contract</a>
           </li>
           <li>
-            <a href="/new-contract">Contract that Create other Contracts</a>
+            <a href="/new-contract">CCreating Contracts from a Contract</a>
+          </li>
+          <li>
+            <a href="/import">Import</a>
           </li>
           <li>
             <a href="/Library">Library</a>
@@ -112,9 +115,6 @@ function Home() {
           </li>
           <li>
             <a href="/self-destruct">Self Destruct</a>
-          </li>
-          <li>
-            <a href="/import">Import</a>
           </li>
           <li>
             <a href="/safe-math">Safe Math</a>
