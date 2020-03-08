@@ -63,13 +63,16 @@ contract VerifySig {
 }
 
 contract VerifySignature {
+    function getMessageHash(string memory _message) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(_message));
+    }
   // Signature is produced by signing a hash with the following format:
   // - prefix of "\x19Ethereum Signed Message\n"
   // - length of message
   // - actual message
-  function getHash() public pure returns (bytes32) {
+  function getEthSignedMessageHash(bytes32 _messageHash) public pure returns (bytes32) {
     // Here we are computing the hash of "Hello World", which has length 11.
-    return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n11", "Hello World"));
+    return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", _messageHash));
   }
 
   // Let's sign "Hello World" (without quotes) using Remix
@@ -85,7 +88,7 @@ contract VerifySignature {
 
   // If the signature or hash is valid the function will return
   // the address of the signer, otherwise a zero address.
-  function recoverSigner(bytes32 _hash, bytes memory _signature)
+  function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
     public
     pure
     returns (uint8, address)
@@ -95,7 +98,9 @@ contract VerifySignature {
 
     // There is a bug in Remix IDE, so we fix 'v' to the expected value,  0x1b
     // return ecrecover(_hash, v, r, s);
-    return (v, ecrecover(_hash, 0x1b, r, s));
+    // TODO: why hash before signing?
+    // TODO: why eth prefix before signing?
+    return (v, ecrecover(_ethSignedMessageHash, 0x1b, r, s));
   }
 
   function splitSignature(bytes memory sig)
