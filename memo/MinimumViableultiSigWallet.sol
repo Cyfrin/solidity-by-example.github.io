@@ -39,12 +39,12 @@ contract MinimumViableMultiSigWallet {
         ));
     }
 
-    function verify(bytes32 txHash, bytes memory sig) public view returns (address) {
-        return txHash.toEthSignedMessageHash().recover(sig);
+    function getEthSignedMessageHash(bytes32 txHash) public view returns (bytes32){
+        return txHash.toEthSignedMessageHash();
     }
 
-    function getSigHash(bytes32 txHash) public view returns (bytes32){
-        return txHash.toEthSignedMessageHash();
+    function verify(bytes32 _txHash, bytes memory sig) public view returns (address) {
+        return _txHash.toEthSignedMessageHash().recover(sig);
     }
 
     // TODO example (send / withdraw ether and call other contract)
@@ -63,9 +63,11 @@ contract MinimumViableMultiSigWallet {
         require(!isExecuted[transactionHash], "Transaction has already been executed");
         isExecuted[transactionHash] = true;
 
+        bytes32 signedHash = transactionHash.toEthSignedMessageHash();
+
         for (uint i = 0; i < owners.length; i++) {
             require(
-                owners[i] == transactionHash.recover(_signatures[i]),
+                owners[i] == signedHash.recover(_signatures[i]),
                 "Invalid signature"
             );
         }
@@ -146,10 +148,3 @@ signatures
 0x042d82fc1ae7e693ed8d38acc3688efb06fa39b457c9c8e7ed88f95ef0c5f9c9084431e7fb971b0e508101f69ce8a543f0a4c9b51d8893e717ce8b3c6c30efb71b
 0xdb6b11f92f155fd13bd8a61081fc3a90d5d891e37d2bcf06e32c9c0bce6d9dee03e198870c8a68069168772af0276ea8a1cf397cad9a9d37e7741cf1706d17131b
 */
-
-contract VerifySignature {
-  function getHash(bytes32 _hash) public pure returns (bytes32) {
-    // Here we are computing the hash of "Hello World", which has length 11.
-    return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n11", _hash));
-  }
-}
