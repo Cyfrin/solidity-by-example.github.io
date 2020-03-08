@@ -4,7 +4,7 @@ contract VerifySig {
     // TODO:
     // https://solidity.readthedocs.io/en/v0.6.3/solidity-by-example.html#micropayment-channel
     // https://programtheblockchain.com/posts/2018/02/17/signing-and-verifying-messages-in-ethereum/
-
+    // https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/cryptography/ECDSA.sol
     // ethereum.enable()
 
     // web3.sha3("hello world")
@@ -91,7 +91,7 @@ contract VerifySignature {
   function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
     public
     pure
-    returns (uint8, address)
+    returns (address)
   {
     // Splitting the signature. We can ignore the details.
     (uint8 v, bytes32 r, bytes32 s) = splitSignature(_signature);
@@ -100,7 +100,7 @@ contract VerifySignature {
     // return ecrecover(_hash, v, r, s);
     // TODO: why hash before signing?
     // TODO: why eth prefix before signing?
-    return (v, ecrecover(_ethSignedMessageHash, 0x1b, r, s));
+    return ecrecover(_ethSignedMessageHash, v, r, s);
   }
 
   function splitSignature(bytes memory sig)
@@ -117,7 +117,7 @@ contract VerifySignature {
       // second 32 bytes
       s:= mload(add(sig, 64))
       // final byte (first byte of the next 32 bytes)
-      v := byte(0, mload(add(sig, 0)))
+      v := byte(0, mload(add(sig, 96)))
     }
 
     return (v, r, s);
