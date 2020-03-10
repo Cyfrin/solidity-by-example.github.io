@@ -1,5 +1,4 @@
-
-pragma solidity ^0.5.11;
+pragma solidity ^1.5.11;
 pragma experimental ABIEncoderV2;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
@@ -7,7 +6,7 @@ import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contr
 contract MinimumViableMultiSigWallet {
     using ECDSA for bytes32;
 
-    // TODO nonce?
+    // TODO: nonce?
     address[] public owners;
     mapping(bytes32 => bool) public isExecuted;
 
@@ -37,14 +36,6 @@ contract MinimumViableMultiSigWallet {
             _data,
             _nonce
         ));
-    }
-
-    function getEthSignedMessageHash(bytes32 txHash) public view returns (bytes32){
-        return txHash.toEthSignedMessageHash();
-    }
-
-    function verify(bytes32 _txHash, bytes memory sig) public view returns (address) {
-        return _txHash.toEthSignedMessageHash().recover(sig);
     }
 
     // TODO example (send / withdraw ether and call other contract)
@@ -78,6 +69,7 @@ contract MinimumViableMultiSigWallet {
         // execute(_to, _value, _data);
     }
 
+    // TODO: remove (keeping it now for assembly reference)
     function execute(address _to, uint _value, bytes memory _data) internal {
         bool success;
 
@@ -130,21 +122,23 @@ contract MinimumViableMultiSigWallet {
     }
 }
 
-/*
-owners
-0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c
-0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C
 
+contract CallMe {
+    uint public i;
+
+    function callMe(uint j) public {
+        i += j;
+    }
+
+    function getData() public view returns (bytes memory) {
+        return abi.encodeWithSignature("callMe(uint256)", 123);
+    }
+}
+
+/*
 tx
 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB
 1000000000000000000
 0x0
 0
-
-tx hash
-0x10f24745d5f82eeb1f41792592bad89fea5f42e05bc9ddaeb1c96e4f879420f2
-
-signatures
-0x042d82fc1ae7e693ed8d38acc3688efb06fa39b457c9c8e7ed88f95ef0c5f9c9084431e7fb971b0e508101f69ce8a543f0a4c9b51d8893e717ce8b3c6c30efb71b
-0xdb6b11f92f155fd13bd8a61081fc3a90d5d891e37d2bcf06e32c9c0bce6d9dee03e198870c8a68069168772af0276ea8a1cf397cad9a9d37e7741cf1706d17131b
 */
