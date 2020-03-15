@@ -1,6 +1,9 @@
-Libraries are similar to contracts, but they are deployed only once at a
+Libraries are similar to contracts, but you can't declare any state variable and
+you can't send ether.
 
-specific address and their code is reused using the `delegatecall`.
+A library is embedded into the contract if all library functions are internal.
+
+Otherwise the library must be deployed and then linked before the contract is deployed.
 
 ```solidity
 {{{Library}}}

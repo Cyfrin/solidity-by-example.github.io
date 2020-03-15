@@ -1,7 +1,7 @@
 pragma solidity ^0.5.11;
 
 // NOTE: use case (send ether to precomputed address, recover later)
-
+// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Create2.sol
 contract Wallet {
     address public owner;
     uint public foo;

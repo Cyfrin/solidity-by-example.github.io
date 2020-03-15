@@ -1,38 +1,48 @@
 pragma solidity ^0.5.16;
 
-library MyLib {
-    function incrementBy(uint i, uint val) public pure returns (uint) {
-        return i + val;
-    }
+library SafeMath {
+    function add(uint x, uint y) internal pure returns (uint) {
+        uint z = x + y;
+        require(z >= x, "uint overflow");
 
-    // Array function to delete element at index and re-organize the array
-    // so that their are no gaps between the elements.
-    function deleteElement(string[] storage arr, uint index) internal {
+        return z;
+    }
+}
+
+contract TestSafeMath {
+    using SafeMath for uint;
+
+    uint public MAX_UINT = 2 ** 256 - 1;
+
+    function testAdd(uint x, uint y) public pure returns (uint) {
+        return x.add(y);
+    }
+}
+
+// Array function to delete element at index and re-organize the array
+// so that their are no gaps between the elements.
+library Array {
+    function remove(uint[] storage arr, uint index) public {
         // Move the last element into the place to delete
         arr[index] = arr[arr.length - 1];
-
-        // Remove the last element
         arr.pop();
     }
 }
 
-contract TestMyLib {
-    using MyLib for uint;
-    using MyLib for string[];
+contract TestArray {
+    using Array for uint[];
 
-    string[] public array = ["foo", "bar"];
+    uint[] public arr;
 
-    function testIncrementBy() public pure returns (uint) {
-        uint i = 10;
+    function testArrayRemove() public {
+        for (uint i = 0; i < 3; i++) {
+            arr.push(i);
+        }
 
-        return i.incrementBy(10);
-    }
+        arr.remove(1);
 
-    function testDeleteElement() public {
-        array.push("abc");
-        array.deleteElement(1);
-        // array should now be ["foo", "abc"]
+        assert(arr.length == 2);
+        assert(arr[0] == 0);
+        assert(arr[1] == 2);
     }
 }
-
-// TODO example MyLib.func()
