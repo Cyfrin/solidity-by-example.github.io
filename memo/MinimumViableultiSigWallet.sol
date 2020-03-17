@@ -11,6 +11,7 @@ contract MinimumViableMultiSigWallet {
     mapping(bytes32 => bool) public isExecuted;
 
     // NOTE: N / N multisig wallet (does not check if owners are unique)
+    // TODO: M / N
     constructor(address[] memory _owners) public payable {
         require(_owners.length > 0, "Owners required");
         owners = _owners;
