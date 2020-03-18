@@ -1,63 +1,30 @@
 pragma solidity ^0.5.16;
 
-contract Keccak256 {
-  struct Todo {
-    string text;
-    uint createdAt;
-  }
+contract HashFunction {
+    function hash(string memory _text, uint _num, address _addr)
+        public pure returns (bytes32)
+    {
+        return keccak256(abi.encodePacked(_text, _num, _addr));
+    }
 
-  // Example to create an ID using keccak256
-  function getTodoId() public pure returns (uint) {
-    Todo memory todo = Todo({
-      text: "Creawte Todo ID",
-      createdAt:123456
-    });
+    // Example of hash collision
+    // Hash collision can occur when you pass more than one dynamic data type
+    // to abi.encodePacked. In such case, you should use abi.encode instead.
+    function collision(string memory _text, string memory _anotherText)
+        public pure returns (bytes32)
+    {
+        // encodePacked(AAA, BBB) -> AAABBB
+        // encodePacked(AA, ABBB) -> AAABBB
+        return keccak256(abi.encodePacked(_text, _anotherText));
+    }
+}
 
-    return uint(keccak256(abi.encodePacked(todo.text, todo.createdAt)));
-  }
+contract GuessTheMagicWord {
+    bytes32 public answer =
+        0x60298f78cc0b47170ba79c10aa3851d7648bd96f2f8e46a19dbc777c36fb0c00;
 
-  // Example of commit-reveal scheme
-  // Try:
-  // 1. create a commitment hash by calling getCommitmentHash(your address, "Trump")
-  // 2. commit(hash returned from previous step)
-  // 3. revel(your address, "Trump", your commitment hash) should return true
-  // You have successfully voted without revealing your choice.
-  struct Vote {
-    address voter;
-    string candidate;
-  }
-
-  mapping(bytes32 => bool) public voted;
-
-  function getCommitmentHash(address voter, string memory candidate)
-    public
-    view
-    returns (bytes32)
-  {
-    Vote memory vote = Vote({
-      voter: voter,
-      candidate: candidate
-    });
-
-    return keccak256(abi.encodePacked(vote.voter, vote.candidate));
-  }
-
-  function commit(bytes32 commitmentHash) public {
-    voted[commitmentHash] = true;
-  }
-
-  function reveal(
-    address voter, string memory candidate, bytes32 commitmentHash
-  )
-    public
-    view
-    returns (bool)
-  {
-    bytes32 hash = getCommitmentHash(voter, candidate);
-
-    require(voted[hash], "Voter has not voted");
-    require(hash == commitmentHash, "Invalid commitment hash");
-
-    return true;
-  }
+    // Magic word is "Solidity"
+    function guess(string memory _word) public view returns (bool) {
+        return keccak256(abi.encodePacked(_word)) == answer;
+    }
 }
