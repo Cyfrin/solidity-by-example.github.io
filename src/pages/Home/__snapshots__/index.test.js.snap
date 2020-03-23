@@ -212,7 +212,7 @@ exports[`it renders 1`] = `
         <a
           href="/new-contract"
         >
-          CCreating Contracts from a Contract
+          Creating Contracts from a Contract
         </a>
       </li>
       <li>
