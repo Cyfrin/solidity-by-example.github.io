@@ -1,60 +1,113 @@
 const html = `<p>Messages can be signed off chain and then verified on chain using a smart contract.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
+/* Signature Verification
+
+How to Sign and Verify
+# Signing
+1. Create message to sign
+2. Hash the message
+3. Sign the hash (off chain, keep your private key secret)
+
+# Verify
+1. Recreate hash from the original message
+2. Recover signer from signature and hash
+3. Compare recovered signer to claimed signer
+
+*/
+
 contract VerifySignature {
-  // Signature is produced by signing a hash with the following format:
-  // - prefix of "\\x19Ethereum Signed Message\\n"
-  // - length of message
-  // - actual message
-  function getHash() public pure returns (bytes32) {
-    // Here we are computing the hash of "Hello World", which has length 11.
-    return keccak256(abi.encodePacked("\\x19Ethereum Signed Message:\\n11", "Hello World"));
-  }
+    /* 1. Unlock MetaMask account
+    ethereum.enable()
+    */
 
-  // Let&#39;s sign "Hello World" (without quotes) using Remix
-  // You will see a dialog box with the following output
+    /* 2. Get message hash to sign
+    getMessageHash(
+        0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C,
+        123,
+        "coffee and donuts",
+        1
+    )
 
-  // hash
-  // 0xa1de988600a42c4b4ab089b619297c17d53cffae5d5120d82d8a92d0bb3b78f2
-  // signature (this will be different depending on the account)
-  // 0x16a16577ba9ac82469ce52db5ea70f622c644006a343649d2b3775ac1470bc49394479b4f97a5baefe82abad836e4648f31c59c564652ea735a8c17d1204f37300
-
-  // Next we recover the signer from the hash and signature.
-  // Execute this function below inputting the hash and your signature.
-
-  // If the signature or hash is valid the function will return
-  // the address of the signer, otherwise a zero address.
-  function recoverSigner(bytes32 _hash, bytes memory _signature)
-    public
-    pure
-    returns (address)
-  {
-    // Splitting the signature. We can ignore the details.
-    (uint8 v, bytes32 r, bytes32 s) = splitSignature(_signature);
-
-    // There is a bug in Remix IDE, so we fix &#39;v&#39; to the expected value,  0x1b
-    // return ecrecover(_hash, v, r, s);
-    return ecrecover(_hash, 0x1b, r, s);
-  }
-
-  function splitSignature(bytes memory sig)
-    public
-    pure
-    returns (uint8 v, bytes32 r, bytes32 s)
-  {
-    require(sig.length == 65);
-
-    assembly {
-      // first 32 bytes, after the length prefix
-      r := mload(add(sig, 32))
-      // second 32 bytes
-      s:= mload(add(sig, 64))
-      // final byte (first byte of the next 32 bytes)
-      v := byte(0, mload(add(sig, 0)))
+    hash = 0xcf36ac4f97dc10d91fc2cbb20d718e94a8cbfe0f82eaedc6a4aa38946fb797cd
+    */
+    function getMessageHash(
+        address _to, uint _amount, string memory _message, uint _nonce
+    )
+        public pure returns (bytes32)
+    {
+        return keccak256(abi.encodePacked(_to, _amount, _message, _nonce));
     }
 
-    return (v, r, s);
-  }
+    /* 3. Sign message hash
+    web3.personal.sign(hash, web3.eth.defaultAccount, console.log)
+
+    Signature will be different for different accounts
+    0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
+    */
+    function getEthSignedMessageHash(bytes32 _messageHash) public pure returns (bytes32) {
+        /*
+        Signature is produced by signing a keccak256 hash with the following format:
+        "\\x19Ethereum Signed Message\\n" + len(msg) + msg
+        */
+        return keccak256(abi.encodePacked("\\x19Ethereum Signed Message:\\n32", _messageHash));
+    }
+
+    /* 4. Verify signature
+    signer = 0xB273216C05A8c0D4F0a4Dd0d7Bae1D2EfFE636dd
+    to = 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C
+    amount = 123
+    message = "coffee and donuts"
+    nonce = 1
+    signature =
+        0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
+    */
+    function verify(
+        address _signer,
+        address _to, uint _amount, string memory _message, uint _nonce,
+        bytes memory signature
+    )
+        public pure returns (bool)
+    {
+        bytes32 messageHash = getMessageHash(_to, _amount, _message, _nonce);
+        bytes32 ethSignedMessageHash = getEthSignedMessageHash(messageHash);
+
+        return recoverSigner(ethSignedMessageHash, signature) == _signer;
+    }
+
+    function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
+        public pure returns (address)
+    {
+        (bytes32 r, bytes32 s, uint8 v) = splitSignature(_signature);
+
+        return ecrecover(_ethSignedMessageHash, v, r, s);
+    }
+
+    function splitSignature(bytes memory sig)
+        public pure returns (bytes32 r, bytes32 s, uint8 v)
+    {
+        require(sig.length == 65, "invalid signature length");
+
+        assembly {
+            /*
+            First 32 bytes stores the length of the signature
+
+            add(sig, 32) = pointer of sig + 32
+            effectively, skips first 32 bytes of signature
+
+            mload(p) loads next 32 bytes starting at the memory address p into memory
+            */
+
+            // first 32 bytes, after the length prefix
+            r := mload(add(sig, 32))
+            // second 32 bytes
+            s := mload(add(sig, 64))
+            // final byte (first byte of the next 32 bytes)
+            v := byte(0, mload(add(sig, 96)))
+        }
+
+        // implicitly return (r, s, v)
+    }
 }
 </code></pre>
 `
