@@ -24,57 +24,92 @@ npm run gen-html-page -- SafeMath
 npm run gen-html-page -- Import
 ```
 
-# Topics
+### Key Concepts
 
-## Basic
-
-- [ ] hello world
-- [ ] local and state variables
-- [ ] ether and wei uints
+- [x] hello world
+- [ ] first application (counter app)
+- [ ] variables (local, state, global)
 - [ ] gas and gas price
-- [ ] function
-  - [ ] getters and setters
+- [ ] ether and wei
+- [ ] getters and setters (tx)
+
+### Data types
+
+- [x] primitives (uint, address,...)
+- [x] custom types (struct, enum)
+  - [x] enum
+  - [x] structs
+- [ ] storage, memory, calldata?
+- [ ] reference types (?)
+  - [ ] mapping
+    - [ ] CRUD
+    - [ ] nested, structs
+    - [ ] not iterable
+  - [ ] array
+    - [ ] CRUD
+    - [ ] nested, structs
+    - [ ] delete element (compact)
+  - [ ] string
+
+### Flow control
+
+- [ ] if / else
+- [ ] for loop
+  - [ ] gas limits
+
+### Function
+
+- [x] function
+  - [ ] getters and setters (tx)
+  - [ ] storage, memory, calldata?
   - [ ] different ways to return outputs
   - [ ] destructing outputs
   - [ ] restriction on inputs and return types (pre: array and maps)
   - [ ] view and pure functions
-- [ ] function modifiers
+- [x] error
+  - [ ] assert, require, revert
+- [x] function modifiers (pre: error)
   - [ ] before and after function call
   - [ ] examples (restrict access, validate inputs, re-entrancy lock) (pre: error handling, re-entrancy)
-- [ ] error
-  - [ ] assert, require, revert
-- [ ] events
-  - [ ] 3 indexes
-  - [ ] ui
-  - [ ] storage
-- [ ] enum (pre: error)
-- [ ] structs (pre: array?)
-- [ ] loop
-  - [ ] gas limits
-- [ ] mapping
-  - [ ] CRUD
-  - [ ] not iterable
-- [ ] array
-  - [ ] delete element (compact)
+
+### Inheritance
+
 - [ ] inheritance
   - [ ] constructor
   - [ ] calling parent contracts
   - [ ] shadowing state variables
 - [ ] visibility (pre: inheritance)
-- [ ] interface?
-- [ ] assembly?
+- [ ] interface??
+
+### Sending and Receiving Ether
+
 - [ ] payable
 - [ ] fallback (pre: payable?)
 - [ ] send ether from contract (pre: payable, ether)
+  - [ ] send ether to constructor?
+
+### Contract Interaction
+
 - [ ] call (pre: sending ether)
 - [ ] delegate call (pre: call)
-- [ ] calling other contracts (pre: sending ether from contract)
-- [ ] creating contract from a contract (pre: calling other contract)
-- [ ] import
 - [ ] library
   - [ ] safe math
   - [ ] iterable mapping
   - [ ] array
+- [ ] calling other contracts (pre: sending ether from contract)
+- [ ] creating contract from a contract (pre: calling other contract)
+
+### Misc
+
+- [ ] import
+- [ ] assembly??
+- [ ] events
+  - [ ] 3 indexes
+  - [ ] ui
+  - [ ] storage
+
+### Cryptography
+
 - [ ] hash function
 - [ ] signature verification (pre: hash function, assembly?)
 
@@ -87,6 +122,8 @@ npm run gen-html-page -- Import
 - [ ] merkle tree
 - [ ] payment channels (uni, bidirectional, payment hub?)
 - [ ] create2
+- [ ] casper?
+- [ ] minimal proxy contract?
 
 ## Hacks
 
@@ -97,82 +134,12 @@ npm run gen-html-page -- Import
 - [ ] blockhash
 - [ ] honeypot
 
-# Patterns
-
-## basics
-
-- [x] Hello World
-- [ ] Primitive types (uint, bool, address)
-- [ ] Variables (local, state, global)
-- [ ] conditional
-- [ ] loops
-- [ ] storage, memory, calldata
-- [ ] string?
-- [ ] array
-- [ ] mapping
-- [ ] enum
-- [ ] struct
-- [ ] contract
-- [ ] special variables
-- [ ] Ether and Wei
-- [ ] Gas and Gas Price (prereq: loops and collection)
-
-## intermediate
-
-- [ ] Function
-- [ ] Error
-- [ ] Function Modifier
-- [ ] View and Pure Functions
-
-- [ ] Sending Ether
-  - [ ] Payable
-  - [ ] Fallback
-- [ ] Call
-- [ ] Delegatecall
-- [ ] Calling Other Contract
-
-- [ ] Constructor
-- [ ] Inheritance
-- [ ] Calling Parent Contracts
-- [ ] Shadowing Inherited State Variables
-- [ ] Visibility
-- [ ] Creating Contract from Other Contract
-
-- [ ] Events
-- [ ] Library
-- [ ] Self Destruct
-- [ ] Hashing with Keccak256
-- [ ] Verifying Signature
-- [ ] Import
-- [ ] interface
-- [ ] assembly (call, delegatecall, signature)
-- [ ] patterns
+## Patterns
 
 ## TODO
 
 - [ ] mobile friendly
 - [ ] archive 0.5
-
-hacks
-
-- [ ] reentrancy
-- [ ] writing to storage
-- [ ] uint overflow
-- [ ] selfdestruct
-- [ ] blockhash
-- [ ] honeypot
-
-applications
-
-- [ ] multisig wallet
-- [ ] erc20
-- [ ] unidirectional?
-- [ ] bidirectional
-- [ ] payment hub?
-- [ ] counterfactual?
-- [ ] minimal proxy contract?
-
-patterns
 
 ## suggestions
 
