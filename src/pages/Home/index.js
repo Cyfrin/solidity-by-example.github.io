@@ -113,9 +113,6 @@ function Home() {
           <li>
             <a href="/signature">Verifying Signature</a>
           </li>
-          <li>
-            <a href="/safe-math">Safe Math</a>
-          </li>
         </ul>
 
         <h3>Applications</h3>

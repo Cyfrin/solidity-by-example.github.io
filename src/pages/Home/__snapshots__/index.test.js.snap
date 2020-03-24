@@ -243,13 +243,6 @@ exports[`it renders 1`] = `
           Verifying Signature
         </a>
       </li>
-      <li>
-        <a
-          href="/safe-math"
-        >
-          Safe Math
-        </a>
-      </li>
     </ul>
     <h3>
       Applications
