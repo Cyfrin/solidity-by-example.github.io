@@ -245,13 +245,6 @@ exports[`it renders 1`] = `
       </li>
       <li>
         <a
-          href="/self-destruct"
-        >
-          Self Destruct
-        </a>
-      </li>
-      <li>
-        <a
           href="/safe-math"
         >
           Safe Math
@@ -300,6 +293,13 @@ exports[`it renders 1`] = `
           href="/re-entrancy"
         >
           Re-Entrancy
+        </a>
+      </li>
+      <li>
+        <a
+          href="/self-destruct"
+        >
+          Self Destruct
         </a>
       </li>
     </ul>

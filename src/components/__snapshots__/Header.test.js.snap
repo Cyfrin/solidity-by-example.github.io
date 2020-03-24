@@ -2,14 +2,14 @@
 
 exports[`it renders 1`] = `
 <div
-  className="Header"
+  className="component"
 >
   <a
     href="/"
   >
     <img
       alt="logo"
-      className="Header-logo"
+      className="logo"
       src="logo.svg"
     />
   </a>
@@ -21,7 +21,7 @@ exports[`it renders 1`] = `
         Solidity by Example
       </div>
       <div>
-        version 0.5.11
+        version 0.5.16
       </div>
     </a>
   </h3>

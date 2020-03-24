@@ -2,7 +2,7 @@
 
 exports[`it renders 1`] = `
 <p
-  className="footer"
+  className="component"
 >
   <a
     href="mailto:contact@solidity-by-example.org"
