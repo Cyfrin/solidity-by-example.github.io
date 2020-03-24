@@ -1,6 +1,5 @@
 import HelloWorld from "./pages/HelloWorld"
 import StateVariables from "./pages/StateVariables"
-import SafeMath from "./pages/SafeMath"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
@@ -48,10 +47,6 @@ const routes = [
   {
     path: "/import",
     component: Import,
-  },
-  {
-    path: "/safe-math",
-    component: SafeMath,
   },
   {
     path: "/events",

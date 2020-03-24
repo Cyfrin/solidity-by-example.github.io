@@ -29,11 +29,6 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          key="/safe-math"
-          path="/safe-math"
-        />
-        <Route
-          component={[Function]}
           key="/events"
           path="/events"
         />

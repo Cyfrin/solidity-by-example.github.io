@@ -113,12 +113,6 @@ function Home() {
           <li>
             <a href="/signature">Verifying Signature</a>
           </li>
-          <li>
-            <a href="/self-destruct">Self Destruct</a>
-          </li>
-          <li>
-            <a href="/safe-math">Safe Math</a>
-          </li>
         </ul>
 
         <h3>Applications</h3>
@@ -141,6 +135,9 @@ function Home() {
         <ul>
           <li>
             <a href="/re-entrancy">Re-Entrancy</a>
+          </li>
+          <li>
+            <a href="/self-destruct">Self Destruct</a>
           </li>
         </ul>
       </div>
