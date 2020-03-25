@@ -24,94 +24,104 @@ npm run gen-html-page -- SafeMath
 npm run gen-html-page -- Import
 ```
 
-### Key Concepts
+### Basic - 0
 
 - [x] hello world
-- [ ] first application (counter app)
-- [ ] variables (local, state, global)
-- [ ] gas and gas price
-- [ ] ether and wei
-- [ ] getters and setters (tx)
+- [x] first application (counter app)
+- [x] primitives (uint, bytes32, address...)
+- [x] variables (local, state, global)
+- [x] getters and setters (tx)
+- [x] gas and gas price
+- [x] ether and wei
+- [ ] TODO: app
 
-### Data types
+### Basic - 1
 
-- [x] primitives (uint, address,...)
+##### Flow control
+
+- [x] if / else
+- [x] for loop
+
+- [x] error (pre: if / else)
+- [x] events
+  - [x] 3 indexes
+  - [x] ui
+  - [x] storage
+- [ ] TODO: app
+
+# Data types
+
+- [x] mapping
+  - [x] CRUD
+  - [x] nested
+  - [x] not iterable
+- [x] array
+  - [x] fixed size / dynamic size
+  - [x] CRUD
+  - [x] delete element (compact)
+- [x] string
+- [x] bytes
 - [x] custom types (struct, enum)
   - [x] enum
   - [x] structs
-- [ ] storage, memory, calldata?
-- [ ] reference types (?)
-  - [ ] mapping
-    - [ ] CRUD
-    - [ ] nested, structs
-    - [ ] not iterable
-  - [ ] array
-    - [ ] CRUD
-    - [ ] nested, structs
-    - [ ] delete element (compact)
-  - [ ] string
-
-### Flow control
-
-- [ ] if / else
-- [ ] for loop
-  - [ ] gas limits
+    - [x] struct with mapping, array
+    - [x] array of structs, mapping to structs
+    - [x] storage declaration
+- [ ] TODO: app
 
 ### Function
 
 - [x] function
-  - [ ] getters and setters (tx)
-  - [ ] storage, memory, calldata?
-  - [ ] different ways to return outputs
-  - [ ] destructing outputs
+  - [x] remind getters and setters (tx)
+  - [x] different ways to return outputs
+  - [x] destructing outputs
+  - [x] view and pure functions
+  - [ ] TODO: storage, memory, calldata?
   - [ ] restriction on inputs and return types (pre: array and maps)
-  - [ ] view and pure functions
-- [x] error
-  - [ ] assert, require, revert
 - [x] function modifiers (pre: error)
-  - [ ] before and after function call
-  - [ ] examples (restrict access, validate inputs, re-entrancy lock) (pre: error handling, re-entrancy)
+  - [x] before and after function call
+  - [x] examples (restrict access, validate inputs, re-entrancy lock) (pre: error handling, re-entrancy)
+- [ ] TODO: app
 
 ### Inheritance
 
+- [ ] constructor
 - [ ] inheritance
-  - [ ] constructor
-  - [ ] calling parent contracts
-  - [ ] shadowing state variables
+- [ ] calling parent contracts
+- [ ] shadowing state variables
 - [ ] visibility (pre: inheritance)
-- [ ] interface??
+- [ ] TODO: interface??
+- [ ] TODO: app
 
 ### Sending and Receiving Ether
 
-- [ ] payable
-- [ ] fallback (pre: payable?)
-- [ ] send ether from contract (pre: payable, ether)
-  - [ ] send ether to constructor?
+- [x] payable
+- [x] fallback (pre: payable?)
+- [x] send ether from contract (pre: payable, ether)
+  - [ ] TODO: send ether to constructor? (pre: constructor)
+- [ ] TODO: app
 
 ### Contract Interaction
 
 - [ ] call (pre: sending ether)
 - [ ] delegate call (pre: call)
-- [ ] library
-  - [ ] safe math
-  - [ ] iterable mapping
-  - [ ] array
 - [ ] calling other contracts (pre: sending ether from contract)
 - [ ] creating contract from a contract (pre: calling other contract)
+- [ ] TODO: app
 
 ### Misc
 
-- [ ] import
-- [ ] assembly??
-- [ ] events
-  - [ ] 3 indexes
-  - [ ] ui
-  - [ ] storage
+- [x] import
+- [x] library
+  - [x] safe math
+  - [x] iterable mapping
+- [ ] TODO: assembly??
 
 ### Cryptography
 
-- [ ] hash function
-- [ ] signature verification (pre: hash function, assembly?)
+- [x] hash function
+- [x] signature verification (pre: hash function, assembly?)
+- [ ] TODO: app
 
 ## Application
 
@@ -120,10 +130,10 @@ npm run gen-html-page -- Import
 - [ ] iterable mapping
 - [ ] heap
 - [ ] merkle tree
-- [ ] payment channels (uni, bidirectional, payment hub?)
+- [ ] payment channels (uni, bidirectional)
 - [ ] create2
-- [ ] casper?
-- [ ] minimal proxy contract?
+- [ ] TODO: casper?
+- [ ] TODO: minimal proxy contract?
 
 ## Hacks
 
@@ -136,10 +146,13 @@ npm run gen-html-page -- Import
 
 ## Patterns
 
+- [ ] push vs pull
+- [ ] factory
+
 ## TODO
 
 - [ ] mobile friendly
-- [ ] archive 0.5
+- [ ] 0.6
 
 ## suggestions
 
