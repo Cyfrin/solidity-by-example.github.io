@@ -5,13 +5,13 @@
   "homepage": "https://solidity-by-example.org",
   "dependencies": {
     "highlight.js": "^9.18.1",
-    "highlightjs-solidity": "^1.0.10",
+    "highlightjs-solidity": "^1.0.11",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,8 +39,8 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "gh-pages": "^2.2.0",
-    "marked": "^0.8.0",
-    "mustache": "^4.0.0",
+    "marked": "^0.8.2",
+    "mustache": "^4.0.1",
     "react-snap": "^1.23.0"
   },
   "jest": {
