@@ -141,6 +141,10 @@ contract MultiSigWallet {
         emit RevokeConfirmation(msg.sender, _txIndex);
     }
 
+    function getOwners() public view returns (address[] memory) {
+        return owners;
+    }
+
     function getTransactionCount() public view returns (uint) {
         return transactions.length;
     }
