@@ -1,3 +1,6 @@
 .component {
   max-width: 100vw;
 }
+.content {
+  margin: 15px;
+}

@@ -26,61 +26,65 @@ npm run gen-html-page -- Import
 
 ### Basic - 0
 
-- [x] hello world
-- [x] first application (counter app)
-- [x] primitives (uint, bytes32, address...)
-- [x] variables (local, state, global)
-- [x] getters and setters (tx)
-- [x] gas and gas price
-- [x] ether and wei
+https://doc.rust-lang.org/rust-by-example/index.html
+
+https://www.tutorialspoint.com/solidity/solidity_overview.htm
+
+- [ ] hello world
+- [ ] first application (counter app)
+- [ ] primitives (uint, bytes32, address...)
+- [ ] variables (local, state, global)
+- [ ] getters and setters (tx)
+- [ ] gas and gas price
+- [ ] ether and wei
 - [ ] TODO: app
 
 ### Basic - 1
 
 ##### Flow control
 
-- [x] if / else
-- [x] for loop
+- [ ] if / else
+- [ ] for loop
 
-- [x] error (pre: if / else)
-- [x] events
-  - [x] 3 indexes
-  - [x] ui
-  - [x] storage
+- [ ] error (pre: if / else)
+- [ ] events
+  - [ ] 3 indexes
+  - [ ] ui
+  - [ ] storage
 - [ ] TODO: app
 
 # Data types
 
-- [x] mapping
-  - [x] CRUD
-  - [x] nested
-  - [x] not iterable
-- [x] array
-  - [x] fixed size / dynamic size
-  - [x] CRUD
-  - [x] delete element (compact)
-- [x] string
-- [x] bytes
-- [x] custom types (struct, enum)
-  - [x] enum
-  - [x] structs
-    - [x] struct with mapping, array
-    - [x] array of structs, mapping to structs
-    - [x] storage declaration
+- [ ] mapping
+  - [ ] CRUD
+  - [ ] nested
+  - [ ] not iterable
+- [ ] array
+  - [ ] fixed size / dynamic size
+  - [ ] CRUD
+  - [ ] delete element (compact)
+- [ ] string
+- [ ] bytes
+- [ ] custom types (struct, enum)
+  - [ ] enum
+  - [ ] structs
+    - [ ] struct with mapping, array
+    - [ ] array of structs, mapping to structs
+    - [ ] storage declaration
 - [ ] TODO: app
 
 ### Function
 
-- [x] function
-  - [x] remind getters and setters (tx)
-  - [x] different ways to return outputs
-  - [x] destructing outputs
-  - [x] view and pure functions
+- [ ] function
+  - [ ] remind getters and setters (tx)
+  - [ ] different ways to return outputs
+  - [ ] destructing outputs
+  - [ ] view and pure functions
   - [ ] TODO: storage, memory, calldata?
   - [ ] restriction on inputs and return types (pre: array and maps)
-- [x] function modifiers (pre: error)
-  - [x] before and after function call
-  - [x] examples (restrict access, validate inputs, re-entrancy lock) (pre: error handling, re-entrancy)
+- [ ] function modifiers (pre: error)
+  - [ ] before and after function call
+  - [ ] examples (restrict access, validate inputs, re-entrancy lock) (pre: error handling, re-entrancy)
 - [ ] TODO: app
 
 ### Inheritance
@@ -111,16 +115,16 @@ npm run gen-html-page -- Import
 
 ### Misc
 
-- [x] import
-- [x] library
-  - [x] safe math
-  - [x] iterable mapping
+- [ ] import
+- [ ] library
+  - [ ] safe math
+  - [ ] iterable mapping
 - [ ] TODO: assembly??
 
 ### Cryptography
 
-- [x] hash function
-- [x] signature verification (pre: hash function, assembly?)
+- [ ] hash function
+- [ ] signature verification (pre: hash function, assembly?)
 - [ ] TODO: app
 
 ## Application
@@ -151,8 +155,14 @@ npm run gen-html-page -- Import
 
 ## TODO
 
-- [ ] mobile friendly
+- [ ] exercises
+- [x] mobile friendly
+- [ ] copy to clipboard
+- [ ] sidenav
+- [ ] link to next topic
+- [ ] seo
 - [ ] 0.6
+- [ ] submarine send
 
 ## suggestions
 

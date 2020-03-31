@@ -14,16 +14,18 @@ function Example(props) {
         {...props}
         title={`${title} | Solidity by Example | ${SOL_VERSION}`}
       />
-      <h2>{title}</h2>
+      <div className={styles.content}>
+        <h2>{title}</h2>
 
-      <Html html={props.html} />
+        <Html html={props.html} />
 
-      <p>
-        Try on{" "}
-        <a href="https://remix.ethereum.org" target="__blank">
-          Remix
-        </a>
-      </p>
+        <p>
+          Try on{" "}
+          <a href="https://remix.ethereum.org" target="__blank">
+            Remix
+          </a>
+        </p>
+      </div>
     </div>
   )
 }
