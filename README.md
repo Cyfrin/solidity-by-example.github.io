@@ -156,7 +156,11 @@ https://www.tutorialspoint.com/solidity/solidity_overview.htm
 ## TODO
 
 - [ ] exercises
-- [ ] mobile friendly
+- [x] mobile friendly
+- [ ] copy to clipboard
+- [ ] sidenav
+- [ ] link to next topic
+- [ ] seo
 - [ ] 0.6
 - [ ] submarine send
 
