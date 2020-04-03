@@ -154,7 +154,7 @@ https://www.tutorialspoint.com/solidity/solidity_overview.htm
 - [ ] seo
 - [ ] 0.6
 - [ ] submarine send
-- [ ] rename index.md.mustache to index.md
+- [x] rename index.md.mustache to index.md
 - [ ] style like reactjs.org
 
 ## suggestions

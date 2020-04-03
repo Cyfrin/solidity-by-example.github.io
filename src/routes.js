@@ -30,10 +30,12 @@ import EtherUnits from "./pages/EtherUnits"
 import Gas from "./pages/Gas"
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
+// application
 import MultiSigWallet from "./pages/MultiSigWallet"
 import Dividend from "./pages/Dividend"
 import PaymentChannel from "./pages/PaymentChannel"
 import MerkleTree from "./pages/MerkleTree"
+import Create2 from "./pages/Create2"
 
 const routes = [
   {
@@ -179,6 +181,10 @@ const routes = [
   {
     path: "/merkle-tree",
     component: MerkleTree,
+  },
+  {
+    path: "/create2",
+    component: Create2,
   },
 ]
 

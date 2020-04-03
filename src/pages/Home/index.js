@@ -129,6 +129,9 @@ function Home() {
           <li>
             <a href="/merkle-tree">Merkle Tree</a>
           </li>
+          <li>
+            <a href="/create2">Precompute Contract Address - Create2</a>
+          </li>
         </ul>
 
         <h3>Hacks</h3>
