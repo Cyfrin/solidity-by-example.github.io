@@ -21,22 +21,26 @@ function removeExt(fileName) {
     .join("")
 }
 
-// convert index.md.mustache -> index.html.js
-async function toHTML(dir) {
+// convert index.md -> index.html.js
+async function toHTML(filePath) {
+  const fileName = removeExt(filePath.split("/").pop())
+  const dir = filePath
+    .split("/")
+    .slice(0, -1)
+    .join("/")
+
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
-  let codes = {}
-  for (let fileName of solidityFileNames) {
-    codes[removeExt(fileName)] = (await readFile(
-      path.join(dir, fileName)
+  const codes = {}
+  for (const solFileName of solidityFileNames) {
+    codes[removeExt(solFileName)] = (await readFile(
+      path.join(dir, solFileName)
     )).toString()
   }
 
   // render solidity inside markdown
-  const mdTemplate = (await readFile(
-    path.join(dir, "index.md.mustache")
-  )).toString()
+  const mdTemplate = (await readFile(filePath)).toString()
 
   const markdown = mustache.render(mdTemplate, codes)
   const html = marked(markdown)
@@ -45,12 +49,13 @@ async function toHTML(dir) {
 
   // render markdown zto html
   const jsTemplate = (await readFile(
-    path.join(__dirname, "./index.html.js.mustache")
+    path.join(__dirname, "./template.html.js.mustache")
   )).toString()
   const js = mustache.render(jsTemplate, { html })
 
-  console.log(`Writing file to ${path.join(dir, "index.html.js")}`)
-  writeFile(path.join(dir, "index.html.js"), js)
+  writeFile(path.join(dir, `${fileName}.html.js`), js)
+
+  console.log(`${path.join(dir, `${fileName}.html.js`)}`)
 }
 
 module.exports = {
