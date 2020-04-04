@@ -12,16 +12,7 @@
 # deploy
 npm run deploy
 
-# compile and copy files
-cd contracts
-truffle compile
-
-npm run gen-pages
-
-# compile SafeMath and Import on remix
-# generate single page
-npm run gen-html-page -- SafeMath
-npm run gen-html-page -- Import
+npm run md-to-html -- path/to/folder/with/md
 ```
 
 ### Basic - 0
@@ -163,6 +154,8 @@ https://www.tutorialspoint.com/solidity/solidity_overview.htm
 - [ ] seo
 - [ ] 0.6
 - [ ] submarine send
+- [x] rename index.md.mustache to index.md
+- [ ] style like reactjs.org
 
 ## suggestions
 

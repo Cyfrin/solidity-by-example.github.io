@@ -2,7 +2,7 @@ import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-function Signature(props) {
+export default function(props) {
   return (
     <Example
       title="Verifying Signature"
@@ -11,5 +11,3 @@ function Signature(props) {
     />
   )
 }
-
-export default Signature

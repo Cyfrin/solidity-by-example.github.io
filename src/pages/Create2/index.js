@@ -5,8 +5,8 @@ import html from "./index.html.js"
 export default function(props) {
   return (
     <Example
-      title="Call"
-      description="In Solidity call is a low level function to interact with other contracts."
+      title="Precompute Contract Address with Create2"
+      description="Precompute contract address with create2"
       html={html}
     />
   )
