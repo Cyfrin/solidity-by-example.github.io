@@ -2,7 +2,7 @@ import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-function NewContract(props) {
+export default function(props) {
   return (
     <Example
       title="Contract that Create other Contracts"
@@ -11,5 +11,3 @@ function NewContract(props) {
     />
   )
 }
-
-export default NewContract

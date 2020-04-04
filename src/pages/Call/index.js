@@ -2,7 +2,7 @@ import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-function Call(props) {
+export default function(props) {
   return (
     <Example
       title="Call"
@@ -11,5 +11,3 @@ function Call(props) {
     />
   )
 }
-
-export default Call

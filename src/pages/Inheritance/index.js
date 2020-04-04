@@ -2,7 +2,7 @@ import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-function Inheritance(props) {
+export default function(props) {
   return (
     <Example
       title="Inheritance"
@@ -11,5 +11,3 @@ function Inheritance(props) {
     />
   )
 }
-
-export default Inheritance
