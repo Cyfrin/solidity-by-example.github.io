@@ -2,75 +2,87 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Learn about arrays in Solidity"
-  html="<p>Array can have a compile-time fixed size or a dynamic size.</p>
-<p>Solidity creates a <code>getter</code> for <code>public</code> arrays.</p>
-<p>Deleting an element creates a gap in the array. One trick to keep the array</p>
-<p>compact is to move the last element into the place to delete.</p>
+  description="Precompute contract address with create2"
+  html="<p>Contract address can be precomputed, before the contract is deployed, using <code>create2</code></p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
-contract Array {
-    // Several ways to initialize an array
-    uint[] public myArray;
-    uint[] public myArray2 = [1,2,3];
-    uint[10] public myFixedSizeArray;
+contract Factory {
+    event Deployed(address addr, uint256 salt);
 
-    function get(uint i) public view returns (uint) {
-      return myArray[i];
+    // 1. Get bytecode of contract to be deployed
+    // NOTE: _owner and _foo are arguments of the TestContract&#39;s constructor
+    function getBytecode(address _owner, uint _foo) public pure returns (bytes memory) {
+        bytes memory bytecode = type(TestContract).creationCode;
+
+        return abi.encodePacked(bytecode, abi.encode(_owner, _foo));
     }
 
-    function push(uint i) public {
-        myArray.push(i);
+    // 2. Compute the address of the contract to be deployed
+    // NOTE: _salt is a random number used to create an address
+    function getAddress(bytes memory bytecode, uint _salt) public view returns (address) {
+        bytes32 hash = keccak256(
+            abi.encodePacked(
+                byte(0xff),
+                address(this),
+                _salt,
+                keccak256(bytecode)
+            )
+        );
+
+        // NOTE: cast last 20 bytes of hash to address
+        return address(uint160(uint256(hash)));
     }
 
-    function pop() public {
-        myArray.pop();
-    }
+    // 3. Deploy the contract
+    // NOTE:
+    // Check the event log Deployed which contains the address of the deployed TestContract.
+    // The address in the log should equal the address computed from above.
+    function deploy(bytes memory bytecode, uint _salt) public payable {
+        address addr;
 
-    function getLength() public view returns (uint) {
-        return myArray.length;
-    }
+        /*
+        NOTE: How to call create2
 
-    function remove(uint index) public {
-        delete myArray[index];
+        create2(v, p, n, s)
+        create new contract with code at memory p to p + n
+        and send v wei
+        and return the new address
+        where new address = first 20 bytes of keccak256(0xff + address(this) + s + keccak256(mem[p…(p+n)))
+              s = big-endian 256-bit value
+        */
+        assembly {
+            addr := create2(
+                callvalue, // wei sent with current call
+                // Actual code starts after skipping the first 32 bytes
+                add(bytecode, 0x20),
+                mload(bytecode), // Load the size of code contained in the first 32 bytes
+                _salt // Salt from function arguments
+            )
+
+            if iszero(extcodesize(addr)) {
+                revert(0, 0)
+            }
+        }
+
+        emit Deployed(addr, _salt);
     }
 }
 
-contract CompactArray {
-    uint[] public myArray;
+contract TestContract {
+    address public owner;
+    uint public foo;
 
-    function remove(uint index) public {
-        // Move the last element into the place to delete
-        myArray[index] = myArray[myArray.length - 1];
-        // Remove the last element
-        myArray.pop();
+    constructor(address _owner, uint _foo) public payable {
+        owner = _owner;
+        foo = _foo;
     }
 
-    function test() public {
-        myArray.push(1);
-        myArray.push(2);
-        myArray.push(3);
-        myArray.push(4);
-        // [1, 2, 3, 4]
-
-        remove(1);
-        // [1, 4, 3]
-
-        assert(myArray.length == 3);
-        assert(myArray[0] == 1);
-        assert(myArray[1] == 4);
-        assert(myArray[2] == 3);
-
-        remove(2);
-        // [1, 4]
-
-        assert(myArray.length == 2);
-        assert(myArray[0] == 1);
-        assert(myArray[1] == 4);
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
     }
 }
 </code></pre>
 "
-  title="Array"
+  title="Precompute Contract Address with Create2"
 />
 `;

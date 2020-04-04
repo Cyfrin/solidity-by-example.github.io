@@ -194,6 +194,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/create2"
+          path="/create2"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>
