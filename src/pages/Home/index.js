@@ -105,7 +105,7 @@ function Home() {
             <a href="/import">Import</a>
           </li>
           <li>
-            <a href="/Library">Library</a>
+            <a href="/library">Library</a>
           </li>
           <li>
             <a href="/hashing">Hashing with Keccak256</a>
