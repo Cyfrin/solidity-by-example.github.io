@@ -17,10 +17,6 @@ npm run md-to-html -- path/to/folder/with/md
 
 ### Basic - 0
 
-https://doc.rust-lang.org/rust-by-example/index.html
-
-https://www.tutorialspoint.com/solidity/solidity_overview.htm
-
 - [ ] hello world
 - [ ] first application (counter app)
 - [ ] primitives (uint, bytes32, address...)
@@ -155,7 +151,10 @@ https://www.tutorialspoint.com/solidity/solidity_overview.htm
 - [ ] 0.6
 - [ ] submarine send
 - [x] rename index.md.mustache to index.md
-- [ ] style like reactjs.org
+- [ ] style like
+      https://reactjs.org/
+      https://doc.rust-lang.org/rust-by-example/index.html
+      https://www.tutorialspoint.com/solidity/solidity_overview.htm
 
 ## suggestions
 
