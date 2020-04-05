@@ -15,6 +15,11 @@ function Html(props) {
   </div>
   */
   useEffect(() => {
+    // Skip creating elements when pre-rendering
+    if (navigator.userAgent === "ReactSnap") {
+      return
+    }
+
     const copy = target => {
       const textArea = document.createElement("textarea")
       textArea.setAttribute("style", "width:1px;border:0;opacity:0;")
