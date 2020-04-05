@@ -14,18 +14,39 @@ pre {
   padding: 20px;
   margin: 0;
   background: #eee;
+  /* position: relative; */
+}
+pre .buttons {
+  /* position: absolute;
+  right: 5px;
+  left: 5px; */
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+pre .buttons button {
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: inherit;
+}
+pre .buttons button:hover {
+  color: #008cff;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
   color: rgb(231, 76, 60);
 }
-a, a:visited {
-    color: #261a3b;
+a,
+a:visited {
+  color: #261a3b;
 }
 h2 {
-    font-size: 32px;
-    line-height: 40px;
+  font-size: 32px;
+  line-height: 40px;
 }
 em {
-    font-style: italic;
+  font-style: italic;
 }

@@ -144,7 +144,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [ ] exercises
 - [x] mobile friendly
-- [ ] copy to clipboard
+- [x] copy to clipboard
 - [ ] sidenav
 - [ ] link to next topic
 - [ ] seo
