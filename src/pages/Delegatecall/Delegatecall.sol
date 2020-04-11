@@ -1,6 +1,6 @@
 pragma solidity ^0.5.16;
 
-// NOTE: Firts deploy this contract
+// NOTE: Deploy this contract first
 contract B {
     // NOTE: storage layout must be the same as contract A
     uint public num;
