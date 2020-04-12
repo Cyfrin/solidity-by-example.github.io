@@ -1,4 +1,5 @@
 import HelloWorld from "./pages/HelloWorld"
+import FirstApp from "./pages/FirstApp"
 import StateVariables from "./pages/StateVariables"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
@@ -41,6 +42,10 @@ const routes = [
   {
     path: "/hello-world",
     component: HelloWorld,
+  },
+  {
+    path: "/first-app",
+    component: FirstApp,
   },
   {
     path: "/state-variables",

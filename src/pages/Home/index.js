@@ -25,6 +25,9 @@ function Home() {
             <a href="/hello-world">Hello World</a>
           </li>
           <li>
+            <a href="/first-app">First App</a>
+          </li>
+          <li>
             <a href="/state-variables">State Variables</a>
           </li>
           <li>
