@@ -30,279 +30,378 @@ exports[`it renders 1`] = `
       </a>
        with simple examples
     </p>
-    <ul
-      className="list"
+    <div
+      key="0"
     >
-      <li>
-        <a
-          href="/hello-world"
+      <ul
+        className="list"
+      >
+        <li
+          key="/hello-world"
         >
-          Hello World
-        </a>
-      </li>
-      <li>
-        <a
-          href="/state-variables"
+          <a
+            href="/hello-world"
+          >
+            Hello World
+          </a>
+        </li>
+        <li
+          key="/first-app"
         >
-          State Variables
-        </a>
-      </li>
-      <li>
-        <a
-          href="/ether-units"
+          <a
+            href="/first-app"
+          >
+            First App
+          </a>
+        </li>
+        <li
+          key="/state-variables"
         >
-          Ether and Wei
-        </a>
-      </li>
-      <li>
-        <a
-          href="/gas"
+          <a
+            href="/state-variables"
+          >
+            State Variables
+          </a>
+        </li>
+        <li
+          key="/ether-units"
         >
-          Gas and Gas Price
-        </a>
-      </li>
-      <li>
-        <a
-          href="/function"
+          <a
+            href="/ether-units"
+          >
+            Ether and Wei
+          </a>
+        </li>
+        <li
+          key="/gas"
         >
-          Function
-        </a>
-      </li>
-      <li>
-        <a
-          href="/view-and-pure-functions"
+          <a
+            href="/gas"
+          >
+            Gas and Gas Price
+          </a>
+        </li>
+        <li
+          key="/function"
         >
-          View and Pure Functions
-        </a>
-      </li>
-      <li>
-        <a
-          href="/function-modifier"
+          <a
+            href="/function"
+          >
+            Function
+          </a>
+        </li>
+        <li
+          key="/view-and-pure-functions"
         >
-          Function Modifier
-        </a>
-      </li>
-      <li>
-        <a
-          href="/constructor"
+          <a
+            href="/view-and-pure-functions"
+          >
+            View and Pure Functions
+          </a>
+        </li>
+        <li
+          key="/function-modifier"
         >
-          Constructor
-        </a>
-      </li>
-      <li>
-        <a
-          href="/inheritance"
+          <a
+            href="/function-modifier"
+          >
+            Function Modifier
+          </a>
+        </li>
+        <li
+          key="/constructor"
         >
-          Inheritance
-        </a>
-      </li>
-      <li>
-        <a
-          href="/super"
+          <a
+            href="/constructor"
+          >
+            Constructor
+          </a>
+        </li>
+        <li
+          key="/inheritance"
         >
-          Calling Parent Contracts
-        </a>
-      </li>
-      <li>
-        <a
-          href="/shadowing-inherited-state-variables"
+          <a
+            href="/inheritance"
+          >
+            Inheritance
+          </a>
+        </li>
+        <li
+          key="/super"
         >
-          Shadowing Inherited State Variables
-        </a>
-      </li>
-      <li>
-        <a
-          href="/visibility"
+          <a
+            href="/super"
+          >
+            Calling Parent Contracts
+          </a>
+        </li>
+        <li
+          key="/shadowing-inherited-state-variables"
         >
-          Visibility
-        </a>
-      </li>
-      <li>
-        <a
-          href="/events"
+          <a
+            href="/shadowing-inherited-state-variables"
+          >
+            Shadowing Inherited State Variables
+          </a>
+        </li>
+        <li
+          key="/visibility"
         >
-          Events
-        </a>
-      </li>
-      <li>
-        <a
-          href="/error"
+          <a
+            href="/visibility"
+          >
+            Visibility
+          </a>
+        </li>
+        <li
+          key="/events"
         >
-          Error
-        </a>
-      </li>
-      <li>
-        <a
-          href="/loop"
+          <a
+            href="/events"
+          >
+            Events
+          </a>
+        </li>
+        <li
+          key="/error"
         >
-          Loop
-        </a>
-      </li>
-      <li>
-        <a
-          href="/array"
+          <a
+            href="/error"
+          >
+            Error
+          </a>
+        </li>
+        <li
+          key="/loop"
         >
-          Array
-        </a>
-      </li>
-      <li>
-        <a
-          href="/mapping"
+          <a
+            href="/loop"
+          >
+            Loop
+          </a>
+        </li>
+        <li
+          key="/array"
         >
-          Mapping
-        </a>
-      </li>
-      <li>
-        <a
-          href="/enum"
+          <a
+            href="/array"
+          >
+            Array
+          </a>
+        </li>
+        <li
+          key="/mapping"
         >
-          Enum
-        </a>
-      </li>
-      <li>
-        <a
-          href="/structs"
+          <a
+            href="/mapping"
+          >
+            Mapping
+          </a>
+        </li>
+        <li
+          key="/enum"
         >
-          Structs
-        </a>
-      </li>
-      <li>
-        <a
-          href="/payable"
+          <a
+            href="/enum"
+          >
+            Enum
+          </a>
+        </li>
+        <li
+          key="/structs"
         >
-          Payable
-        </a>
-      </li>
-      <li>
-        <a
-          href="/sending-ether"
+          <a
+            href="/structs"
+          >
+            Structs
+          </a>
+        </li>
+        <li
+          key="/payable"
         >
-          Sending Ether
-        </a>
-      </li>
-      <li>
-        <a
-          href="/fallback"
+          <a
+            href="/payable"
+          >
+            Payable
+          </a>
+        </li>
+        <li
+          key="/sending-ether"
         >
-          Fallback
-        </a>
-      </li>
-      <li>
-        <a
-          href="/call"
+          <a
+            href="/sending-ether"
+          >
+            Sending Ether
+          </a>
+        </li>
+        <li
+          key="/fallback"
         >
-          Call
-        </a>
-      </li>
-      <li>
-        <a
-          href="/delegatecall"
+          <a
+            href="/fallback"
+          >
+            Fallback
+          </a>
+        </li>
+        <li
+          key="/call"
         >
-          Delegatecall
-        </a>
-      </li>
-      <li>
-        <a
-          href="/calling-contract"
+          <a
+            href="/call"
+          >
+            Call
+          </a>
+        </li>
+        <li
+          key="/delegatecall"
         >
-          Calling Other Contract
-        </a>
-      </li>
-      <li>
-        <a
-          href="/new-contract"
+          <a
+            href="/delegatecall"
+          >
+            Delegatecall
+          </a>
+        </li>
+        <li
+          key="/calling-contract"
         >
-          Creating Contracts from a Contract
-        </a>
-      </li>
-      <li>
-        <a
-          href="/import"
+          <a
+            href="/calling-contract"
+          >
+            Calling Other Contract
+          </a>
+        </li>
+        <li
+          key="/new-contract"
         >
-          Import
-        </a>
-      </li>
-      <li>
-        <a
-          href="/library"
+          <a
+            href="/new-contract"
+          >
+            Creating Contracts from a Contract
+          </a>
+        </li>
+        <li
+          key="/import"
         >
-          Library
-        </a>
-      </li>
-      <li>
-        <a
-          href="/hashing"
+          <a
+            href="/import"
+          >
+            Import
+          </a>
+        </li>
+        <li
+          key="/library"
         >
-          Hashing with Keccak256
-        </a>
-      </li>
-      <li>
-        <a
-          href="/signature"
+          <a
+            href="/library"
+          >
+            Library
+          </a>
+        </li>
+        <li
+          key="/hashing"
         >
-          Verifying Signature
-        </a>
-      </li>
-    </ul>
-    <h3>
-      Applications
-    </h3>
-    <ul>
-      <li>
-        <a
-          href="/multi-sig-wallet"
+          <a
+            href="/hashing"
+          >
+            Hashing with Keccak256
+          </a>
+        </li>
+        <li
+          key="/signature"
         >
-          Multi-Sig Wallet
-        </a>
-      </li>
-      <li>
-        <a
-          href="/dividend"
+          <a
+            href="/signature"
+          >
+            Verifying Signature
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      key="1"
+    >
+      <h3>
+        Applications
+      </h3>
+      <ul
+        className="list"
+      >
+        <li
+          key="/app/multi-sig-wallet"
         >
-          Dividend
-        </a>
-      </li>
-      <li>
-        <a
-          href="/payment-channel"
+          <a
+            href="/app/multi-sig-wallet"
+          >
+            Multi Sig Wallet
+          </a>
+        </li>
+        <li
+          key="/app/dividend"
         >
-          Payment Channel
-        </a>
-      </li>
-      <li>
-        <a
-          href="/merkle-tree"
+          <a
+            href="/app/dividend"
+          >
+            Dividend
+          </a>
+        </li>
+        <li
+          key="/app/payment-channel"
         >
-          Merkle Tree
-        </a>
-      </li>
-      <li>
-        <a
-          href="/create2"
+          <a
+            href="/app/payment-channel"
+          >
+            Payment Channel
+          </a>
+        </li>
+        <li
+          key="/app/merkle-tree"
         >
-          Precompute Contract Address - Create2
-        </a>
-      </li>
-    </ul>
-    <h3>
-      Hacks
-    </h3>
-    <ul>
-      <li>
-        <a
-          href="/re-entrancy"
+          <a
+            href="/app/merkle-tree"
+          >
+            Merkle Tree
+          </a>
+        </li>
+        <li
+          key="/app/create2"
         >
-          Re-Entrancy
-        </a>
-      </li>
-      <li>
-        <a
-          href="/self-destruct"
+          <a
+            href="/app/create2"
+          >
+            Precompute Contract Address with Create2
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      key="2"
+    >
+      <h3>
+        Hacks
+      </h3>
+      <ul
+        className="list"
+      >
+        <li
+          key="/hacks/re-entrancy"
         >
-          Self Destruct
-        </a>
-      </li>
-    </ul>
+          <a
+            href="/hacks/re-entrancy"
+          >
+            Re-Entrancy
+          </a>
+        </li>
+        <li
+          key="/hacks/self-destruct"
+        >
+          <a
+            href="/hacks/self-destruct"
+          >
+            Self Destruct
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;

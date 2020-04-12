@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../../components/SEO"
 import { SOL_VERSION } from "../../constants"
 import styles from "./index.module.css"
+import { ROUTES_BY_CATEGORY } from "../../routes"
 
 function Home() {
   return (
@@ -20,129 +21,19 @@ function Home() {
           examples
         </p>
 
-        <ul className={styles.list}>
-          <li>
-            <a href="/hello-world">Hello World</a>
-          </li>
-          <li>
-            <a href="/state-variables">State Variables</a>
-          </li>
-          <li>
-            <a href="/ether-units">Ether and Wei</a>
-          </li>
-          <li>
-            <a href="/gas">Gas and Gas Price</a>
-          </li>
-          <li>
-            <a href="/function">Function</a>
-          </li>
-          <li>
-            <a href="/view-and-pure-functions">View and Pure Functions</a>
-          </li>
-          <li>
-            <a href="/function-modifier">Function Modifier</a>
-          </li>
-          <li>
-            <a href="/constructor">Constructor</a>
-          </li>
-          <li>
-            <a href="/inheritance">Inheritance</a>
-          </li>
-          <li>
-            <a href="/super">Calling Parent Contracts</a>
-          </li>
-          <li>
-            <a href="/shadowing-inherited-state-variables">
-              Shadowing Inherited State Variables
-            </a>
-          </li>
-          <li>
-            <a href="/visibility">Visibility</a>
-          </li>
-          <li>
-            <a href="/events">Events</a>
-          </li>
-          <li>
-            <a href="/error">Error</a>
-          </li>
-          <li>
-            <a href="/loop">Loop</a>
-          </li>
-          <li>
-            <a href="/array">Array</a>
-          </li>
-          <li>
-            <a href="/mapping">Mapping</a>
-          </li>
-          <li>
-            <a href="/enum">Enum</a>
-          </li>
-          <li>
-            <a href="/structs">Structs</a>
-          </li>
-          <li>
-            <a href="/payable">Payable</a>
-          </li>
-          <li>
-            <a href="/sending-ether">Sending Ether</a>
-          </li>
-          <li>
-            <a href="/fallback">Fallback</a>
-          </li>
-          <li>
-            <a href="/call">Call</a>
-          </li>
-          <li>
-            <a href="/delegatecall">Delegatecall</a>
-          </li>
-          <li>
-            <a href="/calling-contract">Calling Other Contract</a>
-          </li>
-          <li>
-            <a href="/new-contract">Creating Contracts from a Contract</a>
-          </li>
-          <li>
-            <a href="/import">Import</a>
-          </li>
-          <li>
-            <a href="/library">Library</a>
-          </li>
-          <li>
-            <a href="/hashing">Hashing with Keccak256</a>
-          </li>
-          <li>
-            <a href="/signature">Verifying Signature</a>
-          </li>
-        </ul>
+        {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
+          <div key={i}>
+            {title && <h3>{title}</h3>}
 
-        <h3>Applications</h3>
-        <ul>
-          <li>
-            <a href="/multi-sig-wallet">Multi-Sig Wallet</a>
-          </li>
-          <li>
-            <a href="/dividend">Dividend</a>
-          </li>
-          <li>
-            <a href="/payment-channel">Payment Channel</a>
-          </li>
-          <li>
-            <a href="/merkle-tree">Merkle Tree</a>
-          </li>
-          <li>
-            <a href="/create2">Precompute Contract Address - Create2</a>
-          </li>
-        </ul>
-
-        <h3>Hacks</h3>
-        <ul>
-          <li>
-            <a href="/re-entrancy">Re-Entrancy</a>
-          </li>
-          <li>
-            <a href="/self-destruct">Self Destruct</a>
-          </li>
-        </ul>
+            <ul className={styles.list}>
+              {routes.map(({ path, title }) => (
+                <li key={path}>
+                  <a href={path}>{title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   )

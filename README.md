@@ -17,8 +17,8 @@ npm run md-to-html -- path/to/folder/with/md
 
 ### Basic - 0
 
-- [ ] hello world
-- [ ] first application (counter app)
+- [x] hello world
+- [x] first application (counter app)
 - [ ] primitives (uint, bytes32, address...)
 - [ ] variables (local, state, global)
 - [ ] getters and setters (tx)
@@ -128,10 +128,23 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## Hacks
 
-- [ ] uint overflow
 - [ ] reentrancy
+- [ ] arithmetic overflow / underflow
+- [ ] unexpected ether (self destruct)
+- [ ] delegatecall
+- [ ] default visibility
+- [ ] entropy illusion
+- [ ] external contract referencing
+- [ ] short address / param attack
+- [ ] unchecked call return value
+- [ ] race condition / front running
+- [ ] DOS
+- [ ] block timestamp manipulation
+- [ ] constructor with care
+- [ ] unintializsd storage pointers
+- [ ] floating points and precisions
+- [ ] tx.origin
 - [ ] writing to storage
-- [ ] selfdestruct
 - [ ] blockhash
 - [ ] honeypot
 
