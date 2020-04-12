@@ -128,10 +128,23 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## Hacks
 
-- [ ] uint overflow
 - [ ] reentrancy
+- [ ] arithmetic overflow / underflow
+- [ ] unexpected ether (self destruct)
+- [ ] delegatecall
+- [ ] default visibility
+- [ ] entropy illusion
+- [ ] external contract referencing
+- [ ] short address / param attack
+- [ ] unchecked call return value
+- [ ] race condition / front running
+- [ ] DOS
+- [ ] block timestamp manipulation
+- [ ] constructor with care
+- [ ] unintializsd storage pointers
+- [ ] floating points and precisions
+- [ ] tx.origin
 - [ ] writing to storage
-- [ ] selfdestruct
 - [ ] blockhash
 - [ ] honeypot
 
