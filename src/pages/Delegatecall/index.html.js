@@ -3,7 +3,7 @@ const html = `<p><code>delegatecall</code> is a low level function similar to <c
 <p>with contract <code>A</code>&#39;s storage, <code>msg.sender</code> and <code>msg.value</code>.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
-// NOTE: Firts deploy this contract
+// NOTE: Deploy this contract first
 contract B {
     // NOTE: storage layout must be the same as contract A
     uint public num;

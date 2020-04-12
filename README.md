@@ -155,6 +155,8 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## TODO
 
+- [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
+- [ ] contributors
 - [ ] exercises
 - [x] mobile friendly
 - [x] copy to clipboard
