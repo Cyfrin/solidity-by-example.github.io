@@ -4,8 +4,6 @@ import StateVariables from "./pages/StateVariables"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
-import ReEntrancy from "./pages/ReEntrancy"
-import SelfDestruct from "./pages/SelfDestruct"
 import Events from "./pages/Events"
 import Error from "./pages/Error"
 import Import from "./pages/Import"
@@ -37,160 +35,236 @@ import Dividend from "./pages/Dividend"
 import PaymentChannel from "./pages/PaymentChannel"
 import MerkleTree from "./pages/MerkleTree"
 import Create2 from "./pages/Create2"
+// Hack
+import ReEntrancy from "./pages/ReEntrancy"
+import SelfDestruct from "./pages/SelfDestruct"
 
-const routes = [
+const SOL_ROUTES = [
   {
-    path: "/hello-world",
+    path: "hello-world",
     component: HelloWorld,
+    title: "Hello World",
   },
   {
-    path: "/first-app",
+    path: "first-app",
     component: FirstApp,
+    title: "First App",
   },
   {
-    path: "/state-variables",
+    path: "state-variables",
     component: StateVariables,
+    title: "State Variables",
   },
   {
-    path: "/import",
-    component: Import,
-  },
-  {
-    path: "/events",
-    component: Events,
-  },
-  {
-    path: "/error",
-    component: Error,
-  },
-  {
-    path: "/sending-ether",
-    component: SendingEther,
-  },
-  {
-    path: "/payable",
-    component: Payable,
-  },
-  {
-    path: "/fallback",
-    component: Fallback,
-  },
-  {
-    path: "/re-entrancy",
-    component: ReEntrancy,
-  },
-  {
-    path: "/self-destruct",
-    component: SelfDestruct,
-  },
-  {
-    path: "/function",
-    component: Function,
-  },
-  {
-    path: "/function-modifier",
-    component: FunctionModifier,
-  },
-  {
-    path: "/view-and-pure-functions",
-    component: ViewAndPureFunctions,
-  },
-  {
-    path: "/inheritance",
-    component: Inheritance,
-  },
-  {
-    path: "/shadowing-inherited-state-variables",
-    component: Shadow,
-  },
-  {
-    path: "/constructor",
-    component: Constructor,
-  },
-  {
-    path: "/super",
-    component: Super,
-  },
-  {
-    path: "/visibility",
-    component: Visibility,
-  },
-  {
-    path: "/loop",
-    component: Loop,
-  },
-  {
-    path: "/enum",
-    component: Enum,
-  },
-  {
-    path: "/mapping",
-    component: Mapping,
-  },
-  {
-    path: "/array",
-    component: Array,
-  },
-  {
-    path: "/structs",
-    component: Structs,
-  },
-  {
-    path: "/new-contract",
-    component: NewContract,
-  },
-  {
-    path: "/calling-contract",
-    component: CallingContract,
-  },
-  {
-    path: "/call",
-    component: Call,
-  },
-  {
-    path: "/delegatecall",
-    component: Delegatecall,
-  },
-  {
-    path: "/library",
-    component: Library,
-  },
-  {
-    path: "/ether-units",
+    path: "ether-units",
     component: EtherUnits,
+    title: "Ether and Wei",
   },
   {
-    path: "/gas",
+    path: "gas",
     component: Gas,
+    title: "Gas and Gas Price",
   },
   {
-    path: "/hashing",
+    path: "function",
+    component: Function,
+    title: "Function",
+  },
+  {
+    path: "view-and-pure-functions",
+    component: ViewAndPureFunctions,
+    title: "View and Pure Functions",
+  },
+  {
+    path: "function-modifier",
+    component: FunctionModifier,
+    title: "Function Modifier",
+  },
+  {
+    path: "constructor",
+    component: Constructor,
+    title: "Constructor",
+  },
+  {
+    path: "inheritance",
+    component: Inheritance,
+    title: "Inheritance",
+  },
+  {
+    path: "super",
+    component: Super,
+    title: "Calling Parent Contracts",
+  },
+  {
+    path: "shadowing-inherited-state-variables",
+    component: Shadow,
+    title: "Shadowing Inherited State Variables",
+  },
+  {
+    path: "visibility",
+    component: Visibility,
+    title: "Visibility",
+  },
+  {
+    path: "events",
+    component: Events,
+    title: "Events",
+  },
+  {
+    path: "error",
+    component: Error,
+    title: "Error",
+  },
+  {
+    path: "loop",
+    component: Loop,
+    title: "Loop",
+  },
+  {
+    path: "array",
+    component: Array,
+    title: "Array",
+  },
+  {
+    path: "mapping",
+    component: Mapping,
+    title: "Mapping",
+  },
+  {
+    path: "enum",
+    component: Enum,
+    title: "Enum",
+  },
+  {
+    path: "structs",
+    component: Structs,
+    title: "Structs",
+  },
+  {
+    path: "payable",
+    component: Payable,
+    title: "Payable",
+  },
+  {
+    path: "sending-ether",
+    component: SendingEther,
+    title: "Sending Ether",
+  },
+  {
+    path: "fallback",
+    component: Fallback,
+    title: "Fallback",
+  },
+  {
+    path: "call",
+    component: Call,
+    title: "Call",
+  },
+  {
+    path: "delegatecall",
+    component: Delegatecall,
+    title: "Delegatecall",
+  },
+  {
+    path: "calling-contract",
+    component: CallingContract,
+    title: "Calling Other Contract",
+  },
+  {
+    path: "new-contract",
+    component: NewContract,
+    title: "Creating Contracts from a Contract",
+  },
+  {
+    path: "import",
+    component: Import,
+    title: "Import",
+  },
+  {
+    path: "library",
+    component: Library,
+    title: "Library",
+  },
+  {
+    path: "hashing",
     component: Keccak256,
+    title: "Hashing with Keccak256",
   },
   {
-    path: "/signature",
+    path: "signature",
     component: Signature,
-  },
-  {
-    path: "/multi-sig-wallet",
-    component: MultiSigWallet,
-  },
-  {
-    path: "/dividend",
-    component: Dividend,
-  },
-  {
-    path: "/payment-channel",
-    component: PaymentChannel,
-  },
-  {
-    path: "/merkle-tree",
-    component: MerkleTree,
-  },
-  {
-    path: "/create2",
-    component: Create2,
+    title: "Verifying Signature",
   },
 ]
 
-export default routes
+const APP_ROUTES = [
+  {
+    path: "multi-sig-wallet",
+    component: MultiSigWallet,
+    title: "Multi Sig Wallet",
+  },
+  {
+    path: "dividend",
+    component: Dividend,
+    title: "Dividend",
+  },
+  {
+    path: "payment-channel",
+    component: PaymentChannel,
+    title: "Payment Channel",
+  },
+  {
+    path: "merkle-tree",
+    component: MerkleTree,
+    title: "Merkle Tree",
+  },
+  {
+    path: "create2",
+    component: Create2,
+    title: "Precompute Contract Address with Create2",
+  },
+]
+
+const HACK_ROUTES = [
+  {
+    path: "re-entrancy",
+    component: ReEntrancy,
+    title: "Re-Entrancy",
+  },
+  {
+    path: "self-destruct",
+    component: SelfDestruct,
+    title: "Self Destruct",
+  },
+]
+
+export const ROUTES_BY_CATEGORY = [
+  {
+    title: "",
+    routes: SOL_ROUTES.map(route => ({
+      ...route,
+      path: `/${route.path}`,
+    })),
+  },
+  {
+    title: "Applications",
+    routes: APP_ROUTES.map(route => ({
+      ...route,
+      path: `/app/${route.path}`,
+    })),
+  },
+  {
+    title: "Hacks",
+    routes: HACK_ROUTES.map(route => ({
+      ...route,
+      path: `/hacks/${route.path}`,
+    })),
+  },
+]
+
+const ROUTES = ROUTES_BY_CATEGORY.reduce((arr, { routes }) => {
+  arr.push(...routes)
+  return arr
+}, [])
+
+export default ROUTES
