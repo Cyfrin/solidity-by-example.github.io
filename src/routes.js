@@ -1,5 +1,6 @@
 import HelloWorld from "./pages/HelloWorld"
 import FirstApp from "./pages/FirstApp"
+import Primitives from "./pages/Primitives"
 import StateVariables from "./pages/StateVariables"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
@@ -49,6 +50,11 @@ const SOL_ROUTES = [
     path: "first-app",
     component: FirstApp,
     title: "First App",
+  },
+  {
+    path: "primitives",
+    component: Primitives,
+    title: "Primitive Data Types",
   },
   {
     path: "state-variables",
