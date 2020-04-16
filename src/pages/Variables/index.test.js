@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import StateVariables from "./index"
+import Variables from "./index"
 
 test("it renders", () => {
-  const component = shallow(<StateVariables />)
+  const component = shallow(<Variables />)
 
   expect(component).toMatchSnapshot()
 })
