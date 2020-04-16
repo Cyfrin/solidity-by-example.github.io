@@ -24,8 +24,13 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          key="/state-variables"
-          path="/state-variables"
+          key="/primitives"
+          path="/primitives"
+        />
+        <Route
+          component={[Function]}
+          key="/variables"
+          path="/variables"
         />
         <Route
           component={[Function]}

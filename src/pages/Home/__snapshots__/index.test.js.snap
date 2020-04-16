@@ -55,12 +55,21 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/state-variables"
+          key="/primitives"
         >
           <a
-            href="/state-variables"
+            href="/primitives"
           >
-            State Variables
+            Primitive Data Types
+          </a>
+        </li>
+        <li
+          key="/variables"
+        >
+          <a
+            href="/variables"
+          >
+            Variables
           </a>
         </li>
         <li
