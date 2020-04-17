@@ -34,6 +34,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/state-variables"
+          path="/state-variables"
+        />
+        <Route
+          component={[Function]}
           key="/ether-units"
           path="/ether-units"
         />
