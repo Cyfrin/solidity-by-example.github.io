@@ -2,6 +2,7 @@ import HelloWorld from "./pages/HelloWorld"
 import FirstApp from "./pages/FirstApp"
 import Primitives from "./pages/Primitives"
 import Variables from "./pages/Variables"
+import StateVariables from "./pages/StateVariables"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
@@ -60,6 +61,11 @@ const SOL_ROUTES = [
     path: "variables",
     component: Variables,
     title: "Variables",
+  },
+  {
+    path: "state-variables",
+    component: StateVariables,
+    title: "Reading and Writing to a State Variable",
   },
   {
     path: "ether-units",

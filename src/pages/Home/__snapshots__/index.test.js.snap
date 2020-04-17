@@ -73,6 +73,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/state-variables"
+        >
+          <a
+            href="/state-variables"
+          >
+            Reading and Writing to a State Variable
+          </a>
+        </li>
+        <li
           key="/ether-units"
         >
           <a

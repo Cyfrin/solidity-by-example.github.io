@@ -21,7 +21,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] first application (counter app)
 - [x] primitives (uint, bytes32, address...)
 - [x] variables (local, state, global)
-- [ ] getters and setters (tx)
+- [x] getters and setters (tx)
 - [ ] gas and gas price
 - [ ] ether and wei
 - [ ] TODO: app
