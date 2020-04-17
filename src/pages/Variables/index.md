@@ -8,10 +8,6 @@ There are 3 types of variables in Solidity
   - stored on the blockchain
 - **global** (provides information about the blockchain)
 
-Reading data from a state variable is free.
-
-Writing to a state variable cost transaction fee.
-
 ```solidity
 {{{Variables}}}
 ```
