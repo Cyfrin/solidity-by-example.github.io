@@ -23,7 +23,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] variables (local, state, global)
 - [x] getters and setters (tx)
 - [x] ether and wei
-- [ ] gas and gas price
+- [x] gas and gas price
 - [ ] TODO: app
 
 ### Basic - 1

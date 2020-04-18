@@ -3,13 +3,13 @@ const html = `<p>Transactions are paid with <code>ether</code>.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract EtherUnits {
-  uint public oneWei = 1 wei;
-  // 1 wei is equal to 1
-  bool public isOneWei = 1 wei == 1;
+    uint public oneWei = 1 wei;
+    // 1 wei is equal to 1
+    bool public isOneWei = 1 wei == 1;
 
-  uint public oneEther = 1 ether;
-  // 1 ether is equal to 10^18
-  bool public isOneEther = 1 ether == 1e18;
+    uint public oneEther = 1 ether;
+    // 1 ether is equal to 10^18
+    bool public isOneEther = 1 ether == 1e18;
 }
 </code></pre>
 `

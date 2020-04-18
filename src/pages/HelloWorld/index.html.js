@@ -3,7 +3,7 @@ const html = `<p><code>pragma</code> specifies the compiler version of Solidity.
 pragma solidity ^0.5.16;
 
 contract HelloWorld {
-  string public greet = "Hello World!";
+    string public greet = "Hello World!";
 }
 </code></pre>
 `
