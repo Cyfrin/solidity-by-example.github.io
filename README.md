@@ -22,8 +22,8 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] primitives (uint, bytes32, address...)
 - [x] variables (local, state, global)
 - [x] getters and setters (tx)
-- [ ] gas and gas price
-- [ ] ether and wei
+- [x] ether and wei
+- [x] gas and gas price
 - [ ] TODO: app
 
 ### Basic - 1
