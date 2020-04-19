@@ -5,6 +5,8 @@ import StateVariables from "./pages/StateVariables"
 import EtherUnits from "./pages/EtherUnits"
 import Gas from "./pages/Gas"
 import FirstApp from "./pages/FirstApp"
+// Flow control
+import IfElse from "./pages/IfElse"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
@@ -76,6 +78,12 @@ const SOL_ROUTES = [
     path: "first-app",
     component: FirstApp,
     title: "First App",
+  },
+  // Flow control
+  {
+    path: "if-else",
+    component: IfElse,
+    title: "If / Else",
   },
   {
     path: "function",

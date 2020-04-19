@@ -29,7 +29,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 ##### Flow control
 
-- [ ] if / else
+- [x] if / else
 - [ ] for loop
 
 - [ ] error (pre: if / else)

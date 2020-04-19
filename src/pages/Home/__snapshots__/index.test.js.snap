@@ -100,6 +100,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/if-else"
+        >
+          <a
+            href="/if-else"
+          >
+            If / Else
+          </a>
+        </li>
+        <li
           key="/function"
         >
           <a

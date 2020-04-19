@@ -49,6 +49,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/if-else"
+          path="/if-else"
+        />
+        <Route
+          component={[Function]}
           key="/function"
           path="/function"
         />
