@@ -3,8 +3,6 @@ pragma solidity ^0.5.16;
 contract Mapping {
     // Mapping from address to uint
     mapping(address => uint) public myMap;
-    // Nested mapping (mapping from address to another mapping)
-    mapping(address => mapping(address => uint)) public nested;
 
     function get(address _addr) public view returns (uint) {
          // Mapping always returns a value.
@@ -18,25 +16,26 @@ contract Mapping {
     }
 
     function remove(address _addr) public {
-        // Delete resets the value to the default value.
+        // Reset the value to the default value.
         delete myMap[_addr];
     }
 }
 
 contract NestedMapping {
-    mapping(address => mapping(address => uint)) public nested;
+    // Nested mapping (mapping from address to another mapping)
+    mapping(address => mapping(uint => bool)) public nested;
 
-    function get(address _addr1, address _addr2) public view returns (uint) {
-         // You can get values from a nested mapping even when it is not
-         // initialized
-        return  nested[_addr1][_addr2];
+    function get(address _addr1, uint _i) public view returns (bool) {
+         // You can get values from a nested mapping
+         // even when it is not initialized
+        return  nested[_addr1][_i];
     }
 
-    function set(address _addr1, address _addr2, uint _i) public {
-        nested[_addr1][_addr2] = _i;
+    function set(address _addr1, uint _i, bool _boo) public {
+        nested[_addr1][_i] = _boo;
     }
 
-    function remove(address _addr1, address _addr2) public {
-        delete nested[_addr1][_addr2];
+    function remove(address _addr1, uint _i) public {
+        delete nested[_addr1][_i];
     }
 }

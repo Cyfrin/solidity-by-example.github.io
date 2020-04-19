@@ -34,10 +34,10 @@ npm run md-to-html -- path/to/folder/with/md
 
 # Data types
 
-- [ ] mapping
-  - [ ] CRUD
-  - [ ] nested
-  - [ ] not iterable
+- [x] mapping
+  - [x] CRUD
+  - [x] nested
+  - [x] not iterable
 - [ ] array
   - [ ] fixed size / dynamic size
   - [ ] CRUD
