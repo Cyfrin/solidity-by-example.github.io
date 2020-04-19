@@ -109,6 +109,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/loop"
+        >
+          <a
+            href="/loop"
+          >
+            For and While Loop
+          </a>
+        </li>
+        <li
           key="/function"
         >
           <a
@@ -196,15 +205,6 @@ exports[`it renders 1`] = `
             href="/error"
           >
             Error
-          </a>
-        </li>
-        <li
-          key="/loop"
-        >
-          <a
-            href="/loop"
-          >
-            Loop
           </a>
         </li>
         <li

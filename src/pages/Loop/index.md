@@ -1,14 +1,8 @@
-Looping in Solidity is tricky.
+Solidity supports `for`, `while`, and `do while` loops.
 
-The number of iteration in a loop can grow and spend more gas than the
-gas limit, causing your contract to stall.
+Don't write loops that are unbounded as this can hit the gas limit, causing your transaction to fail.
 
-There are two gas limits to keep in mind.
-
-- Transcation gas limit, set by the caller.
-- Block gas limit
-
-Try to avoid writing loops that you cannot estimate the gas consumption.
+For the reason above, `while` and `do while` loops are rarely used.
 
 ```solidity
 {{{Loop}}}

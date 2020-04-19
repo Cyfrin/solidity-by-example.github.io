@@ -2,11 +2,11 @@ import React from "react"
 import Example from "../../components/Example"
 import html from "./index.html.js"
 
-export default function(props) {
+export default function (props) {
   return (
     <Example
-      title="Loop"
-      description="Example of looping in Solidity"
+      title="For and While Loop"
+      description="Example of for and while loop in Solidity"
       html={html}
     />
   )

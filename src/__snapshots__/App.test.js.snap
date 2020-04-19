@@ -54,6 +54,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/loop"
+          path="/loop"
+        />
+        <Route
+          component={[Function]}
           key="/function"
           path="/function"
         />
@@ -101,11 +106,6 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/error"
           path="/error"
-        />
-        <Route
-          component={[Function]}
-          key="/loop"
-          path="/loop"
         />
         <Route
           component={[Function]}

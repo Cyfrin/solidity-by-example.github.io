@@ -7,6 +7,8 @@ import Gas from "./pages/Gas"
 import FirstApp from "./pages/FirstApp"
 // Flow control
 import IfElse from "./pages/IfElse"
+import Loop from "./pages/Loop"
+
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
@@ -21,7 +23,6 @@ import Shadow from "./pages/Shadow"
 import Constructor from "./pages/Constructor"
 import Super from "./pages/Super"
 import Visibility from "./pages/Visibility"
-import Loop from "./pages/Loop"
 import Enum from "./pages/Enum"
 import Mapping from "./pages/Mapping"
 import Array from "./pages/Array"
@@ -86,6 +87,12 @@ const SOL_ROUTES = [
     title: "If / Else",
   },
   {
+    path: "loop",
+    component: Loop,
+    title: "For and While Loop",
+  },
+
+  {
     path: "function",
     component: Function,
     title: "Function",
@@ -134,11 +141,6 @@ const SOL_ROUTES = [
     path: "error",
     component: Error,
     title: "Error",
-  },
-  {
-    path: "loop",
-    component: Loop,
-    title: "Loop",
   },
   {
     path: "array",
