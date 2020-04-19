@@ -1,8 +1,10 @@
 import HelloWorld from "./pages/HelloWorld"
-import FirstApp from "./pages/FirstApp"
 import Primitives from "./pages/Primitives"
 import Variables from "./pages/Variables"
 import StateVariables from "./pages/StateVariables"
+import EtherUnits from "./pages/EtherUnits"
+import Gas from "./pages/Gas"
+import FirstApp from "./pages/FirstApp"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
@@ -27,8 +29,6 @@ import CallingContract from "./pages/CallingContract"
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
 import Library from "./pages/Library"
-import EtherUnits from "./pages/EtherUnits"
-import Gas from "./pages/Gas"
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
 // application
@@ -46,11 +46,6 @@ const SOL_ROUTES = [
     path: "hello-world",
     component: HelloWorld,
     title: "Hello World",
-  },
-  {
-    path: "first-app",
-    component: FirstApp,
-    title: "First App",
   },
   {
     path: "primitives",
@@ -76,6 +71,11 @@ const SOL_ROUTES = [
     path: "gas",
     component: Gas,
     title: "Gas and Gas Price",
+  },
+  {
+    path: "first-app",
+    component: FirstApp,
+    title: "First App",
   },
   {
     path: "function",
@@ -253,21 +253,21 @@ const HACK_ROUTES = [
 export const ROUTES_BY_CATEGORY = [
   {
     title: "",
-    routes: SOL_ROUTES.map(route => ({
+    routes: SOL_ROUTES.map((route) => ({
       ...route,
       path: `/${route.path}`,
     })),
   },
   {
     title: "Applications",
-    routes: APP_ROUTES.map(route => ({
+    routes: APP_ROUTES.map((route) => ({
       ...route,
       path: `/app/${route.path}`,
     })),
   },
   {
     title: "Hacks",
-    routes: HACK_ROUTES.map(route => ({
+    routes: HACK_ROUTES.map((route) => ({
       ...route,
       path: `/hacks/${route.path}`,
     })),

@@ -46,15 +46,6 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/first-app"
-        >
-          <a
-            href="/first-app"
-          >
-            First App
-          </a>
-        </li>
-        <li
           key="/primitives"
         >
           <a
@@ -97,6 +88,15 @@ exports[`it renders 1`] = `
             href="/gas"
           >
             Gas and Gas Price
+          </a>
+        </li>
+        <li
+          key="/first-app"
+        >
+          <a
+            href="/first-app"
+          >
+            First App
           </a>
         </li>
         <li
