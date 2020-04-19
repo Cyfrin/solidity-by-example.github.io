@@ -8,6 +8,12 @@ import FirstApp from "./pages/FirstApp"
 // Flow control
 import IfElse from "./pages/IfElse"
 import Loop from "./pages/Loop"
+// collection data types
+import Mapping from "./pages/Mapping"
+import Array from "./pages/Array"
+// custom data types
+import Enum from "./pages/Enum"
+import Structs from "./pages/Structs"
 
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
@@ -23,10 +29,6 @@ import Shadow from "./pages/Shadow"
 import Constructor from "./pages/Constructor"
 import Super from "./pages/Super"
 import Visibility from "./pages/Visibility"
-import Enum from "./pages/Enum"
-import Mapping from "./pages/Mapping"
-import Array from "./pages/Array"
-import Structs from "./pages/Structs"
 import NewContract from "./pages/NewContract"
 import CallingContract from "./pages/CallingContract"
 import Call from "./pages/Call"
@@ -91,6 +93,28 @@ const SOL_ROUTES = [
     component: Loop,
     title: "For and While Loop",
   },
+  // collection data types
+  {
+    path: "mapping",
+    component: Mapping,
+    title: "Mapping",
+  },
+  {
+    path: "array",
+    component: Array,
+    title: "Array",
+  },
+  // custom data types
+  {
+    path: "enum",
+    component: Enum,
+    title: "Enum",
+  },
+  {
+    path: "structs",
+    component: Structs,
+    title: "Structs",
+  },
 
   {
     path: "function",
@@ -141,26 +165,6 @@ const SOL_ROUTES = [
     path: "error",
     component: Error,
     title: "Error",
-  },
-  {
-    path: "array",
-    component: Array,
-    title: "Array",
-  },
-  {
-    path: "mapping",
-    component: Mapping,
-    title: "Mapping",
-  },
-  {
-    path: "enum",
-    component: Enum,
-    title: "Enum",
-  },
-  {
-    path: "structs",
-    component: Structs,
-    title: "Structs",
   },
   {
     path: "payable",

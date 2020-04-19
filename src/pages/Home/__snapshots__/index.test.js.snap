@@ -118,6 +118,42 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/mapping"
+        >
+          <a
+            href="/mapping"
+          >
+            Mapping
+          </a>
+        </li>
+        <li
+          key="/array"
+        >
+          <a
+            href="/array"
+          >
+            Array
+          </a>
+        </li>
+        <li
+          key="/enum"
+        >
+          <a
+            href="/enum"
+          >
+            Enum
+          </a>
+        </li>
+        <li
+          key="/structs"
+        >
+          <a
+            href="/structs"
+          >
+            Structs
+          </a>
+        </li>
+        <li
           key="/function"
         >
           <a
@@ -205,42 +241,6 @@ exports[`it renders 1`] = `
             href="/error"
           >
             Error
-          </a>
-        </li>
-        <li
-          key="/array"
-        >
-          <a
-            href="/array"
-          >
-            Array
-          </a>
-        </li>
-        <li
-          key="/mapping"
-        >
-          <a
-            href="/mapping"
-          >
-            Mapping
-          </a>
-        </li>
-        <li
-          key="/enum"
-        >
-          <a
-            href="/enum"
-          >
-            Enum
-          </a>
-        </li>
-        <li
-          key="/structs"
-        >
-          <a
-            href="/structs"
-          >
-            Structs
           </a>
         </li>
         <li

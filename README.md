@@ -32,19 +32,12 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] if / else
 - [x] for loop
 
-- [ ] error (pre: if / else)
-- [ ] events
-  - [ ] 3 indexes
-  - [ ] ui
-  - [ ] storage
-- [ ] TODO: app
-
 # Data types
 
-- [ ] mapping
-  - [ ] CRUD
-  - [ ] nested
-  - [ ] not iterable
+- [x] mapping
+  - [x] CRUD
+  - [x] nested
+  - [x] not iterable
 - [ ] array
   - [ ] fixed size / dynamic size
   - [ ] CRUD
@@ -59,12 +52,17 @@ npm run md-to-html -- path/to/folder/with/md
     - [ ] storage declaration
 - [ ] TODO: app
 
+- [ ] error (pre: if / else)
+- [ ] events
+  - [ ] 3 indexes
+  - [ ] ui
+  - [ ] storage
+
 ### Function
 
 - [ ] function
-  - [ ] remind getters and setters (tx)
   - [ ] different ways to return outputs
-  - [ ] destructing outputs
+    - [ ] destructing outputs
   - [ ] view and pure functions
   - [ ] TODO: storage, memory, calldata?
   - [ ] restriction on inputs and return types (pre: array and maps)
