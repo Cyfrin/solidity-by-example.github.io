@@ -46,15 +46,6 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/first-app"
-        >
-          <a
-            href="/first-app"
-          >
-            First App
-          </a>
-        </li>
-        <li
           key="/primitives"
         >
           <a
@@ -97,6 +88,33 @@ exports[`it renders 1`] = `
             href="/gas"
           >
             Gas and Gas Price
+          </a>
+        </li>
+        <li
+          key="/first-app"
+        >
+          <a
+            href="/first-app"
+          >
+            First App
+          </a>
+        </li>
+        <li
+          key="/if-else"
+        >
+          <a
+            href="/if-else"
+          >
+            If / Else
+          </a>
+        </li>
+        <li
+          key="/loop"
+        >
+          <a
+            href="/loop"
+          >
+            For and While Loop
           </a>
         </li>
         <li
@@ -187,15 +205,6 @@ exports[`it renders 1`] = `
             href="/error"
           >
             Error
-          </a>
-        </li>
-        <li
-          key="/loop"
-        >
-          <a
-            href="/loop"
-          >
-            Loop
           </a>
         </li>
         <li

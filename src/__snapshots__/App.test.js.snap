@@ -19,11 +19,6 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          key="/first-app"
-          path="/first-app"
-        />
-        <Route
-          component={[Function]}
           key="/primitives"
           path="/primitives"
         />
@@ -46,6 +41,21 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/gas"
           path="/gas"
+        />
+        <Route
+          component={[Function]}
+          key="/first-app"
+          path="/first-app"
+        />
+        <Route
+          component={[Function]}
+          key="/if-else"
+          path="/if-else"
+        />
+        <Route
+          component={[Function]}
+          key="/loop"
+          path="/loop"
         />
         <Route
           component={[Function]}
@@ -96,11 +106,6 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/error"
           path="/error"
-        />
-        <Route
-          component={[Function]}
-          key="/loop"
-          path="/loop"
         />
         <Route
           component={[Function]}

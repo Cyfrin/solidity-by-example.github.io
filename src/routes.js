@@ -1,8 +1,14 @@
 import HelloWorld from "./pages/HelloWorld"
-import FirstApp from "./pages/FirstApp"
 import Primitives from "./pages/Primitives"
 import Variables from "./pages/Variables"
 import StateVariables from "./pages/StateVariables"
+import EtherUnits from "./pages/EtherUnits"
+import Gas from "./pages/Gas"
+import FirstApp from "./pages/FirstApp"
+// Flow control
+import IfElse from "./pages/IfElse"
+import Loop from "./pages/Loop"
+
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
@@ -17,7 +23,6 @@ import Shadow from "./pages/Shadow"
 import Constructor from "./pages/Constructor"
 import Super from "./pages/Super"
 import Visibility from "./pages/Visibility"
-import Loop from "./pages/Loop"
 import Enum from "./pages/Enum"
 import Mapping from "./pages/Mapping"
 import Array from "./pages/Array"
@@ -27,8 +32,6 @@ import CallingContract from "./pages/CallingContract"
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
 import Library from "./pages/Library"
-import EtherUnits from "./pages/EtherUnits"
-import Gas from "./pages/Gas"
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
 // application
@@ -46,11 +49,6 @@ const SOL_ROUTES = [
     path: "hello-world",
     component: HelloWorld,
     title: "Hello World",
-  },
-  {
-    path: "first-app",
-    component: FirstApp,
-    title: "First App",
   },
   {
     path: "primitives",
@@ -77,6 +75,23 @@ const SOL_ROUTES = [
     component: Gas,
     title: "Gas and Gas Price",
   },
+  {
+    path: "first-app",
+    component: FirstApp,
+    title: "First App",
+  },
+  // Flow control
+  {
+    path: "if-else",
+    component: IfElse,
+    title: "If / Else",
+  },
+  {
+    path: "loop",
+    component: Loop,
+    title: "For and While Loop",
+  },
+
   {
     path: "function",
     component: Function,
@@ -126,11 +141,6 @@ const SOL_ROUTES = [
     path: "error",
     component: Error,
     title: "Error",
-  },
-  {
-    path: "loop",
-    component: Loop,
-    title: "Loop",
   },
   {
     path: "array",
@@ -253,21 +263,21 @@ const HACK_ROUTES = [
 export const ROUTES_BY_CATEGORY = [
   {
     title: "",
-    routes: SOL_ROUTES.map(route => ({
+    routes: SOL_ROUTES.map((route) => ({
       ...route,
       path: `/${route.path}`,
     })),
   },
   {
     title: "Applications",
-    routes: APP_ROUTES.map(route => ({
+    routes: APP_ROUTES.map((route) => ({
       ...route,
       path: `/app/${route.path}`,
     })),
   },
   {
     title: "Hacks",
-    routes: HACK_ROUTES.map(route => ({
+    routes: HACK_ROUTES.map((route) => ({
       ...route,
       path: `/hacks/${route.path}`,
     })),
