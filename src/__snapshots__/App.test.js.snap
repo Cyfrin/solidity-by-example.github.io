@@ -59,6 +59,26 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/mapping"
+          path="/mapping"
+        />
+        <Route
+          component={[Function]}
+          key="/array"
+          path="/array"
+        />
+        <Route
+          component={[Function]}
+          key="/enum"
+          path="/enum"
+        />
+        <Route
+          component={[Function]}
+          key="/structs"
+          path="/structs"
+        />
+        <Route
+          component={[Function]}
           key="/function"
           path="/function"
         />
@@ -106,26 +126,6 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/error"
           path="/error"
-        />
-        <Route
-          component={[Function]}
-          key="/array"
-          path="/array"
-        />
-        <Route
-          component={[Function]}
-          key="/mapping"
-          path="/mapping"
-        />
-        <Route
-          component={[Function]}
-          key="/enum"
-          path="/enum"
-        />
-        <Route
-          component={[Function]}
-          key="/structs"
-          path="/structs"
         />
         <Route
           component={[Function]}
