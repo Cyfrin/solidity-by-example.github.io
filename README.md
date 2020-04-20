@@ -38,10 +38,10 @@ npm run md-to-html -- path/to/folder/with/md
   - [x] CRUD
   - [x] nested
   - [x] not iterable
-- [ ] array
-  - [ ] fixed size / dynamic size
-  - [ ] CRUD
-  - [ ] delete element (compact)
+- [x] array
+  - [x] fixed size / dynamic size
+  - [x] CRUD
+  - [x] delete element (compact)
 - [ ] string
 - [ ] bytes
 - [ ] custom types (struct, enum)
