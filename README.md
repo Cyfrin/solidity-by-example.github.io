@@ -42,21 +42,21 @@ npm run md-to-html -- path/to/folder/with/md
   - [x] fixed size / dynamic size
   - [x] CRUD
   - [x] delete element (compact)
-- [ ] string
-- [ ] bytes
+- [ ] string and bytes
 - [ ] custom types (struct, enum)
-  - [ ] enum
+  - [x] enum
   - [ ] structs
     - [ ] struct with mapping, array
     - [ ] array of structs, mapping to structs
     - [ ] storage declaration
+- [ ] storage, memory, call data?
 - [ ] TODO: app
 
 - [ ] error (pre: if / else)
 - [ ] events
   - [ ] 3 indexes
   - [ ] ui
-  - [ ] storage
+  - [ ] log
 
 ### Function
 
