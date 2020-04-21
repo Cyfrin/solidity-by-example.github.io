@@ -172,12 +172,30 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/error"
+        >
+          <a
+            href="/error"
+          >
+            Error
+          </a>
+        </li>
+        <li
           key="/function-modifier"
         >
           <a
             href="/function-modifier"
           >
             Function Modifier
+          </a>
+        </li>
+        <li
+          key="/events"
+        >
+          <a
+            href="/events"
+          >
+            Events
           </a>
         </li>
         <li
@@ -223,24 +241,6 @@ exports[`it renders 1`] = `
             href="/visibility"
           >
             Visibility
-          </a>
-        </li>
-        <li
-          key="/events"
-        >
-          <a
-            href="/events"
-          >
-            Events
-          </a>
-        </li>
-        <li
-          key="/error"
-        >
-          <a
-            href="/error"
-          >
-            Error
           </a>
         </li>
         <li
