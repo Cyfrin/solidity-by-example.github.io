@@ -43,12 +43,8 @@ npm run md-to-html -- path/to/folder/with/md
   - [x] CRUD
   - [x] delete element (compact)
 - [ ] string and bytes
-- [ ] custom types (struct, enum)
-  - [x] enum
-  - [ ] structs
-    - [ ] struct with mapping, array
-    - [ ] array of structs, mapping to structs
-    - [ ] storage declaration
+- [x] enum
+- [x] structs
 - [ ] storage, memory, call data?
 - [ ] TODO: app
 
