@@ -89,8 +89,18 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/error"
+          path="/error"
+        />
+        <Route
+          component={[Function]}
           key="/function-modifier"
           path="/function-modifier"
+        />
+        <Route
+          component={[Function]}
+          key="/events"
+          path="/events"
         />
         <Route
           component={[Function]}
@@ -116,16 +126,6 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/visibility"
           path="/visibility"
-        />
-        <Route
-          component={[Function]}
-          key="/events"
-          path="/events"
-        />
-        <Route
-          component={[Function]}
-          key="/error"
-          path="/error"
         />
         <Route
           component={[Function]}

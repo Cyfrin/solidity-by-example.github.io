@@ -14,16 +14,17 @@ import Array from "./pages/Array"
 // custom data types
 import Enum from "./pages/Enum"
 import Structs from "./pages/Structs"
+// function
+import Function from "./pages/Function"
+import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
+import Error from "./pages/Error"
+import FunctionModifier from "./pages/FunctionModifier"
+import Events from "./pages/Events"
 
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
-import Events from "./pages/Events"
-import Error from "./pages/Error"
 import Import from "./pages/Import"
-import Function from "./pages/Function"
-import FunctionModifier from "./pages/FunctionModifier"
-import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
 import Inheritance from "./pages/Inheritance"
 import Shadow from "./pages/Shadow"
 import Constructor from "./pages/Constructor"
@@ -115,7 +116,7 @@ const SOL_ROUTES = [
     component: Structs,
     title: "Structs",
   },
-
+  // function
   {
     path: "function",
     component: Function,
@@ -127,9 +128,19 @@ const SOL_ROUTES = [
     title: "View and Pure Functions",
   },
   {
+    path: "error",
+    component: Error,
+    title: "Error",
+  },
+  {
     path: "function-modifier",
     component: FunctionModifier,
     title: "Function Modifier",
+  },
+  {
+    path: "events",
+    component: Events,
+    title: "Events",
   },
   {
     path: "constructor",
@@ -155,16 +166,6 @@ const SOL_ROUTES = [
     path: "visibility",
     component: Visibility,
     title: "Visibility",
-  },
-  {
-    path: "events",
-    component: Events,
-    title: "Events",
-  },
-  {
-    path: "error",
-    component: Error,
-    title: "Error",
   },
   {
     path: "payable",

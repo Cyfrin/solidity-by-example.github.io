@@ -1,6 +1,5 @@
-pragma solidity ^0.5.16;
-
-contract Order {
+contract Enum {
+    // Enum representing shipping status
     enum Status {
         Pending,
         Shipped,
@@ -9,32 +8,32 @@ contract Order {
         Canceled
     }
 
-    // Default value of an enum type is the first element listed in
+    // Default value is the first element listed in
     // definition of the type, in this case "Pending"
     Status public status;
 
-    // Try:
-    // - execute ship() and then acceptDelivery() or rejectDelivery()
-    // - re-deploy the contract and execute cancel()
-    // Any other order of execution fails.
-
-    function ship() public {
-        require(status == Status.Pending);
-        status = Status.Shipped;
+    // Returns uint
+    // Pending  - 0
+    // Shipped  - 1
+    // Accepted - 2
+    // Rejected - 3
+    // Canceled - 4
+    function get() public view returns (Status) {
+        return status;
     }
 
-    function acceptDelivery() public {
-        require(status == Status.Shipped);
-        status = Status.Accepted;
+    // Update status by passing uint into input
+    function set(Status _status) public {
+        status = _status;
     }
 
-    function rejectDelivery() public {
-        require(status == Status.Shipped);
-        status = Status.Rejected;
-    }
-
+    // You can update to a specific enum like this
     function cancel() public {
-        require(status == Status.Pending);
         status = Status.Canceled;
+    }
+
+    // delete resets the enum to it's first value, 0
+    function reset() public {
+        delete status;
     }
 }

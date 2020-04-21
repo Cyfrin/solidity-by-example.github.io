@@ -42,34 +42,25 @@ npm run md-to-html -- path/to/folder/with/md
   - [x] fixed size / dynamic size
   - [x] CRUD
   - [x] delete element (compact)
-- [ ] string
-- [ ] bytes
-- [ ] custom types (struct, enum)
-  - [ ] enum
-  - [ ] structs
-    - [ ] struct with mapping, array
-    - [ ] array of structs, mapping to structs
-    - [ ] storage declaration
-- [ ] TODO: app
-
-- [ ] error (pre: if / else)
-- [ ] events
-  - [ ] 3 indexes
-  - [ ] ui
-  - [ ] storage
+- [ ] TODO?: string and bytes
+- [x] enum
+- [x] structs
 
 ### Function
 
+- [ ] TODO?: storage, memory, calldata
 - [ ] function
   - [ ] different ways to return outputs
-    - [ ] destructing outputs
-  - [ ] view and pure functions
-  - [ ] TODO: storage, memory, calldata?
+  - [ ] destructing outputs
   - [ ] restriction on inputs and return types (pre: array and maps)
+- [ ] view and pure functions
+- [ ] error (pre: if / else)
 - [ ] function modifiers (pre: error)
   - [ ] before and after function call
-  - [ ] examples (restrict access, validate inputs, re-entrancy lock) (pre: error handling, re-entrancy)
-- [ ] TODO: app
+- [ ] events
+  - [ ] 3 indexes
+  - [ ] ui
+  - [ ] log
 
 ### Inheritance
 
@@ -79,7 +70,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] shadowing state variables
 - [ ] visibility (pre: inheritance)
 - [ ] TODO: interface??
-- [ ] TODO: app
 
 ### Sending and Receiving Ether
 
@@ -87,7 +77,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] fallback (pre: payable?)
 - [x] send ether from contract (pre: payable, ether)
   - [ ] TODO: send ether to constructor? (pre: constructor)
-- [ ] TODO: app
 
 ### Contract Interaction
 
@@ -95,7 +84,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] delegate call (pre: call)
 - [ ] calling other contracts (pre: sending ether from contract)
 - [ ] creating contract from a contract (pre: calling other contract)
-- [ ] TODO: app
 
 ### Misc
 
@@ -103,13 +91,11 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] library
   - [ ] safe math
   - [ ] iterable mapping
-- [ ] TODO: assembly??
 
 ### Cryptography
 
 - [ ] hash function
 - [ ] signature verification (pre: hash function, assembly?)
-- [ ] TODO: app
 
 ## Application
 
