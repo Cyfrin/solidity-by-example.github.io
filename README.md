@@ -54,7 +54,7 @@ npm run md-to-html -- path/to/folder/with/md
   - [ ] destructing outputs
   - [ ] restriction on inputs and return types (pre: array and maps)
 - [ ] view and pure functions
-- [ ] error (pre: if / else)
+- [x] error (pre: if / else)
 - [ ] function modifiers (pre: error)
   - [ ] before and after function call
 - [ ] events
