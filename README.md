@@ -49,10 +49,7 @@ npm run md-to-html -- path/to/folder/with/md
 ### Function
 
 - [ ] TODO?: storage, memory, calldata
-- [ ] function
-  - [ ] different ways to return outputs
-  - [ ] destructing outputs
-  - [ ] restriction on inputs and return types (pre: array and maps)
+- [x] function
 - [ ] view and pure functions
 - [x] error (pre: if / else)
 - [ ] function modifiers (pre: error)
