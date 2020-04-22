@@ -1,10 +1,10 @@
 import HelloWorld from "./pages/HelloWorld"
+import FirstApp from "./pages/FirstApp"
 import Primitives from "./pages/Primitives"
 import Variables from "./pages/Variables"
 import StateVariables from "./pages/StateVariables"
 import EtherUnits from "./pages/EtherUnits"
 import Gas from "./pages/Gas"
-import FirstApp from "./pages/FirstApp"
 // Flow control
 import IfElse from "./pages/IfElse"
 import Loop from "./pages/Loop"
@@ -54,6 +54,11 @@ const SOL_ROUTES = [
     title: "Hello World",
   },
   {
+    path: "first-app",
+    component: FirstApp,
+    title: "First App",
+  },
+  {
     path: "primitives",
     component: Primitives,
     title: "Primitive Data Types",
@@ -77,11 +82,6 @@ const SOL_ROUTES = [
     path: "gas",
     component: Gas,
     title: "Gas and Gas Price",
-  },
-  {
-    path: "first-app",
-    component: FirstApp,
-    title: "First App",
   },
   // Flow control
   {

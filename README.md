@@ -18,12 +18,12 @@ npm run md-to-html -- path/to/folder/with/md
 ### Basic - 0
 
 - [x] hello world
+- [x] first application (counter app)
 - [x] primitives (uint, bytes32, address...)
 - [x] variables (local, state, global)
 - [x] getters and setters (tx)
 - [x] ether and wei
 - [x] gas and gas price
-- [x] first application (counter app)
 
 ### Basic - 1
 
