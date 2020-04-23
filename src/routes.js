@@ -14,6 +14,7 @@ import Array from "./pages/Array"
 // custom data types
 import Enum from "./pages/Enum"
 import Structs from "./pages/Structs"
+import DataLocations from "./pages/DataLocations"
 // function
 import Function from "./pages/Function"
 import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
@@ -115,6 +116,11 @@ const SOL_ROUTES = [
     path: "structs",
     component: Structs,
     title: "Structs",
+  },
+  {
+    path: "data-locations",
+    component: DataLocations,
+    title: "Data Locations - Storage, Memory and Calldata",
   },
   // function
   {

@@ -154,6 +154,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/data-locations"
+        >
+          <a
+            href="/data-locations"
+          >
+            Data Locations - Storage, Memory and Calldata
+          </a>
+        </li>
+        <li
           key="/function"
         >
           <a

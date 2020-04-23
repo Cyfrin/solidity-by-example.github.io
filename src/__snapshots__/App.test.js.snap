@@ -79,6 +79,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/data-locations"
+          path="/data-locations"
+        />
+        <Route
+          component={[Function]}
           key="/function"
           path="/function"
         />
