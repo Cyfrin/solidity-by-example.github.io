@@ -18,12 +18,12 @@ npm run md-to-html -- path/to/folder/with/md
 ### Basic - 0
 
 - [x] hello world
+- [x] first application (counter app)
 - [x] primitives (uint, bytes32, address...)
 - [x] variables (local, state, global)
 - [x] getters and setters (tx)
 - [x] ether and wei
 - [x] gas and gas price
-- [x] first application (counter app)
 
 ### Basic - 1
 
@@ -45,22 +45,16 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] TODO?: string and bytes
 - [x] enum
 - [x] structs
+- [x] data locations - storage, memory, calldata (TODO? after internal and external)
 
 ### Function
 
-- [ ] TODO?: storage, memory, calldata
-- [ ] function
-  - [ ] different ways to return outputs
-  - [ ] destructing outputs
-  - [ ] restriction on inputs and return types (pre: array and maps)
-- [ ] view and pure functions
-- [ ] error (pre: if / else)
-- [ ] function modifiers (pre: error)
-  - [ ] before and after function call
-- [ ] events
-  - [ ] 3 indexes
-  - [ ] ui
-  - [ ] log
+- [x] function
+- [x] view and pure functions
+- [x] error
+- [x] function modifiers
+
+- [x] events
 
 ### Inheritance
 
