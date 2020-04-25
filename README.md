@@ -58,7 +58,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 ### Inheritance
 
-- [ ] constructor
+- [x] constructor
 - [ ] inheritance
 - [ ] calling parent contracts
 - [ ] shadowing state variables

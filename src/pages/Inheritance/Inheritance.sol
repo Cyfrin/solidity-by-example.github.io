@@ -1,12 +1,22 @@
 pragma solidity ^0.5.16;
 
+
+/* Graph of inheritance
+    A
+   / \
+  B   C
+ / \ /
+F  D,E
+
+*/
+
 contract A {
     function foo() public pure returns (string memory) {
         return "A";
     }
 }
 
-// Contracts can inherit other contracts by using the keyword 'is'.
+// Contracts inherit other contracts by using the keyword 'is'.
 contract B is A {
     // Override A.foo()
     function foo() public pure returns (string memory) {
