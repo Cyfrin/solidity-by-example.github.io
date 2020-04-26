@@ -1,29 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`it renders 1`] = `
-<p
+<div
   className="component"
 >
-  <a
-    href="mailto:contact@solidity-by-example.org"
+  <div
+    className="row"
   >
-    contact@solidity-by-example.org
-  </a>
-   
-  |
-   
-  <a
-    href="https://github.com/solidity-by-example/solidity-by-example.github.io"
+    <a
+      href="https://etherscan.io/address/0xA8DD4bA80d8904d7cAcE5c3622CCf78bEa5AcFEe"
+      target="__blank"
+    >
+      Donate: 0xA8DD4bA80d8904d7cAcE5c3622CCf78bEa5AcFEe
+    </a>
+  </div>
+  <div
+    className="row"
   >
-    source
-  </a>
-   
-  |
-   
-  <a
-    href="https://github.com/solidity-by-example/solidity-by-example.github.io/tree/gh-pages#license"
-  >
-    license
-  </a>
-</p>
+    <a
+      href="mailto:contact@solidity-by-example.org"
+    >
+      contact@solidity-by-example.org
+    </a>
+    <div
+      className="bar"
+    >
+      |
+    </div>
+    <a
+      href="https://github.com/solidity-by-example/solidity-by-example.github.io"
+      target="__blank"
+    >
+      source
+    </a>
+    <div
+      className="bar"
+    >
+      |
+    </div>
+    <a
+      href="https://github.com/solidity-by-example/solidity-by-example.github.io/blob/gh-pages/LICENSE"
+      target="__blank"
+    >
+      license
+    </a>
+  </div>
+</div>
 `;

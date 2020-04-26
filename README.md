@@ -59,18 +59,17 @@ npm run md-to-html -- path/to/folder/with/md
 ### Inheritance
 
 - [x] constructor
-- [ ] inheritance
-- [ ] calling parent contracts
-- [ ] shadowing state variables
-- [ ] visibility (pre: inheritance)
+- [x] inheritance
+- [x] shadowing state variables
+- [x] calling parent contracts
+- [x] visibility (pre: inheritance)
 - [ ] TODO: interface??
 
 ### Sending and Receiving Ether
 
-- [x] payable
-- [x] fallback (pre: payable?)
+- [ ] payable
 - [x] send ether from contract (pre: payable, ether)
-  - [ ] TODO: send ether to constructor? (pre: constructor)
+- [x] fallback (pre: payable?)
 
 ### Contract Interaction
 
@@ -78,6 +77,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] delegate call (pre: call)
 - [ ] calling other contracts (pre: sending ether from contract)
 - [ ] creating contract from a contract (pre: calling other contract)
+  - [ ] TODO: send ether to constructor? (pre: constructor)
 
 ### Misc
 
