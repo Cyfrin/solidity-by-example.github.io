@@ -1,6 +1,11 @@
-Functions and state variables have to specify whether they can be accessed by other contracts.
+Functions and state variables have to declare whether they are accessible by other contracts.
 
-Fucntions can be declared as `public`, `private`, `internal` or `external`.
+Fucntions can be declared as
+
+- `public` - any contract and account can call
+- `private` - only inside the contract that defines the function
+- `internal`- only inside contract that inherits an `internal` function
+- `external` - only other contracts and accounts can call
 
 State variables can be declared as `public`, `private`, or `internal` but not `external`.
 
