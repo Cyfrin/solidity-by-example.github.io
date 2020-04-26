@@ -2,6 +2,14 @@ const html = `<p>Parent contracts can be called directly, or by using the keywor
 <p>By using the keyword <code>super</code>, all of the immediate parent contracts will be called.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
+/* Inheritance tree
+   A
+ /  \\
+B   C
+ \\ /
+  D
+*/
+
 contract A {
     // This is called an event. You can emit events from your function
     // and they are logged into the transaction log.
@@ -46,7 +54,7 @@ contract D is B, C {
     //   Although D inherits A, B and C, it only called C and then A.
     // - Call D.bar and check the transaction logs
     //   D called C, then B, and finally A.
-    //   Although super was called twice (by B and C) it only called A once. 
+    //   Although super was called twice (by B and C) it only called A once.
 }
 </code></pre>
 `
