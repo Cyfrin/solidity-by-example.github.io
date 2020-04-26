@@ -226,21 +226,21 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/super"
-        >
-          <a
-            href="/super"
-          >
-            Calling Parent Contracts
-          </a>
-        </li>
-        <li
           key="/shadowing-inherited-state-variables"
         >
           <a
             href="/shadowing-inherited-state-variables"
           >
             Shadowing Inherited State Variables
+          </a>
+        </li>
+        <li
+          key="/super"
+        >
+          <a
+            href="/super"
+          >
+            Calling Parent Contracts
           </a>
         </li>
         <li

@@ -1,6 +1,6 @@
 const html = `<p><code>call</code> is a low level function to interact with other contracts.</p>
-<p>This is not the recommend way, but this might be the only way if your contract</p>
-<p>does not have the ABI for the other contract.</p>
+<p>This is the recommended method to use when you&#39;re just sending Ether via calling the <code>fallback</code> function.</p>
+<p>However it is not the recommend way to call existing functions.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Receiver {

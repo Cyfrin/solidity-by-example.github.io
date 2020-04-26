@@ -1,8 +1,19 @@
 .component {
   margin: 15px;
   color: #261a3b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.component a,
-.component a:visited {
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.row .bar {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.row a,
+.row a:visited {
   color: #261a3b;
 }

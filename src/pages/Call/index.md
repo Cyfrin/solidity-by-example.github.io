@@ -1,8 +1,8 @@
 `call` is a low level function to interact with other contracts.
 
-This is not the recommend way, but this might be the only way if your contract
+This is the recommended method to use when you're just sending Ether via calling the `fallback` function.
 
-does not have the ABI for the other contract.
+However it is not the recommend way to call existing functions.
 
 ```solidity
 {{{Call}}}

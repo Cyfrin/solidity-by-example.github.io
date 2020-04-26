@@ -119,13 +119,13 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          key="/super"
-          path="/super"
+          key="/shadowing-inherited-state-variables"
+          path="/shadowing-inherited-state-variables"
         />
         <Route
           component={[Function]}
-          key="/shadowing-inherited-state-variables"
-          path="/shadowing-inherited-state-variables"
+          key="/super"
+          path="/super"
         />
         <Route
           component={[Function]}

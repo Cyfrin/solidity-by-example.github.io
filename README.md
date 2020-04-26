@@ -45,7 +45,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] TODO?: string and bytes
 - [x] enum
 - [x] structs
-- [x] data locations - storage, memory, calldata (TODO? after internal and external)
+- [x] data locations - storage, memory, calldata
 
 ### Function
 
@@ -59,25 +59,25 @@ npm run md-to-html -- path/to/folder/with/md
 ### Inheritance
 
 - [x] constructor
-- [ ] inheritance
-- [ ] calling parent contracts
-- [ ] shadowing state variables
-- [ ] visibility (pre: inheritance)
-- [ ] TODO: interface??
+- [x] inheritance
+- [x] shadowing state variables
+- [x] calling parent contracts
+- [x] visibility
+- [ ] TODO?: interface
 
 ### Sending and Receiving Ether
 
 - [x] payable
-- [x] fallback (pre: payable?)
-- [x] send ether from contract (pre: payable, ether)
-  - [ ] TODO: send ether to constructor? (pre: constructor)
+- [x] send ether from contract
+- [x] fallback
 
 ### Contract Interaction
 
-- [ ] call (pre: sending ether)
+- [ ] call
 - [ ] delegate call (pre: call)
 - [ ] calling other contracts (pre: sending ether from contract)
 - [ ] creating contract from a contract (pre: calling other contract)
+  - [ ] TODO: send ether to constructor
 
 ### Misc
 
