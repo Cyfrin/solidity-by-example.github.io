@@ -21,18 +21,20 @@ import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
 import Error from "./pages/Error"
 import FunctionModifier from "./pages/FunctionModifier"
 import Events from "./pages/Events"
+// inheritance
+import Constructor from "./pages/Constructor"
+import Inheritance from "./pages/Inheritance"
+import Shadow from "./pages/Shadow"
+import Super from "./pages/Super"
+import Visibility from "./pages/Visibility"
+
+import NewContract from "./pages/NewContract"
+import CallingContract from "./pages/CallingContract"
 
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
 import Import from "./pages/Import"
-import Inheritance from "./pages/Inheritance"
-import Shadow from "./pages/Shadow"
-import Constructor from "./pages/Constructor"
-import Super from "./pages/Super"
-import Visibility from "./pages/Visibility"
-import NewContract from "./pages/NewContract"
-import CallingContract from "./pages/CallingContract"
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
 import Library from "./pages/Library"
@@ -148,6 +150,7 @@ const SOL_ROUTES = [
     component: Events,
     title: "Events",
   },
+  // inheritance
   {
     path: "constructor",
     component: Constructor,
@@ -159,14 +162,14 @@ const SOL_ROUTES = [
     title: "Inheritance",
   },
   {
-    path: "super",
-    component: Super,
-    title: "Calling Parent Contracts",
-  },
-  {
     path: "shadowing-inherited-state-variables",
     component: Shadow,
     title: "Shadowing Inherited State Variables",
+  },
+  {
+    path: "super",
+    component: Super,
+    title: "Calling Parent Contracts",
   },
   {
     path: "visibility",
