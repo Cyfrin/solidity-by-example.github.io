@@ -31,12 +31,13 @@ import Visibility from "./pages/Visibility"
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
-
-import NewContract from "./pages/NewContract"
-import CallingContract from "./pages/CallingContract"
-import Import from "./pages/Import"
+// contract intercation
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
+import CallingContract from "./pages/CallingContract"
+
+import NewContract from "./pages/NewContract"
+import Import from "./pages/Import"
 import Library from "./pages/Library"
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
@@ -192,7 +193,7 @@ const SOL_ROUTES = [
     component: Fallback,
     title: "Fallback",
   },
-  // call, delegatecall
+  // contract interaction
   {
     path: "call",
     component: Call,
@@ -208,6 +209,7 @@ const SOL_ROUTES = [
     component: CallingContract,
     title: "Calling Other Contract",
   },
+
   {
     path: "new-contract",
     component: NewContract,
