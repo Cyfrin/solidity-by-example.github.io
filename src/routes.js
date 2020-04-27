@@ -44,7 +44,6 @@ import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
 // application
 import MultiSigWallet from "./pages/MultiSigWallet"
-import Dividend from "./pages/Dividend"
 import PaymentChannel from "./pages/PaymentChannel"
 import MerkleTree from "./pages/MerkleTree"
 import Create2 from "./pages/Create2"
@@ -246,16 +245,6 @@ const APP_ROUTES = [
     title: "Multi Sig Wallet",
   },
   {
-    path: "dividend",
-    component: Dividend,
-    title: "Dividend",
-  },
-  {
-    path: "payment-channel",
-    component: PaymentChannel,
-    title: "Payment Channel",
-  },
-  {
     path: "merkle-tree",
     component: MerkleTree,
     title: "Merkle Tree",
@@ -264,6 +253,11 @@ const APP_ROUTES = [
     path: "create2",
     component: Create2,
     title: "Precompute Contract Address with Create2",
+  },
+  {
+    path: "payment-channel",
+    component: PaymentChannel,
+    title: "Payment Channel",
   },
 ]
 

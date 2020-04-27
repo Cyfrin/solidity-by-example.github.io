@@ -372,24 +372,6 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/app/dividend"
-        >
-          <a
-            href="/app/dividend"
-          >
-            Dividend
-          </a>
-        </li>
-        <li
-          key="/app/payment-channel"
-        >
-          <a
-            href="/app/payment-channel"
-          >
-            Payment Channel
-          </a>
-        </li>
-        <li
           key="/app/merkle-tree"
         >
           <a
@@ -405,6 +387,15 @@ exports[`it renders 1`] = `
             href="/app/create2"
           >
             Precompute Contract Address with Create2
+          </a>
+        </li>
+        <li
+          key="/app/payment-channel"
+        >
+          <a
+            href="/app/payment-channel"
+          >
+            Payment Channel
           </a>
         </li>
       </ul>

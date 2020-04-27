@@ -4,7 +4,7 @@ exports[`it renders 1`] = `
 <Example
   description="Learn how to initialize smart contracts in Solidity using a constructor"
   html="<p>A <code>constructor</code> is an optional function that is executed upon contract creation.</p>
-<p>Here are examples of how to pass arguments to parent <code>constructors</code>.</p>
+<p>Here are examples of how to pass arguments to <code>constructors</code>.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
 // Base contract X
@@ -26,24 +26,23 @@ contract Y {
 }
 
 // There are 2 ways to initialize parent contract with parameters.
-// 1. Pass parameters when declaring the inheritance
-// 2. Pass parameters next to the constructor of the child contract
 
 // Pass the parameters here in the inheritance list.
 contract B is X(\\"Input to X\\"), Y(\\"Input to Y\\") {
 }
 
 contract C is X, Y {
-    // Pass the parameters here in the constructor, similar to modifiers.
+    // Pass the parameters here in the constructor,
+    // similar to function modifiers.
     constructor(string memory _name, string memory _text) X(_name) Y(_text) public {
     }
 }
 
 // Parent constructors are always called in the order of inheritance
 // regardless of the order of parent contracts listed in the
-// constructor of the child contract
+// constructor of the child contract.
 
-// Constructors are called in the following order:
+// Order of constructors called:
 // 1. Y
 // 2. X
 // 3. E
@@ -52,7 +51,7 @@ contract E is X, Y {
     }
 }
 
-// Constructors are still called in the following order:
+// Order of constructors called:
 // 1. Y
 // 2. X
 // 3. E

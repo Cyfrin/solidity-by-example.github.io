@@ -194,16 +194,6 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          key="/app/dividend"
-          path="/app/dividend"
-        />
-        <Route
-          component={[Function]}
-          key="/app/payment-channel"
-          path="/app/payment-channel"
-        />
-        <Route
-          component={[Function]}
           key="/app/merkle-tree"
           path="/app/merkle-tree"
         />
@@ -211,6 +201,11 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/app/create2"
           path="/app/create2"
+        />
+        <Route
+          component={[Function]}
+          key="/app/payment-channel"
+          path="/app/payment-channel"
         />
         <Route
           component={[Function]}
