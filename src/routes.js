@@ -44,9 +44,10 @@ import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
 // application
 import MultiSigWallet from "./pages/MultiSigWallet"
-import PaymentChannel from "./pages/PaymentChannel"
 import MerkleTree from "./pages/MerkleTree"
+import IterableMapping from "./pages/IterableMapping"
 import Create2 from "./pages/Create2"
+import PaymentChannel from "./pages/PaymentChannel"
 // Hack
 import ReEntrancy from "./pages/ReEntrancy"
 import SelfDestruct from "./pages/SelfDestruct"
@@ -248,6 +249,11 @@ const APP_ROUTES = [
     path: "merkle-tree",
     component: MerkleTree,
     title: "Merkle Tree",
+  },
+  {
+    path: "iterable-mapping",
+    component: IterableMapping,
+    title: "Iterable Mapping",
   },
   {
     path: "create2",

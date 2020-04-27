@@ -199,6 +199,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/app/iterable-mapping"
+          path="/app/iterable-mapping"
+        />
+        <Route
+          component={[Function]}
           key="/app/create2"
           path="/app/create2"
         />

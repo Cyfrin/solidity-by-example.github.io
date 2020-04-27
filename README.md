@@ -93,11 +93,11 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [x] multisig wallet
 - [ ] TODO? erc20
-- [ ] TODO? iterable mapping
+- [ ] iterable mapping
 - [ ] TODO? heap
-- [ ] merkle tree
-- [ ] payment channels (uni, bidirectional)
+- [x] merkle tree
 - [x] create2
+- [ ] payment channels (uni, bidirectional)
 - [ ] TODO?: casper?
 - [ ] TODO?: minimal proxy contract?
 

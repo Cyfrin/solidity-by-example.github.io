@@ -381,6 +381,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/app/iterable-mapping"
+        >
+          <a
+            href="/app/iterable-mapping"
+          >
+            Iterable Mapping
+          </a>
+        </li>
+        <li
           key="/app/create2"
         >
           <a

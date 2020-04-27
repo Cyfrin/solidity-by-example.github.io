@@ -1,6 +1,7 @@
+pragma solidity ^0.5.16;
 
 library IterableMapping {
-    // mapping(address => uint) balances;
+    // Iterable mapping from address to uint;
     struct Map {
         address[] keys;
         mapping(address => uint) values;
@@ -8,9 +9,18 @@ library IterableMapping {
         mapping(address => bool) inserted;
     }
 
-    // NOTE: Map and storage
-    // NOTE: not underscored
-    // NOTE: public (deployed and linked)
+    function get(Map storage map, address key) public view returns (uint) {
+        return map.values[key];
+    }
+
+    function getKeyAtIndex(Map storage map, uint index) public view returns (address) {
+        return map.keys[index];
+    }
+
+    function size(Map storage map) public view returns (uint) {
+        return map.keys.length;
+    }
+
     function set(Map storage map, address key, uint val) public {
         if (map.inserted[key]) {
             map.values[key] = val;
@@ -20,10 +30,6 @@ library IterableMapping {
             map.indexOf[key] = map.keys.length;
             map.keys.push(key);
         }
-    }
-
-    function get(Map storage map, address key) public view returns (uint) {
-        return map.values[key];
     }
 
     function remove(Map storage map, address key) public {
@@ -44,36 +50,32 @@ library IterableMapping {
         map.keys[index] = lastKey;
         map.keys.pop();
     }
-
-    function size(Map storage map) public view returns (uint) {
-        return map.keys.length;
-    }
-
-    function getKeyAtIndex(Map storage map, uint index) public view returns (address) {
-        return map.keys[index];
-    }
 }
 
 contract TestIterableMap {
-    // NOTE: using for
     using IterableMapping for IterableMapping.Map;
 
-    // NOTE: cannot be public
     IterableMapping.Map private map;
 
     function testIterableMap() public {
-        // NOTE: address must be unique
-        // NOTE: first parameter do not need to pass
         map.set(address(0), 0);
-        // NOTE: IterableMapping.add(iMap, address(0));
         map.set(address(1), 100);
-        map.set(address(2), 200);
+        map.set(address(2), 200); // insert
+        map.set(address(2), 200); // update
+        map.set(address(3), 300);
 
         for (uint i = 0; i < map.size(); i++) {
-            // NOTE: you cannot iterate a map
             address key = map.getKeyAtIndex(i);
 
             assert(map.get(key) == i * 100);
         }
+
+        map.remove(address(1));
+
+        // keys = [address(0), address(3), address(2)]
+        assert(map.size() == 3);
+        assert(map.getKeyAtIndex(0) == address(0));
+        assert(map.getKeyAtIndex(1) == address(3));
+        assert(map.getKeyAtIndex(2) == address(2));
     }
 }
