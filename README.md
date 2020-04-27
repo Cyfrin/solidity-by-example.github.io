@@ -91,15 +91,15 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## Application
 
-- [ ] multisig wallet
-- [ ] erc20
-- [ ] iterable mapping
-- [ ] heap
+- [x] multisig wallet
+- [ ] TODO? erc20
+- [ ] TODO? iterable mapping
+- [ ] TODO? heap
 - [ ] merkle tree
 - [ ] payment channels (uni, bidirectional)
-- [ ] create2
-- [ ] TODO: casper?
-- [ ] TODO: minimal proxy contract?
+- [x] create2
+- [ ] TODO?: casper?
+- [ ] TODO?: minimal proxy contract?
 
 ## Hacks
 
