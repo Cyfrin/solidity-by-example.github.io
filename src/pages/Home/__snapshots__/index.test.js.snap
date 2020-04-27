@@ -267,7 +267,7 @@ exports[`it renders 1`] = `
           <a
             href="/sending-ether"
           >
-            Sending Ether
+            Sending Ether - Transfer, Send, and Call
           </a>
         </li>
         <li

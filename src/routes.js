@@ -27,13 +27,13 @@ import Inheritance from "./pages/Inheritance"
 import Shadow from "./pages/Shadow"
 import Super from "./pages/Super"
 import Visibility from "./pages/Visibility"
-
-import NewContract from "./pages/NewContract"
-import CallingContract from "./pages/CallingContract"
-
+// send / receive ether
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
+
+import NewContract from "./pages/NewContract"
+import CallingContract from "./pages/CallingContract"
 import Import from "./pages/Import"
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
@@ -176,6 +176,7 @@ const SOL_ROUTES = [
     component: Visibility,
     title: "Visibility",
   },
+  // send / receive ether
   {
     path: "payable",
     component: Payable,
@@ -184,13 +185,14 @@ const SOL_ROUTES = [
   {
     path: "sending-ether",
     component: SendingEther,
-    title: "Sending Ether",
+    title: "Sending Ether - Transfer, Send, and Call",
   },
   {
     path: "fallback",
     component: Fallback,
     title: "Fallback",
   },
+  // call, delegatecall
   {
     path: "call",
     component: Call,
