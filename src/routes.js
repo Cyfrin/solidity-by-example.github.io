@@ -35,10 +35,11 @@ import Fallback from "./pages/Fallback"
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
 import CallingContract from "./pages/CallingContract"
-
 import NewContract from "./pages/NewContract"
+// misc
 import Import from "./pages/Import"
 import Library from "./pages/Library"
+// crypto
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
 // application
@@ -209,12 +210,12 @@ const SOL_ROUTES = [
     component: CallingContract,
     title: "Calling Other Contract",
   },
-
   {
     path: "new-contract",
     component: NewContract,
     title: "Creating Contracts from a Contract",
   },
+  // misc
   {
     path: "import",
     component: Import,
@@ -225,6 +226,7 @@ const SOL_ROUTES = [
     component: Library,
     title: "Library",
   },
+  // crypto
   {
     path: "hashing",
     component: Keccak256,
