@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
   html="<p>An error will undo all changes made to the state during a transaction.</p>
 <p>You can throw an error by calling <code>require</code>, <code>revert</code> or <code>assert</code>.</p>
 <ul>
-<li><code>require</code> is used to validate inputs and conditions before execution</li>
+<li><code>require</code> is used to validate inputs and conditions before execution.</li>
 <li><code>revert</code> is similar to <code>require</code>. See the code below for details.</li>
 <li><code>assert</code> is used to check for code that should never be false. Failing
 assertion probably means that there is a bug.</li>

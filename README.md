@@ -73,35 +73,33 @@ npm run md-to-html -- path/to/folder/with/md
 
 ### Contract Interaction
 
-- [ ] call
-- [ ] delegate call (pre: call)
-- [ ] calling other contracts (pre: sending ether from contract)
-- [ ] creating contract from a contract (pre: calling other contract)
-  - [ ] TODO: send ether to constructor
+- [x] call
+- [x] delegate call
+- [x] calling other contracts
+- [x] creating contract from a contract (pre: calling other contract)
 
 ### Misc
 
-- [ ] import
-- [ ] library
-  - [ ] safe math
-  - [ ] iterable mapping
+- [x] import
+- [x] library
+- [ ] TODO? assembly
 
 ### Cryptography
 
-- [ ] hash function
-- [ ] signature verification (pre: hash function, assembly?)
+- [x] hash function
+- [x] signature verification
 
 ## Application
 
-- [ ] multisig wallet
-- [ ] erc20
+- [x] multisig wallet
+- [ ] TODO? erc20
 - [ ] iterable mapping
-- [ ] heap
-- [ ] merkle tree
+- [ ] TODO? heap
+- [x] merkle tree
+- [x] create2
 - [ ] payment channels (uni, bidirectional)
-- [ ] create2
-- [ ] TODO: casper?
-- [ ] TODO: minimal proxy contract?
+- [ ] TODO?: casper?
+- [ ] TODO?: minimal proxy contract?
 
 ## Hacks
 

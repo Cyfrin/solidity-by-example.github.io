@@ -27,25 +27,27 @@ import Inheritance from "./pages/Inheritance"
 import Shadow from "./pages/Shadow"
 import Super from "./pages/Super"
 import Visibility from "./pages/Visibility"
-
-import NewContract from "./pages/NewContract"
-import CallingContract from "./pages/CallingContract"
-
+// send / receive ether
 import Payable from "./pages/Payable"
 import SendingEther from "./pages/SendingEther"
 import Fallback from "./pages/Fallback"
-import Import from "./pages/Import"
+// contract intercation
 import Call from "./pages/Call"
 import Delegatecall from "./pages/Delegatecall"
+import CallingContract from "./pages/CallingContract"
+import NewContract from "./pages/NewContract"
+// misc
+import Import from "./pages/Import"
 import Library from "./pages/Library"
+// crypto
 import Keccak256 from "./pages/Keccak256"
 import Signature from "./pages/Signature"
 // application
 import MultiSigWallet from "./pages/MultiSigWallet"
-import Dividend from "./pages/Dividend"
-import PaymentChannel from "./pages/PaymentChannel"
 import MerkleTree from "./pages/MerkleTree"
+import IterableMapping from "./pages/IterableMapping"
 import Create2 from "./pages/Create2"
+import PaymentChannel from "./pages/PaymentChannel"
 // Hack
 import ReEntrancy from "./pages/ReEntrancy"
 import SelfDestruct from "./pages/SelfDestruct"
@@ -176,6 +178,7 @@ const SOL_ROUTES = [
     component: Visibility,
     title: "Visibility",
   },
+  // send / receive ether
   {
     path: "payable",
     component: Payable,
@@ -184,13 +187,14 @@ const SOL_ROUTES = [
   {
     path: "sending-ether",
     component: SendingEther,
-    title: "Sending Ether",
+    title: "Sending Ether - Transfer, Send, and Call",
   },
   {
     path: "fallback",
     component: Fallback,
     title: "Fallback",
   },
+  // contract interaction
   {
     path: "call",
     component: Call,
@@ -211,6 +215,7 @@ const SOL_ROUTES = [
     component: NewContract,
     title: "Creating Contracts from a Contract",
   },
+  // misc
   {
     path: "import",
     component: Import,
@@ -221,6 +226,7 @@ const SOL_ROUTES = [
     component: Library,
     title: "Library",
   },
+  // crypto
   {
     path: "hashing",
     component: Keccak256,
@@ -240,24 +246,24 @@ const APP_ROUTES = [
     title: "Multi Sig Wallet",
   },
   {
-    path: "dividend",
-    component: Dividend,
-    title: "Dividend",
-  },
-  {
-    path: "payment-channel",
-    component: PaymentChannel,
-    title: "Payment Channel",
-  },
-  {
     path: "merkle-tree",
     component: MerkleTree,
     title: "Merkle Tree",
   },
   {
+    path: "iterable-mapping",
+    component: IterableMapping,
+    title: "Iterable Mapping",
+  },
+  {
     path: "create2",
     component: Create2,
     title: "Precompute Contract Address with Create2",
+  },
+  {
+    path: "payment-channel",
+    component: PaymentChannel,
+    title: "Payment Channel",
   },
 ]
 

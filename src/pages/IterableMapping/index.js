@@ -5,8 +5,8 @@ import html from "./index.html.js"
 export default function (props) {
   return (
     <Example
-      title="Sending Ether (transfer, send, call)"
-      description="An example of sending Ether in Solidity"
+      title="Iterable Mapping"
+      description="Iterable Mapping in Solidity"
       html={html}
     />
   )

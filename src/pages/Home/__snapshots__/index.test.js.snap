@@ -267,7 +267,7 @@ exports[`it renders 1`] = `
           <a
             href="/sending-ether"
           >
-            Sending Ether
+            Sending Ether - Transfer, Send, and Call
           </a>
         </li>
         <li
@@ -372,24 +372,6 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/app/dividend"
-        >
-          <a
-            href="/app/dividend"
-          >
-            Dividend
-          </a>
-        </li>
-        <li
-          key="/app/payment-channel"
-        >
-          <a
-            href="/app/payment-channel"
-          >
-            Payment Channel
-          </a>
-        </li>
-        <li
           key="/app/merkle-tree"
         >
           <a
@@ -399,12 +381,30 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/app/iterable-mapping"
+        >
+          <a
+            href="/app/iterable-mapping"
+          >
+            Iterable Mapping
+          </a>
+        </li>
+        <li
           key="/app/create2"
         >
           <a
             href="/app/create2"
           >
             Precompute Contract Address with Create2
+          </a>
+        </li>
+        <li
+          key="/app/payment-channel"
+        >
+          <a
+            href="/app/payment-channel"
+          >
+            Payment Channel
           </a>
         </li>
       </ul>

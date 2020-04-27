@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import Dividend from "./index"
+import IterableMapping from "./index"
 
 test("it renders", () => {
-  const component = shallow(<Dividend />)
+  const component = shallow(<IterableMapping />)
 
   expect(component).toMatchSnapshot()
 })
