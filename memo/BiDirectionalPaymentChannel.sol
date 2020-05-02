@@ -133,6 +133,8 @@ contract BiDirectionalPaymentChannel {
         challengeExpiresAt = block.timestamp.add(challengePeriod);
     }
 
+    // TODO? exit without challenge if both users agree
+
     function close(
         uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
     )
