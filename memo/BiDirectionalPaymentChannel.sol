@@ -3,10 +3,8 @@ pragma experimental ABIEncoderV2;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/utils/ReentrancyGuard.sol";
 
-// TODO: no need for ReentrancyGuard if a multi-sig wallet sends payments?
-contract BiDirectionalPaymentChannel is ReentrancyGuard {
+contract BiDirectionalPaymentChannel {
     using SafeMath for uint;
     using ECDSA for bytes32;
 
@@ -97,7 +95,6 @@ contract BiDirectionalPaymentChannel is ReentrancyGuard {
         public
         onlyUser
         checkSignature(_signatures, _balances, _nonce)
-        nonReentrant
     {
         require(status == Status.Open, "Channel status must be open");
         require(block.timestamp < challengeExpiresAt, "Expired challenge period");
@@ -111,7 +108,6 @@ contract BiDirectionalPaymentChannel is ReentrancyGuard {
         public
         onlyUser
         checkSignature(_signatures, _balances, _nonce)
-        nonReentrant
     {
         require(status == Status.Closing, "Channel status must be closing");
         require(block.timestamp < challengeExpiresAt, "Expired challenge period");
@@ -128,7 +124,6 @@ contract BiDirectionalPaymentChannel is ReentrancyGuard {
         public
         onlyUser
         checkSignature(_signatures, _balances, _nonce)
-        nonReentrant
     {
         require(status == Status.Closing, "Channel status must be closing");
         require(block.timestamp >= challengeExpiresAt, "Challenge period has not expired yet");
@@ -143,7 +138,7 @@ contract BiDirectionalPaymentChannel is ReentrancyGuard {
     }
 
     // NOTE: use withdraw to avoid DOS from sending
-    function withdraw() public onlyUser nonReentrant {
+    function withdraw() public onlyUser {
         require(status == Status.Closed, "Channel status must be closed");
 
         uint amount = balances[msg.sender];
