@@ -26,6 +26,7 @@ contract BiDirectionalPaymentChannel {
     // NOTE: deposit from multi-sig wallet
     // NOTE: need to sign initial balances before this contract is deployed
     // TODO: griefing
+    // TODO? deposit and update balance total?
 
     constructor(
         address payable[2] memory _users,
