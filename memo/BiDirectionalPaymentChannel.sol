@@ -24,8 +24,7 @@ contract BiDirectionalPaymentChannel {
     mapping(address => uint) public balances;
 
     // NOTE: deposit from multi-sig wallet
-    // NOTE: need to sign initial deposits before this contract is deployed
-    // NOTE: precomputed address above requires that constructor is empty?
+    // NOTE: need to sign initial balances before this contract is deployed
     // TODO: griefing
 
     constructor(
