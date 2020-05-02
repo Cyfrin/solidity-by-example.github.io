@@ -76,7 +76,7 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    modifier checkSignature(bytes[2] memory _signatures, uint[2] memory _balances, uint _nonce) {
+    modifier checkSignatures(bytes[2] memory _signatures, uint[2] memory _balances, uint _nonce) {
         // NOTE: need to cast payable address to address type (not necessary in 0.6)
         address[2] memory signers;
         for (uint i = 0; i < users.length; i++) {
@@ -94,7 +94,7 @@ contract BiDirectionalPaymentChannel {
     function startExit(uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures)
         public
         onlyUser
-        checkSignature(_signatures, _balances, _nonce)
+        checkSignatures(_signatures, _balances, _nonce)
     {
         require(status == Status.Open, "Channel status must be open");
         require(block.timestamp < challengeExpiresAt, "Expired challenge period");
@@ -107,7 +107,7 @@ contract BiDirectionalPaymentChannel {
     function challengeExit(uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures)
         public
         onlyUser
-        checkSignature(_signatures, _balances, _nonce)
+        checkSignatures(_signatures, _balances, _nonce)
     {
         require(status == Status.Closing, "Channel status must be closing");
         require(block.timestamp < challengeExpiresAt, "Expired challenge period");
@@ -123,7 +123,7 @@ contract BiDirectionalPaymentChannel {
     function close(uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures)
         public
         onlyUser
-        checkSignature(_signatures, _balances, _nonce)
+        checkSignatures(_signatures, _balances, _nonce)
     {
         require(status == Status.Closing, "Channel status must be closing");
         require(block.timestamp >= challengeExpiresAt, "Challenge period has not expired yet");
