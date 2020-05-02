@@ -93,6 +93,7 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
+    // TODO? check contract balance >= sum(balances)
     function startExit(
         uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
     )
