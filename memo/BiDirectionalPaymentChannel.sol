@@ -8,36 +8,47 @@ contract BiDirectionalPaymentChannel {
     using SafeMath for uint;
     using ECDSA for bytes32;
 
+    // TODO events
+
     address payable[2] users;
     mapping(address => bool) public isUser;
 
-    enum Status {
-        Open,
-        Closing,
-        Closed
-    }
-
-    Status public status;
     uint challengePeriod;
     uint challengeExpiresAt = 2 ** 256 - 1;
     uint nonce;
     mapping(address => uint) public balances;
 
     // NOTE: deposit from multi-sig wallet
-    // NOTE: need to sign initial balances before this contract is deployed
     // TODO: griefing
-    // TODO? deposit and update balance total?
 
+    modifier checkBalances(uint[2] _balances) {
+        require(
+            address(this).balance >= _balances[0].add(_balances[1]),
+            "balance of contract must be >= to the total balance of users"
+        );
+        _;
+    }
+
+    // expiresAt
     constructor(
         address payable[2] memory _users,
-        uint _challengePeriod
+        uint _challengePeriod,
+        uint[2] _balances
     )
-        public payable
+        public
+        payable
+        checkBalances(_balances)
     {
+        require(_challengePeriod > 0, "Challenge period must be > 0");
+
         for (uint i = 0; i < _users.length; i++) {
-            users[i] = _users[i];
-            require(!isUser[users[i]], "User address must be unique");
-            isUser[users[i]] = true;
+            address user = _users[i];
+
+            require(!isUser[user], "User address must be unique");
+            users[i] = user;
+            isUser[user] = true;
+
+            balances[user] = _balances[i]
         }
 
         challengePeriod = _challengePeriod;
@@ -72,7 +83,7 @@ contract BiDirectionalPaymentChannel {
     }
 
     modifier onlyUser() {
-        require(isUser[msg.sender], "Not authorized");
+        require(isUser[msg.sender], "Not user");
         _;
     }
 
@@ -93,33 +104,14 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    // TODO? check contract balance >= sum(balances)
-    function startExit(
-        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
-    )
-        public
-        onlyUser
-        checkSignatures(_signatures, _balances, _nonce)
-    {
-        require(status == Status.Open, "Channel status must be open");
-        require(
-            block.timestamp < challengeExpiresAt,
-            "Expired challenge period"
-        );
-
-        status = Status.Closing;
-        nonce = _nonce;
-        challengeExpiresAt = block.timestamp.add(challengePeriod);
-    }
-
     function challengeExit(
         uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
     )
         public
         onlyUser
         checkSignatures(_signatures, _balances, _nonce)
+        checkBalances(_balances)
     {
-        require(status == Status.Closing, "Channel status must be closing");
         require(
             block.timestamp < challengeExpiresAt,
             "Expired challenge period"
@@ -130,39 +122,25 @@ contract BiDirectionalPaymentChannel {
         );
 
         nonce = _nonce;
+
+        for (uint i = 0; i < users.length; i++) {
+            balances[users[i]] = _balances[i];
+        }
+
         challengeExpiresAt = block.timestamp.add(challengePeriod);
     }
 
     // TODO? exit without challenge if both users agree
 
-    function close(
-        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
-    )
-        public
-        onlyUser
-        checkSignatures(_signatures, _balances, _nonce)
-    {
-        require(status == Status.Closing, "Channel status must be closing");
+    // NOTE: use withdraw to avoid DOS
+    function withdraw() public onlyUser {
         require(
             block.timestamp >= challengeExpiresAt,
             "Challenge period has not expired yet"
         );
-        require(_nonce == nonce, "Invalid nonce");
-
-        status = Status.Closed;
-
-        for (uint i = 0; i < users.length; i++) {
-            balances[users[i]] = _balances[i];
-            // TODO: require sum(balances) == address(this).balance?
-        }
-    }
-
-    // NOTE: use withdraw to avoid DOS from sending
-    function withdraw() public onlyUser {
-        require(status == Status.Closed, "Channel status must be closed");
 
         uint amount = balances[msg.sender];
-        balances[msg.sender] = 0;
+        balances[msg.sender] = 0
 
         (bool sent,) = msg.sender.call.value(amount)("");
         require(sent, "Failed to send Ether");
