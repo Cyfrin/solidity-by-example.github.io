@@ -57,9 +57,9 @@ contract BiDirectionalPaymentChannel {
             NOTE: sign with address of this contract to protect
                   agains replay attack on other contracts
             */
-            address signer = _signers[i];
-
-            bool valid = signer == keccak256(abi.encodePacked(_contract, _balances, _nonce))
+            bool valid = _signers[i] == keccak256(
+                    abi.encodePacked(_contract, _balances, _nonce)
+                )
                 .toEthSignedMessageHash()
                 .recover(_signatures[i]);
 
@@ -76,7 +76,9 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    modifier checkSignatures(bytes[2] memory _signatures, uint[2] memory _balances, uint _nonce) {
+    modifier checkSignatures(
+        bytes[2] memory _signatures, uint[2] memory _balances, uint _nonce
+    ) {
         // NOTE: need to cast payable address to address type (not necessary in 0.6)
         address[2] memory signers;
         for (uint i = 0; i < users.length; i++) {
@@ -91,26 +93,36 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    function startExit(uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures)
+    function startExit(
+        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
+    )
         public
         onlyUser
         checkSignatures(_signatures, _balances, _nonce)
     {
         require(status == Status.Open, "Channel status must be open");
-        require(block.timestamp < challengeExpiresAt, "Expired challenge period");
+        require(
+            block.timestamp < challengeExpiresAt,
+            "Expired challenge period"
+        );
 
         status = Status.Closing;
         nonce = _nonce;
         challengeExpiresAt = block.timestamp.add(challengePeriod);
     }
 
-    function challengeExit(uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures)
+    function challengeExit(
+        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
+    )
         public
         onlyUser
         checkSignatures(_signatures, _balances, _nonce)
     {
         require(status == Status.Closing, "Channel status must be closing");
-        require(block.timestamp < challengeExpiresAt, "Expired challenge period");
+        require(
+            block.timestamp < challengeExpiresAt,
+            "Expired challenge period"
+        );
         require(
             _nonce > nonce,
             "Nonce must be greater than the current nonce"
@@ -120,13 +132,18 @@ contract BiDirectionalPaymentChannel {
         challengeExpiresAt = block.timestamp.add(challengePeriod);
     }
 
-    function close(uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures)
+    function close(
+        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
+    )
         public
         onlyUser
         checkSignatures(_signatures, _balances, _nonce)
     {
         require(status == Status.Closing, "Channel status must be closing");
-        require(block.timestamp >= challengeExpiresAt, "Challenge period has not expired yet");
+        require(
+            block.timestamp >= challengeExpiresAt,
+            "Challenge period has not expired yet"
+        );
         require(_nonce == nonce, "Invalid nonce");
 
         status = Status.Closed;
