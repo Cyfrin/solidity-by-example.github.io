@@ -10,46 +10,31 @@ contract BiDirectionalPaymentChannel {
 
     // TODO events
 
-    address payable[2] users;
+    address payable[2] public users;
     mapping(address => bool) public isUser;
 
-    uint challengePeriod;
-    uint expiresAt;
-    uint nonce;
-    mapping(address => uint) public balances;
-
-    modifier checkBalances(uint[2] _balances) {
-        require(
-            address(this).balance >= _balances[0].add(_balances[1]),
-            "balance of contract must be >= to the total balance of users"
-        );
-        _;
-    }
+    uint public challengePeriod;
+    uint public expiresAt;
+    uint public nonce;
 
     // NOTE: deposit from multi-sig wallet
     // TODO: griefing
     // TODO? update contract balance
     constructor(
         address payable[2] memory _users,
-        uint[2] _balances,
         uint _expiresAt,
         uint _challengePeriod,
     )
         public
         payable
-        checkBalances(_balances)
     {
         require(_expiresAt > block.timestamp, "Expiration must be > now");
         require(_challengePeriod > 0, "Challenge period must be > 0");
 
         for (uint i = 0; i < _users.length; i++) {
             address user = _users[i];
-
-            require(!isUser[user], "User address must be unique");
             users[i] = user;
             isUser[user] = true;
-
-            balances[user] = _balances[i]
         }
 
         expiresAt = _ expiresAt;
@@ -63,7 +48,9 @@ contract BiDirectionalPaymentChannel {
         uint[2] memory _balances,
         uint _nonce
     )
-        public pure returns (bool)
+        public
+        pure
+        returns (bool)
     {
         for (uint i = 0; i < _signatures.length; i++) {
             /*
@@ -101,6 +88,14 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
+    modifier checkBalances(uint[2] _balances) {
+        require(
+            address(this).balance >= _balances[0].add(_balances[1]),
+            "balance of contract must be >= to the total balance of users"
+        );
+        _;
+    }
+
     modifier onlyUser() {
         require(isUser[msg.sender], "Not user");
         _;
@@ -124,26 +119,40 @@ contract BiDirectionalPaymentChannel {
         );
 
         nonce = _nonce;
-
-        for (uint i = 0; i < users.length; i++) {
-            balances[users[i]] = _balances[i];
-        }
-
         expiresAt = block.timestamp.add(challengePeriod);
     }
 
     // TODO? exit without challenge if both users agree
-    // NOTE: use withdraw to avoid DOS
-    function withdraw() public onlyUser {
+    // TODO re-entrancy guard
+    function close(
+        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
+    )
+        public
+        onlyUser
+        checkSignatures(_signatures, _balances, _nonce)
+        checkBalances(_balances)
+    {
         require(
             block.timestamp >= expiresAt,
             "Challenge period has not expired yet"
         );
+        require(_nonce == nonce, "Invalid nonce");
 
-        uint amount = balances[msg.sender];
-        balances[msg.sender] = 0
+        if (msg.sender == users[0]) {
+            _kill(_balances[0], users[0], users[1]);
+        } else {
+            _kill(_balances[1], users[1], users[0]);
+        }
+    }
 
-        (bool sent,) = msg.sender.call.value(amount)("");
+    function _kill(
+        uint _amount, address payable _caller, address payable _otherUser
+    )
+        private
+    {
+        (bool sent,) = _caller.call.value(_amount)("");
         require(sent, "Failed to send Ether");
+
+        selfdestruct(_otherUser);
     }
 }
