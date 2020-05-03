@@ -1,6 +1,14 @@
 pragma solidity ^0.5.11;
 pragma experimental ABIEncoderV2;
 
+/*
+1. Alice and Bob fund a multi-sig wallet
+2. Precompute payment channel address
+3. Alice and Bob sign initial balances of the payment channel
+TODO? no need to deploy in case of no dispute?
+4. Deploy payment channel from multi-sig
+*/
+
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
 
@@ -138,6 +146,7 @@ contract BiDirectionalPaymentChannel {
         );
         require(_nonce == nonce, "Invalid nonce");
 
+        // TODO use kill or withdraw?
         if (msg.sender == users[0]) {
             _kill(_balances[0], users[0], users[1]);
         } else {
