@@ -14,12 +14,9 @@ contract BiDirectionalPaymentChannel {
     mapping(address => bool) public isUser;
 
     uint challengePeriod;
-    uint challengeExpiresAt = 2 ** 256 - 1;
+    uint expiresAt;
     uint nonce;
     mapping(address => uint) public balances;
-
-    // NOTE: deposit from multi-sig wallet
-    // TODO: griefing
 
     modifier checkBalances(uint[2] _balances) {
         require(
@@ -29,16 +26,20 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    // expiresAt
+    // NOTE: deposit from multi-sig wallet
+    // TODO: griefing
+    // TODO? update contract balance
     constructor(
         address payable[2] memory _users,
+        uint[2] _balances,
+        uint _expiresAt,
         uint _challengePeriod,
-        uint[2] _balances
     )
         public
         payable
         checkBalances(_balances)
     {
+        require(_expiresAt > block.timestamp, "Expiration must be > now");
         require(_challengePeriod > 0, "Challenge period must be > 0");
 
         for (uint i = 0; i < _users.length; i++) {
@@ -51,6 +52,7 @@ contract BiDirectionalPaymentChannel {
             balances[user] = _balances[i]
         }
 
+        expiresAt = _ expiresAt;
         challengePeriod = _challengePeriod;
     }
 
@@ -82,11 +84,6 @@ contract BiDirectionalPaymentChannel {
         return true;
     }
 
-    modifier onlyUser() {
-        require(isUser[msg.sender], "Not user");
-        _;
-    }
-
     modifier checkSignatures(
         bytes[2] memory _signatures, uint[2] memory _balances, uint _nonce
     ) {
@@ -104,6 +101,11 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
+    modifier onlyUser() {
+        require(isUser[msg.sender], "Not user");
+        _;
+    }
+
     function challengeExit(
         uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
     )
@@ -113,7 +115,7 @@ contract BiDirectionalPaymentChannel {
         checkBalances(_balances)
     {
         require(
-            block.timestamp < challengeExpiresAt,
+            block.timestamp < expiresAt,
             "Expired challenge period"
         );
         require(
@@ -127,15 +129,14 @@ contract BiDirectionalPaymentChannel {
             balances[users[i]] = _balances[i];
         }
 
-        challengeExpiresAt = block.timestamp.add(challengePeriod);
+        expiresAt = block.timestamp.add(challengePeriod);
     }
 
     // TODO? exit without challenge if both users agree
-
     // NOTE: use withdraw to avoid DOS
     function withdraw() public onlyUser {
         require(
-            block.timestamp >= challengeExpiresAt,
+            block.timestamp >= expiresAt,
             "Challenge period has not expired yet"
         );
 
