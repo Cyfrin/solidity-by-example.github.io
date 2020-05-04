@@ -5,47 +5,65 @@ pragma experimental ABIEncoderV2;
 1. Alice and Bob fund a multi-sig wallet
 2. Precompute payment channel address
 3. Alice and Bob sign initial balances of the payment channel
-TODO? no need to deploy in case of no dispute?
 4. Deploy payment channel from multi-sig
+5. startOrChallengeExit to start the process of closing a channel
+
+Update channel balances
+1. Repeat steps 1 - 3 above
 */
+
+// TODO? no need to deploy in case of no dispute?
+// TODO events
+// TODO: griefing
+// TODO? update contract balance
+// TODO? exit without challenge if both users agree
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
 
-contract BiDirectionalPaymentChannel {
-    using SafeMath for uint;
-    using ECDSA for bytes32;
 
-    // TODO events
+contract BiDirectionalPaymentChannel {
+    using SafeMath for uint256;
+    using ECDSA for bytes32;
 
     address payable[2] public users;
     mapping(address => bool) public isUser;
 
-    uint public challengePeriod;
-    uint public expiresAt;
-    uint public nonce;
+    mapping(address => uint256) public balances;
+
+    uint256 public challengePeriod;
+    uint256 public expiresAt;
+    uint256 public nonce;
+
+    modifier checkBalances(uint256[2] _balances) {
+        require(
+            address(this).balance >= _balances[0].add(_balances[1]),
+            "balance of contract must be >= to the total balance of users"
+        );
+        _;
+    }
 
     // NOTE: deposit from multi-sig wallet
-    // TODO: griefing
-    // TODO? update contract balance
     constructor(
         address payable[2] memory _users,
-        uint _expiresAt,
-        uint _challengePeriod,
-    )
-        public
-        payable
-    {
+        uint256[2] _balances,
+        uint256 _expiresAt,
+        uint256 _challengePeriod
+    ) public payable checkBalances(_balances) {
         require(_expiresAt > block.timestamp, "Expiration must be > now");
         require(_challengePeriod > 0, "Challenge period must be > 0");
 
-        for (uint i = 0; i < _users.length; i++) {
+        for (uint256 i = 0; i < _users.length; i++) {
             address user = _users[i];
+
+            require(!isUser[user], "user must be unique");
             users[i] = user;
             isUser[user] = true;
+
+            balances[user] = _balances[i];
         }
 
-        expiresAt = _ expiresAt;
+        expiresAt = _expiresAt;
         challengePeriod = _challengePeriod;
     }
 
@@ -53,23 +71,18 @@ contract BiDirectionalPaymentChannel {
         bytes[2] memory _signatures,
         address _contract,
         address[2] memory _signers,
-        uint[2] memory _balances,
-        uint _nonce
-    )
-        public
-        pure
-        returns (bool)
-    {
-        for (uint i = 0; i < _signatures.length; i++) {
+        uint256[2] memory _balances,
+        uint256 _nonce
+    ) public pure returns (bool) {
+        for (uint256 i = 0; i < _signatures.length; i++) {
             /*
             NOTE: sign with address of this contract to protect
                   agains replay attack on other contracts
             */
-            bool valid = _signers[i] == keccak256(
-                    abi.encodePacked(_contract, _balances, _nonce)
-                )
-                .toEthSignedMessageHash()
-                .recover(_signatures[i]);
+            bool valid = _signers[i] ==
+                keccak256(abi.encodePacked(_contract, _balances, _nonce))
+                    .toEthSignedMessageHash()
+                    .recover(_signatures[i]);
 
             if (!valid) {
                 return false;
@@ -80,11 +93,13 @@ contract BiDirectionalPaymentChannel {
     }
 
     modifier checkSignatures(
-        bytes[2] memory _signatures, uint[2] memory _balances, uint _nonce
+        bytes[2] memory _signatures,
+        uint256[2] memory _balances,
+        uint256 _nonce
     ) {
         // NOTE: need to cast payable address to address type (not necessary in 0.6)
         address[2] memory signers;
-        for (uint i = 0; i < users.length; i++) {
+        for (uint256 i = 0; i < users.length; i++) {
             signers[i] = address(users[i]);
         }
 
@@ -96,72 +111,42 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    modifier checkBalances(uint[2] _balances) {
-        require(
-            address(this).balance >= _balances[0].add(_balances[1]),
-            "balance of contract must be >= to the total balance of users"
-        );
-        _;
-    }
-
     modifier onlyUser() {
         require(isUser[msg.sender], "Not user");
         _;
     }
 
-    function challengeExit(
-        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
+    function startOrChallengeExit(
+        uint256[2] memory _balances,
+        uint256 _nonce,
+        bytes[2] memory _signatures
     )
         public
         onlyUser
         checkSignatures(_signatures, _balances, _nonce)
         checkBalances(_balances)
     {
-        require(
-            block.timestamp < expiresAt,
-            "Expired challenge period"
-        );
-        require(
-            _nonce > nonce,
-            "Nonce must be greater than the current nonce"
-        );
+        require(block.timestamp < expiresAt, "Expired challenge period");
+        require(_nonce > nonce, "Nonce must be greater than the current nonce");
+
+        for (uint256 i = 0; i < _balances.length; i++) {
+            balances[users[i]] = _balances[i];
+        }
 
         nonce = _nonce;
         expiresAt = block.timestamp.add(challengePeriod);
     }
 
-    // TODO? exit without challenge if both users agree
-    // TODO re-entrancy guard
-    function close(
-        uint[2] memory _balances, uint _nonce, bytes[2] memory _signatures
-    )
-        public
-        onlyUser
-        checkSignatures(_signatures, _balances, _nonce)
-        checkBalances(_balances)
-    {
+    function withdraw() public onlyUser {
         require(
             block.timestamp >= expiresAt,
             "Challenge period has not expired yet"
         );
-        require(_nonce == nonce, "Invalid nonce");
 
-        // TODO use kill or withdraw?
-        if (msg.sender == users[0]) {
-            _kill(_balances[0], users[0], users[1]);
-        } else {
-            _kill(_balances[1], users[1], users[0]);
-        }
-    }
+        uint256 amount = balances[msg.sender];
+        balances[msg.sender] = 0;
 
-    function _kill(
-        uint _amount, address payable _caller, address payable _otherUser
-    )
-        private
-    {
-        (bool sent,) = _caller.call.value(_amount)("");
+        (bool sent, ) = msg.sender.call.value(amount)("");
         require(sent, "Failed to send Ether");
-
-        selfdestruct(_otherUser);
     }
 }
