@@ -6,14 +6,13 @@ pragma experimental ABIEncoderV2;
 2. Precompute payment channel address
 3. Alice and Bob sign initial balances of the payment channel
 4. Deploy payment channel from multi-sig
-5. startOrChallengeExit to start the process of closing a channel
+5. challengeExit to start the process of closing a channel
 
 Update channel balances
 1. Repeat steps 1 - 3 above
 */
 
 // TODO: griefing
-// TODO events
 // TODO? update contract balance
 // TODO? exit without challenge if both users agree
 
@@ -24,6 +23,9 @@ import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contr
 contract BiDirectionalPaymentChannel {
     using SafeMath for uint256;
     using ECDSA for bytes32;
+
+    event ChallengeExit(address indexed sender, uint256 nonce);
+    event Withdraw(address indexed to, uint256 amount);
 
     address payable[2] public users;
     mapping(address => bool) public isUser;
@@ -115,7 +117,7 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    function startOrChallengeExit(
+    function challengeExit(
         uint256[2] memory _balances,
         uint256 _nonce,
         bytes[2] memory _signatures
@@ -134,6 +136,8 @@ contract BiDirectionalPaymentChannel {
 
         nonce = _nonce;
         expiresAt = block.timestamp.add(challengePeriod);
+
+        emit ChallengeExit(msg.sender, nonce);
     }
 
     function withdraw() public onlyUser {
@@ -147,5 +151,7 @@ contract BiDirectionalPaymentChannel {
 
         (bool sent, ) = msg.sender.call.value(amount)("");
         require(sent, "Failed to send Ether");
+
+        emit Withdraw(msg.sender, amount);
     }
 }
