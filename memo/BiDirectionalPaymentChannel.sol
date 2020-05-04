@@ -12,9 +12,8 @@ Update channel balances
 1. Repeat steps 1 - 3 above
 */
 
-// TODO? no need to deploy in case of no dispute?
-// TODO events
 // TODO: griefing
+// TODO events
 // TODO? update contract balance
 // TODO? exit without challenge if both users agree
 
