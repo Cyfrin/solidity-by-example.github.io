@@ -2,19 +2,28 @@ pragma solidity ^0.5.11;
 pragma experimental ABIEncoderV2;
 
 /*
+Opening a channel
 1. Alice and Bob fund a multi-sig wallet
 2. Precompute payment channel address
-3. Alice and Bob sign initial balances of the payment channel
-4. Deploy payment channel from multi-sig
-5. challengeExit to start the process of closing a channel
+3. Alice and Bob exchanges signatures of initial balances of the payment channel
 
-Update channel balances
-1. Repeat steps 1 - 3 above
-*/
+Closing a channel when Alice and Bob do not agree on the final balances
+1. Deploy payment channel from multi-sig
+2. call challengeExit() to start the process of closing a channel
+3. Alice and Bob can withdraw funds once the channel is expired
+
+Closing a channel when Alice and Bob agree on the final balance
+1. From multi-sig send transaction to an existing payment splitter that will
+   send payments to Alice and Bob
+2. Invalidate payment channel (TODO how? by wrapping steps 1 - 2 in a single tx)
 
 // TODO: griefing
-// TODO? update contract balance
-// TODO? exit without challenge if both users agree
+Update channel balances 
+1. Repeat steps 1 - 3 above
+2. Invalidate previous channel by either 
+   - deleting the multi-sig transaction that would have deployed the old payment channel
+TODO - dispute after new channel is created, before old is deleted
+*/
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
@@ -98,7 +107,7 @@ contract BiDirectionalPaymentChannel {
         uint256[2] memory _balances,
         uint256 _nonce
     ) {
-        // NOTE: need to cast payable address to address type (not necessary in 0.6)
+        // NOTE: need to cast payable address to address type (not in 0.6)
         address[2] memory signers;
         for (uint256 i = 0; i < users.length; i++) {
             signers[i] = address(users[i]);
