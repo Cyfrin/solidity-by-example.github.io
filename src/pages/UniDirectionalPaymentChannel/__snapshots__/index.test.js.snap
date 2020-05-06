@@ -2,101 +2,84 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="An example of payment channels in Solidity"
+  description="An example of uni-directional payment channels in Solidity"
   html="<p>Payment channels allow participants to repeatedly transfer Ether off chain.</p>
 <p>Here is how this contract is used:</p>
 <ul>
 <li><code>Alice</code> deploys the contract, funding it with some Ether.</li>
-<li><code>Alice</code> authorises a payment by signing a message (off chain) and sends the signed message to <code>Bob</code>.</li>
+<li><code>Alice</code> authorizes a payment by signing a message (off chain) and sends the signature to <code>Bob</code>.</li>
 <li><code>Bob</code> claims his payment by presenting the signed message to the smart contract.</li>
+<li>If <code>Bob</code> does not claim his payment, <code>Alice</code> get her Ether back after the contract expires</li>
 </ul>
+<p>This is called a uni-directional payment channel since the payment can go only in a signle direction from <code>Alice</code> to <code>Bob</code>.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
-contract PaymentChannel {
-  address payable public sender;
-  address payable public recipient;
-  uint public expiration;
+import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol\\";
+import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\";
+import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/utils/ReentrancyGuard.sol\\";
 
-  constructor(address payable _recipient, uint duration) public payable {
-    sender = msg.sender;
-    recipient = _recipient;
-    expiration = now + duration;
-  }
 
-  function isValidSignature(uint amount, bytes memory signature)
-    internal
-    view
-    returns (bool)
-  {
-    bytes32 message = prefixed(keccak256(abi.encodePacked(this, amount)));
+contract UniDirectionalPaymentChannel is ReentrancyGuard {
+    using SafeMath for uint;
+    using ECDSA for bytes32;
 
-    return recoverSigner(message, signature) == sender;
-  }
+    address payable public payer;
+    address payable public payee;
 
-  // The recipient can close the channel at any time by presenting a
-  // signed amount from the sender. The recipient will be sent that amount,
-  // and the remainder will go back to the sender
-  function close(uint amount, bytes memory signature) public {
-    require(msg.sender == recipient);
-    require(isValidSignature(amount, signature));
+    uint public expiresAt;
 
-    recipient.transfer(amount);
-    selfdestruct(sender);
-  }
+    constructor(address payable _payee, uint _expiresAt) public payable {
+        require(_expiresAt &gt; block.timestamp, \\"Expiration must be &gt; now\\");
 
-  // Sender can extend the expiration at any time
-  function extend(uint newExpiration) public {
-    require(msg.sender == sender);
-    require(newExpiration &gt; expiration);
+        payer = msg.sender;
+        payee = _payee;
 
-    expiration = newExpiration;
-  }
-
-  // If the timeout is reached without the recipient closing the channel,
-  // then the Ether is released back to the sender.
-  function claimTimeout() public {
-    require(now &gt;= expiration);
-    selfdestruct(sender);
-  }
-
-  function recoverSigner(bytes32 message, bytes memory sig)
-    internal
-    pure
-    returns (address)
-  {
-    (uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);
-
-    // If you are using Remix IDE, you may need to hard code
-    // v = 0x1b, due to a bug
-    return ecrecover(message, v, r, s);
-  }
-
-  /// builds a prefixed hash to mimic the behavior of eth_sign.
-  function prefixed(bytes32 hash) internal pure returns (bytes32) {
-    return keccak256(abi.encodePacked(\\"\\\\x19Ethereum Signed Message:\\\\n32\\", hash));
-  }
-
-  function splitSignature(bytes memory sig)
-    internal
-    pure
-    returns (uint8 v, bytes32 r, bytes32 s)
-  {
-    require(sig.length == 65);
-
-    assembly {
-      // first 32 bytes, after the length prefix
-      r := mload(add(sig, 32))
-      // second 32 bytes
-      s := mload(add(sig, 64))
-      // final byte (first byte of the next 32 bytes)
-      v := byte(0, mload(add(sig, 96)))
+        expiresAt = _expiresAt;
     }
 
-    return (v, r, s);
-  }
+    function verify(
+        bytes memory _signature,
+        address _payer,
+        address _contract,
+        uint _payeeBalance
+    ) public pure returns (bool) {
+        // NOTE: sign with address of this contract to protect agains
+        // replay attack on other contracts
+        return
+            keccak256(abi.encodePacked(_contract, _payeeBalance))
+                .toEthSignedMessageHash()
+                .recover(_signature) == _payer;
+    }
+
+    modifier checkSignature(bytes memory _signature, uint _payeeBalance) {
+        require(
+            verify(_signature, payer, address(this), _payeeBalance),
+            \\"Invalid signature\\"
+        );
+        _;
+    }
+
+    function close(uint _payeeBalance, bytes memory _signature)
+        public
+        nonReentrant
+        checkSignature(_signature, _payeeBalance)
+    {
+        require(msg.sender == payee, \\"Not payee\\");
+
+        (bool sent, ) = payee.call.value(_payeeBalance)(\\"\\");
+        require(sent, \\"Failed to send Ether\\");
+
+        selfdestruct(payer);
+    }
+
+    function kill() public {
+        require(msg.sender == payer, \\"Not payer\\");
+        require(block.timestamp &gt;= expiresAt, \\"channel not expired\\");
+        selfdestruct(payer);
+    }
 }
 </code></pre>
 "
-  title="Payment Channel"
+  title="Uni-Directional Payment Channel"
 />
 `;

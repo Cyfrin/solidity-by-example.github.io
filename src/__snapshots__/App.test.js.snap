@@ -209,8 +209,13 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
-          key="/app/payment-channel"
-          path="/app/payment-channel"
+          key="/app/uni-directional-payment-channel"
+          path="/app/uni-directional-payment-channel"
+        />
+        <Route
+          component={[Function]}
+          key="/app/bi-directional-payment-channel"
+          path="/app/bi-directional-payment-channel"
         />
         <Route
           component={[Function]}

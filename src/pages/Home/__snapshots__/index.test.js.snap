@@ -399,12 +399,21 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
-          key="/app/payment-channel"
+          key="/app/uni-directional-payment-channel"
         >
           <a
-            href="/app/payment-channel"
+            href="/app/uni-directional-payment-channel"
           >
-            Payment Channel
+            Uni-directional Payment Channel
+          </a>
+        </li>
+        <li
+          key="/app/bi-directional-payment-channel"
+        >
+          <a
+            href="/app/bi-directional-payment-channel"
+          >
+            Bi-directional Payment Channel
           </a>
         </li>
       </ul>

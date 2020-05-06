@@ -1,4 +1,11 @@
-pragma solidity ^0.5.16;
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders 1`] = `
+<Example
+  description="An example of bi-directional payment channels in Solidity"
+  html="<p>Bi-directional payment channels allow participants <code>Alice</code> and <code>Bob</code> to repeatedly transfer Ether off chain.</p>
+<p>Payments can go both ways, <code>Alice</code> pays <code>Bob</code> and <code>Bob</code> pays <code>Alice</code>.</p>
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 pragma experimental ABIEncoderV2;
 
 /*
@@ -27,9 +34,8 @@ Update channel balances
      new balances
 */
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
-
+import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol\\";
+import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\";
 
 contract BiDirectionalPaymentChannel {
     using SafeMath for uint;
@@ -39,9 +45,9 @@ contract BiDirectionalPaymentChannel {
     event Withdraw(address indexed to, uint amount);
 
     address payable[2] public users;
-    mapping(address => bool) public isUser;
+    mapping(address =&gt; bool) public isUser;
 
-    mapping(address => uint) public balances;
+    mapping(address =&gt; uint) public balances;
 
     uint public challengePeriod;
     uint public expiresAt;
@@ -49,8 +55,8 @@ contract BiDirectionalPaymentChannel {
 
     modifier checkBalances(uint[2] memory _balances) {
         require(
-            address(this).balance >= _balances[0].add(_balances[1]),
-            "balance of contract must be >= to the total balance of users"
+            address(this).balance &gt;= _balances[0].add(_balances[1]),
+            \\"balance of contract must be &gt;= to the total balance of users\\"
         );
         _;
     }
@@ -62,13 +68,13 @@ contract BiDirectionalPaymentChannel {
         uint _expiresAt,
         uint _challengePeriod
     ) public payable checkBalances(_balances) {
-        require(_expiresAt > block.timestamp, "Expiration must be > now");
-        require(_challengePeriod > 0, "Challenge period must be > 0");
+        require(_expiresAt &gt; block.timestamp, \\"Expiration must be &gt; now\\");
+        require(_challengePeriod &gt; 0, \\"Challenge period must be &gt; 0\\");
 
-        for (uint i = 0; i < _users.length; i++) {
+        for (uint i = 0; i &lt; _users.length; i++) {
             address payable user = _users[i];
 
-            require(!isUser[user], "user must be unique");
+            require(!isUser[user], \\"user must be unique\\");
             users[i] = user;
             isUser[user] = true;
 
@@ -86,7 +92,7 @@ contract BiDirectionalPaymentChannel {
         uint[2] memory _balances,
         uint _nonce
     ) public pure returns (bool) {
-        for (uint i = 0; i < _signatures.length; i++) {
+        for (uint i = 0; i &lt; _signatures.length; i++) {
             /*
             NOTE: sign with address of this contract to protect
                   agains replay attack on other contracts
@@ -111,20 +117,20 @@ contract BiDirectionalPaymentChannel {
     ) {
         // NOTE: need to cast payable address to address type (not in 0.6)
         address[2] memory signers;
-        for (uint i = 0; i < users.length; i++) {
+        for (uint i = 0; i &lt; users.length; i++) {
             signers[i] = address(users[i]);
         }
 
         require(
             verify(_signatures, address(this), signers, _balances, _nonce),
-            "Invalid signature"
+            \\"Invalid signature\\"
         );
 
         _;
     }
 
     modifier onlyUser() {
-        require(isUser[msg.sender], "Not user");
+        require(isUser[msg.sender], \\"Not user\\");
         _;
     }
 
@@ -138,10 +144,10 @@ contract BiDirectionalPaymentChannel {
         checkSignatures(_signatures, _balances, _nonce)
         checkBalances(_balances)
     {
-        require(block.timestamp < expiresAt, "Expired challenge period");
-        require(_nonce > nonce, "Nonce must be greater than the current nonce");
+        require(block.timestamp &lt; expiresAt, \\"Expired challenge period\\");
+        require(_nonce &gt; nonce, \\"Nonce must be greater than the current nonce\\");
 
-        for (uint i = 0; i < _balances.length; i++) {
+        for (uint i = 0; i &lt; _balances.length; i++) {
             balances[users[i]] = _balances[i];
         }
 
@@ -153,16 +159,21 @@ contract BiDirectionalPaymentChannel {
 
     function withdraw() public onlyUser {
         require(
-            block.timestamp >= expiresAt,
-            "Challenge period has not expired yet"
+            block.timestamp &gt;= expiresAt,
+            \\"Challenge period has not expired yet\\"
         );
 
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
-        require(sent, "Failed to send Ether");
+        (bool sent, ) = msg.sender.call.value(amount)(\\"\\");
+        require(sent, \\"Failed to send Ether\\");
 
         emit Withdraw(msg.sender, amount);
     }
 }
+</code></pre>
+"
+  title="Bi-Directional Payment Channel"
+/>
+`;

@@ -1,44 +1,34 @@
 import Array from "./pages/Array"
-// contract intercation
+import BiDirectionalPaymentChannel from "./pages/BiDirectionalPaymentChannel"
 import Call from "./pages/Call"
 import CallingContract from "./pages/CallingContract"
-// inheritance
 import Constructor from "./pages/Constructor"
 import Create2 from "./pages/Create2"
 import DataLocations from "./pages/DataLocations"
 import Delegatecall from "./pages/Delegatecall"
-// custom data types
 import Enum from "./pages/Enum"
 import Error from "./pages/Error"
 import EtherUnits from "./pages/EtherUnits"
 import Events from "./pages/Events"
 import Fallback from "./pages/Fallback"
 import FirstApp from "./pages/FirstApp"
-// function
 import Function from "./pages/Function"
 import FunctionModifier from "./pages/FunctionModifier"
 import Gas from "./pages/Gas"
 import HelloWorld from "./pages/HelloWorld"
-// Flow control
 import IfElse from "./pages/IfElse"
-// misc
 import Import from "./pages/Import"
 import Inheritance from "./pages/Inheritance"
 import IterableMapping from "./pages/IterableMapping"
-// crypto
 import Keccak256 from "./pages/Keccak256"
 import Library from "./pages/Library"
 import Loop from "./pages/Loop"
-// collection data types
 import Mapping from "./pages/Mapping"
 import MerkleTree from "./pages/MerkleTree"
-// application
 import MultiSigWallet from "./pages/MultiSigWallet"
 import NewContract from "./pages/NewContract"
-// send / receive ether
 import Payable from "./pages/Payable"
 import Primitives from "./pages/Primitives"
-// Hack
 import ReEntrancy from "./pages/ReEntrancy"
 import SelfDestruct from "./pages/SelfDestruct"
 import SendingEther from "./pages/SendingEther"
@@ -263,7 +253,12 @@ const APP_ROUTES = [
   {
     path: "uni-directional-payment-channel",
     component: UniDirectionalPaymentChannel,
-    title: "Uni-Directional Payment Channel",
+    title: "Uni-directional Payment Channel",
+  },
+  {
+    path: "bi-directional-payment-channel",
+    component: BiDirectionalPaymentChannel,
+    title: "Bi-directional Payment Channel",
   },
 ]
 
