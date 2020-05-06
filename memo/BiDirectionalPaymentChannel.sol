@@ -5,7 +5,9 @@ pragma experimental ABIEncoderV2;
 Opening a channel
 1. Alice and Bob fund a multi-sig wallet
 2. Precompute payment channel address
-3. Alice and Bob exchanges signatures of initial balances of the payment channel
+3. Alice and Bob exchanges signatures of initial balances
+4. Alice and Bob creates a transaction that can deploy a payment channel from
+   the multi-sig wallet
 
 Closing a channel when Alice and Bob do not agree on the final balances
 1. Deploy payment channel from multi-sig
@@ -13,16 +15,16 @@ Closing a channel when Alice and Bob do not agree on the final balances
 3. Alice and Bob can withdraw funds once the channel is expired
 
 Closing a channel when Alice and Bob agree on the final balance
-1. From multi-sig send transaction to an existing payment splitter that will
-   send payments to Alice and Bob
-2. Invalidate payment channel (TODO how? by wrapping steps 1 - 2 in a single tx)
+1. From multi-sig wallet create a transaction that will
+   - send payments to Alice and Bob
+   - and then delete the transaction that would have created the payment channel 
 
-// TODO: griefing
 Update channel balances 
-1. Repeat steps 1 - 3 above
-2. Invalidate previous channel by either 
-   - deleting the multi-sig transaction that would have deployed the old payment channel
-TODO - dispute after new channel is created, before old is deleted
+1. Repeat steps 1 - 3 from opening a channel
+2. From multi-sig wallet create a transaction that will
+   - deleting the transaction that would have deployed the old payment channel
+   - and then create a transaction that can deploy a payment channel with the
+     new balances
 */
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
