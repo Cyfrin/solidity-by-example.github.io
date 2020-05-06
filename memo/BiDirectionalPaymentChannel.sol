@@ -47,7 +47,7 @@ contract BiDirectionalPaymentChannel {
     uint256 public expiresAt;
     uint256 public nonce;
 
-    modifier checkBalances(uint256[2] _balances) {
+    modifier checkBalances(uint256[2] memory _balances) {
         require(
             address(this).balance >= _balances[0].add(_balances[1]),
             "balance of contract must be >= to the total balance of users"
@@ -58,7 +58,7 @@ contract BiDirectionalPaymentChannel {
     // NOTE: deposit from multi-sig wallet
     constructor(
         address payable[2] memory _users,
-        uint256[2] _balances,
+        uint256[2] memory _balances,
         uint256 _expiresAt,
         uint256 _challengePeriod
     ) public payable checkBalances(_balances) {
@@ -66,7 +66,7 @@ contract BiDirectionalPaymentChannel {
         require(_challengePeriod > 0, "Challenge period must be > 0");
 
         for (uint256 i = 0; i < _users.length; i++) {
-            address user = _users[i];
+            address payable user = _users[i];
 
             require(!isUser[user], "user must be unique");
             users[i] = user;
