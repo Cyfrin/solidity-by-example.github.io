@@ -1,56 +1,56 @@
-import HelloWorld from "./pages/HelloWorld"
-import FirstApp from "./pages/FirstApp"
-import Primitives from "./pages/Primitives"
-import Variables from "./pages/Variables"
-import StateVariables from "./pages/StateVariables"
+import Array from "./pages/Array"
+// contract intercation
+import Call from "./pages/Call"
+import CallingContract from "./pages/CallingContract"
+// inheritance
+import Constructor from "./pages/Constructor"
+import Create2 from "./pages/Create2"
+import DataLocations from "./pages/DataLocations"
+import Delegatecall from "./pages/Delegatecall"
+// custom data types
+import Enum from "./pages/Enum"
+import Error from "./pages/Error"
 import EtherUnits from "./pages/EtherUnits"
+import Events from "./pages/Events"
+import Fallback from "./pages/Fallback"
+import FirstApp from "./pages/FirstApp"
+// function
+import Function from "./pages/Function"
+import FunctionModifier from "./pages/FunctionModifier"
 import Gas from "./pages/Gas"
+import HelloWorld from "./pages/HelloWorld"
 // Flow control
 import IfElse from "./pages/IfElse"
+// misc
+import Import from "./pages/Import"
+import Inheritance from "./pages/Inheritance"
+import IterableMapping from "./pages/IterableMapping"
+// crypto
+import Keccak256 from "./pages/Keccak256"
+import Library from "./pages/Library"
 import Loop from "./pages/Loop"
 // collection data types
 import Mapping from "./pages/Mapping"
-import Array from "./pages/Array"
-// custom data types
-import Enum from "./pages/Enum"
-import Structs from "./pages/Structs"
-import DataLocations from "./pages/DataLocations"
-// function
-import Function from "./pages/Function"
-import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
-import Error from "./pages/Error"
-import FunctionModifier from "./pages/FunctionModifier"
-import Events from "./pages/Events"
-// inheritance
-import Constructor from "./pages/Constructor"
-import Inheritance from "./pages/Inheritance"
-import Shadow from "./pages/Shadow"
-import Super from "./pages/Super"
-import Visibility from "./pages/Visibility"
-// send / receive ether
-import Payable from "./pages/Payable"
-import SendingEther from "./pages/SendingEther"
-import Fallback from "./pages/Fallback"
-// contract intercation
-import Call from "./pages/Call"
-import Delegatecall from "./pages/Delegatecall"
-import CallingContract from "./pages/CallingContract"
-import NewContract from "./pages/NewContract"
-// misc
-import Import from "./pages/Import"
-import Library from "./pages/Library"
-// crypto
-import Keccak256 from "./pages/Keccak256"
-import Signature from "./pages/Signature"
+import MerkleTree from "./pages/MerkleTree"
 // application
 import MultiSigWallet from "./pages/MultiSigWallet"
-import MerkleTree from "./pages/MerkleTree"
-import IterableMapping from "./pages/IterableMapping"
-import Create2 from "./pages/Create2"
-import PaymentChannel from "./pages/PaymentChannel"
+import NewContract from "./pages/NewContract"
+// send / receive ether
+import Payable from "./pages/Payable"
+import Primitives from "./pages/Primitives"
 // Hack
 import ReEntrancy from "./pages/ReEntrancy"
 import SelfDestruct from "./pages/SelfDestruct"
+import SendingEther from "./pages/SendingEther"
+import Shadow from "./pages/Shadow"
+import Signature from "./pages/Signature"
+import StateVariables from "./pages/StateVariables"
+import Structs from "./pages/Structs"
+import Super from "./pages/Super"
+import UniDirectionalPaymentChannel from "./pages/UniDirectionalPaymentChannel"
+import Variables from "./pages/Variables"
+import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
+import Visibility from "./pages/Visibility"
 
 const SOL_ROUTES = [
   {
@@ -261,9 +261,9 @@ const APP_ROUTES = [
     title: "Precompute Contract Address with Create2",
   },
   {
-    path: "payment-channel",
-    component: PaymentChannel,
-    title: "Payment Channel",
+    path: "uni-directional-payment-channel",
+    component: UniDirectionalPaymentChannel,
+    title: "Uni-Directional Payment Channel",
   },
 ]
 
