@@ -2,6 +2,32 @@ pragma solidity ^0.5.16;
 pragma experimental ABIEncoderV2;
 
 /*
+TODO (Alice and Bob can deposit separately without multisig)
+- precompute payment channel address
+- exchange signatures
+- alice and bob deposit separately
+
+TODO  Alice and Bob can immediately exit without multisig
+- payment channel is deployed
+    - alice and bob signs a message to finalize the balances
+    - alice and bob each withdraws from channel
+    - alice or bob closes the channel
+- payment channel is not deployed (need multi-sig)
+    - multi-sig sends payments to Alice and Bob and then invalidates the channel
+
+TODO Alice and Bob can update channel balance without multi-sig
+    - payment channel is deployed
+        - Alice and Bob can deposit which would update the balances.
+    - payment channel is not deployed
+        - from the multi-sig Alice and Bob creates a transaction that will
+          - delete the transaction that would have deployed the old payment channel 
+          - create a new transaction that can deploy a payment channel with the
+            new balances
+
+TODO  Alice and Bob can challenge and exit without multisig (channel is deployed)
+- Alice and Bob sends challenges
+- Alice and Bob can withdraw once the channel is expired
+
 Opening a channel
 1. Alice and Bob fund a multi-sig wallet
 2. Precompute payment channel address
@@ -17,9 +43,9 @@ Closing a channel when Alice and Bob do not agree on the final balances
 Closing a channel when Alice and Bob agree on the final balance
 1. From multi-sig wallet create a transaction that will
    - send payments to Alice and Bob
-   - and then delete the transaction that would have created the payment channel 
+   - and then delete the transaction that would have created the payment channel
 
-Update channel balances 
+Update channel balances
 1. Repeat steps 1 - 3 from opening a channel
 2. From multi-sig wallet create a transaction that will
    - deleting the transaction that would have deployed the old payment channel
