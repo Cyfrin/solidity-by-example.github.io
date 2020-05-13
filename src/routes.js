@@ -27,6 +27,7 @@ import Mapping from "./pages/Mapping"
 import MerkleTree from "./pages/MerkleTree"
 import MultiSigWallet from "./pages/MultiSigWallet"
 import NewContract from "./pages/NewContract"
+import Overflow from "./pages/Overflow"
 import Payable from "./pages/Payable"
 import Primitives from "./pages/Primitives"
 import ReEntrancy from "./pages/ReEntrancy"
@@ -267,6 +268,11 @@ const HACK_ROUTES = [
     path: "re-entrancy",
     component: ReEntrancy,
     title: "Re-Entrancy",
+  },
+  {
+    path: "overflow",
+    component: Overflow,
+    title: "Arithmetic Overflow and Underflow",
   },
   {
     path: "self-destruct",

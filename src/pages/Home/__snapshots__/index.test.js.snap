@@ -437,6 +437,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/hacks/overflow"
+        >
+          <a
+            href="/hacks/overflow"
+          >
+            Arithmetic Overflow and Underflow
+          </a>
+        </li>
+        <li
           key="/hacks/self-destruct"
         >
           <a
