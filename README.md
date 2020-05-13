@@ -1,6 +1,6 @@
 # solidity-by-example.github.io
 
-TODO: simplify bi directional payment channel 
+TODO: simplify bi directional payment channel
 
 [Solidity By Example](https://solidity-by-example.org)
 
@@ -105,8 +105,8 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## Hacks
 
-- [ ] reentrancy
-- [ ] arithmetic overflow / underflow
+- [x] reentrancy
+- [x] arithmetic overflow / underflow
 - [ ] unexpected ether (self destruct)
 - [ ] delegatecall
 - [ ] default visibility

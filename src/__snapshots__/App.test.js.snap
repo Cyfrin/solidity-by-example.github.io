@@ -224,6 +224,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/overflow"
+          path="/hacks/overflow"
+        />
+        <Route
+          component={[Function]}
           key="/hacks/self-destruct"
           path="/hacks/self-destruct"
         />
