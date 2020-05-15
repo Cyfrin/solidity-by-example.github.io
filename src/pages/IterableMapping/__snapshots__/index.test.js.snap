@@ -3,7 +3,7 @@
 exports[`it renders 1`] = `
 <Example
   description="Iterable Mapping in Solidity"
-  html="<p>You can iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
+  html="<p>You cannot iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 
 library IterableMapping {
