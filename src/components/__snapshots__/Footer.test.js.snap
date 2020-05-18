@@ -22,11 +22,10 @@ exports[`it renders 1`] = `
     >
       contact@solidity-by-example.org
     </a>
-    <div
-      className="bar"
-    >
-      |
-    </div>
+  </div>
+  <div
+    className="row"
+  >
     <a
       href="https://github.com/solidity-by-example/solidity-by-example.github.io"
       target="__blank"

@@ -1,8 +1,11 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
-import hljs from "highlight.js"
+import hljs from "highlight.js/lib/core"
 import "highlight.js/styles/foundation.css"
 import hljsDefineSolidity from "highlightjs-solidity"
+import PropTypes from "prop-types"
+import React, { useEffect } from "react"
+
+hljsDefineSolidity(hljs)
+hljs.initHighlightingOnLoad()
 
 function Html(props) {
   const { html } = props
@@ -20,7 +23,7 @@ function Html(props) {
       return
     }
 
-    const copy = target => {
+    const copy = (target) => {
       const textArea = document.createElement("textarea")
       textArea.setAttribute("style", "width:1px;border:0;opacity:0;")
       document.body.appendChild(textArea)
@@ -33,7 +36,7 @@ function Html(props) {
     }
 
     const pres = document.querySelectorAll("pre")
-    pres.forEach(pre => {
+    pres.forEach((pre) => {
       // div
       const div = document.createElement("div")
       div.className = "buttons"
@@ -54,7 +57,7 @@ function Html(props) {
       pre.insertBefore(div, code)
 
       // button on click
-      button.addEventListener("click", e => {
+      button.addEventListener("click", (e) => {
         e.preventDefault()
         // NOTE:
         // child 0 = <div class="buttons">
@@ -62,11 +65,6 @@ function Html(props) {
         copy(pre.childNodes[1])
       })
     })
-  }, [])
-
-  useEffect(() => {
-    hljsDefineSolidity(hljs)
-    hljs.initHighlightingOnLoad()
   }, [])
 
   return <div dangerouslySetInnerHTML={{ __html: html }}></div>
