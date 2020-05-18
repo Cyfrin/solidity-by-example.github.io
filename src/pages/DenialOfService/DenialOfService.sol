@@ -1,7 +1,9 @@
 pragma solidity ^0.5.16;
-// Denial of Service (DoS)
-// The goal of KingOfEther is to become the king by sending more Ether than the previous king.
-// Previos king will receive the previous amount of Ether required to become the king.
+/*
+The goal of KingOfEther is to become the king by sending more Ether than
+the previous king. Previos king will receive the previous amount of Ether
+sent to become the king.
+*/
 
 /*
 1. Deploy KingOfEther

@@ -6,6 +6,7 @@ import Constructor from "./pages/Constructor"
 import Create2 from "./pages/Create2"
 import DataLocations from "./pages/DataLocations"
 import Delegatecall from "./pages/Delegatecall"
+import DenialOfService from "./pages/DenialOfService"
 import Enum from "./pages/Enum"
 import Error from "./pages/Error"
 import EtherUnits from "./pages/EtherUnits"
@@ -278,6 +279,11 @@ const HACK_ROUTES = [
     path: "self-destruct",
     component: SelfDestruct,
     title: "Self Destruct",
+  },
+  {
+    path: "denial-of-service",
+    component: DenialOfService,
+    title: "Denial of Service",
   },
 ]
 

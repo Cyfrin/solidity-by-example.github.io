@@ -454,6 +454,15 @@ exports[`it renders 1`] = `
             Self Destruct
           </a>
         </li>
+        <li
+          key="/hacks/denial-of-service"
+        >
+          <a
+            href="/hacks/denial-of-service"
+          >
+            Denial of Service
+          </a>
+        </li>
       </ul>
     </div>
   </div>
