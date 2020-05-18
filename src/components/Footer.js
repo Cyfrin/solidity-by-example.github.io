@@ -16,7 +16,8 @@ function Footer() {
         <a href="mailto:contact@solidity-by-example.org">
           contact@solidity-by-example.org
         </a>
-        <div className={styles.bar}>|</div>
+      </div>
+      <div className={styles.row}>
         <a
           href="https://github.com/solidity-by-example/solidity-by-example.github.io"
           target="__blank"

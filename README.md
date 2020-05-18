@@ -132,7 +132,6 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## TODO
 
-- [ ] solidity by example contact form
 - [ ] highlight.js 10.0.0
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] contributors
