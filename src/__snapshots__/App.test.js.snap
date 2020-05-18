@@ -234,6 +234,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/denial-of-service"
+          path="/hacks/denial-of-service"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>
