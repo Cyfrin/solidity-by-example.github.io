@@ -1,6 +1,6 @@
 ### Vulnerability
 
-There are many ways to attack a smart contract to become unusable.
+There are many ways to attack a smart contract to make it unusable.
 
 One exploit we introduce here is denial of service by making the function to send Ether fail.
 

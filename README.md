@@ -115,12 +115,12 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] short address / param attack
 - [ ] unchecked call return value
 - [ ] race condition / front running
-- [ ] DOS
+- [x] DOS
 - [ ] block timestamp manipulation
 - [ ] constructor with care
 - [ ] unintializsd storage pointers
 - [ ] floating points and precisions
-- [ ] tx.origin
+- [x] tx.origin
 - [ ] writing to storage
 - [ ] blockhash
 - [ ] honeypot
@@ -136,16 +136,13 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] contributors
 - [ ] exercises
 - [x] mobile friendly
-- [x] copy to clipboard
 - [ ] sidenav and or link to next topic
 - [ ] seo
 - [ ] 0.6
 - [ ] submarine send
-- [x] rename index.md.mustache to index.md
 - [ ] style like
       https://reactjs.org/
       https://doc.rust-lang.org/rust-by-example/index.html
-      https://www.tutorialspoint.com/solidity/solidity_overview.htm
 
 ## suggestions
 

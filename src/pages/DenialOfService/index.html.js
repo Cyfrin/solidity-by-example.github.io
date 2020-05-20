@@ -1,11 +1,11 @@
 const html = `<h3 id="vulnerability">Vulnerability</h3>
-<p>There are many ways to attack a smart contract to become unusable.</p>
+<p>There are many ways to attack a smart contract to make it unusable.</p>
 <p>One exploit we introduce here is denial of service by making the function to send Ether fail.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 /*
 The goal of KingOfEther is to become the king by sending more Ether than
-the previous king. Previos king will receive the previous amount of Ether
-sent to become the king.
+the previous king. Previous king will be refunded with the amount of Ether
+he sent.
 */
 
 /*

@@ -39,6 +39,7 @@ import Signature from "./pages/Signature"
 import StateVariables from "./pages/StateVariables"
 import Structs from "./pages/Structs"
 import Super from "./pages/Super"
+import TxOrigin from "./pages/TxOrigin"
 import UniDirectionalPaymentChannel from "./pages/UniDirectionalPaymentChannel"
 import Variables from "./pages/Variables"
 import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
@@ -284,6 +285,11 @@ const HACK_ROUTES = [
     path: "denial-of-service",
     component: DenialOfService,
     title: "Denial of Service",
+  },
+  {
+    path: "phishing-with-tx-origin",
+    component: TxOrigin,
+    title: "Phishing with tx.origin",
   },
 ]
 

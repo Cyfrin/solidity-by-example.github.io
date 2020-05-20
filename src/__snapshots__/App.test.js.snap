@@ -239,6 +239,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/phishing-with-tx-origin"
+          path="/hacks/phishing-with-tx-origin"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>
