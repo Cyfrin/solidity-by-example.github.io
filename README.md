@@ -120,7 +120,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] constructor with care
 - [ ] unintializsd storage pointers
 - [ ] floating points and precisions
-- [ ] tx.origin
+- [x] tx.origin
 - [ ] writing to storage
 - [ ] blockhash
 - [ ] honeypot

@@ -463,6 +463,15 @@ exports[`it renders 1`] = `
             Denial of Service
           </a>
         </li>
+        <li
+          key="/hacks/phishing-with-tx-origin"
+        >
+          <a
+            href="/hacks/phishing-with-tx-origin"
+          >
+            Phishing with tx.origin
+          </a>
+        </li>
       </ul>
     </div>
   </div>
