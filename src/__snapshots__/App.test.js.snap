@@ -244,6 +244,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/hiding-malicious-code-with-external-contract"
+          path="/hacks/hiding-malicious-code-with-external-contract"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>
