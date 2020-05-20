@@ -472,6 +472,15 @@ exports[`it renders 1`] = `
             Phishing with tx.origin
           </a>
         </li>
+        <li
+          key="/hacks/hiding-malicious-code-with-external-contract"
+        >
+          <a
+            href="/hacks/hiding-malicious-code-with-external-contract"
+          >
+            Hiding Malicious Code with External Contract
+          </a>
+        </li>
       </ul>
     </div>
   </div>

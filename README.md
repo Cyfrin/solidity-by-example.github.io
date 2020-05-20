@@ -107,11 +107,12 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [x] reentrancy
 - [x] arithmetic overflow / underflow
-- [ ] unexpected ether (self destruct)
+- [x] unexpected ether (self destruct)
 - [ ] delegatecall
 - [ ] default visibility
 - [ ] entropy illusion
-- [ ] external contract referencing
+- [x] external contract referencing
+- [ ] honeypot (pre: external call & reentrancy)
 - [ ] short address / param attack
 - [ ] unchecked call return value
 - [ ] race condition / front running
@@ -123,7 +124,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] tx.origin
 - [ ] writing to storage
 - [ ] blockhash
-- [ ] honeypot
 
 ## Patterns
 
