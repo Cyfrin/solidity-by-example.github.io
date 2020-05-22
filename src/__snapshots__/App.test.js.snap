@@ -249,6 +249,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/honeypot"
+          path="/hacks/honeypot"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>

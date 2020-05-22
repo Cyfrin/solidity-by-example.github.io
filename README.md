@@ -112,7 +112,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] default visibility
 - [ ] entropy illusion
 - [x] external contract referencing
-- [ ] honeypot (pre: external call & reentrancy)
+- [x] honeypot (pre: external call & reentrancy)
 - [ ] short address / param attack
 - [ ] unchecked call return value
 - [ ] race condition / front running
@@ -132,6 +132,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## TODO
 
+- [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] contributors
 - [ ] exercises
