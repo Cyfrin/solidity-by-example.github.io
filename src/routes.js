@@ -45,6 +45,7 @@ import Variables from "./pages/Variables"
 import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
 import Visibility from "./pages/Visibility"
 import ExternalContract from "./pages/ExternalContract"
+import HoneyPot from "./pages/HoneyPot"
 
 const SOL_ROUTES = [
   {
@@ -296,6 +297,11 @@ const HACK_ROUTES = [
     path: "hiding-malicious-code-with-external-contract",
     component: ExternalContract,
     title: "Hiding Malicious Code with External Contract",
+  },
+  {
+    path: "honeypot",
+    component: HoneyPot,
+    title: "Honeypot",
   },
 ]
 

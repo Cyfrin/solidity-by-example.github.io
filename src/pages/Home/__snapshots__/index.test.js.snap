@@ -481,6 +481,15 @@ exports[`it renders 1`] = `
             Hiding Malicious Code with External Contract
           </a>
         </li>
+        <li
+          key="/hacks/honeypot"
+        >
+          <a
+            href="/hacks/honeypot"
+          >
+            Honeypot
+          </a>
+        </li>
       </ul>
     </div>
   </div>
