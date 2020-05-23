@@ -499,6 +499,15 @@ exports[`it renders 1`] = `
             Front Running
           </a>
         </li>
+        <li
+          key="/hacks/block-timestamp-manipulation"
+        >
+          <a
+            href="/hacks/block-timestamp-manipulation"
+          >
+            Block Timestamp Manipulation
+          </a>
+        </li>
       </ul>
     </div>
   </div>

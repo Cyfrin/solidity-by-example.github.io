@@ -1,12 +1,9 @@
 import Array from "./pages/Array"
-import BiDirectionalPaymentChannel from "./pages/BiDirectionalPaymentChannel"
 import Call from "./pages/Call"
 import CallingContract from "./pages/CallingContract"
 import Constructor from "./pages/Constructor"
-import Create2 from "./pages/Create2"
 import DataLocations from "./pages/DataLocations"
 import Delegatecall from "./pages/Delegatecall"
-import DenialOfService from "./pages/DenialOfService"
 import Enum from "./pages/Enum"
 import Error from "./pages/Error"
 import EtherUnits from "./pages/EtherUnits"
@@ -20,33 +17,39 @@ import HelloWorld from "./pages/HelloWorld"
 import IfElse from "./pages/IfElse"
 import Import from "./pages/Import"
 import Inheritance from "./pages/Inheritance"
-import IterableMapping from "./pages/IterableMapping"
 import Keccak256 from "./pages/Keccak256"
 import Library from "./pages/Library"
 import Loop from "./pages/Loop"
 import Mapping from "./pages/Mapping"
-import MerkleTree from "./pages/MerkleTree"
-import MultiSigWallet from "./pages/MultiSigWallet"
 import NewContract from "./pages/NewContract"
-import Overflow from "./pages/Overflow"
 import Payable from "./pages/Payable"
 import Primitives from "./pages/Primitives"
-import ReEntrancy from "./pages/ReEntrancy"
-import SelfDestruct from "./pages/SelfDestruct"
 import SendingEther from "./pages/SendingEther"
 import Shadow from "./pages/Shadow"
 import Signature from "./pages/Signature"
 import StateVariables from "./pages/StateVariables"
 import Structs from "./pages/Structs"
 import Super from "./pages/Super"
-import TxOrigin from "./pages/TxOrigin"
-import UniDirectionalPaymentChannel from "./pages/UniDirectionalPaymentChannel"
 import Variables from "./pages/Variables"
 import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
 import Visibility from "./pages/Visibility"
-import ExternalContract from "./pages/ExternalContract"
-import HoneyPot from "./pages/HoneyPot"
-import FrontRunning from "./pages/FrontRunning"
+
+import BiDirectionalPaymentChannel from "./pages/app/BiDirectionalPaymentChannel"
+import UniDirectionalPaymentChannel from "./pages/app/UniDirectionalPaymentChannel"
+import IterableMapping from "./pages/app/IterableMapping"
+import MerkleTree from "./pages/app/MerkleTree"
+import MultiSigWallet from "./pages/app/MultiSigWallet"
+import Create2 from "./pages/app/Create2"
+
+import ReEntrancy from "./pages/hacks/ReEntrancy"
+import Overflow from "./pages/hacks/Overflow"
+import SelfDestruct from "./pages/hacks/SelfDestruct"
+import DenialOfService from "./pages/hacks/DenialOfService"
+import TxOrigin from "./pages/hacks/TxOrigin"
+import ExternalContract from "./pages/hacks/ExternalContract"
+import HoneyPot from "./pages/hacks/HoneyPot"
+import FrontRunning from "./pages/hacks/FrontRunning"
+import BlockTimestampManipulation from "./pages/hacks/BlockTimestampManipulation"
 
 const SOL_ROUTES = [
   {
@@ -308,6 +311,11 @@ const HACK_ROUTES = [
     path: "front-running",
     component: FrontRunning,
     title: "Front Running",
+  },
+  {
+    path: "block-timestamp-manipulation",
+    component: BlockTimestampManipulation,
+    title: "Block Timestamp Manipulation",
   },
 ]
 
