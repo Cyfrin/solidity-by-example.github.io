@@ -2,9 +2,8 @@ pragma solidity ^0.5.16;
 
 /*
 Alice creates a guessing game.
-If you can find the corrrect string that hashes to the target hash,
-then you will win 10 ether. Let's see how this contract is vulnerable to
-front running.
+You win 10 ether if you can find the correct string that hashes to the target
+hash. Let's see how this contract is vulnerable to front running.
 */
 
 /*

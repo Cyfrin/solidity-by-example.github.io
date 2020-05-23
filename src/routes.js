@@ -47,6 +47,7 @@ import Visibility from "./pages/Visibility"
 import ExternalContract from "./pages/ExternalContract"
 import HoneyPot from "./pages/HoneyPot"
 import FrontRunning from "./pages/FrontRunning"
+import BlockTimestampManipulation from "./pages/BlockTimestampManipulation"
 
 const SOL_ROUTES = [
   {
@@ -308,6 +309,11 @@ const HACK_ROUTES = [
     path: "front-running",
     component: FrontRunning,
     title: "Front Running",
+  },
+  {
+    path: "block-timestamp-manipulation",
+    component: BlockTimestampManipulation,
+    title: "Block Timestamp Manipulation",
   },
 ]
 

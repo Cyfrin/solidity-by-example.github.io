@@ -116,9 +116,8 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] short address / param attack
 - [ ] unchecked call return value
 - [x] front running
-- [ ] race condition
 - [x] DOS
-- [ ] block timestamp manipulation
+- [x] block timestamp manipulation
 - [ ] constructor with care
 - [ ] unintializsd storage pointers
 - [ ] floating points and precisions

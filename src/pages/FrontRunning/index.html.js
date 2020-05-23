@@ -6,9 +6,8 @@ This mechanism can be abused to re-order transactions to the attacker&#39;s adva
 
 /*
 Alice creates a guessing game.
-If you can find the corrrect string that hashes to the target hash,
-then you will win 10 ether. Let&#39;s see how this contract is vulnerable to
-front running.
+You win 10 ether if you can find the correct string that hashes to the target
+hash. Let&#39;s see how this contract is vulnerable to front running.
 */
 
 /*
