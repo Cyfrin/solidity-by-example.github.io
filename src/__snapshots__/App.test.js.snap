@@ -259,6 +259,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/block-timestamp-manipulation"
+          path="/hacks/block-timestamp-manipulation"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>
