@@ -46,6 +46,7 @@ import ViewAndPureFunctions from "./pages/ViewAndPureFunctions"
 import Visibility from "./pages/Visibility"
 import ExternalContract from "./pages/ExternalContract"
 import HoneyPot from "./pages/HoneyPot"
+import FrontRunning from "./pages/FrontRunning"
 
 const SOL_ROUTES = [
   {
@@ -302,6 +303,11 @@ const HACK_ROUTES = [
     path: "honeypot",
     component: HoneyPot,
     title: "Honeypot",
+  },
+  {
+    path: "front-running",
+    component: FrontRunning,
+    title: "Front Running",
   },
 ]
 

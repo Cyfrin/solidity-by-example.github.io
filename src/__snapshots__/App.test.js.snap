@@ -254,6 +254,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/hacks/front-running"
+          path="/hacks/front-running"
+        />
+        <Route
+          component={[Function]}
         />
       </Switch>
     </BrowserRouter>
