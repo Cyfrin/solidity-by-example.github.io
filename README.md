@@ -115,7 +115,8 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] honeypot (pre: external call & reentrancy)
 - [ ] short address / param attack
 - [ ] unchecked call return value
-- [ ] race condition / front running
+- [x] front running
+- [ ] race condition
 - [x] DOS
 - [ ] block timestamp manipulation
 - [ ] constructor with care
@@ -140,6 +141,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] sidenav and or link to next topic
 - [ ] seo
 - [ ] 0.6
+- [ ] commit-reveal scheme
 - [ ] submarine send
 - [ ] style like
       https://reactjs.org/

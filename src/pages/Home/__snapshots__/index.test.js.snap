@@ -490,6 +490,15 @@ exports[`it renders 1`] = `
             Honeypot
           </a>
         </li>
+        <li
+          key="/hacks/front-running"
+        >
+          <a
+            href="/hacks/front-running"
+          >
+            Front Running
+          </a>
+        </li>
       </ul>
     </div>
   </div>
