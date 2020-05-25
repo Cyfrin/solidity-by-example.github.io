@@ -109,21 +109,19 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] arithmetic overflow / underflow
 - [x] unexpected ether (self destruct)
 - [ ] delegatecall
-- [ ] default visibility
+- [x] default visibility (skip)
 - [ ] entropy illusion
 - [x] external contract referencing
 - [x] honeypot (pre: external call & reentrancy)
-- [ ] short address / param attack
-- [ ] unchecked call return value
+- [x] short address / param attack (skip)
+- [x] unchecked call return value (skip)
 - [x] front running
 - [x] DOS
 - [x] block timestamp manipulation
-- [ ] constructor with care
+- [x] constructor with care (skip)
 - [ ] unintializsd storage pointers
-- [ ] floating points and precisions
+- [x] floating points and precisions (skip)
 - [x] tx.origin
-- [ ] writing to storage
-- [ ] blockhash
 
 ## Patterns
 
