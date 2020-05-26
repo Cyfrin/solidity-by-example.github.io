@@ -31,7 +31,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 ##### Flow control
 
-- [x] if / else
+- [x] if / else (TODO: ternary)
 - [x] for loop
 
 # Data types
@@ -109,25 +109,69 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] arithmetic overflow / underflow
 - [x] unexpected ether (self destruct)
 - [ ] delegatecall
-- [ ] default visibility
+- [x] default visibility (skip)
 - [ ] entropy illusion
 - [x] external contract referencing
 - [x] honeypot (pre: external call & reentrancy)
-- [ ] short address / param attack
-- [ ] unchecked call return value
+- [x] short address / param attack (skip)
+- [x] unchecked call return value (skip)
 - [x] front running
 - [x] DOS
 - [x] block timestamp manipulation
 - [ ] constructor with care
 - [ ] unintializsd storage pointers
-- [ ] floating points and precisions
+- [x] floating points and precisions (skip)
 - [x] tx.origin
-- [ ] writing to storage
-- [ ] blockhash
+
+### Ethernaut
+
+- [x] hello ethernaut
+- [x] fallback
+- [ ] fallout (constructor with care)
+- [ ] coin flip (randomness guessing head / tail based on prev block hash)
+- [x] telephone
+- [x] token
+- [ ] delegation (delegatecall to change ownership)
+- [x] force
+- [ ] vault (read private data)
+- [x] king
+- [x] re-entrancy
+- [x] elevation
+- [ ] privacy (optimized storage)
+- [x] gatekeeper one
+- [x] gatekeeper two
+- [x] naught coin
+- [ ] preservation (delegatecall to change address and then ownership)
+- [x] recovery
+- [ ] magic number (contract creation)
+- [ ] alien codex (edit ABI)
+- [ ] denial (denial of service using assert and using up all gas)
+- [ ] shop (external contract call)
+
+### Capture the Ether
+
+- [ ] guess the number
+- [ ] guess the secret number
+- [ ] guess the random number
+- [ ] guess the new number
+- [ ] predit the future
+- [ ] predict the blockhash
+- [ ] token sale
+- [ ] token whale
+- [ ] retirement fund
+- [ ] mapping
+- [ ] donation
+- [ ] fifty years
+- [ ] fuzzy identity
+- [ ] public key
+- [ ] account takeover
+- [ ] assume ownership
+- [ ] token bank
 
 ## Patterns
 
 - [ ] push vs pull
+- [ ] commit reveal
 - [ ] factory
 
 ## TODO

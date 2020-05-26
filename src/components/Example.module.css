@@ -1,6 +1,7 @@
 .component {
-  max-width: 1000px;
+  max-width: min(100vw, 1000px);
 }
 .content {
-  margin: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
