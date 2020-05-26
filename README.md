@@ -96,7 +96,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] multisig wallet
 - [ ] TODO? erc20
 - [x] iterable mapping
-- [ ] TODO? heap
 - [x] merkle tree
 - [x] create2
 - [x] payment channels (uni, bidirectional)
@@ -148,26 +147,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] denial (denial of service using assert and using up all gas)
 - [ ] shop (external contract call)
 
-### Capture the Ether
-
-- [ ] guess the number
-- [ ] guess the secret number
-- [ ] guess the random number
-- [ ] guess the new number
-- [ ] predit the future
-- [ ] predict the blockhash
-- [ ] token sale
-- [ ] token whale
-- [ ] retirement fund
-- [ ] mapping
-- [ ] donation
-- [ ] fifty years
-- [ ] fuzzy identity
-- [ ] public key
-- [ ] account takeover
-- [ ] assume ownership
-- [ ] token bank
-
 ## Patterns
 
 - [ ] push vs pull
@@ -178,17 +157,11 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
-- [ ] contributors
 - [ ] exercises
-- [x] mobile friendly
 - [ ] sidenav and or link to next topic
 - [ ] seo
 - [ ] 0.6
-- [ ] commit-reveal scheme
 - [ ] submarine send
-- [ ] style like
-      https://reactjs.org/
-      https://doc.rust-lang.org/rust-by-example/index.html
 
 ## suggestions
 
