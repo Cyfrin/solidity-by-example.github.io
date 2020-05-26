@@ -117,8 +117,8 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] front running
 - [x] DOS
 - [x] block timestamp manipulation
-- [ ] constructor with care
-- [ ] unintializsd storage pointers
+- [x] constructor with care (skip)
+- [x] unintializsd storage pointers (skip)
 - [x] floating points and precisions (skip)
 - [x] tx.origin
 
@@ -126,7 +126,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [x] hello ethernaut
 - [x] fallback
-- [ ] fallout (constructor with care)
+- [x] fallout (constructor with care)
 - [ ] coin flip (randomness guessing head / tail based on prev block hash)
 - [x] telephone
 - [x] token
@@ -144,7 +144,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] recovery
 - [ ] magic number (contract creation)
 - [ ] alien codex (edit ABI)
-- [ ] denial (denial of service using assert and using up all gas)
+- [x] denial (denial of service using assert and using up all gas)
 - [ ] shop (external contract call)
 
 ## Patterns
