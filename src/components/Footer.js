@@ -4,8 +4,8 @@ import styles from "./Footer.module.css"
 function Footer() {
   return (
     <div className={styles.component}>
+      <div className={styles.row}>Donate 🙂</div>
       <div className={styles.row}>
-        Donate 🙂
         <a
           href="https://etherscan.io/address/0xA8DD4bA80d8904d7cAcE5c3622CCf78bEa5AcFEe"
           target="__blank"

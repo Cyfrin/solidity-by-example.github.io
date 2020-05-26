@@ -8,6 +8,10 @@ exports[`it renders 1`] = `
     className="row"
   >
     Donate 🙂
+  </div>
+  <div
+    className="row"
+  >
     <a
       href="https://etherscan.io/address/0xA8DD4bA80d8904d7cAcE5c3622CCf78bEa5AcFEe"
       target="__blank"

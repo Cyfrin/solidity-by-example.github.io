@@ -31,7 +31,7 @@ npm run md-to-html -- path/to/folder/with/md
 
 ##### Flow control
 
-- [x] if / else
+- [x] if / else (TODO: ternary)
 - [x] for loop
 
 # Data types
@@ -171,6 +171,7 @@ npm run md-to-html -- path/to/folder/with/md
 ## Patterns
 
 - [ ] push vs pull
+- [ ] commit reveal
 - [ ] factory
 
 ## TODO
