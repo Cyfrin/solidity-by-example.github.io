@@ -455,6 +455,15 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          key="/hacks/delegatecall"
+        >
+          <a
+            href="/hacks/delegatecall"
+          >
+            Delegatecall
+          </a>
+        </li>
+        <li
           key="/hacks/denial-of-service"
         >
           <a

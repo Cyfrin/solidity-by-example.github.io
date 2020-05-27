@@ -107,7 +107,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] reentrancy
 - [x] arithmetic overflow / underflow
 - [x] unexpected ether (self destruct)
-- [ ] delegatecall
+- [x] delegatecall (pre: storage layout)
 - [x] default visibility (skip)
 - [ ] entropy illusion
 - [x] external contract referencing
@@ -130,7 +130,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] coin flip (randomness guessing head / tail based on prev block hash)
 - [x] telephone
 - [x] token
-- [ ] delegation (delegatecall to change ownership)
+- [x] delegation (delegatecall to change ownership)
 - [x] force
 - [ ] vault (read private data)
 - [x] king
@@ -140,7 +140,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] gatekeeper one
 - [x] gatekeeper two
 - [x] naught coin
-- [ ] preservation (delegatecall to change address and then ownership)
+- [x] preservation (delegatecall to change address and then ownership)
 - [x] recovery
 - [ ] magic number (contract creation)
 - [ ] alien codex (edit ABI)
