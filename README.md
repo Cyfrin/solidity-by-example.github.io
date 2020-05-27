@@ -96,7 +96,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] multisig wallet
 - [ ] TODO? erc20
 - [x] iterable mapping
-- [ ] TODO? heap
 - [x] merkle tree
 - [x] create2
 - [x] payment channels (uni, bidirectional)
@@ -108,7 +107,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] reentrancy
 - [x] arithmetic overflow / underflow
 - [x] unexpected ether (self destruct)
-- [ ] delegatecall
+- [x] delegatecall (pre: storage layout)
 - [x] default visibility (skip)
 - [ ] entropy illusion
 - [x] external contract referencing
@@ -118,8 +117,8 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] front running
 - [x] DOS
 - [x] block timestamp manipulation
-- [ ] constructor with care
-- [ ] unintializsd storage pointers
+- [x] constructor with care (skip)
+- [x] unintializsd storage pointers (skip)
 - [x] floating points and precisions (skip)
 - [x] tx.origin
 
@@ -127,11 +126,11 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [x] hello ethernaut
 - [x] fallback
-- [ ] fallout (constructor with care)
+- [x] fallout (constructor with care)
 - [ ] coin flip (randomness guessing head / tail based on prev block hash)
 - [x] telephone
 - [x] token
-- [ ] delegation (delegatecall to change ownership)
+- [x] delegation (delegatecall to change ownership)
 - [x] force
 - [ ] vault (read private data)
 - [x] king
@@ -141,32 +140,12 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] gatekeeper one
 - [x] gatekeeper two
 - [x] naught coin
-- [ ] preservation (delegatecall to change address and then ownership)
+- [x] preservation (delegatecall to change address and then ownership)
 - [x] recovery
 - [ ] magic number (contract creation)
 - [ ] alien codex (edit ABI)
-- [ ] denial (denial of service using assert and using up all gas)
+- [x] denial (denial of service using assert and using up all gas)
 - [ ] shop (external contract call)
-
-### Capture the Ether
-
-- [ ] guess the number
-- [ ] guess the secret number
-- [ ] guess the random number
-- [ ] guess the new number
-- [ ] predit the future
-- [ ] predict the blockhash
-- [ ] token sale
-- [ ] token whale
-- [ ] retirement fund
-- [ ] mapping
-- [ ] donation
-- [ ] fifty years
-- [ ] fuzzy identity
-- [ ] public key
-- [ ] account takeover
-- [ ] assume ownership
-- [ ] token bank
 
 ## Patterns
 
@@ -178,17 +157,11 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
-- [ ] contributors
 - [ ] exercises
-- [x] mobile friendly
 - [ ] sidenav and or link to next topic
 - [ ] seo
 - [ ] 0.6
-- [ ] commit-reveal scheme
 - [ ] submarine send
-- [ ] style like
-      https://reactjs.org/
-      https://doc.rust-lang.org/rust-by-example/index.html
 
 ## suggestions
 

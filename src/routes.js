@@ -50,6 +50,7 @@ import ExternalContract from "./pages/hacks/ExternalContract"
 import HoneyPot from "./pages/hacks/HoneyPot"
 import FrontRunning from "./pages/hacks/FrontRunning"
 import BlockTimestampManipulation from "./pages/hacks/BlockTimestampManipulation"
+import HackDelegatecall from "./pages/hacks/Delegatecall"
 
 const SOL_ROUTES = [
   {
@@ -286,6 +287,11 @@ const HACK_ROUTES = [
     path: "self-destruct",
     component: SelfDestruct,
     title: "Self Destruct",
+  },
+  {
+    path: "delegatecall",
+    component: HackDelegatecall,
+    title: "Delegatecall",
   },
   {
     path: "denial-of-service",
