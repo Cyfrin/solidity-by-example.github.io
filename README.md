@@ -65,7 +65,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] shadowing state variables
 - [x] calling parent contracts
 - [x] visibility
-- [ ] TODO?: interface
+- [ ] interface
 
 ### Sending and Receiving Ether
 
@@ -94,7 +94,7 @@ npm run md-to-html -- path/to/folder/with/md
 ## Application
 
 - [x] multisig wallet
-- [ ] TODO? erc20
+- [ ] erc20
 - [x] iterable mapping
 - [x] merkle tree
 - [x] create2
@@ -163,7 +163,21 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] seo
 - [ ] submarine send
 
-## suggestions
+### 0.6 memo
 
-next video please : how to use erc20 in our contracts , example a smart contract that when it gets eth it throws back usdc to the same address or the reverse
-thanks in advance :)
+- Fix override (inheritance)
+- FIX shadow
+- FIX calling parent
+- FIX visibility
+- FIX payable warning
+- FIX sending Ether
+- FIX fallback
+- FIX call
+- FIX calling other contracts
+- FIX contract that create other contract
+- FIX import
+- FIX multisig
+- FIX create2
+- FIX uni-directional payment channel
+- FIX bi-directional payment channel
+- FIX hacks
