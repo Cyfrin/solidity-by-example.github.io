@@ -155,12 +155,12 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## TODO
 
+- [ ] 0.6
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] exercises
 - [ ] sidenav and or link to next topic
 - [ ] seo
-- [ ] 0.6
 - [ ] submarine send
 
 ## suggestions
