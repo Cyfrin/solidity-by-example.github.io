@@ -1,3 +1,5 @@
+pragma solidity ^0.5.16;
+
 contract Enum {
     // Enum representing shipping status
     enum Status {

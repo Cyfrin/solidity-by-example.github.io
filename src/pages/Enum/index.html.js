@@ -1,5 +1,7 @@
 const html = `<p>Solidity support enumerables and they are useful to model choice and keep track of state.</p>
-<pre><code class="language-solidity">contract Enum {
+<pre><code class="language-solidity">pragma solidity ^0.5.16;
+
+contract Enum {
     // Enum representing shipping status
     enum Status {
         Pending,
