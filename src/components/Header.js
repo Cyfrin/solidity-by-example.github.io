@@ -1,12 +1,17 @@
 import React from "react"
-import { useHistory, useParams } from "react-router-dom"
+import { useHistory, useLocation } from "react-router-dom"
 import styles from "./Header.module.css"
 import logo from "./logo.svg"
 import { SOL_VERSIONS } from "../constants"
 
+function getVersion(pathname) {
+  return pathname.split("/")[1] || SOL_VERSIONS[0]
+}
+
 function Header(props) {
-  const { version = SOL_VERSIONS[0] } = useParams()
   const history = useHistory()
+  const location = useLocation()
+  const version = getVersion(location.pathname)
 
   function onSelect(e) {
     const version = e.target.value
