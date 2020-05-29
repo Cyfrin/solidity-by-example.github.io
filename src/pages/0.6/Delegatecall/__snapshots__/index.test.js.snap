@@ -37,5 +37,6 @@ contract A {
 </code></pre>
 "
   title="Delegatecall"
+  version="0.6.0"
 />
 `;

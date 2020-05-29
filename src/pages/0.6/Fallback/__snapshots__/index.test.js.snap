@@ -41,5 +41,6 @@ contract SendToFallback {
 </code></pre>
 "
   title="Fallback"
+  version="0.6.0"
 />
 `;

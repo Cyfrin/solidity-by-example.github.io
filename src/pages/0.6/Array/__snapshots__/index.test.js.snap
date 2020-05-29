@@ -78,5 +78,6 @@ contract CompactArray {
 </code></pre>
 "
   title="Array"
+  version="0.6.0"
 />
 `;

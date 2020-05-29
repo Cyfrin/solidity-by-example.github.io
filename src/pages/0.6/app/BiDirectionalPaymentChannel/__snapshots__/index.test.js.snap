@@ -175,5 +175,6 @@ contract BiDirectionalPaymentChannel {
 </code></pre>
 "
   title="Bi-Directional Payment Channel"
+  version="0.6.0"
 />
 `;

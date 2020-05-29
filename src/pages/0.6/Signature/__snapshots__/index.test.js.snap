@@ -117,5 +117,6 @@ contract VerifySignature {
 </code></pre>
 "
   title="Verifying Signature"
+  version="0.6.0"
 />
 `;

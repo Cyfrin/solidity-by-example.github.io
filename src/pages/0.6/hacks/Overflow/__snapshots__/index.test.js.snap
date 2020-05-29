@@ -71,5 +71,6 @@ contract Attack {
 </ul>
 "
   title="Arithmetic Overflow and Underflow"
+  version="0.6.0"
 />
 `;

@@ -150,5 +150,6 @@ contract Attack {
 </ul>
 "
   title="Delegatecall"
+  version="0.6.0"
 />
 `;

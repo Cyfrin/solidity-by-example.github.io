@@ -49,5 +49,6 @@ contract Roulette {
 </ul>
 "
   title="Block Timestamp Manipulation"
+  version="0.6.0"
 />
 `;

@@ -97,5 +97,6 @@ contract EtherGame {
 }</code></pre>
 "
   title="Self Destruct"
+  version="0.6.0"
 />
 `;

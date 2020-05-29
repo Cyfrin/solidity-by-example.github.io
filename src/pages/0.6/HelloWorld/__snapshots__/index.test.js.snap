@@ -13,5 +13,6 @@ contract HelloWorld {
 </code></pre>
 "
   title="Hello World"
+  version="0.6.0"
 />
 `;

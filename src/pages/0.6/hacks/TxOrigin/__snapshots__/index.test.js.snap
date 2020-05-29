@@ -67,5 +67,6 @@ contract Attack {
     }</code></pre>
 "
   title="Phishing with tx.origin"
+  version="0.6.0"
 />
 `;

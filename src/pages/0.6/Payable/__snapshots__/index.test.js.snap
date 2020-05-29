@@ -47,5 +47,6 @@ contract Payable {
 </code></pre>
 "
   title="Payable"
+  version="0.6.0"
 />
 `;

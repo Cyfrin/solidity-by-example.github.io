@@ -71,5 +71,6 @@ constructor() public {
 }</code></pre>
 "
   title="Hiding Malicious Code with External Contract"
+  version="0.6.0"
 />
 `;

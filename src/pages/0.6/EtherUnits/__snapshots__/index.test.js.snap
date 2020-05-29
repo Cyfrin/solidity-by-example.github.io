@@ -19,5 +19,6 @@ contract EtherUnits {
 </code></pre>
 "
   title="Ether and Wei"
+  version="0.6.0"
 />
 `;

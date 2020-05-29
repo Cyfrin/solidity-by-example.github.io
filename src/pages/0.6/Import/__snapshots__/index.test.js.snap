@@ -39,5 +39,6 @@ contract Import {
 import \\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol\\";</code></pre>
 "
   title="Import"
+  version="0.6.0"
 />
 `;

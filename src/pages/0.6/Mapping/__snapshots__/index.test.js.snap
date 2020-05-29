@@ -51,5 +51,6 @@ contract NestedMapping {
 </code></pre>
 "
   title="Mapping"
+  version="0.6.0"
 />
 `;

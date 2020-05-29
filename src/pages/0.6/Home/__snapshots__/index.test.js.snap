@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
 >
   <SEO
     description="Learn smart contract programming using Solidity"
-    title="Solidity by Example | 0.5.16"
+    title="Solidity by Example | 0.6.0"
   />
   <h1
     className="header"
@@ -14,7 +14,8 @@ exports[`it renders 1`] = `
     <a
       href="/"
     >
-      Solidity by Example
+      Solidity by Example 
+      0.6.0
     </a>
   </h1>
   <div
@@ -37,316 +38,316 @@ exports[`it renders 1`] = `
         className="list"
       >
         <li
-          key="/0.5/hello-world"
+          key="/0.6/hello-world"
         >
           <a
-            href="/0.5/hello-world"
+            href="/0.6/hello-world"
           >
             Hello World
           </a>
         </li>
         <li
-          key="/0.5/first-app"
+          key="/0.6/first-app"
         >
           <a
-            href="/0.5/first-app"
+            href="/0.6/first-app"
           >
             First App
           </a>
         </li>
         <li
-          key="/0.5/primitives"
+          key="/0.6/primitives"
         >
           <a
-            href="/0.5/primitives"
+            href="/0.6/primitives"
           >
             Primitive Data Types
           </a>
         </li>
         <li
-          key="/0.5/variables"
+          key="/0.6/variables"
         >
           <a
-            href="/0.5/variables"
+            href="/0.6/variables"
           >
             Variables
           </a>
         </li>
         <li
-          key="/0.5/state-variables"
+          key="/0.6/state-variables"
         >
           <a
-            href="/0.5/state-variables"
+            href="/0.6/state-variables"
           >
             Reading and Writing to a State Variable
           </a>
         </li>
         <li
-          key="/0.5/ether-units"
+          key="/0.6/ether-units"
         >
           <a
-            href="/0.5/ether-units"
+            href="/0.6/ether-units"
           >
             Ether and Wei
           </a>
         </li>
         <li
-          key="/0.5/gas"
+          key="/0.6/gas"
         >
           <a
-            href="/0.5/gas"
+            href="/0.6/gas"
           >
             Gas and Gas Price
           </a>
         </li>
         <li
-          key="/0.5/if-else"
+          key="/0.6/if-else"
         >
           <a
-            href="/0.5/if-else"
+            href="/0.6/if-else"
           >
             If / Else
           </a>
         </li>
         <li
-          key="/0.5/loop"
+          key="/0.6/loop"
         >
           <a
-            href="/0.5/loop"
+            href="/0.6/loop"
           >
             For and While Loop
           </a>
         </li>
         <li
-          key="/0.5/mapping"
+          key="/0.6/mapping"
         >
           <a
-            href="/0.5/mapping"
+            href="/0.6/mapping"
           >
             Mapping
           </a>
         </li>
         <li
-          key="/0.5/array"
+          key="/0.6/array"
         >
           <a
-            href="/0.5/array"
+            href="/0.6/array"
           >
             Array
           </a>
         </li>
         <li
-          key="/0.5/enum"
+          key="/0.6/enum"
         >
           <a
-            href="/0.5/enum"
+            href="/0.6/enum"
           >
             Enum
           </a>
         </li>
         <li
-          key="/0.5/structs"
+          key="/0.6/structs"
         >
           <a
-            href="/0.5/structs"
+            href="/0.6/structs"
           >
             Structs
           </a>
         </li>
         <li
-          key="/0.5/data-locations"
+          key="/0.6/data-locations"
         >
           <a
-            href="/0.5/data-locations"
+            href="/0.6/data-locations"
           >
             Data Locations - Storage, Memory and Calldata
           </a>
         </li>
         <li
-          key="/0.5/function"
+          key="/0.6/function"
         >
           <a
-            href="/0.5/function"
+            href="/0.6/function"
           >
             Function
           </a>
         </li>
         <li
-          key="/0.5/view-and-pure-functions"
+          key="/0.6/view-and-pure-functions"
         >
           <a
-            href="/0.5/view-and-pure-functions"
+            href="/0.6/view-and-pure-functions"
           >
             View and Pure Functions
           </a>
         </li>
         <li
-          key="/0.5/error"
+          key="/0.6/error"
         >
           <a
-            href="/0.5/error"
+            href="/0.6/error"
           >
             Error
           </a>
         </li>
         <li
-          key="/0.5/function-modifier"
+          key="/0.6/function-modifier"
         >
           <a
-            href="/0.5/function-modifier"
+            href="/0.6/function-modifier"
           >
             Function Modifier
           </a>
         </li>
         <li
-          key="/0.5/events"
+          key="/0.6/events"
         >
           <a
-            href="/0.5/events"
+            href="/0.6/events"
           >
             Events
           </a>
         </li>
         <li
-          key="/0.5/constructor"
+          key="/0.6/constructor"
         >
           <a
-            href="/0.5/constructor"
+            href="/0.6/constructor"
           >
             Constructor
           </a>
         </li>
         <li
-          key="/0.5/inheritance"
+          key="/0.6/inheritance"
         >
           <a
-            href="/0.5/inheritance"
+            href="/0.6/inheritance"
           >
             Inheritance
           </a>
         </li>
         <li
-          key="/0.5/shadowing-inherited-state-variables"
+          key="/0.6/shadowing-inherited-state-variables"
         >
           <a
-            href="/0.5/shadowing-inherited-state-variables"
+            href="/0.6/shadowing-inherited-state-variables"
           >
             Shadowing Inherited State Variables
           </a>
         </li>
         <li
-          key="/0.5/super"
+          key="/0.6/super"
         >
           <a
-            href="/0.5/super"
+            href="/0.6/super"
           >
             Calling Parent Contracts
           </a>
         </li>
         <li
-          key="/0.5/visibility"
+          key="/0.6/visibility"
         >
           <a
-            href="/0.5/visibility"
+            href="/0.6/visibility"
           >
             Visibility
           </a>
         </li>
         <li
-          key="/0.5/payable"
+          key="/0.6/payable"
         >
           <a
-            href="/0.5/payable"
+            href="/0.6/payable"
           >
             Payable
           </a>
         </li>
         <li
-          key="/0.5/sending-ether"
+          key="/0.6/sending-ether"
         >
           <a
-            href="/0.5/sending-ether"
+            href="/0.6/sending-ether"
           >
             Sending Ether - Transfer, Send, and Call
           </a>
         </li>
         <li
-          key="/0.5/fallback"
+          key="/0.6/fallback"
         >
           <a
-            href="/0.5/fallback"
+            href="/0.6/fallback"
           >
             Fallback
           </a>
         </li>
         <li
-          key="/0.5/call"
+          key="/0.6/call"
         >
           <a
-            href="/0.5/call"
+            href="/0.6/call"
           >
             Call
           </a>
         </li>
         <li
-          key="/0.5/delegatecall"
+          key="/0.6/delegatecall"
         >
           <a
-            href="/0.5/delegatecall"
+            href="/0.6/delegatecall"
           >
             Delegatecall
           </a>
         </li>
         <li
-          key="/0.5/calling-contract"
+          key="/0.6/calling-contract"
         >
           <a
-            href="/0.5/calling-contract"
+            href="/0.6/calling-contract"
           >
             Calling Other Contract
           </a>
         </li>
         <li
-          key="/0.5/new-contract"
+          key="/0.6/new-contract"
         >
           <a
-            href="/0.5/new-contract"
+            href="/0.6/new-contract"
           >
             Creating Contracts from a Contract
           </a>
         </li>
         <li
-          key="/0.5/import"
+          key="/0.6/import"
         >
           <a
-            href="/0.5/import"
+            href="/0.6/import"
           >
             Import
           </a>
         </li>
         <li
-          key="/0.5/library"
+          key="/0.6/library"
         >
           <a
-            href="/0.5/library"
+            href="/0.6/library"
           >
             Library
           </a>
         </li>
         <li
-          key="/0.5/hashing"
+          key="/0.6/hashing"
         >
           <a
-            href="/0.5/hashing"
+            href="/0.6/hashing"
           >
             Hashing with Keccak256
           </a>
         </li>
         <li
-          key="/0.5/signature"
+          key="/0.6/signature"
         >
           <a
-            href="/0.5/signature"
+            href="/0.6/signature"
           >
             Verifying Signature
           </a>
@@ -363,55 +364,55 @@ exports[`it renders 1`] = `
         className="list"
       >
         <li
-          key="/0.5/app/multi-sig-wallet"
+          key="/0.6/app/multi-sig-wallet"
         >
           <a
-            href="/0.5/app/multi-sig-wallet"
+            href="/0.6/app/multi-sig-wallet"
           >
             Multi Sig Wallet
           </a>
         </li>
         <li
-          key="/0.5/app/merkle-tree"
+          key="/0.6/app/merkle-tree"
         >
           <a
-            href="/0.5/app/merkle-tree"
+            href="/0.6/app/merkle-tree"
           >
             Merkle Tree
           </a>
         </li>
         <li
-          key="/0.5/app/iterable-mapping"
+          key="/0.6/app/iterable-mapping"
         >
           <a
-            href="/0.5/app/iterable-mapping"
+            href="/0.6/app/iterable-mapping"
           >
             Iterable Mapping
           </a>
         </li>
         <li
-          key="/0.5/app/create2"
+          key="/0.6/app/create2"
         >
           <a
-            href="/0.5/app/create2"
+            href="/0.6/app/create2"
           >
             Precompute Contract Address with Create2
           </a>
         </li>
         <li
-          key="/0.5/app/uni-directional-payment-channel"
+          key="/0.6/app/uni-directional-payment-channel"
         >
           <a
-            href="/0.5/app/uni-directional-payment-channel"
+            href="/0.6/app/uni-directional-payment-channel"
           >
             Uni-directional Payment Channel
           </a>
         </li>
         <li
-          key="/0.5/app/bi-directional-payment-channel"
+          key="/0.6/app/bi-directional-payment-channel"
         >
           <a
-            href="/0.5/app/bi-directional-payment-channel"
+            href="/0.6/app/bi-directional-payment-channel"
           >
             Bi-directional Payment Channel
           </a>
@@ -428,91 +429,91 @@ exports[`it renders 1`] = `
         className="list"
       >
         <li
-          key="/0.5/hacks/re-entrancy"
+          key="/0.6/hacks/re-entrancy"
         >
           <a
-            href="/0.5/hacks/re-entrancy"
+            href="/0.6/hacks/re-entrancy"
           >
             Re-Entrancy
           </a>
         </li>
         <li
-          key="/0.5/hacks/overflow"
+          key="/0.6/hacks/overflow"
         >
           <a
-            href="/0.5/hacks/overflow"
+            href="/0.6/hacks/overflow"
           >
             Arithmetic Overflow and Underflow
           </a>
         </li>
         <li
-          key="/0.5/hacks/self-destruct"
+          key="/0.6/hacks/self-destruct"
         >
           <a
-            href="/0.5/hacks/self-destruct"
+            href="/0.6/hacks/self-destruct"
           >
             Self Destruct
           </a>
         </li>
         <li
-          key="/0.5/hacks/delegatecall"
+          key="/0.6/hacks/delegatecall"
         >
           <a
-            href="/0.5/hacks/delegatecall"
+            href="/0.6/hacks/delegatecall"
           >
             Delegatecall
           </a>
         </li>
         <li
-          key="/0.5/hacks/denial-of-service"
+          key="/0.6/hacks/denial-of-service"
         >
           <a
-            href="/0.5/hacks/denial-of-service"
+            href="/0.6/hacks/denial-of-service"
           >
             Denial of Service
           </a>
         </li>
         <li
-          key="/0.5/hacks/phishing-with-tx-origin"
+          key="/0.6/hacks/phishing-with-tx-origin"
         >
           <a
-            href="/0.5/hacks/phishing-with-tx-origin"
+            href="/0.6/hacks/phishing-with-tx-origin"
           >
             Phishing with tx.origin
           </a>
         </li>
         <li
-          key="/0.5/hacks/hiding-malicious-code-with-external-contract"
+          key="/0.6/hacks/hiding-malicious-code-with-external-contract"
         >
           <a
-            href="/0.5/hacks/hiding-malicious-code-with-external-contract"
+            href="/0.6/hacks/hiding-malicious-code-with-external-contract"
           >
             Hiding Malicious Code with External Contract
           </a>
         </li>
         <li
-          key="/0.5/hacks/honeypot"
+          key="/0.6/hacks/honeypot"
         >
           <a
-            href="/0.5/hacks/honeypot"
+            href="/0.6/hacks/honeypot"
           >
             Honeypot
           </a>
         </li>
         <li
-          key="/0.5/hacks/front-running"
+          key="/0.6/hacks/front-running"
         >
           <a
-            href="/0.5/hacks/front-running"
+            href="/0.6/hacks/front-running"
           >
             Front Running
           </a>
         </li>
         <li
-          key="/0.5/hacks/block-timestamp-manipulation"
+          key="/0.6/hacks/block-timestamp-manipulation"
         >
           <a
-            href="/0.5/hacks/block-timestamp-manipulation"
+            href="/0.6/hacks/block-timestamp-manipulation"
           >
             Block Timestamp Manipulation
           </a>

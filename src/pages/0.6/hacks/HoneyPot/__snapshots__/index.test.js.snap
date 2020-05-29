@@ -107,5 +107,6 @@ contract HoneyPot {
 </code></pre>
 "
   title="Honeypot"
+  version="0.6.0"
 />
 `;

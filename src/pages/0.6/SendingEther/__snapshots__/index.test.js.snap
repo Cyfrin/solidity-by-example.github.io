@@ -51,5 +51,6 @@ contract SendEther {
 </code></pre>
 "
   title="Sending Ether (transfer, send, call)"
+  version="0.6.0"
 />
 `;

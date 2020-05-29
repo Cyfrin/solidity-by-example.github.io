@@ -69,5 +69,6 @@ contract F is A, B {
 </code></pre>
 "
   title="Inheritance"
+  version="0.6.0"
 />
 `;

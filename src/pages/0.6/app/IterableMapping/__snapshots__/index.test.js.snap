@@ -88,5 +88,6 @@ contract TestIterableMap {
 </code></pre>
 "
   title="Iterable Mapping"
+  version="0.6.0"
 />
 `;

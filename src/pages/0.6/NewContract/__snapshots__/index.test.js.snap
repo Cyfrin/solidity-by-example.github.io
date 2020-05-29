@@ -45,5 +45,6 @@ contract CarFactory {
 </code></pre>
 "
   title="Contract that Create other Contracts"
+  version="0.6.0"
 />
 `;

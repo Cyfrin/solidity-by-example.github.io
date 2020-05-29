@@ -37,5 +37,6 @@ contract Gas {
 </code></pre>
 "
   title="Gas and Gas Price"
+  version="0.6.0"
 />
 `;

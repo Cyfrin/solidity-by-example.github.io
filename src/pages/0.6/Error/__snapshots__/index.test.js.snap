@@ -79,5 +79,6 @@ contract Account {
 </code></pre>
 "
   title="Error"
+  version="0.6.0"
 />
 `;

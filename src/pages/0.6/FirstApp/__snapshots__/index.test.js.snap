@@ -27,5 +27,6 @@ contract Counter {
 </code></pre>
 "
   title="First Application"
+  version="0.6.0"
 />
 `;
