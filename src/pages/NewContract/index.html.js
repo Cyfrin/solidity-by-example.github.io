@@ -1,5 +1,5 @@
 const html = `<p>Contracts can be created by other contracts using the <code>new</code> keyword.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Car {
     address public owner;

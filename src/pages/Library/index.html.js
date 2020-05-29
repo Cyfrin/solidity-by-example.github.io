@@ -2,7 +2,7 @@ const html = `<p>Libraries are similar to contracts, but you can&#39;t declare a
 you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 library SafeMath {
     function add(uint x, uint y) internal pure returns (uint) {

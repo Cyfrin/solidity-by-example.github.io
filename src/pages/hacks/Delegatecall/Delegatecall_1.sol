@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 /*
 HackMe is a contract that uses delegatecall to execute code.

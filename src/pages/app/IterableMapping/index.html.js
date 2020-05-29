@@ -1,5 +1,5 @@
 const html = `<p>You cannot iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 library IterableMapping {
     // Iterable mapping from address to uint;

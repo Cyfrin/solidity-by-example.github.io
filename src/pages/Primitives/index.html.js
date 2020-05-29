@@ -5,7 +5,7 @@ const html = `<p>Here we introduce you to some primitive data types available in
 <li><code>int</code></li>
 <li><code>address</code></li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Primitives {
     bool boo = true;

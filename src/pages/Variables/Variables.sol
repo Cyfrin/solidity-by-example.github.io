@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 contract Variables {
     // State varaibles are stored on the blockchain.

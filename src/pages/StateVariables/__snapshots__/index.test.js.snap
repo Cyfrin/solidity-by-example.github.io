@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
   html="<p>You need to send a transaction to the blockchain to write or update a state variable.</p>
 <p>This means that you will have to pay a transaction fee.</p>
 <p>On the other hand, you can read a data from a state variable, for free, without sending any transaction.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
 
 contract SimpleStorage {
     // State variable to store a number

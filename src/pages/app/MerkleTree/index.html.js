@@ -1,6 +1,6 @@
 const html = `<p>Merkle tree allows you to cryptographically prove that an element is contained</p>
 <p>in a set without revealing the entire set.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract MerkleProof {
     function verify(

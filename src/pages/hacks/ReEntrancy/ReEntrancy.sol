@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 // EtherStore is a contract vulnerable to re-entrancy attack. Let's see why.
 

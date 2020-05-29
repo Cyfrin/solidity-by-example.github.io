@@ -2,7 +2,7 @@ const html = `<p>A honeypot is a trap to catch hackers.</p>
 <h3 id="vulnerability">Vulnerability</h3>
 <p>Combining two exploits, reentrancy and hiding malicious code, we can build a contract</p>
 <p>that will catch malicious users.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 /*
 Bank is a contract that calls Logger to log events.

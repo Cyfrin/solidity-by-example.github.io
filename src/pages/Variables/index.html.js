@@ -12,7 +12,7 @@ const html = `<p>There are 3 types of variables in Solidity</p>
 </li>
 <li><strong>global</strong> (provides information about the blockchain)</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Variables {
     // State varaibles are stored on the blockchain.

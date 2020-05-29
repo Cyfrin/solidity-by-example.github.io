@@ -1,5 +1,5 @@
 const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Array {
     // Several ways to initialize an array

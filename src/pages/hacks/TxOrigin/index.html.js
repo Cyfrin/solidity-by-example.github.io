@@ -3,7 +3,7 @@ const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&
 <h3 id="vulnerability">Vulnerability</h3>
 <p>A malicious contract can deceive the owner of a contract into calling a
 function that only the owner should be able to call.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 /*
 Wallet is a simple contract where only the owner should be able to transfer

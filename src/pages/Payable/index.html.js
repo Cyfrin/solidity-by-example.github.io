@@ -1,5 +1,5 @@
 const html = `<p>Functions and addresses declared <code>payable</code> can receive <code>ether</code> into the contract.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Payable {
     // Payable address can receive Ether

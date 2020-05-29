@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 contract EtherUnits {
     uint public oneWei = 1 wei;

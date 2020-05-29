@@ -10,7 +10,7 @@ const html = `<p>You can send Ether to other contracts by</p>
 <li>making all state changes before calling other contracts</li>
 <li>using re-entrancy guard modifier</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract ReceiveEther {
     // This is a special function called the fallback.

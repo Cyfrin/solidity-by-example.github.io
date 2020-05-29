@@ -1,6 +1,6 @@
 const html = `<p>A <code>constructor</code> is an optional function that is executed upon contract creation.</p>
 <p>Here are examples of how to pass arguments to <code>constructors</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 // Base contract X
 contract X {

@@ -1,5 +1,5 @@
 const html = `<p>Here is a simple contract that you can get, increment and decrement the count store in this contract.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Counter {
     uint public count;

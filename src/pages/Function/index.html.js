@@ -1,6 +1,6 @@
 const html = `<p>There are several ways to return outputs from a function.</p>
 <p>Public functions cannot accept certain data types as inputs or outputs</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Function {
     // Functions can return multiple values.

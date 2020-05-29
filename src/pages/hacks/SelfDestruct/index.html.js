@@ -4,7 +4,7 @@ designated address.</p>
 <h3 id="vulnerability">Vulnerability</h3>
 <p>A malicious contract can use <code>selfdestruct</code> to
 force send Ether to any contract.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 // The goal of this game is to be the 7th player to deposit 1 Ether.
 // Players can deposit only 1 Ether at a time.
@@ -65,7 +65,7 @@ contract Attack {
 </code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Don&#39;t rely on <code>address(this).balance</code></p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract EtherGame {
     uint public targetAmount = 3 ether;

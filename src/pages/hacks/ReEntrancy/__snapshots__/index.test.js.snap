@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
   html="<h3 id=\\"vulnerability\\">Vulnerability</h3>
 <p>Let&#39;s say that contract <code>A</code> calls contract <code>B</code>.</p>
 <p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
 
 // EtherStore is a contract vulnerable to re-entrancy attack. Let&#39;s see why.
 
@@ -99,7 +99,7 @@ contract Attack {
 <li>Use function modifiers that prevent re-entrancy</li>
 </ul>
 <p>Here is a example of a re-entracy guard</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
 
 contract ReEntrancyGuard {
     bool internal locked;

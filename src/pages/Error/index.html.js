@@ -6,7 +6,7 @@ const html = `<p>An error will undo all changes made to the state during a trans
 <li><code>assert</code> is used to check for code that should never be false. Failing
 assertion probably means that there is a bug.</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Error {
     function testRequire(uint _i) public {
@@ -38,7 +38,7 @@ contract Error {
 }
 </code></pre>
 <p>Here is another example</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Account {
     uint public balance;

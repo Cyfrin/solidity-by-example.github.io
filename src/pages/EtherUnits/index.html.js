@@ -1,6 +1,6 @@
 const html = `<p>Transactions are paid with <code>ether</code>.</p>
 <p>Similar to how one dollar is equal to 100 cent, one <code>ether</code> is equal to 10<sup>18</sup> <code>wei</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract EtherUnits {
     uint public oneWei = 1 wei;

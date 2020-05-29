@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 // The goal of this game is to be the 7th player to deposit 1 Ether.
 // Players can deposit only 1 Ether at a time.

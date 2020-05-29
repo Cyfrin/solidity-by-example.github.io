@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 library IterableMapping {
     // Iterable mapping from address to uint;

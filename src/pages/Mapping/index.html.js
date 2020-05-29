@@ -2,7 +2,7 @@ const html = `<p>Maps are created with the syntax <code>mapping(keyType =&gt; va
 <p><code>keyType</code> can be value types such as <code>uint</code>, <code>address</code> or <code>bytes</code>.</p>
 <p><code>valueType</code> can be any type including another mapping or an array.</p>
 <p>Mappings are not iterable.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Mapping {
     // Mapping from address to uint

@@ -1,6 +1,6 @@
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Integers in Solidity overflow / underflow without any errors.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 // This contract is designed to act as a time vault.
 // User can deposit into this contract but cannot withdraw for atleast a week.

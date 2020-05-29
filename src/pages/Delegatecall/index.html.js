@@ -1,7 +1,7 @@
 const html = `<p><code>delegatecall</code> is a low level function similar to <code>call</code>.</p>
 <p>When contract <code>A</code> executes <code>delegatecall</code> to contract <code>B</code>, <code>B</code>&#39;s code is excuted</p>
 <p>with contract <code>A</code>&#39;s storage, <code>msg.sender</code> and <code>msg.value</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 // NOTE: Deploy this contract first
 contract B {

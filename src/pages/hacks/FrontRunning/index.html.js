@@ -2,7 +2,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Transactions take some time before they are mined. An attacker can watch the transaction pool
 and send a transaction, have it included in a block before the original transaction.
 This mechanism can be abused to re-order transactions to the attacker&#39;s advantage.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 /*
 Alice creates a guessing game.

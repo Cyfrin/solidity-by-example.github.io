@@ -2,7 +2,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>In Solidity any address can be casted into specific contract,
 even if the contract at the address is not the one being casted.</p>
 <p>This can be exploited to hide malicious code. Let&#39;s see how.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 /*
 Let&#39;s say Alice can see the code of Foo and Bar but not Mal.

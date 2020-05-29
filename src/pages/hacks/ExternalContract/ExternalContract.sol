@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 /*
 Let's say Alice can see the code of Foo and Bar but not Mal.
@@ -17,11 +17,11 @@ will actually execute the code at Mal.
 
 contract Foo {
     Bar bar;
-    
+
     constructor(address _bar) public {
         bar = Bar(_bar);
     }
-    
+
     function callBar() public {
         bar.log();
     }
@@ -29,7 +29,7 @@ contract Foo {
 
 contract Bar {
     event Log(string message);
-    
+
     function log() public {
         emit Log("Bar was called");
     }
@@ -38,11 +38,11 @@ contract Bar {
 // This code is hidden in a separate file
 contract Mal {
     event Log(string message);
-    
+
     // function () external {
     //     emit Log("Mal was called");
     // }
-    
+
     // Actually we can execute the same exploit even if this function does
     // not exit by using the fallback
     function log() public {

@@ -3,14 +3,14 @@ const html = `<p>You can import local and external files in Solidity.</p>
 <p>Here is our folder structure.</p>
 <pre><code>├── Import.sol
 └── Foo.sol</code></pre><p>Foo.sol</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Foo {
     string public name = "Foo";
 }
 </code></pre>
 <p>Import.sol</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 // import Foo.sol from current directory
 import "./Foo.sol";

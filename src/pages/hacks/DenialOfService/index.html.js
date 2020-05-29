@@ -1,7 +1,7 @@
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>There are many ways to attack a smart contract to make it unusable.</p>
 <p>One exploit we introduce here is denial of service by making the function to send Ether fail.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 /*
 The goal of KingOfEther is to become the king by sending more Ether than
 the previous king. Previous king will be refunded with the amount of Ether
@@ -60,7 +60,7 @@ contract Attack {
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>One way to prevent this is to allow the users to withdraw their Ether instead of sending it.</p>
 <p>Here is a example.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract KingOfEther {
     address public king;

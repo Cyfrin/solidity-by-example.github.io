@@ -17,7 +17,7 @@ exports[`it renders 1`] = `
 </li>
 <li><strong>global</strong> (provides information about the blockchain)</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
 
 contract Variables {
     // State varaibles are stored on the blockchain.

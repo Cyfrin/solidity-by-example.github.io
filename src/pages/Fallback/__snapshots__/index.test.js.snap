@@ -10,7 +10,7 @@ exports[`it renders 1`] = `
 <li>sending Ether directly to a contract</li>
 </ul>
 <p><code>Fallback</code> functions have a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
 
 contract Fallback {
     event Log(uint gas);

@@ -12,7 +12,7 @@ exports[`it renders 1`] = `
 <li>If <code>Bob</code> does not claim his payment, <code>Alice</code> get her Ether back after the contract expires</li>
 </ul>
 <p>This is called a uni-directional payment channel since the payment can go only in a signle direction from <code>Alice</code> to <code>Bob</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
 
 import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol\\";
 import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\";

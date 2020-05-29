@@ -1,7 +1,7 @@
 const html = `<p>Solidity supports <code>for</code>, <code>while</code>, and <code>do while</code> loops.</p>
 <p>Don&#39;t write loops that are unbounded as this can hit the gas limit, causing your transaction to fail.</p>
 <p>For the reason above, <code>while</code> and <code>do while</code> loops are rarely used.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity">pragma solidity ^0.6.0;
 
 contract Loop {
     function loop() public {

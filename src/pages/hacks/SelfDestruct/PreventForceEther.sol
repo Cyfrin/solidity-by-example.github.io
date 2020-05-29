@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.6.0;
 
 contract EtherGame {
     uint public targetAmount = 3 ether;
