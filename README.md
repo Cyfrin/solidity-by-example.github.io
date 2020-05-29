@@ -168,7 +168,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] archive 0.5
 - [ ] fix warnings
 
-- FIX create2
 - FIX uni-directional payment channel
 - FIX bi-directional payment channel
 - FIX hacks
