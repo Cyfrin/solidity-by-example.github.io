@@ -181,3 +181,13 @@ npm run md-to-html -- path/to/folder/with/md
 - FIX uni-directional payment channel
 - FIX bi-directional payment channel
 - FIX hacks
+
+### Memo
+
+```
+# find and compile sol
+find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.5.16 {} \;
+
+# compile single file
+docker run -v $PWD/src:/src ethereum/solc:0.5.16 /src/pages/HelloWorld/HelloWorld.sol
+```
