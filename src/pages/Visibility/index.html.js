@@ -28,7 +28,7 @@ contract Base {
         return "internal function called";
     }
 
-    function testInternalFunc() public pure returns (string memory) {
+    function testInternalFunc() public pure virtual returns (string memory) {
         return internalFunc();
     }
 
@@ -68,7 +68,7 @@ contract Child is Base {
     // }
 
     // Internal function call be called inside child contracts.
-    function testInternalFunc() public pure returns (string memory) {
+    function testInternalFunc() public pure override returns (string memory) {
         return internalFunc();
     }
 }
