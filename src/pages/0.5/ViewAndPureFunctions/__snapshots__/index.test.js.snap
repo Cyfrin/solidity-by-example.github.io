@@ -24,5 +24,6 @@ contract ViewAndPure {
 </code></pre>
 "
   title="View and Pure Functions"
+  version="0.5.16"
 />
 `;

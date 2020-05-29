@@ -26,5 +26,6 @@ contract Event {
 </code></pre>
 "
   title="Events"
+  version="0.5.16"
 />
 `;

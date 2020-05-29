@@ -27,5 +27,6 @@ contract SimpleStorage {
 </code></pre>
 "
   title="Reading and Writing to a State Variable"
+  version="0.5.16"
 />
 `;

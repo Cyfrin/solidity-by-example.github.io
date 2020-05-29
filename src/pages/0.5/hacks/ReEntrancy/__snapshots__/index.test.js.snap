@@ -113,5 +113,6 @@ contract ReEntrancyGuard {
 }</code></pre>
 "
   title="Re-Entrancy"
+  version="0.5.16"
 />
 `;

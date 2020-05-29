@@ -205,5 +205,6 @@ contract TestContract {
 </code></pre>
 "
   title="Multi-Sig Wallet"
+  version="0.5.16"
 />
 `;

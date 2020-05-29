@@ -43,5 +43,6 @@ contract GuessTheMagicWord {
 </code></pre>
 "
   title="Hashing with Keccak256"
+  version="0.5.16"
 />
 `;

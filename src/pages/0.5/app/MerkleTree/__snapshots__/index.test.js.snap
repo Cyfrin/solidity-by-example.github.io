@@ -85,5 +85,6 @@ contract TestMerkleProof is MerkleProof {
 </code></pre>
 "
   title="Merkle Tree"
+  version="0.5.16"
 />
 `;

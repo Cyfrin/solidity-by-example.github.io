@@ -20,5 +20,6 @@ contract IfElse {
 </code></pre>
 "
   title="If / Else"
+  version="0.5.16"
 />
 `;

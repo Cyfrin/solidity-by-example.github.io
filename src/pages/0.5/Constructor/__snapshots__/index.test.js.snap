@@ -62,5 +62,6 @@ contract F is X, Y {
 </code></pre>
 "
   title="Constructor"
+  version="0.5.16"
 />
 `;

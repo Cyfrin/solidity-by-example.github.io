@@ -43,5 +43,6 @@ contract Caller {
 </code></pre>
 "
   title="Calling Other Contract"
+  version="0.5.16"
 />
 `;

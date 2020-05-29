@@ -50,5 +50,6 @@ contract DataLocations {
 </code></pre>
 "
   title="Data Locations - Storage, Memory and Calldata"
+  version="0.5.16"
 />
 `;

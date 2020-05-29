@@ -80,5 +80,6 @@ contract Child is Base {
 </code></pre>
 "
   title="Visibility"
+  version="0.5.16"
 />
 `;

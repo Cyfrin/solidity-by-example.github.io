@@ -84,5 +84,6 @@ contract TestContract {
 </code></pre>
 "
   title="Precompute Contract Address with Create2"
+  version="0.5.16"
 />
 `;

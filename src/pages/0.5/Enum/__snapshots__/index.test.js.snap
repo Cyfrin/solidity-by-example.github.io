@@ -48,5 +48,6 @@ contract Enum {
 </code></pre>
 "
   title="Enum"
+  version="0.5.16"
 />
 `;

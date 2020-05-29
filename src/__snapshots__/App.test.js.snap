@@ -1,282 +1,282 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`it renders 1`] = `
-<div
-  className="component"
+<BrowserRouter
+  basename=""
 >
-  <Header />
   <div
-    className="main"
+    className="component"
   >
-    <BrowserRouter
-      basename=""
+    <Header />
+    <div
+      className="main"
     >
       <Switch>
         <Route
           component={[Function]}
-          key="/hello-world"
-          path="/hello-world"
+          key="/0.5/hello-world"
+          path="/0.5/hello-world"
         />
         <Route
           component={[Function]}
-          key="/first-app"
-          path="/first-app"
+          key="/0.5/first-app"
+          path="/0.5/first-app"
         />
         <Route
           component={[Function]}
-          key="/primitives"
-          path="/primitives"
+          key="/0.5/primitives"
+          path="/0.5/primitives"
         />
         <Route
           component={[Function]}
-          key="/variables"
-          path="/variables"
+          key="/0.5/variables"
+          path="/0.5/variables"
         />
         <Route
           component={[Function]}
-          key="/state-variables"
-          path="/state-variables"
+          key="/0.5/state-variables"
+          path="/0.5/state-variables"
         />
         <Route
           component={[Function]}
-          key="/ether-units"
-          path="/ether-units"
+          key="/0.5/ether-units"
+          path="/0.5/ether-units"
         />
         <Route
           component={[Function]}
-          key="/gas"
-          path="/gas"
+          key="/0.5/gas"
+          path="/0.5/gas"
         />
         <Route
           component={[Function]}
-          key="/if-else"
-          path="/if-else"
+          key="/0.5/if-else"
+          path="/0.5/if-else"
         />
         <Route
           component={[Function]}
-          key="/loop"
-          path="/loop"
+          key="/0.5/loop"
+          path="/0.5/loop"
         />
         <Route
           component={[Function]}
-          key="/mapping"
-          path="/mapping"
+          key="/0.5/mapping"
+          path="/0.5/mapping"
         />
         <Route
           component={[Function]}
-          key="/array"
-          path="/array"
+          key="/0.5/array"
+          path="/0.5/array"
         />
         <Route
           component={[Function]}
-          key="/enum"
-          path="/enum"
+          key="/0.5/enum"
+          path="/0.5/enum"
         />
         <Route
           component={[Function]}
-          key="/structs"
-          path="/structs"
+          key="/0.5/structs"
+          path="/0.5/structs"
         />
         <Route
           component={[Function]}
-          key="/data-locations"
-          path="/data-locations"
+          key="/0.5/data-locations"
+          path="/0.5/data-locations"
         />
         <Route
           component={[Function]}
-          key="/function"
-          path="/function"
+          key="/0.5/function"
+          path="/0.5/function"
         />
         <Route
           component={[Function]}
-          key="/view-and-pure-functions"
-          path="/view-and-pure-functions"
+          key="/0.5/view-and-pure-functions"
+          path="/0.5/view-and-pure-functions"
         />
         <Route
           component={[Function]}
-          key="/error"
-          path="/error"
+          key="/0.5/error"
+          path="/0.5/error"
         />
         <Route
           component={[Function]}
-          key="/function-modifier"
-          path="/function-modifier"
+          key="/0.5/function-modifier"
+          path="/0.5/function-modifier"
         />
         <Route
           component={[Function]}
-          key="/events"
-          path="/events"
+          key="/0.5/events"
+          path="/0.5/events"
         />
         <Route
           component={[Function]}
-          key="/constructor"
-          path="/constructor"
+          key="/0.5/constructor"
+          path="/0.5/constructor"
         />
         <Route
           component={[Function]}
-          key="/inheritance"
-          path="/inheritance"
+          key="/0.5/inheritance"
+          path="/0.5/inheritance"
         />
         <Route
           component={[Function]}
-          key="/shadowing-inherited-state-variables"
-          path="/shadowing-inherited-state-variables"
+          key="/0.5/shadowing-inherited-state-variables"
+          path="/0.5/shadowing-inherited-state-variables"
         />
         <Route
           component={[Function]}
-          key="/super"
-          path="/super"
+          key="/0.5/super"
+          path="/0.5/super"
         />
         <Route
           component={[Function]}
-          key="/visibility"
-          path="/visibility"
+          key="/0.5/visibility"
+          path="/0.5/visibility"
         />
         <Route
           component={[Function]}
-          key="/payable"
-          path="/payable"
+          key="/0.5/payable"
+          path="/0.5/payable"
         />
         <Route
           component={[Function]}
-          key="/sending-ether"
-          path="/sending-ether"
+          key="/0.5/sending-ether"
+          path="/0.5/sending-ether"
         />
         <Route
           component={[Function]}
-          key="/fallback"
-          path="/fallback"
+          key="/0.5/fallback"
+          path="/0.5/fallback"
         />
         <Route
           component={[Function]}
-          key="/call"
-          path="/call"
+          key="/0.5/call"
+          path="/0.5/call"
         />
         <Route
           component={[Function]}
-          key="/delegatecall"
-          path="/delegatecall"
+          key="/0.5/delegatecall"
+          path="/0.5/delegatecall"
         />
         <Route
           component={[Function]}
-          key="/calling-contract"
-          path="/calling-contract"
+          key="/0.5/calling-contract"
+          path="/0.5/calling-contract"
         />
         <Route
           component={[Function]}
-          key="/new-contract"
-          path="/new-contract"
+          key="/0.5/new-contract"
+          path="/0.5/new-contract"
         />
         <Route
           component={[Function]}
-          key="/import"
-          path="/import"
+          key="/0.5/import"
+          path="/0.5/import"
         />
         <Route
           component={[Function]}
-          key="/library"
-          path="/library"
+          key="/0.5/library"
+          path="/0.5/library"
         />
         <Route
           component={[Function]}
-          key="/hashing"
-          path="/hashing"
+          key="/0.5/hashing"
+          path="/0.5/hashing"
         />
         <Route
           component={[Function]}
-          key="/signature"
-          path="/signature"
+          key="/0.5/signature"
+          path="/0.5/signature"
         />
         <Route
           component={[Function]}
-          key="/app/multi-sig-wallet"
-          path="/app/multi-sig-wallet"
+          key="/0.5/app/multi-sig-wallet"
+          path="/0.5/app/multi-sig-wallet"
         />
         <Route
           component={[Function]}
-          key="/app/merkle-tree"
-          path="/app/merkle-tree"
+          key="/0.5/app/merkle-tree"
+          path="/0.5/app/merkle-tree"
         />
         <Route
           component={[Function]}
-          key="/app/iterable-mapping"
-          path="/app/iterable-mapping"
+          key="/0.5/app/iterable-mapping"
+          path="/0.5/app/iterable-mapping"
         />
         <Route
           component={[Function]}
-          key="/app/create2"
-          path="/app/create2"
+          key="/0.5/app/create2"
+          path="/0.5/app/create2"
         />
         <Route
           component={[Function]}
-          key="/app/uni-directional-payment-channel"
-          path="/app/uni-directional-payment-channel"
+          key="/0.5/app/uni-directional-payment-channel"
+          path="/0.5/app/uni-directional-payment-channel"
         />
         <Route
           component={[Function]}
-          key="/app/bi-directional-payment-channel"
-          path="/app/bi-directional-payment-channel"
+          key="/0.5/app/bi-directional-payment-channel"
+          path="/0.5/app/bi-directional-payment-channel"
         />
         <Route
           component={[Function]}
-          key="/hacks/re-entrancy"
-          path="/hacks/re-entrancy"
+          key="/0.5/hacks/re-entrancy"
+          path="/0.5/hacks/re-entrancy"
         />
         <Route
           component={[Function]}
-          key="/hacks/overflow"
-          path="/hacks/overflow"
+          key="/0.5/hacks/overflow"
+          path="/0.5/hacks/overflow"
         />
         <Route
           component={[Function]}
-          key="/hacks/self-destruct"
-          path="/hacks/self-destruct"
+          key="/0.5/hacks/self-destruct"
+          path="/0.5/hacks/self-destruct"
         />
         <Route
           component={[Function]}
-          key="/hacks/delegatecall"
-          path="/hacks/delegatecall"
+          key="/0.5/hacks/delegatecall"
+          path="/0.5/hacks/delegatecall"
         />
         <Route
           component={[Function]}
-          key="/hacks/denial-of-service"
-          path="/hacks/denial-of-service"
+          key="/0.5/hacks/denial-of-service"
+          path="/0.5/hacks/denial-of-service"
         />
         <Route
           component={[Function]}
-          key="/hacks/phishing-with-tx-origin"
-          path="/hacks/phishing-with-tx-origin"
+          key="/0.5/hacks/phishing-with-tx-origin"
+          path="/0.5/hacks/phishing-with-tx-origin"
         />
         <Route
           component={[Function]}
-          key="/hacks/hiding-malicious-code-with-external-contract"
-          path="/hacks/hiding-malicious-code-with-external-contract"
+          key="/0.5/hacks/hiding-malicious-code-with-external-contract"
+          path="/0.5/hacks/hiding-malicious-code-with-external-contract"
         />
         <Route
           component={[Function]}
-          key="/hacks/honeypot"
-          path="/hacks/honeypot"
+          key="/0.5/hacks/honeypot"
+          path="/0.5/hacks/honeypot"
         />
         <Route
           component={[Function]}
-          key="/hacks/front-running"
-          path="/hacks/front-running"
+          key="/0.5/hacks/front-running"
+          path="/0.5/hacks/front-running"
         />
         <Route
           component={[Function]}
-          key="/hacks/block-timestamp-manipulation"
-          path="/hacks/block-timestamp-manipulation"
+          key="/0.5/hacks/block-timestamp-manipulation"
+          path="/0.5/hacks/block-timestamp-manipulation"
         />
         <Route
           component={[Function]}
         />
       </Switch>
-    </BrowserRouter>
+    </div>
+    <div
+      className="footer"
+    >
+      <Footer />
+    </div>
   </div>
-  <div
-    className="footer"
-  >
-    <Footer />
-  </div>
-</div>
+</BrowserRouter>
 `;

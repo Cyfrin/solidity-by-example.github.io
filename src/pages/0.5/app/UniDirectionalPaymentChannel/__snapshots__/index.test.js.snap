@@ -81,5 +81,6 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
 </code></pre>
 "
   title="Uni-Directional Payment Channel"
+  version="0.5.16"
 />
 `;

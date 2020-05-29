@@ -38,5 +38,6 @@ contract C is A {
 </code></pre>
 "
   title="Shadowing Inherited State Variables"
+  version="0.5.16"
 />
 `;

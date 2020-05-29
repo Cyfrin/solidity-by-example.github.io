@@ -64,5 +64,6 @@ contract D is B, C {
 </code></pre>
 "
   title="Calling Parent Contracts"
+  version="0.5.16"
 />
 `;
