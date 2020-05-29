@@ -156,6 +156,7 @@ TODO: simplify bi directional payment channel
 ### 0.6 memo
 
 - [ ] archive 0.5
+- [ ] script to generate example pages
 
 - [ ] override and virtual
 - [ ] shadow disallowed
