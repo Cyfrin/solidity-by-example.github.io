@@ -1,23 +1,9 @@
 import React from "react"
-import { useHistory, useLocation } from "react-router-dom"
 import styles from "./Header.module.css"
 import logo from "./logo.svg"
-import { SOL_VERSIONS } from "../constants"
 
-function getVersion(pathname) {
-  return pathname.split("/")[1] || SOL_VERSIONS[0]
-}
-
-function Header(props) {
-  const history = useHistory()
-  const location = useLocation()
-  const version = getVersion(location.pathname)
-
-  function onSelect(e) {
-    const version = e.target.value
-    history.push(`/${version}`)
-  }
-
+function Header() {
+  // NOTE: need to use links for versions so that react-snap can crawl
   return (
     <div className={styles.component}>
       <a href="/">
@@ -27,15 +13,11 @@ function Header(props) {
       <h3 className={styles.header}>
         <a href="/">Solidity by Example</a>
 
-        <div className={styles.select}>
+        <div className={styles.versions}>
           <div className={styles.version}>version</div>
-          <select value={version} onChange={onSelect}>
-            {SOL_VERSIONS.map((ver) => (
-              <option key={ver} value={ver}>
-                {ver}
-              </option>
-            ))}
-          </select>
+          <a href="/0.6">0.6</a>
+          <di className={styles.bar}> | </di>
+          <a href="/0.5">0.5</a>
         </div>
       </h3>
     </div>
