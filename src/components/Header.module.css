@@ -15,12 +15,16 @@
 .header {
   margin: 0;
 }
-.select {
+.versions {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   font-weight: 500;
+}
+.bar {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .version {
   margin-right: 5px;
