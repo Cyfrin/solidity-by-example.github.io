@@ -75,7 +75,7 @@ contract MultiSigWallet {
         numConfirmationsRequired = _numConfirmationsRequired;
     }
 
-    function () payable external {
+    fallback() payable external {
         emit Deposit(msg.sender, msg.value, address(this).balance);
     }
 

@@ -166,8 +166,8 @@ npm run md-to-html -- path/to/folder/with/md
 ### 0.6 memo
 
 - [ ] archive 0.5
+- [ ] fix warnings
 
-- FIX multisig
 - FIX create2
 - FIX uni-directional payment channel
 - FIX bi-directional payment channel
