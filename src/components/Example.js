@@ -1,19 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { SOL_VERSION } from "../constants"
+import { SOL_VERSIONS } from "../constants"
 import SEO from "./SEO"
 import Html from "./Html"
 import styles from "./Example.module.css"
 
 function Example(props) {
-  const { title } = props
+  const { title, version } = props
 
   return (
     <div className={styles.component}>
-      <SEO
-        {...props}
-        title={`${title} | Solidity by Example | ${SOL_VERSION}`}
-      />
+      <SEO {...props} title={`${title} | Solidity by Example | ${version}`} />
       <div className={styles.content}>
         <h2>{title}</h2>
 
@@ -32,6 +29,7 @@ function Example(props) {
 
 Example.propTypes = {
   title: PropTypes.string.isRequired,
+  version: PropTypes.oneOf(SOL_VERSIONS).isRequired,
   html: PropTypes.string.isRequired,
 }
 

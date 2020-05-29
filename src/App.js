@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import styles from "./App.module.css"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Home from "./pages/Home"
-import routes from "./routes"
+import Home from "./pages/0.5/Home"
+import routes from "./pages/0.5/routes"
 
 function App(props) {
   return (
-    <div className={styles.component}>
-      <Header />
-      <div className={styles.main}>
-        <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={process.env.PUBLIC_URL}>
+      <div className={styles.component}>
+        <Header />
+        <div className={styles.main}>
           <Switch>
-            {routes.map(route => (
+            {routes.map((route) => (
               <Route
                 key={route.path}
                 path={route.path}
@@ -22,12 +22,12 @@ function App(props) {
             ))}
             <Route component={Home} />
           </Switch>
-        </Router>
+        </div>
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </div>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
-    </div>
+    </Router>
   )
 }
 
