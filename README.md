@@ -167,7 +167,6 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [ ] archive 0.5
 
-- FIX call
 - FIX calling other contracts
 - FIX contract that create other contract
 - FIX import

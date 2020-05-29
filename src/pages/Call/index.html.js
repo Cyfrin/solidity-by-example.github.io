@@ -6,7 +6,7 @@ const html = `<p><code>call</code> is a low level function to interact with othe
 contract Receiver {
     event Received(address caller, uint amount, string message);
 
-    function () external payable {
+    fallback() external payable {
         emit Received(msg.sender, msg.value, "Fallback was called");
     }
 
