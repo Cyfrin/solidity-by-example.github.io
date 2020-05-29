@@ -8,15 +8,6 @@ TODO: simplify bi directional payment channel
 
 [MIT License](LICENSE)
 
-## Dev memo
-
-```shell
-# deploy
-npm run deploy
-
-npm run md-to-html -- path/to/folder/with/md
-```
-
 ### Basic - 0
 
 - [x] hello world
@@ -155,7 +146,6 @@ npm run md-to-html -- path/to/folder/with/md
 
 ## TODO
 
-- [ ] 0.6
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] exercises
@@ -166,19 +156,27 @@ npm run md-to-html -- path/to/folder/with/md
 ### 0.6 memo
 
 - [ ] archive 0.5
-- [ ] fix warnings
 
-- FIX hacks
 - override and virtual
 - shadow disallowed
 - fallback and receive
 
 ### Memo
 
-```
+````
+```shell
+# deploy
+npm run deploy
+
 # find and compile sol
-find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.5.16 {} \;
+find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
 
 # compile single file
 docker run -v $PWD/src:/src ethereum/solc:0.5.16 /src/pages/HelloWorld/HelloWorld.sol
-```
+
+# md to html
+npm run md-to-html -- path/to/folder/with/md
+
+# md to html all pages
+find src -type d -not -path "*/__snapshots__" -exec npm run md-to-html -- {} \;
+````

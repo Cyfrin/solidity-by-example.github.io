@@ -49,7 +49,7 @@ contract HackMe {
         lib = Lib(_lib);
     }
 
-    function () external payable {
+    fallback() external payable {
         address(lib).delegatecall(msg.data);
     }
 }
