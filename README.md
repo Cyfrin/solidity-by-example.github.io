@@ -167,9 +167,6 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [ ] archive 0.5
 
-- FIX calling other contracts
-- FIX contract that create other contract
-- FIX import
 - FIX multisig
 - FIX create2
 - FIX uni-directional payment channel
