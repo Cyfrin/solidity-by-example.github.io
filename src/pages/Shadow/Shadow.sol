@@ -8,16 +8,11 @@ contract A {
     }
 }
 
-contract B is A {
-    // This is the incorrect way to override inherited state variables.
-    string public name = "Contract B";
-
-    // B.getName returns "Contract A"
-
-    // Functions defined in contract A that use the 'name' state variable
-    // will access A.name. Functions defined in B that uses 'name' will
-    // access B.name.
-}
+// Shadowing is disallowed in Solidity 0.6
+// This will not compile
+// contract B is A {
+//     string public name = "Contract B";
+// }
 
 contract C is A {
     // This is the correct way to override inherited state variables.

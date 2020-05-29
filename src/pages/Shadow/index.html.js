@@ -1,5 +1,4 @@
-const html = `<p>Unlike functions, state variables cannot be overridden by re-declaring it
-in the child contract.</p>
+const html = `<p>Solidity 0.6 disallows shadowing state variables.</p>
 <p>Let&#39;s learn how to correctly override inherited state variables.</p>
 <pre><code class="language-solidity">pragma solidity ^0.6.0;
 
@@ -11,16 +10,11 @@ contract A {
     }
 }
 
-contract B is A {
-    // This is the incorrect way to override inherited state variables.
-    string public name = "Contract B";
-
-    // B.getName returns "Contract A"
-
-    // Functions defined in contract A that use the &#39;name&#39; state variable
-    // will access A.name. Functions defined in B that uses &#39;name&#39; will
-    // access B.name.
-}
+// Shadowing is disallowed in Solidity 0.6
+// This will not compile
+// contract B is A {
+//     string public name = "Contract B";
+// }
 
 contract C is A {
     // This is the correct way to override inherited state variables.

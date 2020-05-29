@@ -165,8 +165,8 @@ npm run md-to-html -- path/to/folder/with/md
 
 ### 0.6 memo
 
-- Fix override (inheritance)
-- FIX shadow
+- [ ] archive 0.5
+
 - FIX calling parent
 - FIX visibility
 - FIX payable warning
@@ -181,6 +181,8 @@ npm run md-to-html -- path/to/folder/with/md
 - FIX uni-directional payment channel
 - FIX bi-directional payment channel
 - FIX hacks
+- override and virtual
+- shadow disallowed
 
 ### Memo
 

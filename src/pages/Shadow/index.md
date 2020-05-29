@@ -1,5 +1,4 @@
-Unlike functions, state variables cannot be overridden by re-declaring it
-in the child contract.
+Solidity 0.6 disallows shadowing state variables.
 
 Let's learn how to correctly override inherited state variables.
 
