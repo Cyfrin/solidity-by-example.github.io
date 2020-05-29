@@ -8,15 +8,6 @@ TODO: simplify bi directional payment channel
 
 [MIT License](LICENSE)
 
-## Dev memo
-
-```shell
-# deploy
-npm run deploy
-
-npm run md-to-html -- path/to/folder/with/md
-```
-
 ### Basic - 0
 
 - [x] hello world
@@ -65,7 +56,7 @@ npm run md-to-html -- path/to/folder/with/md
 - [x] shadowing state variables
 - [x] calling parent contracts
 - [x] visibility
-- [ ] TODO?: interface
+- [ ] interface
 
 ### Sending and Receiving Ether
 
@@ -94,7 +85,7 @@ npm run md-to-html -- path/to/folder/with/md
 ## Application
 
 - [x] multisig wallet
-- [ ] TODO? erc20
+- [ ] erc20
 - [x] iterable mapping
 - [x] merkle tree
 - [x] create2
@@ -160,10 +151,39 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] exercises
 - [ ] sidenav and or link to next topic
 - [ ] seo
-- [ ] 0.6
 - [ ] submarine send
 
-## suggestions
+### 0.6 memo
 
-next video please : how to use erc20 in our contracts , example a smart contract that when it gets eth it throws back usdc to the same address or the reverse
-thanks in advance :)
+- [ ] archive 0.5
+- [ ] script to generate example pages
+- [ ] reusable home page
+- [ ] new tag in 0.6
+- [ ] redirect to current page for 0.5 and 0.6
+- [ ] not found page
+- [ ] typescript
+
+- [ ] override and virtual
+- [ ] shadow disallowed
+- [ ] fallback and receive
+- [ ] 0.6 features
+
+### Memo
+
+````
+```shell
+# deploy
+npm run deploy
+
+# find and compile sol
+find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
+
+# compile single file
+docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/HelloWorld/HelloWorld.sol
+
+# md to html
+npm run md-to-html -- path/to/folder/with/md
+
+# md to html all pages
+find src -type d -not -path "*/__snapshots__" -exec npm run md-to-html -- {} \;
+````

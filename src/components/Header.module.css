@@ -12,3 +12,16 @@
 .logo {
   width: 80px;
 }
+.header {
+  margin: 0;
+}
+.select {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 500;
+}
+.version {
+  margin-right: 5px;
+}

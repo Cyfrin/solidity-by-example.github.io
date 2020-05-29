@@ -7,7 +7,14 @@ exports[`it renders 1`] = `
   <div
     className="row"
   >
-    Donate 🙂
+    Donate
+     
+    <span
+      aria-label="smiley"
+      role="img"
+    >
+      🙂
+    </span>
   </div>
   <div
     className="row"
