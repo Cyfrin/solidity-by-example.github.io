@@ -29,8 +29,8 @@ Closing a channel when Alice and Bob do not agree on the final balances
 3. Alice and Bob can withdraw funds once the channel is expired
 */
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/math/SafeMath.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol";
 
 contract BiDirectionalPaymentChannel {
     using SafeMath for uint;
@@ -110,10 +110,10 @@ contract BiDirectionalPaymentChannel {
         uint[2] memory _balances,
         uint _nonce
     ) {
-        // NOTE: need to cast payable address to address type (not in 0.6)
+        // Note: copy storage array to memory
         address[2] memory signers;
         for (uint i = 0; i &lt; users.length; i++) {
-            signers[i] = address(users[i]);
+            signers[i] = users[i];
         }
 
         require(

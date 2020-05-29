@@ -168,8 +168,6 @@ npm run md-to-html -- path/to/folder/with/md
 - [ ] archive 0.5
 - [ ] fix warnings
 
-- FIX uni-directional payment channel
-- FIX bi-directional payment channel
 - FIX hacks
 - override and virtual
 - shadow disallowed
