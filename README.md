@@ -167,8 +167,6 @@ npm run md-to-html -- path/to/folder/with/md
 
 - [ ] archive 0.5
 
-- FIX payable warning
-- FIX sending Ether
 - FIX fallback
 - FIX call
 - FIX calling other contracts
@@ -181,6 +179,7 @@ npm run md-to-html -- path/to/folder/with/md
 - FIX hacks
 - override and virtual
 - shadow disallowed
+- fallback and receive
 
 ### Memo
 
