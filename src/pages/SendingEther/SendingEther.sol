@@ -4,7 +4,7 @@ contract ReceiveEther {
     // This is a special function called the fallback.
     // The fallback function declared payable enables other contracts to
     // send Ether by send, transfer, or call.
-    function () external payable {}
+    receive() external payable {}
 
     function getBalance() public view returns (uint) {
         return address(this).balance;

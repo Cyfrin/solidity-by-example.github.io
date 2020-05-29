@@ -11,7 +11,7 @@ contract Fallback {
     event Log(uint gas);
 
     // Fallback function must be declared as external.
-    function () external payable {
+    fallback() external payable {
         // send / transfer (forwards 2300 gas to this fallback function)
         // call (forwards all of the gas)
         emit Log(gasleft());
