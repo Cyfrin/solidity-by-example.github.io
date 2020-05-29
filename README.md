@@ -161,6 +161,7 @@ TODO: simplify bi directional payment channel
 - [ ] new tag in 0.6
 - [ ] redirect to current page for 0.5 and 0.6
 - [ ] not found page
+- [ ] typescript
 
 - [ ] override and virtual
 - [ ] shadow disallowed
