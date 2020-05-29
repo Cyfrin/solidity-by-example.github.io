@@ -54,7 +54,7 @@ contract Attack {
         timeLock = TimeLock(_timeLock);
     }
 
-    function () external payable {}
+    fallback() external payable {}
 
     function attack() public payable {
         timeLock.deposit.value(msg.value)();

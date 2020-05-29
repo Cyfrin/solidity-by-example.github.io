@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Header.module.css"
 import logo from "./logo.svg"
+import { SOL_VERSION } from "../constants"
 
 function Header(props) {
   return (
@@ -12,7 +13,7 @@ function Header(props) {
       <h3>
         <a href="/">
           <div>Solidity by Example</div>
-          <div>version 0.5.16</div>
+          <div>version {SOL_VERSION}</div>
         </a>
       </h3>
     </div>

@@ -172,7 +172,7 @@ npm run deploy
 find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
 
 # compile single file
-docker run -v $PWD/src:/src ethereum/solc:0.5.16 /src/pages/HelloWorld/HelloWorld.sol
+docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/HelloWorld/HelloWorld.sol
 
 # md to html
 npm run md-to-html -- path/to/folder/with/md
