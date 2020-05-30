@@ -39,7 +39,8 @@
     "gh-pages": "^3.0.0",
     "marked": "^1.1.0",
     "mustache": "^4.0.1",
-    "react-snap": "^1.23.0"
+    "react-snap": "^1.23.0",
+    "yaml": "^1.10.0"
   },
   "jest": {
     "snapshotSerializers": [
