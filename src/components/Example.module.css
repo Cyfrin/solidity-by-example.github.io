@@ -1,5 +1,6 @@
 .component {
-  max-width: min(100vw, 1000px);
+  /* NOTE -20px from App.module.css */
+  width: min(100vw - 20px, 1000px);
 }
 .content {
   margin-top: 15px;

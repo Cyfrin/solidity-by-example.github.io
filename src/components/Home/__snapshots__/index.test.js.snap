@@ -14,10 +14,15 @@ exports[`0.5 1`] = `
     <a
       href="/"
     >
-      Solidity by Example 
-      0.5.16
+      Solidity by Example
     </a>
   </h1>
+  <div
+    className="subHeader"
+  >
+    v 
+    0.5.16
+  </div>
   <div
     className="main"
   >
@@ -589,10 +594,15 @@ exports[`0.6 1`] = `
     <a
       href="/"
     >
-      Solidity by Example 
-      0.6.0
+      Solidity by Example
     </a>
   </h1>
+  <div
+    className="subHeader"
+  >
+    v 
+    0.6.0
+  </div>
   <div
     className="main"
   >

@@ -14,8 +14,9 @@ function Home(props) {
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
-        <a href="/">Solidity by Example {version}</a>
+        <a href="/">Solidity by Example</a>
       </h1>
+      <div className={styles.subHeader}>v {version}</div>
       <div className={styles.main}>
         <p>
           an introduction to{" "}

@@ -1,5 +1,6 @@
 .component {
-  max-width: 420px;
+  /* set width for auto-margin to be same for 0.5 and 0.6 home page */
+  width: 420px;
   /* background-color: green; */
 }
 .component ul {
