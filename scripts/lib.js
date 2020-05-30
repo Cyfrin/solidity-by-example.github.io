@@ -45,9 +45,9 @@ async function toHTML(filePath) {
     .replace(/&quot;/g, `"`)
     .replace(/\\/g, `\\\\`)
 
-  // render markdown zto html
+  // render markdown to html
   const jsTemplate = (
-    await readFile(path.join(__dirname, "./template/template.html.js.mustache"))
+    await readFile(path.join(__dirname, "./template/index.html.js.mustache"))
   ).toString()
   const js = mustache.render(jsTemplate, { html })
 
