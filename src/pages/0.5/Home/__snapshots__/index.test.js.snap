@@ -14,7 +14,8 @@ exports[`it renders 1`] = `
     <a
       href="/"
     >
-      Solidity by Example
+      Solidity by Example 
+      0.5.16
     </a>
   </h1>
   <div
@@ -37,6 +38,7 @@ exports[`it renders 1`] = `
         className="list"
       >
         <li
+          className="listItem"
           key="/0.5/hello-world"
         >
           <a
@@ -46,6 +48,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/first-app"
         >
           <a
@@ -55,6 +58,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/primitives"
         >
           <a
@@ -64,6 +68,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/variables"
         >
           <a
@@ -73,6 +78,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/state-variables"
         >
           <a
@@ -82,6 +88,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/ether-units"
         >
           <a
@@ -91,6 +98,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/gas"
         >
           <a
@@ -100,6 +108,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/if-else"
         >
           <a
@@ -109,6 +118,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/loop"
         >
           <a
@@ -118,6 +128,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/mapping"
         >
           <a
@@ -127,6 +138,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/array"
         >
           <a
@@ -136,6 +148,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/enum"
         >
           <a
@@ -145,6 +158,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/structs"
         >
           <a
@@ -154,6 +168,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/data-locations"
         >
           <a
@@ -163,6 +178,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/function"
         >
           <a
@@ -172,6 +188,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/view-and-pure-functions"
         >
           <a
@@ -181,6 +198,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/error"
         >
           <a
@@ -190,6 +208,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/function-modifier"
         >
           <a
@@ -199,6 +218,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/events"
         >
           <a
@@ -208,6 +228,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/constructor"
         >
           <a
@@ -217,6 +238,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/inheritance"
         >
           <a
@@ -226,6 +248,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/shadowing-inherited-state-variables"
         >
           <a
@@ -235,6 +258,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/super"
         >
           <a
@@ -244,6 +268,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/visibility"
         >
           <a
@@ -253,6 +278,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/payable"
         >
           <a
@@ -262,6 +288,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/sending-ether"
         >
           <a
@@ -271,6 +298,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/fallback"
         >
           <a
@@ -280,6 +308,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/call"
         >
           <a
@@ -289,6 +318,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/delegatecall"
         >
           <a
@@ -298,6 +328,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/calling-contract"
         >
           <a
@@ -307,6 +338,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/new-contract"
         >
           <a
@@ -316,6 +348,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/import"
         >
           <a
@@ -325,6 +358,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/library"
         >
           <a
@@ -334,6 +368,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hashing"
         >
           <a
@@ -343,6 +378,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/signature"
         >
           <a
@@ -363,6 +399,7 @@ exports[`it renders 1`] = `
         className="list"
       >
         <li
+          className="listItem"
           key="/0.5/app/multi-sig-wallet"
         >
           <a
@@ -372,6 +409,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/app/merkle-tree"
         >
           <a
@@ -381,6 +419,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/app/iterable-mapping"
         >
           <a
@@ -390,6 +429,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/app/create2"
         >
           <a
@@ -399,6 +439,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/app/uni-directional-payment-channel"
         >
           <a
@@ -408,6 +449,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/app/bi-directional-payment-channel"
         >
           <a
@@ -428,6 +470,7 @@ exports[`it renders 1`] = `
         className="list"
       >
         <li
+          className="listItem"
           key="/0.5/hacks/re-entrancy"
         >
           <a
@@ -437,6 +480,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/overflow"
         >
           <a
@@ -446,6 +490,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/self-destruct"
         >
           <a
@@ -455,6 +500,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/delegatecall"
         >
           <a
@@ -464,6 +510,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/denial-of-service"
         >
           <a
@@ -473,6 +520,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/phishing-with-tx-origin"
         >
           <a
@@ -482,6 +530,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/hiding-malicious-code-with-external-contract"
         >
           <a
@@ -491,6 +540,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/honeypot"
         >
           <a
@@ -500,6 +550,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/front-running"
         >
           <a
@@ -509,6 +560,7 @@ exports[`it renders 1`] = `
           </a>
         </li>
         <li
+          className="listItem"
           key="/0.5/hacks/block-timestamp-manipulation"
         >
           <a

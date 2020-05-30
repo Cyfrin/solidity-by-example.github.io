@@ -6,6 +6,17 @@
   list-style: none;
   padding: 0;
 }
+.listItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.label {
+  margin-left: 10px;
+}
 .header a {
   text-decoration: none;
 }

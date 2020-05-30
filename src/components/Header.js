@@ -16,7 +16,7 @@ function Header() {
         <div className={styles.versions}>
           <div className={styles.version}>version</div>
           <a href="/0.6">0.6</a>
-          <di className={styles.bar}> | </di>
+          <div className={styles.bar}> | </div>
           <a href="/0.5">0.5</a>
         </div>
       </h3>

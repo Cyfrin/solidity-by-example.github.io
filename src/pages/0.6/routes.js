@@ -162,11 +162,13 @@ const SOL_ROUTES = [
     path: "inheritance",
     component: Inheritance,
     title: "Inheritance",
+    breakingChanges: true,
   },
   {
     path: "shadowing-inherited-state-variables",
     component: Shadow,
     title: "Shadowing Inherited State Variables",
+    breakingChanges: true,
   },
   {
     path: "super",
@@ -193,6 +195,7 @@ const SOL_ROUTES = [
     path: "fallback",
     component: Fallback,
     title: "Fallback",
+    breakingChanges: true,
   },
   // contract interaction
   {
