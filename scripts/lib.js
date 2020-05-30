@@ -8,35 +8,33 @@ const readdir = util.promisify(fs.readdir)
 const mustache = require("mustache")
 const marked = require("marked")
 
+function removeExtension(fileName) {
+  return fileName.split(".").slice(0, -1).join("")
+}
+
+function getExtension(file) {
+  return file.split(".").slice(-1)[0]
+}
+
 async function findSolidityFiles(dir) {
   const files = await readdir(dir)
 
-  return files.filter(file => file.split(".").pop() == "sol")
-}
-
-function removeExt(fileName) {
-  return fileName
-    .split(".")
-    .slice(0, -1)
-    .join("")
+  return files.filter((file) => file.split(".").pop() == "sol")
 }
 
 // convert index.md -> index.html.js
 async function toHTML(filePath) {
-  const fileName = removeExt(filePath.split("/").pop())
-  const dir = filePath
-    .split("/")
-    .slice(0, -1)
-    .join("/")
+  const fileName = removeExtension(filePath.split("/").pop())
+  const dir = filePath.split("/").slice(0, -1).join("/")
 
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
   const codes = {}
   for (const solFileName of solidityFileNames) {
-    codes[removeExt(solFileName)] = (await readFile(
-      path.join(dir, solFileName)
-    )).toString()
+    codes[removeExtension(solFileName)] = (
+      await readFile(path.join(dir, solFileName))
+    ).toString()
   }
 
   // render solidity inside markdown
@@ -48,9 +46,9 @@ async function toHTML(filePath) {
     .replace(/\\/g, `\\\\`)
 
   // render markdown zto html
-  const jsTemplate = (await readFile(
-    path.join(__dirname, "./template.html.js.mustache")
-  )).toString()
+  const jsTemplate = (
+    await readFile(path.join(__dirname, "./template/template.html.js.mustache"))
+  ).toString()
   const js = mustache.render(jsTemplate, { html })
 
   writeFile(path.join(dir, `${fileName}.html.js`), js)
@@ -60,4 +58,6 @@ async function toHTML(filePath) {
 
 module.exports = {
   toHTML,
+  getExtension,
+  removeExtension,
 }
