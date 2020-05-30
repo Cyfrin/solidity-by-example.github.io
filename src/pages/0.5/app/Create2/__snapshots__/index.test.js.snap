@@ -52,7 +52,7 @@ contract Factory {
         */
         assembly {
             addr := create2(
-                callvalue, // wei sent with current call
+                callvalue(), // wei sent with current call
                 // Actual code starts after skipping the first 32 bytes
                 add(bytecode, 0x20),
                 mload(bytecode), // Load the size of code contained in the first 32 bytes
