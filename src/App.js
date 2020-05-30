@@ -8,10 +8,20 @@ import {
 import styles from "./App.module.css"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Home_ver_0_5 from "./pages/0.5/Home"
-import routes_ver_0_5 from "./pages/0.5/routes"
-import Home_ver_0_6 from "./pages/0.6/Home"
-import routes_ver_0_6 from "./pages/0.6/routes"
+import Home from "./components/Home"
+import routes_ver_0_5, {
+  ROUTES_BY_CATEGORY as routesByCategory_ver_0_5,
+} from "./pages/0.5/routes"
+import routes_ver_0_6, {
+  ROUTES_BY_CATEGORY as routesByCategory_ver_0_6,
+} from "./pages/0.6/routes"
+
+const Home_ver_0_5 = () => (
+  <Home version="0.5.16" routesByCategory={routesByCategory_ver_0_5} />
+)
+const Home_ver_0_6 = () => (
+  <Home version="0.6.0" routesByCategory={routesByCategory_ver_0_6} />
+)
 
 function App(props) {
   return (

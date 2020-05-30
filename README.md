@@ -156,9 +156,7 @@ TODO: simplify bi directional payment channel
 ### 0.6 memo
 
 - [ ] script to generate example pages
-- [ ] reusable home page
 - [ ] redirect to current page for 0.5 and 0.6
-- [ ] not found page
 - [ ] typescript
 
 - [ ] override and virtual

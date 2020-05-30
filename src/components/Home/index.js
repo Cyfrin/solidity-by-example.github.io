@@ -1,20 +1,22 @@
 import React from "react"
-import SEO from "../../../components/SEO"
-import Label from "../../../components/Label"
-import { SOL_VERSION } from "../constants"
+import PropTypes from "prop-types"
+import SEO from "../SEO"
+import Label from "../Label"
 import styles from "./index.module.css"
-import { ROUTES_BY_CATEGORY } from "../routes"
 
-function Home() {
+function Home(props) {
+  const { version, routesByCategory } = props
+
   return (
     <div className={styles.component}>
       <SEO
-        title={`Solidity by Example | ${SOL_VERSION}`}
+        title={`Solidity by Example | ${version}`}
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
-        <a href="/">Solidity by Example {SOL_VERSION}</a>
+        <a href="/">Solidity by Example</a>
       </h1>
+      <div className={styles.subHeader}>v {version}</div>
       <div className={styles.main}>
         <p>
           an introduction to{" "}
@@ -22,7 +24,7 @@ function Home() {
           examples
         </p>
 
-        {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
+        {routesByCategory.map(({ routes, title }, i) => (
           <div key={i}>
             {title && <h3>{title}</h3>}
 
@@ -43,6 +45,22 @@ function Home() {
       </div>
     </div>
   )
+}
+
+Home.propTypes = {
+  version: PropTypes.oneOf(["0.6.0", "0.5.16"]).isRequired,
+  routesByCategory: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      routes: PropTypes.arrayOf(
+        PropTypes.shape({
+          path: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired,
+          breakingChanges: PropTypes.bool,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
 }
 
 export default Home

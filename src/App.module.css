@@ -8,8 +8,15 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
+  margin: auto;
+  padding: 10px;
+  /* align-items: center; */
   /* background-color: red; */
+}
+@media (max-width: 480px) {
+  .main {
+    margin: 0;
+  }
 }
 
 .footer {
