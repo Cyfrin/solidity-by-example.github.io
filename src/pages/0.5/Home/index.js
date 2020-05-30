@@ -1,5 +1,6 @@
 import React from "react"
 import SEO from "../../../components/SEO"
+import Label from "../../../components/Label"
 import { SOL_VERSION } from "../constants"
 import styles from "./index.module.css"
 import { ROUTES_BY_CATEGORY } from "../routes"
@@ -26,9 +27,14 @@ function Home() {
             {title && <h3>{title}</h3>}
 
             <ul className={styles.list}>
-              {routes.map(({ path, title }) => (
-                <li key={path}>
+              {routes.map(({ path, title, breakingChanges }) => (
+                <li className={styles.listItem} key={path}>
                   <a href={path}>{title}</a>
+                  {breakingChanges && (
+                    <div className={styles.label}>
+                      <Label />
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
