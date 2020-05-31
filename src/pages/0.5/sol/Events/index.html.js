@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Events"
+export const description = "Example of how to emit events in Solidity"
+
 const html = `<p><code>Events</code> allow logging to the Ethereum blockchain. Some use cass for events are:</p>
 <ul>
 <li>Listening for events and updating user interface</li>

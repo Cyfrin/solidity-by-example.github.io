@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Function"
+export const description = "Example of how to write functions in Solidity"
+
 const html = `<p>There are several ways to return outputs from a function.</p>
 <p>Public functions cannot accept certain data types as inputs or outputs</p>
 <pre><code class="language-solidity">pragma solidity ^0.6.0;

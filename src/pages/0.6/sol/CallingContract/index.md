@@ -1,3 +1,9 @@
+---
+title: Calling Other Contract
+version: 0.6.0
+description: In Solidity, contract can call other contracts in several ways
+---
+
 Contract can call other contracts in 2 ways.
 
 The easiest way to is to just call it, like `A.foo(x, y, z)`.

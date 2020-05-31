@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Payable"
+export const description = "An example of how to use the keyword payable in Solidity"
+
 const html = `<p>Functions and addresses declared <code>payable</code> can receive <code>ether</code> into the contract.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 

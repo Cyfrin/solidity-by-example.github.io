@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Call"
+export const description = "In Solidity call is a low level function to interact with other contracts"
+
 const html = `<p><code>call</code> is a low level function to interact with other contracts.</p>
 <p>This is the recommended method to use when you&#39;re just sending Ether via calling the <code>fallback</code> function.</p>
 <p>However it is not the recommend way to call existing functions.</p>

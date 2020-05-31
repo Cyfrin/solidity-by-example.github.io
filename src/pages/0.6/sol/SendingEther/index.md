@@ -1,3 +1,9 @@
+---
+title: Sending Ether (transfer, send, call)
+version: 0.6.0
+description: An example of sending Ether in Solidity
+---
+
 You can send Ether to other contracts by
 
 - `transfer` (2300 gas, throws error)

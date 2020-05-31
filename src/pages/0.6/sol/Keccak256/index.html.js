@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Hashing with Keccak256"
+export const description = "Example of hashing using Keccak256 in Solidity"
+
 const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the input.</p>
 <p>Some use cases are:</p>
 <ul>

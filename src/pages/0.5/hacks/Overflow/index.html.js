@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Arithmetic Overflow and Underflow"
+export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
+
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Integers in Solidity overflow / underflow without any errors.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;

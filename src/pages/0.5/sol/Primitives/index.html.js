@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Primitive Data Types"
+export const description = "Primitive data types"
+
 const html = `<p>Here we introduce you to some primitive data types available in Solidity.</p>
 <ul>
 <li><code>boolean</code></li>

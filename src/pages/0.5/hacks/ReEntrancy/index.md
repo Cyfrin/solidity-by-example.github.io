@@ -1,3 +1,9 @@
+---
+title: Re-Entrancy
+version: 0.5.16
+description: An example of re-entrancy attack in Solidity
+---
+
 ### Vulnerability
 
 Let's say that contract `A` calls contract `B`.

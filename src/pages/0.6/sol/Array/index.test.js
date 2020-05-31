@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import Array from "./index"
+import Page from "./index"
 
 test("it renders", () => {
-  const component = shallow(<Array />)
+  const component = shallow(<Page />)
 
   expect(component).toMatchSnapshot()
 })

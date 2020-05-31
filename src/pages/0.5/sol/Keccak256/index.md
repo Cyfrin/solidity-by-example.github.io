@@ -1,3 +1,9 @@
+---
+title: Hashing with Keccak256
+version: 0.5.16
+description: Example of hashing using Keccak256 in Solidity
+---
+
 `keccak256` computes the Keccak-256 hash of the input.
 
 Some use cases are:

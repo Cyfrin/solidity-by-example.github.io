@@ -1,3 +1,9 @@
+---
+title: Shadowing Inherited State Variables
+version: 0.5.16
+description: An example of shadowing state variables by inheritance
+---
+
 Unlike functions, state variables cannot be overridden by re-declaring it
 in the child contract.
 

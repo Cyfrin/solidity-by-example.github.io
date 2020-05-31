@@ -33,9 +33,11 @@ contract Import {
 </code></pre>
 <h3 id=\\"external\\">External</h3>
 <p>You can also import from <a href=\\"https://github.com\\">GitHub</a> by simply copying the url</p>
-<pre><code class=\\"language-solidity\\">import \\"https://github.com/owner/repo/blob/branch/path/to/Contract.sol\\";
+<pre><code class=\\"language-solidity\\">// https://github.com/owner/repo/blob/branch/path/to/Contract.sol
+import \\"https://github.com/owner/repo/blob/branch/path/to/Contract.sol\\";
 
 // Example import ECDSA.sol from openzeppelin-contract repo, release-v3.0.0 branch
+// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol
 import \\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol\\";</code></pre>
 "
   title="Import"

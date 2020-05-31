@@ -1,3 +1,9 @@
+---
+title: Variables
+version: 0.5.16
+description: Local, state and global variables
+---
+
 There are 3 types of variables in Solidity
 
 - **local**

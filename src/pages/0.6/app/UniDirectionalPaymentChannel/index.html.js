@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Uni-Directional Payment Channel"
+export const description = "An example of uni-directional payment channels in Solidity"
+
 const html = `<p>Payment channels allow participants to repeatedly transfer Ether off chain.</p>
 <p>Here is how this contract is used:</p>
 <ul>

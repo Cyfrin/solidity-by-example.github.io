@@ -1,8 +1,14 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Import"
+export const description = "Learn how to import other Solidity files"
+
 const html = `<p>You can import local and external files in Solidity.</p>
 <h3 id="local">Local</h3>
 <p>Here is our folder structure.</p>
 <pre><code>├── Import.sol
-└── Foo.sol</code></pre><p>Foo.sol</p>
+└── Foo.sol</code></pre>
+<p>Foo.sol</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
 contract Foo {

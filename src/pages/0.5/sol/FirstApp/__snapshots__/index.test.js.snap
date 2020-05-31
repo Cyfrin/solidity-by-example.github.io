@@ -2,7 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="First Application - Counter"
+  description="Example of smart contract in Solidity"
   html="<p>Here is a simple contract that you can get, increment and decrement the count store in this contract.</p>
 <pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
 

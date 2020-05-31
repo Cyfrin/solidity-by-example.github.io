@@ -1,14 +1,13 @@
 import React from "react"
-import Example from "../../../components/Example"
-import html from "./index.html.js"
-import { SOL_VERSION } from "../constants"
+import Example from "../../../../components/Example"
+import html, { version, title, description} from "./index.html.js"
 
 export default function (props) {
   return (
     <Example
-      title="Shadowing Inherited State Variables"
-      version={SOL_VERSION}
-      description="An example of shadowing state variables by inheritance"
+      version={version}
+      title={title}
+      description={description}
       html={html}
     />
   )

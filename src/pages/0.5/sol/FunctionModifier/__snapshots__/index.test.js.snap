@@ -2,7 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="Example of function modifiers in Solidity"
+  description="Example of how to write function modifier in Solidity"
   html="<p>Modifiers are code that can be run before and / or after a function call.</p>
 <p>Modifiers can be used to:</p>
 <ul>

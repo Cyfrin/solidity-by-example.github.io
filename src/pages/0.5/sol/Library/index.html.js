@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Library"
+export const description = "Example of how to write and use libraries in your Solidity code"
+
 const html = `<p>Libraries are similar to contracts, but you can&#39;t declare any state variable and
 you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>

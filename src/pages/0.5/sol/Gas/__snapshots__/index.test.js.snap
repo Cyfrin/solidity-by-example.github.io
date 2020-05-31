@@ -2,7 +2,7 @@
 
 exports[`it renders 1`] = `
 <Example
-  description="An example of gas and gas limit in Solidity"
+  description="Example of gas and gas limit in Solidity"
   html="<h3 id=\\"how-much-ether-do-you-need-to-pay-for-a-transaction\\">How much <code>ether</code> do you need to pay for a transaction?</h3>
 <p>You pay <code>gas spent * gas price</code> amount of <code>ether</code>, where</p>
 <ul>
@@ -36,7 +36,7 @@ contract Gas {
 }
 </code></pre>
 "
-  title="Gas and Gas Price"
+  title="Gas"
   version="0.5.16"
 />
 `;

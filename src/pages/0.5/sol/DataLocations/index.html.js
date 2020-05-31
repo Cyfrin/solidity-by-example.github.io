@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Data Locations - Storage, Memory and Calldata"
+export const description = "Data locations - storage, memory and calldata"
+
 const html = `<p>Variables are declared as either <code>storage</code>, <code>memory</code> or <code>calldata</code> to explicitly
 specify the location of the data.</p>
 <ul>

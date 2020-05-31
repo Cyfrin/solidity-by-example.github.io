@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Function Modifier"
+export const description = "Example of how to write function modifier in Solidity"
+
 const html = `<p>Modifiers are code that can be run before and / or after a function call.</p>
 <p>Modifiers can be used to:</p>
 <ul>

@@ -1,3 +1,9 @@
+---
+title: Reading and Writing to a State Variable
+version: 0.5.16
+description: Reading and Writing to a State Variable
+---
+
 You need to send a transaction to the blockchain to write or update a state variable.
 
 This means that you will have to pay a transaction fee.

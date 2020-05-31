@@ -1,3 +1,9 @@
+---
+title: Phishing with tx.origin
+version: 0.5.16
+description: An example of phishing with tx.origin in Solidity
+---
+
 ### What's the difference between `msg.sender` and `tx.origin`?
 
 If contract A calls B, and B calls C, in C `msg.sender` is B and `tx.origin` is A.

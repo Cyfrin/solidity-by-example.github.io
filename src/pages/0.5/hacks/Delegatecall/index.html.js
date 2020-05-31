@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Delegatecall"
+export const description = "An example of exploits using delegatecall in Solidity"
+
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p><code>delegatecall</code> is tricky to use and wrong usage or incorrect understanding
 can lead to devastating results.</p>

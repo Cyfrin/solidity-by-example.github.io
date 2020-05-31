@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import Keccak256 from "./index"
+import Page from "./index"
 
 test("it renders", () => {
-  const component = shallow(<Keccak256 />)
+  const component = shallow(<Page />)
 
   expect(component).toMatchSnapshot()
 })

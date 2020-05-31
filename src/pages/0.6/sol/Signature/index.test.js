@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import Signature from "./index"
+import Page from "./index"
 
 test("it renders", () => {
-  const component = shallow(<Signature />)
+  const component = shallow(<Page />)
 
   expect(component).toMatchSnapshot()
 })

@@ -1,3 +1,9 @@
+---
+title: Data Locations - Storage, Memory and Calldata
+version: 0.6.0
+description: Data locations - storage, memory and calldata
+---
+
 Variables are declared as either `storage`, `memory` or `calldata` to explicitly
 specify the location of the data.
 

@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Verifying Signature"
+export const description = "An example of how to verify signatures in Solidity"
+
 const html = `<p>Messages can be signed off chain and then verified on chain using a smart contract.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 

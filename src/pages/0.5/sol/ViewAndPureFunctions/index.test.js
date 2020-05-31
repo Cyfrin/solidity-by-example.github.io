@@ -1,9 +1,9 @@
 import React from "react"
 import { shallow } from "enzyme"
-import ViewAndPureFunctions from "./index"
+import Page from "./index"
 
 test("it renders", () => {
-  const component = shallow(<ViewAndPureFunctions />)
+  const component = shallow(<Page />)
 
   expect(component).toMatchSnapshot()
 })

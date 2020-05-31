@@ -1,3 +1,9 @@
+---
+title: Error
+version: 0.5.16
+description: Example of how to throw errors in Solidity
+---
+
 An error will undo all changes made to the state during a transaction.
 
 You can throw an error by calling `require`, `revert` or `assert`.

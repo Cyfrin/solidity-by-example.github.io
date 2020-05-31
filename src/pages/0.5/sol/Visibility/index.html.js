@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Visibility"
+export const description = "An example of external, internal, private and public functions in Solidity"
+
 const html = `<p>Functions and state variables have to declare whether they are accessible by other contracts.</p>
 <p>Fucntions can be declared as</p>
 <ul>

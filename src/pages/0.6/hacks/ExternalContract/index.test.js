@@ -1,9 +1,9 @@
-import { shallow } from "enzyme"
 import React from "react"
-import ExternalContract from "./index"
+import { shallow } from "enzyme"
+import Page from "./index"
 
 test("it renders", () => {
-  const component = shallow(<ExternalContract />)
+  const component = shallow(<Page />)
 
   expect(component).toMatchSnapshot()
 })

@@ -1,3 +1,9 @@
+---
+title: Inheritance
+version: 0.5.16
+description: Example of inheritance in Solidity
+---
+
 Solidity supports multiple inheritance. Contracts can inherit other contract by using the `is` keyword.
 
 Order of inheritance is important.

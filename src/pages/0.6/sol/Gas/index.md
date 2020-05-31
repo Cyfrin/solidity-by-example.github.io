@@ -1,3 +1,9 @@
+---
+title: Gas
+version: 0.6.0
+description: Example of gas and gas limit in Solidity
+---
+
 ### How much `ether` do you need to pay for a transaction?
 
 You pay `gas spent * gas price` amount of `ether`, where

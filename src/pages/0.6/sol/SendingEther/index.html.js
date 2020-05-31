@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Sending Ether (transfer, send, call)"
+export const description = "An example of sending Ether in Solidity"
+
 const html = `<p>You can send Ether to other contracts by</p>
 <ul>
 <li><code>transfer</code> (2300 gas, throws error)</li>

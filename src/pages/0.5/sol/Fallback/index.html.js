@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Fallback"
+export const description = "Example of how to use fallback in Solidity"
+
 const html = `<p>A <code>fallback function</code> is an anonymous function that does not take any arguments and does not return anything.</p>
 <p>Fallback functions are executed when</p>
 <ul>

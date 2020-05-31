@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Error"
+export const description = "Example of how to throw errors in Solidity"
+
 const html = `<p>An error will undo all changes made to the state during a transaction.</p>
 <p>You can throw an error by calling <code>require</code>, <code>revert</code> or <code>assert</code>.</p>
 <ul>

@@ -1,3 +1,9 @@
+---
+title: Visibility
+version: 0.5.16
+description: An example of external, internal, private and public functions in Solidity
+---
+
 Functions and state variables have to declare whether they are accessible by other contracts.
 
 Fucntions can be declared as

@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Block Timestamp Manipulation"
+export const description = "An example of a Solidity contract vulnerable to block timestamp manipulation"
+
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p><code>block.timestamp</code> can be manipulated by miners with the following constraints</p>
 <ul>
@@ -30,7 +35,7 @@ contract Roulette {
         require(msg.value == 10 ether); // must send 10 ether to play
         require(now != pastBlockTime); // only 1 transaction per block
 
-        pastBlockTime = now;
+        pastBlockTime = block.timestamp;
 
         if(now % 15 == 0) {
             (bool sent, ) = msg.sender.call.value(address(this).balance)("");

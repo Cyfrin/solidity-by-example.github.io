@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Structs"
+export const description = "An example of how to use structs in Solidity"
+
 const html = `<p>You can define your own type by creating a <code>struct</code>.</p>
 <p>They are useful for grouping togther related data.</p>
 <pre><code class="language-solidity">pragma solidity ^0.6.0;

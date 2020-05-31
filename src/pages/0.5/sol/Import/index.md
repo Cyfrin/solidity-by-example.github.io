@@ -1,6 +1,13 @@
+---
+title: Import
+version: 0.5.16
+description: Learn how to import other Solidity files
+---
+
 You can import local and external files in Solidity.
 
 ### Local
+
 Here is our folder structure.
 
 ```
@@ -9,11 +16,13 @@ Here is our folder structure.
 ```
 
 Foo.sol
+
 ```solidity
 {{{Foo}}}
 ```
 
 Import.sol
+
 ```solidity
 {{{Import}}}
 ```

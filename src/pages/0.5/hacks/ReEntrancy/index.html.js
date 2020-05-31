@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Re-Entrancy"
+export const description = "An example of re-entrancy attack in Solidity"
+
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Let&#39;s say that contract <code>A</code> calls contract <code>B</code>.</p>
 <p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>

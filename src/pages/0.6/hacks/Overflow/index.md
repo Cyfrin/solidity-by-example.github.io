@@ -1,3 +1,9 @@
+---
+title: Arithmetic Overflow and Underflow
+version: 0.6.0
+description: An example of hacking Solidity with arithmetic overflow / underflow
+---
+
 ### Vulnerability
 
 Integers in Solidity overflow / underflow without any errors.
