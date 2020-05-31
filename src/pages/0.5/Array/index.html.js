@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Array"
+export const description = "Learn about arrays in Solidity"
+
 const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
