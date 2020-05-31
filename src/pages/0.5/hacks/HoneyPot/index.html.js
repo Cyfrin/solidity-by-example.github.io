@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Honeypot"
+export const description = "An example of honeypot in Solidity"
+
 const html = `<p>A honeypot is a trap to catch hackers.</p>
 <h3 id="vulnerability">Vulnerability</h3>
 <p>Combining two exploits, reentrancy and hiding malicious code, we can build a contract</p>

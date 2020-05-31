@@ -1,3 +1,9 @@
+---
+title: Hiding Malicious Code with External Contract
+version: 0.5.16
+description: An example of exploit where malicious code is hidden in an external contract in Solidity
+---
+
 ### Vulnerability
 
 In Solidity any address can be casted into specific contract,

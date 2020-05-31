@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Denail of Service"
+export const description = "An example of denial of service hack in Solidity"
+
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>There are many ways to attack a smart contract to make it unusable.</p>
 <p>One exploit we introduce here is denial of service by making the function to send Ether fail.</p>

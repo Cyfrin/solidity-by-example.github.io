@@ -1,3 +1,9 @@
+---
+title: Self Destruct
+version: 0.6.0
+description: An example of how to delete your smart contract by calling seldestruct in Solidity
+---
+
 Contracts can be deleted from the blockchain by calling `selfdestruct`.
 
 `selfdestruct` sends all remainig Ether stored in the contract to an

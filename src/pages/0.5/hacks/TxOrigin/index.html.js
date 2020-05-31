@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Phishing with tx.origin"
+export const description = "An example of phishing with tx.origin in Solidity"
+
 const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&#39;s the difference between <code>msg.sender</code> and <code>tx.origin</code>?</h3>
 <p>If contract A calls B, and B calls C, in C <code>msg.sender</code> is B and <code>tx.origin</code> is A.</p>
 <h3 id="vulnerability">Vulnerability</h3>

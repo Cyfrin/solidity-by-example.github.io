@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.5.16"
+export const title = "Merkle Tree"
+export const description = "Learn about Merkle tree in Solidity"
+
 const html = `<p>Merkle tree allows you to cryptographically prove that an element is contained</p>
 <p>in a set without revealing the entire set.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;

@@ -1,3 +1,9 @@
+---
+title: Uni-Directional Payment Channel
+version: 0.5.16
+description: An example of uni-directional payment channels in Solidity
+---
+
 Payment channels allow participants to repeatedly transfer Ether off chain.
 
 Here is how this contract is used:

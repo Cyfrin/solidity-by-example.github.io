@@ -1,3 +1,9 @@
+---
+title: Delegatecall
+version: 0.5.16
+description: An example of exploits using delegatecall in Solidity
+---
+
 ### Vulnerability
 
 `delegatecall` is tricky to use and wrong usage or incorrect understanding

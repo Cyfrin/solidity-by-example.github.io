@@ -1,3 +1,9 @@
+---
+title: Honeypot
+version: 0.6.0
+description: An example of honeypot in Solidity
+---
+
 A honeypot is a trap to catch hackers.
 
 ### Vulnerability

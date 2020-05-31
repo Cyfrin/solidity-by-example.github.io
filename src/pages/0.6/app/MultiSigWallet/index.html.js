@@ -1,3 +1,8 @@
+// metadata
+export const version = "0.6.0"
+export const title = "Multi-Sig Wallet"
+export const description = "An example of multi-sig wallet in Solidity"
+
 const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specifications.</p>
 <p>The wallet owners can</p>
 <ul>

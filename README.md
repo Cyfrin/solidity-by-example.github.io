@@ -156,6 +156,7 @@ TODO: simplify bi directional payment channel
 ### 0.6 memo
 
 - [ ] script to generate example pages
+- [ ] script to generate routes
 - [ ] redirect to current page for 0.5 and 0.6
 - [ ] typescript
 
@@ -172,14 +173,14 @@ TODO: simplify bi directional payment channel
 npm run deploy
 
 # find and compile sol
-find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
+find src/pages/0.6 -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
 
 # compile single file
-docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/HelloWorld/HelloWorld.sol
+docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/0.6/sol/HelloWorld/HelloWorld.sol
 
-# md to html
-npm run md-to-html -- path/to/folder/with/md
+# md to react
+npm run md-to-react -- path/to/folder/with/md
 
-# md to html all pages
-find src -type d -not -path "*/__snapshots__" -exec npm run md-to-html -- {} \;
+# md to react all pages
+find src -type d -not -path "*/__snapshots__" -exec npm run md-to-react -- {} \;
 ````

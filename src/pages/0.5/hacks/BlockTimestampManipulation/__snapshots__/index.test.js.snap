@@ -35,7 +35,7 @@ contract Roulette {
         require(msg.value == 10 ether); // must send 10 ether to play
         require(now != pastBlockTime); // only 1 transaction per block
 
-        pastBlockTime = now;
+        pastBlockTime = block.timestamp;
 
         if(now % 15 == 0) {
             (bool sent, ) = msg.sender.call.value(address(this).balance)(\\"\\");

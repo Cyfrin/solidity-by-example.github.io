@@ -1,3 +1,9 @@
+---
+title: Denail of Service
+version: 0.5.16
+description: An example of denial of service hack in Solidity
+---
+
 ### Vulnerability
 
 There are many ways to attack a smart contract to make it unusable.

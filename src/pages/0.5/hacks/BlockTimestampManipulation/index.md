@@ -1,3 +1,9 @@
+---
+title: Block Timestamp Manipulation
+version: 0.5.16
+description: An example of a Solidity contract vulnerable to block timestamp manipulation
+---
+
 ### Vulnerability
 
 `block.timestamp` can be manipulated by miners with the following constraints
