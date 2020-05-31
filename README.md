@@ -173,10 +173,10 @@ TODO: simplify bi directional payment channel
 npm run deploy
 
 # find and compile sol
-find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
+find src/pages/0.6 -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {} \;
 
 # compile single file
-docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/lang/HelloWorld/HelloWorld.sol
+docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/0.6/sol/HelloWorld/HelloWorld.sol
 
 # md to react
 npm run md-to-react -- path/to/folder/with/md
