@@ -177,9 +177,9 @@ find src/ -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.6.0 {}
 # compile single file
 docker run -v $PWD/src:/src ethereum/solc:0.6.0 /src/pages/HelloWorld/HelloWorld.sol
 
-# md to html
-npm run md-to-html -- path/to/folder/with/md
+# md to react
+npm run md-to-react -- path/to/folder/with/md
 
-# md to html all pages
-find src -type d -not -path "*/__snapshots__" -exec npm run md-to-html -- {} \;
+# md to react all pages
+find src -type d -not -path "*/__snapshots__" -exec npm run md-to-react -- {} \;
 ````

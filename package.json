@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
-    "md-to-html": "node scripts/md-to-html.js"
+    "md-to-react": "node scripts/md-to-react.js"
   },
   "eslintConfig": {
     "extends": "react-app"
