@@ -435,6 +435,16 @@ exports[`0.5 1`] = `
         </li>
         <li
           className="listItem"
+          key="/0.5/app/erc20"
+        >
+          <a
+            href="/0.5/app/erc20"
+          >
+            ERC 20
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="/0.5/app/create2"
         >
           <a
@@ -1026,6 +1036,16 @@ exports[`0.6 1`] = `
             href="/0.6/app/iterable-mapping"
           >
             Iterable Mapping
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/0.6/app/erc20"
+        >
+          <a
+            href="/0.6/app/erc20"
+          >
+            ERC 20
           </a>
         </li>
         <li

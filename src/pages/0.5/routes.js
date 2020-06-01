@@ -40,6 +40,7 @@ import IterableMapping from "./app/IterableMapping"
 import MerkleTree from "./app/MerkleTree"
 import MultiSigWallet from "./app/MultiSigWallet"
 import Create2 from "./app/Create2"
+import ERC20 from "./app/ERC20"
 
 import ReEntrancy from "./hacks/ReEntrancy"
 import Overflow from "./hacks/Overflow"
@@ -254,6 +255,11 @@ const APP_ROUTES = [
     path: "iterable-mapping",
     component: IterableMapping,
     title: "Iterable Mapping",
+  },
+  {
+    path: "erc20",
+    component: ERC20,
+    title: "ERC 20",
   },
   {
     path: "create2",

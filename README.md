@@ -85,7 +85,7 @@ TODO: simplify bi directional payment channel
 ## Application
 
 - [x] multisig wallet
-- [ ] erc20
+- [x] erc20
 - [x] iterable mapping
 - [x] merkle tree
 - [x] create2
@@ -155,7 +155,6 @@ TODO: simplify bi directional payment channel
 
 ### 0.6 memo
 
-- [ ] script to generate example pages
 - [ ] script to generate routes
 - [ ] redirect to current page for 0.5 and 0.6
 - [ ] typescript
@@ -167,7 +166,6 @@ TODO: simplify bi directional payment channel
 
 ### Memo
 
-````
 ```shell
 # deploy
 npm run deploy
@@ -183,4 +181,4 @@ npm run md-to-react -- path/to/folder/with/md
 
 # md to react all pages
 find src -type d -not -path "*/__snapshots__" -exec npm run md-to-react -- {} \;
-````
+```

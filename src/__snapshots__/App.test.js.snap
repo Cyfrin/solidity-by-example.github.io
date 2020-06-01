@@ -204,6 +204,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/0.5/app/erc20"
+          path="/0.5/app/erc20"
+        />
+        <Route
+          component={[Function]}
           key="/0.5/app/create2"
           path="/0.5/app/create2"
         />
@@ -460,6 +465,11 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/0.6/app/iterable-mapping"
           path="/0.6/app/iterable-mapping"
+        />
+        <Route
+          component={[Function]}
+          key="/0.6/app/erc20"
+          path="/0.6/app/erc20"
         />
         <Route
           component={[Function]}
