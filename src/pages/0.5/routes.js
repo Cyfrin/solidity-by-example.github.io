@@ -259,7 +259,7 @@ const APP_ROUTES = [
   {
     path: "erc20",
     component: ERC20,
-    title: "ERC 20",
+    title: "ERC20",
   },
   {
     path: "create2",

@@ -1,6 +1,6 @@
 // metadata
 export const version = "0.6.0"
-export const title = "ERC 20"
+export const title = "ERC20"
 export const description = "Example of ERC20 token in Solidity"
 
 const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org/EIPS/eip-20" target="__blank">ERC20 standard</a> is a ERC20 token.</p>
