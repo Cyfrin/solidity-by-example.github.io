@@ -3,11 +3,11 @@ export const version = "0.5.16"
 export const title = "Interface"
 export const description = "An example of interface in Solidity"
 
-const html = `<p>Interface defines contraints so that any contract that implements this can communicate with another contract that require theses contraints.</p>
+const html = `<p>Interface define contraints so that any contract that implements this can communicate with another contract that require these contraints.</p>
 <p>Interface</p>
 <ul>
 <li>cannot have any functions implemented</li>
-<li>cannot inherit from other contracts, but they can inherit from other interfaces (0.6)</li>
+<li>cannot inherit from other contracts and interfaces</li>
 <li>all declared functions must be external</li>
 <li>cannot declare a constructor</li>
 <li>cannot declare state variables</li>
