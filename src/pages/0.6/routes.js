@@ -17,6 +17,7 @@ import HelloWorld from "./sol/HelloWorld"
 import IfElse from "./sol/IfElse"
 import Import from "./sol/Import"
 import Inheritance from "./sol/Inheritance"
+import Interface from "./sol/Interface"
 import Keccak256 from "./sol/Keccak256"
 import Library from "./sol/Library"
 import Loop from "./sol/Loop"
@@ -180,6 +181,11 @@ const SOL_ROUTES = [
     path: "visibility",
     component: Visibility,
     title: "Visibility",
+  },
+  {
+    path: "interface",
+    component: Interface,
+    title: "Interface",
   },
   // send / receive ether
   {

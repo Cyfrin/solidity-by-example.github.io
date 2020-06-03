@@ -134,6 +134,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/0.5/interface"
+          path="/0.5/interface"
+        />
+        <Route
+          component={[Function]}
           key="/0.5/payable"
           path="/0.5/payable"
         />
@@ -395,6 +400,11 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/0.6/visibility"
           path="/0.6/visibility"
+        />
+        <Route
+          component={[Function]}
+          key="/0.6/interface"
+          path="/0.6/interface"
         />
         <Route
           component={[Function]}
