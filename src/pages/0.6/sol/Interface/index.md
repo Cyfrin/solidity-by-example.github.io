@@ -4,7 +4,7 @@ version: 0.6.0
 description: An example of interface in Solidity
 ---
 
-Interface defines contraints so that any contract that implements this can communicate with another contract that require theses contraints.
+Interface define contraints so that any contract that implements this can communicate with another contract that require these contraints.
 
 Interface
 

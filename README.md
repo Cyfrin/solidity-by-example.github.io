@@ -56,7 +56,7 @@ TODO: simplify bi directional payment channel
 - [x] shadowing state variables
 - [x] calling parent contracts
 - [x] visibility
-- [ ] interface
+- [x] interface
 
 ### Sending and Receiving Ether
 
@@ -98,6 +98,7 @@ TODO: simplify bi directional payment channel
 - [x] reentrancy
 - [x] arithmetic overflow / underflow
 - [x] unexpected ether (self destruct)
+- [ ] read private data
 - [x] delegatecall (pre: storage layout)
 - [x] default visibility (skip)
 - [ ] entropy illusion

@@ -3,7 +3,7 @@ export const version = "0.6.0"
 export const title = "Interface"
 export const description = "An example of interface in Solidity"
 
-const html = `<p>Interface defines contraints so that any contract that implements this can communicate with another contract that require theses contraints.</p>
+const html = `<p>Interface define contraints so that any contract that implements this can communicate with another contract that require these contraints.</p>
 <p>Interface</p>
 <ul>
 <li>cannot have any functions implemented</li>
