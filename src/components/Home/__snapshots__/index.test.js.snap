@@ -284,6 +284,16 @@ exports[`0.5 1`] = `
         </li>
         <li
           className="listItem"
+          key="/0.5/interface"
+        >
+          <a
+            href="/0.5/interface"
+          >
+            Interface
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="/0.5/payable"
         >
           <a
@@ -440,7 +450,7 @@ exports[`0.5 1`] = `
           <a
             href="/0.5/app/erc20"
           >
-            ERC 20
+            ERC20
           </a>
         </li>
         <li
@@ -884,6 +894,16 @@ exports[`0.6 1`] = `
         </li>
         <li
           className="listItem"
+          key="/0.6/interface"
+        >
+          <a
+            href="/0.6/interface"
+          >
+            Interface
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="/0.6/payable"
         >
           <a
@@ -1045,7 +1065,7 @@ exports[`0.6 1`] = `
           <a
             href="/0.6/app/erc20"
           >
-            ERC 20
+            ERC20
           </a>
         </li>
         <li
