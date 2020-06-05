@@ -244,6 +244,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/0.5/hacks/accessing-private-data"
+          path="/0.5/hacks/accessing-private-data"
+        />
+        <Route
+          component={[Function]}
           key="/0.5/hacks/delegatecall"
           path="/0.5/hacks/delegatecall"
         />
@@ -510,6 +515,11 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/0.6/hacks/self-destruct"
           path="/0.6/hacks/self-destruct"
+        />
+        <Route
+          component={[Function]}
+          key="/0.6/hacks/accessing-private-data"
+          path="/0.6/hacks/accessing-private-data"
         />
         <Route
           component={[Function]}
