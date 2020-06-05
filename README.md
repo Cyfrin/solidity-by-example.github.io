@@ -98,7 +98,7 @@ TODO: simplify bi directional payment channel
 - [x] reentrancy
 - [x] arithmetic overflow / underflow
 - [x] unexpected ether (self destruct)
-- [ ] read private data
+- [x] read private data
 - [x] delegatecall (pre: storage layout)
 - [x] default visibility (skip)
 - [ ] entropy illusion
@@ -124,11 +124,11 @@ TODO: simplify bi directional payment channel
 - [x] token
 - [x] delegation (delegatecall to change ownership)
 - [x] force
-- [ ] vault (read private data)
+- [x] vault (read private data)
 - [x] king
 - [x] re-entrancy
 - [x] elevation
-- [ ] privacy (optimized storage)
+- [x] privacy (optimized storage)
 - [x] gatekeeper one
 - [x] gatekeeper two
 - [x] naught coin

@@ -53,6 +53,7 @@ import HoneyPot from "./hacks/HoneyPot"
 import FrontRunning from "./hacks/FrontRunning"
 import BlockTimestampManipulation from "./hacks/BlockTimestampManipulation"
 import HackDelegatecall from "./hacks/Delegatecall"
+import PrivateData from "./hacks/PrivateData"
 
 const SOL_ROUTES = [
   {
@@ -299,6 +300,11 @@ const HACK_ROUTES = [
     path: "self-destruct",
     component: SelfDestruct,
     title: "Self Destruct",
+  },
+  {
+    path: "accessing-private-data",
+    component: PrivateData,
+    title: "Accessing Private Data",
   },
   {
     path: "delegatecall",
