@@ -546,6 +546,16 @@ exports[`0.5 1`] = `
         </li>
         <li
           className="listItem"
+          key="/0.5/hacks/randomness"
+        >
+          <a
+            href="/0.5/hacks/randomness"
+          >
+            Source of Randomness
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="/0.5/hacks/denial-of-service"
         >
           <a
@@ -1167,6 +1177,16 @@ exports[`0.6 1`] = `
             href="/0.6/hacks/delegatecall"
           >
             Delegatecall
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/0.6/hacks/randomness"
+        >
+          <a
+            href="/0.6/hacks/randomness"
+          >
+            Source of Randomness
           </a>
         </li>
         <li

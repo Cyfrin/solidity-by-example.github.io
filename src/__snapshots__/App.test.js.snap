@@ -254,6 +254,11 @@ exports[`it renders 1`] = `
         />
         <Route
           component={[Function]}
+          key="/0.5/hacks/randomness"
+          path="/0.5/hacks/randomness"
+        />
+        <Route
+          component={[Function]}
           key="/0.5/hacks/denial-of-service"
           path="/0.5/hacks/denial-of-service"
         />
@@ -525,6 +530,11 @@ exports[`it renders 1`] = `
           component={[Function]}
           key="/0.6/hacks/delegatecall"
           path="/0.6/hacks/delegatecall"
+        />
+        <Route
+          component={[Function]}
+          key="/0.6/hacks/randomness"
+          path="/0.6/hacks/randomness"
         />
         <Route
           component={[Function]}

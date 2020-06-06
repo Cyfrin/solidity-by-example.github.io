@@ -101,7 +101,7 @@ TODO: simplify bi directional payment channel
 - [x] read private data
 - [x] delegatecall (pre: storage layout)
 - [x] default visibility (skip)
-- [ ] entropy illusion
+- [x] entropy illusion
 - [x] external contract referencing
 - [x] honeypot (pre: external call & reentrancy)
 - [x] short address / param attack (skip)
@@ -119,7 +119,7 @@ TODO: simplify bi directional payment channel
 - [x] hello ethernaut
 - [x] fallback
 - [x] fallout (constructor with care)
-- [ ] coin flip (randomness guessing head / tail based on prev block hash)
+- [x] coin flip (randomness guessing head / tail based on prev block hash)
 - [x] telephone
 - [x] token
 - [x] delegation (delegatecall to change ownership)
@@ -137,7 +137,7 @@ TODO: simplify bi directional payment channel
 - [ ] magic number (contract creation)
 - [ ] alien codex (edit ABI)
 - [x] denial (denial of service using assert and using up all gas)
-- [ ] shop (external contract call)
+- [x] shop (external contract call)
 
 ## Patterns
 
@@ -149,6 +149,7 @@ TODO: simplify bi directional payment channel
 
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
+- [ ] auto deploy on pr merge
 - [ ] exercises
 - [ ] sidenav and or link to next topic
 - [ ] seo
