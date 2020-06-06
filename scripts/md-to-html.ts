@@ -4,9 +4,9 @@ import path from "path"
 import yaml from "yaml"
 import mustache from "mustache"
 import marked from "marked"
-import { removeExtension } from "./lib"
+import { removeExtension, renderTemplateToFile } from "./lib"
 
-const { readFile, writeFile, readdir } = fs.promises
+const { readFile, readdir } = fs.promises
 
 function findIndexOfFrontMatter(lines: string[]): number {
   assert(lines[0] === "---", "Front matter missing")
@@ -82,17 +82,14 @@ export default async function mdToHtml(filePath: string) {
     .replace(/\\/g, `\\\\`)
 
   // render markdown to html
-  const jsTemplate = (
-    await readFile(path.join(__dirname, "./template/index.html.js.mustache"))
-  ).toString()
-  const js = mustache.render(jsTemplate, {
-    html,
-    title: metadata.title,
-    version: metadata.version,
-    description: metadata.description,
-  })
-
-  await writeFile(path.join(dir, `${fileName}.html.js`), js)
-
-  console.log(`${path.join(dir, `${fileName}.html.js`)}`)
+  await renderTemplateToFile(
+    path.join(__dirname, "./template/index.html.js.mustache"),
+    path.join(dir, `${fileName}.html.js`),
+    {
+      html,
+      title: metadata.title,
+      version: metadata.version,
+      description: metadata.description,
+    }
+  )
 }

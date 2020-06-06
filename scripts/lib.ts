@@ -1,5 +1,6 @@
 import assert from "assert"
 import fs from "fs"
+import mustache from "mustache"
 const { readFile, writeFile } = fs.promises
 
 export async function copy(fromFilePath: string, toFilePath: string) {
@@ -23,4 +24,17 @@ export function getExtension(file: string): string {
   }
 
   return ext
+}
+
+export async function renderTemplateToFile(
+  templatePath: string,
+  writeToPath: string,
+  data: {}
+): Promise<void> {
+  // create index.js
+  const template = (await readFile(templatePath)).toString()
+  const js = mustache.render(template, data)
+  await writeFile(writeToPath, js)
+
+  console.log(`Created ${writeToPath}`)
 }

@@ -1,10 +1,7 @@
 import fs from "fs"
 import path from "path"
-import mustache from "mustache"
-import { copy, getExtension } from "./lib"
+import { copy, renderTemplateToFile } from "./lib"
 import mdToHtml from "./md-to-html"
-
-const { readdir, readFile, writeFile } = fs.promises
 
 function getImportExamplePath(dir: string): string {
   const folders = dir.split("/")
@@ -26,13 +23,13 @@ async function main() {
   await mdToHtml(path.join(dir, "index.md"))
 
   // create index.js
-  const jsTemplate = (
-    await readFile(path.join(__dirname, "./template/index.js.mustache"))
-  ).toString()
-  const js = mustache.render(jsTemplate, {
-    importExamplePath: getImportExamplePath(dir),
-  })
-  await writeFile(path.join(dir, `index.js`), js)
+  await renderTemplateToFile(
+    path.join(__dirname, "./template/index.js.mustache"),
+    path.join(dir, `index.js`),
+    {
+      importExamplePath: getImportExamplePath(dir),
+    }
+  )
 
   await copy(
     path.join(__dirname, "./template/index.test.js"),
