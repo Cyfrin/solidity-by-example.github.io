@@ -23,27 +23,21 @@ async function main() {
   const args = process.argv.slice(2)
   const dir = args[0]
 
-  const files = (await readdir(dir)).filter(
-    (file) => getExtension(file) === "md"
+  await mdToHtml(path.join(dir, "index.md"))
+
+  // create index.js
+  const jsTemplate = (
+    await readFile(path.join(__dirname, "./template/index.js.mustache"))
+  ).toString()
+  const js = mustache.render(jsTemplate, {
+    importExamplePath: getImportExamplePath(dir),
+  })
+  await writeFile(path.join(dir, `index.js`), js)
+
+  await copy(
+    path.join(__dirname, "./template/index.test.js"),
+    path.join(dir, "index.test.js")
   )
-
-  for (const file of files) {
-    await mdToHtml(path.join(dir, file))
-
-    // create index.js
-    const jsTemplate = (
-      await readFile(path.join(__dirname, "./template/index.js.mustache"))
-    ).toString()
-    const js = mustache.render(jsTemplate, {
-      importExamplePath: getImportExamplePath(dir),
-    })
-    await writeFile(path.join(dir, `index.js`), js)
-
-    await copy(
-      path.join(__dirname, "./template/index.test.js"),
-      path.join(dir, "index.test.js")
-    )
-  }
 }
 
 main()
