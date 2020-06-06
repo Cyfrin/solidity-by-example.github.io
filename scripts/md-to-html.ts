@@ -4,7 +4,7 @@ import path from "path"
 import yaml from "yaml"
 import mustache from "mustache"
 import marked from "marked"
-import { removeExtension, renderTemplateToFile } from "./lib"
+import { removeExtension, getExtension, renderTemplateToFile } from "./lib"
 
 const { readFile, readdir } = fs.promises
 
@@ -59,8 +59,14 @@ async function findSolidityFiles(dir: string): Promise<string[]> {
 
 // convert index.md -> index.html.js
 export default async function mdToHtml(filePath: string) {
-  const fileName = removeExtension(filePath.split("/").pop())
-  const dir = filePath.split("/").slice(0, -1).join("/")
+  const folders = filePath.split("/")
+  const tail = folders.pop()
+
+  const ext = getExtension(tail)
+  assert(ext === "md", `Expected md file, got ${tail}`)
+
+  const fileName = removeExtension(tail)
+  const dir = folders.slice(0, -1).join("/")
 
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)

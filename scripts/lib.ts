@@ -16,7 +16,11 @@ export function removeExtension(file: string | undefined): string {
   return file.split(".").slice(0, -1).join("")
 }
 
-export function getExtension(file: string): string {
+export function getExtension(file: string | undefined): string {
+  if (!file) {
+    throw new Error(`Failed to get extension. Invalid file name`)
+  }
+
   const ext = file.split(".").slice(-1)[0]
 
   if (!ext) {
