@@ -183,4 +183,8 @@ npm run md-to-react -- path/to/folder/with/md
 
 # md to react all pages
 find src -type d -not -path "*/__snapshots__" -exec npm run md-to-react -- {} \;
+
+# build routes
+cd scripts
+npx ts-node -- build-routes.ts
 ```
