@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { copy, renderTemplateToFile } from "./lib"
+import { exists, copy, renderTemplateToFile } from "./lib"
 import mdToHtml from "./md-to-html"
 
 function getImportPathToExample(dir: string): string {
@@ -16,11 +16,25 @@ function getImportPathToExample(dir: string): string {
   return path.join("../".repeat(depth), "components/Example")
 }
 
+function removeTrailingSlash(dir: string): string {
+  if (dir[dir.length - 1] === "/") {
+    return dir.slice(0, -1)
+  }
+  return dir
+}
+
 async function main() {
   const args = process.argv.slice(2)
-  const dir = args[0]
+  const dir = removeTrailingSlash(args[0])
 
-  await mdToHtml(path.join(dir, "index.md"))
+  const mdPath = path.join(dir, "index.md")
+
+  if (!(await exists(mdPath))) {
+    console.log(`Skip ${mdPath} does not exist`)
+    return
+  }
+
+  await mdToHtml(mdPath)
 
   // create index.js
   await renderTemplateToFile(

@@ -1,7 +1,16 @@
 import assert from "assert"
 import fs from "fs"
 import mustache from "mustache"
-const { readFile, writeFile } = fs.promises
+const { access, readFile, writeFile } = fs.promises
+
+export async function exists(filePath: string): Promise<boolean> {
+  try {
+    await access(filePath)
+    return true
+  } catch (error) {
+    return false
+  }
+}
 
 export async function copy(fromFilePath: string, toFilePath: string) {
   const file = await readFile(fromFilePath)
