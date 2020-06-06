@@ -54,6 +54,7 @@ import FrontRunning from "./hacks/FrontRunning"
 import BlockTimestampManipulation from "./hacks/BlockTimestampManipulation"
 import HackDelegatecall from "./hacks/Delegatecall"
 import PrivateData from "./hacks/PrivateData"
+import Randomness from "./hacks/Randomness"
 
 const SOL_ROUTES = [
   {
@@ -313,6 +314,11 @@ const HACK_ROUTES = [
     path: "delegatecall",
     component: HackDelegatecall,
     title: "Delegatecall",
+  },
+  {
+    path: "randomness",
+    component: Randomness,
+    title: "Source of Randomness",
   },
   {
     path: "denial-of-service",
