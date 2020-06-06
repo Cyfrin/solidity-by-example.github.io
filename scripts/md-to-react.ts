@@ -1,9 +1,8 @@
-const fs = require("fs")
-const util = require("util")
-const path = require("path")
-const readdir = util.promisify(fs.readdir)
-const { copy, getExtension } = require("./lib")
-const mdToHtml = require("./md-to-html")
+import fs from "fs"
+import path from "path"
+import { copy, getExtension } from "./lib"
+import mdToHtml from "./md-to-html"
+const { readdir } = fs.promises
 
 async function main() {
   const args = process.argv.slice(2)

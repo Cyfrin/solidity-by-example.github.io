@@ -1,16 +1,14 @@
-const assert = require("assert")
-const fs = require("fs")
-const path = require("path")
-const util = require("util")
-const readFile = util.promisify(fs.readFile)
-const writeFile = util.promisify(fs.writeFile)
-const readdir = util.promisify(fs.readdir)
-const yaml = require("yaml")
-const mustache = require("mustache")
-const marked = require("marked")
-const { removeExtension, getExtension } = require("./lib")
+import assert from "assert"
+import fs from "fs"
+import path from "path"
+import yaml from "yaml"
+import mustache from "mustache"
+import marked from "marked"
+import { removeExtension } from "./lib"
 
-function findIndexOfFrontMatter(lines) {
+const { readFile, writeFile, readdir } = fs.promises
+
+function findIndexOfFrontMatter(lines: string[]): number {
   assert(lines[0] === "---", "Front matter missing")
 
   // find front matter
@@ -22,14 +20,24 @@ function findIndexOfFrontMatter(lines) {
   return i
 }
 
-function getMetadata(lines) {
+interface Metadata {
+  title: string
+  description: string
+  version: string
+}
+
+function getMetadata(lines: string[]): Metadata {
   assert(lines[0] === "---", "Invalid front matter")
   assert(lines[lines.length - 1] === "---", "Invalid front matter")
 
-  return yaml.parse(lines.slice(1, -1).join("\n"))
+  const { title, description, version } = yaml.parse(
+    lines.slice(1, -1).join("\n")
+  )
+
+  return { title, description, version }
 }
 
-function parse(file) {
+function parse(file: string): { content: string; metadata: Metadata } {
   const lines = file.split("\n")
 
   const i = findIndexOfFrontMatter(lines)
@@ -43,25 +51,24 @@ function parse(file) {
   }
 }
 
-async function findSolidityFiles(dir) {
+async function findSolidityFiles(dir: string): Promise<string[]> {
   const files = await readdir(dir)
 
-  return files.filter((file) => file.split(".").pop() == "sol")
+  return files.filter((file) => file.split(".").pop() === "sol")
 }
 
 // convert index.md -> index.html.js
-async function mdToHtml(filePath) {
+export default async function mdToHtml(filePath: string) {
   const fileName = removeExtension(filePath.split("/").pop())
   const dir = filePath.split("/").slice(0, -1).join("/")
 
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
-  const codes = {}
+  const codes: Map<string, string> = new Map()
   for (const solFileName of solidityFileNames) {
-    codes[removeExtension(solFileName)] = (
-      await readFile(path.join(dir, solFileName))
-    ).toString()
+    const source = (await readFile(path.join(dir, solFileName))).toString()
+    codes.set(removeExtension(solFileName), source)
   }
 
   // render solidity inside markdown
@@ -88,5 +95,3 @@ async function mdToHtml(filePath) {
 
   console.log(`${path.join(dir, `${fileName}.html.js`)}`)
 }
-
-module.exports = mdToHtml
