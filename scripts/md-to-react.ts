@@ -15,7 +15,7 @@ async function main() {
   for (const file of files) {
     await mdToHtml(path.join(dir, file))
     await copy(
-      path.join(__dirname, "./template/index.js"),
+      path.join(__dirname, "./template/index.js.mustache"),
       path.join(dir, "index.js")
     )
     await copy(

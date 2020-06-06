@@ -65,10 +65,11 @@ export default async function mdToHtml(filePath: string) {
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
-  const codes: Map<string, string> = new Map()
+  const codes = {}
   for (const solFileName of solidityFileNames) {
     const source = (await readFile(path.join(dir, solFileName))).toString()
-    codes.set(removeExtension(solFileName), source)
+    // @ts-ignore
+    codes[removeExtension(solFileName)] = source
   }
 
   // render solidity inside markdown
