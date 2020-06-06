@@ -117,7 +117,7 @@ contract TokenSwap {
     }
 }</code></pre>
 "
-  title="ERC 20"
+  title="ERC20"
   version="0.6.0"
 />
 `;
