@@ -3,7 +3,7 @@ import path from "path"
 import { copy, renderTemplateToFile } from "./lib"
 import mdToHtml from "./md-to-html"
 
-function getImportExamplePath(dir: string): string {
+function getImportPathToExample(dir: string): string {
   const folders = dir.split("/")
 
   const start = folders.findIndex((folder) => folder === "src")
@@ -27,7 +27,7 @@ async function main() {
     path.join(__dirname, "./template/index.js.mustache"),
     path.join(dir, `index.js`),
     {
-      importExamplePath: getImportExamplePath(dir),
+      importPathToExample: getImportPathToExample(dir),
     }
   )
 
