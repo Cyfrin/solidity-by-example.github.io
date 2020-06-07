@@ -57,7 +57,7 @@ async function findSolidityFiles(dir: string): Promise<string[]> {
   return files.filter((file) => file.split(".").pop() === "sol")
 }
 
-// convert index.md -> index.html.js
+// convert index.md -> index.html.ts
 export default async function mdToHtml(filePath: string) {
   const folders = filePath.split("/")
   const tail = folders.pop()
@@ -89,8 +89,8 @@ export default async function mdToHtml(filePath: string) {
 
   // render markdown to html
   await renderTemplateToFile(
-    path.join(__dirname, "./template/index.html.js.mustache"),
-    path.join(dir, `${fileName}.html.js`),
+    path.join(__dirname, "./template/index.html.ts.mustache"),
+    path.join(dir, `${fileName}.html.ts`),
     {
       html,
       title: metadata.title,

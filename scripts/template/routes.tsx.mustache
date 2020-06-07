@@ -1,0 +1,20 @@
+{{#routes}}
+import {{{componentName}}} from "{{{importPath}}}"
+{{/routes}}
+
+interface Route {
+  path: string
+  component: () => JSX.Element
+  breakingChanges?: boolean
+}
+
+const routes: Route[] = [
+  {{#routes}}
+    {
+        path: "{{{routePath}}}",
+        component: {{{componentName}}}
+    },
+  {{/routes}}
+]
+
+export default routes
