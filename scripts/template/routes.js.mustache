@@ -1,0 +1,14 @@
+{{#routes}}
+import {{{componentName}}} from "{{{importPath}}}"
+{{/routes}}
+
+const routes = [
+  {{#routes}}
+    {
+        path: "{{{routePath}}}",
+        component: {{{componentName}}}
+    },
+  {{/routes}}
+]
+
+export default routes
