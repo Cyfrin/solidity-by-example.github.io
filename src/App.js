@@ -21,6 +21,7 @@ function App(props) {
               <Route
                 key={route.path}
                 path={route.path}
+                exact
                 component={route.component}
               />
             ))}
