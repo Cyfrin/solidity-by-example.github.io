@@ -66,7 +66,7 @@ export default async function mdToHtml(filePath: string) {
   assert(ext === "md", `Expected md file, got ${tail}`)
 
   const fileName = removeExtension(tail)
-  const dir = folders.slice(0, -1).join("/")
+  const dir = folders.join("/")
 
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
