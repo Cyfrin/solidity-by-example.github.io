@@ -44,10 +44,9 @@ export async function renderTemplateToFile(
   writeToPath: string,
   data: {}
 ): Promise<void> {
-  // create index.js
   const template = (await readFile(templatePath)).toString()
-  const js = mustache.render(template, data)
-  await writeFile(writeToPath, js)
+  const content = mustache.render(template, data)
+  await writeFile(writeToPath, content)
 
   console.log(`Created ${writeToPath}`)
 }

@@ -36,18 +36,18 @@ async function main() {
 
   await mdToHtml(mdPath)
 
-  // create index.js
+  // create index.tsx
   await renderTemplateToFile(
-    path.join(__dirname, "./template/index.js.mustache"),
-    path.join(dir, `index.js`),
+    path.join(__dirname, "./template/index.tsx.mustache"),
+    path.join(dir, `index.tsx`),
     {
       importPathToExample: getImportPathToExample(dir),
     }
   )
 
   await copy(
-    path.join(__dirname, "./template/index.test.js"),
-    path.join(dir, "index.test.js")
+    path.join(__dirname, "./template/index.test.tsx"),
+    path.join(dir, "index.test.tsx")
   )
 }
 

@@ -157,9 +157,7 @@ TODO: simplify bi directional payment channel
 
 ### 0.6 memo
 
-- [ ] script to generate routes
 - [ ] redirect to current page for 0.5 and 0.6
-- [ ] typescript
 
 - [ ] override and virtual
 - [ ] shadow disallowed
@@ -186,6 +184,8 @@ npx ts-node --project ./scripts/tsconfig.json scripts/md-to-react.ts src/pages/0
 find src/pages -type d -not -path "*/__snapshots__" -exec npx ts-node --project ./scripts/tsconfig.json scripts/md-to-react.ts {} \;
 
 # build routes
-npx ts-node -- build-routes.ts
 npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
+
+# rename files
+find . -type f -name "index.test.js" -exec sh -c 'mv "$0" "${0%.test.js}.test.tsx"' {} \;
 ```

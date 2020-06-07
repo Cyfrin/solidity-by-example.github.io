@@ -21,8 +21,8 @@ function buildRoutePath(folders: string[]) {
   for (let i = start + 1; i < folders.length; i++) {
     const file = folders[i]
 
-    // ignore index.js
-    if (file === "index.js") {
+    // ignore index.tsx
+    if (file === "index.tsx") {
       continue
     }
 
@@ -42,8 +42,8 @@ function buildImportPath(folders: string[]) {
   for (let i = start + 1; i < folders.length; i++) {
     const file = folders[i]
 
-    // ignore index.js
-    if (file === "index.js") {
+    // ignore index.tsx
+    if (file === "index.tsx") {
       continue
     }
 
@@ -78,7 +78,7 @@ async function getFiles(): Promise<string[]> {
 
       if (fileStat.isDirectory()) {
         queue.push(filePath)
-      } else if (fileName === "index.js") {
+      } else if (fileName === "index.tsx") {
         files.push(filePath)
       }
     }
@@ -105,15 +105,15 @@ async function main() {
   })
 
   const template = (
-    await readFile(path.join(__dirname, "template", "routes.js.mustache"))
+    await readFile(path.join(__dirname, "template", "routes.tsx.mustache"))
   ).toString()
-  const js = mustache.render(template, {
+  const ts = mustache.render(template, {
     routes,
   })
 
-  writeFile(path.join(dir, `routes.js`), js)
+  writeFile(path.join(dir, `routes.tsx`), ts)
 
-  console.log(`${path.join(dir, `routes.js`)}`)
+  console.log(`${path.join(dir, `routes.tsx`)}`)
 }
 
 main()
