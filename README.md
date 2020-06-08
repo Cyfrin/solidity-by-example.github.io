@@ -22,7 +22,7 @@ TODO: simplify bi directional payment channel
 
 ##### Flow control
 
-- [x] if / else (TODO: ternary)
+- [x] if / else
 - [x] for loop
 
 # Data types
@@ -134,8 +134,8 @@ TODO: simplify bi directional payment channel
 - [x] naught coin
 - [x] preservation (delegatecall to change address and then ownership)
 - [x] recovery
-- [ ] magic number (contract creation)
-- [ ] alien codex (edit ABI)
+- [x] magic number (contract creation)
+- [x] alien codex (edit ABI)
 - [x] denial (denial of service using assert and using up all gas)
 - [x] shop (external contract call)
 
