@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Library"
 export const description = "Example of how to write and use libraries in your Solidity code"
 
@@ -7,7 +7,8 @@ const html = `<p>Libraries are similar to contracts, but you can&#39;t declare a
 you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 library SafeMath {
     function add(uint x, uint y) internal pure returns (uint) {

@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Car {
     address public owner;
@@ -22,7 +23,7 @@ contract CarFactory {
         public
         payable
     {
-        Car car = (new Car).value(msg.value)(_owner, _model);
+        Car car = (new Car){value: msg.value}(_owner, _model);
         cars.push(car);
     }
 

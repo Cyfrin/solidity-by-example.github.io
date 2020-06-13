@@ -1,11 +1,12 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Constructor"
 export const description = "Learn how to initialize smart contracts in Solidity using a constructor"
 
 const html = `<p>A <code>constructor</code> is an optional function that is executed upon contract creation.</p>
 <p>Here are examples of how to pass arguments to <code>constructors</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // Base contract X
 contract X {

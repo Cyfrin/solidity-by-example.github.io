@@ -4,7 +4,8 @@ exports[`it renders 1`] = `
 <Example
   description="If / Else conditional statement in Solidity"
   html="<p>Solidity support conditional statements <code>if</code>, <code>else if</code> and <code>else</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract IfElse {
     function foo(uint x) public pure returns (uint) {
@@ -20,6 +21,6 @@ contract IfElse {
 </code></pre>
 "
   title="If / Else"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // The goal of this game is to be the 7th player to deposit 1 Ether.
 // Players can deposit only 1 Ether at a time.
@@ -34,7 +35,7 @@ contract EtherGame {
     function claimReward() public {
         require(msg.sender == winner, "Not winner");
 
-        (bool sent, ) = msg.sender.call.value(address(this).balance)("");
+        (bool sent, ) = msg.sender.call{value: address(this).balance}("");
         require(sent, "Failed to send Ether");
     }
 }

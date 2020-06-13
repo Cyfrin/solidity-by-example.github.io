@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Let's say Alice can see the code of Foo and Bar but not Mal.

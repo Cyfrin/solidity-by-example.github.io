@@ -1,12 +1,13 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Re-Entrancy"
 export const description = "An example of re-entrancy attack in Solidity"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Let&#39;s say that contract <code>A</code> calls contract <code>B</code>.</p>
 <p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // EtherStore is a contract vulnerable to re-entrancy attack. Let&#39;s see why.
 
@@ -49,7 +50,7 @@ contract EtherStore {
         require(_amount &lt;= withdrawalLimit);
         require(now &gt;= lastWithdrawTime[msg.sender] + 1 weeks);
 
-        (bool sent, ) = msg.sender.call.value(_amount)("");
+        (bool sent, ) = msg.sender.call{value: _amount}("");
         require(sent, "Failed to send Ether");
 
         balances[msg.sender] -= _amount;
@@ -78,12 +79,12 @@ contract Attack {
 
     function attack() external payable {
         require(msg.value &gt;= 1 ether);
-        etherStore.deposit.value(1 ether)();
+        etherStore.deposit{value: 1 ether}();
         etherStore.withdraw(1 ether);
     }
 
     function collectEther() public {
-        (bool sent, ) = msg.sender.call.value(address(this).balance)("");
+        (bool sent, ) = msg.sender.call{value: address(this).balance}("");
         require(sent, "Failed to send Ether");
     }
 
@@ -99,7 +100,8 @@ contract Attack {
 <li>Use function modifiers that prevent re-entrancy</li>
 </ul>
 <p>Here is a example of a re-entracy guard</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract ReEntrancyGuard {
     bool internal locked;

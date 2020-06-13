@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Interface"
 export const description = "An example of interface in Solidity"
 
@@ -12,7 +12,8 @@ const html = `<p>Interface define contraints so that any contract that implement
 <li>cannot declare a constructor</li>
 <li>cannot declare state variables</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Here is an example where the Zoo contract calls a contract the implements

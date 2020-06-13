@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Visibility"
 export const description = "An example of external, internal, private and public functions in Solidity"
 
@@ -12,7 +12,8 @@ const html = `<p>Functions and state variables have to declare whether they are 
 <li><code>external</code> - only other contracts and accounts can call</li>
 </ul>
 <p>State variables can be declared as <code>public</code>, <code>private</code>, or <code>internal</code> but not <code>external</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Base {
     // Private function can only be called

@@ -4,7 +4,8 @@ exports[`it renders 1`] = `
 <Example
   description="Precompute contract address with create2"
   html="<p>Contract address can be precomputed, before the contract is deployed, using <code>create2</code></p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Factory {
     event Deployed(address addr, uint256 salt);
@@ -84,6 +85,6 @@ contract TestContract {
 </code></pre>
 "
   title="Precompute Contract Address with Create2"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

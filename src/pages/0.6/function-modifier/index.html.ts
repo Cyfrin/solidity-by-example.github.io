@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Function Modifier"
 export const description = "Example of how to write function modifier in Solidity"
 
@@ -10,7 +10,8 @@ const html = `<p>Modifiers are code that can be run before and / or after a func
 <li>Validate inputs</li>
 <li>Guard against reentrancy hack</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract FunctionModifier {
     // We will use these variables to demonstrate how to use

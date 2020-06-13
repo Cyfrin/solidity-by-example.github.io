@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract KingOfEther {
     address public king;
@@ -20,7 +21,7 @@ contract KingOfEther {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
+        (bool sent, ) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
     }
 }

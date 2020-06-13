@@ -626,7 +626,7 @@ exports[`0.6 1`] = `
 >
   <SEO
     description="Learn smart contract programming using Solidity"
-    title="Solidity by Example | 0.6.0"
+    title="Solidity by Example | 0.6.10"
   />
   <h1
     className="header"
@@ -641,7 +641,7 @@ exports[`0.6 1`] = `
     className="subHeader"
   >
     v 
-    0.6.0
+    0.6.10
   </div>
   <div
     className="main"

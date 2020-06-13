@@ -6,7 +6,8 @@ exports[`it renders 1`] = `
   html="<p>Getter functions can be declared <code>view</code> or <code>pure</code>.</p>
 <p><code>View</code> function declares that no state will be changed.</p>
 <p><code>Pure</code> function declares that no state variable will be changed or read.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract ViewAndPure {
     uint public x = 1;
@@ -24,6 +25,6 @@ contract ViewAndPure {
 </code></pre>
 "
   title="View and Pure Functions"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

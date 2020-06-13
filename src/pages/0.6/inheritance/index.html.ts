@@ -1,12 +1,13 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Inheritance"
 export const description = "Example of inheritance in Solidity"
 
 const html = `<p>Solidity supports multiple inheritance. Contracts can inherit other contract by using the <code>is</code> keyword.</p>
 <p>Order of inheritance is important.</p>
 <p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /* Graph of inheritance
     A

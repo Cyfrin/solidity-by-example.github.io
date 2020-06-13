@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Multi-Sig Wallet"
 export const description = "An example of multi-sig wallet in Solidity"
 
@@ -10,7 +10,8 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
 <li>approve and revoke approval of pending transcations</li>
 <li>anyone can execute a transcation after enough owners has approved it.</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract MultiSigWallet {
     event Deposit(address indexed sender, uint amount, uint balance);
@@ -80,7 +81,7 @@ contract MultiSigWallet {
         numConfirmationsRequired = _numConfirmationsRequired;
     }
 
-    fallback() payable external {
+    receive() payable external {
         emit Deposit(msg.sender, msg.value, address(this).balance);
     }
 
@@ -131,7 +132,7 @@ contract MultiSigWallet {
 
         transaction.executed = true;
 
-        (bool success, ) = transaction.to.call.value(transaction.value)(transaction.data);
+        (bool success, ) = transaction.to.call{value: transaction.value}(transaction.data);
         require(success, "tx failed");
 
         emit ExecuteTransaction(msg.sender, _txIndex);
@@ -189,7 +190,8 @@ contract MultiSigWallet {
 }
 </code></pre>
 <p>Here is a contract to test sending transactions from the multi-sig wallet</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract TestContract {
     uint public i;

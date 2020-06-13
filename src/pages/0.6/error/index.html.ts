@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Error"
 export const description = "Example of how to throw errors in Solidity"
 
@@ -11,7 +11,8 @@ const html = `<p>An error will undo all changes made to the state during a trans
 <li><code>assert</code> is used to check for code that should never be false. Failing
 assertion probably means that there is a bug.</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Error {
     function testRequire(uint _i) public {
@@ -43,7 +44,8 @@ contract Error {
 }
 </code></pre>
 <p>Here is another example</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Account {
     uint public balance;

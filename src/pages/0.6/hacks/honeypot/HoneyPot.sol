@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Bank is a contract that calls Logger to log events.
@@ -37,7 +38,7 @@ contract Bank {
     function withdraw(uint _amount) public {
         require(_amount <= balances[msg.sender], "Insufficient funds");
 
-        (bool sent, ) = msg.sender.call.value(_amount)("");
+        (bool sent, ) = msg.sender.call{value: _amount}("");
         require(sent, "Failed to send Ether");
 
         balances[msg.sender] -= _amount;
@@ -69,7 +70,7 @@ contract Attack {
     }
 
     function attack() public payable {
-        bank.deposit.value(1 ether)();
+        bank.deposit{value: 1 ether}();
         bank.withdraw(1 ether);
     }
 

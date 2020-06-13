@@ -1,6 +1,6 @@
 ---
 title: Verifying Signature
-version: 0.6.0
+version: 0.6.10
 description: An example of how to verify signatures in Solidity
 ---
 

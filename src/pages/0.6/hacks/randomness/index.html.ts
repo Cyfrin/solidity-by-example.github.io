@@ -1,11 +1,12 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Source of Randomness"
 export const description = "Blockchain is not a reliable source of randomness in Solidity"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p><code>blockhash</code> and <code>block.timestamp</code> are not reliable sources for randomness.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 NOTE: cannot use blockhash in Remix so use ganache-cli
@@ -40,7 +41,7 @@ contract GuessTheRandomNumber {
         )));
 
         if (_guess == answer) {
-            (bool sent, ) = msg.sender.call.value(1 ether)("");
+            (bool sent, ) = msg.sender.call{value: 1 ether}("");
             require(sent, "Failed to send Ether");
         }
     }

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Hashing with Keccak256"
 export const description = "Example of hashing using Keccak256 in Solidity"
 
@@ -10,7 +10,8 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
 <li>Commit-Reveal scheme</li>
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract HashFunction {
     function hash(string memory _text, uint _num, address _addr)

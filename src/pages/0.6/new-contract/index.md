@@ -1,6 +1,6 @@
 ---
 title: Contract that Create other Contracts
-version: 0.6.0
+version: 0.6.10
 description: Learn how to create new contract from inside a contract with Solidity
 ---
 

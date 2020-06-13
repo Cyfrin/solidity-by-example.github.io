@@ -1,12 +1,13 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Denail of Service"
 export const description = "An example of denial of service hack in Solidity"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>There are many ways to attack a smart contract to make it unusable.</p>
 <p>One exploit we introduce here is denial of service by making the function to send Ether fail.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 /*
 The goal of KingOfEther is to become the king by sending more Ether than
 the previous king. Previous king will be refunded with the amount of Ether
@@ -35,7 +36,7 @@ contract KingOfEther {
     function claimThrone() external payable {
         require(msg.value &gt; balance, "Need to pay more to become the king");
 
-        (bool sent, ) = king.call.value(balance)("");
+        (bool sent, ) = king.call{value: balance}("");
         require(sent, "Failed to send Ether");
 
         balance = msg.value;
@@ -59,13 +60,14 @@ contract Attack {
     // }
 
     function attack() public payable {
-        kingOfEther.claimThrone.value(msg.value)();
+        kingOfEther.claimThrone{value: msg.value}();
     }
 }</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>One way to prevent this is to allow the users to withdraw their Ether instead of sending it.</p>
 <p>Here is a example.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract KingOfEther {
     address public king;
@@ -87,7 +89,7 @@ contract KingOfEther {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
+        (bool sent, ) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
     }
 }

@@ -12,7 +12,8 @@ exports[`it renders 1`] = `
 <li>cannot declare a constructor</li>
 <li>cannot declare state variables</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Here is an example where the Zoo contract calls a contract the implements
@@ -63,6 +64,6 @@ contract Zoo {
 }</code></pre>
 "
   title="Interface"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

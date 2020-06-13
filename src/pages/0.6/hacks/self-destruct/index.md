@@ -1,6 +1,6 @@
 ---
 title: Self Destruct
-version: 0.6.0
+version: 0.6.10
 description: An example of how to delete your smart contract by calling seldestruct in Solidity
 ---
 

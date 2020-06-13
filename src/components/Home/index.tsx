@@ -10,7 +10,7 @@ interface Route {
 }
 
 interface Props {
-  version: "0.6.0" | "0.5.16"
+  version: "0.6.10" | "0.5.16"
   routesByCategory: { title: string; routes: Route[] }[]
 }
 

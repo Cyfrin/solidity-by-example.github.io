@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Data Locations - Storage, Memory and Calldata"
 export const description = "Data locations - storage, memory and calldata"
 
@@ -10,7 +10,8 @@ specify the location of the data.</p>
 <li><code>memory</code> - variable is in memory and it exists while a function is being called</li>
 <li><code>calldata</code> - special data location that contains function arguments, only available for <code>external</code> functions</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract DataLocations {
     uint[] public arr;

@@ -7,7 +7,8 @@ exports[`it renders 1`] = `
 <p>Transactions take some time before they are mined. An attacker can watch the transaction pool
 and send a transaction, have it included in a block before the original transaction.
 This mechanism can be abused to re-order transactions to the attacker&#39;s advantage.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Alice creates a guessing game.
@@ -43,7 +44,7 @@ contract FindThisHash {
     function solve(string memory solution) public {
         require(hash == keccak256(abi.encodePacked(solution)), \\"Incorrect answer\\");
 
-        (bool sent, ) = msg.sender.call.value(10 ether)(\\"\\");
+        (bool sent, ) = msg.sender.call{value: 10 ether}(\\"\\");
         require(sent, \\"Failed to send Ether\\");
     }
 }</code></pre>
@@ -54,6 +55,6 @@ contract FindThisHash {
 </ul>
 "
   title="Front Running"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

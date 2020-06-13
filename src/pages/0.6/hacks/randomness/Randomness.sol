@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 NOTE: cannot use blockhash in Remix so use ganache-cli
@@ -33,7 +34,7 @@ contract GuessTheRandomNumber {
         )));
 
         if (_guess == answer) {
-            (bool sent, ) = msg.sender.call.value(1 ether)("");
+            (bool sent, ) = msg.sender.call{value: 1 ether}("");
             require(sent, "Failed to send Ether");
         }
     }

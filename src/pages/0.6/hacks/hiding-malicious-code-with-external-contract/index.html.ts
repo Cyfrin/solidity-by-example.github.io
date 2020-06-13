@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Hiding Malicious Code with External Contract"
 export const description = "An example of exploit where malicious code is hidden in an external contract in Solidity"
 
@@ -7,7 +7,8 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>In Solidity any address can be casted into specific contract,
 even if the contract at the address is not the one being casted.</p>
 <p>This can be exploited to hide malicious code. Let&#39;s see how.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Let&#39;s say Alice can see the code of Foo and Bar but not Mal.

@@ -10,7 +10,8 @@ exports[`it renders 1`] = `
 <li>Commit-Reveal scheme</li>
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract HashFunction {
     function hash(string memory _text, uint _num, address _addr)
@@ -43,6 +44,6 @@ contract GuessTheMagicWord {
 </code></pre>
 "
   title="Hashing with Keccak256"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

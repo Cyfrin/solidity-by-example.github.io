@@ -1,11 +1,12 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Bi-Directional Payment Channel"
 export const description = "An example of bi-directional payment channels in Solidity"
 
 const html = `<p>Bi-directional payment channels allow participants <code>Alice</code> and <code>Bob</code> to repeatedly transfer Ether off chain.</p>
 <p>Payments can go both ways, <code>Alice</code> pays <code>Bob</code> and <code>Bob</code> pays <code>Alice</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 pragma experimental ABIEncoderV2;
 
 /*
@@ -166,7 +167,7 @@ contract BiDirectionalPaymentChannel {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
+        (bool sent, ) = msg.sender.call.value{value: amount}("");
         require(sent, "Failed to send Ether");
 
         emit Withdraw(msg.sender, amount);

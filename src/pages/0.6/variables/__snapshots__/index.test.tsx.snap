@@ -17,7 +17,8 @@ exports[`it renders 1`] = `
 </li>
 <li><strong>global</strong> (provides information about the blockchain)</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Variables {
     // State varaibles are stored on the blockchain.
@@ -36,6 +37,6 @@ contract Variables {
 </code></pre>
 "
   title="Variables"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

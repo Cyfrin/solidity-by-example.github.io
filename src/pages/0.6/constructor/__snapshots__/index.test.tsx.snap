@@ -5,7 +5,8 @@ exports[`it renders 1`] = `
   description="Learn how to initialize smart contracts in Solidity using a constructor"
   html="<p>A <code>constructor</code> is an optional function that is executed upon contract creation.</p>
 <p>Here are examples of how to pass arguments to <code>constructors</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // Base contract X
 contract X {
@@ -62,6 +63,6 @@ contract F is X, Y {
 </code></pre>
 "
   title="Constructor"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

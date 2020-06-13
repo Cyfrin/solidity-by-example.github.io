@@ -6,7 +6,8 @@ exports[`it renders 1`] = `
   html="<p>Solidity supports multiple inheritance. Contracts can inherit other contract by using the <code>is</code> keyword.</p>
 <p>Order of inheritance is important.</p>
 <p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /* Graph of inheritance
     A
@@ -69,6 +70,6 @@ contract F is A, B {
 </code></pre>
 "
   title="Inheritance"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

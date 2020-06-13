@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Delegatecall"
 export const description = "An example of exploits using delegatecall in Solidity"
 
@@ -11,7 +11,8 @@ can lead to devastating results.</p>
 <li><code>delegatecall</code> preserves context (storage, caller, etc...)</li>
 <li>storage layout must be the same for the contract calling <code>delegatecall</code> and the contract getting called</li>
 </ol>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 HackMe is a contract that uses delegatecall to execute code.
@@ -73,7 +74,8 @@ contract Attack {
 <p>Here is another example.</p>
 <p>You will need to understand how Solidity stores
 state variables before you can understand this exploit.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 This is a more sophisticated version of the previous exploit.
