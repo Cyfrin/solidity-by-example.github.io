@@ -32,7 +32,7 @@ const PATHS = [
   "/0.6/hacks/self-destruct",
   "/0.6/hacks/re-entrancy",
   "/0.6/hacks/randomness",
-  "/0.6/hacks/phising-with-tx-origin",
+  "/0.6/hacks/phishing-with-tx-origin",
   "/0.6/hacks/overflow",
   "/0.6/hacks/honeypot",
   "/0.6/hacks/hiding-malicious-code-with-external-contract",
