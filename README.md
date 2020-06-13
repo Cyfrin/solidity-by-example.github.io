@@ -151,14 +151,12 @@ TODO: simplify bi directional payment channel
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] auto deploy on pr merge
 - [ ] exercises
-- [ ] sidenav and or link to next topic
 - [ ] seo
 - [ ] submarine send
 
 ### 0.6 memo
 
-- [ ] redirect to current page for 0.5 and 0.6
-
+- [ ] 0.6.5?
 - [ ] override and virtual
 - [ ] shadow disallowed
 - [ ] fallback and receive
