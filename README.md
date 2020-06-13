@@ -144,15 +144,13 @@ TODO: simplify bi directional payment channel
 - [ ] push vs pull
 - [ ] commit reveal
 - [ ] factory
+- [ ] submarine send
 
 ## TODO
 
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] auto deploy on pr merge
-- [ ] exercises
-- [ ] seo
-- [ ] submarine send
 - [ ] css mobile / expand code width to fit 80 columns into mobile
 
 ### 0.6 memo
