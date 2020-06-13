@@ -10,7 +10,8 @@ exports[`it renders 1`] = `
 <li><code>int</code></li>
 <li><code>address</code></li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Primitives {
     bool boo = true;
@@ -47,6 +48,6 @@ contract Primitives {
 </code></pre>
 "
   title="Primitive Data Types"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

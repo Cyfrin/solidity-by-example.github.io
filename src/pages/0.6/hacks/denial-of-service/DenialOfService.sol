@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 /*
 The goal of KingOfEther is to become the king by sending more Ether than
 the previous king. Previous king will be refunded with the amount of Ether
@@ -27,7 +28,7 @@ contract KingOfEther {
     function claimThrone() external payable {
         require(msg.value > balance, "Need to pay more to become the king");
 
-        (bool sent, ) = king.call.value(balance)("");
+        (bool sent, ) = king.call{value: balance}("");
         require(sent, "Failed to send Ether");
 
         balance = msg.value;
@@ -51,6 +52,6 @@ contract Attack {
     // }
 
     function attack() public payable {
-        kingOfEther.claimThrone.value(msg.value)();
+        kingOfEther.claimThrone{value: msg.value}();
     }
 }

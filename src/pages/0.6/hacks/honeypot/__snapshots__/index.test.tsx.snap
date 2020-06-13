@@ -7,7 +7,8 @@ exports[`it renders 1`] = `
 <h3 id=\\"vulnerability\\">Vulnerability</h3>
 <p>Combining two exploits, reentrancy and hiding malicious code, we can build a contract</p>
 <p>that will catch malicious users.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Bank is a contract that calls Logger to log events.
@@ -46,7 +47,7 @@ contract Bank {
     function withdraw(uint _amount) public {
         require(_amount &lt;= balances[msg.sender], \\"Insufficient funds\\");
 
-        (bool sent, ) = msg.sender.call.value(_amount)(\\"\\");
+        (bool sent, ) = msg.sender.call{value: _amount}(\\"\\");
         require(sent, \\"Failed to send Ether\\");
 
         balances[msg.sender] -= _amount;
@@ -78,7 +79,7 @@ contract Attack {
     }
 
     function attack() public payable {
-        bank.deposit.value(1 ether)();
+        bank.deposit{value: 1 ether}();
         bank.withdraw(1 ether);
     }
 
@@ -107,6 +108,6 @@ contract HoneyPot {
 </code></pre>
 "
   title="Honeypot"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

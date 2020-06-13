@@ -1,6 +1,6 @@
 ---
 title: Function
-version: 0.6.0
+version: 0.6.10
 description: Example of how to write functions in Solidity
 ---
 

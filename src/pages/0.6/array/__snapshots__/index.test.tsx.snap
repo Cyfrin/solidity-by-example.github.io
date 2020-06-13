@@ -4,7 +4,8 @@ exports[`it renders 1`] = `
 <Example
   description="Learn about arrays in Solidity"
   html="<p>Array can have a compile-time fixed size or a dynamic size.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Array {
     // Several ways to initialize an array
@@ -78,6 +79,6 @@ contract CompactArray {
 </code></pre>
 "
   title="Array"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

@@ -1,12 +1,13 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Shadowing Inherited State Variables"
 export const description = "An example of shadowing state variables by inheritance"
 
 const html = `<p>Unlike functions, state variables cannot be overridden by re-declaring it
 in the child contract.</p>
 <p>Let&#39;s learn how to correctly override inherited state variables.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract A {
     string public name = "Contract A";

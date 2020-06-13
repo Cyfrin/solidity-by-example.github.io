@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Roulette is a game where you can win all of the Ether in the contract
@@ -27,7 +28,7 @@ contract Roulette {
         pastBlockTime = block.timestamp;
 
         if(now % 15 == 0) {
-            (bool sent, ) = msg.sender.call.value(address(this).balance)("");
+            (bool sent, ) = msg.sender.call{value: address(this).balance}("");
             require(sent, "Failed to send Ether");
         }
     }

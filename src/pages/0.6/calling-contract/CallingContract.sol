@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Callee {
     uint public x;
@@ -28,6 +29,6 @@ contract Caller {
     }
 
     function setXandSendEther(Callee _callee, uint _x) public payable {
-        (uint x, uint value) = _callee.setXandSendEther.value(msg.value)(_x);
+        (uint x, uint value) = _callee.setXandSendEther{value: msg.value}(_x);
     }
 }

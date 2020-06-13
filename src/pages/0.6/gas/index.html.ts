@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
 
@@ -18,7 +18,8 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 <li><code>gas limit</code> (max amount of gas your willing to use for your transaction, set by you)</li>
 <li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Gas {
     uint public i = 0;

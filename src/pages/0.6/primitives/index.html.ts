@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Primitive Data Types"
 export const description = "Primitive data types"
 
@@ -10,7 +10,8 @@ const html = `<p>Here we introduce you to some primitive data types available in
 <li><code>int</code></li>
 <li><code>address</code></li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Primitives {
     bool boo = true;

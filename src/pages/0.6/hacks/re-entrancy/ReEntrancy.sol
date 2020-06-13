@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // EtherStore is a contract vulnerable to re-entrancy attack. Let's see why.
 
@@ -41,7 +42,7 @@ contract EtherStore {
         require(_amount <= withdrawalLimit);
         require(now >= lastWithdrawTime[msg.sender] + 1 weeks);
 
-        (bool sent, ) = msg.sender.call.value(_amount)("");
+        (bool sent, ) = msg.sender.call{value: _amount}("");
         require(sent, "Failed to send Ether");
 
         balances[msg.sender] -= _amount;
@@ -70,12 +71,12 @@ contract Attack {
 
     function attack() external payable {
         require(msg.value >= 1 ether);
-        etherStore.deposit.value(1 ether)();
+        etherStore.deposit{value: 1 ether}();
         etherStore.withdraw(1 ether);
     }
 
     function collectEther() public {
-        (bool sent, ) = msg.sender.call.value(address(this).balance)("");
+        (bool sent, ) = msg.sender.call{value: address(this).balance}("");
         require(sent, "Failed to send Ether");
     }
 

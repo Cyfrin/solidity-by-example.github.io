@@ -4,7 +4,8 @@ exports[`it renders 1`] = `
 <Example
   description="Iterable Mapping in Solidity"
   html="<p>You cannot iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 library IterableMapping {
     // Iterable mapping from address to uint;
@@ -88,6 +89,6 @@ contract TestIterableMap {
 </code></pre>
 "
   title="Iterable Mapping"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

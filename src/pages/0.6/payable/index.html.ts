@@ -1,10 +1,11 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Payable"
 export const description = "An example of how to use the keyword payable in Solidity"
 
 const html = `<p>Functions and addresses declared <code>payable</code> can receive <code>ether</code> into the contract.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Payable {
     // Payable address can receive Ether
@@ -33,14 +34,14 @@ contract Payable {
 
         // send all Ether to owner
         // Owner can receive Ether since the address of owner is payable
-        (bool success,) = owner.call.value(amount)("");
+        (bool success,) = owner.call{value: amount}("");
         require(success, "Failed to send Ether");
     }
 
     // Function to transfer Ether from this contract to address from input
     function transfer(address payable _to, uint _amount) public {
         // Note that "to" is declared as payable
-        (bool success,) = _to.call.value(_amount)("");
+        (bool success,) = _to.call{value: _amount}("");
         require(success, "Failed to send Ether");
     }
 }

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Block Timestamp Manipulation"
 export const description = "An example of a Solidity contract vulnerable to block timestamp manipulation"
 
@@ -9,7 +9,8 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <li>it cannot be stamped with an earlier time than its parent</li>
 <li>it cannot be too far in the future</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Roulette is a game where you can win all of the Ether in the contract
@@ -38,7 +39,7 @@ contract Roulette {
         pastBlockTime = block.timestamp;
 
         if(now % 15 == 0) {
-            (bool sent, ) = msg.sender.call.value(address(this).balance)("");
+            (bool sent, ) = msg.sender.call{value: address(this).balance}("");
             require(sent, "Failed to send Ether");
         }
     }

@@ -1,9 +1,10 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Receiver {
     event Received(address caller, uint amount, string message);
 
-    fallback() external payable {
+    receive() external payable {
         emit Received(msg.sender, msg.value, "Fallback was called");
     }
 
@@ -21,7 +22,7 @@ contract Caller {
     // contract A, but we do know the address of A and the function to call.
     function testCallFoo(address payable _addr) public payable {
         // You can send ether and specify a custom gas amount
-        (bool success, bytes memory data) = _addr.call.value(msg.value).gas(5000)(
+        (bool success, bytes memory data) = _addr.call{value: msg.value, gas: 5000}(
             abi.encodeWithSignature("foo(string,uint256)", "call foo", 123)
         );
 

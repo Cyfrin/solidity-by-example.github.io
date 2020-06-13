@@ -1,10 +1,11 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Enum"
 export const description = "Example of enums in Solidity"
 
 const html = `<p>Solidity support enumerables and they are useful to model choice and keep track of state.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Enum {
     // Enum representing shipping status

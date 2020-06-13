@@ -1,12 +1,13 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Reading and Writing to a State Variable"
 export const description = "Reading and Writing to a State Variable"
 
 const html = `<p>You need to send a transaction to the blockchain to write or update a state variable.</p>
 <p>This means that you will have to pay a transaction fee.</p>
 <p>On the other hand, you can read a data from a state variable, for free, without sending any transaction.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract SimpleStorage {
     // State variable to store a number

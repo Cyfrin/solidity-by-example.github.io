@@ -6,7 +6,7 @@ import { ROUTES_BY_CATEGORY as routesByCategory_ver_0_6 } from "../../pages/0.6"
 
 test("0.6", () => {
   const props = {
-    version: "0.6.0",
+    version: "0.6.10",
     routesByCategory: routesByCategory_ver_0_6,
   }
 

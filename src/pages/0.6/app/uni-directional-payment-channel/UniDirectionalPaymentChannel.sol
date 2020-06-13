@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol";
@@ -52,7 +53,7 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
     {
         require(msg.sender == payee, "Not payee");
 
-        (bool sent, ) = payee.call.value(_payeeBalance)("");
+        (bool sent, ) = payee.call{value: _payeeBalance}("");
         require(sent, "Failed to send Ether");
 
         selfdestruct(payer);

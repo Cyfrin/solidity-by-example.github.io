@@ -9,14 +9,16 @@ exports[`it renders 1`] = `
 <pre><code>├── Import.sol
 └── Foo.sol</code></pre>
 <p>Foo.sol</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Foo {
     string public name = \\"Foo\\";
 }
 </code></pre>
 <p>Import.sol</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 // import Foo.sol from current directory
 import \\"./Foo.sol\\";
@@ -41,6 +43,6 @@ import \\"https://github.com/owner/repo/blob/branch/path/to/Contract.sol\\";
 import \\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol\\";</code></pre>
 "
   title="Import"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

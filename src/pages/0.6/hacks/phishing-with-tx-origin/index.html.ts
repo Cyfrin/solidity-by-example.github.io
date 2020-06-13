@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Phishing with tx.origin"
 export const description = "An example of phishing with tx.origin in Solidity"
 
@@ -8,7 +8,8 @@ const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&
 <h3 id="vulnerability">Vulnerability</h3>
 <p>A malicious contract can deceive the owner of a contract into calling a
 function that only the owner should be able to call.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Wallet is a simple contract where only the owner should be able to transfer
@@ -39,7 +40,7 @@ contract Wallet {
     function transfer(address payable _to, uint _amount) public {
         require(tx.origin == owner, "Not owner");
 
-        (bool sent, ) = _to.call.value(_amount)("");
+        (bool sent, ) = _to.call{value: _amount}("");
         require(sent, "Failed to send Ether");
     }
 }

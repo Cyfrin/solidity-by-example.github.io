@@ -1,6 +1,6 @@
 ---
 title: Array
-version: 0.6.0
+version: 0.6.10
 description: Learn about arrays in Solidity
 ---
 

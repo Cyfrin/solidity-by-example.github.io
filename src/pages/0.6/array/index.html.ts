@@ -1,10 +1,11 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Array"
 export const description = "Learn about arrays in Solidity"
 
 const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Array {
     // Several ways to initialize an array

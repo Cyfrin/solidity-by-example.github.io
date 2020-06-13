@@ -10,7 +10,8 @@ exports[`it renders 1`] = `
 <li>Validate inputs</li>
 <li>Guard against reentrancy hack</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract FunctionModifier {
     // We will use these variables to demonstrate how to use
@@ -71,6 +72,6 @@ contract FunctionModifier {
 </code></pre>
 "
   title="Function Modifier"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

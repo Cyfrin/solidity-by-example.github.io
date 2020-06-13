@@ -269,7 +269,7 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const Home_ver_0_6 = () => (
-  <Home version="0.6.0" routesByCategory={ROUTES_BY_CATEGORY} />
+  <Home version="0.6.10" routesByCategory={ROUTES_BY_CATEGORY} />
 )
 
 export default Home_ver_0_6

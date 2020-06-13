@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Uni-Directional Payment Channel"
 export const description = "An example of uni-directional payment channels in Solidity"
 
@@ -12,7 +12,8 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
 <li>If <code>Bob</code> does not claim his payment, <code>Alice</code> get her Ether back after the contract expires</li>
 </ul>
 <p>This is called a uni-directional payment channel since the payment can go only in a signle direction from <code>Alice</code> to <code>Bob</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol";
@@ -66,7 +67,7 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
     {
         require(msg.sender == payee, "Not payee");
 
-        (bool sent, ) = payee.call.value(_payeeBalance)("");
+        (bool sent, ) = payee.call{value: _payeeBalance}("");
         require(sent, "Failed to send Ether");
 
         selfdestruct(payer);

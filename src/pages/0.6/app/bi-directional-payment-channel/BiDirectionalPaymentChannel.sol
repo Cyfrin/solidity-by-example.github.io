@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 pragma experimental ABIEncoderV2;
 
 /*
@@ -159,7 +160,7 @@ contract BiDirectionalPaymentChannel {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
+        (bool sent, ) = msg.sender.call.value{value: amount}("");
         require(sent, "Failed to send Ether");
 
         emit Withdraw(msg.sender, amount);

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Fallback"
 export const description = "Example of how to use fallback in Solidity"
 
@@ -10,7 +10,8 @@ const html = `<p>A <code>fallback function</code> is an anonymous function that 
 <li>sending Ether directly to a contract</li>
 </ul>
 <p><code>Fallback</code> functions have a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Fallback {
     event Log(uint gas);
@@ -34,7 +35,7 @@ contract SendToFallback {
     }
 
     function callFallback(address payable _to) public payable {
-        (bool sent,) = _to.call.value(msg.value)("");
+        (bool sent,) = _to.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
     }
 }

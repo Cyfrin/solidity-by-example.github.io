@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Sending Ether (transfer, send, call)"
 export const description = "An example of sending Ether in Solidity"
 
@@ -15,7 +15,8 @@ const html = `<p>You can send Ether to other contracts by</p>
 <li>making all state changes before calling other contracts</li>
 <li>using re-entrancy guard modifier</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract ReceiveEther {
     // This is a special function called the fallback.
@@ -44,7 +45,7 @@ contract SendEther {
     function sendViaCall(address payable _to) public payable {
         // Call returns a boolean value indicating success or failure.
         // This is the current recommended method to use.
-        (bool sent, bytes memory data) = _to.call.value(msg.value)("");
+        (bool sent, bytes memory data) = _to.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
     }
 }

@@ -4,7 +4,8 @@ exports[`it renders 1`] = `
 <Example
   description="Example of smart contract in Solidity"
   html="<p>Here is a simple contract that you can get, increment and decrement the count store in this contract.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.6.0;
+<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Counter {
     uint public count;
@@ -27,6 +28,6 @@ contract Counter {
 </code></pre>
 "
   title="First Application"
-  version="0.6.0"
+  version="0.6.10"
 />
 `;

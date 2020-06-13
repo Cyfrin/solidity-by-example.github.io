@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Wallet is a simple contract where only the owner should be able to transfer
@@ -29,7 +30,7 @@ contract Wallet {
     function transfer(address payable _to, uint _amount) public {
         require(tx.origin == owner, "Not owner");
 
-        (bool sent, ) = _to.call.value(_amount)("");
+        (bool sent, ) = _to.call{value: _amount}("");
         require(sent, "Failed to send Ether");
     }
 }

@@ -1,10 +1,11 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Contract that Create other Contracts"
 export const description = "Learn how to create new contract from inside a contract with Solidity"
 
 const html = `<p>Contracts can be created by other contracts using the <code>new</code> keyword.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 contract Car {
     address public owner;
@@ -28,7 +29,7 @@ contract CarFactory {
         public
         payable
     {
-        Car car = (new Car).value(msg.value)(_owner, _model);
+        Car car = (new Car){value: msg.value}(_owner, _model);
         cars.push(car);
     }
 

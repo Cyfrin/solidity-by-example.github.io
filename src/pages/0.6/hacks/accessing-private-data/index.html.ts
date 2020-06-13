@@ -1,12 +1,13 @@
 // metadata
-export const version = "0.6.0"
+export const version = "0.6.10"
 export const title = "Accessing Private Data"
 export const description = "An example of accessing private data from a Solidity smart contract"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>All data on a smart contract can be read.</p>
 <p>Let&#39;s see how we can read <code>private</code> data. In the process you will learn how Solidity stores state variables.</p>
-<pre><code class="language-solidity">pragma solidity ^0.6.0;
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
 
 /*
 Note: cannot use web3 on JVM, so use the contract deployed on ropsten
