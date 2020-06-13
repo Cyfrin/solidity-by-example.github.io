@@ -153,6 +153,7 @@ TODO: simplify bi directional payment channel
 - [ ] exercises
 - [ ] seo
 - [ ] submarine send
+- [ ] css mobile / expand code width to fit 80 columns into mobile
 
 ### 0.6 memo
 
