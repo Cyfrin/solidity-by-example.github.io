@@ -165,8 +165,8 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/phising-with-tx-origin"
-          path="/0.6/hacks/phising-with-tx-origin"
+          key="/0.6/hacks/phishing-with-tx-origin"
+          path="/0.6/hacks/phishing-with-tx-origin"
         />
         <Route
           component={[Function]}

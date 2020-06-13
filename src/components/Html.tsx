@@ -13,6 +13,13 @@ interface Props {
 }
 
 const Html: React.FC<Props> = ({ html }) => {
+  // NOTE: to render hightlighs after page load
+  // useEffect(() => {
+  //   document.querySelectorAll("pre code").forEach((block) => {
+  //     hljs.highlightBlock(block)
+  //   })
+  // }, [])
+
   /* Note: Copy button to render inside pre
   <div class="buttons">
     <button class="fa fa-copy clip-button" title="Copy to clipboard" aria-label="Copy to clipboard">

@@ -34,6 +34,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
     "@types/highlight.js": "^9.12.4",
     "@types/jest": "^24.9.1",
     "@types/marked": "^0.7.4",

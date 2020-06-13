@@ -22,7 +22,7 @@ TODO: simplify bi directional payment channel
 
 ##### Flow control
 
-- [x] if / else (TODO: ternary)
+- [x] if / else
 - [x] for loop
 
 # Data types
@@ -134,8 +134,8 @@ TODO: simplify bi directional payment channel
 - [x] naught coin
 - [x] preservation (delegatecall to change address and then ownership)
 - [x] recovery
-- [ ] magic number (contract creation)
-- [ ] alien codex (edit ABI)
+- [x] magic number (contract creation)
+- [x] alien codex (edit ABI)
 - [x] denial (denial of service using assert and using up all gas)
 - [x] shop (external contract call)
 
@@ -144,21 +144,17 @@ TODO: simplify bi directional payment channel
 - [ ] push vs pull
 - [ ] commit reveal
 - [ ] factory
+- [ ] submarine send
 
 ## TODO
 
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] auto deploy on pr merge
-- [ ] exercises
-- [ ] sidenav and or link to next topic
-- [ ] seo
-- [ ] submarine send
 
 ### 0.6 memo
 
-- [ ] redirect to current page for 0.5 and 0.6
-
+- [ ] 0.6.5?
 - [ ] override and virtual
 - [ ] shadow disallowed
 - [ ] fallback and receive

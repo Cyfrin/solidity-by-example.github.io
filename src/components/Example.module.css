@@ -1,5 +1,5 @@
 .component {
-  /* NOTE -20px from App.module.css */
+  /* NOTE -20px from .main in App.module.css */
   width: min(100vw - 20px, 1000px);
 }
 .content {

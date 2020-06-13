@@ -23,7 +23,7 @@ import component_0_6_hashing from "./pages/0.6/hashing"
 import component_0_6_hacks_self_destruct from "./pages/0.6/hacks/self-destruct"
 import component_0_6_hacks_re_entrancy from "./pages/0.6/hacks/re-entrancy"
 import component_0_6_hacks_randomness from "./pages/0.6/hacks/randomness"
-import component_0_6_hacks_phising_with_tx_origin from "./pages/0.6/hacks/phising-with-tx-origin"
+import component_0_6_hacks_phishing_with_tx_origin from "./pages/0.6/hacks/phishing-with-tx-origin"
 import component_0_6_hacks_overflow from "./pages/0.6/hacks/overflow"
 import component_0_6_hacks_honeypot from "./pages/0.6/hacks/honeypot"
 import component_0_6_hacks_hiding_malicious_code_with_external_contract from "./pages/0.6/hacks/hiding-malicious-code-with-external-contract"
@@ -219,8 +219,8 @@ const routes: Route[] = [
         component: component_0_6_hacks_randomness
     },
     {
-        path: "/0.6/hacks/phising-with-tx-origin",
-        component: component_0_6_hacks_phising_with_tx_origin
+        path: "/0.6/hacks/phishing-with-tx-origin",
+        component: component_0_6_hacks_phishing_with_tx_origin
     },
     {
         path: "/0.6/hacks/overflow",
