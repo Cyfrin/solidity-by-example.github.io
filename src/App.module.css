@@ -13,11 +13,12 @@
   /* align-items: center; */
   /* background-color: red; */
 }
-@media (max-width: 480px) {
+
+/* @media only screen and (max-width: 600px) {
   .main {
     margin: 0;
   }
-}
+} */
 
 .footer {
   display: flex;

@@ -151,7 +151,6 @@ TODO: simplify bi directional payment channel
 - [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
 - [ ] auto deploy on pr merge
-- [ ] css mobile / expand code width to fit 80 columns into mobile
 
 ### 0.6 memo
 
