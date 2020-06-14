@@ -3,12 +3,14 @@
 exports[`it renders 1`] = `
 <Example
   description="An example of sending Ether in Solidity"
-  html="<p>You can send Ether to other contracts by</p>
+  html="<h3 id=\\"how-to-send-ether\\">How to send Ether?</h3>
+<p>You can send Ether to other contracts by</p>
 <ul>
 <li><code>transfer</code> (2300 gas, throws error)</li>
 <li><code>send</code> (2300 gas, returns bool)</li>
 <li><code>call</code> (forward all gas or set gas, returns bool)</li>
 </ul>
+<h3 id=\\"which-method-should-you-use\\">Which method should you use?</h3>
 <p><code>call</code> in combination with re-entrancy guard is the recommended method to use after December 2019.</p>
 <p>Guard against re-entrancy by</p>
 <ul>
