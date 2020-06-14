@@ -2,10 +2,27 @@
 pragma solidity ^0.6.10;
 
 contract ReceiveEther {
-    // This is a special function called the fallback.
-    // The fallback function declared payable enables other contracts to
-    // send Ether by send, transfer, or call.
+    /*
+    Which function is called, fallback() or receive()?
+
+           send Ether
+               |
+         msg.data is empty?
+              / \
+            yes  no
+            /     \
+receive() exists?  fallback()
+         /   \
+        yes   no
+        /      \
+    receive()   fallback()
+    */
+
+    // Function to receive Ether. msg.data must be empty
     receive() external payable {}
+
+    // Fallback function is called when msg.data is not empty
+    fallback() external payable {}
 
     function getBalance() public view returns (uint) {
         return address(this).balance;

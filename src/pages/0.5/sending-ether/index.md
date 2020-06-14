@@ -4,11 +4,15 @@ version: 0.5.16
 description: An example of sending Ether in Solidity
 ---
 
+### How to send Ether?
+
 You can send Ether to other contracts by
 
 - `transfer` (2300 gas, throws error)
 - `send` (2300 gas, returns bool)
 - `call` (forward all gas or set gas, returns bool)
+
+### Which method should you use?
 
 `call` in combination with re-entrancy guard is the recommended method to use after December 2019.
 
