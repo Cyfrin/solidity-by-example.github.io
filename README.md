@@ -158,6 +158,8 @@ TODO: simplify bi directional payment channel
 - [ ] fallback and receive
 - [ ] override and virtual
 - [ ] shadow disallowed
+- [ ] try / catch
+- [ ] payable(address)
 
 ### Memo
 
