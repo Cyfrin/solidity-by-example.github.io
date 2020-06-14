@@ -155,7 +155,6 @@ TODO: simplify bi directional payment channel
 ### 0.6 memo
 
 - [ ] 0.6 features
-- [ ] fallback
 - [ ] override and virtual
 - [ ] shadow disallowed
 - [ ] try / catch

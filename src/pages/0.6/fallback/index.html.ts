@@ -3,13 +3,13 @@ export const version = "0.6.10"
 export const title = "Fallback"
 export const description = "Example of how to use fallback in Solidity"
 
-const html = `<p>A <code>fallback function</code> is an anonymous function that does not take any arguments and does not return anything.</p>
-<p>Fallback functions are executed when</p>
+const html = `<p><code>fallback</code> is a function that does not take any arguments and does not return anything.</p>
+<p>It is executed either when</p>
 <ul>
-<li>calling a function that does not exist</li>
-<li>sending Ether directly to a contract</li>
+<li>a function that does not exist is called or</li>
+<li>Ether is sent directly to a contract but <code>receive()</code> does not exist or <code>msg.data</code> is not empty</li>
 </ul>
-<p><code>Fallback</code> functions have a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
+<p><code>fallback</code> has a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
 <pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.10;
 
