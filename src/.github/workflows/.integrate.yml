@@ -8,8 +8,8 @@ jobs:
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@gh-pages
-      - uses: actions/setup-node@gh-pages
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 12
       - run: npm ci
