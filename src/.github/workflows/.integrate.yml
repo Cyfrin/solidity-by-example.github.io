@@ -1,0 +1,17 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: [gh-pages]
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@gh-pages
+      - uses: actions/setup-node@gh-pages
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
