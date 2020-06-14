@@ -3,7 +3,7 @@ import { shallow } from "enzyme"
 import App from "./App"
 
 test("CI", () => {
-  expect(1).toEqual(3)
+  expect(1).toEqual(2)
 })
 
 test("it renders", () => {
