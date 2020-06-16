@@ -4,6 +4,8 @@ exports[`it renders 1`] = `
 <Example
   description="Example of inheritance in Solidity"
   html="<p>Solidity supports multiple inheritance. Contracts can inherit other contract by using the <code>is</code> keyword.</p>
+<p>Function that is going to be overridden by a child contract must be declared as <code>virtual</code>.</p>
+<p>Function that is going to override a parent function must use the keyword <code>override</code>.</p>
 <p>Order of inheritance is important.</p>
 <p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
 <pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
