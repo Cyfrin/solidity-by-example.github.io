@@ -6,6 +6,22 @@ description: Example of enums in Solidity
 
 Solidity support enumerables and they are useful to model choice and keep track of state.
 
+Enums can be declared ouside of a contract.
+
 ```solidity
 {{{Enum}}}
+```
+
+### Declaring and importing Enum
+
+File that the enum is declared in
+
+```solidity
+{{{EnumDeclaration}}}
+```
+
+File that imports the enum above
+
+```solidity
+{{{EnumImport}}}
 ```
