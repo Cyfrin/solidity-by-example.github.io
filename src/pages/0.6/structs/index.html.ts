@@ -5,6 +5,7 @@ export const description = "An example of how to use structs in Solidity"
 
 const html = `<p>You can define your own type by creating a <code>struct</code>.</p>
 <p>They are useful for grouping togther related data.</p>
+<p>Structs can be declared outside of a contract and imported in another contract.</p>
 <pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.10;
 
@@ -57,6 +58,25 @@ contract Todos {
     }
 }
 </code></pre>
+<h3 id="declaring-and-importing-struct">Declaring and importing Struct</h3>
+<p>File that the struct is declared in</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
+
+struct Todo {
+    string text;
+    bool completed;
+}</code></pre>
+<p>File that imports the struct above</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
+
+import "./StructDeclaration.sol";
+
+contract Todos {
+    // An array of &#39;Todo&#39; structs
+    Todo[] public todos;
+}</code></pre>
 `
 
 export default html
