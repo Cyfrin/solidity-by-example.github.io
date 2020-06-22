@@ -159,10 +159,8 @@ TODO: simplify bi directional payment channel
 ### 0.6 memo
 
 - [ ] 0.6 features
-- [ ] shadow disallowed
 - [ ] try / catch
 - [ ] payable(address)
-- [ ] file level declaration (enum and struct)
 
 ### Memo
 

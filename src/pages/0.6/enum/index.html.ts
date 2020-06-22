@@ -4,6 +4,7 @@ export const title = "Enum"
 export const description = "Example of enums in Solidity"
 
 const html = `<p>Solidity support enumerables and they are useful to model choice and keep track of state.</p>
+<p>Enums can be declared ouside of a contract.</p>
 <pre><code class="language-solidity">// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.10;
 
@@ -47,6 +48,27 @@ contract Enum {
     }
 }
 </code></pre>
+<h3 id="declaring-and-importing-enum">Declaring and importing Enum</h3>
+<p>File that the enum is declared in</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
+
+enum Status {
+    Pending,
+    Shipped,
+    Accepted,
+    Rejected,
+    Canceled
+}</code></pre>
+<p>File that imports the enum above</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.10;
+
+import "./EnumDeclaration.sol";
+
+contract Enum {
+    Status public status;
+}</code></pre>
 `
 
 export default html
