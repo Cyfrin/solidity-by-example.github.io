@@ -4,7 +4,7 @@ exports[`it renders 1`] = `
 <Example
   description="An example of how to delete your smart contract by calling seldestruct in Solidity"
   html="<p>Contracts can be deleted from the blockchain by calling <code>selfdestruct</code>.</p>
-<p><code>selfdestruct</code> sends all remainig Ether stored in the contract to an
+<p><code>selfdestruct</code> sends all remaining Ether stored in the contract to an
 designated address.</p>
 <h3 id=\\"vulnerability\\">Vulnerability</h3>
 <p>A malicious contract can use <code>selfdestruct</code> to
@@ -63,7 +63,7 @@ contract Attack {
         // the game balance &gt;= 7 ether
 
         // cast address to payable
-        address payable addr = address(uint160(address(etherGame)));
+        address payable addr = payable(address(etherGame));
         selfdestruct(addr);
     }
 }
