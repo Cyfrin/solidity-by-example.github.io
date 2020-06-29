@@ -6,7 +6,7 @@ description: An example of how to delete your smart contract by calling seldestr
 
 Contracts can be deleted from the blockchain by calling `selfdestruct`.
 
-`selfdestruct` sends all remainig Ether stored in the contract to an
+`selfdestruct` sends all remaining Ether stored in the contract to an
 designated address.
 
 ### Vulnerability
