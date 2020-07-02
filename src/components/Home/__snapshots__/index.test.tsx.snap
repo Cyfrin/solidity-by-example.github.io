@@ -999,6 +999,16 @@ exports[`0.6 1`] = `
         </li>
         <li
           className="listItem"
+          key="/0.6/try-catch"
+        >
+          <a
+            href="/0.6/try-catch"
+          >
+            Try / Catch
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="/0.6/import"
         >
           <a

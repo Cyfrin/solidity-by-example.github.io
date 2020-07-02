@@ -142,6 +142,10 @@ const SOL_ROUTES = [
   },
   // misc
   {
+    path: "try-catch",
+    title: "Try / Catch",
+  },
+  {
     path: "import",
     title: "Import",
   },

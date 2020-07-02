@@ -11,6 +11,7 @@ const PATHS = [
   "/0.6/visibility",
   "/0.6/view-and-pure-functions",
   "/0.6/variables",
+  "/0.6/try-catch",
   "/0.6/super",
   "/0.6/structs",
   "/0.6/state-variables",
