@@ -138,6 +138,11 @@ exports[`it renders 1`] = `
             "title": "Creating Contracts from a Contract",
           },
           Object {
+            "newFeature": true,
+            "path": "/0.6/try-catch",
+            "title": "Try / Catch",
+          },
+          Object {
             "path": "/0.6/import",
             "title": "Import",
           },

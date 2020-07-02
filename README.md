@@ -159,7 +159,6 @@ TODO: simplify bi directional payment channel
 ### 0.6 memo
 
 - [ ] 0.6 features
-- [ ] try / catch
 - [ ] payable(address)
 
 ### Memo

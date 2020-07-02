@@ -39,6 +39,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/0.6/try-catch"
+          path="/0.6/try-catch"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/0.6/super"
           path="/0.6/super"
         />

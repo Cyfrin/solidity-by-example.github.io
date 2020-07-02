@@ -7,6 +7,7 @@ interface Route {
   path: string
   title: string
   breakingChanges?: boolean
+  newFeature?: boolean
 }
 
 interface Props {
@@ -37,12 +38,16 @@ const Home: React.FC<Props> = ({ version, routesByCategory }) => {
             {title && <h3>{title}</h3>}
 
             <ul className={styles.list}>
-              {routes.map(({ path, title, breakingChanges }) => (
+              {routes.map(({ path, title, breakingChanges, newFeature }) => (
                 <li className={styles.listItem} key={path}>
                   <a href={path}>{title}</a>
-                  {breakingChanges && (
+                  {(breakingChanges || newFeature) && (
                     <div className={styles.label}>
-                      <Label />
+                      <Label
+                        type={
+                          breakingChanges ? "breakingChanges" : "newFeature"
+                        }
+                      />
                     </div>
                   )}
                 </li>

@@ -874,7 +874,9 @@ exports[`0.6 1`] = `
           <div
             className="label"
           >
-            <Label />
+            <Label
+              type="breakingChanges"
+            />
           </div>
         </li>
         <li
@@ -889,7 +891,9 @@ exports[`0.6 1`] = `
           <div
             className="label"
           >
-            <Label />
+            <Label
+              type="breakingChanges"
+            />
           </div>
         </li>
         <li
@@ -954,7 +958,9 @@ exports[`0.6 1`] = `
           <div
             className="label"
           >
-            <Label />
+            <Label
+              type="breakingChanges"
+            />
           </div>
         </li>
         <li
@@ -996,6 +1002,23 @@ exports[`0.6 1`] = `
           >
             Creating Contracts from a Contract
           </a>
+        </li>
+        <li
+          className="listItem"
+          key="/0.6/try-catch"
+        >
+          <a
+            href="/0.6/try-catch"
+          >
+            Try / Catch
+          </a>
+          <div
+            className="label"
+          >
+            <Label
+              type="newFeature"
+            />
+          </div>
         </li>
         <li
           className="listItem"

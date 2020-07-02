@@ -2,6 +2,7 @@ import component_0_6 from "./pages/0.6"
 import component_0_6_visibility from "./pages/0.6/visibility"
 import component_0_6_view_and_pure_functions from "./pages/0.6/view-and-pure-functions"
 import component_0_6_variables from "./pages/0.6/variables"
+import component_0_6_try_catch from "./pages/0.6/try-catch"
 import component_0_6_super from "./pages/0.6/super"
 import component_0_6_structs from "./pages/0.6/structs"
 import component_0_6_state_variables from "./pages/0.6/state-variables"
@@ -133,6 +134,10 @@ const routes: Route[] = [
     {
         path: "/0.6/variables",
         component: component_0_6_variables
+    },
+    {
+        path: "/0.6/try-catch",
+        component: component_0_6_try_catch
     },
     {
         path: "/0.6/super",
