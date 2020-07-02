@@ -144,6 +144,7 @@ const SOL_ROUTES = [
   {
     path: "try-catch",
     title: "Try / Catch",
+    newFeature: true,
   },
   {
     path: "import",

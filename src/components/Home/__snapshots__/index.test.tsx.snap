@@ -874,7 +874,9 @@ exports[`0.6 1`] = `
           <div
             className="label"
           >
-            <Label />
+            <Label
+              type="breakingChanges"
+            />
           </div>
         </li>
         <li
@@ -889,7 +891,9 @@ exports[`0.6 1`] = `
           <div
             className="label"
           >
-            <Label />
+            <Label
+              type="breakingChanges"
+            />
           </div>
         </li>
         <li
@@ -954,7 +958,9 @@ exports[`0.6 1`] = `
           <div
             className="label"
           >
-            <Label />
+            <Label
+              type="breakingChanges"
+            />
           </div>
         </li>
         <li
@@ -1006,6 +1012,13 @@ exports[`0.6 1`] = `
           >
             Try / Catch
           </a>
+          <div
+            className="label"
+          >
+            <Label
+              type="newFeature"
+            />
+          </div>
         </li>
         <li
           className="listItem"
