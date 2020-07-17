@@ -148,18 +148,13 @@ TODO: simplify bi directional payment channel
 
 ## TODO
 
-- [ ] search
 - [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
   - [ ] install
   - [ ] compile contracts (check no errors, skip ones with import)
   - [ ] build (md to react, create routes, react build, react snap)
   - [ ] npm test
   - [ ] deploy
-
-### 0.6 memo
-
-- [ ] 0.6 features
-- [ ] payable(address)
+- [ ] mobile responsive (landscape) -[ ] array overflow
 
 ### Memo
 

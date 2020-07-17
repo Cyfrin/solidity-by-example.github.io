@@ -66,6 +66,6 @@ contract Attack {
 
     // function signature must match HackMe.doSomething()
     function doSomething(uint _num) public {
-        owner = address(this);
+        owner = msg.sender;
     }
 }
