@@ -139,23 +139,6 @@ TODO: simplify bi directional payment channel
 - [x] denial (denial of service using assert and using up all gas)
 - [x] shop (external contract call)
 
-## Patterns
-
-- [ ] push vs pull
-- [ ] commit reveal
-- [ ] factory
-- [ ] submarine send
-
-## TODO
-
-- [ ] build pipeline (.gitignore index.html.js and rebuild it when deploy)
-  - [ ] install
-  - [ ] compile contracts (check no errors, skip ones with import)
-  - [ ] build (md to react, create routes, react build, react snap)
-  - [ ] npm test
-  - [ ] deploy
-- [ ] mobile responsive (landscape) -[ ] array overflow
-
 ### Memo
 
 ```shell
