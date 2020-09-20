@@ -160,7 +160,7 @@ contract BiDirectionalPaymentChannel {
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
 
-        (bool sent, ) = msg.sender.call.value{value: amount}("");
+        (bool sent, ) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
 
         emit Withdraw(msg.sender, amount);

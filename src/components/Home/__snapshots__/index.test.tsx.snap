@@ -614,6 +614,16 @@ exports[`0.5 1`] = `
             Block Timestamp Manipulation
           </a>
         </li>
+        <li
+          className="listItem"
+          key="/0.5/hacks/signature-replay"
+        >
+          <a
+            href="/0.5/hacks/signature-replay"
+          >
+            Signature Replay
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -1270,6 +1280,16 @@ exports[`0.6 1`] = `
             href="/0.6/hacks/block-timestamp-manipulation"
           >
             Block Timestamp Manipulation
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/0.6/hacks/signature-replay"
+        >
+          <a
+            href="/0.6/hacks/signature-replay"
+          >
+            Signature Replay
           </a>
         </li>
       </ul>
