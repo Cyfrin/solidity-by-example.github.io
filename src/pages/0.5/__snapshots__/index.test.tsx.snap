@@ -236,6 +236,10 @@ exports[`it renders 1`] = `
             "path": "/0.5/hacks/block-timestamp-manipulation",
             "title": "Block Timestamp Manipulation",
           },
+          Object {
+            "path": "/0.5/hacks/signature-replay",
+            "title": "Signature Replay",
+          },
         ],
         "title": "Hacks",
       },

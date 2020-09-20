@@ -1,7 +1,5 @@
 # solidity-by-example.github.io
 
-TODO: simplify bi directional payment channel
-
 [Solidity By Example](https://solidity-by-example.org)
 
 ### License

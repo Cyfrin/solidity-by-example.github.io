@@ -21,6 +21,7 @@ import component_0_6_import from "./pages/0.6/import"
 import component_0_6_if_else from "./pages/0.6/if-else"
 import component_0_6_hello_world from "./pages/0.6/hello-world"
 import component_0_6_hashing from "./pages/0.6/hashing"
+import component_0_6_hacks_signature_replay from "./pages/0.6/hacks/signature-replay"
 import component_0_6_hacks_self_destruct from "./pages/0.6/hacks/self-destruct"
 import component_0_6_hacks_re_entrancy from "./pages/0.6/hacks/re-entrancy"
 import component_0_6_hacks_randomness from "./pages/0.6/hacks/randomness"
@@ -77,6 +78,7 @@ import component_0_5_import from "./pages/0.5/import"
 import component_0_5_if_else from "./pages/0.5/if-else"
 import component_0_5_hello_world from "./pages/0.5/hello-world"
 import component_0_5_hashing from "./pages/0.5/hashing"
+import component_0_5_hacks_signature_replay from "./pages/0.5/hacks/signature-replay"
 import component_0_5_hacks_self_destruct from "./pages/0.5/hacks/self-destruct"
 import component_0_5_hacks_re_entrancy from "./pages/0.5/hacks/re-entrancy"
 import component_0_5_hacks_randomness from "./pages/0.5/hacks/randomness"
@@ -210,6 +212,10 @@ const routes: Route[] = [
     {
         path: "/0.6/hashing",
         component: component_0_6_hashing
+    },
+    {
+        path: "/0.6/hacks/signature-replay",
+        component: component_0_6_hacks_signature_replay
     },
     {
         path: "/0.6/hacks/self-destruct",
@@ -434,6 +440,10 @@ const routes: Route[] = [
     {
         path: "/0.5/hashing",
         component: component_0_5_hashing
+    },
+    {
+        path: "/0.5/hacks/signature-replay",
+        component: component_0_5_hacks_signature_replay
     },
     {
         path: "/0.5/hacks/self-destruct",

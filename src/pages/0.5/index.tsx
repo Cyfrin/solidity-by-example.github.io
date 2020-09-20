@@ -237,6 +237,10 @@ const HACK_ROUTES = [
     path: "block-timestamp-manipulation",
     title: "Block Timestamp Manipulation",
   },
+  {
+    path: "signature-replay",
+    title: "Signature Replay",
+  },
 ]
 
 const BASE_PATH = "/0.5"

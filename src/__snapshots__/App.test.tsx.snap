@@ -153,6 +153,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/0.6/hacks/signature-replay"
+          path="/0.6/hacks/signature-replay"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/0.6/hacks/self-destruct"
           path="/0.6/hacks/self-destruct"
         />
@@ -485,6 +491,12 @@ exports[`it renders 1`] = `
           exact={true}
           key="/0.5/hashing"
           path="/0.5/hashing"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          key="/0.5/hacks/signature-replay"
+          path="/0.5/hacks/signature-replay"
         />
         <Route
           component={[Function]}
