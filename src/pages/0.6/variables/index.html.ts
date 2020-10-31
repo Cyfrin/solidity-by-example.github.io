@@ -21,7 +21,7 @@ const html = `<p>There are 3 types of variables in Solidity</p>
 pragma solidity ^0.6.10;
 
 contract Variables {
-    // State varaibles are stored on the blockchain.
+    // State variables are stored on the blockchain.
     string public text = "Hello";
     uint public num = 123;
 
