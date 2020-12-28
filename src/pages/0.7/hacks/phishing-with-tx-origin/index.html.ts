@@ -9,7 +9,7 @@ const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&
 <p>A malicious contract can deceive the owner of a contract into calling a
 function that only the owner should be able to call.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-comment">/*
 Wallet is a simple contract where only the owner should be able to transfer

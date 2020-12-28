@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.7.6;
 
 contract FunctionModifier {
     // We will use these variables to demonstrate how to use

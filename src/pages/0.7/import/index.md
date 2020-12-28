@@ -35,7 +35,7 @@ You can also import from [GitHub](https://github.com) by simply copying the url
 // https://github.com/owner/repo/blob/branch/path/to/Contract.sol
 import "https://github.com/owner/repo/blob/branch/path/to/Contract.sol";
 
-// Example import ECDSA.sol from openzeppelin-contract repo, solc-0.8 branch
-// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol";
+// Example import ECDSA.sol from openzeppelin-contract repo, release-v3.3 branch
+// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol";
 ```

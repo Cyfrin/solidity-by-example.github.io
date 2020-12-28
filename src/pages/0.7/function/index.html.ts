@@ -6,7 +6,7 @@ export const description = "Example of how to write functions in Solidity"
 const html = `<p>There are several ways to return outputs from a function.</p>
 <p>Public functions cannot accept certain data types as inputs or outputs</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Function</span> </span>{
     <span class="hljs-comment">// Functions can return multiple values.</span>

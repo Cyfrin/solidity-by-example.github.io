@@ -10,7 +10,7 @@ exports[`it renders 1`] = `
 └── Foo.sol</code></pre>
 <p>Foo.sol</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.0;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Foo</span> </span>{
     <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> name = <span class=\\"hljs-string\\">\\"Foo\\"</span>;
@@ -18,7 +18,7 @@ exports[`it renders 1`] = `
 </code></pre>
 <p>Import.sol</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.0;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
 
 <span class=\\"hljs-comment\\">// import Foo.sol from current directory</span>
 <span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"./Foo.sol\\"</span>;
@@ -38,9 +38,9 @@ exports[`it renders 1`] = `
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// https://github.com/owner/repo/blob/branch/path/to/Contract.sol</span>
 <span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/owner/repo/blob/branch/path/to/Contract.sol\\"</span>;
 
-<span class=\\"hljs-comment\\">// Example import ECDSA.sol from openzeppelin-contract repo, solc-0.8 branch</span>
-<span class=\\"hljs-comment\\">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol</span>
-<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol\\"</span>;</code></pre>
+<span class=\\"hljs-comment\\">// Example import ECDSA.sol from openzeppelin-contract repo, release-v3.3 branch</span>
+<span class=\\"hljs-comment\\">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol</span>
+<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol\\"</span>;</code></pre>
 "
   title="Import"
   version="0.6.10"

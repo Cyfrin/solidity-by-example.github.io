@@ -8,7 +8,7 @@ const html = `<p>A honeypot is a trap to catch hackers.</p>
 <p>Combining two exploits, reentrancy and hiding malicious code, we can build a contract</p>
 <p>that will catch malicious users.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-comment">/*
 Bank is a contract that calls Logger to log events.

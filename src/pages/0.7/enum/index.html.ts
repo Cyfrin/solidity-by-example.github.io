@@ -6,7 +6,7 @@ export const description = "Example of enums in Solidity"
 const html = `<p>Solidity support enumerables and they are useful to model choice and keep track of state.</p>
 <p>Enums can be declared ouside of a contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Enum</span> </span>{
     <span class="hljs-comment">// Enum representing shipping status</span>
@@ -51,7 +51,7 @@ const html = `<p>Solidity support enumerables and they are useful to model choic
 <h3 id="declaring-and-importing-enum">Declaring and importing Enum</h3>
 <p>File that the enum is declared in</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-keyword">enum</span> <span class="hljs-title">Status</span> {
     Pending,
@@ -62,7 +62,7 @@ const html = `<p>Solidity support enumerables and they are useful to model choic
 }</code></pre>
 <p>File that imports the enum above</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">"./EnumDeclaration.sol"</span>;
 
