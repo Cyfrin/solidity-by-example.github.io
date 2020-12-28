@@ -2,7 +2,7 @@ import React from "react"
 import { shallow } from "enzyme"
 import Home from "./index"
 import { ROUTES_BY_CATEGORY as routesByCategory_ver_0_5 } from "../../pages/0.5"
-import { ROUTES_BY_CATEGORY as routesByCategory_ver_0_6 } from "../../pages/0.6"
+import { ROUTES_BY_CATEGORY as routesByCategory_ver_0_6 } from "../../pages/0.8"
 
 test("0.6", () => {
   const props = {
