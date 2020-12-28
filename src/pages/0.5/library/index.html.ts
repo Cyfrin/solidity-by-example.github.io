@@ -7,52 +7,52 @@ const html = `<p>Libraries are similar to contracts, but you can&#39;t declare a
 you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.16;</span>
 
-library SafeMath {
-    function add(uint x, uint y) internal pure returns (uint) {
-        uint z = x + y;
-        require(z &gt;= x, "uint overflow");
+<span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">SafeMath</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        <span class="hljs-keyword">uint</span> z = x + y;
+        <span class="hljs-built_in">require</span>(z &gt;= x, <span class="hljs-string">"uint overflow"</span>);
 
-        return z;
+        <span class="hljs-keyword">return</span> z;
     }
 }
 
-contract TestSafeMath {
-    using SafeMath for uint;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestSafeMath</span> </span>{
+    <span class="hljs-keyword">using</span> <span class="hljs-title">SafeMath</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint</span></span>;
 
-    uint public MAX_UINT = 2 ** 256 - 1;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> MAX_UINT = <span class="hljs-number">2</span> ** <span class="hljs-number">256</span> - <span class="hljs-number">1</span>;
 
-    function testAdd(uint x, uint y) public pure returns (uint) {
-        return x.add(y);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testAdd</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        <span class="hljs-keyword">return</span> x.add(y);
     }
 }
 
-// Array function to delete element at index and re-organize the array
-// so that their are no gaps between the elements.
-library Array {
-    function remove(uint[] storage arr, uint index) public {
-        // Move the last element into the place to delete
-        arr[index] = arr[arr.length - 1];
-        arr.pop();
+<span class="hljs-comment">// Array function to delete element at index and re-organize the array</span>
+<span class="hljs-comment">// so that their are no gaps between the elements.</span>
+<span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">Array</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">storage</span> arr, <span class="hljs-keyword">uint</span> index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-comment">// Move the last element into the place to delete</span>
+        arr[index] = arr[arr.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>];
+        arr.<span class="hljs-built_in">pop</span>();
     }
 }
 
-contract TestArray {
-    using Array for uint[];
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestArray</span> </span>{
+    <span class="hljs-keyword">using</span> <span class="hljs-title">Array</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint</span></span>[];
 
-    uint[] public arr;
+    <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
 
-    function testArrayRemove() public {
-        for (uint i = 0; i &lt; 3; i++) {
-            arr.push(i);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testArrayRemove</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+            arr.<span class="hljs-built_in">push</span>(i);
         }
 
-        arr.remove(1);
+        arr.remove(<span class="hljs-number">1</span>);
 
-        assert(arr.length == 2);
-        assert(arr[0] == 0);
-        assert(arr[1] == 2);
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">2</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">2</span>);
     }
 }
 </code></pre>

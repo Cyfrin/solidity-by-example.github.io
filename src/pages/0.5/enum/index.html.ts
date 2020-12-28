@@ -4,11 +4,11 @@ export const title = "Enum"
 export const description = "Example of enums in Solidity"
 
 const html = `<p>Solidity support enumerables and they are useful to model choice and keep track of state.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.16;</span>
 
-contract Enum {
-    // Enum representing shipping status
-    enum Status {
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Enum</span> </span>{
+    <span class="hljs-comment">// Enum representing shipping status</span>
+    <span class="hljs-keyword">enum</span> <span class="hljs-title">Status</span> {
         Pending,
         Shipped,
         Accepted,
@@ -16,33 +16,33 @@ contract Enum {
         Canceled
     }
 
-    // Default value is the first element listed in
-    // definition of the type, in this case "Pending"
-    Status public status;
+    <span class="hljs-comment">// Default value is the first element listed in</span>
+    <span class="hljs-comment">// definition of the type, in this case "Pending"</span>
+    Status <span class="hljs-keyword">public</span> status;
 
-    // Returns uint
-    // Pending  - 0
-    // Shipped  - 1
-    // Accepted - 2
-    // Rejected - 3
-    // Canceled - 4
-    function get() public view returns (Status) {
-        return status;
+    <span class="hljs-comment">// Returns uint</span>
+    <span class="hljs-comment">// Pending  - 0</span>
+    <span class="hljs-comment">// Shipped  - 1</span>
+    <span class="hljs-comment">// Accepted - 2</span>
+    <span class="hljs-comment">// Rejected - 3</span>
+    <span class="hljs-comment">// Canceled - 4</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">Status</span>) </span>{
+        <span class="hljs-keyword">return</span> status;
     }
 
-    // Update status by passing uint into input
-    function set(Status _status) public {
+    <span class="hljs-comment">// Update status by passing uint into input</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params">Status _status</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         status = _status;
     }
 
-    // You can update to a specific enum like this
-    function cancel() public {
+    <span class="hljs-comment">// You can update to a specific enum like this</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cancel</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         status = Status.Canceled;
     }
 
-    // delete resets the enum to it&#39;s first value, 0
-    function reset() public {
-        delete status;
+    <span class="hljs-comment">// delete resets the enum to it&#x27;s first value, 0</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reset</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">delete</span> status;
     }
 }
 </code></pre>

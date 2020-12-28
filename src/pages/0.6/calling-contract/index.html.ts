@@ -7,38 +7,38 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
 <p>The easiest way to is to just call it, like <code>A.foo(x, y, z)</code>.</p>
 <p>Another way to call other contracts is to use the low-level <code>call</code>.</p>
 <p>This method is not recommended.</p>
-<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
 
-contract Callee {
-    uint public x;
-    uint public value;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Callee</span> </span>{
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> value;
 
-    function setX(uint _x) public returns (uint) {
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setX</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         x = _x;
-        return x;
+        <span class="hljs-keyword">return</span> x;
     }
 
-    function setXandSendEther(uint _x) public payable returns (uint, uint) {
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXandSendEther</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>, <span class="hljs-keyword">uint</span></span>) </span>{
         x = _x;
-        value = msg.value;
+        value = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
 
-        return (x, value);
+        <span class="hljs-keyword">return</span> (x, value);
     }
 }
 
-contract Caller {
-    function setX(Callee _callee, uint _x) public {
-        uint x = _callee.setX(_x);
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Caller</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setX</span>(<span class="hljs-params">Callee _callee, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint</span> x = _callee.setX(_x);
     }
 
-    function setXFromAddress(address _addr, uint _x) public {
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXFromAddress</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _addr, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         Callee callee = Callee(_addr);
         callee.setX(_x);
     }
 
-    function setXandSendEther(Callee _callee, uint _x) public payable {
-        (uint x, uint value) = _callee.setXandSendEther{value: msg.value}(_x);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXandSendEther</span>(<span class="hljs-params">Callee _callee, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        (<span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> value) = _callee.setXandSendEther{<span class="hljs-built_in">value:</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_x);
     }
 }
 </code></pre>

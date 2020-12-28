@@ -17,37 +17,37 @@ const html = `<h3 id="how-to-send-ether">How to send Ether?</h3>
 <li>making all state changes before calling other contracts</li>
 <li>using re-entrancy guard modifier</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.16;</span>
 
-contract ReceiveEther {
-    // This is a special function called the fallback.
-    // The fallback function declared payable enables other contracts to
-    // send Ether by send, transfer, or call.
-    function () external payable {}
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ReceiveEther</span> </span>{
+    <span class="hljs-comment">// This is a special function called the fallback.</span>
+    <span class="hljs-comment">// The fallback function declared payable enables other contracts to</span>
+    <span class="hljs-comment">// send Ether by send, transfer, or call.</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
-    function getBalance() public view returns (uint) {
-        return address(this).balance;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBalance</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
     }
 }
 
-contract SendEther {
-    function sendViaTransfer(address payable _to) public payable {
-        // This function is no longer recommended for sending Ether.
-        _to.transfer(msg.value);
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">SendEther</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendViaTransfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        <span class="hljs-comment">// This function is no longer recommended for sending Ether.</span>
+        _to.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
     }
 
-    function sendViaSend(address payable _to) public payable {
-        // Send returns a boolean value indicating success or failure.
-        // This function is not recommended for sending Ether.
-        bool sent = _to.send(msg.value);
-        require(sent, "Failed to send Ether");
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendViaSend</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        <span class="hljs-comment">// Send returns a boolean value indicating success or failure.</span>
+        <span class="hljs-comment">// This function is not recommended for sending Ether.</span>
+        <span class="hljs-keyword">bool</span> sent = _to.<span class="hljs-built_in">send</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 
-    function sendViaCall(address payable _to) public payable {
-        // Call returns a boolean value indicating success or failure.
-        // This is the current recommended method to use.
-        (bool sent, bytes memory data) = _to.call.value(msg.value)("");
-        require(sent, "Failed to send Ether");
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sendViaCall</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        <span class="hljs-comment">// Call returns a boolean value indicating success or failure.</span>
+        <span class="hljs-comment">// This is the current recommended method to use.</span>
+        (<span class="hljs-keyword">bool</span> sent, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data) = _to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>)(<span class="hljs-string">""</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
 </code></pre>

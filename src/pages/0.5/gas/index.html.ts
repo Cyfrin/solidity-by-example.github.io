@@ -18,19 +18,19 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 <li><code>gas limit</code> (max amount of gas your willing to use for your transaction, set by you)</li>
 <li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.16;</span>
 
-contract Gas {
-    uint public i = 0;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Gas</span> </span>{
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i = <span class="hljs-number">0</span>;
 
-    // Using up all of the gas that you send causes your transaction to fail.
-    // State changes are undone.
-    // Gas spent are not refunded.
-    function forever() public {
-        // Here we run a loop until all of the gas are spent
-        // and the transaction fails
-        while(true) {
-            i += 1;
+    <span class="hljs-comment">// Using up all of the gas that you send causes your transaction to fail.</span>
+    <span class="hljs-comment">// State changes are undone.</span>
+    <span class="hljs-comment">// Gas spent are not refunded.</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forever</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-comment">// Here we run a loop until all of the gas are spent</span>
+        <span class="hljs-comment">// and the transaction fails</span>
+        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) {
+            i += <span class="hljs-number">1</span>;
         }
     }
 }

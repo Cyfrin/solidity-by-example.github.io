@@ -10,41 +10,41 @@ specify the location of the data.</p>
 <li><code>memory</code> - variable is in memory and it exists while a function is being called</li>
 <li><code>calldata</code> - special data location that contains function arguments, only available for <code>external</code> functions</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.5.16;</span>
 
-contract DataLocations {
-    uint[] public arr;
-    mapping(uint =&gt; address) map;
-    struct MyStruct {
-        uint foo;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">DataLocations</span> </span>{
+    <span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">public</span> arr;
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">uint</span> =&gt; <span class=\\"hljs-keyword\\">address</span>) map;
+    <span class=\\"hljs-keyword\\">struct</span> <span class=\\"hljs-title\\">MyStruct</span> {
+        <span class=\\"hljs-keyword\\">uint</span> foo;
     }
-    mapping(uint =&gt; MyStruct) myStructs;
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">uint</span> =&gt; MyStruct) myStructs;
 
-    function f() public {
-        // call _f with state variables
-        _f(arr, map, myStructs[1]);
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">f</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        <span class=\\"hljs-comment\\">// call _f with state variables</span>
+        _f(arr, map, myStructs[<span class=\\"hljs-number\\">1</span>]);
 
-        // get a struct from a mapping
-        MyStruct storage myStruct = myStructs[1];
-        // create a struct in memory
-        MyStruct memory myMemStruct = MyStruct(0);
-    }
-
-    function _f(
-        uint[] storage _arr,
-        mapping(uint =&gt; address) storage _map,
-        MyStruct storage _myStruct
-    ) internal {
-        // do something with storage variables
+        <span class=\\"hljs-comment\\">// get a struct from a mapping</span>
+        MyStruct <span class=\\"hljs-keyword\\">storage</span> myStruct = myStructs[<span class=\\"hljs-number\\">1</span>];
+        <span class=\\"hljs-comment\\">// create a struct in memory</span>
+        MyStruct <span class=\\"hljs-keyword\\">memory</span> myMemStruct = MyStruct(<span class=\\"hljs-number\\">0</span>);
     }
 
-    // You can return memory variables
-    function g(uint[] memory _arr) public returns (uint[] memory) {
-        // do something with memory array
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">_f</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">storage</span> _arr,
+        <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> =&gt; <span class=\\"hljs-keyword\\">address</span></span>) <span class=\\"hljs-keyword\\">storage</span> _map,
+        MyStruct <span class=\\"hljs-keyword\\">storage</span> _myStruct
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">internal</span></span> </span>{
+        <span class=\\"hljs-comment\\">// do something with storage variables</span>
     }
 
-    function h(uint[] calldata _arr) external {
-        // do something with calldata array
+    <span class=\\"hljs-comment\\">// You can return memory variables</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">g</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">memory</span> _arr</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-comment\\">// do something with memory array</span>
+    }
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">h</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">calldata</span> _arr</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
+        <span class=\\"hljs-comment\\">// do something with calldata array</span>
     }
 }
 </code></pre>

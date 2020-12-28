@@ -12,70 +12,70 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
 <li>If <code>Bob</code> does not claim his payment, <code>Alice</code> get her Ether back after the contract expires</li>
 </ul>
 <p>This is called a uni-directional payment channel since the payment can go only in a signle direction from <code>Alice</code> to <code>Bob</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.16;</span>
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/utils/ReentrancyGuard.sol";
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/utils/ReentrancyGuard.sol"</span>;
 
 
-contract UniDirectionalPaymentChannel is ReentrancyGuard {
-    using SafeMath for uint;
-    using ECDSA for bytes32;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniDirectionalPaymentChannel</span> <span class="hljs-keyword">is</span> <span class="hljs-title">ReentrancyGuard</span> </span>{
+    <span class="hljs-keyword">using</span> <span class="hljs-title">SafeMath</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint</span></span>;
+    <span class="hljs-keyword">using</span> <span class="hljs-title">ECDSA</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">bytes32</span></span>;
 
-    address payable public payer;
-    address payable public payee;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> payer;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> payee;
 
-    uint public expiresAt;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> expiresAt;
 
-    constructor(address payable _payee, uint _expiresAt) public payable {
-        require(_expiresAt &gt; block.timestamp, "Expiration must be &gt; now");
+    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _payee, <span class="hljs-keyword">uint</span> _expiresAt</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+        <span class="hljs-built_in">require</span>(_expiresAt &gt; <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>, <span class="hljs-string">"Expiration must be &gt; now"</span>);
 
-        payer = msg.sender;
+        payer = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
         payee = _payee;
 
         expiresAt = _expiresAt;
     }
 
-    function verify(
-        bytes memory _signature,
-        address _payer,
-        address _contract,
-        uint _payeeBalance
-    ) public pure returns (bool) {
-        // NOTE: sign with address of this contract to protect agains
-        // replay attack on other contracts
-        return
-            keccak256(abi.encodePacked(_contract, _payeeBalance))
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params">
+        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _signature,
+        <span class="hljs-keyword">address</span> _payer,
+        <span class="hljs-keyword">address</span> _contract,
+        <span class="hljs-keyword">uint</span> _payeeBalance
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> sign with address of this contract to protect agains</span>
+        <span class="hljs-comment">// replay attack on other contracts</span>
+        <span class="hljs-keyword">return</span>
+            <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_contract, _payeeBalance))
                 .toEthSignedMessageHash()
                 .recover(_signature) == _payer;
     }
 
-    modifier checkSignature(bytes memory _signature, uint _payeeBalance) {
-        require(
-            verify(_signature, payer, address(this), _payeeBalance),
-            "Invalid signature"
+    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">checkSignature</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _signature, <span class="hljs-keyword">uint</span> _payeeBalance</span>) </span>{
+        <span class="hljs-built_in">require</span>(
+            verify(_signature, payer, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _payeeBalance),
+            <span class="hljs-string">"Invalid signature"</span>
         );
-        _;
+        <span class="hljs-keyword">_</span>;
     }
 
-    function close(uint _payeeBalance, bytes memory _signature)
-        public
-        nonReentrant
-        checkSignature(_signature, _payeeBalance)
-    {
-        require(msg.sender == payee, "Not payee");
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">close</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _payeeBalance, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _signature</span>)
+        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+        <span class="hljs-title">nonReentrant</span>
+        <span class="hljs-title">checkSignature</span>(<span class="hljs-params">_signature, _payeeBalance</span>)
+    </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == payee, <span class="hljs-string">"Not payee"</span>);
 
-        (bool sent, ) = payee.call.value(_payeeBalance)("");
-        require(sent, "Failed to send Ether");
+        (<span class="hljs-keyword">bool</span> sent, ) = payee.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(_payeeBalance)(<span class="hljs-string">""</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 
-        selfdestruct(payer);
+        <span class="hljs-built_in">selfdestruct</span>(payer);
     }
 
-    function kill() public {
-        require(msg.sender == payer, "Not payer");
-        require(block.timestamp &gt;= expiresAt, "channel not expired");
-        selfdestruct(payer);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">kill</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == payer, <span class="hljs-string">"Not payer"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= expiresAt, <span class="hljs-string">"channel not expired"</span>);
+        <span class="hljs-built_in">selfdestruct</span>(payer);
     }
 }
 </code></pre>

@@ -1,12 +1,12 @@
 // @ts-ignore
-import hljs from "highlight.js/lib/core"
+// import hljs from "highlight.js/lib/core"
 import "highlight.js/styles/foundation.css"
 // @ts-ignore
-import hljsDefineSolidity from "highlightjs-solidity"
+// import hljsDefineSolidity from "highlightjs-solidity"
 import React, { useEffect } from "react"
 
-hljsDefineSolidity(hljs)
-hljs.initHighlightingOnLoad()
+// hljsDefineSolidity(hljs)
+// hljs.initHighlightingOnLoad()
 
 interface Props {
   html: string

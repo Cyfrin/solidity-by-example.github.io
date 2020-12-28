@@ -13,109 +13,109 @@ a function is a useful technique.</p>
 <h3 id=\\"vulnerability\\">Vulnerability</h3>
 <p>Same signature can be used multiple times to execute a function. This can be harmful
 if the signer&#39;s intention was to approve a transaction once.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
-pragma experimental ABIEncoderV2;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.5.16;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">experimental</span> <span class=\\"hljs-built_in\\">ABIEncoderV2</span>;</span>
 
-import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\";
-contract MultiSigWallet {
-    using ECDSA for bytes32;
+<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\"</span>;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">MultiSigWallet</span> </span>{
+    <span class=\\"hljs-keyword\\">using</span> <span class=\\"hljs-title\\">ECDSA</span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">for</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">bytes32</span></span>;
 
-    address[2] public owners;
+    <span class=\\"hljs-keyword\\">address</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">public</span> owners;
 
-    constructor(address[2] memory _owners) public payable {
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _owners</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         owners = _owners;
     }
 
-    function deposit() external payable {}
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">deposit</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
 
-    function transfer(address _to, uint _amount, bytes[2] memory _sigs)
-        public
-    {
-        bytes32 txHash = getTxHash(_to, _amount);
-        require(_checkSigs(_sigs, txHash), \\"invalid sig\\");
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">bytes</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _sigs</span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
+    </span>{
+        <span class=\\"hljs-keyword\\">bytes32</span> txHash = getTxHash(_to, _amount);
+        <span class=\\"hljs-built_in\\">require</span>(_checkSigs(_sigs, txHash), <span class=\\"hljs-string\\">\\"invalid sig\\"</span>);
 
-        (bool sent, ) = _to.call.value(_amount)(\\"\\");
-        require(sent, \\"Failed to send Ether\\");
+        (<span class=\\"hljs-keyword\\">bool</span> sent, ) = _to.<span class=\\"hljs-built_in\\">call</span>.<span class=\\"hljs-built_in\\">value</span>(_amount)(<span class=\\"hljs-string\\">\\"\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(sent, <span class=\\"hljs-string\\">\\"Failed to send Ether\\"</span>);
     }
 
-    function getTxHash(address _to, uint _amount) public view returns (bytes32) {
-        return keccak256(abi.encodePacked(_to, _amount));
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getTxHash</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(_to, _amount));
     }
 
-    function _checkSigs(
-        bytes[2] memory _sigs,
-        bytes32 _txHash
-    ) private view returns (bool) {
-        bytes32 ethSignedHash = _txHash.toEthSignedMessageHash();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">_checkSigs</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">bytes</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _sigs,
+        <span class=\\"hljs-keyword\\">bytes32</span> _txHash
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">private</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">bytes32</span> ethSignedHash = _txHash.toEthSignedMessageHash();
 
-        for (uint i = 0; i &lt; _sigs.length; i++) {
-            address signer = ethSignedHash.recover(_sigs[i]);
-            bool valid = signer == owners[i];
+        <span class=\\"hljs-keyword\\">for</span> (<span class=\\"hljs-keyword\\">uint</span> i = <span class=\\"hljs-number\\">0</span>; i &lt; _sigs.<span class=\\"hljs-built_in\\">length</span>; i++) {
+            <span class=\\"hljs-keyword\\">address</span> signer = ethSignedHash.recover(_sigs[i]);
+            <span class=\\"hljs-keyword\\">bool</span> valid = signer == owners[i];
 
-            if (!valid) {
-                return false;
+            <span class=\\"hljs-keyword\\">if</span> (!valid) {
+                <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-literal\\">false</span>;
             }
         }
 
-        return true;
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-literal\\">true</span>;
     }
 }</code></pre>
 <h3 id=\\"preventative-techniques\\">Preventative Techniques</h3>
 <p>Sign messages with <code>nonce</code> and address of the contract.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
-pragma experimental ABIEncoderV2;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.5.16;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">experimental</span> <span class=\\"hljs-built_in\\">ABIEncoderV2</span>;</span>
 
-import \\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\";
+<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol\\"</span>;
 
-contract MultiSigWallet {
-    using ECDSA for bytes32;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">MultiSigWallet</span> </span>{
+    <span class=\\"hljs-keyword\\">using</span> <span class=\\"hljs-title\\">ECDSA</span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">for</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">bytes32</span></span>;
 
-    address[2] public owners;
-    mapping(bytes32 =&gt; bool) public executed;
+    <span class=\\"hljs-keyword\\">address</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">public</span> owners;
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">bytes32</span> =&gt; <span class=\\"hljs-keyword\\">bool</span>) <span class=\\"hljs-keyword\\">public</span> executed;
 
-    constructor(address[2] memory _owners) public payable {
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _owners</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         owners = _owners;
     }
 
-    function deposit() external payable {}
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">deposit</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
 
-    function transfer(address _to, uint _amount, uint _nonce, bytes[2] memory _sigs)
-        public
-    {
-        bytes32 txHash = getTxHash(_to, _amount, _nonce);
-        require(!executed[txHash], \\"tx executed\\");
-        require(_checkSigs(_sigs, txHash), \\"invalid sig\\");
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">uint</span> _nonce, <span class=\\"hljs-keyword\\">bytes</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _sigs</span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
+    </span>{
+        <span class=\\"hljs-keyword\\">bytes32</span> txHash = getTxHash(_to, _amount, _nonce);
+        <span class=\\"hljs-built_in\\">require</span>(!executed[txHash], <span class=\\"hljs-string\\">\\"tx executed\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(_checkSigs(_sigs, txHash), <span class=\\"hljs-string\\">\\"invalid sig\\"</span>);
 
-        executed[txHash] = true;
+        executed[txHash] = <span class=\\"hljs-literal\\">true</span>;
 
-        (bool sent, ) = _to.call.value(_amount)(\\"\\");
-        require(sent, \\"Failed to send Ether\\");
+        (<span class=\\"hljs-keyword\\">bool</span> sent, ) = _to.<span class=\\"hljs-built_in\\">call</span>.<span class=\\"hljs-built_in\\">value</span>(_amount)(<span class=\\"hljs-string\\">\\"\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(sent, <span class=\\"hljs-string\\">\\"Failed to send Ether\\"</span>);
     }
 
-    function getTxHash(address _to, uint _amount, uint _nonce) public view returns (bytes32) {
-        return keccak256(abi.encodePacked(address(this), _to, _amount, _nonce));
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getTxHash</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">uint</span> _nonce</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>), _to, _amount, _nonce));
     }
 
-    function _checkSigs(
-        bytes[2] memory _sigs,
-        bytes32 _txHash
-    ) private view returns (bool) {
-        bytes32 ethSignedHash = _txHash.toEthSignedMessageHash();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">_checkSigs</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">bytes</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _sigs,
+        <span class=\\"hljs-keyword\\">bytes32</span> _txHash
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">private</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">bytes32</span> ethSignedHash = _txHash.toEthSignedMessageHash();
 
-        for (uint i = 0; i &lt; _sigs.length; i++) {
-            address signer = ethSignedHash.recover(_sigs[i]);
-            bool valid = signer == owners[i];
+        <span class=\\"hljs-keyword\\">for</span> (<span class=\\"hljs-keyword\\">uint</span> i = <span class=\\"hljs-number\\">0</span>; i &lt; _sigs.<span class=\\"hljs-built_in\\">length</span>; i++) {
+            <span class=\\"hljs-keyword\\">address</span> signer = ethSignedHash.recover(_sigs[i]);
+            <span class=\\"hljs-keyword\\">bool</span> valid = signer == owners[i];
 
-            if (!valid) {
-                return false;
+            <span class=\\"hljs-keyword\\">if</span> (!valid) {
+                <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-literal\\">false</span>;
             }
         }
 
-        return true;
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-literal\\">true</span>;
     }
 }
 
-/*
+<span class=\\"hljs-comment\\">/*
 // owners
 0xe19aea93F6C1dBef6A3776848bE099A7c3253ac8
 0xfa854FE5339843b3e9Bfd8554B38BD042A42e340
@@ -132,7 +132,7 @@ contract MultiSigWallet {
 // signatures
 0x120f8ed8f2fa55498f2ef0a22f26e39b9b51ed29cc93fe0ef3ed1756f58fad0c6eb5a1d6f3671f8d5163639fdc40bb8720de6d8f2523077ad6d1138a60923b801c
 0xa240a487de1eb5bb971e920cb0677a47ddc6421e38f7b048f8aa88266b2c884a10455a52dc76a203a1a9a953418469f9eec2c59e87201bbc8db0e4d9796935cb1b
-*/</code></pre>
+*/</span></code></pre>
 "
   title="Signature Replay"
   version="0.6.10"

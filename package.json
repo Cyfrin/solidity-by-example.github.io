@@ -5,7 +5,6 @@
   "homepage": "https://solidity-by-example.org",
   "dependencies": {
     "highlight.js": "^10.5.0",
-    "highlightjs-solidity": "^1.0.20",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -48,6 +47,7 @@
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
     "gh-pages": "^3.1.0",
+    "highlightjs-solidity": "^1.0.20",
     "marked": "^1.2.7",
     "mustache": "^4.1.0",
     "react-snap": "^1.23.0",

@@ -9,38 +9,38 @@ exports[`it renders 1`] = `
 <pre><code>├── Import.sol
 └── Foo.sol</code></pre>
 <p>Foo.sol</p>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-contract Foo {
-    string public name = \\"Foo\\";
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Foo</span> </span>{
+    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> name = <span class=\\"hljs-string\\">\\"Foo\\"</span>;
 }
 </code></pre>
 <p>Import.sol</p>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-// import Foo.sol from current directory
-import \\"./Foo.sol\\";
+<span class=\\"hljs-comment\\">// import Foo.sol from current directory</span>
+<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"./Foo.sol\\"</span>;
 
-contract Import {
-    // Initialize Foo.sol
-    Foo public foo = new Foo();
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Import</span> </span>{
+    <span class=\\"hljs-comment\\">// Initialize Foo.sol</span>
+    Foo <span class=\\"hljs-keyword\\">public</span> foo = <span class=\\"hljs-keyword\\">new</span> Foo();
 
-    // Test Foo.sol by getting it&#39;s name.
-    function getFooName() public view returns (string memory) {
-        return foo.name();
+    <span class=\\"hljs-comment\\">// Test Foo.sol by getting it&#x27;s name.</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getFooName</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> foo.<span class=\\"hljs-built_in\\">name</span>();
     }
 }
 </code></pre>
 <h3 id=\\"external\\">External</h3>
 <p>You can also import from <a href=\\"https://github.com\\">GitHub</a> by simply copying the url</p>
-<pre><code class=\\"language-solidity\\">// https://github.com/owner/repo/blob/branch/path/to/Contract.sol
-import \\"https://github.com/owner/repo/blob/branch/path/to/Contract.sol\\";
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// https://github.com/owner/repo/blob/branch/path/to/Contract.sol</span>
+<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/owner/repo/blob/branch/path/to/Contract.sol\\"</span>;
 
-// Example import ECDSA.sol from openzeppelin-contract repo, release-v3.0.0 branch
-// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol
-import \\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol\\";</code></pre>
+<span class=\\"hljs-comment\\">// Example import ECDSA.sol from openzeppelin-contract repo, release-v3.0.0 branch</span>
+<span class=\\"hljs-comment\\">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol</span>
+<span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol\\"</span>;</code></pre>
 "
   title="Import"
   version="0.6.10"

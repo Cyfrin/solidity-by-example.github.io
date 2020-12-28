@@ -4,8 +4,12 @@ import path from "path"
 import yaml from "yaml"
 import mustache from "mustache"
 import marked from "marked"
+import hljs from "highlight.js"
+// @ts-ignore
+import { definer } from "highlightjs-solidity"
 import { exists, copy, removeExt, getExt, renderTemplateToFile } from "./lib"
 
+hljs.registerLanguage("solidity", definer)
 const { readFile, readdir } = fs.promises
 
 function findIndexOfFrontMatter(lines: string[]): number {
@@ -82,7 +86,14 @@ async function mdToHtml(filePath: string) {
   const { content, metadata } = parse(md)
 
   const markdown = mustache.render(content, codes)
-  const html = marked(markdown)
+  const html = marked(markdown, {
+    highlight: (code, lang) => {
+      if (lang === "solidity") {
+        return hljs.highlight(lang, code).value
+      }
+      return code
+    },
+  })
     .replace(/&quot;/g, `"`)
     .replace(/\\/g, `\\\\`)
 

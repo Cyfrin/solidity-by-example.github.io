@@ -5,10 +5,10 @@ export const description = "An example of bi-directional payment channels in Sol
 
 const html = `<p>Bi-directional payment channels allow participants <code>Alice</code> and <code>Bob</code> to repeatedly transfer Ether off chain.</p>
 <p>Payments can go both ways, <code>Alice</code> pays <code>Bob</code> and <code>Bob</code> pays <code>Alice</code>.</p>
-<pre><code class="language-solidity">pragma solidity ^0.5.16;
-pragma experimental ABIEncoderV2;
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.5.16;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">experimental</span> <span class="hljs-built_in">ABIEncoderV2</span>;</span>
 
-/*
+<span class="hljs-comment">/*
 Opening a channel
 1. Alice and Bob fund a multi-sig wallet
 2. Precompute payment channel address
@@ -32,51 +32,51 @@ Closing a channel when Alice and Bob do not agree on the final balances
 1. Deploy payment channel from multi-sig
 2. call challengeExit() to start the process of closing a channel
 3. Alice and Bob can withdraw funds once the channel is expired
-*/
+*/</span>
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol";
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/cryptography/ECDSA.sol"</span>;
 
-contract BiDirectionalPaymentChannel {
-    using SafeMath for uint;
-    using ECDSA for bytes32;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">BiDirectionalPaymentChannel</span> </span>{
+    <span class="hljs-keyword">using</span> <span class="hljs-title">SafeMath</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint</span></span>;
+    <span class="hljs-keyword">using</span> <span class="hljs-title">ECDSA</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">bytes32</span></span>;
 
-    event ChallengeExit(address indexed sender, uint nonce);
-    event Withdraw(address indexed to, uint amount);
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">ChallengeExit</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> sender, <span class="hljs-keyword">uint</span> nonce</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> amount</span>)</span>;
 
-    address payable[2] public users;
-    mapping(address =&gt; bool) public isUser;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">public</span> users;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> isUser;
 
-    mapping(address =&gt; uint) public balances;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
 
-    uint public challengePeriod;
-    uint public expiresAt;
-    uint public nonce;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> challengePeriod;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> expiresAt;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> nonce;
 
-    modifier checkBalances(uint[2] memory _balances) {
-        require(
-            address(this).balance &gt;= _balances[0].add(_balances[1]),
-            "balance of contract must be &gt;= to the total balance of users"
+    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">checkBalances</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances</span>) </span>{
+        <span class="hljs-built_in">require</span>(
+            <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span> &gt;= _balances[<span class="hljs-number">0</span>].add(_balances[<span class="hljs-number">1</span>]),
+            <span class="hljs-string">"balance of contract must be &gt;= to the total balance of users"</span>
         );
-        _;
+        <span class="hljs-keyword">_</span>;
     }
 
-    // NOTE: deposit from multi-sig wallet
-    constructor(
-        address payable[2] memory _users,
-        uint[2] memory _balances,
-        uint _expiresAt,
-        uint _challengePeriod
-    ) public payable checkBalances(_balances) {
-        require(_expiresAt &gt; block.timestamp, "Expiration must be &gt; now");
-        require(_challengePeriod &gt; 0, "Challenge period must be &gt; 0");
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> deposit from multi-sig wallet</span>
+    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _users,
+        <span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances,
+        <span class="hljs-keyword">uint</span> _expiresAt,
+        <span class="hljs-keyword">uint</span> _challengePeriod
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title">checkBalances</span>(<span class="hljs-params">_balances</span>) </span>{
+        <span class="hljs-built_in">require</span>(_expiresAt &gt; <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>, <span class="hljs-string">"Expiration must be &gt; now"</span>);
+        <span class="hljs-built_in">require</span>(_challengePeriod &gt; <span class="hljs-number">0</span>, <span class="hljs-string">"Challenge period must be &gt; 0"</span>);
 
-        for (uint i = 0; i &lt; _users.length; i++) {
-            address payable user = _users[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _users.<span class="hljs-built_in">length</span>; i++) {
+            <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> user = _users[i];
 
-            require(!isUser[user], "user must be unique");
+            <span class="hljs-built_in">require</span>(!isUser[user], <span class="hljs-string">"user must be unique"</span>);
             users[i] = user;
-            isUser[user] = true;
+            isUser[user] = <span class="hljs-literal">true</span>;
 
             balances[user] = _balances[i];
         }
@@ -85,91 +85,91 @@ contract BiDirectionalPaymentChannel {
         challengePeriod = _challengePeriod;
     }
 
-    function verify(
-        bytes[2] memory _signatures,
-        address _contract,
-        address[2] memory _signers,
-        uint[2] memory _balances,
-        uint _nonce
-    ) public pure returns (bool) {
-        for (uint i = 0; i &lt; _signatures.length; i++) {
-            /*
-            NOTE: sign with address of this contract to protect
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params">
+        <span class="hljs-keyword">bytes</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _signatures,
+        <span class="hljs-keyword">address</span> _contract,
+        <span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _signers,
+        <span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances,
+        <span class="hljs-keyword">uint</span> _nonce
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _signatures.<span class="hljs-built_in">length</span>; i++) {
+            <span class="hljs-comment">/*
+            <span class="hljs-doctag">NOTE:</span> sign with address of this contract to protect
                   agains replay attack on other contracts
-            */
-            bool valid = _signers[i] ==
-                keccak256(abi.encodePacked(_contract, _balances, _nonce))
+            */</span>
+            <span class="hljs-keyword">bool</span> valid = _signers[i] ==
+                <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_contract, _balances, _nonce))
                     .toEthSignedMessageHash()
                     .recover(_signatures[i]);
 
-            if (!valid) {
-                return false;
+            <span class="hljs-keyword">if</span> (!valid) {
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
             }
         }
 
-        return true;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     }
 
-    modifier checkSignatures(
-        bytes[2] memory _signatures,
-        uint[2] memory _balances,
-        uint _nonce
-    ) {
-        // NOTE: need to cast payable address to address type (not in 0.6)
-        address[2] memory signers;
-        for (uint i = 0; i &lt; users.length; i++) {
-            signers[i] = address(users[i]);
+    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">checkSignatures</span>(<span class="hljs-params">
+        <span class="hljs-keyword">bytes</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _signatures,
+        <span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances,
+        <span class="hljs-keyword">uint</span> _nonce
+    </span>) </span>{
+        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> need to cast payable address to address type (not in 0.6)</span>
+        <span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> signers;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; users.<span class="hljs-built_in">length</span>; i++) {
+            signers[i] = <span class="hljs-keyword">address</span>(users[i]);
         }
 
-        require(
-            verify(_signatures, address(this), signers, _balances, _nonce),
-            "Invalid signature"
+        <span class="hljs-built_in">require</span>(
+            verify(_signatures, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), signers, _balances, _nonce),
+            <span class="hljs-string">"Invalid signature"</span>
         );
 
-        _;
+        <span class="hljs-keyword">_</span>;
     }
 
-    modifier onlyUser() {
-        require(isUser[msg.sender], "Not user");
-        _;
+    <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">onlyUser</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">require</span>(isUser[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"Not user"</span>);
+        <span class="hljs-keyword">_</span>;
     }
 
-    function challengeExit(
-        uint[2] memory _balances,
-        uint _nonce,
-        bytes[2] memory _signatures
-    )
-        public
-        onlyUser
-        checkSignatures(_signatures, _balances, _nonce)
-        checkBalances(_balances)
-    {
-        require(block.timestamp &lt; expiresAt, "Expired challenge period");
-        require(_nonce &gt; nonce, "Nonce must be greater than the current nonce");
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">challengeExit</span>(<span class="hljs-params">
+        <span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances,
+        <span class="hljs-keyword">uint</span> _nonce,
+        <span class="hljs-keyword">bytes</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _signatures
+    </span>)
+        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+        <span class="hljs-title">onlyUser</span>
+        <span class="hljs-title">checkSignatures</span>(<span class="hljs-params">_signatures, _balances, _nonce</span>)
+        <span class="hljs-title">checkBalances</span>(<span class="hljs-params">_balances</span>)
+    </span>{
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &lt; expiresAt, <span class="hljs-string">"Expired challenge period"</span>);
+        <span class="hljs-built_in">require</span>(_nonce &gt; nonce, <span class="hljs-string">"Nonce must be greater than the current nonce"</span>);
 
-        for (uint i = 0; i &lt; _balances.length; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _balances.<span class="hljs-built_in">length</span>; i++) {
             balances[users[i]] = _balances[i];
         }
 
         nonce = _nonce;
-        expiresAt = block.timestamp.add(challengePeriod);
+        expiresAt = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>.add(challengePeriod);
 
-        emit ChallengeExit(msg.sender, nonce);
+        <span class="hljs-keyword">emit</span> ChallengeExit(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, nonce);
     }
 
-    function withdraw() public onlyUser {
-        require(
-            block.timestamp &gt;= expiresAt,
-            "Challenge period has not expired yet"
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyUser</span> </span>{
+        <span class="hljs-built_in">require</span>(
+            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= expiresAt,
+            <span class="hljs-string">"Challenge period has not expired yet"</span>
         );
 
-        uint amount = balances[msg.sender];
-        balances[msg.sender] = 0;
+        <span class="hljs-keyword">uint</span> amount = balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
+        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;
 
-        (bool sent, ) = msg.sender.call.value(amount)("");
-        require(sent, "Failed to send Ether");
+        (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(amount)(<span class="hljs-string">""</span>);
+        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 
-        emit Withdraw(msg.sender, amount);
+        <span class="hljs-keyword">emit</span> Withdraw(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount);
     }
 }
 </code></pre>

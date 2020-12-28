@@ -4,25 +4,25 @@ exports[`it renders 1`] = `
 <Example
   description="Example of smart contract in Solidity"
   html="<p>Here is a simple contract that you can get, increment and decrement the count store in this contract.</p>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-contract Counter {
-    uint public count;
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Counter</span> </span>{
+    <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> count;
 
-    // Function to get the current count
-    function get() public view returns (uint) {
-        return count;
+    <span class=\\"hljs-comment\\">// Function to get the current count</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">get</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> count;
     }
 
-    // Function to increment count by 1
-    function inc() public {
-        count += 1;
+    <span class=\\"hljs-comment\\">// Function to increment count by 1</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">inc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        count += <span class=\\"hljs-number\\">1</span>;
     }
 
-    // Function to decrement count by 1
-    function dec() public {
-        count -= 1;
+    <span class=\\"hljs-comment\\">// Function to decrement count by 1</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">dec</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        count -= <span class=\\"hljs-number\\">1</span>;
     }
 }
 </code></pre>

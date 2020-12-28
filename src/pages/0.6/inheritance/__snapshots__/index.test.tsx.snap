@@ -8,65 +8,65 @@ exports[`it renders 1`] = `
 <p>Function that is going to override a parent function must use the keyword <code>override</code>.</p>
 <p>Order of inheritance is important.</p>
 <p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-/* Graph of inheritance
+<span class=\\"hljs-comment\\">/* Graph of inheritance
     A
    / \\\\
   B   C
  / \\\\ /
 F  D,E
 
-*/
+*/</span>
 
-contract A {
-    function foo() public pure virtual returns (string memory) {
-        return \\"A\\";
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">A</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"A\\"</span>;
     }
 }
 
-// Contracts inherit other contracts by using the keyword &#39;is&#39;.
-contract B is A {
-    // Override A.foo()
-    function foo() public pure virtual override returns (string memory) {
-        return \\"B\\";
+<span class=\\"hljs-comment\\">// Contracts inherit other contracts by using the keyword &#x27;is&#x27;.</span>
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">B</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">A</span> </span>{
+    <span class=\\"hljs-comment\\">// Override A.foo()</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"B\\"</span>;
     }
 }
 
-contract C is A {
-    // Override A.foo()
-    function foo() public pure virtual override returns (string memory) {
-        return \\"C\\";
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">C</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">A</span> </span>{
+    <span class=\\"hljs-comment\\">// Override A.foo()</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"C\\"</span>;
     }
 }
 
-// Contracts can inherit from multiple parent contracts.
-// When a function is called that is defined multiple times in
-// different contracts, parent contracts are searched from
-// right to left, and in depth-first manner.
+<span class=\\"hljs-comment\\">// Contracts can inherit from multiple parent contracts.</span>
+<span class=\\"hljs-comment\\">// When a function is called that is defined multiple times in</span>
+<span class=\\"hljs-comment\\">// different contracts, parent contracts are searched from</span>
+<span class=\\"hljs-comment\\">// right to left, and in depth-first manner.</span>
 
-contract D is B, C {
-    // D.foo() returns \\"C\\"
-    // since C is the right most parent contract with function foo()
-    function foo() public pure override(B, C) returns (string memory) {
-        return super.foo();
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">D</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">B</span>, <span class=\\"hljs-title\\">C</span> </span>{
+    <span class=\\"hljs-comment\\">// D.foo() returns \\"C\\"</span>
+    <span class=\\"hljs-comment\\">// since C is the right most parent contract with function foo()</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span>(<span class=\\"hljs-params\\">B, C</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">super</span>.foo();
     }
 }
 
-contract E is C, B {
-    // E.foo() returns \\"B\\"
-    // since B is the right most parent contract with function foo()
-    function foo() public pure override(C, B) returns (string memory) {
-        return super.foo();
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">E</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">C</span>, <span class=\\"hljs-title\\">B</span> </span>{
+    <span class=\\"hljs-comment\\">// E.foo() returns \\"B\\"</span>
+    <span class=\\"hljs-comment\\">// since B is the right most parent contract with function foo()</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span>(<span class=\\"hljs-params\\">C, B</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">super</span>.foo();
     }
 }
 
-// Inheritance must be ordered from “most base-like” to “most derived”.
-// Swapping the order of A and B will throw a compilation error.
-contract F is A, B {
-    function foo() public pure override(A, B) returns (string memory) {
-        return super.foo();
+<span class=\\"hljs-comment\\">// Inheritance must be ordered from “most base-like” to “most derived”.</span>
+<span class=\\"hljs-comment\\">// Swapping the order of A and B will throw a compilation error.</span>
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">F</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">A</span>, <span class=\\"hljs-title\\">B</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span>(<span class=\\"hljs-params\\">A, B</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">super</span>.foo();
     }
 }
 </code></pre>

@@ -5,69 +5,69 @@ exports[`it renders 1`] = `
   description="An example of calling parent contracts in Solidity"
   html="<p>Parent contracts can be called directly, or by using the keyword <code>super</code>.</p>
 <p>By using the keyword <code>super</code>, all of the immediate parent contracts will be called.</p>
-<pre><code class=\\"language-solidity\\">// SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
 
-/* Inheritance tree
+<span class=\\"hljs-comment\\">/* Inheritance tree
    A
  /  \\\\
 B   C
  \\\\ /
   D
-*/
+*/</span>
 
-contract A {
-    // This is called an event. You can emit events from your function
-    // and they are logged into the transaction log.
-    // In our case, this will be useful for tracing function calls.
-    event Log(string message);
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">A</span> </span>{
+    <span class=\\"hljs-comment\\">// This is called an event. You can emit events from your function</span>
+    <span class=\\"hljs-comment\\">// and they are logged into the transaction log.</span>
+    <span class=\\"hljs-comment\\">// In our case, this will be useful for tracing function calls.</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Log</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> message</span>)</span>;
 
-    function foo() public virtual {
-        emit Log(\\"A.foo called\\");
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"A.foo called\\"</span>);
     }
 
-    function bar() public virtual {
-        emit Log(\\"A.bar called\\");
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">bar</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"A.bar called\\"</span>);
     }
 }
 
-contract B is A {
-    function foo() public virtual override {
-        emit Log(\\"B.foo called\\");
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">B</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">A</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"B.foo called\\"</span>);
         A.foo();
     }
-    function bar() public virtual override {
-        emit Log(\\"B.bar called\\");
-        super.bar();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">bar</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"B.bar called\\"</span>);
+        <span class=\\"hljs-built_in\\">super</span>.bar();
     }
 }
 
-contract C is A {
-    function foo() public virtual override {
-        emit Log(\\"C.foo called\\");
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">C</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">A</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"C.foo called\\"</span>);
         A.foo();
     }
 
-    function bar() public virtual override {
-        emit Log(\\"C.bar called\\");
-        super.bar();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">bar</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"C.bar called\\"</span>);
+        <span class=\\"hljs-built_in\\">super</span>.bar();
     }
 }
 
-contract D is B, C {
-    // Try:
-    // - Call D.foo and check the transaction logs.
-    //   Although D inherits A, B and C, it only called C and then A.
-    // - Call D.bar and check the transaction logs
-    //   D called C, then B, and finally A.
-    //   Although super was called twice (by B and C) it only called A once.
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">D</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">B</span>, <span class=\\"hljs-title\\">C</span> </span>{
+    <span class=\\"hljs-comment\\">// Try:</span>
+    <span class=\\"hljs-comment\\">// - Call D.foo and check the transaction logs.</span>
+    <span class=\\"hljs-comment\\">//   Although D inherits A, B and C, it only called C and then A.</span>
+    <span class=\\"hljs-comment\\">// - Call D.bar and check the transaction logs</span>
+    <span class=\\"hljs-comment\\">//   D called C, then B, and finally A.</span>
+    <span class=\\"hljs-comment\\">//   Although super was called twice (by B and C) it only called A once.</span>
 
-    function foo() public override(B, C) {
-        super.foo();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">foo</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span>(<span class=\\"hljs-params\\">B, C</span>) </span>{
+        <span class=\\"hljs-built_in\\">super</span>.foo();
     }
 
-    function bar() public override(B, C) {
-        super.bar();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">bar</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span>(<span class=\\"hljs-params\\">B, C</span>) </span>{
+        <span class=\\"hljs-built_in\\">super</span>.bar();
     }
 }
 </code></pre>

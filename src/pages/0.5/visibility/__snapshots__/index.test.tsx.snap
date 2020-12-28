@@ -12,69 +12,69 @@ exports[`it renders 1`] = `
 <li><code>external</code> - only other contracts and accounts can call</li>
 </ul>
 <p>State variables can be declared as <code>public</code>, <code>private</code>, or <code>internal</code> but not <code>external</code>.</p>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.5.16;</span>
 
-contract Base {
-    // Private function can only be called
-    // - inside this contract
-    // Contracts that inherit this contract cannot call this function.
-    function privateFunc() private pure returns (string memory) {
-        return \\"private function called\\";
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Base</span> </span>{
+    <span class=\\"hljs-comment\\">// Private function can only be called</span>
+    <span class=\\"hljs-comment\\">// - inside this contract</span>
+    <span class=\\"hljs-comment\\">// Contracts that inherit this contract cannot call this function.</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">privateFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">private</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"private function called\\"</span>;
     }
 
-    function testPrivateFunc() public pure returns (string memory) {
-        return privateFunc();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testPrivateFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> privateFunc();
     }
 
-    // Internal function can be called
-    // - inside this contract
-    // - inside contracts that inherit this contract
-    function internalFunc() internal pure returns (string memory) {
-        return \\"internal function called\\";
+    <span class=\\"hljs-comment\\">// Internal function can be called</span>
+    <span class=\\"hljs-comment\\">// - inside this contract</span>
+    <span class=\\"hljs-comment\\">// - inside contracts that inherit this contract</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">internalFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">internal</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"internal function called\\"</span>;
     }
 
-    function testInternalFunc() public pure returns (string memory) {
-        return internalFunc();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testInternalFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> internalFunc();
     }
 
-    // Public functions can be called
-    // - inside this contract
-    // - inside contracts that inherit this contract
-    // - by other contracts and accounts
-    function publicFunc() public pure returns (string memory) {
-        return \\"public function called\\";
+    <span class=\\"hljs-comment\\">// Public functions can be called</span>
+    <span class=\\"hljs-comment\\">// - inside this contract</span>
+    <span class=\\"hljs-comment\\">// - inside contracts that inherit this contract</span>
+    <span class=\\"hljs-comment\\">// - by other contracts and accounts</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">publicFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"public function called\\"</span>;
     }
 
-    // External functions can only be called
-    // - by other contracts and accounts
-    function externalFunc() external pure returns (string memory) {
-        return \\"external function called\\";
+    <span class=\\"hljs-comment\\">// External functions can only be called</span>
+    <span class=\\"hljs-comment\\">// - by other contracts and accounts</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">externalFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-string\\">\\"external function called\\"</span>;
     }
 
-    // This function will not compile since we&#39;re trying to call
-    // an external function here.
-    // function testExternalFunc() public pure returns (string memory) {
-    //     return externalFunc();
-    // }
+    <span class=\\"hljs-comment\\">// This function will not compile since we&#x27;re trying to call</span>
+    <span class=\\"hljs-comment\\">// an external function here.</span>
+    <span class=\\"hljs-comment\\">// function testExternalFunc() public pure returns (string memory) {</span>
+    <span class=\\"hljs-comment\\">//     return externalFunc();</span>
+    <span class=\\"hljs-comment\\">// }</span>
 
-    // State variables
-    string private privateVar = \\"my private variable\\";
-    string internal internalVar = \\"my internal variable\\";
-    string public publicVar = \\"my public variable\\";
-    // State variables cannot be external so this code won&#39;t compile.
-    // string external externalVar = \\"my external variable\\";
+    <span class=\\"hljs-comment\\">// State variables</span>
+    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">private</span> privateVar = <span class=\\"hljs-string\\">\\"my private variable\\"</span>;
+    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">internal</span> internalVar = <span class=\\"hljs-string\\">\\"my internal variable\\"</span>;
+    <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> publicVar = <span class=\\"hljs-string\\">\\"my public variable\\"</span>;
+    <span class=\\"hljs-comment\\">// State variables cannot be external so this code won&#x27;t compile.</span>
+    <span class=\\"hljs-comment\\">// string external externalVar = \\"my external variable\\";</span>
 }
 
-contract Child is Base {
-    // Inherited contracts do not have access to private functions
-    // and state variables.
-    // function testPrivateFunc() public pure returns (string memory) {
-    //     return privateFunc();
-    // }
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Child</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">Base</span> </span>{
+    <span class=\\"hljs-comment\\">// Inherited contracts do not have access to private functions</span>
+    <span class=\\"hljs-comment\\">// and state variables.</span>
+    <span class=\\"hljs-comment\\">// function testPrivateFunc() public pure returns (string memory) {</span>
+    <span class=\\"hljs-comment\\">//     return privateFunc();</span>
+    <span class=\\"hljs-comment\\">// }</span>
 
-    // Internal function call be called inside child contracts.
-    function testInternalFunc() public pure returns (string memory) {
-        return internalFunc();
+    <span class=\\"hljs-comment\\">// Internal function call be called inside child contracts.</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testInternalFunc</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> internalFunc();
     }
 }
 </code></pre>

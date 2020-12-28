@@ -8,19 +8,19 @@ exports[`it renders 1`] = `
 <li>Listening for events and updating user interface</li>
 <li>A cheap form of storage</li>
 </ul>
-<pre><code class=\\"language-solidity\\">pragma solidity ^0.5.16;
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.5.16;</span>
 
-contract Event {
-    // Event declaration
-    // Up to 3 parameters can be indexed.
-    // Indexed parameters helps you filter the logs by the indexed parameter
-    event Log(address indexed sender, string message);
-    event AnotherLog();
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Event</span> </span>{
+    <span class=\\"hljs-comment\\">// Event declaration</span>
+    <span class=\\"hljs-comment\\">// Up to 3 parameters can be indexed.</span>
+    <span class=\\"hljs-comment\\">// Indexed parameters helps you filter the logs by the indexed parameter</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Log</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> sender, <span class=\\"hljs-keyword\\">string</span> message</span>)</span>;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">AnotherLog</span>(<span class=\\"hljs-params\\"></span>)</span>;
 
-    function test() public {
-        emit Log(msg.sender, \\"Hello World!\\");
-        emit Log(msg.sender, \\"Hello EVM!\\");
-        emit AnotherLog();
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">test</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-string\\">\\"Hello World!\\"</span>);
+        <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-string\\">\\"Hello EVM!\\"</span>);
+        <span class=\\"hljs-keyword\\">emit</span> AnotherLog();
     }
 }
 </code></pre>
