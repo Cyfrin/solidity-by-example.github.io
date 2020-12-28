@@ -5,7 +5,7 @@ exports[`it renders 1`] = `
   description="Learn how to create new contract from inside a contract with Solidity"
   html="<p>Contracts can be created by other contracts using the <code>new</code> keyword.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.0;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Car</span> </span>{
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> owner;

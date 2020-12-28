@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 // External contract used for try / catch examples
 contract Foo {
     address public owner;
 
-    constructor (address _owner) public {
+    constructor (address _owner) {
         require(_owner != address(0), "invalid address");
         assert(_owner != 0x0000000000000000000000000000000000000001);
         owner = _owner;
@@ -23,7 +23,7 @@ contract Bar {
 
     Foo public foo;
 
-    constructor() public {
+    constructor() {
         // This Foo contract is used for example of try catch with external call
         foo = new Foo(msg.sender);
     }

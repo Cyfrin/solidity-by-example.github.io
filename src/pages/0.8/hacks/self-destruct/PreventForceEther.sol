@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract EtherGame {
     uint public targetAmount = 3 ether;

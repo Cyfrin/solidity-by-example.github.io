@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 Note: cannot use web3 on JVM, so use the contract deployed on ropsten
@@ -50,7 +50,7 @@ contract Vault {
     // where slot = 7, key = map key
     mapping(uint => User) private idToUser;
 
-    constructor(bytes32 _password) public {
+    constructor(bytes32 _password) {
         password = _password;
     }
 

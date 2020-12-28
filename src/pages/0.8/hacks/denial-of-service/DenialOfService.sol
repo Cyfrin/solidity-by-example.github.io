@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 /*
 The goal of KingOfEther is to become the king by sending more Ether than
 the previous king. Previous king will be refunded with the amount of Ether
@@ -39,7 +39,7 @@ contract KingOfEther {
 contract Attack {
     KingOfEther kingOfEther;
 
-    constructor(KingOfEther _kingOfEther) public {
+    constructor(KingOfEther _kingOfEther) {
         kingOfEther = KingOfEther(_kingOfEther);
     }
 

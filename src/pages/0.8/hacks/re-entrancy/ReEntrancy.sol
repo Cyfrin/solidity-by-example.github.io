@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 EtherStore is a contract where you can deposit any amount and withdraw at most
@@ -41,13 +41,13 @@ contract EtherStore {
     function withdraw(uint _amount) public {
         require(balances[msg.sender] >= _amount);
         require(_amount <= WITHDRAWAL_LIMIT);
-        require(now >= lastWithdrawTime[msg.sender] + 1 weeks);
+        require(block.timestamp >= lastWithdrawTime[msg.sender] + 1 weeks);
 
         (bool sent, ) = msg.sender.call{value: _amount}("");
         require(sent, "Failed to send Ether");
 
         balances[msg.sender] -= _amount;
-        lastWithdrawTime[msg.sender] = now;
+        lastWithdrawTime[msg.sender] = block.timestamp;
     }
 
     // Helper function to check the balance of this contract
@@ -59,7 +59,7 @@ contract EtherStore {
 contract Attack {
     EtherStore public etherStore;
 
-    constructor(address _etherStoreAddress) public {
+    constructor(address _etherStoreAddress) {
         etherStore = EtherStore(_etherStoreAddress);
     }
 

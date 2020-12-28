@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract MultiSigWallet {
     event Deposit(address indexed sender, uint amount, uint balance);
@@ -23,9 +23,11 @@ contract MultiSigWallet {
         uint value;
         bytes data;
         bool executed;
-        mapping(address => bool) isConfirmed;
         uint numConfirmations;
     }
+
+    // mapping from tx index => owner => bool
+    mapping(uint => mapping(address => bool)) public isConfirmed;
 
     Transaction[] public transactions;
 
@@ -45,11 +47,11 @@ contract MultiSigWallet {
     }
 
     modifier notConfirmed(uint _txIndex) {
-        require(!transactions[_txIndex].isConfirmed[msg.sender], "tx already confirmed");
+        require(!isConfirmed[_txIndex][msg.sender], "tx already confirmed");
         _;
     }
 
-    constructor(address[] memory _owners, uint _numConfirmationsRequired) public {
+    constructor(address[] memory _owners, uint _numConfirmationsRequired) {
         require(_owners.length > 0, "owners required");
         require(
             _numConfirmationsRequired > 0 && _numConfirmationsRequired <= _owners.length,
@@ -98,9 +100,8 @@ contract MultiSigWallet {
         notConfirmed(_txIndex)
     {
         Transaction storage transaction = transactions[_txIndex];
-
-        transaction.isConfirmed[msg.sender] = true;
         transaction.numConfirmations += 1;
+        isConfirmed[_txIndex][msg.sender] = true;
 
         emit ConfirmTransaction(msg.sender, _txIndex);
     }
@@ -134,10 +135,10 @@ contract MultiSigWallet {
     {
         Transaction storage transaction = transactions[_txIndex];
 
-        require(transaction.isConfirmed[msg.sender], "tx not confirmed");
+        require(isConfirmed[_txIndex][msg.sender], "tx not confirmed");
 
-        transaction.isConfirmed[msg.sender] = false;
         transaction.numConfirmations -= 1;
+        isConfirmed[_txIndex][msg.sender] = false;
 
         emit RevokeConfirmation(msg.sender, _txIndex);
     }
@@ -164,15 +165,5 @@ contract MultiSigWallet {
             transaction.executed,
             transaction.numConfirmations
         );
-    }
-
-    function isConfirmed(uint _txIndex, address _owner)
-        public
-        view
-        returns (bool)
-    {
-        Transaction storage transaction = transactions[_txIndex];
-
-        return transaction.isConfirmed[_owner];
     }
 }

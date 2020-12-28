@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 Let's say Alice can see the code of Foo and Bar but not Mal.
@@ -19,7 +19,7 @@ will actually execute the code at Mal.
 contract Foo {
     Bar bar;
 
-    constructor(address _bar) public {
+    constructor(address _bar) {
         bar = Bar(_bar);
     }
 

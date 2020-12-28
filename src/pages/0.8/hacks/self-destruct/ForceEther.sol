@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 // The goal of this game is to be the 7th player to deposit 1 Ether.
 // Players can deposit only 1 Ether at a time.
@@ -43,7 +43,7 @@ contract EtherGame {
 contract Attack {
     EtherGame etherGame;
 
-    constructor(EtherGame _etherGame) public {
+    constructor(EtherGame _etherGame) {
         etherGame = EtherGame(_etherGame);
     }
 

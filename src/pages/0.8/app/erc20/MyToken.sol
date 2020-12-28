@@ -1,13 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/ERC20.sol";
 
 contract MyToken is ERC20 {
-    constructor (string memory name, string memory symbol)
-        ERC20(name, symbol)
-        public
-    {
+    constructor (string memory name, string memory symbol) ERC20(name, symbol) {
         // Mint 100 tokens to msg.sender
         // Similar to how
         // 1 dollar = 100 cents

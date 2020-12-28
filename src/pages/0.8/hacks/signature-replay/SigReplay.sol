@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol";
 
 contract MultiSigWallet {
     using ECDSA for bytes32;
 
     address[2] public owners;
 
-    constructor(address[2] memory _owners) public payable {
+    constructor(address[2] memory _owners) payable {
         owners = _owners;
     }
 

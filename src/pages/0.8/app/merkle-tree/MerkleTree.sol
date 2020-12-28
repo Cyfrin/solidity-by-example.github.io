@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract MerkleProof {
     function verify(
@@ -28,7 +28,7 @@ contract MerkleProof {
 contract TestMerkleProof is MerkleProof {
     bytes32[] public hashes;
 
-    constructor() public {
+    constructor() {
         string[4] memory transactions = [
             "alice -> bob",
             "bob -> dave",

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 NOTE: cannot use blockhash in Remix so use ganache-cli
@@ -25,7 +25,7 @@ Attack computed the correct answer by simply copying the code that computes the 
 */
 
 contract GuessTheRandomNumber {
-    constructor() public payable {}
+    constructor() payable {}
 
     function guess(uint _guess) public {
         uint answer = uint(keccak256(abi.encodePacked(

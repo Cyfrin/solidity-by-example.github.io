@@ -7,7 +7,7 @@ exports[`it renders 1`] = `
 <p>This means that you will have to pay a transaction fee.</p>
 <p>On the other hand, you can read a data from a state variable, for free, without sending any transaction.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.6.10;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.0;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">SimpleStorage</span> </span>{
     <span class=\\"hljs-comment\\">// State variable to store a number</span>

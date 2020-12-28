@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/math/SafeMath.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol";
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/utils/ReentrancyGuard.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/math/SafeMath.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/utils/ReentrancyGuard.sol";
 
 
 contract UniDirectionalPaymentChannel is ReentrancyGuard {
@@ -15,7 +15,7 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
 
     uint public expiresAt;
 
-    constructor(address payable _payee, uint _expiresAt) public payable {
+    constructor(address payable _payee, uint _expiresAt) payable {
         require(_expiresAt > block.timestamp, "Expiration must be > now");
 
         payer = msg.sender;

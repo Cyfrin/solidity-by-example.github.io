@@ -1,12 +1,13 @@
 // metadata
 export const version = "0.6.10"
 export const title = "Arithmetic Overflow and Underflow"
-export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
+export const description =
+  "An example of hacking Solidity with arithmetic overflow / underflow"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Integers in Solidity overflow / underflow without any errors.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
 <span class="hljs-comment">// This contract is designed to act as a time vault.</span>
 <span class="hljs-comment">// User can deposit into this contract but cannot withdraw for atleast a week.</span>

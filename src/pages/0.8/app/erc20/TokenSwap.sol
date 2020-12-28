@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol";
 
@@ -31,7 +31,7 @@ contract TokenSwap {
         address _token2,
         address _owner2,
         uint _amount2
-    ) public {
+    ) {
         token1 = IERC20(_token1);
         owner1 = _owner1;
         amount1 = _amount1;

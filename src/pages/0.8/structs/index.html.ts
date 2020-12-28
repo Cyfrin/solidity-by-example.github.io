@@ -7,7 +7,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 <p>They are useful for grouping togther related data.</p>
 <p>Structs can be declared outside of a contract and imported in another contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Todos</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">Todo</span> {
@@ -61,7 +61,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 <h3 id="declaring-and-importing-struct">Declaring and importing Struct</h3>
 <p>File that the struct is declared in</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
 <span class="hljs-keyword">struct</span> <span class="hljs-title">Todo</span> {
     <span class="hljs-keyword">string</span> text;
@@ -69,7 +69,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 }</code></pre>
 <p>File that imports the struct above</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">"./StructDeclaration.sol"</span>;
 

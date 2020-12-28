@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.6.10"
 export const title = "Self Destruct"
-export const description = "An example of how to delete your smart contract by calling seldestruct in Solidity"
+export const description =
+  "An example of how to delete your smart contract by calling seldestruct in Solidity"
 
 const html = `<p>Contracts can be deleted from the blockchain by calling <code>selfdestruct</code>.</p>
 <p><code>selfdestruct</code> sends all remaining Ether stored in the contract to an
@@ -10,7 +11,7 @@ designated address.</p>
 <p>A malicious contract can use <code>selfdestruct</code> to
 force send Ether to any contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
 <span class="hljs-comment">// The goal of this game is to be the 7th player to deposit 1 Ether.</span>
 <span class="hljs-comment">// Players can deposit only 1 Ether at a time.</span>
@@ -72,7 +73,7 @@ Now no one can deposit and the winner cannot be set.
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Don&#39;t rely on <code>address(this).balance</code></p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EtherGame</span> </span>{
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> targetAmount = <span class="hljs-number">3</span> <span class="hljs-literal">ether</span>;

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract FunctionModifier {
     // We will use these variables to demonstrate how to use
@@ -8,7 +8,7 @@ contract FunctionModifier {
     uint public x = 10;
     bool public locked;
 
-    constructor() public {
+    constructor() {
         // Set the transaction sender as the owner of the contract.
         owner = msg.sender;
     }

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 Wallet is a simple contract where only the owner should be able to transfer
@@ -23,7 +23,7 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
 contract Wallet {
     address public owner;
 
-    constructor() public payable {
+    constructor() payable {
         owner = msg.sender;
     }
 
@@ -39,9 +39,9 @@ contract Attack {
     address payable public owner;
     Wallet wallet;
 
-    constructor(Wallet _wallet) public {
+    constructor(Wallet _wallet) {
         wallet = Wallet(_wallet);
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
 
     function attack() public {

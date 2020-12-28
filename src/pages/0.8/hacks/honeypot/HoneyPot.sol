@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 /*
 Bank is a contract that calls Logger to log events.
@@ -26,7 +26,7 @@ contract Bank {
     mapping (address => uint) public balances;
     Logger logger;
 
-    constructor(Logger _logger) public {
+    constructor(Logger _logger) {
         logger = Logger(_logger);
     }
 
@@ -59,7 +59,7 @@ contract Logger {
 contract Attack {
     Bank bank;
 
-    constructor(Bank _bank) public {
+    constructor(Bank _bank) {
         bank = Bank(_bank);
     }
 

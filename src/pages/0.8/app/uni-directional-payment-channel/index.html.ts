@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.6.10"
 export const title = "Uni-Directional Payment Channel"
-export const description = "An example of uni-directional payment channels in Solidity"
+export const description =
+  "An example of uni-directional payment channels in Solidity"
 
 const html = `<p>Payment channels allow participants to repeatedly transfer Ether off chain.</p>
 <p>Here is how this contract is used:</p>
@@ -13,11 +14,11 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
 </ul>
 <p>This is called a uni-directional payment channel since the payment can go only in a signle direction from <code>Alice</code> to <code>Bob</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.6.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.0;</span>
 
-<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/math/SafeMath.sol"</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/cryptography/ECDSA.sol"</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.0.0/contracts/utils/ReentrancyGuard.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/math/SafeMath.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/cryptography/ECDSA.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/solc-0.8/contracts/utils/ReentrancyGuard.sol"</span>;
 
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniDirectionalPaymentChannel</span> <span class="hljs-keyword">is</span> <span class="hljs-title">ReentrancyGuard</span> </span>{

@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract Payable {
     // Payable address can receive Ether
     address payable public owner;
 
     // Payable constructor can receive Ether
-    constructor() public payable {
-        owner = msg.sender;
+    constructor() payable {
+        owner = payable(msg.sender);
     }
 
     // Function to deposit Ether into this contract.

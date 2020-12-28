@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract A {
     string public name = "Contract A";
@@ -17,7 +17,7 @@ contract A {
 
 contract C is A {
     // This is the correct way to override inherited state variables.
-    constructor() public {
+    constructor() {
         name = "Contract C";
     }
 

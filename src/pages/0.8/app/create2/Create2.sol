@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.10;
+pragma solidity ^0.8.0;
 
 contract Factory {
     event Deployed(address addr, uint256 salt);
@@ -17,7 +17,7 @@ contract Factory {
     function getAddress(bytes memory bytecode, uint _salt) public view returns (address) {
         bytes32 hash = keccak256(
             abi.encodePacked(
-                byte(0xff),
+                bytes1(0xff),
                 address(this),
                 _salt,
                 keccak256(bytecode)
@@ -67,7 +67,7 @@ contract TestContract {
     address public owner;
     uint public foo;
 
-    constructor(address _owner, uint _foo) public payable {
+    constructor(address _owner, uint _foo) payable {
         owner = _owner;
         foo = _foo;
     }
