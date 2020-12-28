@@ -26,8 +26,7 @@ contract TimeLock {
     }
 
     function increaseLockTime(uint _secondsToIncrease) public {
-        // solidity 0.8 throws error on overflow / underflow
-        unchecked { lockTime[msg.sender] += _secondsToIncrease; }
+        lockTime[msg.sender] += _secondsToIncrease;
     }
 
     function withdraw() public {
