@@ -1,8 +1,8 @@
 import React from "react"
 import Example from "../../../components/Example"
-import html, { version, title, description} from "./index.html"
+import html, { version, title, description } from "./index.html"
 
-export default function () {
+function ExamplePage() {
   return (
     <Example
       version={version}
@@ -12,3 +12,5 @@ export default function () {
     />
   )
 }
+
+export default ExamplePage
