@@ -17,7 +17,7 @@ export async function copy(fromFilePath: string, toFilePath: string) {
   await writeFile(toFilePath, file)
 }
 
-export function removeExtension(file: string | undefined): string {
+export function removeExt(file: string | undefined): string {
   if (!file) {
     throw new Error(`Failed to remove extension. Invalid file name`)
   }
@@ -25,7 +25,7 @@ export function removeExtension(file: string | undefined): string {
   return file.split(".").slice(0, -1).join("")
 }
 
-export function getExtension(file: string | undefined): string {
+export function getExt(file: string | undefined): string {
   if (!file) {
     throw new Error(`Failed to get extension. Invalid file name`)
   }
