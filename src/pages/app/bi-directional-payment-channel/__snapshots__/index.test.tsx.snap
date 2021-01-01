@@ -68,7 +68,7 @@ Closing a channel when Alice and Bob do not agree on the final balances
         <span class=\\"hljs-keyword\\">uint</span>[<span class=\\"hljs-number\\">2</span>] <span class=\\"hljs-keyword\\">memory</span> _balances,
         <span class=\\"hljs-keyword\\">uint</span> _expiresAt,
         <span class=\\"hljs-keyword\\">uint</span> _challengePeriod
-    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> <span class=\\"hljs-title\\">checkBalances</span>(<span class=\\"hljs-params\\">_balances</span>) </span>{
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> <span class=\\"hljs-title\\">checkBalances</span>(<span class=\\"hljs-params\\">_balances</span>) </span>{
         <span class=\\"hljs-built_in\\">require</span>(_expiresAt &gt; <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>, <span class=\\"hljs-string\\">\\"Expiration must be &gt; now\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(_challengePeriod &gt; <span class=\\"hljs-number\\">0</span>, <span class=\\"hljs-string\\">\\"Challenge period must be &gt; 0\\"</span>);
 

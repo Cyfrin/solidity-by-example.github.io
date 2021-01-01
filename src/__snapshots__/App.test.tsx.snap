@@ -15,696 +15,350 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6"
-          path="/0.6"
+          key="/app/bi-directional-payment-channel"
+          path="/app/bi-directional-payment-channel"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/visibility"
-          path="/0.6/visibility"
+          key="/app/create2"
+          path="/app/create2"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/view-and-pure-functions"
-          path="/0.6/view-and-pure-functions"
+          key="/app/erc20"
+          path="/app/erc20"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/variables"
-          path="/0.6/variables"
+          key="/app/iterable-mapping"
+          path="/app/iterable-mapping"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/try-catch"
-          path="/0.6/try-catch"
+          key="/app/merkle-tree"
+          path="/app/merkle-tree"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/super"
-          path="/0.6/super"
+          key="/app/multi-sig-wallet"
+          path="/app/multi-sig-wallet"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/structs"
-          path="/0.6/structs"
+          key="/app/uni-directional-payment-channel"
+          path="/app/uni-directional-payment-channel"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/state-variables"
-          path="/0.6/state-variables"
+          key="/array"
+          path="/array"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/signature"
-          path="/0.6/signature"
+          key="/call"
+          path="/call"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/shadowing-inherited-state-variables"
-          path="/0.6/shadowing-inherited-state-variables"
+          key="/calling-contract"
+          path="/calling-contract"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/sending-ether"
-          path="/0.6/sending-ether"
+          key="/constructor"
+          path="/constructor"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/primitives"
-          path="/0.6/primitives"
+          key="/data-locations"
+          path="/data-locations"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/payable"
-          path="/0.6/payable"
+          key="/delegatecall"
+          path="/delegatecall"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/new-contract"
-          path="/0.6/new-contract"
+          key="/enum"
+          path="/enum"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/mapping"
-          path="/0.6/mapping"
+          key="/error"
+          path="/error"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/loop"
-          path="/0.6/loop"
+          key="/ether-units"
+          path="/ether-units"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/library"
-          path="/0.6/library"
+          key="/events"
+          path="/events"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/interface"
-          path="/0.6/interface"
+          key="/fallback"
+          path="/fallback"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/inheritance"
-          path="/0.6/inheritance"
+          key="/first-app"
+          path="/first-app"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/import"
-          path="/0.6/import"
+          key="/function"
+          path="/function"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/if-else"
-          path="/0.6/if-else"
+          key="/function-modifier"
+          path="/function-modifier"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hello-world"
-          path="/0.6/hello-world"
+          key="/gas"
+          path="/gas"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hashing"
-          path="/0.6/hashing"
+          key="/hacks/accessing-private-data"
+          path="/hacks/accessing-private-data"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/signature-replay"
-          path="/0.6/hacks/signature-replay"
+          key="/hacks/block-timestamp-manipulation"
+          path="/hacks/block-timestamp-manipulation"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/self-destruct"
-          path="/0.6/hacks/self-destruct"
+          key="/hacks/delegatecall"
+          path="/hacks/delegatecall"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/re-entrancy"
-          path="/0.6/hacks/re-entrancy"
+          key="/hacks/denial-of-service"
+          path="/hacks/denial-of-service"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/randomness"
-          path="/0.6/hacks/randomness"
+          key="/hacks/front-running"
+          path="/hacks/front-running"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/phishing-with-tx-origin"
-          path="/0.6/hacks/phishing-with-tx-origin"
+          key="/hacks/hiding-malicious-code-with-external-contract"
+          path="/hacks/hiding-malicious-code-with-external-contract"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/overflow"
-          path="/0.6/hacks/overflow"
+          key="/hacks/honeypot"
+          path="/hacks/honeypot"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/honeypot"
-          path="/0.6/hacks/honeypot"
+          key="/hacks/overflow"
+          path="/hacks/overflow"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/hiding-malicious-code-with-external-contract"
-          path="/0.6/hacks/hiding-malicious-code-with-external-contract"
+          key="/hacks/phishing-with-tx-origin"
+          path="/hacks/phishing-with-tx-origin"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/front-running"
-          path="/0.6/hacks/front-running"
+          key="/hacks/randomness"
+          path="/hacks/randomness"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/denial-of-service"
-          path="/0.6/hacks/denial-of-service"
+          key="/hacks/re-entrancy"
+          path="/hacks/re-entrancy"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/delegatecall"
-          path="/0.6/hacks/delegatecall"
+          key="/hacks/self-destruct"
+          path="/hacks/self-destruct"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/block-timestamp-manipulation"
-          path="/0.6/hacks/block-timestamp-manipulation"
+          key="/hacks/signature-replay"
+          path="/hacks/signature-replay"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/hacks/accessing-private-data"
-          path="/0.6/hacks/accessing-private-data"
+          key="/hashing"
+          path="/hashing"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/gas"
-          path="/0.6/gas"
+          key="/hello-world"
+          path="/hello-world"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/function-modifier"
-          path="/0.6/function-modifier"
+          key="/if-else"
+          path="/if-else"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/function"
-          path="/0.6/function"
+          key="/import"
+          path="/import"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/first-app"
-          path="/0.6/first-app"
+          key="/inheritance"
+          path="/inheritance"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/fallback"
-          path="/0.6/fallback"
+          key="/interface"
+          path="/interface"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/events"
-          path="/0.6/events"
+          key="/library"
+          path="/library"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/ether-units"
-          path="/0.6/ether-units"
+          key="/loop"
+          path="/loop"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/error"
-          path="/0.6/error"
+          key="/mapping"
+          path="/mapping"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/enum"
-          path="/0.6/enum"
+          key="/new-contract"
+          path="/new-contract"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/delegatecall"
-          path="/0.6/delegatecall"
+          key="/payable"
+          path="/payable"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/data-locations"
-          path="/0.6/data-locations"
+          key="/primitives"
+          path="/primitives"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/constructor"
-          path="/0.6/constructor"
+          key="/sending-ether"
+          path="/sending-ether"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/calling-contract"
-          path="/0.6/calling-contract"
+          key="/shadowing-inherited-state-variables"
+          path="/shadowing-inherited-state-variables"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/call"
-          path="/0.6/call"
+          key="/signature"
+          path="/signature"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/array"
-          path="/0.6/array"
+          key="/state-variables"
+          path="/state-variables"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/uni-directional-payment-channel"
-          path="/0.6/app/uni-directional-payment-channel"
+          key="/structs"
+          path="/structs"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/multi-sig-wallet"
-          path="/0.6/app/multi-sig-wallet"
+          key="/super"
+          path="/super"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/merkle-tree"
-          path="/0.6/app/merkle-tree"
+          key="/try-catch"
+          path="/try-catch"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/iterable-mapping"
-          path="/0.6/app/iterable-mapping"
+          key="/variables"
+          path="/variables"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/erc20"
-          path="/0.6/app/erc20"
+          key="/view-and-pure-functions"
+          path="/view-and-pure-functions"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/create2"
-          path="/0.6/app/create2"
+          key="/visibility"
+          path="/visibility"
         />
         <Route
           component={[Function]}
           exact={true}
-          key="/0.6/app/bi-directional-payment-channel"
-          path="/0.6/app/bi-directional-payment-channel"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5"
-          path="/0.5"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/visibility"
-          path="/0.5/visibility"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/view-and-pure-functions"
-          path="/0.5/view-and-pure-functions"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/variables"
-          path="/0.5/variables"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/super"
-          path="/0.5/super"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/structs"
-          path="/0.5/structs"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/state-variables"
-          path="/0.5/state-variables"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/signature"
-          path="/0.5/signature"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/shadowing-inherited-state-variables"
-          path="/0.5/shadowing-inherited-state-variables"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/sending-ether"
-          path="/0.5/sending-ether"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/primitives"
-          path="/0.5/primitives"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/payable"
-          path="/0.5/payable"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/new-contract"
-          path="/0.5/new-contract"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/mapping"
-          path="/0.5/mapping"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/loop"
-          path="/0.5/loop"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/library"
-          path="/0.5/library"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/interface"
-          path="/0.5/interface"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/inheritance"
-          path="/0.5/inheritance"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/import"
-          path="/0.5/import"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/if-else"
-          path="/0.5/if-else"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hello-world"
-          path="/0.5/hello-world"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hashing"
-          path="/0.5/hashing"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/signature-replay"
-          path="/0.5/hacks/signature-replay"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/self-destruct"
-          path="/0.5/hacks/self-destruct"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/re-entrancy"
-          path="/0.5/hacks/re-entrancy"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/randomness"
-          path="/0.5/hacks/randomness"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/phishing-with-tx-origin"
-          path="/0.5/hacks/phishing-with-tx-origin"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/overflow"
-          path="/0.5/hacks/overflow"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/honeypot"
-          path="/0.5/hacks/honeypot"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/hiding-malicious-code-with-external-contract"
-          path="/0.5/hacks/hiding-malicious-code-with-external-contract"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/front-running"
-          path="/0.5/hacks/front-running"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/denial-of-service"
-          path="/0.5/hacks/denial-of-service"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/delegatecall"
-          path="/0.5/hacks/delegatecall"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/block-timestamp-manipulation"
-          path="/0.5/hacks/block-timestamp-manipulation"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/hacks/accessing-private-data"
-          path="/0.5/hacks/accessing-private-data"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/gas"
-          path="/0.5/gas"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/function-modifier"
-          path="/0.5/function-modifier"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/function"
-          path="/0.5/function"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/first-app"
-          path="/0.5/first-app"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/fallback"
-          path="/0.5/fallback"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/events"
-          path="/0.5/events"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/ether-units"
-          path="/0.5/ether-units"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/error"
-          path="/0.5/error"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/enum"
-          path="/0.5/enum"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/delegatecall"
-          path="/0.5/delegatecall"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/data-locations"
-          path="/0.5/data-locations"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/constructor"
-          path="/0.5/constructor"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/calling-contract"
-          path="/0.5/calling-contract"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/call"
-          path="/0.5/call"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/array"
-          path="/0.5/array"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/uni-directional-payment-channel"
-          path="/0.5/app/uni-directional-payment-channel"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/multi-sig-wallet"
-          path="/0.5/app/multi-sig-wallet"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/merkle-tree"
-          path="/0.5/app/merkle-tree"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/iterable-mapping"
-          path="/0.5/app/iterable-mapping"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/erc20"
-          path="/0.5/app/erc20"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/create2"
-          path="/0.5/app/create2"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          key="/0.5/app/bi-directional-payment-channel"
-          path="/0.5/app/bi-directional-payment-channel"
-        />
-        <Redirect
+          key="/"
           path="/"
-          to="/0.6"
         />
       </Switch>
     </div>

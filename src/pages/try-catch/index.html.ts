@@ -3,8 +3,7 @@ export const version = "0.6.10"
 export const title = "Try Catch"
 export const description = "An example of try / catch in Solidity"
 
-const html = `<p>Solidity 0.6 introduces <code>try / catch</code>.</p>
-<p>It can only catch errors from external function calls and contract creation.</p>
+const html = `<p><code>try / catch</code> can only catch errors from external function calls and contract creation.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 

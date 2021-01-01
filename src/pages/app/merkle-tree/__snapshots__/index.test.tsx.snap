@@ -35,7 +35,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">TestMerkleProof</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">MerkleProof</span> </span>{
     <span class=\\"hljs-keyword\\">bytes32</span>[] <span class=\\"hljs-keyword\\">public</span> hashes;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) </span>{
         <span class=\\"hljs-keyword\\">string</span>[<span class=\\"hljs-number\\">4</span>] <span class=\\"hljs-keyword\\">memory</span> transactions = [
             <span class=\\"hljs-string\\">\\"alice -&gt; bob\\"</span>,
             <span class=\\"hljs-string\\">\\"bob -&gt; dave\\"</span>,

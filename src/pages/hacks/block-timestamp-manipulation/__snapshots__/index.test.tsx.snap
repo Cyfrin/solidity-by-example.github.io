@@ -30,15 +30,15 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Roulette</span> </span>{
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> pastBlockTime;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">spin</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span> == <span class=\\"hljs-number\\">10</span> <span class=\\"hljs-literal\\">ether</span>); <span class=\\"hljs-comment\\">// must send 10 ether to play</span>
-        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">now</span> != pastBlockTime); <span class=\\"hljs-comment\\">// only 1 transaction per block</span>
+        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> != pastBlockTime); <span class=\\"hljs-comment\\">// only 1 transaction per block</span>
 
         pastBlockTime = <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>;
 
-        <span class=\\"hljs-keyword\\">if</span>(<span class=\\"hljs-built_in\\">now</span> % <span class=\\"hljs-number\\">15</span> == <span class=\\"hljs-number\\">0</span>) {
+        <span class=\\"hljs-keyword\\">if</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> % <span class=\\"hljs-number\\">15</span> == <span class=\\"hljs-number\\">0</span>) {
             (<span class=\\"hljs-keyword\\">bool</span> sent, ) = <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>).<span class=\\"hljs-built_in\\">balance</span>}(<span class=\\"hljs-string\\">\\"\\"</span>);
             <span class=\\"hljs-built_in\\">require</span>(sent, <span class=\\"hljs-string\\">\\"Failed to send Ether\\"</span>);
         }

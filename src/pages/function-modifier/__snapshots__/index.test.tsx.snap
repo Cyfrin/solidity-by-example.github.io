@@ -20,7 +20,7 @@ exports[`it renders 1`] = `
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> x = <span class=\\"hljs-number\\">10</span>;
     <span class=\\"hljs-keyword\\">bool</span> <span class=\\"hljs-keyword\\">public</span> locked;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) </span>{
         <span class=\\"hljs-comment\\">// Set the transaction sender as the owner of the contract.</span>
         owner = <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>;
     }

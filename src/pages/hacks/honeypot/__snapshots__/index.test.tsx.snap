@@ -35,7 +35,7 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
     <span class=\\"hljs-keyword\\">mapping</span> (<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">uint</span>) <span class=\\"hljs-keyword\\">public</span> balances;
     Logger logger;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Logger _logger</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Logger _logger</span>) </span>{
         logger = Logger(_logger);
     }
 
@@ -68,7 +68,7 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Attack</span> </span>{
     Bank bank;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Bank _bank</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Bank _bank</span>) </span>{
         bank = Bank(_bank);
     }
 

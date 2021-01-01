@@ -58,7 +58,7 @@ Contract deployed on Ropsten
     <span class=\\"hljs-comment\\">// where slot = 7, key = map key</span>
     <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">uint</span> =&gt; User) <span class=\\"hljs-keyword\\">private</span> idToUser;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> _password</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> _password</span>) </span>{
         password = _password;
     }
 

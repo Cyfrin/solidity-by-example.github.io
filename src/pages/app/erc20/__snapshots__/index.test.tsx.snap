@@ -35,10 +35,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/ERC20.sol\\"</span>;
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">MyToken</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">ERC20</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> name, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> symbol</span>)
-        <span class=\\"hljs-title\\">ERC20</span>(<span class=\\"hljs-params\\">name, symbol</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
-    </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> name, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> symbol</span>) <span class=\\"hljs-title\\">ERC20</span>(<span class=\\"hljs-params\\">name, symbol</span>) </span>{
         <span class=\\"hljs-comment\\">// Mint 100 tokens to msg.sender</span>
         <span class=\\"hljs-comment\\">// Similar to how</span>
         <span class=\\"hljs-comment\\">// 1 dollar = 100 cents</span>
@@ -91,7 +88,7 @@ How to swap tokens
         <span class=\\"hljs-keyword\\">address</span> _token2,
         <span class=\\"hljs-keyword\\">address</span> _owner2,
         <span class=\\"hljs-keyword\\">uint</span> _amount2
-    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    </span>) </span>{
         token1 = IERC20(_token1);
         owner1 = _owner1;
         amount1 = _amount1;

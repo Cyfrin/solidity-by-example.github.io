@@ -263,11 +263,17 @@ export const ROUTES_BY_CATEGORY = [
   },
   {
     title: "Applications",
-    routes: APP_ROUTES,
+    routes: APP_ROUTES.map((route) => ({
+      ...route,
+      path: `/app/${route.path}`,
+    })),
   },
   {
     title: "Hacks",
-    routes: HACK_ROUTES,
+    routes: HACK_ROUTES.map((route) => ({
+      ...route,
+      path: `/hacks/${route.path}`,
+    })),
   },
 ]
 

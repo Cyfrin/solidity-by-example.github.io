@@ -39,7 +39,7 @@ before the original.
     <span class=\\"hljs-keyword\\">bytes32</span> <span class=\\"hljs-keyword\\">constant</span> <span class=\\"hljs-keyword\\">public</span> hash =
       <span class=\\"hljs-number\\">0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2</span>;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">solve</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> solution</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-built_in\\">require</span>(hash == <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(solution)), <span class=\\"hljs-string\\">\\"Incorrect answer\\"</span>);

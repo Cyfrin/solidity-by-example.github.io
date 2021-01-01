@@ -49,13 +49,13 @@ Here is how the functions were called
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">withdraw</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-built_in\\">require</span>(balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] &gt;= _amount);
         <span class=\\"hljs-built_in\\">require</span>(_amount &lt;= WITHDRAWAL_LIMIT);
-        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">now</span> &gt;= lastWithdrawTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] + <span class=\\"hljs-number\\">1</span> <span class=\\"hljs-literal\\">weeks</span>);
+        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> &gt;= lastWithdrawTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] + <span class=\\"hljs-number\\">1</span> <span class=\\"hljs-literal\\">weeks</span>);
 
         (<span class=\\"hljs-keyword\\">bool</span> sent, ) = <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: _amount}(<span class=\\"hljs-string\\">\\"\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(sent, <span class=\\"hljs-string\\">\\"Failed to send Ether\\"</span>);
 
         balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] -= _amount;
-        lastWithdrawTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-built_in\\">now</span>;
+        lastWithdrawTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>;
     }
 
     <span class=\\"hljs-comment\\">// Helper function to check the balance of this contract</span>
@@ -67,7 +67,7 @@ Here is how the functions were called
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Attack</span> </span>{
     EtherStore <span class=\\"hljs-keyword\\">public</span> etherStore;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _etherStoreAddress</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _etherStoreAddress</span>) </span>{
         etherStore = EtherStore(_etherStoreAddress);
     }
 

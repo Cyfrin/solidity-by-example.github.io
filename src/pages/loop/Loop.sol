@@ -16,9 +16,9 @@ contract Loop {
         }
 
         // while loop
-        uint i;
-        while (i < 10) {
-            i++;
+        uint j;
+        while (j < 10) {
+            j++;
         }
     }
 }

@@ -47,7 +47,7 @@ Ether sent from KingOfEther before the new king is set.
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Attack</span> </span>{
     KingOfEther kingOfEther;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">KingOfEther _kingOfEther</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">KingOfEther _kingOfEther</span>) </span>{
         kingOfEther = KingOfEther(_kingOfEther);
     }
 

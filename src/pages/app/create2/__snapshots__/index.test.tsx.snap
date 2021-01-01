@@ -23,7 +23,7 @@ exports[`it renders 1`] = `
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getAddress</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> bytecode, <span class=\\"hljs-keyword\\">uint</span> _salt</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span></span>) </span>{
         <span class=\\"hljs-keyword\\">bytes32</span> hash = <span class=\\"hljs-built_in\\">keccak256</span>(
             <span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(
-                <span class=\\"hljs-keyword\\">byte</span>(<span class=\\"hljs-number\\">0xff</span>),
+                <span class=\\"hljs-keyword\\">bytes1</span>(<span class=\\"hljs-number\\">0xff</span>),
                 <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>),
                 _salt,
                 <span class=\\"hljs-built_in\\">keccak256</span>(bytecode)
@@ -73,7 +73,7 @@ exports[`it renders 1`] = `
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> owner;
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> foo;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _owner, <span class=\\"hljs-keyword\\">uint</span> _foo</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _owner, <span class=\\"hljs-keyword\\">uint</span> _foo</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         owner = _owner;
         foo = _foo;
     }

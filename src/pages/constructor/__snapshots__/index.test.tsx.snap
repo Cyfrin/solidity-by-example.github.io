@@ -12,7 +12,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">X</span> </span>{
     <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> name;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _name</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _name</span>) </span>{
         name = _name;
     }
 }
@@ -21,7 +21,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Y</span> </span>{
     <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> text;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _text</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _text</span>) </span>{
         text = _text;
     }
 }
@@ -35,7 +35,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">C</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">X</span>, <span class=\\"hljs-title\\">Y</span> </span>{
     <span class=\\"hljs-comment\\">// Pass the parameters here in the constructor,</span>
     <span class=\\"hljs-comment\\">// similar to function modifiers.</span>
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _name, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _text</span>) <span class=\\"hljs-title\\">X</span>(<span class=\\"hljs-params\\">_name</span>) <span class=\\"hljs-title\\">Y</span>(<span class=\\"hljs-params\\">_text</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _name, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _text</span>) <span class=\\"hljs-title\\">X</span>(<span class=\\"hljs-params\\">_name</span>) <span class=\\"hljs-title\\">Y</span>(<span class=\\"hljs-params\\">_text</span>) </span>{
     }
 }
 
@@ -48,7 +48,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-comment\\">// 2. X</span>
 <span class=\\"hljs-comment\\">// 3. E</span>
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">E</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">X</span>, <span class=\\"hljs-title\\">Y</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\">X</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"X was called\\"</span></span>) <span class=\\"hljs-title\\">Y</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"Y was called\\"</span></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\">X</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"X was called\\"</span></span>) <span class=\\"hljs-title\\">Y</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"Y was called\\"</span></span>) </span>{
     }
 }
 
@@ -57,7 +57,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-comment\\">// 2. X</span>
 <span class=\\"hljs-comment\\">// 3. E</span>
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">F</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">X</span>, <span class=\\"hljs-title\\">Y</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\">Y</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"Y was called\\"</span></span>) <span class=\\"hljs-title\\">X</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"X was called\\"</span></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\">Y</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"Y was called\\"</span></span>) <span class=\\"hljs-title\\">X</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-string\\">\\"X was called\\"</span></span>) </span>{
     }
 }
 </code></pre>

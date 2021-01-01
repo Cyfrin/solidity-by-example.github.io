@@ -24,9 +24,9 @@ const html = `<p>Solidity supports <code>for</code>, <code>while</code>, and <co
         }
 
         <span class="hljs-comment">// while loop</span>
-        <span class="hljs-keyword">uint</span> i;
-        <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>) {
-            i++;
+        <span class="hljs-keyword">uint</span> j;
+        <span class="hljs-keyword">while</span> (j &lt; <span class="hljs-number">10</span>) {
+            j++;
         }
     }
 }

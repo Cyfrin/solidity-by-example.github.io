@@ -3,8 +3,7 @@
 exports[`it renders 1`] = `
 <Example
   description="An example of try / catch in Solidity"
-  html="<p>Solidity 0.6 introduces <code>try / catch</code>.</p>
-<p>It can only catch errors from external function calls and contract creation.</p>
+  html="<p><code>try / catch</code> can only catch errors from external function calls and contract creation.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
 
@@ -12,7 +11,7 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Foo</span> </span>{
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> owner;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _owner</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _owner</span>) </span>{
         <span class=\\"hljs-built_in\\">require</span>(_owner != <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-number\\">0</span>), <span class=\\"hljs-string\\">\\"invalid address\\"</span>);
         <span class=\\"hljs-built_in\\">assert</span>(_owner != <span class=\\"hljs-number\\">0x0000000000000000000000000000000000000001</span>);
         owner = _owner;
@@ -30,7 +29,7 @@ exports[`it renders 1`] = `
 
     Foo <span class=\\"hljs-keyword\\">public</span> foo;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) </span>{
         <span class=\\"hljs-comment\\">// This Foo contract is used for example of try catch with external call</span>
         foo = <span class=\\"hljs-keyword\\">new</span> Foo(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>);
     }

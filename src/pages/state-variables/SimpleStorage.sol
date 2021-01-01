@@ -11,8 +11,6 @@ contract SimpleStorage {
     }
 
     // You can read from a state variable without sending a transaction.
-    // Actually we don't need this function. The compiler automatically
-    // creates getter functions for all public variables.
     function get() public view returns (uint) {
         return num;
     }

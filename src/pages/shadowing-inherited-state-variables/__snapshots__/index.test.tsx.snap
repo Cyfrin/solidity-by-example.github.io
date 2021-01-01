@@ -25,7 +25,7 @@ in the child contract.</p>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">C</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">A</span> </span>{
     <span class=\\"hljs-comment\\">// This is the correct way to override inherited state variables.</span>
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) </span>{
         name = <span class=\\"hljs-string\\">\\"Contract C\\"</span>;
     }
 

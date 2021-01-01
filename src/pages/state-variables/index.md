@@ -4,12 +4,10 @@ version: 0.6.10
 description: Reading and Writing to a State Variable
 ---
 
-You need to send a transaction to the blockchain to write or update a state variable.
+To write or update a state variable you need to send a transaction.
 
-This means that you will have to pay a transaction fee.
-
-On the other hand, you can read a data from a state variable, for free, without sending any transaction.
+On the other hand, you can read state variables, for free, without any transaction fee.
 
 ```solidity
-{{{StateVariables}}}
+{{{SimpleStorage}}}
 ```
