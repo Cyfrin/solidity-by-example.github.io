@@ -7,6 +7,12 @@
   list-style: none;
   padding: 0;
 }
+.updates {
+  background-color: #cce5ff;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
+}
 .listItem {
   display: flex;
   flex-direction: row;

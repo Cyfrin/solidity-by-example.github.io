@@ -277,6 +277,8 @@ export const ROUTES_BY_CATEGORY = [
   },
 ]
 
+const UPDATES = ["2021/01/01 - Updated to 0.7.6"]
+
 function HomePage() {
   return (
     <div className={styles.component}>
@@ -294,6 +296,12 @@ function HomePage() {
           <a href="https://solidity.readthedocs.io">Solidity</a> with simple
           examples
         </p>
+
+        <div className={styles.updates}>
+          {UPDATES.map((text, i) => (
+            <div key={i}>{text}</div>
+          ))}
+        </div>
 
         {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
           <div key={i}>
