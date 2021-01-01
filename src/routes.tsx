@@ -1,118 +1,61 @@
-import component_0_6 from "./pages/0.7"
-import component_0_6_visibility from "./pages/0.7/visibility"
-import component_0_6_view_and_pure_functions from "./pages/0.7/view-and-pure-functions"
-import component_0_6_variables from "./pages/0.7/variables"
-import component_0_6_try_catch from "./pages/0.7/try-catch"
-import component_0_6_super from "./pages/0.7/super"
-import component_0_6_structs from "./pages/0.7/structs"
-import component_0_6_state_variables from "./pages/0.7/state-variables"
-import component_0_6_signature from "./pages/0.7/signature"
-import component_0_6_shadowing_inherited_state_variables from "./pages/0.7/shadowing-inherited-state-variables"
-import component_0_6_sending_ether from "./pages/0.7/sending-ether"
-import component_0_6_primitives from "./pages/0.7/primitives"
-import component_0_6_payable from "./pages/0.7/payable"
-import component_0_6_new_contract from "./pages/0.7/new-contract"
-import component_0_6_mapping from "./pages/0.7/mapping"
-import component_0_6_loop from "./pages/0.7/loop"
-import component_0_6_library from "./pages/0.7/library"
-import component_0_6_interface from "./pages/0.7/interface"
-import component_0_6_inheritance from "./pages/0.7/inheritance"
-import component_0_6_import from "./pages/0.7/import"
-import component_0_6_if_else from "./pages/0.7/if-else"
-import component_0_6_hello_world from "./pages/0.7/hello-world"
-import component_0_6_hashing from "./pages/0.7/hashing"
-import component_0_6_hacks_signature_replay from "./pages/0.7/hacks/signature-replay"
-import component_0_6_hacks_self_destruct from "./pages/0.7/hacks/self-destruct"
-import component_0_6_hacks_re_entrancy from "./pages/0.7/hacks/re-entrancy"
-import component_0_6_hacks_randomness from "./pages/0.7/hacks/randomness"
-import component_0_6_hacks_phishing_with_tx_origin from "./pages/0.7/hacks/phishing-with-tx-origin"
-import component_0_6_hacks_overflow from "./pages/0.7/hacks/overflow"
-import component_0_6_hacks_honeypot from "./pages/0.7/hacks/honeypot"
-import component_0_6_hacks_hiding_malicious_code_with_external_contract from "./pages/0.7/hacks/hiding-malicious-code-with-external-contract"
-import component_0_6_hacks_front_running from "./pages/0.7/hacks/front-running"
-import component_0_6_hacks_denial_of_service from "./pages/0.7/hacks/denial-of-service"
-import component_0_6_hacks_delegatecall from "./pages/0.7/hacks/delegatecall"
-import component_0_6_hacks_block_timestamp_manipulation from "./pages/0.7/hacks/block-timestamp-manipulation"
-import component_0_6_hacks_accessing_private_data from "./pages/0.7/hacks/accessing-private-data"
-import component_0_6_gas from "./pages/0.7/gas"
-import component_0_6_function_modifier from "./pages/0.7/function-modifier"
-import component_0_6_function from "./pages/0.7/function"
-import component_0_6_first_app from "./pages/0.7/first-app"
-import component_0_6_fallback from "./pages/0.7/fallback"
-import component_0_6_events from "./pages/0.7/events"
-import component_0_6_ether_units from "./pages/0.7/ether-units"
-import component_0_6_error from "./pages/0.7/error"
-import component_0_6_enum from "./pages/0.7/enum"
-import component_0_6_delegatecall from "./pages/0.7/delegatecall"
-import component_0_6_data_locations from "./pages/0.7/data-locations"
-import component_0_6_constructor from "./pages/0.7/constructor"
-import component_0_6_calling_contract from "./pages/0.7/calling-contract"
-import component_0_6_call from "./pages/0.7/call"
-import component_0_6_array from "./pages/0.7/array"
-import component_0_6_app_uni_directional_payment_channel from "./pages/0.7/app/uni-directional-payment-channel"
-import component_0_6_app_multi_sig_wallet from "./pages/0.7/app/multi-sig-wallet"
-import component_0_6_app_merkle_tree from "./pages/0.7/app/merkle-tree"
-import component_0_6_app_iterable_mapping from "./pages/0.7/app/iterable-mapping"
-import component_0_6_app_erc20 from "./pages/0.7/app/erc20"
-import component_0_6_app_create2 from "./pages/0.7/app/create2"
-import component_0_6_app_bi_directional_payment_channel from "./pages/0.7/app/bi-directional-payment-channel"
-import component_0_5 from "./pages/0.5"
-import component_0_5_visibility from "./pages/0.5/visibility"
-import component_0_5_view_and_pure_functions from "./pages/0.5/view-and-pure-functions"
-import component_0_5_variables from "./pages/0.5/variables"
-import component_0_5_super from "./pages/0.5/super"
-import component_0_5_structs from "./pages/0.5/structs"
-import component_0_5_state_variables from "./pages/0.5/state-variables"
-import component_0_5_signature from "./pages/0.5/signature"
-import component_0_5_shadowing_inherited_state_variables from "./pages/0.5/shadowing-inherited-state-variables"
-import component_0_5_sending_ether from "./pages/0.5/sending-ether"
-import component_0_5_primitives from "./pages/0.5/primitives"
-import component_0_5_payable from "./pages/0.5/payable"
-import component_0_5_new_contract from "./pages/0.5/new-contract"
-import component_0_5_mapping from "./pages/0.5/mapping"
-import component_0_5_loop from "./pages/0.5/loop"
-import component_0_5_library from "./pages/0.5/library"
-import component_0_5_interface from "./pages/0.5/interface"
-import component_0_5_inheritance from "./pages/0.5/inheritance"
-import component_0_5_import from "./pages/0.5/import"
-import component_0_5_if_else from "./pages/0.5/if-else"
-import component_0_5_hello_world from "./pages/0.5/hello-world"
-import component_0_5_hashing from "./pages/0.5/hashing"
-import component_0_5_hacks_signature_replay from "./pages/0.5/hacks/signature-replay"
-import component_0_5_hacks_self_destruct from "./pages/0.5/hacks/self-destruct"
-import component_0_5_hacks_re_entrancy from "./pages/0.5/hacks/re-entrancy"
-import component_0_5_hacks_randomness from "./pages/0.5/hacks/randomness"
-import component_0_5_hacks_phishing_with_tx_origin from "./pages/0.5/hacks/phishing-with-tx-origin"
-import component_0_5_hacks_overflow from "./pages/0.5/hacks/overflow"
-import component_0_5_hacks_honeypot from "./pages/0.5/hacks/honeypot"
-import component_0_5_hacks_hiding_malicious_code_with_external_contract from "./pages/0.5/hacks/hiding-malicious-code-with-external-contract"
-import component_0_5_hacks_front_running from "./pages/0.5/hacks/front-running"
-import component_0_5_hacks_denial_of_service from "./pages/0.5/hacks/denial-of-service"
-import component_0_5_hacks_delegatecall from "./pages/0.5/hacks/delegatecall"
-import component_0_5_hacks_block_timestamp_manipulation from "./pages/0.5/hacks/block-timestamp-manipulation"
-import component_0_5_hacks_accessing_private_data from "./pages/0.5/hacks/accessing-private-data"
-import component_0_5_gas from "./pages/0.5/gas"
-import component_0_5_function_modifier from "./pages/0.5/function-modifier"
-import component_0_5_function from "./pages/0.5/function"
-import component_0_5_first_app from "./pages/0.5/first-app"
-import component_0_5_fallback from "./pages/0.5/fallback"
-import component_0_5_events from "./pages/0.5/events"
-import component_0_5_ether_units from "./pages/0.5/ether-units"
-import component_0_5_error from "./pages/0.5/error"
-import component_0_5_enum from "./pages/0.5/enum"
-import component_0_5_delegatecall from "./pages/0.5/delegatecall"
-import component_0_5_data_locations from "./pages/0.5/data-locations"
-import component_0_5_constructor from "./pages/0.5/constructor"
-import component_0_5_calling_contract from "./pages/0.5/calling-contract"
-import component_0_5_call from "./pages/0.5/call"
-import component_0_5_array from "./pages/0.5/array"
-import component_0_5_app_uni_directional_payment_channel from "./pages/0.5/app/uni-directional-payment-channel"
-import component_0_5_app_multi_sig_wallet from "./pages/0.5/app/multi-sig-wallet"
-import component_0_5_app_merkle_tree from "./pages/0.5/app/merkle-tree"
-import component_0_5_app_iterable_mapping from "./pages/0.5/app/iterable-mapping"
-import component_0_5_app_erc20 from "./pages/0.5/app/erc20"
-import component_0_5_app_create2 from "./pages/0.5/app/create2"
-import component_0_5_app_bi_directional_payment_channel from "./pages/0.5/app/bi-directional-payment-channel"
+import component_app_bi_directional_payment_channel from "./pages/app/bi-directional-payment-channel"
+import component_app_create2 from "./pages/app/create2"
+import component_app_erc20 from "./pages/app/erc20"
+import component_app_iterable_mapping from "./pages/app/iterable-mapping"
+import component_app_merkle_tree from "./pages/app/merkle-tree"
+import component_app_multi_sig_wallet from "./pages/app/multi-sig-wallet"
+import component_app_uni_directional_payment_channel from "./pages/app/uni-directional-payment-channel"
+import component_array from "./pages/array"
+import component_call from "./pages/call"
+import component_calling_contract from "./pages/calling-contract"
+import component_constructor from "./pages/constructor"
+import component_data_locations from "./pages/data-locations"
+import component_delegatecall from "./pages/delegatecall"
+import component_enum from "./pages/enum"
+import component_error from "./pages/error"
+import component_ether_units from "./pages/ether-units"
+import component_events from "./pages/events"
+import component_fallback from "./pages/fallback"
+import component_first_app from "./pages/first-app"
+import component_function from "./pages/function"
+import component_function_modifier from "./pages/function-modifier"
+import component_gas from "./pages/gas"
+import component_hacks_accessing_private_data from "./pages/hacks/accessing-private-data"
+import component_hacks_block_timestamp_manipulation from "./pages/hacks/block-timestamp-manipulation"
+import component_hacks_delegatecall from "./pages/hacks/delegatecall"
+import component_hacks_denial_of_service from "./pages/hacks/denial-of-service"
+import component_hacks_front_running from "./pages/hacks/front-running"
+import component_hacks_hiding_malicious_code_with_external_contract from "./pages/hacks/hiding-malicious-code-with-external-contract"
+import component_hacks_honeypot from "./pages/hacks/honeypot"
+import component_hacks_overflow from "./pages/hacks/overflow"
+import component_hacks_phishing_with_tx_origin from "./pages/hacks/phishing-with-tx-origin"
+import component_hacks_randomness from "./pages/hacks/randomness"
+import component_hacks_re_entrancy from "./pages/hacks/re-entrancy"
+import component_hacks_self_destruct from "./pages/hacks/self-destruct"
+import component_hacks_signature_replay from "./pages/hacks/signature-replay"
+import component_hashing from "./pages/hashing"
+import component_hello_world from "./pages/hello-world"
+import component_if_else from "./pages/if-else"
+import component_import from "./pages/import"
+import component_inheritance from "./pages/inheritance"
+import component_interface from "./pages/interface"
+import component_library from "./pages/library"
+import component_loop from "./pages/loop"
+import component_mapping from "./pages/mapping"
+import component_new_contract from "./pages/new-contract"
+import component_payable from "./pages/payable"
+import component_primitives from "./pages/primitives"
+import component_sending_ether from "./pages/sending-ether"
+import component_shadowing_inherited_state_variables from "./pages/shadowing-inherited-state-variables"
+import component_signature from "./pages/signature"
+import component_state_variables from "./pages/state-variables"
+import component_structs from "./pages/structs"
+import component_super from "./pages/super"
+import component_try_catch from "./pages/try-catch"
+import component_variables from "./pages/variables"
+import component_view_and_pure_functions from "./pages/view-and-pure-functions"
+import component_visibility from "./pages/visibility"
+import component_ from "./pages"
 
 interface Route {
   path: string
@@ -121,466 +64,238 @@ interface Route {
 }
 
 const routes: Route[] = [
-  {
-    path: "/0.6",
-    component: component_0_6,
-  },
-  {
-    path: "/0.6/visibility",
-    component: component_0_6_visibility,
-  },
-  {
-    path: "/0.6/view-and-pure-functions",
-    component: component_0_6_view_and_pure_functions,
-  },
-  {
-    path: "/0.6/variables",
-    component: component_0_6_variables,
-  },
-  {
-    path: "/0.6/try-catch",
-    component: component_0_6_try_catch,
-  },
-  {
-    path: "/0.6/super",
-    component: component_0_6_super,
-  },
-  {
-    path: "/0.6/structs",
-    component: component_0_6_structs,
-  },
-  {
-    path: "/0.6/state-variables",
-    component: component_0_6_state_variables,
-  },
-  {
-    path: "/0.6/signature",
-    component: component_0_6_signature,
-  },
-  {
-    path: "/0.6/shadowing-inherited-state-variables",
-    component: component_0_6_shadowing_inherited_state_variables,
-  },
-  {
-    path: "/0.6/sending-ether",
-    component: component_0_6_sending_ether,
-  },
-  {
-    path: "/0.6/primitives",
-    component: component_0_6_primitives,
-  },
-  {
-    path: "/0.6/payable",
-    component: component_0_6_payable,
-  },
-  {
-    path: "/0.6/new-contract",
-    component: component_0_6_new_contract,
-  },
-  {
-    path: "/0.6/mapping",
-    component: component_0_6_mapping,
-  },
-  {
-    path: "/0.6/loop",
-    component: component_0_6_loop,
-  },
-  {
-    path: "/0.6/library",
-    component: component_0_6_library,
-  },
-  {
-    path: "/0.6/interface",
-    component: component_0_6_interface,
-  },
-  {
-    path: "/0.6/inheritance",
-    component: component_0_6_inheritance,
-  },
-  {
-    path: "/0.6/import",
-    component: component_0_6_import,
-  },
-  {
-    path: "/0.6/if-else",
-    component: component_0_6_if_else,
-  },
-  {
-    path: "/0.6/hello-world",
-    component: component_0_6_hello_world,
-  },
-  {
-    path: "/0.6/hashing",
-    component: component_0_6_hashing,
-  },
-  {
-    path: "/0.6/hacks/signature-replay",
-    component: component_0_6_hacks_signature_replay,
-  },
-  {
-    path: "/0.6/hacks/self-destruct",
-    component: component_0_6_hacks_self_destruct,
-  },
-  {
-    path: "/0.6/hacks/re-entrancy",
-    component: component_0_6_hacks_re_entrancy,
-  },
-  {
-    path: "/0.6/hacks/randomness",
-    component: component_0_6_hacks_randomness,
-  },
-  {
-    path: "/0.6/hacks/phishing-with-tx-origin",
-    component: component_0_6_hacks_phishing_with_tx_origin,
-  },
-  {
-    path: "/0.6/hacks/overflow",
-    component: component_0_6_hacks_overflow,
-  },
-  {
-    path: "/0.6/hacks/honeypot",
-    component: component_0_6_hacks_honeypot,
-  },
-  {
-    path: "/0.6/hacks/hiding-malicious-code-with-external-contract",
-    component: component_0_6_hacks_hiding_malicious_code_with_external_contract,
-  },
-  {
-    path: "/0.6/hacks/front-running",
-    component: component_0_6_hacks_front_running,
-  },
-  {
-    path: "/0.6/hacks/denial-of-service",
-    component: component_0_6_hacks_denial_of_service,
-  },
-  {
-    path: "/0.6/hacks/delegatecall",
-    component: component_0_6_hacks_delegatecall,
-  },
-  {
-    path: "/0.6/hacks/block-timestamp-manipulation",
-    component: component_0_6_hacks_block_timestamp_manipulation,
-  },
-  {
-    path: "/0.6/hacks/accessing-private-data",
-    component: component_0_6_hacks_accessing_private_data,
-  },
-  {
-    path: "/0.6/gas",
-    component: component_0_6_gas,
-  },
-  {
-    path: "/0.6/function-modifier",
-    component: component_0_6_function_modifier,
-  },
-  {
-    path: "/0.6/function",
-    component: component_0_6_function,
-  },
-  {
-    path: "/0.6/first-app",
-    component: component_0_6_first_app,
-  },
-  {
-    path: "/0.6/fallback",
-    component: component_0_6_fallback,
-  },
-  {
-    path: "/0.6/events",
-    component: component_0_6_events,
-  },
-  {
-    path: "/0.6/ether-units",
-    component: component_0_6_ether_units,
-  },
-  {
-    path: "/0.6/error",
-    component: component_0_6_error,
-  },
-  {
-    path: "/0.6/enum",
-    component: component_0_6_enum,
-  },
-  {
-    path: "/0.6/delegatecall",
-    component: component_0_6_delegatecall,
-  },
-  {
-    path: "/0.6/data-locations",
-    component: component_0_6_data_locations,
-  },
-  {
-    path: "/0.6/constructor",
-    component: component_0_6_constructor,
-  },
-  {
-    path: "/0.6/calling-contract",
-    component: component_0_6_calling_contract,
-  },
-  {
-    path: "/0.6/call",
-    component: component_0_6_call,
-  },
-  {
-    path: "/0.6/array",
-    component: component_0_6_array,
-  },
-  {
-    path: "/0.6/app/uni-directional-payment-channel",
-    component: component_0_6_app_uni_directional_payment_channel,
-  },
-  {
-    path: "/0.6/app/multi-sig-wallet",
-    component: component_0_6_app_multi_sig_wallet,
-  },
-  {
-    path: "/0.6/app/merkle-tree",
-    component: component_0_6_app_merkle_tree,
-  },
-  {
-    path: "/0.6/app/iterable-mapping",
-    component: component_0_6_app_iterable_mapping,
-  },
-  {
-    path: "/0.6/app/erc20",
-    component: component_0_6_app_erc20,
-  },
-  {
-    path: "/0.6/app/create2",
-    component: component_0_6_app_create2,
-  },
-  {
-    path: "/0.6/app/bi-directional-payment-channel",
-    component: component_0_6_app_bi_directional_payment_channel,
-  },
-  {
-    path: "/0.5",
-    component: component_0_5,
-  },
-  {
-    path: "/0.5/visibility",
-    component: component_0_5_visibility,
-  },
-  {
-    path: "/0.5/view-and-pure-functions",
-    component: component_0_5_view_and_pure_functions,
-  },
-  {
-    path: "/0.5/variables",
-    component: component_0_5_variables,
-  },
-  {
-    path: "/0.5/super",
-    component: component_0_5_super,
-  },
-  {
-    path: "/0.5/structs",
-    component: component_0_5_structs,
-  },
-  {
-    path: "/0.5/state-variables",
-    component: component_0_5_state_variables,
-  },
-  {
-    path: "/0.5/signature",
-    component: component_0_5_signature,
-  },
-  {
-    path: "/0.5/shadowing-inherited-state-variables",
-    component: component_0_5_shadowing_inherited_state_variables,
-  },
-  {
-    path: "/0.5/sending-ether",
-    component: component_0_5_sending_ether,
-  },
-  {
-    path: "/0.5/primitives",
-    component: component_0_5_primitives,
-  },
-  {
-    path: "/0.5/payable",
-    component: component_0_5_payable,
-  },
-  {
-    path: "/0.5/new-contract",
-    component: component_0_5_new_contract,
-  },
-  {
-    path: "/0.5/mapping",
-    component: component_0_5_mapping,
-  },
-  {
-    path: "/0.5/loop",
-    component: component_0_5_loop,
-  },
-  {
-    path: "/0.5/library",
-    component: component_0_5_library,
-  },
-  {
-    path: "/0.5/interface",
-    component: component_0_5_interface,
-  },
-  {
-    path: "/0.5/inheritance",
-    component: component_0_5_inheritance,
-  },
-  {
-    path: "/0.5/import",
-    component: component_0_5_import,
-  },
-  {
-    path: "/0.5/if-else",
-    component: component_0_5_if_else,
-  },
-  {
-    path: "/0.5/hello-world",
-    component: component_0_5_hello_world,
-  },
-  {
-    path: "/0.5/hashing",
-    component: component_0_5_hashing,
-  },
-  {
-    path: "/0.5/hacks/signature-replay",
-    component: component_0_5_hacks_signature_replay,
-  },
-  {
-    path: "/0.5/hacks/self-destruct",
-    component: component_0_5_hacks_self_destruct,
-  },
-  {
-    path: "/0.5/hacks/re-entrancy",
-    component: component_0_5_hacks_re_entrancy,
-  },
-  {
-    path: "/0.5/hacks/randomness",
-    component: component_0_5_hacks_randomness,
-  },
-  {
-    path: "/0.5/hacks/phishing-with-tx-origin",
-    component: component_0_5_hacks_phishing_with_tx_origin,
-  },
-  {
-    path: "/0.5/hacks/overflow",
-    component: component_0_5_hacks_overflow,
-  },
-  {
-    path: "/0.5/hacks/honeypot",
-    component: component_0_5_hacks_honeypot,
-  },
-  {
-    path: "/0.5/hacks/hiding-malicious-code-with-external-contract",
-    component: component_0_5_hacks_hiding_malicious_code_with_external_contract,
-  },
-  {
-    path: "/0.5/hacks/front-running",
-    component: component_0_5_hacks_front_running,
-  },
-  {
-    path: "/0.5/hacks/denial-of-service",
-    component: component_0_5_hacks_denial_of_service,
-  },
-  {
-    path: "/0.5/hacks/delegatecall",
-    component: component_0_5_hacks_delegatecall,
-  },
-  {
-    path: "/0.5/hacks/block-timestamp-manipulation",
-    component: component_0_5_hacks_block_timestamp_manipulation,
-  },
-  {
-    path: "/0.5/hacks/accessing-private-data",
-    component: component_0_5_hacks_accessing_private_data,
-  },
-  {
-    path: "/0.5/gas",
-    component: component_0_5_gas,
-  },
-  {
-    path: "/0.5/function-modifier",
-    component: component_0_5_function_modifier,
-  },
-  {
-    path: "/0.5/function",
-    component: component_0_5_function,
-  },
-  {
-    path: "/0.5/first-app",
-    component: component_0_5_first_app,
-  },
-  {
-    path: "/0.5/fallback",
-    component: component_0_5_fallback,
-  },
-  {
-    path: "/0.5/events",
-    component: component_0_5_events,
-  },
-  {
-    path: "/0.5/ether-units",
-    component: component_0_5_ether_units,
-  },
-  {
-    path: "/0.5/error",
-    component: component_0_5_error,
-  },
-  {
-    path: "/0.5/enum",
-    component: component_0_5_enum,
-  },
-  {
-    path: "/0.5/delegatecall",
-    component: component_0_5_delegatecall,
-  },
-  {
-    path: "/0.5/data-locations",
-    component: component_0_5_data_locations,
-  },
-  {
-    path: "/0.5/constructor",
-    component: component_0_5_constructor,
-  },
-  {
-    path: "/0.5/calling-contract",
-    component: component_0_5_calling_contract,
-  },
-  {
-    path: "/0.5/call",
-    component: component_0_5_call,
-  },
-  {
-    path: "/0.5/array",
-    component: component_0_5_array,
-  },
-  {
-    path: "/0.5/app/uni-directional-payment-channel",
-    component: component_0_5_app_uni_directional_payment_channel,
-  },
-  {
-    path: "/0.5/app/multi-sig-wallet",
-    component: component_0_5_app_multi_sig_wallet,
-  },
-  {
-    path: "/0.5/app/merkle-tree",
-    component: component_0_5_app_merkle_tree,
-  },
-  {
-    path: "/0.5/app/iterable-mapping",
-    component: component_0_5_app_iterable_mapping,
-  },
-  {
-    path: "/0.5/app/erc20",
-    component: component_0_5_app_erc20,
-  },
-  {
-    path: "/0.5/app/create2",
-    component: component_0_5_app_create2,
-  },
-  {
-    path: "/0.5/app/bi-directional-payment-channel",
-    component: component_0_5_app_bi_directional_payment_channel,
-  },
+    {
+        path: "/app/bi-directional-payment-channel",
+        component: component_app_bi_directional_payment_channel
+    },
+    {
+        path: "/app/create2",
+        component: component_app_create2
+    },
+    {
+        path: "/app/erc20",
+        component: component_app_erc20
+    },
+    {
+        path: "/app/iterable-mapping",
+        component: component_app_iterable_mapping
+    },
+    {
+        path: "/app/merkle-tree",
+        component: component_app_merkle_tree
+    },
+    {
+        path: "/app/multi-sig-wallet",
+        component: component_app_multi_sig_wallet
+    },
+    {
+        path: "/app/uni-directional-payment-channel",
+        component: component_app_uni_directional_payment_channel
+    },
+    {
+        path: "/array",
+        component: component_array
+    },
+    {
+        path: "/call",
+        component: component_call
+    },
+    {
+        path: "/calling-contract",
+        component: component_calling_contract
+    },
+    {
+        path: "/constructor",
+        component: component_constructor
+    },
+    {
+        path: "/data-locations",
+        component: component_data_locations
+    },
+    {
+        path: "/delegatecall",
+        component: component_delegatecall
+    },
+    {
+        path: "/enum",
+        component: component_enum
+    },
+    {
+        path: "/error",
+        component: component_error
+    },
+    {
+        path: "/ether-units",
+        component: component_ether_units
+    },
+    {
+        path: "/events",
+        component: component_events
+    },
+    {
+        path: "/fallback",
+        component: component_fallback
+    },
+    {
+        path: "/first-app",
+        component: component_first_app
+    },
+    {
+        path: "/function",
+        component: component_function
+    },
+    {
+        path: "/function-modifier",
+        component: component_function_modifier
+    },
+    {
+        path: "/gas",
+        component: component_gas
+    },
+    {
+        path: "/hacks/accessing-private-data",
+        component: component_hacks_accessing_private_data
+    },
+    {
+        path: "/hacks/block-timestamp-manipulation",
+        component: component_hacks_block_timestamp_manipulation
+    },
+    {
+        path: "/hacks/delegatecall",
+        component: component_hacks_delegatecall
+    },
+    {
+        path: "/hacks/denial-of-service",
+        component: component_hacks_denial_of_service
+    },
+    {
+        path: "/hacks/front-running",
+        component: component_hacks_front_running
+    },
+    {
+        path: "/hacks/hiding-malicious-code-with-external-contract",
+        component: component_hacks_hiding_malicious_code_with_external_contract
+    },
+    {
+        path: "/hacks/honeypot",
+        component: component_hacks_honeypot
+    },
+    {
+        path: "/hacks/overflow",
+        component: component_hacks_overflow
+    },
+    {
+        path: "/hacks/phishing-with-tx-origin",
+        component: component_hacks_phishing_with_tx_origin
+    },
+    {
+        path: "/hacks/randomness",
+        component: component_hacks_randomness
+    },
+    {
+        path: "/hacks/re-entrancy",
+        component: component_hacks_re_entrancy
+    },
+    {
+        path: "/hacks/self-destruct",
+        component: component_hacks_self_destruct
+    },
+    {
+        path: "/hacks/signature-replay",
+        component: component_hacks_signature_replay
+    },
+    {
+        path: "/hashing",
+        component: component_hashing
+    },
+    {
+        path: "/hello-world",
+        component: component_hello_world
+    },
+    {
+        path: "/if-else",
+        component: component_if_else
+    },
+    {
+        path: "/import",
+        component: component_import
+    },
+    {
+        path: "/inheritance",
+        component: component_inheritance
+    },
+    {
+        path: "/interface",
+        component: component_interface
+    },
+    {
+        path: "/library",
+        component: component_library
+    },
+    {
+        path: "/loop",
+        component: component_loop
+    },
+    {
+        path: "/mapping",
+        component: component_mapping
+    },
+    {
+        path: "/new-contract",
+        component: component_new_contract
+    },
+    {
+        path: "/payable",
+        component: component_payable
+    },
+    {
+        path: "/primitives",
+        component: component_primitives
+    },
+    {
+        path: "/sending-ether",
+        component: component_sending_ether
+    },
+    {
+        path: "/shadowing-inherited-state-variables",
+        component: component_shadowing_inherited_state_variables
+    },
+    {
+        path: "/signature",
+        component: component_signature
+    },
+    {
+        path: "/state-variables",
+        component: component_state_variables
+    },
+    {
+        path: "/structs",
+        component: component_structs
+    },
+    {
+        path: "/super",
+        component: component_super
+    },
+    {
+        path: "/try-catch",
+        component: component_try_catch
+    },
+    {
+        path: "/variables",
+        component: component_variables
+    },
+    {
+        path: "/view-and-pure-functions",
+        component: component_view_and_pure_functions
+    },
+    {
+        path: "/visibility",
+        component: component_visibility
+    },
+    {
+        path: "/",
+        component: component_
+    },
 ]
 
 export default routes

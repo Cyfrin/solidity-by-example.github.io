@@ -104,6 +104,9 @@ async function main() {
     }
   })
 
+  // reverse to put home page at bottom
+  routes.reverse()
+
   const template = (
     await readFile(path.join(__dirname, "template", "routes.tsx.mustache"))
   ).toString()
