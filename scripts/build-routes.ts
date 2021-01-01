@@ -12,7 +12,7 @@ interface Route {
 }
 
 function buildRoutePath(folders: string[]) {
-  const routePath = [""]
+  const routePath = ["/"]
 
   // ignore path up to /pages
   const start = folders.findIndex((file) => file === "pages")
@@ -29,7 +29,7 @@ function buildRoutePath(folders: string[]) {
     routePath.push(file)
   }
 
-  return routePath.join("/")
+  return path.join(...routePath)
 }
 
 // build import path relative to src
