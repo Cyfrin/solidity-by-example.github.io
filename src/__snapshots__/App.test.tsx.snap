@@ -357,8 +357,8 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
-          key="/"
-          path="/"
+          key=""
+          path=""
         />
       </Switch>
     </div>

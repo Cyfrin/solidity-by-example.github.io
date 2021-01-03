@@ -98,7 +98,7 @@ async function main() {
     const routePath = buildRoutePath(folders)
 
     return {
-      routePath,
+      routePath: routePath === "/" ? "" : routePath,
       importPath: buildImportPath(folders),
       componentName: getComponentName(routePath),
     }

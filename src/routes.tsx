@@ -293,7 +293,7 @@ const routes: Route[] = [
         component: component_visibility
     },
     {
-        path: "/",
+        path: "",
         component: component_
     },
 ]
