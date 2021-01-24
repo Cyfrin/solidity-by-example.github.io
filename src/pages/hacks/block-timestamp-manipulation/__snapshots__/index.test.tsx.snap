@@ -50,6 +50,6 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
 </ul>
 "
   title="Block Timestamp Manipulation"
-  version="0.6.10"
+  version="0.7.6"
 />
 `;

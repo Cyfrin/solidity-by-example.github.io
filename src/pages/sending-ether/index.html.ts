@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Sending Ether (transfer, send, call)"
 export const description = "An example of sending Ether in Solidity"
 

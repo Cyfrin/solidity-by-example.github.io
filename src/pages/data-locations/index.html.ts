@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Data Locations - Storage, Memory and Calldata"
 export const description = "Data locations - storage, memory and calldata"
 

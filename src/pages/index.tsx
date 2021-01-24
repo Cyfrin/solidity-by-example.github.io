@@ -192,6 +192,10 @@ const APP_ROUTES: Route[] = [
     title: "Precompute Contract Address with Create2",
   },
   {
+    path: "minimal-proxy",
+    title: "Minimal Proxy Contract",
+  },
+  {
     path: "uni-directional-payment-channel",
     title: "Uni-directional Payment Channel",
   },
@@ -277,7 +281,10 @@ export const ROUTES_BY_CATEGORY = [
   },
 ]
 
-const UPDATES = ["2021/01/01 - Updated to 0.7.6"]
+const UPDATES = [
+  "2021/01/24 - Minimal Proxy Contract",
+  "2021/01/01 - Updated to 0.7.6",
+]
 
 function HomePage() {
   return (

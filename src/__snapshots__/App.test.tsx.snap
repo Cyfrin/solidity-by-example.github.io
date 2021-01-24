@@ -45,6 +45,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/app/minimal-proxy"
+          path="/app/minimal-proxy"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/app/multi-sig-wallet"
           path="/app/multi-sig-wallet"
         />

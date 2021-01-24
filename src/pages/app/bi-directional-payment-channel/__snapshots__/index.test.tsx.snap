@@ -176,6 +176,6 @@ Closing a channel when Alice and Bob do not agree on the final balances
 </code></pre>
 "
   title="Bi-Directional Payment Channel"
-  version="0.6.10"
+  version="0.7.6"
 />
 `;

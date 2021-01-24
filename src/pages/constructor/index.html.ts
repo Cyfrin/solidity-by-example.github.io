@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Constructor"
 export const description = "Learn how to initialize smart contracts in Solidity using a constructor"
 
@@ -56,7 +56,7 @@ const html = `<p>A <code>constructor</code> is an optional function that is exec
 <span class="hljs-comment">// 1. Y</span>
 <span class="hljs-comment">// 2. X</span>
 <span class="hljs-comment">// 3. E</span>
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">E</span> <span class="hljs-keyword">is</span> <span class="hljs-title">X</span>, <span class="hljs-title">Y</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">F</span> <span class="hljs-keyword">is</span> <span class="hljs-title">X</span>, <span class="hljs-title">Y</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title">Y</span>(<span class="hljs-params"><span class="hljs-string">"Y was called"</span></span>) <span class="hljs-title">X</span>(<span class="hljs-params"><span class="hljs-string">"X was called"</span></span>) </span>{
     }
 }

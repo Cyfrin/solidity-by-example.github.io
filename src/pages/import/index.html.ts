@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Import"
 export const description = "Learn how to import other Solidity files"
 

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Bi-Directional Payment Channel"
 export const description = "An example of bi-directional payment channels in Solidity"
 

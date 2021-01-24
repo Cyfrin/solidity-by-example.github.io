@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Payable"
 export const description = "An example of how to use the keyword payable in Solidity"
 

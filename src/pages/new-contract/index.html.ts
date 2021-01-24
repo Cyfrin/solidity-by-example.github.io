@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Contract that Create other Contracts"
 export const description = "Learn how to create new contract from inside a contract with Solidity"
 

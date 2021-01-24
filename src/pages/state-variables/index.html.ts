@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Reading and Writing to a State Variable"
 export const description = "Reading and Writing to a State Variable"
 

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Library"
 export const description = "Example of how to write and use libraries in your Solidity code"
 

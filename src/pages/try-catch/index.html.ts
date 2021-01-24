@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.6.10"
+export const version = "0.7.6"
 export const title = "Try Catch"
 export const description = "An example of try / catch in Solidity"
 

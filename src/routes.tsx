@@ -3,6 +3,7 @@ import component_app_create2 from "./pages/app/create2"
 import component_app_erc20 from "./pages/app/erc20"
 import component_app_iterable_mapping from "./pages/app/iterable-mapping"
 import component_app_merkle_tree from "./pages/app/merkle-tree"
+import component_app_minimal_proxy from "./pages/app/minimal-proxy"
 import component_app_multi_sig_wallet from "./pages/app/multi-sig-wallet"
 import component_app_uni_directional_payment_channel from "./pages/app/uni-directional-payment-channel"
 import component_array from "./pages/array"
@@ -83,6 +84,10 @@ const routes: Route[] = [
     {
         path: "/app/merkle-tree",
         component: component_app_merkle_tree
+    },
+    {
+        path: "/app/minimal-proxy",
+        component: component_app_minimal_proxy
     },
     {
         path: "/app/multi-sig-wallet",

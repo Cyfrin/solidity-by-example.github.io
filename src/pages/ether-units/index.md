@@ -1,6 +1,6 @@
 ---
 title: Ether and Wei
-version: 0.6.10
+version: 0.7.6
 description: An example of Ether and Wei in Solidity
 ---
 

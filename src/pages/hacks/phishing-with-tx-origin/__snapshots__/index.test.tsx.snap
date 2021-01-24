@@ -68,6 +68,6 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
     }</code></pre>
 "
   title="Phishing with tx.origin"
-  version="0.6.10"
+  version="0.7.6"
 />
 `;

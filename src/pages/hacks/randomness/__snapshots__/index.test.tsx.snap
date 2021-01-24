@@ -70,6 +70,6 @@ Attack computed the correct answer by simply copying the code that computes the 
 </ul>
 "
   title="Source of Randomness"
-  version="0.6.10"
+  version="0.7.6"
 />
 `;

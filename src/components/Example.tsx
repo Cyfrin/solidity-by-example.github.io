@@ -6,7 +6,7 @@ import styles from "./Example.module.css"
 interface Props {
   title: string
   description: string
-  version: "0.6.10" | "0.5.16"
+  version: "0.7.6"
   html: string
 }
 

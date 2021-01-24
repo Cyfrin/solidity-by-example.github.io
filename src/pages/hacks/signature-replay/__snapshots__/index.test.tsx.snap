@@ -138,6 +138,6 @@ if the signer&#39;s intention was to approve a transaction once.</p>
 */</span></code></pre>
 "
   title="Signature Replay"
-  version="0.6.10"
+  version="0.7.6"
 />
 `;

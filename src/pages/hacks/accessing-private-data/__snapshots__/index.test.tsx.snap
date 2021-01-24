@@ -117,6 +117,6 @@ web3.eth.getStorageAt(\\"0x3505a02BCDFbb225988161a95528bfDb279faD6b\\", \\"0xb39
 </ul>
 "
   title="Accessing Private Data"
-  version="0.6.10"
+  version="0.7.6"
 />
 `;
