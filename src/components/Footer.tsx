@@ -1,13 +1,21 @@
 import React from "react"
 import styles from "./Footer.module.css"
 
-const ADDRESS = "0xA8DD4bA80d8904d7cAcE5c3622CCf78bEa5AcFEe"
+// Khan Academy
+const ADDRESS = "0x95a647B3d8a3F11176BAdB799b9499C671fa243a"
 
 function Footer() {
   return (
     <div className={styles.component}>
       <div className={styles.row}>
-        Donate{" "}
+        Donation goes directly to
+        <a
+          href="https://khanacademy.org"
+          target="__blank"
+          className={styles.khan}
+        >
+          Khan Academy
+        </a>
         <span role="img" aria-label="smiley">
           🙂
         </span>
