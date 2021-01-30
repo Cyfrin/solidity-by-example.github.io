@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className={styles.component}>
       <div className={styles.row}>
-        Donation
+        Donate
         <span role="img" aria-label="smiley">
           🙂
         </span>
