@@ -7,8 +7,7 @@ exports[`it renders 1`] = `
   <div
     className="row"
   >
-    Donate
-     
+    Donation
     <span
       aria-label="smiley"
       role="img"
@@ -20,12 +19,24 @@ exports[`it renders 1`] = `
     className="row"
   >
     <a
-      href="https://etherscan.io/address/0xA8DD4bA80d8904d7cAcE5c3622CCf78bEa5AcFEe"
+      href="https://etherscan.io/address/0x95a647B3d8a3F11176BAdB799b9499C671fa243a"
       target="__blank"
     >
-      0xA8DD
+      0x95a6
       ...
-      5AcFE
+      fa243
+    </a>
+  </div>
+  <div
+    className="row"
+  >
+    your ETH will directly go to
+    <a
+      className="khan"
+      href="https://khanacademy.org"
+      target="__blank"
+    >
+      Khan Academy
     </a>
   </div>
   <div

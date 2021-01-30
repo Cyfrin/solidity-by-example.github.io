@@ -8,14 +8,7 @@ function Footer() {
   return (
     <div className={styles.component}>
       <div className={styles.row}>
-        Donation goes directly to
-        <a
-          href="https://khanacademy.org"
-          target="__blank"
-          className={styles.khan}
-        >
-          Khan Academy
-        </a>
+        Donation
         <span role="img" aria-label="smiley">
           🙂
         </span>
@@ -23,6 +16,16 @@ function Footer() {
       <div className={styles.row}>
         <a href={`https://etherscan.io/address/${ADDRESS}`} target="__blank">
           {ADDRESS.slice(0, 6)}...{ADDRESS.slice(-6, -1)}
+        </a>
+      </div>
+      <div className={styles.row}>
+        your ETH will directly go to
+        <a
+          href="https://khanacademy.org"
+          target="__blank"
+          className={styles.khan}
+        >
+          Khan Academy
         </a>
       </div>
       <div className={styles.row}>
