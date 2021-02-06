@@ -13,7 +13,6 @@ How to Sign and Verify
 1. Recreate hash from the original message
 2. Recover signer from signature and hash
 3. Compare recovered signer to claimed signer
-
 */
 
 contract VerifySignature {
@@ -29,7 +28,7 @@ contract VerifySignature {
         1
     )
 
-    hash = 0xcf36ac4f97dc10d91fc2cbb20d718e94a8cbfe0f82eaedc6a4aa38946fb797cd
+    hash = "0xcf36ac4f97dc10d91fc2cbb20d718e94a8cbfe0f82eaedc6a4aa38946fb797cd"
     */
     function getMessageHash(
         address _to, uint _amount, string memory _message, uint _nonce
@@ -40,6 +39,11 @@ contract VerifySignature {
     }
 
     /* 3. Sign message hash
+    # using browser
+    account = "copy paste account of signer here"
+    ethereum.request({ method: "personal_sign", params: [account, hash]}).then(console.log)
+
+    # using web3
     web3.personal.sign(hash, web3.eth.defaultAccount, console.log)
 
     Signature will be different for different accounts
