@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
   html="<p><code>keccak256</code> computes the Keccak-256 hash of the input.</p>
 <p>Some use cases are:</p>
 <ul>
-<li>Creating an deterministic unique ID from a input</li>
+<li>Creating a deterministic unique ID from a input</li>
 <li>Commit-Reveal scheme</li>
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>

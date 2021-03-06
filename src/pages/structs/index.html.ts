@@ -37,7 +37,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
         todos.<span class="hljs-built_in">push</span>(todo);
     }
 
-    <span class="hljs-comment">// Solidity automatically created a getter for&#x27; todos&#x27; so</span>
+    <span class="hljs-comment">// Solidity automatically created a getter for &#x27;todos&#x27; so</span>
     <span class="hljs-comment">// you don&#x27;t actually need this function.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> text, <span class="hljs-keyword">bool</span> completed</span>)
@@ -66,7 +66,8 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 <span class="hljs-keyword">struct</span> <span class="hljs-title">Todo</span> {
     <span class="hljs-keyword">string</span> text;
     <span class="hljs-keyword">bool</span> completed;
-}</code></pre>
+}
+</code></pre>
 <p>File that imports the struct above</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
@@ -76,7 +77,8 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Todos</span> </span>{
     <span class="hljs-comment">// An array of &#x27;Todo&#x27; structs</span>
     Todo[] <span class="hljs-keyword">public</span> todos;
-}</code></pre>
+}
+</code></pre>
 `
 
 export default html

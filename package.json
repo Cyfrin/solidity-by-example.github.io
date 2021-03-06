@@ -50,11 +50,11 @@
     "highlightjs-solidity": "^1.0.21",
     "marked": "^2.0.0",
     "mustache": "^4.1.0",
+    "prettier": "^2.2.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.5",
     "react-snap": "^1.23.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.5",
-    "prettier": "^2.2.1",
-    "prettier-plugin-solidity": "^1.0.0-beta.5",
     "yaml": "^1.10.0"
   },
   "jest": {

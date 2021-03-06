@@ -3,7 +3,7 @@
 exports[`it renders 1`] = `
 <Example
   description="Example of enums in Solidity"
-  html="<p>Solidity support enumerables and they are useful to model choice and keep track of state.</p>
+  html="<p>Solidity supports enumerables and they are useful to model choice and keep track of state.</p>
 <p>Enums can be declared ouside of a contract.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
@@ -59,7 +59,8 @@ exports[`it renders 1`] = `
     Accepted,
     Rejected,
     Canceled
-}</code></pre>
+}
+</code></pre>
 <p>File that imports the enum above</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
@@ -68,7 +69,8 @@ exports[`it renders 1`] = `
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Enum</span> </span>{
     Status <span class=\\"hljs-keyword\\">public</span> status;
-}</code></pre>
+}
+</code></pre>
 "
   title="Enum"
   version="0.7.6"
