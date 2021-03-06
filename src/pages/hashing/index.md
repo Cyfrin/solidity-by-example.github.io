@@ -8,7 +8,7 @@ description: Example of hashing using Keccak256 in Solidity
 
 Some use cases are:
 
-- Creating an deterministic unique ID from a input
+- Creating a deterministic unique ID from a input
 - Commit-Reveal scheme
 - Compact cryptographic signature (by signing the hash instead of a larger input)
 
