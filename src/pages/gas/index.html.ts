@@ -15,7 +15,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 <h3 id="gas-limit">Gas Limit</h3>
 <p>There are 2 upper bounds to the amount of gas you can spend</p>
 <ul>
-<li><code>gas limit</code> (max amount of gas your willing to use for your transaction, set by you)</li>
+<li><code>gas limit</code> (max amount of gas you&#39;re willing to use for your transaction, set by you)</li>
 <li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
