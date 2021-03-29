@@ -20,6 +20,7 @@ import component_fallback from "./pages/fallback"
 import component_first_app from "./pages/first-app"
 import component_function from "./pages/function"
 import component_function_modifier from "./pages/function-modifier"
+import component_function_selector from "./pages/function-selector"
 import component_gas from "./pages/gas"
 import component_hacks_accessing_private_data from "./pages/hacks/accessing-private-data"
 import component_hacks_block_timestamp_manipulation from "./pages/hacks/block-timestamp-manipulation"
@@ -152,6 +153,10 @@ const routes: Route[] = [
     {
         path: "/function-modifier",
         component: component_function_modifier
+    },
+    {
+        path: "/function-selector",
+        component: component_function_selector
     },
     {
         path: "/gas",

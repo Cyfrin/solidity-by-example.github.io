@@ -147,6 +147,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/function-selector"
+          path="/function-selector"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/gas"
           path="/gas"
         />

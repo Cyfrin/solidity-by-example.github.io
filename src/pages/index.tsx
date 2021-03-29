@@ -139,6 +139,11 @@ const SOL_ROUTES: Route[] = [
     title: "Delegatecall",
   },
   {
+    path: "function-selector",
+    title: "Function Selector",
+  },
+
+  {
     path: "calling-contract",
     title: "Calling Other Contract",
   },
@@ -282,6 +287,7 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/03/29 - Function selector",
   "2021/01/24 - Minimal Proxy Contract",
   "2021/01/01 - Updated to 0.7.6",
 ]
@@ -299,9 +305,8 @@ function HomePage() {
       <div className={styles.subHeader}>v 0.7.6</div>
       <div className={styles.main}>
         <p>
-          an introduction to{" "}
-          <a href="https://solidity.readthedocs.io">Solidity</a> with simple
-          examples
+          an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with
+          simple examples
         </p>
 
         <div className={styles.updates}>
@@ -321,9 +326,7 @@ function HomePage() {
                   {(breakingChanges || newFeature) && (
                     <div className={styles.label}>
                       <Label
-                        type={
-                          breakingChanges ? "breakingChanges" : "newFeature"
-                        }
+                        type={breakingChanges ? "breakingChanges" : "newFeature"}
                       />
                     </div>
                   )}

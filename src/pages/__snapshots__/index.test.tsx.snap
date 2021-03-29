@@ -26,8 +26,7 @@ exports[`it renders 1`] = `
     className="main"
   >
     <p>
-      an introduction to
-       
+      an introduction to 
       <a
         href="https://solidity.readthedocs.io"
       >
@@ -41,10 +40,15 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/01/24 - Minimal Proxy Contract
+        2021/03/29 - Function selector
       </div>
       <div
         key="1"
+      >
+        2021/01/24 - Minimal Proxy Contract
+      </div>
+      <div
+        key="2"
       >
         2021/01/01 - Updated to 0.7.6
       </div>
@@ -353,6 +357,16 @@ exports[`it renders 1`] = `
             href="delegatecall"
           >
             Delegatecall
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="function-selector"
+        >
+          <a
+            href="function-selector"
+          >
+            Function Selector
           </a>
         </li>
         <li
