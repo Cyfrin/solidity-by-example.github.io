@@ -21,7 +21,7 @@ contract Todos {
             completed: false
         }));
 
-        // initialize an emoty struct and then update it
+        // initialize an empty struct and then update it
         Todo memory todo;
         todo.text = _text;
         // todo.completed initialized to false
