@@ -263,6 +263,10 @@ const HACK_ROUTES: Route[] = [
     path: "signature-replay",
     title: "Signature Replay",
   },
+  {
+    path: "contract-size",
+    title: "Bypass Contract Size Check",
+  },
 ]
 
 export const ROUTES_BY_CATEGORY = [
@@ -287,6 +291,7 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/05/16 - Hack contract size",
   "2021/03/29 - Function selector",
   "2021/01/24 - Minimal Proxy Contract",
   "2021/01/01 - Updated to 0.7.6",

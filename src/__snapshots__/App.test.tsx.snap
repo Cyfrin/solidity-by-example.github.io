@@ -171,6 +171,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/hacks/contract-size"
+          path="/hacks/contract-size"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/hacks/delegatecall"
           path="/hacks/delegatecall"
         />

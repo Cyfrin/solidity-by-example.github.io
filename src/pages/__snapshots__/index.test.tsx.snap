@@ -40,15 +40,20 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/03/29 - Function selector
+        2021/05/16 - Hack contract size
       </div>
       <div
         key="1"
       >
-        2021/01/24 - Minimal Proxy Contract
+        2021/03/29 - Function selector
       </div>
       <div
         key="2"
+      >
+        2021/01/24 - Minimal Proxy Contract
+      </div>
+      <div
+        key="3"
       >
         2021/01/01 - Updated to 0.7.6
       </div>
@@ -669,6 +674,16 @@ exports[`it renders 1`] = `
             href="/hacks/signature-replay"
           >
             Signature Replay
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/hacks/contract-size"
+        >
+          <a
+            href="/hacks/contract-size"
+          >
+            Bypass Contract Size Check
           </a>
         </li>
       </ul>
