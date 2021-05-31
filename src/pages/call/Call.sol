@@ -4,7 +4,7 @@ pragma solidity ^0.7.6;
 contract Receiver {
     event Received(address caller, uint amount, string message);
 
-    receive() external payable {
+    fallback() external payable {
         emit Received(msg.sender, msg.value, "Fallback was called");
     }
 
