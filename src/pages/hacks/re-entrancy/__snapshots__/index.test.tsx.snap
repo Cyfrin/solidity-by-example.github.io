@@ -108,7 +108,8 @@ Here is how the functions were called
         <span class=\\"hljs-keyword\\">_</span>;
         locked = <span class=\\"hljs-literal\\">false</span>;
     }
-}</code></pre>
+}
+</code></pre>
 "
   title="Re-Entrancy"
   version="0.7.6"

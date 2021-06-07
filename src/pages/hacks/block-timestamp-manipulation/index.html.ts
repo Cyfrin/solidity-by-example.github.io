@@ -43,7 +43,8 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
             <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
         }
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <ul>
 <li>Don&#39;t use <code>block.timestamp</code> for a source of entropy and random number</li>

@@ -40,22 +40,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/05/16 - Hack contract size
+        2021/06/07 - GitHub PR by tanliwei
       </div>
       <div
         key="1"
       >
-        2021/03/29 - Function selector
+        2021/06/07 - GitHub PR by RockmanR
       </div>
       <div
         key="2"
       >
-        2021/01/24 - Minimal Proxy Contract
-      </div>
-      <div
-        key="3"
-      >
-        2021/01/01 - Updated to 0.7.6
+        2021/05/16 - Hack contract size
       </div>
     </div>
     <div

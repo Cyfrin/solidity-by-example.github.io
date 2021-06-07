@@ -61,7 +61,8 @@ exports[`it renders 1`] = `
             <span class=\\"hljs-keyword\\">emit</span> LogBytes(reason);
         }
     }
-}</code></pre>
+}
+</code></pre>
 "
   title="Try Catch"
   version="0.7.6"

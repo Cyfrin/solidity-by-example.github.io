@@ -57,7 +57,8 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         wallet.<span class="hljs-built_in">transfer</span>(owner, <span class="hljs-keyword">address</span>(wallet).<span class="hljs-built_in">balance</span>);
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Use <code>msg.sender</code> instead of <code>tx.origin</code></p>
 <pre><code class="language-solidity">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
@@ -65,7 +66,8 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
 
         (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(_amount)(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
-    }</code></pre>
+    }
+</code></pre>
 `
 
 export default html

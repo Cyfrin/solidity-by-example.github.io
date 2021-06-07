@@ -29,7 +29,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
             completed: <span class="hljs-literal">false</span>
         }));
 
-        <span class="hljs-comment">// initialize an emoty struct and then update it</span>
+        <span class="hljs-comment">// initialize an empty struct and then update it</span>
         Todo <span class="hljs-keyword">memory</span> todo;
         todo.text = _text;
         <span class="hljs-comment">// todo.completed initialized to false</span>

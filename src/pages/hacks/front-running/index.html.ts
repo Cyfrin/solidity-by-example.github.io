@@ -47,7 +47,8 @@ before the original.
         (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-number">10</span> <span class="hljs-literal">ether</span>}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <ul>
 <li>use commit-reveal scheme</li>

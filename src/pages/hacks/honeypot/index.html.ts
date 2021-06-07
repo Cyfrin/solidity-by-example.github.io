@@ -94,7 +94,7 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
     </span>{
         <span class="hljs-keyword">if</span> (equal(_action, <span class="hljs-string">"Withdraw"</span>)) {
-            <span class="hljs-built_in">revert</span>(<span class="hljs-string">"It&#x27;s a trap"</span>);
+            <span class="hljs-keyword">revert</span>(<span class="hljs-string">"It&#x27;s a trap"</span>);
         }
     }
 

@@ -7,7 +7,8 @@ const html = `<p>You can import local and external files in Solidity.</p>
 <h3 id="local">Local</h3>
 <p>Here is our folder structure.</p>
 <pre><code>├── Import.sol
-└── Foo.sol</code></pre>
+└── Foo.sol
+</code></pre>
 <p>Foo.sol</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
@@ -40,7 +41,8 @@ const html = `<p>You can import local and external files in Solidity.</p>
 
 <span class="hljs-comment">// Example import ECDSA.sol from openzeppelin-contract repo, release-v3.3 branch</span>
 <span class="hljs-comment">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol"</span>;</code></pre>
+<span class="hljs-keyword">import</span> <span class="hljs-string">"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol"</span>;
+</code></pre>
 `
 
 export default html

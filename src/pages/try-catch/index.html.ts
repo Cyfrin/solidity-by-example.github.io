@@ -61,7 +61,8 @@ const html = `<p><code>try / catch</code> can only catch errors from external fu
             <span class="hljs-keyword">emit</span> LogBytes(reason);
         }
     }
-}</code></pre>
+}
+</code></pre>
 `
 
 export default html

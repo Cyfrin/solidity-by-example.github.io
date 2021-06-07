@@ -110,7 +110,8 @@ web3.utils.soliditySha3({ type: "uint", value: 1 }, {type: "uint", value: 7})
 user 1
 web3.eth.getStorageAt("0x3505a02BCDFbb225988161a95528bfDb279faD6b", "0xb39221ace053465ec3453ce2b36430bd138b997ecea25c1043da0c366812b828", console.log)
 web3.eth.getStorageAt("0x3505a02BCDFbb225988161a95528bfDb279faD6b", "0xb39221ace053465ec3453ce2b36430bd138b997ecea25c1043da0c366812b829", console.log)
-*/</span></code></pre>
+*/</span>
+</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <ul>
 <li>Don&#39;t store sensitive information on the blockchain.</li>

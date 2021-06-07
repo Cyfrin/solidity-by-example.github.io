@@ -27,7 +27,7 @@ assertion probably means that there is a bug.</li>
         <span class=\\"hljs-comment\\">// Revert is useful when the condition to check is complex.</span>
         <span class=\\"hljs-comment\\">// This code does the exact same thing as the example above</span>
         <span class=\\"hljs-keyword\\">if</span> (_i &lt;= <span class=\\"hljs-number\\">10</span>) {
-            <span class=\\"hljs-built_in\\">revert</span>(<span class=\\"hljs-string\\">\\"Input must be greater than 10\\"</span>);
+            <span class=\\"hljs-keyword\\">revert</span>(<span class=\\"hljs-string\\">\\"Input must be greater than 10\\"</span>);
         }
     }
 
@@ -70,7 +70,7 @@ assertion probably means that there is a bug.</li>
         <span class=\\"hljs-built_in\\">require</span>(balance &gt;= _amount, <span class=\\"hljs-string\\">\\"Underflow\\"</span>);
 
         <span class=\\"hljs-keyword\\">if</span> (balance &lt; _amount) {
-            <span class=\\"hljs-built_in\\">revert</span>(<span class=\\"hljs-string\\">\\"Underflow\\"</span>);
+            <span class=\\"hljs-keyword\\">revert</span>(<span class=\\"hljs-string\\">\\"Underflow\\"</span>);
         }
 
         balance -= _amount;

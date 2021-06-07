@@ -70,7 +70,8 @@ caller of HackMe, in this case Attack.
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         hackMe.<span class="hljs-built_in">call</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"pwn()"</span>));
     }
-}</code></pre>
+}
+</code></pre>
 <p>Here is another example.</p>
 <p>You will need to understand how Solidity stores
 state variables before you can understand this exploit.</p>

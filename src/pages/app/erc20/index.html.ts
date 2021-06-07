@@ -42,7 +42,8 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
         <span class="hljs-comment">// 1 token = 1 * (10 ** decimals)</span>
         _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-number">100</span> * <span class="hljs-number">10</span> ** <span class="hljs-keyword">uint</span>(decimals()));
     }
-}</code></pre>
+}
+</code></pre>
 <h2 id="contract-to-swap-tokens">Contract to swap tokens</h2>
 <p>Here is an example contract, <code>TokenSwap</code>, to trade one ERC20 token for another.</p>
 <p>This contract will swap tokens by calling</p>
@@ -121,7 +122,8 @@ How to swap tokens
         <span class="hljs-keyword">bool</span> sent = token.transferFrom(sender, recipient, amount);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Token transfer failed"</span>);
     }
-}</code></pre>
+}
+</code></pre>
 `
 
 export default html

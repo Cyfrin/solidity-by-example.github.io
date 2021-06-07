@@ -58,7 +58,8 @@ will actually execute the code at Mal.
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">log</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"Mal was called\\"</span>);
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id=\\"preventative-techniques\\">Preventative Techniques</h3>
 <ul>
 <li>Initialize a new contract inside the constructor</li>
@@ -69,7 +70,8 @@ external contract can be reviewed</li>
 
 <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
     bar = <span class=\\"hljs-keyword\\">new</span> Bar();
-}</code></pre>
+}
+</code></pre>
 "
   title="Hiding Malicious Code with External Contract"
   version="0.7.6"

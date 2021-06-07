@@ -61,7 +61,8 @@ if the signer&#39;s intention was to approve a transaction once.</p>
 
         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     }
-}</code></pre>
+}
+</code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Sign messages with <code>nonce</code> and address of the contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -135,7 +136,8 @@ if the signer&#39;s intention was to approve a transaction once.</p>
 // signatures
 0x120f8ed8f2fa55498f2ef0a22f26e39b9b51ed29cc93fe0ef3ed1756f58fad0c6eb5a1d6f3671f8d5163639fdc40bb8720de6d8f2523077ad6d1138a60923b801c
 0xa240a487de1eb5bb971e920cb0677a47ddc6421e38f7b048f8aa88266b2c884a10455a52dc76a203a1a9a953418469f9eec2c59e87201bbc8db0e4d9796935cb1b
-*/</span></code></pre>
+*/</span>
+</code></pre>
 `
 
 export default html
