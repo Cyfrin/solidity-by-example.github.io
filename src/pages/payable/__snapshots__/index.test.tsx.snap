@@ -34,14 +34,14 @@ exports[`it renders 1`] = `
 
         <span class=\\"hljs-comment\\">// send all Ether to owner</span>
         <span class=\\"hljs-comment\\">// Owner can receive Ether since the address of owner is payable</span>
-        (<span class=\\"hljs-keyword\\">bool</span> success,) = owner.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value:</span> amount}(<span class=\\"hljs-string\\">\\"\\"</span>);
+        (<span class=\\"hljs-keyword\\">bool</span> success,) = owner.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: amount}(<span class=\\"hljs-string\\">\\"\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(success, <span class=\\"hljs-string\\">\\"Failed to send Ether\\"</span>);
     }
 
     <span class=\\"hljs-comment\\">// Function to transfer Ether from this contract to address from input</span>
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">payable</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-comment\\">// Note that \\"to\\" is declared as payable</span>
-        (<span class=\\"hljs-keyword\\">bool</span> success,) = _to.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value:</span> _amount}(<span class=\\"hljs-string\\">\\"\\"</span>);
+        (<span class=\\"hljs-keyword\\">bool</span> success,) = _to.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: _amount}(<span class=\\"hljs-string\\">\\"\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(success, <span class=\\"hljs-string\\">\\"Failed to send Ether\\"</span>);
     }
 }

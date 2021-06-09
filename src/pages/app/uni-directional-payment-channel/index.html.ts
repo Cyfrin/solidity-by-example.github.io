@@ -64,7 +64,7 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == receiver, <span class="hljs-string">"!receiver"</span>);
         <span class="hljs-built_in">require</span>(_verify(_amount, _sig), <span class="hljs-string">"invalid sig"</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = receiver.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value:</span> _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) = receiver.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
         <span class="hljs-built_in">selfdestruct</span>(sender);
     }
