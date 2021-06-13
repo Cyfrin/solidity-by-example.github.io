@@ -2,7 +2,7 @@
 pragma solidity ^0.7.6;
 
 contract Primitives {
-    bool boo = true;
+    bool public boo = true;
 
     /*
     uint stands for unsigned integer, meaning non negative integers
