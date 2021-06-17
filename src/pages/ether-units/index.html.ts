@@ -14,7 +14,7 @@ const html = `<p>Transactions are paid with <code>ether</code>.</p>
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isOneWei = <span class="hljs-number">1</span> <span class="hljs-literal">wei</span> == <span class="hljs-number">1</span>;
 
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> oneEther = <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>;
-    <span class="hljs-comment">// 1 ether is equal to 10^18</span>
+    <span class="hljs-comment">// 1 ether is equal to 10^18 wei</span>
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isOneEther = <span class="hljs-number">1</span> <span class="hljs-literal">ether</span> == <span class="hljs-number">1e18</span>;
 }
 </code></pre>

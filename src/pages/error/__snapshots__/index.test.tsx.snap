@@ -15,7 +15,7 @@ assertion probably means that there is a bug.</li>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">Error</span></span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testRequire</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testRequire</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-comment\\">// Require should be used to validate conditions such as:</span>
         <span class=\\"hljs-comment\\">// - inputs</span>
         <span class=\\"hljs-comment\\">// - conditions before execution</span>
@@ -23,7 +23,7 @@ assertion probably means that there is a bug.</li>
         <span class=\\"hljs-built_in\\">require</span>(_i &gt; <span class=\\"hljs-number\\">10</span>, <span class=\\"hljs-string\\">\\"Input must be greater than 10\\"</span>);
     }
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testRevert</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testRevert</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _i</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-comment\\">// Revert is useful when the condition to check is complex.</span>
         <span class=\\"hljs-comment\\">// This code does the exact same thing as the example above</span>
         <span class=\\"hljs-keyword\\">if</span> (_i &lt;= <span class=\\"hljs-number\\">10</span>) {
@@ -33,7 +33,7 @@ assertion probably means that there is a bug.</li>
 
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> num;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testAssert</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testAssert</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-comment\\">// Assert should only be used to test for internal errors,</span>
         <span class=\\"hljs-comment\\">// and to check invariants.</span>
 
