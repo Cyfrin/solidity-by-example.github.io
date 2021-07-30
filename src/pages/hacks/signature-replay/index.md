@@ -10,7 +10,7 @@ a function is a useful technique.
 For example this technique is used to:
 
 - reduce number of transaction on chain
-- gas-less transaction, called `meta transcation`
+- gas-less transaction, called `meta transaction`
 
 ### Vulnerability
 
