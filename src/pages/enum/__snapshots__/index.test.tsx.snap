@@ -4,7 +4,7 @@ exports[`it renders 1`] = `
 <Example
   description="Example of enums in Solidity"
   html="<p>Solidity supports enumerables and they are useful to model choice and keep track of state.</p>
-<p>Enums can be declared ouside of a contract.</p>
+<p>Enums can be declared outside of a contract.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
 

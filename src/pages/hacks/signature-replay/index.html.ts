@@ -8,7 +8,7 @@ a function is a useful technique.</p>
 <p>For example this technique is used to:</p>
 <ul>
 <li>reduce number of transaction on chain</li>
-<li>gas-less transaction, called <code>meta transcation</code></li>
+<li>gas-less transaction, called <code>meta transaction</code></li>
 </ul>
 <h3 id="vulnerability">Vulnerability</h3>
 <p>Same signature can be used multiple times to execute a function. This can be harmful

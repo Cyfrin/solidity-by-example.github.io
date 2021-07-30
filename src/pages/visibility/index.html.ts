@@ -4,7 +4,7 @@ export const title = "Visibility"
 export const description = "An example of external, internal, private and public functions in Solidity"
 
 const html = `<p>Functions and state variables have to declare whether they are accessible by other contracts.</p>
-<p>Fucntions can be declared as</p>
+<p>Functions can be declared as</p>
 <ul>
 <li><code>public</code> - any contract and account can call</li>
 <li><code>private</code> - only inside the contract that defines the function</li>
