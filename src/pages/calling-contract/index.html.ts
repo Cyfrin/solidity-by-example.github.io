@@ -38,7 +38,7 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXandSendEther</span>(<span class="hljs-params">Callee _callee, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        (<span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> value) = _callee.setXandSendEther{<span class="hljs-built_in">value:</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_x);
+        (<span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> value) = _callee.setXandSendEther{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_x);
     }
 }
 </code></pre>

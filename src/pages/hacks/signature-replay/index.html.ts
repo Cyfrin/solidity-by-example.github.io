@@ -8,7 +8,7 @@ a function is a useful technique.</p>
 <p>For example this technique is used to:</p>
 <ul>
 <li>reduce number of transaction on chain</li>
-<li>gas-less transaction, called <code>meta transcation</code></li>
+<li>gas-less transaction, called <code>meta transaction</code></li>
 </ul>
 <h3 id="vulnerability">Vulnerability</h3>
 <p>Same signature can be used multiple times to execute a function. This can be harmful
@@ -36,7 +36,7 @@ if the signer&#39;s intention was to approve a transaction once.</p>
         <span class="hljs-keyword">bytes32</span> txHash = getTxHash(_to, _amount);
         <span class="hljs-built_in">require</span>(_checkSigs(_sigs, txHash), <span class="hljs-string">"invalid sig"</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value:</span> _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 
@@ -92,7 +92,7 @@ if the signer&#39;s intention was to approve a transaction once.</p>
 
         executed[txHash] = <span class="hljs-literal">true</span>;
 
-        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value:</span> _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 

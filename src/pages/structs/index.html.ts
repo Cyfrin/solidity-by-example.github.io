@@ -4,7 +4,7 @@ export const title = "Structs"
 export const description = "An example of how to use structs in Solidity"
 
 const html = `<p>You can define your own type by creating a <code>struct</code>.</p>
-<p>They are useful for grouping togther related data.</p>
+<p>They are useful for grouping together related data.</p>
 <p>Structs can be declared outside of a contract and imported in another contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>

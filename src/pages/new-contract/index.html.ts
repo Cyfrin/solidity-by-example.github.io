@@ -29,7 +29,7 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
     </span>{
-        Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value:</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_owner, _model);
+        Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 

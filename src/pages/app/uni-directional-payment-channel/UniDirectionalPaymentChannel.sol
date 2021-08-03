@@ -10,7 +10,7 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
     address payable public sender;
     address payable public receiver;
 
-    uint private constant DURACTION = 7 * 24 * 60 * 60;
+    uint private constant DURATION = 7 * 24 * 60 * 60;
     uint public expiresAt;
 
     constructor(address payable _receiver) payable {

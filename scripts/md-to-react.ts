@@ -34,9 +34,7 @@ function getMetadata(lines: string[]): Metadata {
   assert(lines[0] === "---", "Invalid front matter")
   assert(lines[lines.length - 1] === "---", "Invalid front matter")
 
-  const { title, description, version } = yaml.parse(
-    lines.slice(1, -1).join("\n")
-  )
+  const { title, description, version } = yaml.parse(lines.slice(1, -1).join("\n"))
 
   return { title, description, version }
 }
@@ -87,9 +85,9 @@ async function mdToHtml(filePath: string) {
 
   const markdown = mustache.render(content, codes)
   const html = marked(markdown, {
-    highlight: (code, lang) => {
-      if (lang === "solidity") {
-        return hljs.highlight(lang, code).value
+    highlight: (code, language) => {
+      if (language === "solidity") {
+        return hljs.highlight(code, { language }).value
       }
       return code
     },

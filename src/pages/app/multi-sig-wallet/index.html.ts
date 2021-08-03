@@ -83,7 +83,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         numConfirmationsRequired = _numConfirmationsRequired;
     }
 
-    <span class="hljs-keyword">receive</span>() <span class="hljs-keyword">payable</span> <span class="hljs-keyword">external</span> {
+    <span class="hljs-function"><span class="hljs-keyword">receive</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-keyword">emit</span> Deposit(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>);
     }
 
@@ -95,7 +95,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
 
         transactions.<span class="hljs-built_in">push</span>(Transaction({
             to: _to,
-            <span class="hljs-built_in">value:</span> _value,
+            <span class="hljs-built_in">value</span>: _value,
             data: _data,
             executed: <span class="hljs-literal">false</span>,
             numConfirmations: <span class="hljs-number">0</span>
@@ -133,7 +133,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
 
         transaction.executed = <span class="hljs-literal">true</span>;
 
-        (<span class="hljs-keyword">bool</span> success, ) = transaction.to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value:</span> transaction.<span class="hljs-built_in">value</span>}(transaction.data);
+        (<span class="hljs-keyword">bool</span> success, ) = transaction.to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: transaction.<span class="hljs-built_in">value</span>}(transaction.data);
         <span class="hljs-built_in">require</span>(success, <span class="hljs-string">"tx failed"</span>);
 
         <span class="hljs-keyword">emit</span> ExecuteTransaction(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _txIndex);
