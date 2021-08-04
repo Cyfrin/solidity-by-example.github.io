@@ -13,7 +13,7 @@ library SafeMath {
 contract TestSafeMath {
     using SafeMath for uint;
 
-    uint public MAX_UINT = 2 ** 256 - 1;
+    uint public MAX_UINT = 2**256 - 1;
 
     function testAdd(uint x, uint y) public pure returns (uint) {
         return x.add(y);
@@ -25,6 +25,7 @@ contract TestSafeMath {
 library Array {
     function remove(uint[] storage arr, uint index) public {
         // Move the last element into the place to delete
+        require(arr.length > 0, "Can't remove from empty array");
         arr[index] = arr[arr.length - 1];
         arr.pop();
     }
