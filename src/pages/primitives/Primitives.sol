@@ -18,7 +18,7 @@ contract Primitives {
 
     /*
     Negative numbers are allowed for int types.
-    Like uint, different ranges are available from uint8 to uint256
+    Like uint, different ranges are available from int8 to int256
     */
     int8 public i8 = -1;
     int256 public i256 = 456;
