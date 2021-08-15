@@ -22,7 +22,7 @@ you can&#39;t send ether.</p>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestSafeMath</span> </span>{
     <span class="hljs-keyword">using</span> <span class="hljs-title">SafeMath</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint</span></span>;
 
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> MAX_UINT = <span class="hljs-number">2</span> ** <span class="hljs-number">256</span> - <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> MAX_UINT = <span class="hljs-number">2</span>**<span class="hljs-number">256</span> - <span class="hljs-number">1</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testAdd</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">return</span> x.add(y);
@@ -34,6 +34,7 @@ you can&#39;t send ether.</p>
 <span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">Array</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">storage</span> arr, <span class="hljs-keyword">uint</span> index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// Move the last element into the place to delete</span>
+        <span class="hljs-built_in">require</span>(arr.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>, <span class="hljs-string">"Can&#x27;t remove from empty array"</span>);
         arr[index] = arr[arr.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>];
         arr.<span class="hljs-built_in">pop</span>();
     }

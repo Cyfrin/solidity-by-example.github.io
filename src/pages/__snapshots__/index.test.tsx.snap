@@ -40,17 +40,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/07/30 GitHub PR by pmuens
+        2021/08/15 GitHub PR by janndriessen
       </div>
       <div
         key="1"
       >
-        2021/06/10 - GitHub PR by diegoramosxyz
+        2021/08/15 - GitHub PR by devengn
       </div>
       <div
         key="2"
       >
-        2021/06/10 - GitHub PR by tanliwei
+        2021/08/15 - GitHub PR by diegoramosxyz
       </div>
     </div>
     <div

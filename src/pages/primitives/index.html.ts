@@ -30,7 +30,7 @@ const html = `<p>Here we introduce you to some primitive data types available in
 
     <span class="hljs-comment">/*
     Negative numbers are allowed for int types.
-    Like uint, different ranges are available from uint8 to uint256
+    Like uint, different ranges are available from int8 to int256
     */</span>
     <span class="hljs-keyword">int8</span> <span class="hljs-keyword">public</span> i8 = <span class="hljs-number">-1</span>;
     <span class="hljs-keyword">int256</span> <span class="hljs-keyword">public</span> i256 = <span class="hljs-number">456</span>;

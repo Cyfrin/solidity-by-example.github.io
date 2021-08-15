@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.7.6"
-export const title = "Contract that Create other Contracts"
-export const description = "Learn how to create new contract from inside a contract with Solidity"
+export const title = "Contract that Creates other Contracts"
+export const description = "Learn how to create new contracts from inside of a contract with Solidity"
 
 const html = `<p>Contracts can be created by other contracts using the <code>new</code> keyword.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -10,10 +10,12 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Car</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
     <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> model;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> carAddr;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         owner = _owner;
         model = _model;
+        carAddr = <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>);
     }
 }
 
@@ -36,11 +38,11 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCar</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">view</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> model, <span class="hljs-keyword">uint</span> balance</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> model, <span class="hljs-keyword">address</span> carAddr, <span class="hljs-keyword">uint</span> balance</span>)
     </span>{
         Car car = cars[_index];
 
-        <span class="hljs-keyword">return</span> (car.owner(), car.model(), <span class="hljs-keyword">address</span>(car).<span class="hljs-built_in">balance</span>);
+        <span class="hljs-keyword">return</span> (car.owner(), car.model(), car.carAddr(), <span class="hljs-keyword">address</span>(car).<span class="hljs-built_in">balance</span>);
     }
 }
 </code></pre>

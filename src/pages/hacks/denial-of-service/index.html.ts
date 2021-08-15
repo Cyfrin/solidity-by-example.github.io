@@ -1,6 +1,6 @@
 // metadata
 export const version = "0.7.6"
-export const title = "Denail of Service"
+export const title = "Denial of Service"
 export const description = "An example of denial of service hack in Solidity"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
@@ -52,7 +52,7 @@ Ether sent from KingOfEther before the new king is set.
     }
 
     <span class="hljs-comment">// You can also perform a DOS by consuming all gas using assert.</span>
-    <span class="hljs-comment">// This attack wil work even if the calling contract does not check</span>
+    <span class="hljs-comment">// This attack will work even if the calling contract does not check</span>
     <span class="hljs-comment">// whether the call was successful or not.</span>
     <span class="hljs-comment">//</span>
     <span class="hljs-comment">// function () external payable {</span>

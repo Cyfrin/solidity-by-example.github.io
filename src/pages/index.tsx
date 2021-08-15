@@ -291,9 +291,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
-  "2021/07/30 GitHub PR by pmuens",
-  "2021/06/10 - GitHub PR by diegoramosxyz",
-  "2021/06/10 - GitHub PR by tanliwei",
+  "2021/08/15 GitHub PR by janndriessen",
+  "2021/08/15 - GitHub PR by devengn",
+  "2021/08/15 - GitHub PR by diegoramosxyz",
 ]
 
 function HomePage() {
