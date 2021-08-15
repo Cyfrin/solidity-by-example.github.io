@@ -6,13 +6,13 @@ description: An example of how to delete your smart contract by calling seldestr
 
 Contracts can be deleted from the blockchain by calling `selfdestruct`.
 
-`selfdestruct` sends all remaining Ether stored in the contract to an
+`selfdestruct` sends all remaining Ether stored in the contract to a
 designated address.
 
 ### Vulnerability
 
 A malicious contract can use `selfdestruct` to
-force send Ether to any contract.
+force sending Ether to any contract.
 
 ```solidity
 {{{ForceEther}}}
