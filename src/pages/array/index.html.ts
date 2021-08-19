@@ -1,16 +1,16 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Array"
 export const description = "Learn about arrays in Solidity"
 
 const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Array</span> </span>{
     <span class="hljs-comment">// Several ways to initialize an array</span>
     <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
-    <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr2 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];
+    <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr2 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
     <span class="hljs-comment">// Fixed sized array, all elements initialize to 0</span>
     <span class="hljs-keyword">uint</span>[<span class="hljs-number">10</span>] <span class="hljs-keyword">public</span> myFixedSizeArr;
 

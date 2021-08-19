@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract Gas {
     uint public i = 0;
@@ -10,7 +10,7 @@ contract Gas {
     function forever() public {
         // Here we run a loop until all of the gas are spent
         // and the transaction fails
-        while(true) {
+        while (true) {
             i += 1;
         }
     }

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Front Running"
 export const description = "An example of a Solidity contract vulnerable to front running"
 
@@ -8,7 +8,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 and send a transaction, have it included in a block before the original transaction.
 This mechanism can be abused to re-order transactions to the attacker&#39;s advantage.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">/*
 Alice creates a guessing game.
@@ -36,8 +36,8 @@ before the original.
 */</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FindThisHash</span> </span>{
-    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> hash =
-      <span class="hljs-number">0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2</span>;
+    <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> hash =
+        <span class="hljs-number">0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 

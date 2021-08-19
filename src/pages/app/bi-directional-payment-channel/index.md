@@ -1,6 +1,6 @@
 ---
 title: Bi-Directional Payment Channel
-version: 0.7.6
+version: 0.8.3
 description: An example of bi-directional payment channels in Solidity
 ---
 

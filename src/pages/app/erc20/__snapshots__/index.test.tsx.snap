@@ -11,36 +11,45 @@ exports[`it renders 1`] = `
 </ul>
 <p>Here is the interface for ERC20.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-comment\\">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol</span>
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">IERC20</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">totalSupply</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint256</span></span>)</span>;
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">balanceOf</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> account</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint256</span></span>)</span>;
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> recipient, <span class=\\"hljs-keyword\\">uint256</span> amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)</span>;
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">allowance</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> owner, <span class=\\"hljs-keyword\\">address</span> spender</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint256</span></span>)</span>;
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">approve</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> spender, <span class=\\"hljs-keyword\\">uint256</span> amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)</span>;
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">transferFrom</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> sender, <span class=\\"hljs-keyword\\">address</span> recipient, <span class=\\"hljs-keyword\\">uint256</span> amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)</span>;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">totalSupply</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>)</span>;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Transfer</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> <span class=\\"hljs-keyword\\">from</span>, <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> to, <span class=\\"hljs-keyword\\">uint256</span> value</span>)</span>;
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Approval</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> owner, <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> spender, <span class=\\"hljs-keyword\\">uint256</span> value</span>)</span>;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">balanceOf</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> account</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>)</span>;
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> recipient, <span class=\\"hljs-keyword\\">uint</span> amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)</span>;
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">allowance</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> owner, <span class=\\"hljs-keyword\\">address</span> spender</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>)</span>;
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">approve</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> spender, <span class=\\"hljs-keyword\\">uint</span> amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)</span>;
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">transferFrom</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">address</span> sender,
+        <span class=\\"hljs-keyword\\">address</span> recipient,
+        <span class=\\"hljs-keyword\\">uint</span> amount
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)</span>;
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Transfer</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> <span class=\\"hljs-keyword\\">from</span>, <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> to, <span class=\\"hljs-keyword\\">uint</span> value</span>)</span>;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Approval</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> owner, <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> spender, <span class=\\"hljs-keyword\\">uint</span> value</span>)</span>;
 }
 </code></pre>
 <h2 id=\\"create-your-own-erc20-token\\">Create your own ERC20 token</h2>
 <p>Using <a href=\\"https://github.com/OpenZeppelin/openzeppelin-contracts\\" target=\\"__blank\\">Open Zeppelin</a> it&#39;s really easy to create your own ERC20 token.</p>
 <p>Here is an example</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/ERC20.sol\\"</span>;
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">MyToken</span> <span class=\\"hljs-keyword\\">is</span> <span class=\\"hljs-title\\">ERC20</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> name, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> symbol</span>) <span class=\\"hljs-title\\">ERC20</span>(<span class=\\"hljs-params\\">name, symbol</span>) </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> name, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> symbol</span>) <span class=\\"hljs-title\\">ERC20</span>(<span class=\\"hljs-params\\">name, symbol</span>) </span>{
         <span class=\\"hljs-comment\\">// Mint 100 tokens to msg.sender</span>
         <span class=\\"hljs-comment\\">// Similar to how</span>
         <span class=\\"hljs-comment\\">// 1 dollar = 100 cents</span>
         <span class=\\"hljs-comment\\">// 1 token = 1 * (10 ** decimals)</span>
-        _mint(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-number\\">100</span> * <span class=\\"hljs-number\\">10</span> ** <span class=\\"hljs-keyword\\">uint</span>(decimals()));
+        _mint(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-number\\">100</span> * <span class=\\"hljs-number\\">10</span>**<span class=\\"hljs-keyword\\">uint</span>(decimals()));
     }
 }
 </code></pre>
@@ -57,7 +66,7 @@ exports[`it renders 1`] = `
 </ul>
 <p>prior to <code>TokenSwap</code> calling <code>transferFrom</code></p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol\\"</span>;
 
@@ -126,6 +135,6 @@ How to swap tokens
 </code></pre>
 "
   title="ERC20"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

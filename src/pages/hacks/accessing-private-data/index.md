@@ -1,6 +1,6 @@
 ---
 title: Accessing Private Data
-version: 0.7.6
+version: 0.8.3
 description: An example of accessing private data from a Solidity smart contract
 ---
 

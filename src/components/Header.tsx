@@ -14,7 +14,7 @@ function Header() {
         <a href="/">Solidity by Example</a>
 
         <div className={styles.versions}>
-          <div className={styles.version}>version 0.7.6</div>
+          <div className={styles.version}>version 0.8.3</div>
         </div>
       </h3>
     </div>

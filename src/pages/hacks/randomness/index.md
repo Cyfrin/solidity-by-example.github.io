@@ -1,6 +1,6 @@
 ---
 title: Source of Randomness
-version: 0.7.6
+version: 0.8.3
 description: Blockchain is not a reliable source of randomness in Solidity
 ---
 

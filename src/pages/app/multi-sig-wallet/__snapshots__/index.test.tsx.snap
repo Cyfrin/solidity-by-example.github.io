@@ -11,7 +11,7 @@ exports[`it renders 1`] = `
 <li>anyone can execute a transcation after enough owners has approved it.</li>
 </ul>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">MultiSigWallet</span> </span>{
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Deposit</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> sender, <span class=\\"hljs-keyword\\">uint</span> amount, <span class=\\"hljs-keyword\\">uint</span> balance</span>)</span>;
@@ -66,7 +66,8 @@ exports[`it renders 1`] = `
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>[] <span class=\\"hljs-keyword\\">memory</span> _owners, <span class=\\"hljs-keyword\\">uint</span> _numConfirmationsRequired</span>) </span>{
         <span class=\\"hljs-built_in\\">require</span>(_owners.<span class=\\"hljs-built_in\\">length</span> &gt; <span class=\\"hljs-number\\">0</span>, <span class=\\"hljs-string\\">\\"owners required\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(
-            _numConfirmationsRequired &gt; <span class=\\"hljs-number\\">0</span> &amp;&amp; _numConfirmationsRequired &lt;= _owners.<span class=\\"hljs-built_in\\">length</span>,
+            _numConfirmationsRequired &gt; <span class=\\"hljs-number\\">0</span> &amp;&amp;
+                _numConfirmationsRequired &lt;= _owners.<span class=\\"hljs-built_in\\">length</span>,
             <span class=\\"hljs-string\\">\\"invalid number of required confirmations\\"</span>
         );
 
@@ -83,23 +84,26 @@ exports[`it renders 1`] = `
         numConfirmationsRequired = _numConfirmationsRequired;
     }
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">receive</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">receive</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         <span class=\\"hljs-keyword\\">emit</span> Deposit(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span>, <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>).<span class=\\"hljs-built_in\\">balance</span>);
     }
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">submitTransaction</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _value, <span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> _data</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
-        <span class=\\"hljs-title\\">onlyOwner</span>
-    </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">submitTransaction</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">address</span> _to,
+        <span class=\\"hljs-keyword\\">uint</span> _value,
+        <span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> _data
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\">onlyOwner</span> </span>{
         <span class=\\"hljs-keyword\\">uint</span> txIndex = transactions.<span class=\\"hljs-built_in\\">length</span>;
 
-        transactions.<span class=\\"hljs-built_in\\">push</span>(Transaction({
-            to: _to,
-            <span class=\\"hljs-built_in\\">value</span>: _value,
-            data: _data,
-            executed: <span class=\\"hljs-literal\\">false</span>,
-            numConfirmations: <span class=\\"hljs-number\\">0</span>
-        }));
+        transactions.<span class=\\"hljs-built_in\\">push</span>(
+            Transaction({
+                to: _to,
+                <span class=\\"hljs-built_in\\">value</span>: _value,
+                data: _data,
+                executed: <span class=\\"hljs-literal\\">false</span>,
+                numConfirmations: <span class=\\"hljs-number\\">0</span>
+            })
+        );
 
         <span class=\\"hljs-keyword\\">emit</span> SubmitTransaction(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, txIndex, _to, _value, _data);
     }
@@ -133,7 +137,9 @@ exports[`it renders 1`] = `
 
         transaction.executed = <span class=\\"hljs-literal\\">true</span>;
 
-        (<span class=\\"hljs-keyword\\">bool</span> success, ) = transaction.to.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: transaction.<span class=\\"hljs-built_in\\">value</span>}(transaction.data);
+        (<span class=\\"hljs-keyword\\">bool</span> success, ) = transaction.to.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: transaction.<span class=\\"hljs-built_in\\">value</span>}(
+            transaction.data
+        );
         <span class=\\"hljs-built_in\\">require</span>(success, <span class=\\"hljs-string\\">\\"tx failed\\"</span>);
 
         <span class=\\"hljs-keyword\\">emit</span> ExecuteTransaction(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, _txIndex);
@@ -166,7 +172,13 @@ exports[`it renders 1`] = `
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getTransaction</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _txIndex</span>)
         <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
         <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span>
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> to, <span class=\\"hljs-keyword\\">uint</span> value, <span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> data, <span class=\\"hljs-keyword\\">bool</span> executed, <span class=\\"hljs-keyword\\">uint</span> numConfirmations</span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\">
+            <span class=\\"hljs-keyword\\">address</span> to,
+            <span class=\\"hljs-keyword\\">uint</span> value,
+            <span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> data,
+            <span class=\\"hljs-keyword\\">bool</span> executed,
+            <span class=\\"hljs-keyword\\">uint</span> numConfirmations
+        </span>)
     </span>{
         Transaction <span class=\\"hljs-keyword\\">storage</span> transaction = transactions[_txIndex];
 
@@ -182,7 +194,7 @@ exports[`it renders 1`] = `
 </code></pre>
 <p>Here is a contract to test sending transactions from the multi-sig wallet</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">TestContract</span> </span>{
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> i;
@@ -198,6 +210,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="Multi-Sig Wallet"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

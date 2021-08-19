@@ -1,6 +1,6 @@
 ---
 title: First Application
-version: 0.7.6
+version: 0.8.3
 description: Example of smart contract in Solidity
 ---
 

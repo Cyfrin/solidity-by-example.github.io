@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 /*
 Alice creates a guessing game.
@@ -27,8 +27,8 @@ before the original.
 */
 
 contract FindThisHash {
-    bytes32 constant public hash =
-      0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
+    bytes32 public constant hash =
+        0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
 
     constructor() payable {}
 

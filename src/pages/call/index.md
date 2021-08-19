@@ -1,6 +1,6 @@
 ---
 title: Call
-version: 0.7.6
+version: 0.8.3
 description: In Solidity call is a low level function to interact with other contracts
 ---
 

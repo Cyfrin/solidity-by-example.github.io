@@ -1,6 +1,6 @@
 ---
 title: Iterable Mapping
-version: 0.7.6
+version: 0.8.3
 description: Iterable Mapping in Solidity
 ---
 

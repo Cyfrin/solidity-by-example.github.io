@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Block Timestamp Manipulation"
 export const description = "An example of a Solidity contract vulnerable to block timestamp manipulation"
 
@@ -10,7 +10,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <li>it cannot be too far in the future</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">/*
 Roulette is a game where you can win all of the Ether in the contract
@@ -38,7 +38,7 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
 
         pastBlockTime = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
 
-        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> % <span class="hljs-number">15</span> == <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> % <span class="hljs-number">15</span> == <span class="hljs-number">0</span>) {
             (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>}(<span class="hljs-string">""</span>);
             <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
         }

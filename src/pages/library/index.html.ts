@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Library"
 export const description = "Example of how to write and use libraries in your Solidity code"
 
@@ -8,7 +8,7 @@ you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">SafeMath</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{

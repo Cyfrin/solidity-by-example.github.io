@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Phishing with tx.origin"
 export const description = "An example of phishing with tx.origin in Solidity"
 
@@ -9,7 +9,7 @@ const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&
 <p>A malicious contract can deceive the owner of a contract into calling a
 function that only the owner should be able to call.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">/*
 Wallet is a simple contract where only the owner should be able to transfer
@@ -61,12 +61,12 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
 </code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Use <code>msg.sender</code> instead of <code>tx.origin</code></p>
-<pre><code class="language-solidity">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner, <span class="hljs-string">"Not owner"</span>);
+<pre><code class="language-solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+  <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner, <span class="hljs-string">"Not owner"</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(_amount)(<span class="hljs-string">""</span>);
-        <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
-    }
+  (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>.<span class="hljs-built_in">value</span>(_amount)(<span class="hljs-string">""</span>);
+  <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
+}
 </code></pre>
 `
 

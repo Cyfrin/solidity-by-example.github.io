@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Arithmetic Overflow and Underflow"
 export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Integers in Solidity overflow / underflow without any errors.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">// This contract is designed to act as a time vault.</span>
 <span class="hljs-comment">// User can deposit into this contract but cannot withdraw for atleast a week.</span>
@@ -67,7 +67,7 @@ before the 1 week waiting period.
         so x = type(uint).max + 1 - t
         */</span>
         timeLock.increaseLockTime(
-            <span class="hljs-built_in">type</span>(<span class="hljs-keyword">uint</span>).<span class="hljs-built_in">max</span> + <span class="hljs-number">1</span>- timeLock.lockTime(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>))
+            <span class="hljs-built_in">type</span>(<span class="hljs-keyword">uint</span>).<span class="hljs-built_in">max</span> + <span class="hljs-number">1</span> - timeLock.lockTime(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>))
         );
         timeLock.withdraw();
     }

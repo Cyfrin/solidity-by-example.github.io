@@ -24,10 +24,10 @@ npm run deploy
 
 ## Compile Solidity ##
 # compile single file
-docker run -v $PWD/src:/src ethereum/solc:0.7.6 /src/pages/hello-world/HelloWorld.sol
+docker run -v $PWD/src:/src ethereum/solc:0.8.3 /src/pages/hello-world/HelloWorld.sol
 
 # find and compile sol
-find src/pages/hacks -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.7.6 {} \;
+find src/pages/hacks -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.8.3 {} \;
 
 ## Mics ##
 # rename files

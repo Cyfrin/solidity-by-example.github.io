@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 // External contract used for try / catch examples
 contract Foo {
     address public owner;
 
-    constructor (address _owner) {
+    constructor(address _owner) {
         require(_owner != address(0), "invalid address");
         assert(_owner != 0x0000000000000000000000000000000000000001);
         owner = _owner;

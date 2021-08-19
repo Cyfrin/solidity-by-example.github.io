@@ -1,6 +1,6 @@
 ---
 title: Mapping
-version: 0.7.6
+version: 0.8.3
 description: Example of using mapping in Solidity
 ---
 

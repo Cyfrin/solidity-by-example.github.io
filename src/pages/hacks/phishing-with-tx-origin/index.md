@@ -1,6 +1,6 @@
 ---
 title: Phishing with tx.origin
-version: 0.7.6
+version: 0.8.3
 description: An example of phishing with tx.origin in Solidity
 ---
 
@@ -22,10 +22,11 @@ function that only the owner should be able to call.
 Use `msg.sender` instead of `tx.origin`
 
 ```solidity
-    function transfer(address payable _to, uint _amount) public {
-        require(msg.sender == owner, "Not owner");
+function transfer(address payable _to, uint256 _amount) public {
+  require(msg.sender == owner, "Not owner");
 
-        (bool sent, ) = _to.call.value(_amount)("");
-        require(sent, "Failed to send Ether");
-    }
+  (bool sent, ) = _to.call.value(_amount)("");
+  require(sent, "Failed to send Ether");
+}
+
 ```

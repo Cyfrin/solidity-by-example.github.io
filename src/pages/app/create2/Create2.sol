@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract Factory {
-    event Deployed(address addr, uint256 salt);
+    event Deployed(address addr, uint salt);
 
     // 1. Get bytecode of contract to be deployed
     // NOTE: _owner and _foo are arguments of the TestContract's constructor
@@ -14,18 +14,17 @@ contract Factory {
 
     // 2. Compute the address of the contract to be deployed
     // NOTE: _salt is a random number used to create an address
-    function getAddress(bytes memory bytecode, uint _salt) public view returns (address) {
+    function getAddress(bytes memory bytecode, uint _salt)
+        public
+        view
+        returns (address)
+    {
         bytes32 hash = keccak256(
-            abi.encodePacked(
-                bytes1(0xff),
-                address(this),
-                _salt,
-                keccak256(bytecode)
-            )
+            abi.encodePacked(bytes1(0xff), address(this), _salt, keccak256(bytecode))
         );
 
         // NOTE: cast last 20 bytes of hash to address
-        return address(uint160(uint256(hash)));
+        return address(uint160(uint(hash)));
     }
 
     // 3. Deploy the contract

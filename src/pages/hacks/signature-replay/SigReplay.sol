@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 pragma experimental ABIEncoderV2;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol";
@@ -15,9 +15,11 @@ contract MultiSigWallet {
 
     function deposit() external payable {}
 
-    function transfer(address _to, uint _amount, bytes[2] memory _sigs)
-        external
-    {
+    function transfer(
+        address _to,
+        uint _amount,
+        bytes[2] memory _sigs
+    ) external {
         bytes32 txHash = getTxHash(_to, _amount);
         require(_checkSigs(_sigs, txHash), "invalid sig");
 
@@ -29,10 +31,11 @@ contract MultiSigWallet {
         return keccak256(abi.encodePacked(_to, _amount));
     }
 
-    function _checkSigs(
-        bytes[2] memory _sigs,
-        bytes32 _txHash
-    ) private view returns (bool) {
+    function _checkSigs(bytes[2] memory _sigs, bytes32 _txHash)
+        private
+        view
+        returns (bool)
+    {
         bytes32 ethSignedHash = _txHash.toEthSignedMessageHash();
 
         for (uint i = 0; i < _sigs.length; i++) {

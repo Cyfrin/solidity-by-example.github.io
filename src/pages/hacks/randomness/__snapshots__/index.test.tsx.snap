@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
   html="<h3 id=\\"vulnerability\\">Vulnerability</h3>
 <p><code>blockhash</code> and <code>block.timestamp</code> are not reliable sources for randomness.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-comment\\">/*
 <span class=\\"hljs-doctag\\">NOTE:</span> cannot use blockhash in Remix so use ganache-cli
@@ -35,10 +35,9 @@ Attack computed the correct answer by simply copying the code that computes the 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">guess</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _guess</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
-        <span class=\\"hljs-keyword\\">uint</span> answer = <span class=\\"hljs-keyword\\">uint</span>(<span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(
-            <span class=\\"hljs-built_in\\">blockhash</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">number</span> - <span class=\\"hljs-number\\">1</span>),
-            <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>
-        )));
+        <span class=\\"hljs-keyword\\">uint</span> answer = <span class=\\"hljs-keyword\\">uint</span>(
+            <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(<span class=\\"hljs-built_in\\">blockhash</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">number</span> - <span class=\\"hljs-number\\">1</span>), <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>))
+        );
 
         <span class=\\"hljs-keyword\\">if</span> (_guess == answer) {
             (<span class=\\"hljs-keyword\\">bool</span> sent, ) = <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>.<span class=\\"hljs-built_in\\">call</span>{<span class=\\"hljs-built_in\\">value</span>: <span class=\\"hljs-number\\">1</span> <span class=\\"hljs-literal\\">ether</span>}(<span class=\\"hljs-string\\">\\"\\"</span>);
@@ -51,10 +50,9 @@ Attack computed the correct answer by simply copying the code that computes the 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">receive</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{}
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">attack</span>(<span class=\\"hljs-params\\">GuessTheRandomNumber guessTheRandomNumber</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
-         <span class=\\"hljs-keyword\\">uint</span> answer = <span class=\\"hljs-keyword\\">uint</span>(<span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(
-            <span class=\\"hljs-built_in\\">blockhash</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">number</span> - <span class=\\"hljs-number\\">1</span>),
-            <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>
-        )));
+        <span class=\\"hljs-keyword\\">uint</span> answer = <span class=\\"hljs-keyword\\">uint</span>(
+            <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(<span class=\\"hljs-built_in\\">blockhash</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">number</span> - <span class=\\"hljs-number\\">1</span>), <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span>))
+        );
 
         guessTheRandomNumber.guess(answer);
     }
@@ -71,6 +69,6 @@ Attack computed the correct answer by simply copying the code that computes the 
 </ul>
 "
   title="Source of Randomness"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

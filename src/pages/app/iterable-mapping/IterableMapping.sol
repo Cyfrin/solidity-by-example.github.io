@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 library IterableMapping {
     // Iterable mapping from address to uint;
@@ -22,7 +22,11 @@ library IterableMapping {
         return map.keys.length;
     }
 
-    function set(Map storage map, address key, uint val) public {
+    function set(
+        Map storage map,
+        address key,
+        uint val
+    ) public {
         if (map.inserted[key]) {
             map.values[key] = val;
         } else {

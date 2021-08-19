@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Primitive Data Types"
 export const description = "Primitive data types"
 
@@ -11,7 +11,7 @@ const html = `<p>Here we introduce you to some primitive data types available in
 <li><code>address</code></li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Primitives</span> </span>{
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> boo = <span class="hljs-literal">true</span>;
@@ -25,7 +25,7 @@ const html = `<p>Here we introduce you to some primitive data types available in
         uint256 ranges from 0 to 2 ** 256 - 1
     */</span>
     <span class="hljs-keyword">uint8</span> <span class="hljs-keyword">public</span> u8 = <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> u256 = <span class="hljs-number">456</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> u256 = <span class="hljs-number">456</span>;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> u = <span class="hljs-number">123</span>; <span class="hljs-comment">// uint is an alias for uint256</span>
 
     <span class="hljs-comment">/*
@@ -33,7 +33,7 @@ const html = `<p>Here we introduce you to some primitive data types available in
     Like uint, different ranges are available from int8 to int256
     */</span>
     <span class="hljs-keyword">int8</span> <span class="hljs-keyword">public</span> i8 = <span class="hljs-number">-1</span>;
-    <span class="hljs-keyword">int256</span> <span class="hljs-keyword">public</span> i256 = <span class="hljs-number">456</span>;
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">public</span> i256 = <span class="hljs-number">456</span>;
     <span class="hljs-keyword">int</span> <span class="hljs-keyword">public</span> i = <span class="hljs-number">-123</span>; <span class="hljs-comment">// int is same as int256</span>
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> addr = <span class="hljs-number">0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c</span>;

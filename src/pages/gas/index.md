@@ -1,6 +1,6 @@
 ---
 title: Gas
-version: 0.7.6
+version: 0.8.3
 description: Example of gas and gas limit in Solidity
 ---
 

@@ -5,10 +5,10 @@ exports[`it renders 1`] = `
   description="Precompute contract address with create2"
   html="<p>Contract address can be precomputed, before the contract is deployed, using <code>create2</code></p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Factory</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Deployed</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> addr, <span class=\\"hljs-keyword\\">uint256</span> salt</span>)</span>;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Deployed</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> addr, <span class=\\"hljs-keyword\\">uint</span> salt</span>)</span>;
 
     <span class=\\"hljs-comment\\">// 1. Get bytecode of contract to be deployed</span>
     <span class=\\"hljs-comment\\">// <span class=\\"hljs-doctag\\">NOTE:</span> _owner and _foo are arguments of the TestContract&#x27;s constructor</span>
@@ -20,18 +20,17 @@ exports[`it renders 1`] = `
 
     <span class=\\"hljs-comment\\">// 2. Compute the address of the contract to be deployed</span>
     <span class=\\"hljs-comment\\">// <span class=\\"hljs-doctag\\">NOTE:</span> _salt is a random number used to create an address</span>
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getAddress</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> bytecode, <span class=\\"hljs-keyword\\">uint</span> _salt</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span></span>) </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getAddress</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> bytecode, <span class=\\"hljs-keyword\\">uint</span> _salt</span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span></span>)
+    </span>{
         <span class=\\"hljs-keyword\\">bytes32</span> hash = <span class=\\"hljs-built_in\\">keccak256</span>(
-            <span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(
-                <span class=\\"hljs-keyword\\">bytes1</span>(<span class=\\"hljs-number\\">0xff</span>),
-                <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>),
-                _salt,
-                <span class=\\"hljs-built_in\\">keccak256</span>(bytecode)
-            )
+            <span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(<span class=\\"hljs-keyword\\">bytes1</span>(<span class=\\"hljs-number\\">0xff</span>), <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>), _salt, <span class=\\"hljs-built_in\\">keccak256</span>(bytecode))
         );
 
         <span class=\\"hljs-comment\\">// <span class=\\"hljs-doctag\\">NOTE:</span> cast last 20 bytes of hash to address</span>
-        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-keyword\\">uint160</span>(<span class=\\"hljs-keyword\\">uint256</span>(hash)));
+        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-keyword\\">uint160</span>(<span class=\\"hljs-keyword\\">uint</span>(hash)));
     }
 
     <span class=\\"hljs-comment\\">// 3. Deploy the contract</span>
@@ -85,6 +84,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="Precompute Contract Address with Create2"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

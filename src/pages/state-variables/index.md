@@ -1,6 +1,6 @@
 ---
 title: Reading and Writing to a State Variable
-version: 0.7.6
+version: 0.8.3
 description: Reading and Writing to a State Variable
 ---
 

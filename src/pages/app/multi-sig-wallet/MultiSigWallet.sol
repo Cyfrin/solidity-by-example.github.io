@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract MultiSigWallet {
     event Deposit(address indexed sender, uint amount, uint balance);
@@ -54,7 +54,8 @@ contract MultiSigWallet {
     constructor(address[] memory _owners, uint _numConfirmationsRequired) {
         require(_owners.length > 0, "owners required");
         require(
-            _numConfirmationsRequired > 0 && _numConfirmationsRequired <= _owners.length,
+            _numConfirmationsRequired > 0 &&
+                _numConfirmationsRequired <= _owners.length,
             "invalid number of required confirmations"
         );
 
@@ -71,23 +72,26 @@ contract MultiSigWallet {
         numConfirmationsRequired = _numConfirmationsRequired;
     }
 
-    receive() payable external {
+    receive() external payable {
         emit Deposit(msg.sender, msg.value, address(this).balance);
     }
 
-    function submitTransaction(address _to, uint _value, bytes memory _data)
-        public
-        onlyOwner
-    {
+    function submitTransaction(
+        address _to,
+        uint _value,
+        bytes memory _data
+    ) public onlyOwner {
         uint txIndex = transactions.length;
 
-        transactions.push(Transaction({
-            to: _to,
-            value: _value,
-            data: _data,
-            executed: false,
-            numConfirmations: 0
-        }));
+        transactions.push(
+            Transaction({
+                to: _to,
+                value: _value,
+                data: _data,
+                executed: false,
+                numConfirmations: 0
+            })
+        );
 
         emit SubmitTransaction(msg.sender, txIndex, _to, _value, _data);
     }
@@ -121,7 +125,9 @@ contract MultiSigWallet {
 
         transaction.executed = true;
 
-        (bool success, ) = transaction.to.call{value: transaction.value}(transaction.data);
+        (bool success, ) = transaction.to.call{value: transaction.value}(
+            transaction.data
+        );
         require(success, "tx failed");
 
         emit ExecuteTransaction(msg.sender, _txIndex);
@@ -154,7 +160,13 @@ contract MultiSigWallet {
     function getTransaction(uint _txIndex)
         public
         view
-        returns (address to, uint value, bytes memory data, bool executed, uint numConfirmations)
+        returns (
+            address to,
+            uint value,
+            bytes memory data,
+            bool executed,
+            uint numConfirmations
+        )
     {
         Transaction storage transaction = transactions[_txIndex];
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 /*
 Note: cannot use web3 on JVM, so use the contract deployed on ropsten
@@ -55,16 +55,17 @@ contract Vault {
     }
 
     function addUser(bytes32 _password) public {
-        User memory user = User({
-            id: users.length,
-            password: _password
-        });
+        User memory user = User({id: users.length, password: _password});
 
         users.push(user);
         idToUser[user.id] = user;
     }
 
-    function getArrayLocation(uint slot, uint index, uint elementSize) public pure returns (uint) {
+    function getArrayLocation(
+        uint slot,
+        uint index,
+        uint elementSize
+    ) public pure returns (uint) {
         return uint(keccak256(abi.encodePacked(slot))) + (index * elementSize);
     }
 

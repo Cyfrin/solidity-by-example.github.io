@@ -5,7 +5,7 @@ exports[`it renders 1`] = `
   description="An example of how to verify signatures in Solidity"
   html="<p>Messages can be signed off chain and then verified on chain using a smart contract.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-comment\\">/* Signature Verification
 
@@ -37,10 +37,11 @@ How to Sign and Verify
     hash = \\"0xcf36ac4f97dc10d91fc2cbb20d718e94a8cbfe0f82eaedc6a4aa38946fb797cd\\"
     */</span>
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getMessageHash</span>(<span class=\\"hljs-params\\">
-        <span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _message, <span class=\\"hljs-keyword\\">uint</span> _nonce
-    </span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span></span>)
-    </span>{
+        <span class=\\"hljs-keyword\\">address</span> _to,
+        <span class=\\"hljs-keyword\\">uint</span> _amount,
+        <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _message,
+        <span class=\\"hljs-keyword\\">uint</span> _nonce
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span></span>) </span>{
         <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(_to, _amount, _message, _nonce));
     }
 
@@ -55,12 +56,19 @@ How to Sign and Verify
     Signature will be different for different accounts
     0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
     */</span>
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getEthSignedMessageHash</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> _messageHash</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span></span>) </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getEthSignedMessageHash</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> _messageHash</span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span></span>)
+    </span>{
         <span class=\\"hljs-comment\\">/*
         Signature is produced by signing a keccak256 hash with the following format:
         \\"\\\\x19Ethereum Signed Message\\\\n\\" + len(msg) + msg
         */</span>
-        <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(<span class=\\"hljs-string\\">\\"\\\\x19Ethereum Signed Message:\\\\n32\\"</span>, _messageHash));
+        <span class=\\"hljs-keyword\\">return</span>
+            <span class=\\"hljs-built_in\\">keccak256</span>(
+                <span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(<span class=\\"hljs-string\\">\\"\\\\x19Ethereum Signed Message:\\\\n32\\"</span>, _messageHash)
+            );
     }
 
     <span class=\\"hljs-comment\\">/* 4. Verify signature
@@ -74,11 +82,12 @@ How to Sign and Verify
     */</span>
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">verify</span>(<span class=\\"hljs-params\\">
         <span class=\\"hljs-keyword\\">address</span> _signer,
-        <span class=\\"hljs-keyword\\">address</span> _to, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _message, <span class=\\"hljs-keyword\\">uint</span> _nonce,
+        <span class=\\"hljs-keyword\\">address</span> _to,
+        <span class=\\"hljs-keyword\\">uint</span> _amount,
+        <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _message,
+        <span class=\\"hljs-keyword\\">uint</span> _nonce,
         <span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> signature
-    </span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)
-    </span>{
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>) </span>{
         <span class=\\"hljs-keyword\\">bytes32</span> messageHash = getMessageHash(_to, _amount, _message, _nonce);
         <span class=\\"hljs-keyword\\">bytes32</span> ethSignedMessageHash = getEthSignedMessageHash(messageHash);
 
@@ -86,7 +95,9 @@ How to Sign and Verify
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">recoverSigner</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> _ethSignedMessageHash, <span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> _signature</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span></span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span></span>)
     </span>{
         (<span class=\\"hljs-keyword\\">bytes32</span> r, <span class=\\"hljs-keyword\\">bytes32</span> s, <span class=\\"hljs-keyword\\">uint8</span> v) = splitSignature(_signature);
 
@@ -94,7 +105,13 @@ How to Sign and Verify
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">splitSignature</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes</span> <span class=\\"hljs-keyword\\">memory</span> sig</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> r, <span class=\\"hljs-keyword\\">bytes32</span> s, <span class=\\"hljs-keyword\\">uint8</span> v</span>)
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span>
+        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\">
+            <span class=\\"hljs-keyword\\">bytes32</span> r,
+            <span class=\\"hljs-keyword\\">bytes32</span> s,
+            <span class=\\"hljs-keyword\\">uint8</span> v
+        </span>)
     </span>{
         <span class=\\"hljs-built_in\\">require</span>(sig.<span class=\\"hljs-built_in\\">length</span> == <span class=\\"hljs-number\\">65</span>, <span class=\\"hljs-string\\">\\"invalid signature length\\"</span>);
 
@@ -122,6 +139,6 @@ How to Sign and Verify
 </code></pre>
 "
   title="Verifying Signature"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

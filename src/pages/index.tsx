@@ -291,22 +291,22 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
-  "2021/08/15 GitHub PR by janndriessen",
+  "2021/08/19 - Solidity 0.8.3",
+  "2021/08/15 - GitHub PR by janndriessen",
   "2021/08/15 - GitHub PR by devengn",
-  "2021/08/15 - GitHub PR by diegoramosxyz",
 ]
 
 function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
-        title="Solidity by Example | 0.7.6"
+        title="Solidity by Example | 0.8.3"
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
         <a href="/">Solidity by Example</a>
       </h1>
-      <div className={styles.subHeader}>v 0.7.6</div>
+      <div className={styles.subHeader}>v 0.8.3</div>
       <div className={styles.main}>
         <p>
           an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with

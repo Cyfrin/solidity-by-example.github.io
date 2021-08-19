@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Interface"
 export const description = "An example of interface in Solidity"
 
@@ -13,7 +13,7 @@ const html = `<p>You can interact with other contracts by declaring an <code>Int
 <li>cannot declare state variables</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Counter</span> </span>{
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> count;
@@ -41,11 +41,21 @@ const html = `<p>You can interact with other contracts by declaring an <code>Int
 
 <span class="hljs-comment">// Uniswap example</span>
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UniswapV2Factory</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPair</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> tokenA, <span class="hljs-keyword">address</span> tokenB</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> pair</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPair</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> tokenA, <span class="hljs-keyword">address</span> tokenB</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">view</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> pair</span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UniswapV2Pair</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getReserves</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint112</span> reserve0, <span class="hljs-keyword">uint112</span> reserve1, <span class="hljs-keyword">uint32</span> blockTimestampLast</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getReserves</span>(<span class="hljs-params"></span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">view</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
+            <span class="hljs-keyword">uint112</span> reserve0,
+            <span class="hljs-keyword">uint112</span> reserve1,
+            <span class="hljs-keyword">uint32</span> blockTimestampLast
+        </span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapExample</span> </span>{

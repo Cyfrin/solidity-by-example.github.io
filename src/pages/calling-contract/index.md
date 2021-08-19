@@ -1,6 +1,6 @@
 ---
 title: Calling Other Contract
-version: 0.7.6
+version: 0.8.3
 description: In Solidity, contract can call other contracts in several ways
 ---
 

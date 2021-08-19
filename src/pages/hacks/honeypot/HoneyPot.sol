@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 /*
 Bank is a contract that calls Logger to log events.
@@ -23,7 +23,7 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 */
 
 contract Bank {
-    mapping (address => uint) public balances;
+    mapping(address => uint) public balances;
     Logger logger;
 
     constructor(Logger _logger) {
@@ -32,7 +32,7 @@ contract Bank {
 
     function deposit() public payable {
         balances[msg.sender] += msg.value;
-        logger.log(msg.sender, msg.value,"Deposit");
+        logger.log(msg.sender, msg.value, "Deposit");
     }
 
     function withdraw(uint _amount) public {
@@ -50,7 +50,11 @@ contract Bank {
 contract Logger {
     event Log(address caller, uint amount, string action);
 
-    function log(address _caller, uint _amount, string memory _action) public {
+    function log(
+        address _caller,
+        uint _amount,
+        string memory _action
+    ) public {
         emit Log(_caller, _amount, _action);
     }
 }
@@ -81,18 +85,18 @@ contract Attack {
 
 // Let's say this code is in a separate file so that others cannot read it.
 contract HoneyPot {
-    function log(address _caller, uint _amount, string memory _action)
-        public
-    {
+    function log(
+        address _caller,
+        uint _amount,
+        string memory _action
+    ) public {
         if (equal(_action, "Withdraw")) {
             revert("It's a trap");
         }
     }
 
     // Function to compare strings using keccak256
-    function equal(string memory _a, string memory _b)
-        public pure returns (bool)
-    {
+    function equal(string memory _a, string memory _b) public pure returns (bool) {
         return keccak256(abi.encode(_a)) == keccak256(abi.encode(_b));
     }
 }

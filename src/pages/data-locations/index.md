@@ -1,6 +1,6 @@
 ---
 title: Data Locations - Storage, Memory and Calldata
-version: 0.7.6
+version: 0.8.3
 description: Data locations - storage, memory and calldata
 ---
 

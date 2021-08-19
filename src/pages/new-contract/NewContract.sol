@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract Car {
     address public owner;
@@ -21,10 +21,7 @@ contract CarFactory {
         cars.push(car);
     }
 
-    function createAndSendEther(address _owner, string memory _model)
-        public
-        payable
-    {
+    function createAndSendEther(address _owner, string memory _model) public payable {
         Car car = (new Car){value: msg.value}(_owner, _model);
         cars.push(car);
     }
@@ -32,7 +29,12 @@ contract CarFactory {
     function getCar(uint _index)
         public
         view
-        returns (address owner, string memory model, address carAddr, uint balance)
+        returns (
+            address owner,
+            string memory model,
+            address carAddr,
+            uint balance
+        )
     {
         Car car = cars[_index];
 

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract FunctionModifier {
     // We will use these variables to demonstrate how to use
@@ -30,11 +30,7 @@ contract FunctionModifier {
         _;
     }
 
-    function changeOwner(address _newOwner)
-        public
-        onlyOwner
-        validAddress(_newOwner)
-    {
+    function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
         owner = _newOwner;
     }
 

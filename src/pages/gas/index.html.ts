@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
 
@@ -19,7 +19,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 <li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Gas</span> </span>{
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i = <span class="hljs-number">0</span>;
@@ -30,7 +30,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forever</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// Here we run a loop until all of the gas are spent</span>
         <span class="hljs-comment">// and the transaction fails</span>
-        <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) {
+        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
             i += <span class="hljs-number">1</span>;
         }
     }

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Re-Entrancy"
 export const description = "An example of re-entrancy attack in Solidity"
 
@@ -7,7 +7,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Let&#39;s say that contract <code>A</code> calls contract <code>B</code>.</p>
 <p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">/*
 EtherStore is a contract where you can deposit any amount and withdraw at most
@@ -38,7 +38,7 @@ Here is how the functions were called
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EtherStore</span> </span>{
     <span class="hljs-comment">// Withdrawal limit = 1 ether / week</span>
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> WITHDRAWAL_LIMIT = <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> WITHDRAWAL_LIMIT = <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>;
     <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> lastWithdrawTime;
     <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
 
@@ -97,7 +97,7 @@ Here is how the functions were called
 </ul>
 <p>Here is a example of a re-entracy guard</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ReEntrancyGuard</span> </span>{
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">internal</span> locked;

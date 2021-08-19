@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract Fallback {
     event Log(uint gas);
@@ -23,7 +23,7 @@ contract SendToFallback {
     }
 
     function callFallback(address payable _to) public payable {
-        (bool sent,) = _to.call{value: msg.value}("");
+        (bool sent, ) = _to.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
     }
 }

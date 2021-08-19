@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 pragma experimental ABIEncoderV2;
 
 /*
@@ -93,8 +93,8 @@ contract BiDirectionalPaymentChannel {
             */
             bool valid = _signers[i] ==
                 keccak256(abi.encodePacked(_contract, _balances, _nonce))
-                    .toEthSignedMessageHash()
-                    .recover(_signatures[i]);
+                .toEthSignedMessageHash()
+                .recover(_signatures[i]);
 
             if (!valid) {
                 return false;
@@ -152,10 +152,7 @@ contract BiDirectionalPaymentChannel {
     }
 
     function withdraw() public onlyUser {
-        require(
-            block.timestamp >= expiresAt,
-            "Challenge period has not expired yet"
-        );
+        require(block.timestamp >= expiresAt, "Challenge period has not expired yet");
 
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;

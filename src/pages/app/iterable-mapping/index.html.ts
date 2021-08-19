@@ -1,11 +1,11 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Iterable Mapping"
 export const description = "Iterable Mapping in Solidity"
 
 const html = `<p>You cannot iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">IterableMapping</span> </span>{
     <span class="hljs-comment">// Iterable mapping from address to uint;</span>
@@ -28,7 +28,11 @@ const html = `<p>You cannot iterate through a <code>mapping</code>. So here is a
         <span class="hljs-keyword">return</span> map.keys.<span class="hljs-built_in">length</span>;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">address</span> key, <span class="hljs-keyword">uint</span> val</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params">
+        Map <span class="hljs-keyword">storage</span> map,
+        <span class="hljs-keyword">address</span> key,
+        <span class="hljs-keyword">uint</span> val
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">if</span> (map.inserted[key]) {
             map.values[key] = val;
         } <span class="hljs-keyword">else</span> {

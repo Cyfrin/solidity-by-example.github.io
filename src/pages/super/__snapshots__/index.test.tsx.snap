@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
   html="<p>Parent contracts can be called directly, or by using the keyword <code>super</code>.</p>
 <p>By using the keyword <code>super</code>, all of the immediate parent contracts will be called.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-comment\\">/* Inheritance tree
    A
@@ -36,6 +36,7 @@ B   C
         <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"B.foo called\\"</span>);
         A.foo();
     }
+
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">bar</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">virtual</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">override</span></span> </span>{
         <span class=\\"hljs-keyword\\">emit</span> Log(<span class=\\"hljs-string\\">\\"B.bar called\\"</span>);
         <span class=\\"hljs-built_in\\">super</span>.bar();
@@ -73,6 +74,6 @@ B   C
 </code></pre>
 "
   title="Calling Parent Contracts"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

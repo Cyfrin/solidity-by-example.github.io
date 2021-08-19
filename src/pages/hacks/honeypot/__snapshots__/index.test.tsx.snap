@@ -8,7 +8,7 @@ exports[`it renders 1`] = `
 <p>Combining two exploits, reentrancy and hiding malicious code, we can build a contract</p>
 <p>that will catch malicious users.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-comment\\">/*
 Bank is a contract that calls Logger to log events.
@@ -32,7 +32,7 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 */</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Bank</span> </span>{
-    <span class=\\"hljs-keyword\\">mapping</span> (<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">uint</span>) <span class=\\"hljs-keyword\\">public</span> balances;
+    <span class=\\"hljs-keyword\\">mapping</span>(<span class=\\"hljs-keyword\\">address</span> =&gt; <span class=\\"hljs-keyword\\">uint</span>) <span class=\\"hljs-keyword\\">public</span> balances;
     Logger logger;
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">constructor</span>(<span class=\\"hljs-params\\">Logger _logger</span>) </span>{
@@ -41,7 +41,7 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">deposit</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
         balances[<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>] += <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span>;
-        logger.log(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span>,<span class=\\"hljs-string\\">\\"Deposit\\"</span>);
+        logger.log(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span>, <span class=\\"hljs-string\\">\\"Deposit\\"</span>);
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">withdraw</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _amount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
@@ -59,7 +59,11 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Logger</span> </span>{
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Log</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> caller, <span class=\\"hljs-keyword\\">uint</span> amount, <span class=\\"hljs-keyword\\">string</span> action</span>)</span>;
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">log</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _caller, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _action</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">log</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">address</span> _caller,
+        <span class=\\"hljs-keyword\\">uint</span> _amount,
+        <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _action
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-keyword\\">emit</span> Log(_caller, _amount, _action);
     }
 }
@@ -90,24 +94,24 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 
 <span class=\\"hljs-comment\\">// Let&#x27;s say this code is in a separate file so that others cannot read it.</span>
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">HoneyPot</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">log</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> _caller, <span class=\\"hljs-keyword\\">uint</span> _amount, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _action</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span>
-    </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">log</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">address</span> _caller,
+        <span class=\\"hljs-keyword\\">uint</span> _amount,
+        <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _action
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
         <span class=\\"hljs-keyword\\">if</span> (equal(_action, <span class=\\"hljs-string\\">\\"Withdraw\\"</span>)) {
             <span class=\\"hljs-keyword\\">revert</span>(<span class=\\"hljs-string\\">\\"It&#x27;s a trap\\"</span>);
         }
     }
 
     <span class=\\"hljs-comment\\">// Function to compare strings using keccak256</span>
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">equal</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _a, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _b</span>)
-        <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>)
-    </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">equal</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _a, <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">memory</span> _b</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bool</span></span>) </span>{
         <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encode</span>(_a)) == <span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encode</span>(_b));
     }
 }
 </code></pre>
 "
   title="Honeypot"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

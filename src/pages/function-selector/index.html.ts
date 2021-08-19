@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Function Selector"
 export const description = "Example of how function selectors are computed"
 
@@ -12,7 +12,7 @@ const html = `<p>When a function is called, the first 4 bytes of <code>calldata<
 <p>Perhaps you can save a tiny amount of gas if you precompute and inline the function selector in your code?</p>
 <p>Here is how the function selector is computed.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FunctionSelector</span> </span>{
     <span class="hljs-comment">/*

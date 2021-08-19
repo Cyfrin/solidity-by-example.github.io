@@ -1,6 +1,6 @@
 ---
 title: Payable
-version: 0.7.6
+version: 0.8.3
 description: An example of how to use the keyword payable in Solidity
 ---
 

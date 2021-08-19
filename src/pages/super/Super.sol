@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 /* Inheritance tree
    A
@@ -29,6 +29,7 @@ contract B is A {
         emit Log("B.foo called");
         A.foo();
     }
+
     function bar() public virtual override {
         emit Log("B.bar called");
         super.bar();

@@ -1,19 +1,20 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Merkle Tree"
 export const description = "Learn about Merkle tree in Solidity"
 
 const html = `<p>Merkle tree allows you to cryptographically prove that an element is contained</p>
 <p>in a set without revealing the entire set.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MerkleProof</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params">
-        <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof, <span class="hljs-keyword">bytes32</span> root, <span class="hljs-keyword">bytes32</span> leaf, <span class="hljs-keyword">uint</span> index
-    </span>)
-        <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)
-    </span>{
+        <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof,
+        <span class="hljs-keyword">bytes32</span> root,
+        <span class="hljs-keyword">bytes32</span> leaf,
+        <span class="hljs-keyword">uint</span> index
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
         <span class="hljs-keyword">bytes32</span> hash = leaf;
 
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; proof.<span class="hljs-built_in">length</span>; i++) {
@@ -51,12 +52,11 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
         <span class="hljs-keyword">uint</span> offset = <span class="hljs-number">0</span>;
 
         <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i+=<span class="hljs-number">2</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i += <span class="hljs-number">2</span>) {
                 hashes.<span class="hljs-built_in">push</span>(
-                    <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(
-                        hashes[offset + i],
-                        hashes[offset + i + <span class="hljs-number">1</span>]
-                    ))
+                    <span class="hljs-built_in">keccak256</span>(
+                        <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(hashes[offset + i], hashes[offset + i + <span class="hljs-number">1</span>])
+                    )
                 );
             }
             offset += n;

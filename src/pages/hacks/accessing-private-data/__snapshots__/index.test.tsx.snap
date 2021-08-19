@@ -7,7 +7,7 @@ exports[`it renders 1`] = `
 <p>All data on a smart contract can be read.</p>
 <p>Let&#39;s see how we can read <code>private</code> data. In the process you will learn how Solidity stores state variables.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.7.6;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-comment\\">/*
 Note: cannot use web3 on JVM, so use the contract deployed on ropsten
@@ -63,16 +63,17 @@ Contract deployed on Ropsten
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">addUser</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">bytes32</span> _password</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> </span>{
-        User <span class=\\"hljs-keyword\\">memory</span> user = User({
-            id: users.<span class=\\"hljs-built_in\\">length</span>,
-            password: _password
-        });
+        User <span class=\\"hljs-keyword\\">memory</span> user = User({id: users.<span class=\\"hljs-built_in\\">length</span>, password: _password});
 
         users.<span class=\\"hljs-built_in\\">push</span>(user);
         idToUser[user.id] = user;
     }
 
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getArrayLocation</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> slot, <span class=\\"hljs-keyword\\">uint</span> index, <span class=\\"hljs-keyword\\">uint</span> elementSize</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">getArrayLocation</span>(<span class=\\"hljs-params\\">
+        <span class=\\"hljs-keyword\\">uint</span> slot,
+        <span class=\\"hljs-keyword\\">uint</span> index,
+        <span class=\\"hljs-keyword\\">uint</span> elementSize
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
         <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-keyword\\">uint</span>(<span class=\\"hljs-built_in\\">keccak256</span>(<span class=\\"hljs-built_in\\">abi</span>.<span class=\\"hljs-built_in\\">encodePacked</span>(slot))) + (index * elementSize);
     }
 
@@ -118,6 +119,6 @@ web3.eth.getStorageAt(\\"0x3505a02BCDFbb225988161a95528bfDb279faD6b\\", \\"0xb39
 </ul>
 "
   title="Accessing Private Data"
-  version="0.7.6"
+  version="0.8.3"
 />
 `;

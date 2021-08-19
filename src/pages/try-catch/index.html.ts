@@ -1,17 +1,17 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Try Catch"
 export const description = "An example of try / catch in Solidity"
 
 const html = `<p><code>try / catch</code> can only catch errors from external function calls and contract creation.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">// External contract used for try / catch examples</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Foo</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
 
-    <span class="hljs-function"><span class="hljs-keyword">constructor</span> (<span class="hljs-params"><span class="hljs-keyword">address</span> _owner</span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner</span>) </span>{
         <span class="hljs-built_in">require</span>(_owner != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"invalid address"</span>);
         <span class="hljs-built_in">assert</span>(_owner != <span class="hljs-number">0x0000000000000000000000000000000000000001</span>);
         owner = _owner;

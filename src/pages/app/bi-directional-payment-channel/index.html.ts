@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.7.6"
+export const version = "0.8.3"
 export const title = "Bi-Directional Payment Channel"
 export const description = "An example of bi-directional payment channels in Solidity"
 
 const html = `<p>Bi-directional payment channels allow participants <code>Alice</code> and <code>Bob</code> to repeatedly transfer Ether off chain.</p>
 <p>Payments can go both ways, <code>Alice</code> pays <code>Bob</code> and <code>Bob</code> pays <code>Alice</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">experimental</span> <span class="hljs-built_in">ABIEncoderV2</span>;</span>
 
 <span class="hljs-comment">/*
@@ -100,8 +100,8 @@ Closing a channel when Alice and Bob do not agree on the final balances
             */</span>
             <span class="hljs-keyword">bool</span> valid = _signers[i] ==
                 <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_contract, _balances, _nonce))
-                    .toEthSignedMessageHash()
-                    .recover(_signatures[i]);
+                .toEthSignedMessageHash()
+                .recover(_signatures[i]);
 
             <span class="hljs-keyword">if</span> (!valid) {
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
@@ -159,10 +159,7 @@ Closing a channel when Alice and Bob do not agree on the final balances
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyUser</span> </span>{
-        <span class="hljs-built_in">require</span>(
-            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= expiresAt,
-            <span class="hljs-string">"Challenge period has not expired yet"</span>
-        );
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= expiresAt, <span class="hljs-string">"Challenge period has not expired yet"</span>);
 
         <span class="hljs-keyword">uint</span> amount = balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
         balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;

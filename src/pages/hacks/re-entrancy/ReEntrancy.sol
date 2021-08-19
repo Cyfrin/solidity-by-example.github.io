@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 /*
 EtherStore is a contract where you can deposit any amount and withdraw at most
@@ -30,7 +30,7 @@ Here is how the functions were called
 
 contract EtherStore {
     // Withdrawal limit = 1 ether / week
-    uint constant public WITHDRAWAL_LIMIT = 1 ether;
+    uint public constant WITHDRAWAL_LIMIT = 1 ether;
     mapping(address => uint) public lastWithdrawTime;
     mapping(address => uint) public balances;
 

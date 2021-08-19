@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 // Base contract X
 contract X {
@@ -23,13 +23,13 @@ contract Y {
 
 // Pass the parameters here in the inheritance list.
 contract B is X("Input to X"), Y("Input to Y") {
+
 }
 
 contract C is X, Y {
     // Pass the parameters here in the constructor,
     // similar to function modifiers.
-    constructor(string memory _name, string memory _text) X(_name) Y(_text) {
-    }
+    constructor(string memory _name, string memory _text) X(_name) Y(_text) {}
 }
 
 // Parent constructors are always called in the order of inheritance
@@ -41,8 +41,7 @@ contract C is X, Y {
 // 2. X
 // 3. D
 contract D is X, Y {
-    constructor() X("X was called") Y("Y was called") {
-    }
+    constructor() X("X was called") Y("Y was called") {}
 }
 
 // Order of constructors called:
@@ -50,6 +49,5 @@ contract D is X, Y {
 // 2. X
 // 3. E
 contract E is X, Y {
-    constructor() Y("Y was called") X("X was called") {
-    }
+    constructor() Y("Y was called") X("X was called") {}
 }

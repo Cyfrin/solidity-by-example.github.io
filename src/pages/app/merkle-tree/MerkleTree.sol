@@ -1,12 +1,13 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.6;
+pragma solidity ^0.8.3;
 
 contract MerkleProof {
     function verify(
-        bytes32[] memory proof, bytes32 root, bytes32 leaf, uint index
-    )
-        public pure returns (bool)
-    {
+        bytes32[] memory proof,
+        bytes32 root,
+        bytes32 leaf,
+        uint index
+    ) public pure returns (bool) {
         bytes32 hash = leaf;
 
         for (uint i = 0; i < proof.length; i++) {
@@ -44,12 +45,11 @@ contract TestMerkleProof is MerkleProof {
         uint offset = 0;
 
         while (n > 0) {
-            for (uint i = 0; i < n - 1; i+=2) {
+            for (uint i = 0; i < n - 1; i += 2) {
                 hashes.push(
-                    keccak256(abi.encodePacked(
-                        hashes[offset + i],
-                        hashes[offset + i + 1]
-                    ))
+                    keccak256(
+                        abi.encodePacked(hashes[offset + i], hashes[offset + i + 1])
+                    )
                 );
             }
             offset += n;
