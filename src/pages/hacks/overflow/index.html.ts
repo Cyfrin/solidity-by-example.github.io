@@ -4,9 +4,12 @@ export const title = "Arithmetic Overflow and Underflow"
 export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
-<p>Integers in Solidity overflow / underflow without any errors.</p>
+<h5 id="solidity--08">Solidity &lt; 0.8</h5>
+<p>Integers in Solidity overflow / underflow without any errors</p>
+<h5 id="solidity--08-1">Solidity &gt;= 0.8</h5>
+<p>Default behaviour of Solidity 0.8 for overflow / underflow is to throw an error.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-comment">// This contract is designed to act as a time vault.</span>
 <span class="hljs-comment">// User can deposit into this contract but cannot withdraw for atleast a week.</span>
@@ -75,7 +78,10 @@ before the 1 week waiting period.
 </code></pre>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <ul>
-<li>Use <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol" target="__blank">SafeMath</a> to will prevent arithmetic overflow and underflow</li>
+<li><p>Use <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol" target="__blank">SafeMath</a> to will prevent arithmetic overflow and underflow</p>
+</li>
+<li><p>Solidity 0.8 defaults to throwing an error for overflow / underflow</p>
+</li>
 </ul>
 `
 
