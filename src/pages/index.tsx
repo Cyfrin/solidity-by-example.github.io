@@ -1,13 +1,10 @@
 import React from "react"
 import SEO from "../components/SEO"
-import Label from "../components/Label"
 import styles from "./index.module.css"
 
 interface Route {
   path: string
   title: string
-  breakingChanges?: boolean
-  newFeature?: boolean
 }
 
 const SOL_ROUTES: Route[] = [
@@ -269,6 +266,13 @@ const HACK_ROUTES: Route[] = [
   },
 ]
 
+const DEFI_ROUTES = [
+  {
+    path: "uniswap-v2",
+    title: "Uniswap V2",
+  },
+]
+
 export const ROUTES_BY_CATEGORY = [
   {
     title: "",
@@ -288,9 +292,20 @@ export const ROUTES_BY_CATEGORY = [
       path: `/hacks/${route.path}`,
     })),
   },
+  {
+    title: "DeFi",
+    routes: DEFI_ROUTES.map((route) => ({
+      ...route,
+      path: `/defi/${route.path}`,
+    })),
+  },
 ]
 
-const UPDATES = ["2021/08/28 - Square root", "2021/08/28 - GitHub PR by Rphad"]
+const UPDATES = [
+  "2021/08/28 - DeFi Uniswap V2",
+  "2021/08/28 - Square root",
+  "2021/08/28 - GitHub PR by Rphad",
+]
 
 function HomePage() {
   return (
@@ -320,16 +335,9 @@ function HomePage() {
             {title && <h3>{title}</h3>}
 
             <ul className={styles.list}>
-              {routes.map(({ path, title, breakingChanges, newFeature }) => (
+              {routes.map(({ path, title }) => (
                 <li className={styles.listItem} key={path}>
                   <a href={path}>{title}</a>
-                  {(breakingChanges || newFeature) && (
-                    <div className={styles.label}>
-                      <Label
-                        type={breakingChanges ? "breakingChanges" : "newFeature"}
-                      />
-                    </div>
-                  )}
                 </li>
               ))}
             </ul>

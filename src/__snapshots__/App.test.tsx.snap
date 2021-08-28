@@ -93,6 +93,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/defi/uniswap-v2"
+          path="/defi/uniswap-v2"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/delegatecall"
           path="/delegatecall"
         />

@@ -11,6 +11,7 @@ import component_call from "./pages/call"
 import component_calling_contract from "./pages/calling-contract"
 import component_constructor from "./pages/constructor"
 import component_data_locations from "./pages/data-locations"
+import component_defi_uniswap_v2 from "./pages/defi/uniswap-v2"
 import component_delegatecall from "./pages/delegatecall"
 import component_enum from "./pages/enum"
 import component_error from "./pages/error"
@@ -118,6 +119,10 @@ const routes: Route[] = [
     {
         path: "/data-locations",
         component: component_data_locations
+    },
+    {
+        path: "/defi/uniswap-v2",
+        component: component_defi_uniswap_v2
     },
     {
         path: "/delegatecall",

@@ -40,17 +40,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/08/19 - Solidity 0.8.3
+        2021/08/28 - DeFi Uniswap V2
       </div>
       <div
         key="1"
       >
-        2021/08/15 - GitHub PR by janndriessen
+        2021/08/28 - Square root
       </div>
       <div
         key="2"
       >
-        2021/08/15 - GitHub PR by devengn
+        2021/08/28 - GitHub PR by Rphad
       </div>
     </div>
     <div
@@ -679,6 +679,27 @@ exports[`it renders 1`] = `
             href="/hacks/contract-size"
           >
             Bypass Contract Size Check
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      key="3"
+    >
+      <h3>
+        DeFi
+      </h3>
+      <ul
+        className="list"
+      >
+        <li
+          className="listItem"
+          key="/defi/uniswap-v2"
+        >
+          <a
+            href="/defi/uniswap-v2"
+          >
+            Uniswap V2
           </a>
         </li>
       </ul>

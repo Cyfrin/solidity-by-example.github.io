@@ -42,7 +42,7 @@ const html = `<p>Solidity supports enumerables and they are useful to model choi
         status = Status.Canceled;
     }
 
-    <span class="hljs-comment">// delete resets the enum to it&#x27;s first value, 0</span>
+    <span class="hljs-comment">// delete resets the enum to its first value, 0</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reset</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">delete</span> status;
     }

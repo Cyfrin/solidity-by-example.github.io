@@ -23,11 +23,14 @@ npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
 npm run deploy
 
 ## Compile Solidity ##
+solc-select install 0.8.3
+solc-select use 0.8.3
+
 # compile single file
-docker run -v $PWD/src:/src ethereum/solc:0.8.3 /src/pages/hello-world/HelloWorld.sol
+solc src/pages/hello-world/HelloWorld.sol
 
 # find and compile sol
-find src/pages/hacks -name "*.sol" -exec docker run -v $PWD/src:/src ethereum/solc:0.8.3 {} \;
+find src/pages/hacks -name "*.sol" solc {} \;
 
 ## Mics ##
 # rename files

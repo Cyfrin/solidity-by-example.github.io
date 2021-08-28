@@ -19,6 +19,22 @@ you can&#39;t send ether.</p>
     }
 }
 
+<span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">library</span> <span class=\\"hljs-title\\">Math</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">sqrt</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> y</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">internal</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> z</span>) </span>{
+        <span class=\\"hljs-keyword\\">if</span> (y &gt; <span class=\\"hljs-number\\">3</span>) {
+            z = y;
+            <span class=\\"hljs-keyword\\">uint</span> x = y / <span class=\\"hljs-number\\">2</span> + <span class=\\"hljs-number\\">1</span>;
+            <span class=\\"hljs-keyword\\">while</span> (x &lt; z) {
+                z = x;
+                x = (y / x + x) / <span class=\\"hljs-number\\">2</span>;
+            }
+        } <span class=\\"hljs-keyword\\">else</span> <span class=\\"hljs-keyword\\">if</span> (y != <span class=\\"hljs-number\\">0</span>) {
+            z = <span class=\\"hljs-number\\">1</span>;
+        }
+        <span class=\\"hljs-comment\\">// else z = 0 (default value)</span>
+    }
+}
+
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">TestSafeMath</span> </span>{
     <span class=\\"hljs-keyword\\">using</span> <span class=\\"hljs-title\\">SafeMath</span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">for</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">uint</span></span>;
 
@@ -26,6 +42,10 @@ you can&#39;t send ether.</p>
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testAdd</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> x, <span class=\\"hljs-keyword\\">uint</span> y</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
         <span class=\\"hljs-keyword\\">return</span> x.add(y);
+    }
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testSquareRoot</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> x</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+        <span class=\\"hljs-keyword\\">return</span> Math.sqrt(x);
     }
 }
 
