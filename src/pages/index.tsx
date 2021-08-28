@@ -290,11 +290,7 @@ export const ROUTES_BY_CATEGORY = [
   },
 ]
 
-const UPDATES = [
-  "2021/08/19 - Solidity 0.8.3",
-  "2021/08/15 - GitHub PR by janndriessen",
-  "2021/08/15 - GitHub PR by devengn",
-]
+const UPDATES = ["2021/08/28 - Square root", "2021/08/28 - GitHub PR by Rphad"]
 
 function HomePage() {
   return (
