@@ -8,6 +8,7 @@
 .row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .row .bar {
   margin-left: 5px;
@@ -19,4 +20,8 @@
 }
 .khan {
   margin-left: 10px;
+}
+.youTube {
+  width: 40px;
+  padding-right: 10px;
 }

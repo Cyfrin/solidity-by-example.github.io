@@ -27,3 +27,13 @@
 .header a {
   text-decoration: none;
 }
+.youTube {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+.youTubeLogo {
+  width: 30px;
+  padding-right: 10px;
+}

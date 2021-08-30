@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/SEO"
 import styles from "./index.module.css"
+import youTube from "../components/youtube.svg"
 
 interface Route {
   path: string
@@ -323,6 +324,16 @@ function HomePage() {
           an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with
           simple examples
         </p>
+
+        <div className={styles.youTube}>
+          <img src={youTube} alt="logo" className={styles.youTubeLogo} />
+          <a
+            href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
+            target="__blank"
+          >
+            Most code are explained here
+          </a>
+        </div>
 
         <div className={styles.updates}>
           {UPDATES.map((text, i) => (

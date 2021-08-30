@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "./Footer.module.css"
+import youTube from "./youtube.svg"
 
 // Khan Academy
 const ADDRESS = "0x95a647B3d8a3F11176BAdB799b9499C671fa243a"
@@ -7,6 +8,15 @@ const ADDRESS = "0x95a647B3d8a3F11176BAdB799b9499C671fa243a"
 function Footer() {
   return (
     <div className={styles.component}>
+      <div className={styles.row}>
+        <img src={youTube} alt="logo" className={styles.youTube} />
+        <a
+          href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
+          target="__blank"
+        >
+          Smart Contract Programmer
+        </a>
+      </div>
       <div className={styles.row}>
         Donate
         <span role="img" aria-label="smiley">
@@ -20,11 +30,7 @@ function Footer() {
       </div>
       <div className={styles.row}>
         your ETH will directly go to
-        <a
-          href="https://khanacademy.org"
-          target="__blank"
-          className={styles.khan}
-        >
+        <a href="https://khanacademy.org" target="__blank" className={styles.khan}>
           Khan Academy
         </a>
       </div>
