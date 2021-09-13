@@ -29,9 +29,6 @@ Here is how the functions were called
 */
 
 contract EtherStore {
-    // Withdrawal limit = 1 ether / week
-    uint public constant WITHDRAWAL_LIMIT = 1 ether;
-    mapping(address => uint) public lastWithdrawTime;
     mapping(address => uint) public balances;
 
     function deposit() public payable {
