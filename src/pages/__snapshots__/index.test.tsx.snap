@@ -35,6 +35,21 @@ exports[`it renders 1`] = `
        with simple examples
     </p>
     <div
+      className="youTube"
+    >
+      <img
+        alt="logo"
+        className="youTubeLogo"
+        src="youtube.svg"
+      />
+      <a
+        href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
+        target="__blank"
+      >
+        Most code are explained here
+      </a>
+    </div>
+    <div
       className="updates"
     >
       <div
