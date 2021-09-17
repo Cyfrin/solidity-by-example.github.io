@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/08/28 - DeFi Uniswap V2
+        2021/09/18 - Github PR by Hammer-A
       </div>
       <div
         key="1"
       >
-        2021/08/28 - Square root
+        2021/08/28 - DeFi Uniswap V2
       </div>
       <div
         key="2"
       >
-        2021/08/28 - GitHub PR by Rphad
+        2021/08/28 - Square root
       </div>
     </div>
     <div

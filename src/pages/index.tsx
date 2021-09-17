@@ -303,9 +303,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/09/18 - Github PR by Hammer-A",
   "2021/08/28 - DeFi Uniswap V2",
   "2021/08/28 - Square root",
-  "2021/08/28 - GitHub PR by Rphad",
 ]
 
 function HomePage() {
