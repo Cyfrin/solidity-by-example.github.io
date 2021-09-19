@@ -272,6 +272,10 @@ const DEFI_ROUTES = [
     path: "uniswap-v2",
     title: "Uniswap V2",
   },
+  {
+    path: "staking-rewards",
+    title: "Staking Rewards",
+  },
 ]
 
 export const ROUTES_BY_CATEGORY = [
@@ -303,9 +307,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/09/20 - Staking reward contract",
   "2021/09/18 - Github PR by Hammer-A",
   "2021/08/28 - DeFi Uniswap V2",
-  "2021/08/28 - Square root",
 ]
 
 function HomePage() {
