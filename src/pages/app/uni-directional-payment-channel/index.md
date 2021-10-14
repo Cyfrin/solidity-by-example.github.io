@@ -13,7 +13,7 @@ Here is how this contract is used:
 - `Bob` claims his payment by presenting the signed message to the smart contract.
 - If `Bob` does not claim his payment, `Alice` get her Ether back after the contract expires
 
-This is called a uni-directional payment channel since the payment can go only in a signle direction from `Alice` to `Bob`.
+This is called a uni-directional payment channel since the payment can go only in a single direction from `Alice` to `Bob`.
 
 ```solidity
 {{{UniDirectionalPaymentChannel}}}
