@@ -9,6 +9,16 @@ function Footer() {
   return (
     <div className={styles.component}>
       <div className={styles.row}>
+        <a href="https://discord.gg/bt8FK2wkcW" target="__blank">
+          Discord
+        </a>
+      </div>
+      <div className={styles.row}>
+        <a href="https://t.me/smartcontractprogrammer" target="__blank">
+          Telegram
+        </a>
+      </div>
+      <div className={styles.row}>
         <img src={youTube} alt="logo" className={styles.youTube} />
         <a
           href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"

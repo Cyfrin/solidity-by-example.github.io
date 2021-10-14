@@ -7,6 +7,26 @@ exports[`it renders 1`] = `
   <div
     className="row"
   >
+    <a
+      href="https://discord.gg/bt8FK2wkcW"
+      target="__blank"
+    >
+      Discord
+    </a>
+  </div>
+  <div
+    className="row"
+  >
+    <a
+      href="https://t.me/smartcontractprogrammer"
+      target="__blank"
+    >
+      Telegram
+    </a>
+  </div>
+  <div
+    className="row"
+  >
     <img
       alt="logo"
       className="youTube"

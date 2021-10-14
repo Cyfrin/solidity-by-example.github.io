@@ -307,9 +307,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/10/14 - GitHub PR by wiasliaw",
+  "2021/10/14 - GitHub PR by meetmangukiya",
   "2021/10/04 - GitHub PR by tomMobileDev123",
-  "2021/09/29 - CSS styled by kylebakerio",
-  "2021/09/20 - Staking reward contract",
 ]
 
 function HomePage() {
