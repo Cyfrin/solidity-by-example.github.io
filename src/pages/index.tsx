@@ -26,6 +26,10 @@ const SOL_ROUTES: Route[] = [
     title: "Variables",
   },
   {
+    path: "constants",
+    title: "Constants",
+  },
+  {
     path: "state-variables",
     title: "Reading and Writing to a State Variable",
   },

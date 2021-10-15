@@ -116,6 +116,16 @@ exports[`it renders 1`] = `
         </li>
         <li
           className="listItem"
+          key="constants"
+        >
+          <a
+            href="constants"
+          >
+            Constants
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="state-variables"
         >
           <a

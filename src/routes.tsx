@@ -9,6 +9,7 @@ import component_app_uni_directional_payment_channel from "./pages/app/uni-direc
 import component_array from "./pages/array"
 import component_call from "./pages/call"
 import component_calling_contract from "./pages/calling-contract"
+import component_constants from "./pages/constants"
 import component_constructor from "./pages/constructor"
 import component_data_locations from "./pages/data-locations"
 import component_defi_staking_rewards from "./pages/defi/staking-rewards"
@@ -112,6 +113,10 @@ const routes: Route[] = [
     {
         path: "/calling-contract",
         component: component_calling_contract
+    },
+    {
+        path: "/constants",
+        component: component_constants
     },
     {
         path: "/constructor",

@@ -81,6 +81,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/constants"
+          path="/constants"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/constructor"
           path="/constructor"
         />
