@@ -42,6 +42,7 @@ import component_hacks_signature_replay from "./pages/hacks/signature-replay"
 import component_hashing from "./pages/hashing"
 import component_hello_world from "./pages/hello-world"
 import component_if_else from "./pages/if-else"
+import component_immutable from "./pages/immutable"
 import component_import from "./pages/import"
 import component_inheritance from "./pages/inheritance"
 import component_interface from "./pages/interface"
@@ -245,6 +246,10 @@ const routes: Route[] = [
     {
         path: "/if-else",
         component: component_if_else
+    },
+    {
+        path: "/immutable",
+        component: component_immutable
     },
     {
         path: "/import",

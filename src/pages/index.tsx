@@ -30,6 +30,10 @@ const SOL_ROUTES: Route[] = [
     title: "Constants",
   },
   {
+    path: "immutable",
+    title: "Immutable",
+  },
+  {
     path: "state-variables",
     title: "Reading and Writing to a State Variable",
   },
