@@ -13,6 +13,8 @@ You can throw an error by calling `require`, `revert` or `assert`.
 - `assert` is used to check for code that should never be false. Failing
   assertion probably means that there is a bug.
 
+Use custom error to save gas.
+
 ```solidity
 {{{Error}}}
 ```
