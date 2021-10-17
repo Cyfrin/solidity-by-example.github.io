@@ -126,6 +126,16 @@ exports[`it renders 1`] = `
         </li>
         <li
           className="listItem"
+          key="immutable"
+        >
+          <a
+            href="immutable"
+          >
+            Immutable
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="state-variables"
         >
           <a

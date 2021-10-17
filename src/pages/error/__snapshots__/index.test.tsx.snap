@@ -11,6 +11,7 @@ exports[`it renders 1`] = `
 <li><code>assert</code> is used to check for code that should never be false. Failing
 assertion probably means that there is a bug.</li>
 </ul>
+<p>Use custom error to save gas.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
@@ -40,6 +41,16 @@ assertion probably means that there is a bug.</li>
         <span class=\\"hljs-comment\\">// Here we assert that num is always equal to 0</span>
         <span class=\\"hljs-comment\\">// since it is impossible to update the value of num</span>
         <span class=\\"hljs-built_in\\">assert</span>(num == <span class=\\"hljs-number\\">0</span>);
+    }
+
+    <span class=\\"hljs-comment\\">// custom error</span>
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">error</span> <span class=\\"hljs-title\\">InsufficientBalance</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> balance, <span class=\\"hljs-keyword\\">uint</span> withdrawAmount</span>)</span>;
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">testCustomError</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _withdrawAmount</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">view</span></span> </span>{
+        <span class=\\"hljs-keyword\\">uint</span> bal = <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>).<span class=\\"hljs-built_in\\">balance</span>;
+        <span class=\\"hljs-keyword\\">if</span> (bal &lt; _withdrawAmount) {
+            <span class=\\"hljs-keyword\\">revert</span> InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
+        }
     }
 }
 </code></pre>
