@@ -17,6 +17,16 @@ exports[`it renders 1`] = `
             <span class=\\"hljs-keyword\\">return</span> <span class=\\"hljs-number\\">2</span>;
         }
     }
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">ternary</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> _x</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">public</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+        <span class=\\"hljs-comment\\">// if (_x &lt; 10) {</span>
+        <span class=\\"hljs-comment\\">//     return 1;</span>
+        <span class=\\"hljs-comment\\">// }</span>
+        <span class=\\"hljs-comment\\">// return 2;</span>
+
+        <span class=\\"hljs-comment\\">// shorthand way to write if / else statement</span>
+        <span class=\\"hljs-keyword\\">return</span> _x &lt; <span class=\\"hljs-number\\">10</span> ? <span class=\\"hljs-number\\">1</span> : <span class=\\"hljs-number\\">2</span>;
+    }
 }
 </code></pre>
 "
