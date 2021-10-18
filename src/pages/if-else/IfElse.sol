@@ -11,4 +11,14 @@ contract IfElse {
             return 2;
         }
     }
+
+    function ternary(uint _x) public pure returns (uint) {
+        // if (_x < 10) {
+        //     return 1;
+        // }
+        // return 2;
+
+        // shorthand way to write if / else statement
+        return _x < 10 ? 1 : 2;
+    }
 }
