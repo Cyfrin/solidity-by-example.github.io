@@ -21,7 +21,20 @@
 .khan {
   margin-left: 10px;
 }
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.telegram {
+  width: 30px;
+  margin: 5px;
+}
+.discord {
+  width: 30px;
+  margin: 5px;
+}
 .youTube {
-  width: 40px;
-  padding-right: 10px;
+  width: 30px;
+  margin: 5px;
 }
