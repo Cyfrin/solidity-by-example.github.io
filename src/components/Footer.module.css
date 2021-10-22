@@ -26,6 +26,11 @@
   flex-direction: row;
   align-items: center;
 }
+.sce {
+  width: 30px;
+  margin: 5px;
+  border-radius: 4px;
+}
 .telegram {
   width: 30px;
   margin: 5px;

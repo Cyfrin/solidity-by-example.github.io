@@ -5,13 +5,28 @@ exports[`it renders 1`] = `
   className="component"
 >
   <div
+    className="row"
+  >
+    <img
+      alt="smart contract engineer"
+      className="sce"
+      src="sce.png"
+    />
+    <a
+      href="https://www.smartcontract.engineer"
+      target="__blank"
+    >
+      Smart Contract Engineer
+    </a>
+  </div>
+  <div
     className="social"
   >
     <div
       className="row"
     >
       <img
-        alt="logo"
+        alt="discord"
         className="discord"
         src="discord.png"
       />
@@ -26,7 +41,7 @@ exports[`it renders 1`] = `
       className="row"
     >
       <img
-        alt="logo"
+        alt="telegram"
         className="telegram"
         src="telegram.png"
       />
@@ -41,7 +56,7 @@ exports[`it renders 1`] = `
       className="row"
     >
       <img
-        alt="logo"
+        alt="youtube"
         className="youTube"
         src="youtube.svg"
       />

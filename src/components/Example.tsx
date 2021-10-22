@@ -28,12 +28,6 @@ const Example: React.FC<Props> = ({ title, version, description, html }) => {
             Remix
           </a>
         </p>
-        <p>
-          Take a course at{" "}
-          <a href="https://www.smartcontract.engineer" target="__blank">
-            Smart Contract Engineer
-          </a>
-        </p>
       </div>
     </div>
   )
