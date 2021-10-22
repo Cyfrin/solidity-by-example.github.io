@@ -281,6 +281,10 @@ const DEFI_ROUTES = [
     title: "Uniswap V2",
   },
   {
+    path: "chainlink-price-oracle",
+    title: "Chainlink Price Oracle",
+  },
+  {
     path: "staking-rewards",
     title: "Staking Rewards",
   },
@@ -315,9 +319,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/10/22 - Chainlink price oracle",
   "2021/10/14 - GitHub PR by wiasliaw",
   "2021/10/14 - GitHub PR by meetmangukiya",
-  "2021/10/04 - GitHub PR by tomMobileDev123",
 ]
 
 function HomePage() {

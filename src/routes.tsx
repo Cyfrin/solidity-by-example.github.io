@@ -12,6 +12,7 @@ import component_calling_contract from "./pages/calling-contract"
 import component_constants from "./pages/constants"
 import component_constructor from "./pages/constructor"
 import component_data_locations from "./pages/data-locations"
+import component_defi_chainlink_price_oracle from "./pages/defi/chainlink-price-oracle"
 import component_defi_staking_rewards from "./pages/defi/staking-rewards"
 import component_defi_uniswap_v2 from "./pages/defi/uniswap-v2"
 import component_delegatecall from "./pages/delegatecall"
@@ -126,6 +127,10 @@ const routes: Route[] = [
     {
         path: "/data-locations",
         component: component_data_locations
+    },
+    {
+        path: "/defi/chainlink-price-oracle",
+        component: component_defi_chainlink_price_oracle
     },
     {
         path: "/defi/staking-rewards",

@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/10/14 - GitHub PR by wiasliaw
+        2021/10/22 - Chainlink price oracle
       </div>
       <div
         key="1"
       >
-        2021/10/14 - GitHub PR by meetmangukiya
+        2021/10/14 - GitHub PR by wiasliaw
       </div>
       <div
         key="2"
       >
-        2021/10/04 - GitHub PR by tomMobileDev123
+        2021/10/14 - GitHub PR by meetmangukiya
       </div>
     </div>
     <div
@@ -735,6 +735,16 @@ exports[`it renders 1`] = `
             href="/defi/uniswap-v2"
           >
             Uniswap V2
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/defi/chainlink-price-oracle"
+        >
+          <a
+            href="/defi/chainlink-price-oracle"
+          >
+            Chainlink Price Oracle
           </a>
         </li>
         <li

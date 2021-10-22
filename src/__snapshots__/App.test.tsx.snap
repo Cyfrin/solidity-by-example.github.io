@@ -99,6 +99,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/defi/chainlink-price-oracle"
+          path="/defi/chainlink-price-oracle"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/defi/staking-rewards"
           path="/defi/staking-rewards"
         />

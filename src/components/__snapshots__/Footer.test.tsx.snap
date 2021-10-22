@@ -5,39 +5,53 @@ exports[`it renders 1`] = `
   className="component"
 >
   <div
-    className="row"
+    className="social"
   >
-    <a
-      href="https://discord.gg/bt8FK2wkcW"
-      target="__blank"
+    <div
+      className="row"
     >
-      Discord
-    </a>
-  </div>
-  <div
-    className="row"
-  >
-    <a
-      href="https://t.me/smartcontractprogrammer"
-      target="__blank"
+      <img
+        alt="logo"
+        className="discord"
+        src="discord.png"
+      />
+      <a
+        href="https://discord.gg/bt8FK2wkcW"
+        target="__blank"
+      >
+        Discord
+      </a>
+    </div>
+    <div
+      className="row"
     >
-      Telegram
-    </a>
-  </div>
-  <div
-    className="row"
-  >
-    <img
-      alt="logo"
-      className="youTube"
-      src="youtube.svg"
-    />
-    <a
-      href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
-      target="__blank"
+      <img
+        alt="logo"
+        className="telegram"
+        src="telegram.png"
+      />
+      <a
+        href="https://t.me/smartcontractprogrammer"
+        target="__blank"
+      >
+        Telegram
+      </a>
+    </div>
+    <div
+      className="row"
     >
-      Smart Contract Programmer
-    </a>
+      <img
+        alt="logo"
+        className="youTube"
+        src="youtube.svg"
+      />
+      <a
+        href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
+        target="__blank"
+      >
+        YouTube
+      </a>
+    </div>
   </div>
   <div
     className="row"
