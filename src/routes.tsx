@@ -1,5 +1,6 @@
 import component_app_bi_directional_payment_channel from "./pages/app/bi-directional-payment-channel"
 import component_app_create2 from "./pages/app/create2"
+import component_app_english_auction from "./pages/app/english-auction"
 import component_app_erc20 from "./pages/app/erc20"
 import component_app_iterable_mapping from "./pages/app/iterable-mapping"
 import component_app_merkle_tree from "./pages/app/merkle-tree"
@@ -79,6 +80,10 @@ const routes: Route[] = [
     {
         path: "/app/create2",
         component: component_app_create2
+    },
+    {
+        path: "/app/english-auction",
+        component: component_app_english_auction
     },
     {
         path: "/app/erc20",

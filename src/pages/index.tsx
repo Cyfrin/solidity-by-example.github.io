@@ -214,6 +214,10 @@ const APP_ROUTES: Route[] = [
     path: "bi-directional-payment-channel",
     title: "Bi-directional Payment Channel",
   },
+  {
+    path: "english-auction",
+    title: "English Auction",
+  },
 ]
 
 const HACK_ROUTES: Route[] = [
@@ -319,9 +323,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/10/22 - English Auction",
   "2021/10/22 - Chainlink price oracle",
   "2021/10/14 - GitHub PR by wiasliaw",
-  "2021/10/14 - GitHub PR by meetmangukiya",
 ]
 
 function HomePage() {
