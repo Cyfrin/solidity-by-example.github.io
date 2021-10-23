@@ -12,6 +12,7 @@ interface IERC721 {
 }
 
 contract EnglishAuction {
+    event Start();
     event Bid(address indexed sender, uint amount);
     event Withdraw(address indexed bidder, uint amount);
     event End(address winner, uint amount);
@@ -21,6 +22,7 @@ contract EnglishAuction {
 
     address payable public seller;
     uint public endAt;
+    bool public started;
     bool public ended;
 
     address public highestBidder;
@@ -35,14 +37,23 @@ contract EnglishAuction {
         nft = IERC721(_nft);
         nftId = _nftId;
 
-        nft.transferFrom(msg.sender, address(this), _nftId);
-
         seller = payable(msg.sender);
         highestBid = _startingBid;
+    }
+
+    function start() external {
+        require(!started, "started");
+        require(msg.sender == seller, "not seller");
+
+        nft.transferFrom(msg.sender, address(this), nftId);
+        started = true;
         endAt = block.timestamp + 7 days;
+
+        emit Start();
     }
 
     function bid() external payable {
+        require(started, "not started");
         require(block.timestamp < endAt, "ended");
         require(msg.value > highestBid, "value < highest");
 
@@ -65,6 +76,7 @@ contract EnglishAuction {
     }
 
     function end() external {
+        require(started, "not started");
         require(block.timestamp >= endAt, "not ended");
         require(!ended, "ended");
 

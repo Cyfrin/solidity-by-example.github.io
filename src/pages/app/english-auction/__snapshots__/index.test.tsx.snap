@@ -30,6 +30,7 @@ exports[`it renders 1`] = `
 }
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">EnglishAuction</span> </span>{
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Start</span>(<span class=\\"hljs-params\\"></span>)</span>;
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Bid</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> sender, <span class=\\"hljs-keyword\\">uint</span> amount</span>)</span>;
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">Withdraw</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">indexed</span> bidder, <span class=\\"hljs-keyword\\">uint</span> amount</span>)</span>;
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">event</span> <span class=\\"hljs-title\\">End</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> winner, <span class=\\"hljs-keyword\\">uint</span> amount</span>)</span>;
@@ -39,6 +40,7 @@ exports[`it renders 1`] = `
 
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">payable</span> <span class=\\"hljs-keyword\\">public</span> seller;
     <span class=\\"hljs-keyword\\">uint</span> <span class=\\"hljs-keyword\\">public</span> endAt;
+    <span class=\\"hljs-keyword\\">bool</span> <span class=\\"hljs-keyword\\">public</span> started;
     <span class=\\"hljs-keyword\\">bool</span> <span class=\\"hljs-keyword\\">public</span> ended;
 
     <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">public</span> highestBidder;
@@ -53,14 +55,23 @@ exports[`it renders 1`] = `
         nft = IERC721(_nft);
         nftId = _nftId;
 
-        nft.transferFrom(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>), _nftId);
-
         seller = <span class=\\"hljs-keyword\\">payable</span>(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>);
         highestBid = _startingBid;
+    }
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">start</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
+        <span class=\\"hljs-built_in\\">require</span>(!started, <span class=\\"hljs-string\\">\\"started\\"</span>);
+        <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span> == seller, <span class=\\"hljs-string\\">\\"not seller\\"</span>);
+
+        nft.transferFrom(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">sender</span>, <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>), nftId);
+        started = <span class=\\"hljs-literal\\">true</span>;
         endAt = <span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> + <span class=\\"hljs-number\\">7</span> <span class=\\"hljs-literal\\">days</span>;
+
+        <span class=\\"hljs-keyword\\">emit</span> Start();
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">bid</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">payable</span></span> </span>{
+        <span class=\\"hljs-built_in\\">require</span>(started, <span class=\\"hljs-string\\">\\"not started\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> &lt; endAt, <span class=\\"hljs-string\\">\\"ended\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">msg</span>.<span class=\\"hljs-built_in\\">value</span> &gt; highestBid, <span class=\\"hljs-string\\">\\"value &lt; highest\\"</span>);
 
@@ -83,6 +94,7 @@ exports[`it renders 1`] = `
     }
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">end</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
+        <span class=\\"hljs-built_in\\">require</span>(started, <span class=\\"hljs-string\\">\\"not started\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(<span class=\\"hljs-built_in\\">block</span>.<span class=\\"hljs-built_in\\">timestamp</span> &gt;= endAt, <span class=\\"hljs-string\\">\\"not ended\\"</span>);
         <span class=\\"hljs-built_in\\">require</span>(!ended, <span class=\\"hljs-string\\">\\"ended\\"</span>);
 
