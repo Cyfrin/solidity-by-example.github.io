@@ -8,15 +8,16 @@ exports[`it renders 1`] = `
 <ol>
 <li>Seller of NFT deploys this contract.</li>
 <li>Auction lasts for 7 days.</li>
-<li>Participants can bid by depositing ETH greater that the last highest bidder.</li>
-<li>All bidder except the highest bidder can withdraw their bid</li>
+<li>Participants can bid by depositing ETH greater than the current highest bidder.</li>
+<li>All bidders except the highest bidder can withdraw their bid</li>
 </ol>
 <h3 id=\\"after-the-auction\\">After the auction</h3>
 <ol>
-<li>Highest bidder become the new owner of NFT.</li>
-<li>The seller is transferred the highest bid of ETH.</li>
+<li>Highest bidder becomes the new owner of NFT.</li>
+<li>The seller receives the highest bid of ETH.</li>
 </ol>
-<pre><code class=\\"language-solidity\\"><span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">IERC721</span> </span>{
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>, <span class=\\"hljs-keyword\\">uint</span></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span></span>;
