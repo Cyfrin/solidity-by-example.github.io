@@ -27,6 +27,12 @@ exports[`it renders 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          key="/app/dutch-auction"
+          path="/app/dutch-auction"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           key="/app/english-auction"
           path="/app/english-auction"
         />

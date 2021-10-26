@@ -218,6 +218,10 @@ const APP_ROUTES: Route[] = [
     path: "english-auction",
     title: "English Auction",
   },
+  {
+    path: "dutch-auction",
+    title: "Dutch Auction",
+  },
 ]
 
 const HACK_ROUTES: Route[] = [
@@ -323,9 +327,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/10/26 - Dutch Auction",
   "2021/10/22 - English Auction",
   "2021/10/22 - Chainlink price oracle",
-  "2021/10/14 - GitHub PR by wiasliaw",
 ]
 
 function HomePage() {

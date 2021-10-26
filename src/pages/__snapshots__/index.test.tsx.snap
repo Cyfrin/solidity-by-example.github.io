@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/10/22 - English Auction
+        2021/10/26 - Dutch Auction
       </div>
       <div
         key="1"
       >
-        2021/10/22 - Chainlink price oracle
+        2021/10/22 - English Auction
       </div>
       <div
         key="2"
       >
-        2021/10/14 - GitHub PR by wiasliaw
+        2021/10/22 - Chainlink price oracle
       </div>
     </div>
     <div
@@ -573,6 +573,16 @@ exports[`it renders 1`] = `
             href="/app/english-auction"
           >
             English Auction
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/app/dutch-auction"
+        >
+          <a
+            href="/app/dutch-auction"
+          >
+            Dutch Auction
           </a>
         </li>
       </ul>
