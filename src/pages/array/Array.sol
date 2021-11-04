@@ -41,32 +41,9 @@ contract Array {
         // in this case 0
         delete arr[index];
     }
-}
 
-contract CompactArray {
-    uint[] public arr;
-
-    // Deleting an element creates a gap in the array.
-    // One trick to keep the array compact is to
-    // move the last element into the place to delete.
-    function remove(uint index) public {
-        // Move the last element into the place to delete
-        arr[index] = arr[arr.length - 1];
-        // Remove the last element
-        arr.pop();
-    }
-
-    function test() public {
-        arr.push(1);
-        arr.push(2);
-        arr.push(3);
-        arr.push(4);
-        // [1, 2, 3, 4]
-
-        remove(1);
-        // [1, 4, 3]
-
-        remove(2);
-        // [1, 4]
+    function examples() external {
+        // create array in memory, only fixed size can be created
+        uint[] memory a = new uint[](5);
     }
 }

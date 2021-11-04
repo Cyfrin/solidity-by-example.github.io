@@ -327,9 +327,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/11/04 - Update array examples",
   "2021/10/26 - Dutch Auction",
   "2021/10/22 - English Auction",
-  "2021/10/22 - Chainlink price oracle",
 ]
 
 function HomePage() {

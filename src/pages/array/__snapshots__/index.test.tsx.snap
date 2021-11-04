@@ -47,7 +47,16 @@ exports[`it renders 1`] = `
         <span class=\\"hljs-comment\\">// in this case 0</span>
         <span class=\\"hljs-keyword\\">delete</span> arr[index];
     }
+
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">examples</span>(<span class=\\"hljs-params\\"></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span> </span>{
+        <span class=\\"hljs-comment\\">// create array in memory, only fixed size can be created</span>
+        <span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">memory</span> a = <span class=\\"hljs-keyword\\">new</span> <span class=\\"hljs-keyword\\">uint</span>[](<span class=\\"hljs-number\\">5</span>);
+    }
 }
+</code></pre>
+<h3 id=\\"example-of-removing-array-element\\">Example of removing array element</h3>
+<pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">CompactArray</span> </span>{
     <span class=\\"hljs-keyword\\">uint</span>[] <span class=\\"hljs-keyword\\">public</span> arr;

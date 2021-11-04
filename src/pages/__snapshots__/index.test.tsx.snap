@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/10/26 - Dutch Auction
+        2021/11/04 - Update array examples
       </div>
       <div
         key="1"
       >
-        2021/10/22 - English Auction
+        2021/10/26 - Dutch Auction
       </div>
       <div
         key="2"
       >
-        2021/10/22 - Chainlink price oracle
+        2021/10/22 - English Auction
       </div>
     </div>
     <div
