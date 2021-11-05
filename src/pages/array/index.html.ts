@@ -54,11 +54,51 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
     }
 }
 </code></pre>
-<h3 id="example-of-removing-array-element">Example of removing array element</h3>
+<h3 id="examples-of-removing-array-element">Examples of removing array element</h3>
+<p>Remove array element by shifting elements from right to left</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">CompactArray</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ArrayRemoveByShifting</span> </span>{
+    <span class="hljs-comment">// [1, 2, 3] -- remove(1) --&gt; [1, 3, 3] --&gt; [1, 3]</span>
+    <span class="hljs-comment">// [1, 2, 3, 4, 5, 6] -- remove(2) --&gt; [1, 2, 4, 5, 6, 6] --&gt; [1, 2, 4, 5, 6]</span>
+    <span class="hljs-comment">// [1, 2, 3, 4, 5, 6] -- remove(0) --&gt; [2, 3, 4, 5, 6, 6] --&gt; [2, 3, 4, 5, 6]</span>
+    <span class="hljs-comment">// [1] -- remove(0) --&gt; [1] --&gt; []</span>
+
+    <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-built_in">require</span>(_index &lt; arr.<span class="hljs-built_in">length</span>, <span class="hljs-string">"index out of bound"</span>);
+
+        <span class="hljs-comment">// Write your code here</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = _index; i &lt; arr.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>; i++) {
+            arr[i] = arr[i + <span class="hljs-number">1</span>];
+        }
+        arr.<span class="hljs-built_in">pop</span>();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
+        arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+        remove(<span class="hljs-number">2</span>);
+        <span class="hljs-comment">// [1, 2, 4, 5]</span>
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">2</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] == <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">3</span>] == <span class="hljs-number">5</span>);
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">4</span>);
+
+        arr = [<span class="hljs-number">1</span>];
+        remove(<span class="hljs-number">0</span>);
+        <span class="hljs-comment">// []</span>
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">0</span>);
+    }
+}
+</code></pre>
+<p>Remove array element by copying last element into to the place to remove</p>
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ArrayReplaceFromEnd</span> </span>{
     <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
 
     <span class="hljs-comment">// Deleting an element creates a gap in the array.</span>

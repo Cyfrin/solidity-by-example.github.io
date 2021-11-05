@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.3;
 
-contract CompactArray {
+contract ArrayReplaceFromEnd {
     uint[] public arr;
 
     // Deleting an element creates a gap in the array.

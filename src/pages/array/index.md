@@ -10,8 +10,16 @@ Array can have a compile-time fixed size or a dynamic size.
 {{{Array}}}
 ```
 
-### Example of removing array element
+### Examples of removing array element
+
+Remove array element by shifting elements from right to left
 
 ```solidity
-{{{ArrayRemoveFromEnd}}}
+{{{ArrayRemoveByShifting}}}
+```
+
+Remove array element by copying last element into to the place to remove
+
+```solidity
+{{{ArrayReplaceFromEnd}}}
 ```
