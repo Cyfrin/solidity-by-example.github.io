@@ -12,7 +12,6 @@ contract ArrayRemoveByShifting {
     function remove(uint _index) public {
         require(_index < arr.length, "index out of bound");
 
-        // Write your code here
         for (uint i = _index; i < arr.length - 1; i++) {
             arr[i] = arr[i + 1];
         }
