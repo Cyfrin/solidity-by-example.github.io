@@ -70,7 +70,6 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-built_in">require</span>(_index &lt; arr.<span class="hljs-built_in">length</span>, <span class="hljs-string">"index out of bound"</span>);
 
-        <span class="hljs-comment">// Write your code here</span>
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = _index; i &lt; arr.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>; i++) {
             arr[i] = arr[i + <span class="hljs-number">1</span>];
         }
