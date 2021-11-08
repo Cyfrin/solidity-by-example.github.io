@@ -111,17 +111,20 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        arr.<span class="hljs-built_in">push</span>(<span class="hljs-number">1</span>);
-        arr.<span class="hljs-built_in">push</span>(<span class="hljs-number">2</span>);
-        arr.<span class="hljs-built_in">push</span>(<span class="hljs-number">3</span>);
-        arr.<span class="hljs-built_in">push</span>(<span class="hljs-number">4</span>);
-        <span class="hljs-comment">// [1, 2, 3, 4]</span>
+        arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
 
         remove(<span class="hljs-number">1</span>);
         <span class="hljs-comment">// [1, 4, 3]</span>
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] = <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>);
 
         remove(<span class="hljs-number">2</span>);
         <span class="hljs-comment">// [1, 4]</span>
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">2</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] = <span class="hljs-number">4</span>);
     }
 }
 </code></pre>
