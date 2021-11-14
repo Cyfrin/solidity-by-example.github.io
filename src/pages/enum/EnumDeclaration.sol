@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
-// This is saved 'EnumDeclaration.sol'
 pragma solidity ^0.8.3;
+// This is saved 'EnumDeclaration.sol'
 
 enum Status {
     Pending,
