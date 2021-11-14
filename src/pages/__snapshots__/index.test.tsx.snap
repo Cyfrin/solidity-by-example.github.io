@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/11/04 - Update array examples
+        2021/11/14 - Deploy any contract
       </div>
       <div
         key="1"
       >
-        2021/10/26 - Dutch Auction
+        2021/11/04 - Update array examples
       </div>
       <div
         key="2"
       >
-        2021/10/22 - English Auction
+        2021/10/26 - Dutch Auction
       </div>
     </div>
     <div
@@ -543,6 +543,16 @@ exports[`it renders 1`] = `
             href="/app/minimal-proxy"
           >
             Minimal Proxy Contract
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/app/deploy-any-contract"
+        >
+          <a
+            href="/app/deploy-any-contract"
+          >
+            Deploy Any Contract
           </a>
         </li>
         <li

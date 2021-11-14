@@ -207,6 +207,10 @@ const APP_ROUTES: Route[] = [
     title: "Minimal Proxy Contract",
   },
   {
+    path: "deploy-any-contract",
+    title: "Deploy Any Contract",
+  },
+  {
     path: "uni-directional-payment-channel",
     title: "Uni-directional Payment Channel",
   },
@@ -327,9 +331,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/11/14 - Deploy any contract",
   "2021/11/04 - Update array examples",
   "2021/10/26 - Dutch Auction",
-  "2021/10/22 - English Auction",
 ]
 
 function HomePage() {

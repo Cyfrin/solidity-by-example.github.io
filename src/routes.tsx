@@ -1,5 +1,6 @@
 import component_app_bi_directional_payment_channel from "./pages/app/bi-directional-payment-channel"
 import component_app_create2 from "./pages/app/create2"
+import component_app_deploy_any_contract from "./pages/app/deploy-any-contract"
 import component_app_dutch_auction from "./pages/app/dutch-auction"
 import component_app_english_auction from "./pages/app/english-auction"
 import component_app_erc20 from "./pages/app/erc20"
@@ -81,6 +82,10 @@ const routes: Route[] = [
     {
         path: "/app/create2",
         component: component_app_create2
+    },
+    {
+        path: "/app/deploy-any-contract",
+        component: component_app_deploy_any_contract
     },
     {
         path: "/app/dutch-auction",
