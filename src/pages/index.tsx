@@ -331,9 +331,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/11/15 - GitHub PR basnijholt",
   "2021/11/14 - Deploy any contract",
   "2021/11/04 - Update array examples",
-  "2021/10/26 - Dutch Auction",
 ]
 
 function HomePage() {

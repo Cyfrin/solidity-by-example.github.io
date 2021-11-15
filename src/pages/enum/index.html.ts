@@ -52,6 +52,7 @@ const html = `<p>Solidity supports enumerables and they are useful to model choi
 <p>File that the enum is declared in</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-comment">// This is saved &#x27;EnumDeclaration.sol&#x27;</span>
 
 <span class="hljs-keyword">enum</span> <span class="hljs-title">Status</span> {
     Pending,
