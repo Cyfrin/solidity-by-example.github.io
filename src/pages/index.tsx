@@ -371,7 +371,7 @@ function HomePage() {
 
         {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
           <div key={i}>
-            {title && <h3>{title}</h3>}
+            {title && <h3 className={styles.category}>{title}</h3>}
 
             <ul className={styles.list}>
               {routes.map(({ path, title }) => (

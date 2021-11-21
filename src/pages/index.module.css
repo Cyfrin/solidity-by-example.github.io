@@ -12,6 +12,12 @@
   padding: 5px;
   padding-left: 15px;
   border-radius: 5px;
+  /* dark */
+  background-color: transparent;
+}
+.category {
+  /* dark */
+  color: white;
 }
 .listItem {
   display: flex;

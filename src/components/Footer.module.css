@@ -1,6 +1,6 @@
 .component {
   margin: 15px;
-  color: #261a3b;
+  color: var(--color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 .row a,
 .row a:visited {
-  color: #261a3b;
+  color: var(--link-color);
 }
 .khan {
   margin-left: 10px;
