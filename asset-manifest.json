@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8567077.chunk.css",
-    "main.js": "/static/js/main.3ac97311.chunk.js",
-    "main.js.map": "/static/js/main.3ac97311.chunk.js.map",
+    "main.css": "/static/css/main.5625f743.chunk.css",
+    "main.js": "/static/js/main.fa6b80e5.chunk.js",
+    "main.js.map": "/static/js/main.fa6b80e5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e42829fe.js",
     "runtime-main.js.map": "/static/js/runtime-main.e42829fe.js.map",
     "static/js/2.db7805ed.chunk.js": "/static/js/2.db7805ed.chunk.js",
     "static/js/2.db7805ed.chunk.js.map": "/static/js/2.db7805ed.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.f8567077.chunk.css.map": "/static/css/main.f8567077.chunk.css.map",
+    "static/css/main.5625f743.chunk.css.map": "/static/css/main.5625f743.chunk.css.map",
     "static/js/2.db7805ed.chunk.js.LICENSE.txt": "/static/js/2.db7805ed.chunk.js.LICENSE.txt",
     "static/media/discord.5cb3ac6f.png": "/static/media/discord.5cb3ac6f.png",
     "static/media/logo-dark.6ab48bb9.svg": "/static/media/logo-dark.6ab48bb9.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.e42829fe.js",
     "static/js/2.db7805ed.chunk.js",
-    "static/css/main.f8567077.chunk.css",
-    "static/js/main.3ac97311.chunk.js"
+    "static/css/main.5625f743.chunk.css",
+    "static/js/main.fa6b80e5.chunk.js"
   ]
 }
