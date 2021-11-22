@@ -8,9 +8,17 @@ interface AppState {
   mode: Mode
 }
 
+let mode: Mode = "light"
+try {
+  // @ts-ignore
+  const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+  mode = data?.mode || "light"
+} catch (error) {
+  console.log(error)
+}
+
 const INITIAL_STATE: AppState = {
-  // TODO: system default mode, listen for system preference
-  mode: "light",
+  mode,
 }
 
 const AppContext = createContext({
