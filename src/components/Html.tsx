@@ -1,6 +1,7 @@
 // @ts-ignore
 // import hljs from "highlight.js/lib/core"
-import "highlight.js/styles/foundation.css"
+// import "highlight.js/styles/foundation.css"
+// import "highlight.js/styles/github-dark.css"
 // @ts-ignore
 // import hljsDefineSolidity from "highlightjs-solidity"
 import React, { useEffect } from "react"

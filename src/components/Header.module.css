@@ -4,16 +4,25 @@
   flex-direction: row;
   align-items: center;
 }
-
 .component a {
   text-decoration: none;
 }
-
 .logo {
   width: 80px;
 }
+.light {
+  width: 30px;
+  cursor: pointer;
+  margin: 0 20px 0 20px;
+}
+.dark {
+  width: 30px;
+  cursor: pointer;
+  margin: 0 20px 0 20px;
+}
 .header {
   margin: 0;
+  margin-right: auto;
 }
 .versions {
   margin-top: 10px;

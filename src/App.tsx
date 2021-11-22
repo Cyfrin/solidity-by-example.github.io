@@ -1,11 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { useAppContext } from "./contexts/AppContext"
 import styles from "./App.module.css"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import routes from "./routes"
 
 function App() {
+  const { loadLocalStorage } = useAppContext()
+
+  useEffect(() => {
+    loadLocalStorage()
+  }, [])
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className={styles.component}>

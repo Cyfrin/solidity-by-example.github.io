@@ -1,15 +1,26 @@
 import React from "react"
 import { hydrate, render } from "react-dom"
 import "./index.css"
+import { Provider as AppContextProvider } from "./contexts/AppContext"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 
 const rootElement = document.getElementById("root")
 // @ts-ignore
 if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement)
+  hydrate(
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>,
+    rootElement
+  )
 } else {
-  render(<App />, rootElement)
+  render(
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>,
+    rootElement
+  )
 }
 
 // If you want your app to work offline and load faster, you can change

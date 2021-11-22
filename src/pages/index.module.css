@@ -1,23 +1,18 @@
 .component {
   /* set width for auto-margin to be same for 0.5 and 0.6 home page */
   width: 420px;
-  /* background-color: green; */
 }
 .component ul {
   list-style: none;
   padding: 0;
 }
 .updates {
-  background-color: #cce5ff;
   padding: 5px;
   padding-left: 15px;
   border-radius: 5px;
-  /* dark */
-  background-color: transparent;
 }
 .category {
-  /* dark */
-  color: white;
+  color: var(--color);
 }
 .listItem {
   display: flex;

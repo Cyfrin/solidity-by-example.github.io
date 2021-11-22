@@ -26,6 +26,7 @@ body {
 
   background-color: var(--bg-color);
   color: var(--color);
+  /* transition: background-color 0.5s; */
   /* min-width: 400px; */
 }
 body.dark {
@@ -60,7 +61,7 @@ pre .buttons button:hover {
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  /* color: rgb(231, 76, 60); */
+  color: rgb(231, 76, 60);
 }
 .language-solidity {
   display: block;
@@ -78,20 +79,200 @@ em {
   font-style: italic;
 }
 
-/* code */
-.hljs-code,
-.hljs-keyword,
-.hljs-literal,
-.hljs-number,
-.hljs-selector-tag {
-  /* color: #0758fc !important; */
-}
-
 pre {
   background-color: var(--code-bg);
 }
 
-.hljs-comment,
-.hljs-quote {
-  /* color: #5f5f55 !important; */
+/* code */
+
+/* foundation */
+.hljs {
+  background: #eee;
+  color: black;
+}
+
+.hljs-link,
+.hljs-emphasis,
+.hljs-attribute,
+.hljs-addition {
+  color: #070;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong,
+.hljs-string,
+.hljs-deletion {
+  color: #d14;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-quote,
+.hljs-comment {
+  color: #5f5f55;
+  font-style: italic;
+}
+
+.hljs-section,
+.hljs-title {
+  color: #900;
+}
+
+.hljs-class .hljs-title,
+.hljs-title.class_,
+.hljs-type {
+  color: #458;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #336699;
+}
+
+.hljs-bullet {
+  color: #997700;
+}
+
+.hljs-meta {
+  color: #3344bb;
+}
+
+.hljs-code,
+.hljs-number,
+.hljs-literal,
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #0758fc;
+}
+
+.hljs-regexp {
+  background-color: #fff0ff;
+  color: #880088;
+}
+
+.hljs-symbol {
+  color: #990073;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #007700;
+}
+
+/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/
+
+body.dark .hljs {
+  color: #c9d1d9;
+  background: #0d1117;
+}
+
+body.dark .hljs-doctag,
+body.dark .hljs-keyword,
+body.dark .hljs-meta .hljs-keyword,
+body.dark .hljs-template-tag,
+body.dark .hljs-template-variable,
+body.dark .hljs-type,
+body.dark .hljs-variable.language_ {
+  color: #ff7b72;
+}
+
+body.dak .hljs-title,
+body.dak .hljs-title.class_,
+body.dak .hljs-title.class_.inherited__,
+body.dak .hljs-title.function_ {
+  color: #d2a8ff;
+}
+
+body.dark .hljs-attr,
+body.dark .hljs-attribute,
+body.dark .hljs-literal,
+body.dark .hljs-meta,
+body.dark .hljs-number,
+body.dark .hljs-operator,
+body.dark .hljs-variable,
+body.dark .hljs-selector-attr,
+body.dark .hljs-selector-class,
+body.dark .hljs-selector-id {
+  color: #79c0ff;
+}
+
+body.dark .hljs-regexp,
+body.dark .hljs-string,
+body.dark .hljs-meta .hljs-string {
+  color: #a5d6ff;
+}
+
+body.dark .hljs-built_in,
+body.dark .hljs-symbol {
+  color: #ffa657;
+}
+
+body.dary .hljs-comment,
+body.dary .hljs-code,
+body.dary .hljs-formula {
+  color: #8b949e;
+}
+
+body.dark .hljs-name,
+body.dark .hljs-quote,
+body.dark .hljs-selector-tag,
+body.dark .hljs-selector-pseudo {
+  color: #7ee787;
+}
+
+body.dark .hljs-subst {
+  color: #c9d1d9;
+}
+
+body.dark .hljs-section {
+  color: #1f6feb;
+  font-weight: bold;
+}
+
+body.dark .hljs-bullet {
+  color: #f2cc60;
+}
+
+body.dark .hljs-emphasis {
+  color: #c9d1d9;
+  font-style: italic;
+}
+
+body.dark .hljs-strong {
+  color: #c9d1d9;
+  font-weight: bold;
+}
+
+body.dark .hljs-addition {
+  color: #aff5b4;
+  background-color: #033a16;
+}
+
+body.dark .hljs-deletion {
+  color: #ffdcd7;
+  background-color: #67060c;
+}
+
+body.dark .hljs-char.escape_,
+body.dark .hljs-link,
+body.dark .hljs-params,
+body.dark .hljs-property,
+body.dark .hljs-punctuation,
+body.dark .hljs-tag {
 }
