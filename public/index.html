@@ -43,6 +43,13 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      // This script tag here is, purposefully blocking the 1st render
+      // to avoid background flashes on page load/reload
+      // It does the bare minimum: checking the previous mode in the localStorage
+      const theme = localStorage.getItem("theme") || "light"
+      document.body.classList.add(theme)
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
