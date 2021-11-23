@@ -1,29 +1,20 @@
 import React, { useState, createContext, useContext, useMemo } from "react"
 
-const LOCAL_STORAGE_KEY = "sol"
-
-export type Mode = "light" | "dark"
+export type Theme = "light" | "dark"
 
 interface AppState {
-  mode: Mode
-}
-
-let mode: Mode = "light"
-try {
-  // @ts-ignore
-  const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-  mode = data?.mode || "light"
-} catch (error) {
-  console.log(error)
+  theme: Theme
+  loading: boolean
 }
 
 const INITIAL_STATE: AppState = {
-  mode,
+  theme: "light",
+  loading: true,
 }
 
 const AppContext = createContext({
   state: INITIAL_STATE,
-  setMode: (mode: Mode) => {},
+  setTheme: (theme: Theme) => {},
   loadLocalStorage: () => {},
 })
 
@@ -31,9 +22,9 @@ export function useAppContext() {
   return useContext(AppContext)
 }
 
-function _saveToLocalStorage(state: AppState) {
+function _saveToLocalStorage(theme: Theme) {
   try {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state))
+    localStorage.setItem("theme", theme)
   } catch (error) {
     console.error(error)
   }
@@ -44,42 +35,41 @@ interface Props {}
 export const Provider: React.FC<Props> = ({ children }) => {
   const [state, setState] = useState(INITIAL_STATE)
 
+  function _setTheme(theme: Theme) {
+    if (theme == "dark") {
+      document.body.classList.remove("light")
+      document.body.classList.add("dark")
+    } else {
+      document.body.classList.remove("dark")
+      document.body.classList.add("light")
+    }
+  }
+
   function loadLocalStorage() {
     try {
       // @ts-ignore
-      const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+      const theme: Theme = localStorage.getItem("theme") || "light"
 
-      const mode = data?.mode || "light"
-      if (mode == "light") {
-        document.body.classList.remove("dark")
-      } else {
-        document.body.classList.add("dark")
-      }
+      _setTheme(theme)
 
       setState((state) => ({
         ...state,
-        ...data,
-        mode,
+        theme,
       }))
     } catch (error) {
       console.error(error)
     }
+
+    setState((state) => ({
+      ...state,
+      loading: false,
+    }))
   }
 
-  function setMode(mode: Mode) {
-    if (mode == "light") {
-      document.body.classList.remove("dark")
-    } else {
-      document.body.classList.add("dark")
-    }
-
-    const newState = {
-      ...state,
-      mode,
-    }
-
-    setState(newState)
-    _saveToLocalStorage(newState)
+  function setTheme(theme: Theme) {
+    _setTheme(theme)
+    setState({ ...state, theme })
+    _saveToLocalStorage(theme)
   }
 
   return (
@@ -88,7 +78,7 @@ export const Provider: React.FC<Props> = ({ children }) => {
         () => ({
           state,
           loadLocalStorage,
-          setMode,
+          setTheme,
         }),
         [state]
       )}

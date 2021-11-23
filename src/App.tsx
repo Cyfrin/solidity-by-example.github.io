@@ -7,11 +7,15 @@ import Footer from "./components/Footer"
 import routes from "./routes"
 
 function App() {
-  const { loadLocalStorage } = useAppContext()
+  const { state, loadLocalStorage } = useAppContext()
 
   useEffect(() => {
     loadLocalStorage()
   }, [])
+
+  if (state.loading) {
+    return null
+  }
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
