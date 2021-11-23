@@ -45,7 +45,7 @@ contract Mal {
     // }
 
     // Actually we can execute the same exploit even if this function does
-    // not exit by using the fallback
+    // not exist by using the fallback
     function log() public {
         emit Log("Mal was called");
     }
