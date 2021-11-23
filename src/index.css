@@ -10,11 +10,6 @@
 }
 
 body {
-  --bg-color: white;
-  --color: #252519;
-  --code-bg: #f5f5f5;
-  --link-color: #261a3b;
-
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -28,6 +23,12 @@ body {
   color: var(--color);
   /* transition: background-color 0.5s; */
   /* min-width: 400px; */
+}
+body.light {
+  --bg-color: white;
+  --color: #252519;
+  --code-bg: #f5f5f5;
+  --link-color: #261a3b;
 }
 body.dark {
   --bg-color: #161b22;
@@ -86,83 +87,83 @@ pre {
 /* code */
 
 /* foundation */
-body .hljs {
+body.light .hljs {
   background: #eee;
   color: black;
 }
 
-body .hljs-link,
-body .hljs-emphasis,
-body .hljs-attribute,
-body .hljs-addition {
+body.light .hljs-link,
+body.light .hljs-emphasis,
+body.light .hljs-attribute,
+body.light .hljs-addition {
   color: #070;
 }
 
-body .hljs-emphasis {
+body.light .hljs-emphasis {
   font-style: italic;
 }
 
-body .hljs-strong,
-body .hljs-string,
-body .hljs-deletion {
+body.light .hljs-strong,
+body.light .hljs-string,
+body.light .hljs-deletion {
   color: #d14;
 }
 
-body .hljs-strong {
+body.light .hljs-strong {
   font-weight: bold;
 }
 
-body .hljs-quote,
-body .hljs-comment {
+body.light .hljs-quote,
+body.light .hljs-comment {
   color: #5f5f55;
   font-style: italic;
 }
 
-body .hljs-section,
-body .hljs-title {
+body.light .hljs-section,
+body.light .hljs-title {
   color: #900;
 }
 
-body .hljs-class .hljs-title,
-body .hljs-title.class_,
-body .hljs-type {
+body.light .hljs-class .hljs-title,
+body.light .hljs-title.class_,
+body.light .hljs-type {
   color: #458;
 }
 
-body .hljs-variable,
-body .hljs-template-variable {
+body.light .hljs-variable,
+body.light .hljs-template-variable {
   color: #336699;
 }
 
-body .hljs-bullet {
+body.light .hljs-bullet {
   color: #997700;
 }
 
-body .hljs-meta {
+body.light .hljs-meta {
   color: #3344bb;
 }
 
-body .hljs-code,
-body .hljs-number,
-body .hljs-literal,
-body .hljs-keyword,
-body .hljs-selector-tag {
+body.light .hljs-code,
+body.light .hljs-number,
+body.light .hljs-literal,
+body.light .hljs-keyword,
+body.light .hljs-selector-tag {
   color: #0758fc;
 }
 
-body .hljs-regexp {
+body.light .hljs-regexp {
   background-color: #fff0ff;
   color: #880088;
 }
 
-body .hljs-symbol {
+body.light .hljs-symbol {
   color: #990073;
 }
 
-body .hljs-tag,
-body .hljs-name,
-body .hljs-selector-id,
-body .hljs-selector-class {
+body.light .hljs-tag,
+body.light .hljs-name,
+body.light .hljs-selector-id,
+body.light .hljs-selector-class {
   color: #007700;
 }
 
