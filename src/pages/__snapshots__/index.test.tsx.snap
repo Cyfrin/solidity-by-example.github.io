@@ -479,7 +479,9 @@ exports[`it renders 1`] = `
     <div
       key="1"
     >
-      <h3>
+      <h3
+        className="category"
+      >
         Applications
       </h3>
       <ul
@@ -600,7 +602,9 @@ exports[`it renders 1`] = `
     <div
       key="2"
     >
-      <h3>
+      <h3
+        className="category"
+      >
         Hacks
       </h3>
       <ul
@@ -751,7 +755,9 @@ exports[`it renders 1`] = `
     <div
       key="3"
     >
-      <h3>
+      <h3
+        className="category"
+      >
         DeFi
       </h3>
       <ul

@@ -180,6 +180,8 @@ const html = `<h3 id="swap">Swap</h3>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPair</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> token0, <span class="hljs-keyword">address</span> token1</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>)</span>;
 }
 </code></pre>
+<h3 id="links">Links</h3>
+<p><a href="https://cryptoradar.co/guide/uniswap">What is Uniswap? Everything You Need To Know</a></p>
 `
 
 export default html
