@@ -12,7 +12,7 @@
   border-radius: 5px;
 }
 .category {
-  color: var(--color);
+  color: var(--link-color);
 }
 .listItem {
   display: flex;
