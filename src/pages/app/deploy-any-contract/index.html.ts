@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Deploy Any Contract"
 export const description = "Deploy Any Contract"
 
 const html = `<p>Deploy any contract by calling <code>Proxy.deploy(bytes memory _code)</code></p>
 <p>For this example, you can get the contract bytecodes by calling <code>Helper.getBytecode1</code> and <code>Helper.getBytecode2</code></p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Proxy</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Deploy</span>(<span class="hljs-params"><span class="hljs-keyword">address</span></span>)</span>;

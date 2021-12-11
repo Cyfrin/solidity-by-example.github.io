@@ -268,6 +268,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="ERC721"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

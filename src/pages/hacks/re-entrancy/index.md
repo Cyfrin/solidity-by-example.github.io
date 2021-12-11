@@ -1,6 +1,6 @@
 ---
 title: Re-Entrancy
-version: 0.8.3
+version: 0.8.10
 description: An example of re-entrancy attack in Solidity
 ---
 

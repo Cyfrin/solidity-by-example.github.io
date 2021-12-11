@@ -1,6 +1,6 @@
 ---
 title: Function Selector
-version: 0.8.3
+version: 0.8.10
 description: Example of how function selectors are computed
 ---
 

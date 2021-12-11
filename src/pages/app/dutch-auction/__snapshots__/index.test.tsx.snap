@@ -13,7 +13,7 @@ exports[`it renders 1`] = `
 <li>Auction ends when a buyer buys the NFT.</li>
 </ol>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">IERC721</span> </span>{
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">transferFrom</span>(<span class=\\"hljs-params\\">
@@ -72,6 +72,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="Dutch Auction"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

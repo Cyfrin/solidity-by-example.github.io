@@ -8,7 +8,7 @@ exports[`it renders 1`] = `
 even if the contract at the address is not the one being casted.</p>
 <p>This can be exploited to hide malicious code. Let&#39;s see how.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-comment\\">/*
 Let&#x27;s say Alice can see the code of Foo and Bar but not Mal.
@@ -74,6 +74,6 @@ external contract can be reviewed</li>
 </code></pre>
 "
   title="Hiding Malicious Code with External Contract"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

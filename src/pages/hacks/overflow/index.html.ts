@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Arithmetic Overflow and Underflow"
 export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
 

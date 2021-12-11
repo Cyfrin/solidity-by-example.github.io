@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Calling Parent Contracts"
 export const description = "An example of calling parent contracts in Solidity"
 
 const html = `<p>Parent contracts can be called directly, or by using the keyword <code>super</code>.</p>
 <p>By using the keyword <code>super</code>, all of the immediate parent contracts will be called.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-comment">/* Inheritance tree
    A

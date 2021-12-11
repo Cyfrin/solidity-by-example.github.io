@@ -1,6 +1,6 @@
 ---
 title: Signature Replay
-version: 0.8.3
+version: 0.8.10
 description: An example of a contract vulnerable to signature replay attack
 ---
 

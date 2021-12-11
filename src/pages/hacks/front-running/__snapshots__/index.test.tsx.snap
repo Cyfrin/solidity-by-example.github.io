@@ -8,7 +8,7 @@ exports[`it renders 1`] = `
 and send a transaction, have it included in a block before the original transaction.
 This mechanism can be abused to re-order transactions to the attacker&#39;s advantage.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-comment\\">/*
 Alice creates a guessing game.
@@ -56,6 +56,6 @@ before the original.
 </ul>
 "
   title="Front Running"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Variables"
 export const description = "Local, state and global variables"
 
@@ -18,7 +18,7 @@ const html = `<p>There are 3 types of variables in Solidity</p>
 <li><strong>global</strong> (provides information about the blockchain)</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Variables</span> </span>{
     <span class="hljs-comment">// State variables are stored on the blockchain.</span>

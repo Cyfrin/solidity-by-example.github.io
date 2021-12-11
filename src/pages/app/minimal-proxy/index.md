@@ -1,6 +1,6 @@
 ---
 title: Minimal Proxy Contract
-version: 0.8.3
+version: 0.8.10
 description: Deploy contracts cheaply with minimal proxy contract
 ---
 

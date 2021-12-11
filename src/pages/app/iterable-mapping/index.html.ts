@@ -1,11 +1,11 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Iterable Mapping"
 export const description = "Iterable Mapping in Solidity"
 
 const html = `<p>You cannot iterate through a <code>mapping</code>. So here is an example of how to create an iterable <code>mapping</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">IterableMapping</span> </span>{
     <span class="hljs-comment">// Iterable mapping from address to uint;</span>

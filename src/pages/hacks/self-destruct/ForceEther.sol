@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.3;
+pragma solidity ^0.8.10;
 
 // The goal of this game is to be the 7th player to deposit 1 Ether.
 // Players can deposit only 1 Ether at a time.

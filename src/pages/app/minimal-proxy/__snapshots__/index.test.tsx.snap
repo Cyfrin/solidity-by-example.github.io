@@ -5,7 +5,7 @@ exports[`it renders 1`] = `
   description="Deploy contracts cheaply with minimal proxy contract"
   html="<p>If you have a contract that will be deployed multiple times, use minimal proxy contract to deploy them cheaply.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-comment\\">// original code</span>
 <span class=\\"hljs-comment\\">// https://github.com/optionality/clone-factory/blob/master/contracts/CloneFactory.sol</span>
@@ -78,6 +78,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="Minimal Proxy Contract"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

@@ -1,6 +1,6 @@
 ---
 title: Variables
-version: 0.8.3
+version: 0.8.10
 description: Local, state and global variables
 ---
 

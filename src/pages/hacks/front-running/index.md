@@ -1,6 +1,6 @@
 ---
 title: Front Running
-version: 0.8.3
+version: 0.8.10
 description: An example of a Solidity contract vulnerable to front running
 ---
 

@@ -23,8 +23,8 @@ npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
 npm run deploy
 
 ## Compile Solidity ##
-solc-select install 0.8.3
-solc-select use 0.8.3
+solc-select install 0.8.10
+solc-select use 0.8.10
 
 # compile single file
 solc src/pages/hello-world/HelloWorld.sol

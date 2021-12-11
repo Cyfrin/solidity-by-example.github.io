@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Signature Replay"
 export const description = "An example of a contract vulnerable to signature replay attack"
 
@@ -14,7 +14,7 @@ a function is a useful technique.</p>
 <p>Same signature can be used multiple times to execute a function. This can be harmful
 if the signer&#39;s intention was to approve a transaction once.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">experimental</span> <span class="hljs-built_in">ABIEncoderV2</span>;</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol"</span>;
@@ -69,7 +69,7 @@ if the signer&#39;s intention was to approve a transaction once.</p>
 <h3 id="preventative-techniques">Preventative Techniques</h3>
 <p>Sign messages with <code>nonce</code> and address of the contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">experimental</span> <span class="hljs-built_in">ABIEncoderV2</span>;</span>
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">"github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol"</span>;

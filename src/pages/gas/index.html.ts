@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
 
@@ -19,7 +19,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 <li><code>block gas limit</code> (max amount of gas allowed in a block, set by the network)</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Gas</span> </span>{
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i = <span class="hljs-number">0</span>;

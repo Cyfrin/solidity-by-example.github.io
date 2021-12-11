@@ -5,7 +5,7 @@ exports[`it renders 1`] = `
   description="Chainlink Price Oracle"
   html="<h3 id=\\"eth--usd-price-oracle\\">ETH / USD Price Oracle</h3>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-comment\\">// import \\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\";</span>
 
@@ -45,6 +45,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="Chainlink Price Oracle"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

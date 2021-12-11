@@ -1,6 +1,6 @@
 ---
 title: Hiding Malicious Code with External Contract
-version: 0.8.3
+version: 0.8.10
 description: An example of exploit where malicious code is hidden in an external contract in Solidity
 ---
 

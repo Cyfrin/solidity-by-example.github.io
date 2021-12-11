@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Function Modifier"
 export const description = "Example of how to write function modifier in Solidity"
 
@@ -11,7 +11,7 @@ const html = `<p>Modifiers are code that can be run before and / or after a func
 <li>Guard against reentrancy hack</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FunctionModifier</span> </span>{
     <span class="hljs-comment">// We will use these variables to demonstrate how to use</span>

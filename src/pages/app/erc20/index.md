@@ -1,6 +1,6 @@
 ---
 title: ERC20
-version: 0.8.3
+version: 0.8.10
 description: Example of ERC20 token in Solidity
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Function Modifier
-version: 0.8.3
+version: 0.8.10
 description: Example of how to write function modifier in Solidity
 ---
 

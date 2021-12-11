@@ -1,6 +1,6 @@
 ---
 title: Hello World
-version: 0.8.3
+version: 0.8.10
 description: Hello world in Solidity
 ---
 

@@ -5,7 +5,7 @@ exports[`it renders 1`] = `
   description="An example of try / catch in Solidity"
   html="<p><code>try / catch</code> can only catch errors from external function calls and contract creation.</p>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-comment\\">// External contract used for try / catch examples</span>
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Foo</span> </span>{
@@ -65,6 +65,6 @@ exports[`it renders 1`] = `
 </code></pre>
 "
   title="Try Catch"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

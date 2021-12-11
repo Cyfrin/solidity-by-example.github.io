@@ -6,7 +6,7 @@ exports[`it renders 1`] = `
 >
   <SEO
     description="Learn smart contract programming using Solidity"
-    title="Solidity by Example | 0.8.3"
+    title="Solidity by Example | 0.8.10"
   />
   <h1
     className="header"
@@ -20,7 +20,7 @@ exports[`it renders 1`] = `
   <div
     className="subHeader"
   >
-    v 0.8.3
+    v 0.8.10
   </div>
   <div
     className="main"

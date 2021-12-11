@@ -25,7 +25,7 @@ exports[`it renders 1`] = `
 <li>using re-entrancy guard modifier</li>
 </ul>
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
-<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
+<span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">ReceiveEther</span> </span>{
     <span class=\\"hljs-comment\\">/*
@@ -78,6 +78,6 @@ receive() exists?  fallback()
 </code></pre>
 "
   title="Sending Ether (transfer, send, call)"
-  version="0.8.3"
+  version="0.8.10"
 />
 `;

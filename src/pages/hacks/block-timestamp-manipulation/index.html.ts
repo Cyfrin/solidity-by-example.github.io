@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Block Timestamp Manipulation"
 export const description = "An example of a Solidity contract vulnerable to block timestamp manipulation"
 
@@ -10,7 +10,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <li>it cannot be too far in the future</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-comment">/*
 Roulette is a game where you can win all of the Ether in the contract

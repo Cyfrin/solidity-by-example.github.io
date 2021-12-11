@@ -1,6 +1,6 @@
 ---
 title: Chainlink Price Oracle
-version: 0.8.3
+version: 0.8.10
 description: Chainlink Price Oracle
 ---
 

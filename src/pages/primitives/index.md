@@ -1,6 +1,6 @@
 ---
 title: Primitive Data Types
-version: 0.8.3
+version: 0.8.10
 description: Primitive data types
 ---
 

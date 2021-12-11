@@ -1,11 +1,11 @@
 // metadata
-export const version = "0.8.3"
+export const version = "0.8.10"
 export const title = "Contract that Creates other Contracts"
 export const description = "Learn how to create new contracts from inside of a contract with Solidity"
 
 const html = `<p>Contracts can be created by other contracts using the <code>new</code> keyword. Since 0.8.0, <code>new</code> keyword supports <code>create2</code> feature by specifying <code>salt</code> options.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.3;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Car</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
@@ -32,12 +32,20 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create2</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model, <span class="hljs-keyword">bytes32</span> _salt</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create2</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> _owner,
+        <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model,
+        <span class="hljs-keyword">bytes32</span> _salt
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create2AndSendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model, <span class="hljs-keyword">bytes32</span> _salt</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create2AndSendEther</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> _owner,
+        <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model,
+        <span class="hljs-keyword">bytes32</span> _salt
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>, <span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
