@@ -2,7 +2,11 @@
 pragma solidity ^0.8.3;
 
 interface IERC721 {
-    function transfer(address, uint) external;
+    function safeTransferFrom(
+      address from,
+      address to,
+      uint256 tokenId
+    ) external;
 
     function transferFrom(
         address,
@@ -82,10 +86,10 @@ contract EnglishAuction {
 
         ended = true;
         if (highestBidder != address(0)) {
-            nft.transfer(highestBidder, nftId);
+            nft.safeTransferFrom(address(this), highestBidder, nftId);
             seller.transfer(highestBid);
         } else {
-            nft.transfer(seller, nftId);
+            nft.safeTransferFrom(address(this), seller, nftId);
         }
 
         emit End(highestBidder, highestBid);
