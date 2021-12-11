@@ -20,7 +20,11 @@ exports[`it renders 1`] = `
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.3;</span>
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">interface</span> <span class=\\"hljs-title\\">IERC721</span> </span>{
-    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\"><span class=\\"hljs-built_in\\">transfer</span></span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span>, <span class=\\"hljs-keyword\\">uint</span></span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span></span>;
+    <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">safeTransferFrom</span>(<span class=\\"hljs-params\\">
+      <span class=\\"hljs-keyword\\">address</span> <span class=\\"hljs-keyword\\">from</span>,
+      <span class=\\"hljs-keyword\\">address</span> to,
+      <span class=\\"hljs-keyword\\">uint256</span> tokenId
+    </span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">external</span></span></span>;
 
     <span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">transferFrom</span>(<span class=\\"hljs-params\\">
         <span class=\\"hljs-keyword\\">address</span>,
@@ -100,10 +104,10 @@ exports[`it renders 1`] = `
 
         ended = <span class=\\"hljs-literal\\">true</span>;
         <span class=\\"hljs-keyword\\">if</span> (highestBidder != <span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-number\\">0</span>)) {
-            nft.<span class=\\"hljs-built_in\\">transfer</span>(highestBidder, nftId);
+            nft.safeTransferFrom(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>), highestBidder, nftId);
             seller.<span class=\\"hljs-built_in\\">transfer</span>(highestBid);
         } <span class=\\"hljs-keyword\\">else</span> {
-            nft.<span class=\\"hljs-built_in\\">transfer</span>(seller, nftId);
+            nft.safeTransferFrom(<span class=\\"hljs-keyword\\">address</span>(<span class=\\"hljs-built_in\\">this</span>), seller, nftId);
         }
 
         <span class=\\"hljs-keyword\\">emit</span> End(highestBidder, highestBid);

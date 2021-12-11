@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/12/02 - GitHub PR yc90s
+        2021/12/12 - GitHub PR dadaphl
       </div>
       <div
         key="1"
       >
-        2021/11/15 - GitHub PR basnijholt
+        2021/12/02 - GitHub PR yc90s
       </div>
       <div
         key="2"
       >
-        2021/11/14 - Deploy any contract
+        2021/11/15 - GitHub PR basnijholt
       </div>
     </div>
     <div
@@ -525,6 +525,16 @@ exports[`it renders 1`] = `
             href="/app/erc20"
           >
             ERC20
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/app/erc721"
+        >
+          <a
+            href="/app/erc721"
+          >
+            ERC721
           </a>
         </li>
         <li

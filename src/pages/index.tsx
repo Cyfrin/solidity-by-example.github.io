@@ -199,6 +199,10 @@ const APP_ROUTES: Route[] = [
     title: "ERC20",
   },
   {
+    path: "erc721",
+    title: "ERC721",
+  },
+  {
     path: "create2",
     title: "Precompute Contract Address with Create2",
   },
@@ -331,9 +335,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/12/12 - GitHub PR dadaphl",
   "2021/12/02 - GitHub PR yc90s",
   "2021/11/15 - GitHub PR basnijholt",
-  "2021/11/14 - Deploy any contract",
 ]
 
 function HomePage() {

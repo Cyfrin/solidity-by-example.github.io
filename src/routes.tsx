@@ -4,6 +4,7 @@ import component_app_deploy_any_contract from "./pages/app/deploy-any-contract"
 import component_app_dutch_auction from "./pages/app/dutch-auction"
 import component_app_english_auction from "./pages/app/english-auction"
 import component_app_erc20 from "./pages/app/erc20"
+import component_app_erc721 from "./pages/app/erc721"
 import component_app_iterable_mapping from "./pages/app/iterable-mapping"
 import component_app_merkle_tree from "./pages/app/merkle-tree"
 import component_app_minimal_proxy from "./pages/app/minimal-proxy"
@@ -98,6 +99,10 @@ const routes: Route[] = [
     {
         path: "/app/erc20",
         component: component_app_erc20
+    },
+    {
+        path: "/app/erc721",
+        component: component_app_erc721
     },
     {
         path: "/app/iterable-mapping",

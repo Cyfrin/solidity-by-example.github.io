@@ -8,7 +8,7 @@ exports[`it renders 1`] = `
 <ol>
 <li>Seller of NFT deploys this contract setting a starting price for the NFT.</li>
 <li>Auction lasts for 7 days.</li>
-<li>Price of NFT decreases over time</li>
+<li>Price of NFT decreases over time.</li>
 <li>Participants can buy by depositing ETH greater than the current price computed by the smart contract.</li>
 <li>Auction ends when a buyer buys the NFT.</li>
 </ol>
