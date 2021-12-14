@@ -489,6 +489,16 @@ exports[`it renders 1`] = `
       >
         <li
           className="listItem"
+          key="/app/ether-wallet"
+        >
+          <a
+            href="/app/ether-wallet"
+          >
+            Ether Wallet
+          </a>
+        </li>
+        <li
+          className="listItem"
           key="/app/multi-sig-wallet"
         >
           <a

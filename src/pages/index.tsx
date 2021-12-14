@@ -183,6 +183,10 @@ const SOL_ROUTES: Route[] = [
 
 const APP_ROUTES: Route[] = [
   {
+    path: "ether-wallet",
+    title: "Ether Wallet",
+  },
+  {
     path: "multi-sig-wallet",
     title: "Multi Sig Wallet",
   },
