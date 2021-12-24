@@ -15,7 +15,3 @@ description: Uniswap V2
 ```solidity
 {{{Uniswap}}}
 ```
-
-### Links
-
-[What is Uniswap? Everything You Need To Know](https://cryptoradar.co/guide/uniswap)

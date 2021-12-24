@@ -339,9 +339,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/12//24 - GiitHub PR Tanteli - primitives",
   "2021/12/12 - GitHub PR dadaphl",
   "2021/12/02 - GitHub PR yc90s",
-  "2021/11/15 - GitHub PR basnijholt",
 ]
 
 function HomePage() {

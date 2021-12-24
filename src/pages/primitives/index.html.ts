@@ -45,6 +45,19 @@ const html = `<p>Here we introduce you to some primitive data types available in
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> addr = <span class="hljs-number">0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c</span>;
 
+    <span class="hljs-comment">/*
+    In Solidity, the data type byte represent a sequence of bytes. 
+    Solidity presents two type of bytes types :
+
+     - fixed-sized byte arrays
+     - dynamically-sized byte arrays.
+     
+     The term bytes in Solidity represents a dynamic array of bytes. 
+     It’s a shorthand for byte[] .
+    */</span>
+    <span class="hljs-keyword">bytes1</span> a = <span class="hljs-number">0xb5</span>; <span class="hljs-comment">//  [10110101]</span>
+    <span class="hljs-keyword">bytes1</span> b = <span class="hljs-number">0x56</span>; <span class="hljs-comment">//  [01010110]</span>
+
     <span class="hljs-comment">// Default values</span>
     <span class="hljs-comment">// Unassigned variables have a default value</span>
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> defaultBoo; <span class="hljs-comment">// false</span>
