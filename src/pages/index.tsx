@@ -298,7 +298,7 @@ const HACK_ROUTES: Route[] = [
 const DEFI_ROUTES = [
   {
     path: "uniswap-v2",
-    title: "Uniswap V2",
+    title: "Uniswap V2 Swap",
   },
   {
     path: "chainlink-price-oracle",

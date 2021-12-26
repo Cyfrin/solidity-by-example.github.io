@@ -790,7 +790,7 @@ exports[`it renders 1`] = `
           <a
             href="/defi/uniswap-v2"
           >
-            Uniswap V2
+            Uniswap V2 Swap
           </a>
         </li>
         <li

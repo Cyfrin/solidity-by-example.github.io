@@ -1,5 +1,5 @@
 ---
-title: Uniswap V2 - Swap
+title: Uniswap V2 Swap
 version: 0.8.10
 description: Uniswap V2 swap
 ---

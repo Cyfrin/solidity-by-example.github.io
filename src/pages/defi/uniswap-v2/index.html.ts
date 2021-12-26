@@ -1,6 +1,6 @@
 // metadata
 export const version = "0.8.10"
-export const title = "Uniswap V2 - Swap"
+export const title = "Uniswap V2 Swap"
 export const description = "Uniswap V2 swap"
 
 const html = `<h3 id="swap">Swap</h3>
