@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2021/12//26 - Uniswap V2 optimal one sided supply
+        2021/12//26 - Uniswap V2 add / remove liquidity
       </div>
       <div
         key="1"
       >
-        2021/12//24 - GiitHub PR Tanteli - primitives
+        2021/12//26 - Uniswap V2 optimal one sided supply
       </div>
       <div
         key="2"
       >
-        2021/12/12 - GitHub PR dadaphl
+        2021/12//24 - GiitHub PR Tanteli - primitives
       </div>
     </div>
     <div
@@ -791,6 +791,16 @@ exports[`it renders 1`] = `
             href="/defi/uniswap-v2"
           >
             Uniswap V2 Swap
+          </a>
+        </li>
+        <li
+          className="listItem"
+          key="/defi/uniswap-v2-add-remove-liquidity"
+        >
+          <a
+            href="/defi/uniswap-v2-add-remove-liquidity"
+          >
+            Uniswap V2 Add Remove Liquidity
           </a>
         </li>
         <li

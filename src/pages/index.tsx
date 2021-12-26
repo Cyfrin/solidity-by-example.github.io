@@ -301,6 +301,10 @@ const DEFI_ROUTES = [
     title: "Uniswap V2 Swap",
   },
   {
+    path: "uniswap-v2-add-remove-liquidity",
+    title: "Uniswap V2 Add Remove Liquidity",
+  },
+  {
     path: "uniswap-v2-optimal-one-sided-supply",
     title: "Uniswap V2 Optimal One Sided Supply",
   },
@@ -343,9 +347,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/12//26 - Uniswap V2 add / remove liquidity",
   "2021/12//26 - Uniswap V2 optimal one sided supply",
   "2021/12//24 - GiitHub PR Tanteli - primitives",
-  "2021/12/12 - GitHub PR dadaphl",
 ]
 
 function HomePage() {

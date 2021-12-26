@@ -20,6 +20,7 @@ import component_data_locations from "./pages/data-locations"
 import component_defi_chainlink_price_oracle from "./pages/defi/chainlink-price-oracle"
 import component_defi_staking_rewards from "./pages/defi/staking-rewards"
 import component_defi_uniswap_v2 from "./pages/defi/uniswap-v2"
+import component_defi_uniswap_v2_add_remove_liquidity from "./pages/defi/uniswap-v2-add-remove-liquidity"
 import component_defi_uniswap_v2_optimal_one_sided_supply from "./pages/defi/uniswap-v2-optimal-one-sided-supply"
 import component_delegatecall from "./pages/delegatecall"
 import component_enum from "./pages/enum"
@@ -165,6 +166,10 @@ const routes: Route[] = [
     {
         path: "/defi/uniswap-v2",
         component: component_defi_uniswap_v2
+    },
+    {
+        path: "/defi/uniswap-v2-add-remove-liquidity",
+        component: component_defi_uniswap_v2_add_remove_liquidity
     },
     {
         path: "/defi/uniswap-v2-optimal-one-sided-supply",
