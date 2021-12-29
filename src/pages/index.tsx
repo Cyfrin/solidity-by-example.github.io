@@ -219,6 +219,10 @@ const APP_ROUTES: Route[] = [
     title: "Deploy Any Contract",
   },
   {
+    path: "write-to-any-slot",
+    title: "Write to Any Slot",
+  },
+  {
     path: "uni-directional-payment-channel",
     title: "Uni-directional Payment Channel",
   },
@@ -347,9 +351,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2021/12//29 - Write to any slot",
   "2021/12//26 - Uniswap V2 add / remove liquidity",
   "2021/12//26 - Uniswap V2 optimal one sided supply",
-  "2021/12//24 - GiitHub PR Tanteli - primitives",
 ]
 
 function HomePage() {
