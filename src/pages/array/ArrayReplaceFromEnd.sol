@@ -20,14 +20,14 @@ contract ArrayReplaceFromEnd {
         remove(1);
         // [1, 4, 3]
         assert(arr.length == 3);
-        assert(arr[0] = 1);
-        assert(arr[1] = 4);
-        assert(arr[2] = 3);
+        assert(arr[0] == 1);
+        assert(arr[1] == 4);
+        assert(arr[2] == 3);
 
         remove(2);
         // [1, 4]
         assert(arr.length == 2);
-        assert(arr[0] = 1);
-        assert(arr[1] = 4);
+        assert(arr[0] == 1);
+        assert(arr[1] == 4);
     }
 }
