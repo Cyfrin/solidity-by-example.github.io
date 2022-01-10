@@ -215,6 +215,10 @@ const APP_ROUTES: Route[] = [
     title: "Minimal Proxy Contract",
   },
   {
+    path: "upgradeable-proxy",
+    title: "Upgradeable Proxy",
+  },
+  {
     path: "deploy-any-contract",
     title: "Deploy Any Contract",
   },
@@ -351,9 +355,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2022/01/10 - Upgradeable proxy",
   "2022/01/10 - GitHub PR HyperHoomann",
   "2021/12//29 - Write to any slot",
-  "2021/12//26 - Uniswap V2 add / remove liquidity",
 ]
 
 function HomePage() {

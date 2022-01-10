@@ -11,6 +11,7 @@ import component_app_merkle_tree from "./pages/app/merkle-tree"
 import component_app_minimal_proxy from "./pages/app/minimal-proxy"
 import component_app_multi_sig_wallet from "./pages/app/multi-sig-wallet"
 import component_app_uni_directional_payment_channel from "./pages/app/uni-directional-payment-channel"
+import component_app_upgradeable_proxy from "./pages/app/upgradeable-proxy"
 import component_app_write_to_any_slot from "./pages/app/write-to-any-slot"
 import component_array from "./pages/array"
 import component_call from "./pages/call"
@@ -131,6 +132,10 @@ const routes: Route[] = [
     {
         path: "/app/uni-directional-payment-channel",
         component: component_app_uni_directional_payment_channel
+    },
+    {
+        path: "/app/upgradeable-proxy",
+        component: component_app_upgradeable_proxy
     },
     {
         path: "/app/write-to-any-slot",
