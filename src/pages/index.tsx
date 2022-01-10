@@ -351,9 +351,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2022/01/10 - GitHub PR HyperHoomann",
   "2021/12//29 - Write to any slot",
   "2021/12//26 - Uniswap V2 add / remove liquidity",
-  "2021/12//26 - Uniswap V2 optimal one sided supply",
 ]
 
 function HomePage() {

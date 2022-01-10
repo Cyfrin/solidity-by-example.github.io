@@ -116,15 +116,15 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
         remove(<span class="hljs-number">1</span>);
         <span class="hljs-comment">// [1, 4, 3]</span>
         <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">3</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] = <span class="hljs-number">4</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] == <span class="hljs-number">3</span>);
 
         remove(<span class="hljs-number">2</span>);
         <span class="hljs-comment">// [1, 4]</span>
         <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">2</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] = <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">4</span>);
     }
 }
 </code></pre>

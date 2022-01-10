@@ -44,16 +44,16 @@ const html = `<p>A <code>constructor</code> is an optional function that is exec
 <span class="hljs-comment">// constructor of the child contract.</span>
 
 <span class="hljs-comment">// Order of constructors called:</span>
-<span class="hljs-comment">// 1. Y</span>
-<span class="hljs-comment">// 2. X</span>
+<span class="hljs-comment">// 1. X</span>
+<span class="hljs-comment">// 2. Y</span>
 <span class="hljs-comment">// 3. D</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">D</span> <span class="hljs-keyword">is</span> <span class="hljs-title">X</span>, <span class="hljs-title">Y</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title">X</span>(<span class="hljs-params"><span class="hljs-string">"X was called"</span></span>) <span class="hljs-title">Y</span>(<span class="hljs-params"><span class="hljs-string">"Y was called"</span></span>) </span>{}
 }
 
 <span class="hljs-comment">// Order of constructors called:</span>
-<span class="hljs-comment">// 1. Y</span>
-<span class="hljs-comment">// 2. X</span>
+<span class="hljs-comment">// 1. X</span>
+<span class="hljs-comment">// 2. Y</span>
 <span class="hljs-comment">// 3. E</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">E</span> <span class="hljs-keyword">is</span> <span class="hljs-title">X</span>, <span class="hljs-title">Y</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title">Y</span>(<span class="hljs-params"><span class="hljs-string">"Y was called"</span></span>) <span class="hljs-title">X</span>(<span class="hljs-params"><span class="hljs-string">"X was called"</span></span>) </span>{}

@@ -53,7 +53,7 @@ const html = `<p>There are several ways to return outputs from a function.</p>
 
     <span class="hljs-comment">// Use destructing assignment when calling another</span>
     <span class="hljs-comment">// function that returns multiple values.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destructingAssigments</span>(<span class="hljs-params"></span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destructingAssignments</span>(<span class="hljs-params"></span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">

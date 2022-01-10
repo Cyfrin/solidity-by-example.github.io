@@ -46,7 +46,7 @@ contract Function {
 
     // Use destructing assignment when calling another
     // function that returns multiple values.
-    function destructingAssigments()
+    function destructingAssignments()
         public
         pure
         returns (
