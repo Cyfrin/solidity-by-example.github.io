@@ -13,6 +13,17 @@ exports[`it renders 1`] = `
 <pre><code class=\\"language-solidity\\"><span class=\\"hljs-comment\\">// SPDX-License-Identifier: MIT</span>
 <span class=\\"hljs-meta\\"><span class=\\"hljs-keyword\\">pragma</span> <span class=\\"hljs-keyword\\">solidity</span> ^0.8.10;</span>
 
+<span class=\\"hljs-keyword\\">struct</span> <span class=\\"hljs-title\\">Point</span> {
+    <span class=\\"hljs-keyword\\">uint</span> x;
+    <span class=\\"hljs-keyword\\">uint</span> y;
+}
+
+<span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">error</span> <span class=\\"hljs-title\\">Unauthorized</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">address</span> caller</span>)</span>;
+
+<span class=\\"hljs-function\\"><span class=\\"hljs-keyword\\">function</span> <span class=\\"hljs-title\\">add</span>(<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span> x, <span class=\\"hljs-keyword\\">uint</span> y</span>) <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">pure</span></span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">returns</span></span> (<span class=\\"hljs-params\\"><span class=\\"hljs-keyword\\">uint</span></span>) </span>{
+    <span class=\\"hljs-keyword\\">return</span> x + y;
+}
+
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Foo</span> </span>{
     <span class=\\"hljs-keyword\\">string</span> <span class=\\"hljs-keyword\\">public</span> name = <span class=\\"hljs-string\\">\\"Foo\\"</span>;
 }
@@ -23,6 +34,9 @@ exports[`it renders 1`] = `
 
 <span class=\\"hljs-comment\\">// import Foo.sol from current directory</span>
 <span class=\\"hljs-keyword\\">import</span> <span class=\\"hljs-string\\">\\"./Foo.sol\\"</span>;
+
+<span class=\\"hljs-comment\\">// import {symbol1 as alias, symbol2} from \\"filename\\";</span>
+<span class=\\"hljs-keyword\\">import</span> {<span class=\\"hljs-title\\">Unauthorized</span>, <span class=\\"hljs-title\\">add</span> <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">as</span></span> <span class=\\"hljs-title\\">func</span>, <span class=\\"hljs-title\\">Point</span>} <span class=\\"hljs-title\\"><span class=\\"hljs-keyword\\">from</span></span> <span class=\\"hljs-string\\">\\"./Foo.sol\\"</span>;
 
 <span class=\\"hljs-class\\"><span class=\\"hljs-keyword\\">contract</span> <span class=\\"hljs-title\\">Import</span> </span>{
     <span class=\\"hljs-comment\\">// Initialize Foo.sol</span>

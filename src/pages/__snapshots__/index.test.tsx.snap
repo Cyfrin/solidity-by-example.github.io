@@ -55,17 +55,17 @@ exports[`it renders 1`] = `
       <div
         key="0"
       >
-        2022/01/10 - Upgradeable proxy
+        2022/01/14 - Solidity 0.8 import
       </div>
       <div
         key="1"
       >
-        2022/01/10 - GitHub PR HyperHoomann
+        2022/01/10 - Upgradeable proxy
       </div>
       <div
         key="2"
       >
-        2021/12//29 - Write to any slot
+        2022/01/10 - GitHub PR HyperHoomann
       </div>
     </div>
     <div

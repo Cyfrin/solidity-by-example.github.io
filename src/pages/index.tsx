@@ -355,9 +355,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2022/01/14 - Solidity 0.8 import",
   "2022/01/10 - Upgradeable proxy",
   "2022/01/10 - GitHub PR HyperHoomann",
-  "2021/12//29 - Write to any slot",
 ]
 
 function HomePage() {
