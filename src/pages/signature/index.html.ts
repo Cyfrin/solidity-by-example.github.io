@@ -88,10 +88,10 @@ How to Sign and Verify
         <span class="hljs-keyword">uint</span> _nonce,
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> signature
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
-        <span class="hljs-keyword">bytes32</span> messageHash = getMessageHash(_to, _amount, _message, _nonce);
-        <span class="hljs-keyword">bytes32</span> ethSignedMessageHash = getEthSignedMessageHash(messageHash);
+        <span class="hljs-keyword">bytes32</span> messageHash <span class="hljs-operator">=</span> getMessageHash(_to, _amount, _message, _nonce);
+        <span class="hljs-keyword">bytes32</span> ethSignedMessageHash <span class="hljs-operator">=</span> getEthSignedMessageHash(messageHash);
 
-        <span class="hljs-keyword">return</span> recoverSigner(ethSignedMessageHash, signature) == _signer;
+        <span class="hljs-keyword">return</span> recoverSigner(ethSignedMessageHash, signature) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> _signer;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recoverSigner</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> _ethSignedMessageHash, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _signature</span>)
@@ -99,7 +99,7 @@ How to Sign and Verify
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>)
     </span>{
-        (<span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> s, <span class="hljs-keyword">uint8</span> v) = splitSignature(_signature);
+        (<span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> s, <span class="hljs-keyword">uint8</span> v) <span class="hljs-operator">=</span> splitSignature(_signature);
 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">ecrecover</span>(_ethSignedMessageHash, v, r, s);
     }
@@ -113,7 +113,7 @@ How to Sign and Verify
             <span class="hljs-keyword">uint8</span> v
         </span>)
     </span>{
-        <span class="hljs-built_in">require</span>(sig.<span class="hljs-built_in">length</span> == <span class="hljs-number">65</span>, <span class="hljs-string">"invalid signature length"</span>);
+        <span class="hljs-built_in">require</span>(sig.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">65</span>, <span class="hljs-string">"invalid signature length"</span>);
 
         <span class="hljs-keyword">assembly</span> {
             <span class="hljs-comment">/*
@@ -126,11 +126,11 @@ How to Sign and Verify
             */</span>
 
             <span class="hljs-comment">// first 32 bytes, after the length prefix</span>
-            r := <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">32</span>))
+            r <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">32</span>))
             <span class="hljs-comment">// second 32 bytes</span>
-            s := <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">64</span>))
+            s <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">64</span>))
             <span class="hljs-comment">// final byte (first byte of the next 32 bytes)</span>
-            v := <span class="hljs-built_in">byte</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">96</span>)))
+            v <span class="hljs-operator">:=</span> <span class="hljs-built_in">byte</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(sig, <span class="hljs-number">96</span>)))
         }
 
         <span class="hljs-comment">// implicitly return (r, s, v)</span>

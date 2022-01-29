@@ -3,13 +3,13 @@ import fs from "fs"
 import path from "path"
 import yaml from "yaml"
 import mustache from "mustache"
-import marked from "marked"
+import { marked } from "marked"
 import hljs from "highlight.js"
 // @ts-ignore
-import { definer } from "highlightjs-solidity"
+import { solidity } from "highlightjs-solidity"
 import { exists, copy, removeExt, getExt, renderTemplateToFile } from "./lib"
 
-hljs.registerLanguage("solidity", definer)
+hljs.registerLanguage("solidity", solidity)
 const { readFile, readdir } = fs.promises
 
 function findIndexOfFrontMatter(lines: string[]): number {

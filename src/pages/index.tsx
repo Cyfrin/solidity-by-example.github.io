@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "../components/SEO"
 import styles from "./index.module.css"
-import youTube from "../components/youtube.svg"
+import youTube from "../components/youtube.png"
 
 interface Route {
   path: string

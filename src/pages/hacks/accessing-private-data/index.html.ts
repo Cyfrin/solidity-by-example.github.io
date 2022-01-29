@@ -28,16 +28,16 @@ Contract deployed on Ropsten
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Vault</span> </span>{
     <span class="hljs-comment">// slot 0</span>
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> count = <span class="hljs-number">123</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> count <span class="hljs-operator">=</span> <span class="hljs-number">123</span>;
     <span class="hljs-comment">// slot 1</span>
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isTrue = <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">uint16</span> <span class="hljs-keyword">public</span> u16 = <span class="hljs-number">31</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isTrue <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">uint16</span> <span class="hljs-keyword">public</span> u16 <span class="hljs-operator">=</span> <span class="hljs-number">31</span>;
     <span class="hljs-comment">// slot 2</span>
     <span class="hljs-keyword">bytes32</span> <span class="hljs-keyword">private</span> password;
 
     <span class="hljs-comment">// constants do not use storage</span>
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> someConst = <span class="hljs-number">123</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> someConst <span class="hljs-operator">=</span> <span class="hljs-number">123</span>;
 
     <span class="hljs-comment">// slot 3, 4, 5 (one for each array element)</span>
     <span class="hljs-keyword">bytes32</span>[<span class="hljs-number">3</span>] <span class="hljs-keyword">public</span> data;
@@ -56,17 +56,17 @@ Contract deployed on Ropsten
     <span class="hljs-comment">// slot 7 - empty</span>
     <span class="hljs-comment">// entries are stored at hash(key, slot)</span>
     <span class="hljs-comment">// where slot = 7, key = map key</span>
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> =&gt; User) <span class="hljs-keyword">private</span> idToUser;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> User) <span class="hljs-keyword">private</span> idToUser;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> _password</span>) </span>{
-        password = _password;
+        password <span class="hljs-operator">=</span> _password;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addUser</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> _password</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        User <span class="hljs-keyword">memory</span> user = User({id: users.<span class="hljs-built_in">length</span>, password: _password});
+        User <span class="hljs-keyword">memory</span> user <span class="hljs-operator">=</span> User({id: users.<span class="hljs-built_in">length</span>, password: _password});
 
         users.<span class="hljs-built_in">push</span>(user);
-        idToUser[user.id] = user;
+        idToUser[user.id] <span class="hljs-operator">=</span> user;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getArrayLocation</span>(<span class="hljs-params">
@@ -74,7 +74,7 @@ Contract deployed on Ropsten
         <span class="hljs-keyword">uint</span> index,
         <span class="hljs-keyword">uint</span> elementSize
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">uint</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(slot))) + (index * elementSize);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">uint</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(slot))) <span class="hljs-operator">+</span> (index <span class="hljs-operator">*</span> elementSize);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMapLocation</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> slot, <span class="hljs-keyword">uint</span> key</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{

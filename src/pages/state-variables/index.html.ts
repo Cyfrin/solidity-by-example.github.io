@@ -14,7 +14,7 @@ const html = `<p>To write or update a state variable you need to send a transact
 
     <span class="hljs-comment">// You need to send a transaction to write to a state variable.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        num = _num;
+        num <span class="hljs-operator">=</span> _num;
     }
 
     <span class="hljs-comment">// You can read from a state variable without sending a transaction.</span>

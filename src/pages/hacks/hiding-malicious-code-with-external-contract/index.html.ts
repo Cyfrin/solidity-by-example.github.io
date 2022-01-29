@@ -29,7 +29,7 @@ will actually execute the code at Mal.
     Bar bar;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _bar</span>) </span>{
-        bar = Bar(_bar);
+        bar <span class="hljs-operator">=</span> Bar(_bar);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callBar</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
@@ -69,7 +69,7 @@ external contract can be reviewed</li>
 <pre><code class="language-solidity">Bar <span class="hljs-keyword">public</span> bar;
 
 <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-    bar = <span class="hljs-keyword">new</span> Bar();
+    bar <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Bar();
 }
 </code></pre>
 `

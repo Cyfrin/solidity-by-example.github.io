@@ -14,7 +14,7 @@ const html = `<h3 id="eth--usd-price-oracle">ETH / USD Price Oracle</h3>
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-comment">// ETH / USD</span>
-        priceFeed = AggregatorV3Interface(<span class="hljs-number">0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419</span>);
+        priceFeed <span class="hljs-operator">=</span> AggregatorV3Interface(<span class="hljs-number">0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419</span>);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLatestPrice</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">int</span></span>) </span>{
@@ -24,9 +24,9 @@ const html = `<h3 id="eth--usd-price-oracle">ETH / USD Price Oracle</h3>
             <span class="hljs-keyword">uint</span> startedAt,
             <span class="hljs-keyword">uint</span> timeStamp,
             <span class="hljs-keyword">uint80</span> answeredInRound
-        ) = priceFeed.latestRoundData();
+        ) <span class="hljs-operator">=</span> priceFeed.latestRoundData();
         <span class="hljs-comment">// for ETH / USD price is scaled up by 10 ** 8</span>
-        <span class="hljs-keyword">return</span> price / <span class="hljs-number">1e8</span>;
+        <span class="hljs-keyword">return</span> price <span class="hljs-operator">/</span> <span class="hljs-number">1e8</span>;
     }
 }
 

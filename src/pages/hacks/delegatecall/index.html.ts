@@ -42,7 +42,7 @@ caller of HackMe, in this case Attack.
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pwn</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 }
 
@@ -51,8 +51,8 @@ caller of HackMe, in this case Attack.
     Lib <span class="hljs-keyword">public</span> lib;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params">Lib _lib</span>) </span>{
-        owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-        lib = Lib(_lib);
+        owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        lib <span class="hljs-operator">=</span> Lib(_lib);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
@@ -64,7 +64,7 @@ caller of HackMe, in this case Attack.
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> hackMe;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _hackMe</span>) </span>{
-        hackMe = _hackMe;
+        hackMe <span class="hljs-operator">=</span> _hackMe;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
@@ -101,7 +101,7 @@ change the owner.
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> someNumber;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        someNumber = _num;
+        someNumber <span class="hljs-operator">=</span> _num;
     }
 }
 
@@ -111,8 +111,8 @@ change the owner.
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> someNumber;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _lib</span>) </span>{
-        lib = _lib;
-        owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        lib <span class="hljs-operator">=</span> _lib;
+        owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
@@ -130,7 +130,7 @@ change the owner.
     HackMe <span class="hljs-keyword">public</span> hackMe;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params">HackMe _hackMe</span>) </span>{
-        hackMe = HackMe(_hackMe);
+        hackMe <span class="hljs-operator">=</span> HackMe(_hackMe);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
@@ -143,7 +143,7 @@ change the owner.
 
     <span class="hljs-comment">// function signature must match HackMe.doSomething()</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 }
 </code></pre>

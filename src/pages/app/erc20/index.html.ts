@@ -19,7 +19,7 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
@@ -49,7 +49,7 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
         <span class="hljs-comment">// Similar to how</span>
         <span class="hljs-comment">// 1 dollar = 100 cents</span>
         <span class="hljs-comment">// 1 token = 1 * (10 ** decimals)</span>
-        _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-number">100</span> * <span class="hljs-number">10</span>**<span class="hljs-keyword">uint</span>(decimals()));
+        _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-number">100</span> <span class="hljs-operator">*</span> <span class="hljs-number">10</span><span class="hljs-operator">*</span><span class="hljs-operator">*</span><span class="hljs-keyword">uint</span>(decimals()));
     }
 }
 </code></pre>
@@ -99,22 +99,22 @@ How to swap tokens
         <span class="hljs-keyword">address</span> _owner2,
         <span class="hljs-keyword">uint</span> _amount2
     </span>) </span>{
-        token1 = IERC20(_token1);
-        owner1 = _owner1;
-        amount1 = _amount1;
-        token2 = IERC20(_token2);
-        owner2 = _owner2;
-        amount2 = _amount2;
+        token1 <span class="hljs-operator">=</span> IERC20(_token1);
+        owner1 <span class="hljs-operator">=</span> _owner1;
+        amount1 <span class="hljs-operator">=</span> _amount1;
+        token2 <span class="hljs-operator">=</span> IERC20(_token2);
+        owner2 <span class="hljs-operator">=</span> _owner2;
+        amount2 <span class="hljs-operator">=</span> _amount2;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner1 || <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner2, <span class="hljs-string">"Not authorized"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner1 <span class="hljs-operator">|</span><span class="hljs-operator">|</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner2, <span class="hljs-string">"Not authorized"</span>);
         <span class="hljs-built_in">require</span>(
-            token1.allowance(owner1, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) &gt;= amount1,
+            token1.allowance(owner1, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> amount1,
             <span class="hljs-string">"Token 1 allowance too low"</span>
         );
         <span class="hljs-built_in">require</span>(
-            token2.allowance(owner2, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) &gt;= amount2,
+            token2.allowance(owner2, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> amount2,
             <span class="hljs-string">"Token 2 allowance too low"</span>
         );
 
@@ -128,7 +128,7 @@ How to swap tokens
         <span class="hljs-keyword">address</span> recipient,
         <span class="hljs-keyword">uint</span> amount
     </span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> </span>{
-        <span class="hljs-keyword">bool</span> sent = token.transferFrom(sender, recipient, amount);
+        <span class="hljs-keyword">bool</span> sent <span class="hljs-operator">=</span> token.transferFrom(sender, recipient, amount);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Token transfer failed"</span>);
     }
 }

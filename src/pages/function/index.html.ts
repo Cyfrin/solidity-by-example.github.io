@@ -46,9 +46,9 @@ const html = `<p>There are several ways to return outputs from a function.</p>
             <span class="hljs-keyword">uint</span> y
         </span>)
     </span>{
-        x = <span class="hljs-number">1</span>;
-        b = <span class="hljs-literal">true</span>;
-        y = <span class="hljs-number">2</span>;
+        x <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        b <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+        y <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
     }
 
     <span class="hljs-comment">// Use destructing assignment when calling another</span>
@@ -64,10 +64,10 @@ const html = `<p>There are several ways to return outputs from a function.</p>
             <span class="hljs-keyword">uint</span>
         </span>)
     </span>{
-        (<span class="hljs-keyword">uint</span> i, <span class="hljs-keyword">bool</span> b, <span class="hljs-keyword">uint</span> j) = returnMany();
+        (<span class="hljs-keyword">uint</span> i, <span class="hljs-keyword">bool</span> b, <span class="hljs-keyword">uint</span> j) <span class="hljs-operator">=</span> returnMany();
 
         <span class="hljs-comment">// Values can be left out.</span>
-        (<span class="hljs-keyword">uint</span> x, , <span class="hljs-keyword">uint</span> y) = (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>);
+        (<span class="hljs-keyword">uint</span> x, , <span class="hljs-keyword">uint</span> y) <span class="hljs-operator">=</span> (<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>);
 
         <span class="hljs-keyword">return</span> (i, b, j, x, y);
     }

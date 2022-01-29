@@ -13,7 +13,7 @@ const html = `<p>Contract address can be precomputed, before the contract is dep
     <span class="hljs-comment">// 1. Get bytecode of contract to be deployed</span>
     <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> _owner and _foo are arguments of the TestContract&#x27;s constructor</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBytecode</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">uint</span> _foo</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
-        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> bytecode = <span class="hljs-built_in">type</span>(TestContract).<span class="hljs-built_in">creationCode</span>;
+        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> bytecode <span class="hljs-operator">=</span> <span class="hljs-keyword">type</span>(TestContract).<span class="hljs-built_in">creationCode</span>;
 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(bytecode, <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(_owner, _foo));
     }
@@ -25,7 +25,7 @@ const html = `<p>Contract address can be precomputed, before the contract is dep
         <span class="hljs-title"><span class="hljs-keyword">view</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>)
     </span>{
-        <span class="hljs-keyword">bytes32</span> hash = <span class="hljs-built_in">keccak256</span>(
+        <span class="hljs-keyword">bytes32</span> hash <span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(
             <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-keyword">bytes1</span>(<span class="hljs-number">0xff</span>), <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _salt, <span class="hljs-built_in">keccak256</span>(bytecode))
         );
 
@@ -51,7 +51,7 @@ const html = `<p>Contract address can be precomputed, before the contract is dep
               s = big-endian 256-bit value
         */</span>
         <span class="hljs-keyword">assembly</span> {
-            addr := <span class="hljs-built_in">create2</span>(
+            addr <span class="hljs-operator">:=</span> <span class="hljs-built_in">create2</span>(
                 <span class="hljs-built_in">callvalue</span>(), <span class="hljs-comment">// wei sent with current call</span>
                 <span class="hljs-comment">// Actual code starts after skipping the first 32 bytes</span>
                 <span class="hljs-built_in">add</span>(bytecode, <span class="hljs-number">0x20</span>),
@@ -73,8 +73,8 @@ const html = `<p>Contract address can be precomputed, before the contract is dep
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> foo;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">uint</span> _foo</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        owner = _owner;
-        foo = _foo;
+        owner <span class="hljs-operator">=</span> _owner;
+        foo <span class="hljs-operator">=</span> _foo;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBalance</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{

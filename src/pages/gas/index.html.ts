@@ -22,7 +22,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Gas</span> </span>{
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
     <span class="hljs-comment">// Using up all of the gas that you send causes your transaction to fail.</span>
     <span class="hljs-comment">// State changes are undone.</span>
@@ -31,7 +31,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
         <span class="hljs-comment">// Here we run a loop until all of the gas are spent</span>
         <span class="hljs-comment">// and the transaction fails</span>
         <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
-            i += <span class="hljs-number">1</span>;
+            i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
         }
     }
 }

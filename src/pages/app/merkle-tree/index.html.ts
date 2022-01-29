@@ -15,21 +15,21 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
         <span class="hljs-keyword">bytes32</span> leaf,
         <span class="hljs-keyword">uint</span> index
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
-        <span class="hljs-keyword">bytes32</span> hash = leaf;
+        <span class="hljs-keyword">bytes32</span> hash <span class="hljs-operator">=</span> leaf;
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; proof.<span class="hljs-built_in">length</span>; i++) {
-            <span class="hljs-keyword">bytes32</span> proofElement = proof[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> proof.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">bytes32</span> proofElement <span class="hljs-operator">=</span> proof[i];
 
-            <span class="hljs-keyword">if</span> (index % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
-                hash = <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(hash, proofElement));
+            <span class="hljs-keyword">if</span> (index <span class="hljs-operator">%</span> <span class="hljs-number">2</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
+                hash <span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(hash, proofElement));
             } <span class="hljs-keyword">else</span> {
-                hash = <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(proofElement, hash));
+                hash <span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(proofElement, hash));
             }
 
-            index = index / <span class="hljs-number">2</span>;
+            index <span class="hljs-operator">=</span> index <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;
         }
 
-        <span class="hljs-keyword">return</span> hash == root;
+        <span class="hljs-keyword">return</span> hash <span class="hljs-operator">=</span><span class="hljs-operator">=</span> root;
     }
 }
 
@@ -37,35 +37,35 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
     <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">public</span> hashes;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">string</span>[<span class="hljs-number">4</span>] <span class="hljs-keyword">memory</span> transactions = [
+        <span class="hljs-keyword">string</span>[<span class="hljs-number">4</span>] <span class="hljs-keyword">memory</span> transactions <span class="hljs-operator">=</span> [
             <span class="hljs-string">"alice -&gt; bob"</span>,
             <span class="hljs-string">"bob -&gt; dave"</span>,
             <span class="hljs-string">"carol -&gt; alice"</span>,
             <span class="hljs-string">"dave -&gt; bob"</span>
         ];
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; transactions.<span class="hljs-built_in">length</span>; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> transactions.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
             hashes.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(transactions[i])));
         }
 
-        <span class="hljs-keyword">uint</span> n = transactions.<span class="hljs-built_in">length</span>;
-        <span class="hljs-keyword">uint</span> offset = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">uint</span> n <span class="hljs-operator">=</span> transactions.<span class="hljs-built_in">length</span>;
+        <span class="hljs-keyword">uint</span> offset <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
-        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i += <span class="hljs-number">2</span>) {
+        <span class="hljs-keyword">while</span> (n <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> n <span class="hljs-operator">-</span> <span class="hljs-number">1</span>; i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>) {
                 hashes.<span class="hljs-built_in">push</span>(
                     <span class="hljs-built_in">keccak256</span>(
-                        <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(hashes[offset + i], hashes[offset + i + <span class="hljs-number">1</span>])
+                        <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(hashes[offset <span class="hljs-operator">+</span> i], hashes[offset <span class="hljs-operator">+</span> i <span class="hljs-operator">+</span> <span class="hljs-number">1</span>])
                     )
                 );
             }
-            offset += n;
-            n = n / <span class="hljs-number">2</span>;
+            offset <span class="hljs-operator">+</span><span class="hljs-operator">=</span> n;
+            n <span class="hljs-operator">=</span> n <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;
         }
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRoot</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span></span>) </span>{
-        <span class="hljs-keyword">return</span> hashes[hashes.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>];
+        <span class="hljs-keyword">return</span> hashes[hashes.<span class="hljs-built_in">length</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>];
     }
 
     <span class="hljs-comment">/* verify

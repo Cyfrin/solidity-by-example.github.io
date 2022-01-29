@@ -72,16 +72,16 @@ const html = `<p>Example of ERC721</p>
     </span>)</span>;
 
     <span class="hljs-comment">// Mapping from token ID to owner address</span>
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> =&gt; <span class="hljs-keyword">address</span>) <span class="hljs-keyword">private</span> _owners;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">address</span>) <span class="hljs-keyword">private</span> _owners;
 
     <span class="hljs-comment">// Mapping owner address to token count</span>
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">private</span> _balances;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">private</span> _balances;
 
     <span class="hljs-comment">// Mapping from token ID to approved address</span>
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> =&gt; <span class="hljs-keyword">address</span>) <span class="hljs-keyword">private</span> _tokenApprovals;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">address</span>) <span class="hljs-keyword">private</span> _tokenApprovals;
 
     <span class="hljs-comment">// Mapping from owner to operator approvals</span>
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>)) <span class="hljs-keyword">private</span> _operatorApprovals;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>)) <span class="hljs-keyword">private</span> _operatorApprovals;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">supportsInterface</span>(<span class="hljs-params"><span class="hljs-keyword">bytes4</span> interfaceId</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
@@ -90,18 +90,18 @@ const html = `<p>Example of ERC721</p>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)
     </span>{
         <span class="hljs-keyword">return</span>
-            interfaceId == <span class="hljs-built_in">type</span>(IERC721).<span class="hljs-built_in">interfaceId</span> ||
-            interfaceId == <span class="hljs-built_in">type</span>(IERC165).<span class="hljs-built_in">interfaceId</span>;
+            interfaceId <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">type</span>(IERC721).<span class="hljs-built_in">interfaceId</span> <span class="hljs-operator">|</span><span class="hljs-operator">|</span>
+            interfaceId <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">type</span>(IERC165).<span class="hljs-built_in">interfaceId</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-built_in">require</span>(owner != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"owner = zero address"</span>);
+        <span class="hljs-built_in">require</span>(owner <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"owner = zero address"</span>);
         <span class="hljs-keyword">return</span> _balances[owner];
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ownerOf</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> tokenId</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> owner</span>) </span>{
-        owner = _owners[tokenId];
-        <span class="hljs-built_in">require</span>(owner != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"token doesn&#x27;t exist"</span>);
+        owner <span class="hljs-operator">=</span> _owners[tokenId];
+        <span class="hljs-built_in">require</span>(owner <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"token doesn&#x27;t exist"</span>);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isApprovedForAll</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> operator</span>)
@@ -114,12 +114,12 @@ const html = `<p>Example of ERC721</p>
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setApprovalForAll</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> operator, <span class="hljs-keyword">bool</span> approved</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> </span>{
-        _operatorApprovals[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>][operator] = approved;
+        _operatorApprovals[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>][operator] <span class="hljs-operator">=</span> approved;
         <span class="hljs-keyword">emit</span> ApprovalForAll(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, operator, approved);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getApproved</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> tokenId</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>) </span>{
-        <span class="hljs-built_in">require</span>(_owners[tokenId] != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"token doesn&#x27;t exist"</span>);
+        <span class="hljs-built_in">require</span>(_owners[tokenId] <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"token doesn&#x27;t exist"</span>);
         <span class="hljs-keyword">return</span> _tokenApprovals[tokenId];
     }
 
@@ -128,14 +128,14 @@ const html = `<p>Example of ERC721</p>
         <span class="hljs-keyword">address</span> to,
         <span class="hljs-keyword">uint</span> tokenId
     </span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> </span>{
-        _tokenApprovals[tokenId] = to;
+        _tokenApprovals[tokenId] <span class="hljs-operator">=</span> to;
         <span class="hljs-keyword">emit</span> Approval(owner, to, tokenId);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">approve</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> to, <span class="hljs-keyword">uint</span> tokenId</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> </span>{
-        <span class="hljs-keyword">address</span> owner = _owners[tokenId];
+        <span class="hljs-keyword">address</span> owner <span class="hljs-operator">=</span> _owners[tokenId];
         <span class="hljs-built_in">require</span>(
-            <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner || _operatorApprovals[owner][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>],
+            <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner <span class="hljs-operator">|</span><span class="hljs-operator">|</span> _operatorApprovals[owner][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>],
             <span class="hljs-string">"not owner nor approved for all"</span>
         );
         _approve(owner, to, tokenId);
@@ -146,8 +146,8 @@ const html = `<p>Example of ERC721</p>
         <span class="hljs-keyword">address</span> spender,
         <span class="hljs-keyword">uint</span> tokenId
     </span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
-        <span class="hljs-keyword">return</span> (spender == owner ||
-            _tokenApprovals[tokenId] == spender ||
+        <span class="hljs-keyword">return</span> (spender <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner <span class="hljs-operator">|</span><span class="hljs-operator">|</span>
+            _tokenApprovals[tokenId] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> spender <span class="hljs-operator">|</span><span class="hljs-operator">|</span>
             _operatorApprovals[owner][spender]);
     }
 
@@ -157,14 +157,14 @@ const html = `<p>Example of ERC721</p>
         <span class="hljs-keyword">address</span> to,
         <span class="hljs-keyword">uint</span> tokenId
     </span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-keyword">from</span> == owner, <span class="hljs-string">"not owner"</span>);
-        <span class="hljs-built_in">require</span>(to != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"transfer to the zero address"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-keyword">from</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner, <span class="hljs-string">"not owner"</span>);
+        <span class="hljs-built_in">require</span>(to <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"transfer to the zero address"</span>);
 
         _approve(owner, <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), tokenId);
 
-        _balances[<span class="hljs-keyword">from</span>] -= <span class="hljs-number">1</span>;
-        _balances[to] += <span class="hljs-number">1</span>;
-        _owners[tokenId] = to;
+        _balances[<span class="hljs-keyword">from</span>] <span class="hljs-operator">-</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        _balances[to] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        _owners[tokenId] <span class="hljs-operator">=</span> to;
 
         <span class="hljs-keyword">emit</span> Transfer(<span class="hljs-keyword">from</span>, to, tokenId);
     }
@@ -174,7 +174,7 @@ const html = `<p>Example of ERC721</p>
         <span class="hljs-keyword">address</span> to,
         <span class="hljs-keyword">uint</span> tokenId
     </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> </span>{
-        <span class="hljs-keyword">address</span> owner = ownerOf(tokenId);
+        <span class="hljs-keyword">address</span> owner <span class="hljs-operator">=</span> ownerOf(tokenId);
         <span class="hljs-built_in">require</span>(
             _isApprovedOrOwner(owner, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, tokenId),
             <span class="hljs-string">"not owner nor approved"</span>
@@ -195,7 +195,7 @@ const html = `<p>Example of ERC721</p>
                     <span class="hljs-keyword">from</span>,
                     tokenId,
                     _data
-                ) == IERC721Receiver.onERC721Received.<span class="hljs-built_in">selector</span>;
+                ) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> IERC721Receiver.onERC721Received.<span class="hljs-built_in">selector</span>;
         } <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
         }
@@ -218,7 +218,7 @@ const html = `<p>Example of ERC721</p>
         <span class="hljs-keyword">uint</span> tokenId,
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _data
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span> </span>{
-        <span class="hljs-keyword">address</span> owner = ownerOf(tokenId);
+        <span class="hljs-keyword">address</span> owner <span class="hljs-operator">=</span> ownerOf(tokenId);
         <span class="hljs-built_in">require</span>(
             _isApprovedOrOwner(owner, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, tokenId),
             <span class="hljs-string">"not owner nor approved"</span>
@@ -235,21 +235,21 @@ const html = `<p>Example of ERC721</p>
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mint</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> to, <span class="hljs-keyword">uint</span> tokenId</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-built_in">require</span>(to != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"mint to zero address"</span>);
-        <span class="hljs-built_in">require</span>(_owners[tokenId] == <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"token already minted"</span>);
+        <span class="hljs-built_in">require</span>(to <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"mint to zero address"</span>);
+        <span class="hljs-built_in">require</span>(_owners[tokenId] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"token already minted"</span>);
 
-        _balances[to] += <span class="hljs-number">1</span>;
-        _owners[tokenId] = to;
+        _balances[to] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        _owners[tokenId] <span class="hljs-operator">=</span> to;
 
         <span class="hljs-keyword">emit</span> Transfer(<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), to, tokenId);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">burn</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> tokenId</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-keyword">address</span> owner = ownerOf(tokenId);
+        <span class="hljs-keyword">address</span> owner <span class="hljs-operator">=</span> ownerOf(tokenId);
 
         _approve(owner, <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), tokenId);
 
-        _balances[owner] -= <span class="hljs-number">1</span>;
+        _balances[owner] <span class="hljs-operator">-</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
         <span class="hljs-keyword">delete</span> _owners[tokenId];
 
         <span class="hljs-keyword">emit</span> Transfer(owner, <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), tokenId);
@@ -260,9 +260,9 @@ const html = `<p>Example of ERC721</p>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isContract</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
         <span class="hljs-keyword">uint</span> size;
         <span class="hljs-keyword">assembly</span> {
-            size := <span class="hljs-built_in">extcodesize</span>(account)
+            size <span class="hljs-operator">:=</span> <span class="hljs-built_in">extcodesize</span>(account)
         }
-        <span class="hljs-keyword">return</span> size &gt; <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">return</span> size <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>;
     }
 }
 </code></pre>

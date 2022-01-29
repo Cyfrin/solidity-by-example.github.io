@@ -37,20 +37,20 @@ Here is how the functions were called
 */</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EtherStore</span> </span>{
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] += <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">uint</span> bal = balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
-        <span class="hljs-built_in">require</span>(bal &gt; <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">uint</span> bal <span class="hljs-operator">=</span> balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
+        <span class="hljs-built_in">require</span>(bal <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: bal}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: bal}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 
-        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;
+        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
     }
 
     <span class="hljs-comment">// Helper function to check the balance of this contract</span>
@@ -63,18 +63,18 @@ Here is how the functions were called
     EtherStore <span class="hljs-keyword">public</span> etherStore;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _etherStoreAddress</span>) </span>{
-        etherStore = EtherStore(_etherStoreAddress);
+        etherStore <span class="hljs-operator">=</span> EtherStore(_etherStoreAddress);
     }
 
     <span class="hljs-comment">// Fallback is called when EtherStore sends Ether to this contract.</span>
     <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">address</span>(etherStore).<span class="hljs-built_in">balance</span> &gt;= <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">address</span>(etherStore).<span class="hljs-built_in">balance</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>) {
             etherStore.withdraw();
         }
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> &gt;= <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
         etherStore.deposit{<span class="hljs-built_in">value</span>: <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}();
         etherStore.withdraw();
     }
@@ -98,10 +98,10 @@ Here is how the functions were called
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">internal</span> locked;
 
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">noReentrant</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-built_in">require</span>(!locked, <span class="hljs-string">"No re-entrancy"</span>);
-        locked = <span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>locked, <span class="hljs-string">"No re-entrancy"</span>);
+        locked <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
         <span class="hljs-keyword">_</span>;
-        locked = <span class="hljs-literal">false</span>;
+        locked <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
     }
 }
 </code></pre>

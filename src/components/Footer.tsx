@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Footer.module.css"
 import sce from "./sce.png"
-import youTube from "./youtube.svg"
+import youTube from "./youtube.png"
 import telegram from "./telegram.png"
 import discord from "./discord.png"
 

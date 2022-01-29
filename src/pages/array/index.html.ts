@@ -10,7 +10,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Array</span> </span>{
     <span class="hljs-comment">// Several ways to initialize an array</span>
     <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
-    <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr2 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+    <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr2 <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
     <span class="hljs-comment">// Fixed sized array, all elements initialize to 0</span>
     <span class="hljs-keyword">uint</span>[<span class="hljs-number">10</span>] <span class="hljs-keyword">public</span> myFixedSizeArr;
 
@@ -50,7 +50,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">examples</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// create array in memory, only fixed size can be created</span>
-        <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> a = <span class="hljs-keyword">new</span> <span class="hljs-keyword">uint</span>[](<span class="hljs-number">5</span>);
+        <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> a <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">uint</span>[](<span class="hljs-number">5</span>);
     }
 }
 </code></pre>
@@ -68,28 +68,28 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
     <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(_index &lt; arr.<span class="hljs-built_in">length</span>, <span class="hljs-string">"index out of bound"</span>);
+        <span class="hljs-built_in">require</span>(_index <span class="hljs-operator">&lt;</span> arr.<span class="hljs-built_in">length</span>, <span class="hljs-string">"index out of bound"</span>);
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = _index; i &lt; arr.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>; i++) {
-            arr[i] = arr[i + <span class="hljs-number">1</span>];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> _index; i <span class="hljs-operator">&lt;</span> arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            arr[i] <span class="hljs-operator">=</span> arr[i <span class="hljs-operator">+</span> <span class="hljs-number">1</span>];
         }
         arr.<span class="hljs-built_in">pop</span>();
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+        arr <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
         remove(<span class="hljs-number">2</span>);
         <span class="hljs-comment">// [1, 2, 4, 5]</span>
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">2</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] == <span class="hljs-number">4</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">3</span>] == <span class="hljs-number">5</span>);
-        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">3</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">5</span>);
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>);
 
-        arr = [<span class="hljs-number">1</span>];
+        arr <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>];
         remove(<span class="hljs-number">0</span>);
         <span class="hljs-comment">// []</span>
-        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">0</span>);
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>);
     }
 }
 </code></pre>
@@ -105,26 +105,26 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
     <span class="hljs-comment">// move the last element into the place to delete.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// Move the last element into the place to delete</span>
-        arr[index] = arr[arr.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>];
+        arr[index] <span class="hljs-operator">=</span> arr[arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>];
         <span class="hljs-comment">// Remove the last element</span>
         arr.<span class="hljs-built_in">pop</span>();
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+        arr <span class="hljs-operator">=</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
 
         remove(<span class="hljs-number">1</span>);
         <span class="hljs-comment">// [1, 4, 3]</span>
-        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">3</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">4</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] == <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">2</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">3</span>);
 
         remove(<span class="hljs-number">2</span>);
         <span class="hljs-comment">// [1, 4]</span>
-        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> == <span class="hljs-number">2</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span>);
-        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] == <span class="hljs-number">4</span>);
+        <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>);
+        <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>);
     }
 }
 </code></pre>

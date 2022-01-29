@@ -15,20 +15,20 @@ specify the location of the data.</p>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">DataLocations</span> </span>{
     <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> =&gt; <span class="hljs-keyword">address</span>) map;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">address</span>) map;
     <span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {
         <span class="hljs-keyword">uint</span> foo;
     }
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> =&gt; MyStruct) myStructs;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> MyStruct) myStructs;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// call _f with state variables</span>
         _f(arr, map, myStructs[<span class="hljs-number">1</span>]);
 
         <span class="hljs-comment">// get a struct from a mapping</span>
-        MyStruct <span class="hljs-keyword">storage</span> myStruct = myStructs[<span class="hljs-number">1</span>];
+        MyStruct <span class="hljs-keyword">storage</span> myStruct <span class="hljs-operator">=</span> myStructs[<span class="hljs-number">1</span>];
         <span class="hljs-comment">// create a struct in memory</span>
-        MyStruct <span class="hljs-keyword">memory</span> myMemStruct = MyStruct(<span class="hljs-number">0</span>);
+        MyStruct <span class="hljs-keyword">memory</span> myMemStruct <span class="hljs-operator">=</span> MyStruct(<span class="hljs-number">0</span>);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_f</span>(<span class="hljs-params">

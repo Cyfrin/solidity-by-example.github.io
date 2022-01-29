@@ -1,10 +1,10 @@
 import React from "react"
 import { useAppContext, Theme } from "../contexts/AppContext"
 import styles from "./Header.module.css"
-import logoLight from "./logo.svg"
-import logoDark from "./logo-dark.svg"
-import modeLight from "./mode-light.svg"
-import modeDark from "./mode-dark.svg"
+import logoLight from "./logo.png"
+import logoDark from "./logo-dark.png"
+import modeLight from "./mode-light.png"
+import modeDark from "./mode-dark.png"
 
 function Header() {
   const { state, setTheme } = useAppContext()

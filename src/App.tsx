@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useAppContext } from "./contexts/AppContext"
 import styles from "./App.module.css"
 import Header from "./components/Header"
@@ -22,16 +22,11 @@ function App() {
       <div className={styles.component}>
         <Header />
         <div className={styles.main}>
-          <Switch>
+          <Routes>
             {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                exact
-                component={route.component}
-              />
+              <Route key={route.path} path={route.path} element={route.component()} />
             ))}
-          </Switch>
+          </Routes>
         </div>
         <div className={styles.footer}>
           <Footer />

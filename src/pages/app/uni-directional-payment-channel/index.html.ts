@@ -24,14 +24,14 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> sender;
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> <span class="hljs-keyword">public</span> receiver;
 
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> DURATION = <span class="hljs-number">7</span> * <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> DURATION <span class="hljs-operator">=</span> <span class="hljs-number">7</span> <span class="hljs-operator">*</span> <span class="hljs-number">24</span> <span class="hljs-operator">*</span> <span class="hljs-number">60</span> <span class="hljs-operator">*</span> <span class="hljs-number">60</span>;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> expiresAt;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _receiver</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-built_in">require</span>(_receiver != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"receiver = zero address"</span>);
-        sender = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-        receiver = _receiver;
-        expiresAt = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> + DURATION;
+        <span class="hljs-built_in">require</span>(_receiver <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"receiver = zero address"</span>);
+        sender <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        receiver <span class="hljs-operator">=</span> _receiver;
+        expiresAt <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">+</span> DURATION;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_getHash</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span></span>) </span>{
@@ -53,7 +53,7 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_verify</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _sig</span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
-        <span class="hljs-keyword">return</span> _getEthSignedHash(_amount).recover(_sig) == sender;
+        <span class="hljs-keyword">return</span> _getEthSignedHash(_amount).recover(_sig) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> sender;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _sig</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
@@ -61,17 +61,17 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">close</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _sig</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">nonReentrant</span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == receiver, <span class="hljs-string">"!receiver"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> receiver, <span class="hljs-string">"!receiver"</span>);
         <span class="hljs-built_in">require</span>(_verify(_amount, _sig), <span class="hljs-string">"invalid sig"</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = receiver.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> receiver.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
         <span class="hljs-built_in">selfdestruct</span>(sender);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cancel</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == sender, <span class="hljs-string">"!sender"</span>);
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= expiresAt, <span class="hljs-string">"!expired"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> sender, <span class="hljs-string">"!sender"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> expiresAt, <span class="hljs-string">"!expired"</span>);
         <span class="hljs-built_in">selfdestruct</span>(sender);
     }
 }

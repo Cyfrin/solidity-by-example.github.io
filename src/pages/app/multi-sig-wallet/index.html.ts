@@ -27,7 +27,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">ExecuteTransaction</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">uint</span> <span class="hljs-keyword">indexed</span> txIndex</span>)</span>;
 
     <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">public</span> owners;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> isOwner;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> isOwner;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> numConfirmationsRequired;
 
     <span class="hljs-keyword">struct</span> <span class="hljs-title">Transaction</span> {
@@ -39,7 +39,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
     }
 
     <span class="hljs-comment">// mapping from tx index =&gt; owner =&gt; bool</span>
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> =&gt; <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>)) <span class="hljs-keyword">public</span> isConfirmed;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">uint</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>)) <span class="hljs-keyword">public</span> isConfirmed;
 
     Transaction[] <span class="hljs-keyword">public</span> transactions;
 
@@ -49,39 +49,39 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
     }
 
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">txExists</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _txIndex</span>) </span>{
-        <span class="hljs-built_in">require</span>(_txIndex &lt; transactions.<span class="hljs-built_in">length</span>, <span class="hljs-string">"tx does not exist"</span>);
+        <span class="hljs-built_in">require</span>(_txIndex <span class="hljs-operator">&lt;</span> transactions.<span class="hljs-built_in">length</span>, <span class="hljs-string">"tx does not exist"</span>);
         <span class="hljs-keyword">_</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">notExecuted</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _txIndex</span>) </span>{
-        <span class="hljs-built_in">require</span>(!transactions[_txIndex].executed, <span class="hljs-string">"tx already executed"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>transactions[_txIndex].executed, <span class="hljs-string">"tx already executed"</span>);
         <span class="hljs-keyword">_</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">notConfirmed</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _txIndex</span>) </span>{
-        <span class="hljs-built_in">require</span>(!isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"tx already confirmed"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"tx already confirmed"</span>);
         <span class="hljs-keyword">_</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span>[] <span class="hljs-keyword">memory</span> _owners, <span class="hljs-keyword">uint</span> _numConfirmationsRequired</span>) </span>{
-        <span class="hljs-built_in">require</span>(_owners.<span class="hljs-built_in">length</span> &gt; <span class="hljs-number">0</span>, <span class="hljs-string">"owners required"</span>);
+        <span class="hljs-built_in">require</span>(_owners.<span class="hljs-built_in">length</span> <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, <span class="hljs-string">"owners required"</span>);
         <span class="hljs-built_in">require</span>(
-            _numConfirmationsRequired &gt; <span class="hljs-number">0</span> &amp;&amp;
-                _numConfirmationsRequired &lt;= _owners.<span class="hljs-built_in">length</span>,
+            _numConfirmationsRequired <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;</span><span class="hljs-operator">&amp;</span>
+                _numConfirmationsRequired <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> _owners.<span class="hljs-built_in">length</span>,
             <span class="hljs-string">"invalid number of required confirmations"</span>
         );
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _owners.<span class="hljs-built_in">length</span>; i++) {
-            <span class="hljs-keyword">address</span> owner = _owners[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _owners.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">address</span> owner <span class="hljs-operator">=</span> _owners[i];
 
-            <span class="hljs-built_in">require</span>(owner != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"invalid owner"</span>);
-            <span class="hljs-built_in">require</span>(!isOwner[owner], <span class="hljs-string">"owner not unique"</span>);
+            <span class="hljs-built_in">require</span>(owner <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"invalid owner"</span>);
+            <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>isOwner[owner], <span class="hljs-string">"owner not unique"</span>);
 
-            isOwner[owner] = <span class="hljs-literal">true</span>;
+            isOwner[owner] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
             owners.<span class="hljs-built_in">push</span>(owner);
         }
 
-        numConfirmationsRequired = _numConfirmationsRequired;
+        numConfirmationsRequired <span class="hljs-operator">=</span> _numConfirmationsRequired;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">receive</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
@@ -93,7 +93,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         <span class="hljs-keyword">uint</span> _value,
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _data
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyOwner</span> </span>{
-        <span class="hljs-keyword">uint</span> txIndex = transactions.<span class="hljs-built_in">length</span>;
+        <span class="hljs-keyword">uint</span> txIndex <span class="hljs-operator">=</span> transactions.<span class="hljs-built_in">length</span>;
 
         transactions.<span class="hljs-built_in">push</span>(
             Transaction({
@@ -115,9 +115,9 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         <span class="hljs-title">notExecuted</span>(<span class="hljs-params">_txIndex</span>)
         <span class="hljs-title">notConfirmed</span>(<span class="hljs-params">_txIndex</span>)
     </span>{
-        Transaction <span class="hljs-keyword">storage</span> transaction = transactions[_txIndex];
-        transaction.numConfirmations += <span class="hljs-number">1</span>;
-        isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-literal">true</span>;
+        Transaction <span class="hljs-keyword">storage</span> transaction <span class="hljs-operator">=</span> transactions[_txIndex];
+        transaction.numConfirmations <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
 
         <span class="hljs-keyword">emit</span> ConfirmTransaction(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _txIndex);
     }
@@ -128,16 +128,16 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         <span class="hljs-title">txExists</span>(<span class="hljs-params">_txIndex</span>)
         <span class="hljs-title">notExecuted</span>(<span class="hljs-params">_txIndex</span>)
     </span>{
-        Transaction <span class="hljs-keyword">storage</span> transaction = transactions[_txIndex];
+        Transaction <span class="hljs-keyword">storage</span> transaction <span class="hljs-operator">=</span> transactions[_txIndex];
 
         <span class="hljs-built_in">require</span>(
-            transaction.numConfirmations &gt;= numConfirmationsRequired,
+            transaction.numConfirmations <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> numConfirmationsRequired,
             <span class="hljs-string">"cannot execute tx"</span>
         );
 
-        transaction.executed = <span class="hljs-literal">true</span>;
+        transaction.executed <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
 
-        (<span class="hljs-keyword">bool</span> success, ) = transaction.to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: transaction.<span class="hljs-built_in">value</span>}(
+        (<span class="hljs-keyword">bool</span> success, ) <span class="hljs-operator">=</span> transaction.to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: transaction.<span class="hljs-built_in">value</span>}(
             transaction.data
         );
         <span class="hljs-built_in">require</span>(success, <span class="hljs-string">"tx failed"</span>);
@@ -151,12 +151,12 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         <span class="hljs-title">txExists</span>(<span class="hljs-params">_txIndex</span>)
         <span class="hljs-title">notExecuted</span>(<span class="hljs-params">_txIndex</span>)
     </span>{
-        Transaction <span class="hljs-keyword">storage</span> transaction = transactions[_txIndex];
+        Transaction <span class="hljs-keyword">storage</span> transaction <span class="hljs-operator">=</span> transactions[_txIndex];
 
         <span class="hljs-built_in">require</span>(isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>], <span class="hljs-string">"tx not confirmed"</span>);
 
-        transaction.numConfirmations -= <span class="hljs-number">1</span>;
-        isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-literal">false</span>;
+        transaction.numConfirmations <span class="hljs-operator">-</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        isConfirmed[_txIndex][<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
 
         <span class="hljs-keyword">emit</span> RevokeConfirmation(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _txIndex);
     }
@@ -180,7 +180,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
             <span class="hljs-keyword">uint</span> numConfirmations
         </span>)
     </span>{
-        Transaction <span class="hljs-keyword">storage</span> transaction = transactions[_txIndex];
+        Transaction <span class="hljs-keyword">storage</span> transaction <span class="hljs-operator">=</span> transactions[_txIndex];
 
         <span class="hljs-keyword">return</span> (
             transaction.to,
@@ -200,7 +200,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callMe</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> j</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        i += j;
+        i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> j;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getData</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{

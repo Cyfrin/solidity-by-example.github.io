@@ -8,20 +8,20 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestUniswapOptimalOneSidedSupply</span> </span>{
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> FACTORY = <span class="hljs-number">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</span>;
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> ROUTER = <span class="hljs-number">0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D</span>;
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> WETH = <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> FACTORY <span class="hljs-operator">=</span> <span class="hljs-number">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> ROUTER <span class="hljs-operator">=</span> <span class="hljs-number">0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sqrt</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> z</span>) </span>{
-        <span class="hljs-keyword">if</span> (y &gt; <span class="hljs-number">3</span>) {
-            z = y;
-            <span class="hljs-keyword">uint</span> x = y / <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
-            <span class="hljs-keyword">while</span> (x &lt; z) {
-                z = x;
-                x = (y / x + x) / <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">if</span> (y <span class="hljs-operator">&gt;</span> <span class="hljs-number">3</span>) {
+            z <span class="hljs-operator">=</span> y;
+            <span class="hljs-keyword">uint</span> x <span class="hljs-operator">=</span> y <span class="hljs-operator">/</span> <span class="hljs-number">2</span> <span class="hljs-operator">+</span> <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">while</span> (x <span class="hljs-operator">&lt;</span> z) {
+                z <span class="hljs-operator">=</span> x;
+                x <span class="hljs-operator">=</span> (y <span class="hljs-operator">/</span> x <span class="hljs-operator">+</span> x) <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;
             }
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (y != <span class="hljs-number">0</span>) {
-            z = <span class="hljs-number">1</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (y <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
+            z <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
         }
     }
 
@@ -33,7 +33,7 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
     s = (sqrt(((2 - f)r)^2 + 4(1 - f)ar) - (2 - f)r) / (2(1 - f))
     */</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSwapAmount</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> r, <span class="hljs-keyword">uint</span> a</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">return</span> (sqrt(r * (r * <span class="hljs-number">3988009</span> + a * <span class="hljs-number">3988000</span>)) - r * <span class="hljs-number">1997</span>) / <span class="hljs-number">1994</span>;
+        <span class="hljs-keyword">return</span> (sqrt(r <span class="hljs-operator">*</span> (r <span class="hljs-operator">*</span> <span class="hljs-number">3988009</span> <span class="hljs-operator">+</span> a <span class="hljs-operator">*</span> <span class="hljs-number">3988000</span>)) <span class="hljs-operator">-</span> r <span class="hljs-operator">*</span> <span class="hljs-number">1997</span>) <span class="hljs-operator">/</span> <span class="hljs-number">1994</span>;
     }
 
     <span class="hljs-comment">/* Optimal one-sided supply
@@ -45,20 +45,20 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
         <span class="hljs-keyword">address</span> _tokenB,
         <span class="hljs-keyword">uint</span> _amountA
     </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-built_in">require</span>(_tokenA == WETH || _tokenB == WETH, <span class="hljs-string">"!weth"</span>);
+        <span class="hljs-built_in">require</span>(_tokenA <span class="hljs-operator">=</span><span class="hljs-operator">=</span> WETH <span class="hljs-operator">|</span><span class="hljs-operator">|</span> _tokenB <span class="hljs-operator">=</span><span class="hljs-operator">=</span> WETH, <span class="hljs-string">"!weth"</span>);
 
         IERC20(_tokenA).transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amountA);
 
-        <span class="hljs-keyword">address</span> pair = IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
-        (<span class="hljs-keyword">uint</span> reserve0, <span class="hljs-keyword">uint</span> reserve1, ) = IUniswapV2Pair(pair).getReserves();
+        <span class="hljs-keyword">address</span> pair <span class="hljs-operator">=</span> IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
+        (<span class="hljs-keyword">uint</span> reserve0, <span class="hljs-keyword">uint</span> reserve1, ) <span class="hljs-operator">=</span> IUniswapV2Pair(pair).getReserves();
 
         <span class="hljs-keyword">uint</span> swapAmount;
-        <span class="hljs-keyword">if</span> (IUniswapV2Pair(pair).token0() == _tokenA) {
+        <span class="hljs-keyword">if</span> (IUniswapV2Pair(pair).token0() <span class="hljs-operator">=</span><span class="hljs-operator">=</span> _tokenA) {
             <span class="hljs-comment">// swap from token0 to token1</span>
-            swapAmount = getSwapAmount(reserve0, _amountA);
+            swapAmount <span class="hljs-operator">=</span> getSwapAmount(reserve0, _amountA);
         } <span class="hljs-keyword">else</span> {
             <span class="hljs-comment">// swap from token1 to token0</span>
-            swapAmount = getSwapAmount(reserve1, _amountA);
+            swapAmount <span class="hljs-operator">=</span> getSwapAmount(reserve1, _amountA);
         }
 
         _swap(_tokenA, _tokenB, swapAmount);
@@ -72,10 +72,10 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
     </span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> </span>{
         IERC20(_from).approve(ROUTER, _amount);
 
-        <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">memory</span> path = <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">2</span>);
-        path = <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">2</span>);
-        path[<span class="hljs-number">0</span>] = _from;
-        path[<span class="hljs-number">1</span>] = _to;
+        <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">memory</span> path <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">2</span>);
+        path <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">2</span>);
+        path[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span> _from;
+        path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> _to;
 
         IUniswapV2Router(ROUTER).swapExactTokensForTokens(
             _amount,
@@ -87,8 +87,8 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_addLiquidity</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _tokenA, <span class="hljs-keyword">address</span> _tokenB</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> </span>{
-        <span class="hljs-keyword">uint</span> balA = IERC20(_tokenA).balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
-        <span class="hljs-keyword">uint</span> balB = IERC20(_tokenB).balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint</span> balA <span class="hljs-operator">=</span> IERC20(_tokenA).balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint</span> balB <span class="hljs-operator">=</span> IERC20(_tokenB).balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
         IERC20(_tokenA).approve(ROUTER, balA);
         IERC20(_tokenB).approve(ROUTER, balB);
 
@@ -156,7 +156,7 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 

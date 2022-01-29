@@ -11,9 +11,9 @@ const html = `<p>You cannot iterate through a <code>mapping</code>. So here is a
     <span class="hljs-comment">// Iterable mapping from address to uint;</span>
     <span class="hljs-keyword">struct</span> <span class="hljs-title">Map</span> {
         <span class="hljs-keyword">address</span>[] keys;
-        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) values;
-        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) indexOf;
-        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>) inserted;
+        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) values;
+        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) indexOf;
+        <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>) inserted;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">address</span> key</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
@@ -34,31 +34,31 @@ const html = `<p>You cannot iterate through a <code>mapping</code>. So here is a
         <span class="hljs-keyword">uint</span> val
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">if</span> (map.inserted[key]) {
-            map.values[key] = val;
+            map.values[key] <span class="hljs-operator">=</span> val;
         } <span class="hljs-keyword">else</span> {
-            map.inserted[key] = <span class="hljs-literal">true</span>;
-            map.values[key] = val;
-            map.indexOf[key] = map.keys.<span class="hljs-built_in">length</span>;
+            map.inserted[key] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
+            map.values[key] <span class="hljs-operator">=</span> val;
+            map.indexOf[key] <span class="hljs-operator">=</span> map.keys.<span class="hljs-built_in">length</span>;
             map.keys.<span class="hljs-built_in">push</span>(key);
         }
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params">Map <span class="hljs-keyword">storage</span> map, <span class="hljs-keyword">address</span> key</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">if</span> (!map.inserted[key]) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-operator">!</span>map.inserted[key]) {
             <span class="hljs-keyword">return</span>;
         }
 
         <span class="hljs-keyword">delete</span> map.inserted[key];
         <span class="hljs-keyword">delete</span> map.values[key];
 
-        <span class="hljs-keyword">uint</span> index = map.indexOf[key];
-        <span class="hljs-keyword">uint</span> lastIndex = map.keys.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">address</span> lastKey = map.keys[lastIndex];
+        <span class="hljs-keyword">uint</span> index <span class="hljs-operator">=</span> map.indexOf[key];
+        <span class="hljs-keyword">uint</span> lastIndex <span class="hljs-operator">=</span> map.keys.<span class="hljs-built_in">length</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">address</span> lastKey <span class="hljs-operator">=</span> map.keys[lastIndex];
 
-        map.indexOf[lastKey] = index;
+        map.indexOf[lastKey] <span class="hljs-operator">=</span> index;
         <span class="hljs-keyword">delete</span> map.indexOf[key];
 
-        map.keys[index] = lastKey;
+        map.keys[index] <span class="hljs-operator">=</span> lastKey;
         map.keys.<span class="hljs-built_in">pop</span>();
     }
 }
@@ -75,19 +75,19 @@ const html = `<p>You cannot iterate through a <code>mapping</code>. So here is a
         map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>), <span class="hljs-number">200</span>); <span class="hljs-comment">// update</span>
         map.set(<span class="hljs-keyword">address</span>(<span class="hljs-number">3</span>), <span class="hljs-number">300</span>);
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; map.size(); i++) {
-            <span class="hljs-keyword">address</span> key = map.getKeyAtIndex(i);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> map.size(); i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">address</span> key <span class="hljs-operator">=</span> map.getKeyAtIndex(i);
 
-            <span class="hljs-built_in">assert</span>(map.get(key) == i * <span class="hljs-number">100</span>);
+            <span class="hljs-built_in">assert</span>(map.get(key) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> i <span class="hljs-operator">*</span> <span class="hljs-number">100</span>);
         }
 
         map.remove(<span class="hljs-keyword">address</span>(<span class="hljs-number">1</span>));
 
         <span class="hljs-comment">// keys = [address(0), address(3), address(2)]</span>
-        <span class="hljs-built_in">assert</span>(map.size() == <span class="hljs-number">3</span>);
-        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">0</span>) == <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>));
-        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">1</span>) == <span class="hljs-keyword">address</span>(<span class="hljs-number">3</span>));
-        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">2</span>) == <span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>));
+        <span class="hljs-built_in">assert</span>(map.size() <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">3</span>);
+        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">0</span>) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>));
+        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">1</span>) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">3</span>));
+        <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">2</span>) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>));
     }
 }
 </code></pre>

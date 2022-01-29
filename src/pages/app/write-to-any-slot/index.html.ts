@@ -16,16 +16,16 @@ Each slot in the array can store 32 bytes.</p>
     }
 
     <span class="hljs-comment">// struct stored at slot 0</span>
-    MyStruct <span class="hljs-keyword">public</span> s0 = MyStruct(<span class="hljs-number">123</span>);
+    MyStruct <span class="hljs-keyword">public</span> s0 <span class="hljs-operator">=</span> MyStruct(<span class="hljs-number">123</span>);
     <span class="hljs-comment">// struct stored at slot 1</span>
-    MyStruct <span class="hljs-keyword">public</span> s1 = MyStruct(<span class="hljs-number">456</span>);
+    MyStruct <span class="hljs-keyword">public</span> s1 <span class="hljs-operator">=</span> MyStruct(<span class="hljs-number">456</span>);
     <span class="hljs-comment">// struct stored at slot 2</span>
-    MyStruct <span class="hljs-keyword">public</span> s2 = MyStruct(<span class="hljs-number">789</span>);
+    MyStruct <span class="hljs-keyword">public</span> s2 <span class="hljs-operator">=</span> MyStruct(<span class="hljs-number">789</span>);
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_get</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> i</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">MyStruct <span class="hljs-keyword">storage</span> s</span>) </span>{
         <span class="hljs-comment">// get struct stored at slot i</span>
         <span class="hljs-keyword">assembly</span> {
-            s.<span class="hljs-built_in">slot</span> := i
+            s.<span class="hljs-built_in">slot</span> <span class="hljs-operator">:=</span> i
         }
     }
 
@@ -46,7 +46,7 @@ Each slot in the array can store 32 bytes.</p>
     */</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> i, <span class="hljs-keyword">uint</span> x</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// set value of MyStruct to x and store it at slot i</span>
-        _get(i).<span class="hljs-built_in">value</span> = x;
+        _get(i).<span class="hljs-built_in">value</span> <span class="hljs-operator">=</span> x;
     }
 }
 </code></pre>

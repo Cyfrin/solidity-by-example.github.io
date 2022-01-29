@@ -13,7 +13,7 @@ const html = `<p>If you have a contract that will be deployed multiple times, us
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MinimalProxy</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clone</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> target</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> result</span>) </span>{
         <span class="hljs-comment">// convert address to 20 bytes</span>
-        <span class="hljs-keyword">bytes20</span> targetBytes = <span class="hljs-keyword">bytes20</span>(target);
+        <span class="hljs-keyword">bytes20</span> targetBytes <span class="hljs-operator">=</span> <span class="hljs-keyword">bytes20</span>(target);
 
         <span class="hljs-comment">// actual code //</span>
         <span class="hljs-comment">// 3d602d80600a3d3981f3363d3d373d3d3d363d73bebebebebebebebebebebebebebebebebebebebe5af43d82803e903d91602b57fd5bf3</span>
@@ -33,7 +33,7 @@ const html = `<p>If you have a contract that will be deployed multiple times, us
             In solidity, the 0x40 slot in memory is special: it contains the "free memory pointer"
             which points to the end of the currently allocated memory.
             */</span>
-            <span class="hljs-keyword">let</span> clone := <span class="hljs-built_in">mload</span>(<span class="hljs-number">0x40</span>)
+            <span class="hljs-keyword">let</span> clone <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-number">0x40</span>)
             <span class="hljs-comment">// store 32 bytes to memory starting at "clone"</span>
             <span class="hljs-built_in">mstore</span>(
                 clone,
@@ -71,7 +71,7 @@ const html = `<p>If you have a contract that will be deployed multiple times, us
             <span class="hljs-comment">// send 0 Ether</span>
             <span class="hljs-comment">// code starts at pointer stored in "clone"</span>
             <span class="hljs-comment">// code size 0x37 (55 bytes)</span>
-            result := <span class="hljs-built_in">create</span>(<span class="hljs-number">0</span>, clone, <span class="hljs-number">0x37</span>)
+            result <span class="hljs-operator">:=</span> <span class="hljs-built_in">create</span>(<span class="hljs-number">0</span>, clone, <span class="hljs-number">0x37</span>)
         }
     }
 }

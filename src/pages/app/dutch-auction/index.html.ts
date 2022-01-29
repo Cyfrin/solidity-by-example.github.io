@@ -42,27 +42,27 @@ const html = `<p>Dutch auction for NFT.</p>
         <span class="hljs-keyword">address</span> _nft,
         <span class="hljs-keyword">uint</span> _nftId
     </span>) </span>{
-        seller = <span class="hljs-keyword">payable</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
-        startingPrice = _startingPrice;
-        startAt = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
-        expiresAt = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> + <span class="hljs-number">7</span> <span class="hljs-literal">days</span>;
-        priceDeductionRate = _priceDeductionRate;
+        seller <span class="hljs-operator">=</span> <span class="hljs-keyword">payable</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+        startingPrice <span class="hljs-operator">=</span> _startingPrice;
+        startAt <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
+        expiresAt <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">+</span> <span class="hljs-number">7</span> <span class="hljs-literal">days</span>;
+        priceDeductionRate <span class="hljs-operator">=</span> _priceDeductionRate;
 
-        nft = IERC721(_nft);
-        nftId = _nftId;
+        nft <span class="hljs-operator">=</span> IERC721(_nft);
+        nftId <span class="hljs-operator">=</span> _nftId;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buy</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &lt; expiresAt, <span class="hljs-string">"auction expired"</span>);
-        <span class="hljs-built_in">require</span>(winner == <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"auction finished"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">&lt;</span> expiresAt, <span class="hljs-string">"auction expired"</span>);
+        <span class="hljs-built_in">require</span>(winner <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"auction finished"</span>);
 
-        <span class="hljs-keyword">uint</span> timeElapsed = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> - startAt;
-        <span class="hljs-keyword">uint</span> deduction = priceDeductionRate * timeElapsed;
-        <span class="hljs-keyword">uint</span> price = startingPrice - deduction;
+        <span class="hljs-keyword">uint</span> timeElapsed <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">-</span> startAt;
+        <span class="hljs-keyword">uint</span> deduction <span class="hljs-operator">=</span> priceDeductionRate <span class="hljs-operator">*</span> timeElapsed;
+        <span class="hljs-keyword">uint</span> price <span class="hljs-operator">=</span> startingPrice <span class="hljs-operator">-</span> deduction;
 
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> &gt;= price, <span class="hljs-string">"ETH &lt; price"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> price, <span class="hljs-string">"ETH &lt; price"</span>);
 
-        winner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        winner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
         nft.transferFrom(seller, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, nftId);
         seller.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
 

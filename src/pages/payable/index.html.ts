@@ -13,7 +13,7 @@ const html = `<p>Functions and addresses declared <code>payable</code> can recei
 
     <span class="hljs-comment">// Payable constructor can receive Ether</span>
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        owner = <span class="hljs-keyword">payable</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+        owner <span class="hljs-operator">=</span> <span class="hljs-keyword">payable</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
     }
 
     <span class="hljs-comment">// Function to deposit Ether into this contract.</span>
@@ -28,18 +28,18 @@ const html = `<p>Functions and addresses declared <code>payable</code> can recei
     <span class="hljs-comment">// Function to withdraw all Ether from this contract.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// get the amount of Ether stored in this contract</span>
-        <span class="hljs-keyword">uint</span> amount = <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
+        <span class="hljs-keyword">uint</span> amount <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
 
         <span class="hljs-comment">// send all Ether to owner</span>
         <span class="hljs-comment">// Owner can receive Ether since the address of owner is payable</span>
-        (<span class="hljs-keyword">bool</span> success, ) = owner.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> success, ) <span class="hljs-operator">=</span> owner.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(success, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 
     <span class="hljs-comment">// Function to transfer Ether from this contract to address from input</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// Note that "to" is declared as payable</span>
-        (<span class="hljs-keyword">bool</span> success, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> success, ) <span class="hljs-operator">=</span> _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(success, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }

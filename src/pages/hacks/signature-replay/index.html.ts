@@ -25,20 +25,20 @@ if the signer&#39;s intention was to approve a transaction once.</p>
     <span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">public</span> owners;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _owners</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        owners = _owners;
+        owners <span class="hljs-operator">=</span> _owners;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params">
         <span class="hljs-keyword">address</span> _to,
         <span class="hljs-keyword">uint</span> _amount,
         <span class="hljs-keyword">bytes</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _sigs
     </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-keyword">bytes32</span> txHash = getTxHash(_to, _amount);
+        <span class="hljs-keyword">bytes32</span> txHash <span class="hljs-operator">=</span> getTxHash(_to, _amount);
         <span class="hljs-built_in">require</span>(_checkSigs(_sigs, txHash), <span class="hljs-string">"invalid sig"</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 
@@ -51,13 +51,13 @@ if the signer&#39;s intention was to approve a transaction once.</p>
         <span class="hljs-title"><span class="hljs-keyword">view</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)
     </span>{
-        <span class="hljs-keyword">bytes32</span> ethSignedHash = _txHash.toEthSignedMessageHash();
+        <span class="hljs-keyword">bytes32</span> ethSignedHash <span class="hljs-operator">=</span> _txHash.toEthSignedMessageHash();
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _sigs.<span class="hljs-built_in">length</span>; i++) {
-            <span class="hljs-keyword">address</span> signer = ethSignedHash.recover(_sigs[i]);
-            <span class="hljs-keyword">bool</span> valid = signer == owners[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _sigs.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">address</span> signer <span class="hljs-operator">=</span> ethSignedHash.recover(_sigs[i]);
+            <span class="hljs-keyword">bool</span> valid <span class="hljs-operator">=</span> signer <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owners[i];
 
-            <span class="hljs-keyword">if</span> (!valid) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-operator">!</span>valid) {
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
             }
         }
@@ -78,27 +78,27 @@ if the signer&#39;s intention was to approve a transaction once.</p>
     <span class="hljs-keyword">using</span> <span class="hljs-title">ECDSA</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">bytes32</span></span>;
 
     <span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">public</span> owners;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">bytes32</span> =&gt; <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> executed;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">bytes32</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> executed;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _owners</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        owners = _owners;
+        owners <span class="hljs-operator">=</span> _owners;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params">
         <span class="hljs-keyword">address</span> _to,
         <span class="hljs-keyword">uint</span> _amount,
         <span class="hljs-keyword">uint</span> _nonce,
         <span class="hljs-keyword">bytes</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _sigs
     </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-keyword">bytes32</span> txHash = getTxHash(_to, _amount, _nonce);
-        <span class="hljs-built_in">require</span>(!executed[txHash], <span class="hljs-string">"tx executed"</span>);
+        <span class="hljs-keyword">bytes32</span> txHash <span class="hljs-operator">=</span> getTxHash(_to, _amount, _nonce);
+        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>executed[txHash], <span class="hljs-string">"tx executed"</span>);
         <span class="hljs-built_in">require</span>(_checkSigs(_sigs, txHash), <span class="hljs-string">"invalid sig"</span>);
 
-        executed[txHash] = <span class="hljs-literal">true</span>;
+        executed[txHash] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
 
-        (<span class="hljs-keyword">bool</span> sent, ) = _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 
@@ -115,13 +115,13 @@ if the signer&#39;s intention was to approve a transaction once.</p>
         <span class="hljs-title"><span class="hljs-keyword">view</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)
     </span>{
-        <span class="hljs-keyword">bytes32</span> ethSignedHash = _txHash.toEthSignedMessageHash();
+        <span class="hljs-keyword">bytes32</span> ethSignedHash <span class="hljs-operator">=</span> _txHash.toEthSignedMessageHash();
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _sigs.<span class="hljs-built_in">length</span>; i++) {
-            <span class="hljs-keyword">address</span> signer = ethSignedHash.recover(_sigs[i]);
-            <span class="hljs-keyword">bool</span> valid = signer == owners[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _sigs.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">address</span> signer <span class="hljs-operator">=</span> ethSignedHash.recover(_sigs[i]);
+            <span class="hljs-keyword">bool</span> valid <span class="hljs-operator">=</span> signer <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owners[i];
 
-            <span class="hljs-keyword">if</span> (!valid) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-operator">!</span>valid) {
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
             }
         }

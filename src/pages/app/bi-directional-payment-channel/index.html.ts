@@ -46,9 +46,9 @@ Closing a channel when Alice and Bob do not agree on the final balances
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> amount</span>)</span>;
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">public</span> users;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> isUser;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> isUser;
 
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
 
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> challengePeriod;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> expiresAt;
@@ -56,7 +56,7 @@ Closing a channel when Alice and Bob do not agree on the final balances
 
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">checkBalances</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances</span>) </span>{
         <span class="hljs-built_in">require</span>(
-            <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span> &gt;= _balances[<span class="hljs-number">0</span>].add(_balances[<span class="hljs-number">1</span>]),
+            <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> _balances[<span class="hljs-number">0</span>].add(_balances[<span class="hljs-number">1</span>]),
             <span class="hljs-string">"balance of contract must be &gt;= to the total balance of users"</span>
         );
         <span class="hljs-keyword">_</span>;
@@ -69,21 +69,21 @@ Closing a channel when Alice and Bob do not agree on the final balances
         <span class="hljs-keyword">uint</span> _expiresAt,
         <span class="hljs-keyword">uint</span> _challengePeriod
     </span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title">checkBalances</span>(<span class="hljs-params">_balances</span>) </span>{
-        <span class="hljs-built_in">require</span>(_expiresAt &gt; <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>, <span class="hljs-string">"Expiration must be &gt; now"</span>);
-        <span class="hljs-built_in">require</span>(_challengePeriod &gt; <span class="hljs-number">0</span>, <span class="hljs-string">"Challenge period must be &gt; 0"</span>);
+        <span class="hljs-built_in">require</span>(_expiresAt <span class="hljs-operator">&gt;</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>, <span class="hljs-string">"Expiration must be &gt; now"</span>);
+        <span class="hljs-built_in">require</span>(_challengePeriod <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, <span class="hljs-string">"Challenge period must be &gt; 0"</span>);
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _users.<span class="hljs-built_in">length</span>; i++) {
-            <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> user = _users[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _users.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> user <span class="hljs-operator">=</span> _users[i];
 
-            <span class="hljs-built_in">require</span>(!isUser[user], <span class="hljs-string">"user must be unique"</span>);
-            users[i] = user;
-            isUser[user] = <span class="hljs-literal">true</span>;
+            <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>isUser[user], <span class="hljs-string">"user must be unique"</span>);
+            users[i] <span class="hljs-operator">=</span> user;
+            isUser[user] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
 
-            balances[user] = _balances[i];
+            balances[user] <span class="hljs-operator">=</span> _balances[i];
         }
 
-        expiresAt = _expiresAt;
-        challengePeriod = _challengePeriod;
+        expiresAt <span class="hljs-operator">=</span> _expiresAt;
+        challengePeriod <span class="hljs-operator">=</span> _challengePeriod;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params">
@@ -93,17 +93,17 @@ Closing a channel when Alice and Bob do not agree on the final balances
         <span class="hljs-keyword">uint</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> _balances,
         <span class="hljs-keyword">uint</span> _nonce
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _signatures.<span class="hljs-built_in">length</span>; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _signatures.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
             <span class="hljs-comment">/*
             <span class="hljs-doctag">NOTE:</span> sign with address of this contract to protect
                   agains replay attack on other contracts
             */</span>
-            <span class="hljs-keyword">bool</span> valid = _signers[i] ==
+            <span class="hljs-keyword">bool</span> valid <span class="hljs-operator">=</span> _signers[i] <span class="hljs-operator">=</span><span class="hljs-operator">=</span>
                 <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_contract, _balances, _nonce))
                 .toEthSignedMessageHash()
                 .recover(_signatures[i]);
 
-            <span class="hljs-keyword">if</span> (!valid) {
+            <span class="hljs-keyword">if</span> (<span class="hljs-operator">!</span>valid) {
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
             }
         }
@@ -118,8 +118,8 @@ Closing a channel when Alice and Bob do not agree on the final balances
     </span>) </span>{
         <span class="hljs-comment">// Note: copy storage array to memory</span>
         <span class="hljs-keyword">address</span>[<span class="hljs-number">2</span>] <span class="hljs-keyword">memory</span> signers;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; users.<span class="hljs-built_in">length</span>; i++) {
-            signers[i] = users[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> users.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            signers[i] <span class="hljs-operator">=</span> users[i];
         }
 
         <span class="hljs-built_in">require</span>(
@@ -145,26 +145,26 @@ Closing a channel when Alice and Bob do not agree on the final balances
         <span class="hljs-title">checkSignatures</span>(<span class="hljs-params">_signatures, _balances, _nonce</span>)
         <span class="hljs-title">checkBalances</span>(<span class="hljs-params">_balances</span>)
     </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &lt; expiresAt, <span class="hljs-string">"Expired challenge period"</span>);
-        <span class="hljs-built_in">require</span>(_nonce &gt; nonce, <span class="hljs-string">"Nonce must be greater than the current nonce"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">&lt;</span> expiresAt, <span class="hljs-string">"Expired challenge period"</span>);
+        <span class="hljs-built_in">require</span>(_nonce <span class="hljs-operator">&gt;</span> nonce, <span class="hljs-string">"Nonce must be greater than the current nonce"</span>);
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i = <span class="hljs-number">0</span>; i &lt; _balances.<span class="hljs-built_in">length</span>; i++) {
-            balances[users[i]] = _balances[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _balances.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            balances[users[i]] <span class="hljs-operator">=</span> _balances[i];
         }
 
-        nonce = _nonce;
-        expiresAt = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>.add(challengePeriod);
+        nonce <span class="hljs-operator">=</span> _nonce;
+        expiresAt <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>.add(challengePeriod);
 
         <span class="hljs-keyword">emit</span> ChallengeExit(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, nonce);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">onlyUser</span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> &gt;= expiresAt, <span class="hljs-string">"Challenge period has not expired yet"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> expiresAt, <span class="hljs-string">"Challenge period has not expired yet"</span>);
 
-        <span class="hljs-keyword">uint</span> amount = balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
-        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">uint</span> amount <span class="hljs-operator">=</span> balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
+        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
-        (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 
         <span class="hljs-keyword">emit</span> Withdraw(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount);

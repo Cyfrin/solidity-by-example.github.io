@@ -9,9 +9,9 @@ const html = `<h3 id="swap">Swap</h3>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestUniswap</span> </span>{
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> UNISWAP_V2_ROUTER =
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> UNISWAP_V2_ROUTER <span class="hljs-operator">=</span>
         <span class="hljs-number">0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D</span>;
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> WETH = <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span class="hljs-params">
         <span class="hljs-keyword">address</span> _tokenIn,
@@ -24,15 +24,15 @@ const html = `<h3 id="swap">Swap</h3>
         IERC20(_tokenIn).approve(UNISWAP_V2_ROUTER, _amountIn);
 
         <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">memory</span> path;
-        <span class="hljs-keyword">if</span> (_tokenIn == WETH || _tokenOut == WETH) {
-            path = <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">2</span>);
-            path[<span class="hljs-number">0</span>] = _tokenIn;
-            path[<span class="hljs-number">1</span>] = _tokenOut;
+        <span class="hljs-keyword">if</span> (_tokenIn <span class="hljs-operator">=</span><span class="hljs-operator">=</span> WETH <span class="hljs-operator">|</span><span class="hljs-operator">|</span> _tokenOut <span class="hljs-operator">=</span><span class="hljs-operator">=</span> WETH) {
+            path <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">2</span>);
+            path[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span> _tokenIn;
+            path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> _tokenOut;
         } <span class="hljs-keyword">else</span> {
-            path = <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">3</span>);
-            path[<span class="hljs-number">0</span>] = _tokenIn;
-            path[<span class="hljs-number">1</span>] = WETH;
-            path[<span class="hljs-number">2</span>] = _tokenOut;
+            path <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">address</span>[](<span class="hljs-number">3</span>);
+            path[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span> _tokenIn;
+            path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> WETH;
+            path[<span class="hljs-number">2</span>] <span class="hljs-operator">=</span> _tokenOut;
         }
 
         IUniswapV2Router(UNISWAP_V2_ROUTER).swapExactTokensForTokens(
@@ -60,7 +60,7 @@ const html = `<h3 id="swap">Swap</h3>
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 

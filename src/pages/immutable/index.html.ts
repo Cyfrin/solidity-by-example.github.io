@@ -13,8 +13,8 @@ const html = `<p>Immutable variables are like constants. Values of immutable var
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">immutable</span> MY_UINT;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _myUint</span>) </span>{
-        MY_ADDRESS = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-        MY_UINT = _myUint;
+        MY_ADDRESS <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        MY_UINT <span class="hljs-operator">=</span> _myUint;
     }
 }
 </code></pre>

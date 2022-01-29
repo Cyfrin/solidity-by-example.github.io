@@ -12,7 +12,7 @@ const html = `<p>Example of upgradeable proxy contract. Never use this in produc
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> implementation;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setImplementation</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _imp</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        implementation = _imp;
+        implementation <span class="hljs-operator">=</span> _imp;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_delegate</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _imp</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">virtual</span></span> </span>{
@@ -27,7 +27,7 @@ const html = `<p>Example of upgradeable proxy contract. Never use this in produc
             <span class="hljs-comment">// - providing g gas</span>
             <span class="hljs-comment">// - and output area mem[out…(out+outsize))</span>
             <span class="hljs-comment">// - returning 0 on error and 1 on success</span>
-            <span class="hljs-keyword">let</span> result := <span class="hljs-built_in">delegatecall</span>(<span class="hljs-built_in">gas</span>(), _imp, <span class="hljs-number">0</span>, <span class="hljs-built_in">calldatasize</span>(), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">let</span> result <span class="hljs-operator">:=</span> <span class="hljs-built_in">delegatecall</span>(<span class="hljs-built_in">gas</span>(), _imp, <span class="hljs-number">0</span>, <span class="hljs-built_in">calldatasize</span>(), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
 
             <span class="hljs-comment">// returndatacopy(t, f, s)</span>
             <span class="hljs-comment">// copy s bytes from returndata at position f to mem at position t</span>
@@ -57,7 +57,7 @@ const html = `<p>Example of upgradeable proxy contract. Never use this in produc
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inc</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        x += <span class="hljs-number">1</span>;
+        x <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 }
 
@@ -66,11 +66,11 @@ const html = `<p>Example of upgradeable proxy contract. Never use this in produc
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inc</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        x += <span class="hljs-number">1</span>;
+        x <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dec</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        x -= <span class="hljs-number">1</span>;
+        x <span class="hljs-operator">-</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 }
 </code></pre>

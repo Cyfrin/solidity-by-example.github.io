@@ -13,7 +13,7 @@ const html = `<p>A <code>constructor</code> is an optional function that is exec
     <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> name;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _name</span>) </span>{
-        name = _name;
+        name <span class="hljs-operator">=</span> _name;
     }
 }
 
@@ -22,7 +22,7 @@ const html = `<p>A <code>constructor</code> is an optional function that is exec
     <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> text;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _text</span>) </span>{
-        text = _text;
+        text <span class="hljs-operator">=</span> _text;
     }
 }
 

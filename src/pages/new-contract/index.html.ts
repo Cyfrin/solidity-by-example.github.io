@@ -13,9 +13,9 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> carAddr;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        owner = _owner;
-        model = _model;
-        carAddr = <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>);
+        owner <span class="hljs-operator">=</span> _owner;
+        model <span class="hljs-operator">=</span> _model;
+        carAddr <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>);
     }
 }
 
@@ -23,12 +23,12 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
     Car[] <span class="hljs-keyword">public</span> cars;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        Car car = <span class="hljs-keyword">new</span> Car(_owner, _model);
+        Car car <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Car(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createAndSendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_owner, _model);
+        Car car <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
@@ -37,7 +37,7 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model,
         <span class="hljs-keyword">bytes32</span> _salt
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
+        Car car <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
@@ -46,7 +46,7 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model,
         <span class="hljs-keyword">bytes32</span> _salt
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        Car car = (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>, <span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
+        Car car <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>, <span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
@@ -60,7 +60,7 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
             <span class="hljs-keyword">uint</span> balance
         </span>)
     </span>{
-        Car car = cars[_index];
+        Car car <span class="hljs-operator">=</span> cars[_index];
 
         <span class="hljs-keyword">return</span> (car.owner(), car.model(), car.carAddr(), <span class="hljs-keyword">address</span>(car).<span class="hljs-built_in">balance</span>);
     }

@@ -21,11 +21,11 @@ const html = `<p>You can import local and external files in Solidity.</p>
 <span class="hljs-function"><span class="hljs-keyword">error</span> <span class="hljs-title">Unauthorized</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> caller</span>)</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-    <span class="hljs-keyword">return</span> x + y;
+    <span class="hljs-keyword">return</span> x <span class="hljs-operator">+</span> y;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Foo</span> </span>{
-    <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> name = <span class="hljs-string">"Foo"</span>;
+    <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> name <span class="hljs-operator">=</span> <span class="hljs-string">"Foo"</span>;
 }
 </code></pre>
 <p>Import.sol</p>
@@ -40,7 +40,7 @@ const html = `<p>You can import local and external files in Solidity.</p>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Import</span> </span>{
     <span class="hljs-comment">// Initialize Foo.sol</span>
-    Foo <span class="hljs-keyword">public</span> foo = <span class="hljs-keyword">new</span> Foo();
+    Foo <span class="hljs-keyword">public</span> foo <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Foo();
 
     <span class="hljs-comment">// Test Foo.sol by getting it&#x27;s name.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFooName</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span></span>) </span>{

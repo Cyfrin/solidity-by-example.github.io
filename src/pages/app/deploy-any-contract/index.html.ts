@@ -19,49 +19,49 @@ const html = `<p>Deploy any contract by calling <code>Proxy.deploy(bytes memory 
             <span class="hljs-comment">// v = amount of ETH to send</span>
             <span class="hljs-comment">// p = pointer in memory to start of code</span>
             <span class="hljs-comment">// n = size of code</span>
-            addr := <span class="hljs-built_in">create</span>(<span class="hljs-built_in">callvalue</span>(), <span class="hljs-built_in">add</span>(_code, <span class="hljs-number">0x20</span>), <span class="hljs-built_in">mload</span>(_code))
+            addr <span class="hljs-operator">:=</span> <span class="hljs-built_in">create</span>(<span class="hljs-built_in">callvalue</span>(), <span class="hljs-built_in">add</span>(_code, <span class="hljs-number">0x20</span>), <span class="hljs-built_in">mload</span>(_code))
         }
         <span class="hljs-comment">// return address 0 on error</span>
-        <span class="hljs-built_in">require</span>(addr != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"deploy failed"</span>);
+        <span class="hljs-built_in">require</span>(addr <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"deploy failed"</span>);
 
         <span class="hljs-keyword">emit</span> Deploy(addr);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">execute</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _target, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> _data</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        (<span class="hljs-keyword">bool</span> success, ) = _target.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_data);
+        (<span class="hljs-keyword">bool</span> success, ) <span class="hljs-operator">=</span> _target.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_data);
         <span class="hljs-built_in">require</span>(success, <span class="hljs-string">"failed"</span>);
     }
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestContract1</span> </span>{
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setOwner</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> == owner, <span class="hljs-string">"not owner"</span>);
-        owner = _owner;
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner, <span class="hljs-string">"not owner"</span>);
+        owner <span class="hljs-operator">=</span> _owner;
     }
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestContract2</span> </span>{
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> value = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> value <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> y;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _x, <span class="hljs-keyword">uint</span> _y</span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        x = _x;
-        y = _y;
+        x <span class="hljs-operator">=</span> _x;
+        y <span class="hljs-operator">=</span> _y;
     }
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Helper</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBytecode1</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
-        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> bytecode = <span class="hljs-built_in">type</span>(TestContract1).<span class="hljs-built_in">creationCode</span>;
+        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> bytecode <span class="hljs-operator">=</span> <span class="hljs-keyword">type</span>(TestContract1).<span class="hljs-built_in">creationCode</span>;
         <span class="hljs-keyword">return</span> bytecode;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBytecode2</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _x, <span class="hljs-keyword">uint</span> _y</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
-        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> bytecode = <span class="hljs-built_in">type</span>(TestContract2).<span class="hljs-built_in">creationCode</span>;
+        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> bytecode <span class="hljs-operator">=</span> <span class="hljs-keyword">type</span>(TestContract2).<span class="hljs-built_in">creationCode</span>;
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(bytecode, <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(_x, _y));
     }
 

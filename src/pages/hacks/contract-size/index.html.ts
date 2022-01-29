@@ -16,16 +16,16 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
         <span class="hljs-comment">// constructor execution.</span>
         <span class="hljs-keyword">uint</span> size;
         <span class="hljs-keyword">assembly</span> {
-            size := <span class="hljs-built_in">extcodesize</span>(account)
+            size <span class="hljs-operator">:=</span> <span class="hljs-built_in">extcodesize</span>(account)
         }
-        <span class="hljs-keyword">return</span> size &gt; <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">return</span> size <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>;
     }
 
-    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> pwned = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> pwned <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">protected</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-built_in">require</span>(!isContract(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>), <span class="hljs-string">"no contract allowed"</span>);
-        pwned = <span class="hljs-literal">true</span>;
+        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>isContract(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>), <span class="hljs-string">"no contract allowed"</span>);
+        pwned <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
     }
 }
 
@@ -45,8 +45,8 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
     <span class="hljs-comment">// When contract is being created, code size (extcodesize) is 0.</span>
     <span class="hljs-comment">// This will bypass the isContract() check</span>
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _target</span>) </span>{
-        isContract = Target(_target).isContract(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
-        addr = <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>);
+        isContract <span class="hljs-operator">=</span> Target(_target).isContract(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        addr <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>);
         <span class="hljs-comment">// This will work</span>
         Target(_target).protected();
     }

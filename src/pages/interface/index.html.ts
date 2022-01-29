@@ -19,7 +19,7 @@ const html = `<p>You can interact with other contracts by declaring an <code>Int
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> count;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        count += <span class="hljs-number">1</span>;
+        count <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 }
 
@@ -59,13 +59,13 @@ const html = `<p>You can interact with other contracts by declaring an <code>Int
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapExample</span> </span>{
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> factory = <span class="hljs-number">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</span>;
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> dai = <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
-    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> weth = <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> factory <span class="hljs-operator">=</span> <span class="hljs-number">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> dai <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> weth <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTokenReserves</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>, <span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">address</span> pair = UniswapV2Factory(factory).getPair(dai, weth);
-        (<span class="hljs-keyword">uint</span> reserve0, <span class="hljs-keyword">uint</span> reserve1, ) = UniswapV2Pair(pair).getReserves();
+        <span class="hljs-keyword">address</span> pair <span class="hljs-operator">=</span> UniswapV2Factory(factory).getPair(dai, weth);
+        (<span class="hljs-keyword">uint</span> reserve0, <span class="hljs-keyword">uint</span> reserve1, ) <span class="hljs-operator">=</span> UniswapV2Pair(pair).getReserves();
         <span class="hljs-keyword">return</span> (reserve0, reserve1);
     }
 }

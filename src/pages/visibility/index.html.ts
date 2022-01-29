@@ -59,9 +59,9 @@ const html = `<p>Functions and state variables have to declare whether they are 
     <span class="hljs-comment">// }</span>
 
     <span class="hljs-comment">// State variables</span>
-    <span class="hljs-keyword">string</span> <span class="hljs-keyword">private</span> privateVar = <span class="hljs-string">"my private variable"</span>;
-    <span class="hljs-keyword">string</span> <span class="hljs-keyword">internal</span> internalVar = <span class="hljs-string">"my internal variable"</span>;
-    <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> publicVar = <span class="hljs-string">"my public variable"</span>;
+    <span class="hljs-keyword">string</span> <span class="hljs-keyword">private</span> privateVar <span class="hljs-operator">=</span> <span class="hljs-string">"my private variable"</span>;
+    <span class="hljs-keyword">string</span> <span class="hljs-keyword">internal</span> internalVar <span class="hljs-operator">=</span> <span class="hljs-string">"my internal variable"</span>;
+    <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> publicVar <span class="hljs-operator">=</span> <span class="hljs-string">"my public variable"</span>;
     <span class="hljs-comment">// State variables cannot be external so this code won&#x27;t compile.</span>
     <span class="hljs-comment">// string external externalVar = "my external variable";</span>
 }

@@ -34,12 +34,12 @@ const html = `<p>Solidity supports enumerables and they are useful to model choi
 
     <span class="hljs-comment">// Update status by passing uint into input</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">set</span>(<span class="hljs-params">Status _status</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        status = _status;
+        status <span class="hljs-operator">=</span> _status;
     }
 
     <span class="hljs-comment">// You can update to a specific enum like this</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cancel</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        status = Status.Canceled;
+        status <span class="hljs-operator">=</span> Status.Canceled;
     }
 
     <span class="hljs-comment">// delete resets the enum to its first value, 0</span>

@@ -35,13 +35,13 @@ Ether sent from KingOfEther before the new king is set.
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> balance;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">claimThrone</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> &gt; balance, <span class="hljs-string">"Need to pay more to become the king"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span> balance, <span class="hljs-string">"Need to pay more to become the king"</span>);
 
-        (<span class="hljs-keyword">bool</span> sent, ) = king.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: balance}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> king.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: balance}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 
-        balance = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
-        king = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        balance <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+        king <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 }
 
@@ -49,7 +49,7 @@ Ether sent from KingOfEther before the new king is set.
     KingOfEther kingOfEther;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params">KingOfEther _kingOfEther</span>) </span>{
-        kingOfEther = KingOfEther(_kingOfEther);
+        kingOfEther <span class="hljs-operator">=</span> KingOfEther(_kingOfEther);
     }
 
     <span class="hljs-comment">// You can also perform a DOS by consuming all gas using assert.</span>
@@ -74,24 +74,24 @@ Ether sent from KingOfEther before the new king is set.
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">KingOfEther</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> king;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> balance;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> balances;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">claimThrone</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> &gt; balance, <span class="hljs-string">"Need to pay more to become the king"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span> balance, <span class="hljs-string">"Need to pay more to become the king"</span>);
 
-        balances[king] += balance;
+        balances[king] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> balance;
 
-        balance = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
-        king = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        balance <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+        king <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> != king, <span class="hljs-string">"Current king cannot withdraw"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">!</span><span class="hljs-operator">=</span> king, <span class="hljs-string">"Current king cannot withdraw"</span>);
 
-        <span class="hljs-keyword">uint</span> amount = balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
-        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">uint</span> amount <span class="hljs-operator">=</span> balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
+        balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
-        (<span class="hljs-keyword">bool</span> sent, ) = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }

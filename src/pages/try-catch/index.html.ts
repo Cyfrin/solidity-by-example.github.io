@@ -12,13 +12,13 @@ const html = `<p><code>try / catch</code> can only catch errors from external fu
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner</span>) </span>{
-        <span class="hljs-built_in">require</span>(_owner != <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"invalid address"</span>);
-        <span class="hljs-built_in">assert</span>(_owner != <span class="hljs-number">0x0000000000000000000000000000000000000001</span>);
-        owner = _owner;
+        <span class="hljs-built_in">require</span>(_owner <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), <span class="hljs-string">"invalid address"</span>);
+        <span class="hljs-built_in">assert</span>(_owner <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-number">0x0000000000000000000000000000000000000001</span>);
+        owner <span class="hljs-operator">=</span> _owner;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunc</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span></span>) </span>{
-        <span class="hljs-built_in">require</span>(x != <span class="hljs-number">0</span>, <span class="hljs-string">"require failed"</span>);
+        <span class="hljs-built_in">require</span>(x <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>, <span class="hljs-string">"require failed"</span>);
         <span class="hljs-keyword">return</span> <span class="hljs-string">"my func was called"</span>;
     }
 }
@@ -31,7 +31,7 @@ const html = `<p><code>try / catch</code> can only catch errors from external fu
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-comment">// This Foo contract is used for example of try catch with external call</span>
-        foo = <span class="hljs-keyword">new</span> Foo(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
+        foo <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Foo(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
     }
 
     <span class="hljs-comment">// Example of try / catch with external call</span>

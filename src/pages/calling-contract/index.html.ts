@@ -15,13 +15,13 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> value;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setX</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        x = _x;
+        x <span class="hljs-operator">=</span> _x;
         <span class="hljs-keyword">return</span> x;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXandSendEther</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>, <span class="hljs-keyword">uint</span></span>) </span>{
-        x = _x;
-        value = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+        x <span class="hljs-operator">=</span> _x;
+        value <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
 
         <span class="hljs-keyword">return</span> (x, value);
     }
@@ -29,16 +29,16 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Caller</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setX</span>(<span class="hljs-params">Callee _callee, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">uint</span> x = _callee.setX(_x);
+        <span class="hljs-keyword">uint</span> x <span class="hljs-operator">=</span> _callee.setX(_x);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXFromAddress</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _addr, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        Callee callee = Callee(_addr);
+        Callee callee <span class="hljs-operator">=</span> Callee(_addr);
         callee.setX(_x);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setXandSendEther</span>(<span class="hljs-params">Callee _callee, <span class="hljs-keyword">uint</span> _x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        (<span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> value) = _callee.setXandSendEther{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_x);
+        (<span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> value) <span class="hljs-operator">=</span> _callee.setXandSendEther{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_x);
     }
 }
 </code></pre>

@@ -9,7 +9,7 @@ const html = `<p><code>pragma</code> specifies the compiler version of Solidity.
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">HelloWorld</span> </span>{
-    <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> greet = <span class="hljs-string">"Hello World!"</span>;
+    <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> greet <span class="hljs-operator">=</span> <span class="hljs-string">"Hello World!"</span>;
 }
 </code></pre>
 `

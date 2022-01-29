@@ -4,21 +4,18 @@
   "private": true,
   "homepage": "https://solidity-by-example.org",
   "dependencies": {
-    "highlight.js": "^11.0.1",
-    "prop-types": "^15.7.2",
-    "puppeteer": "^10.2.0",
+    "highlight.js": "^11.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "^5.0.0",
     "typescript": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "postbuild": "react-snap",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
@@ -34,33 +31,23 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@types/enzyme": "^3.10.8",
     "@types/highlight.js": "^9.12.4",
-    "@types/jest": "^26.0.23",
-    "@types/marked": "^2.0.3",
-    "@types/mustache": "^4.1.1",
-    "@types/node": "^15.12.2",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.7",
-    "@types/react-helmet": "^6.1.1",
-    "@types/react-router-dom": "^5.1.7",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.2",
-    "gh-pages": "^3.2.0",
-    "highlightjs-solidity": "^1.1.0",
-    "marked": "^2.0.7",
+    "@types/marked": "^4.0.1",
+    "@types/mustache": "^4.1.2",
+    "@types/node": "^17.0.10",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-router-dom": "^5.3.3",
+    "gh-pages": "^3.2.3",
+    "highlightjs-solidity": "^2.0.3",
+    "marked": "^4.0.10",
     "mustache": "^4.2.0",
-    "prettier": "^2.3.1",
-    "prettier-plugin-solidity": "^1.0.0-beta.13",
+    "prettier": "^2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
     "react-snap": "^1.23.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.2.4",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5",
     "yaml": "^1.10.2"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
   }
 }

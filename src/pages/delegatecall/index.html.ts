@@ -17,9 +17,9 @@ const html = `<p><code>delegatecall</code> is a low level function similar to <c
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> value;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVars</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        num = _num;
-        sender = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-        value = <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+        num <span class="hljs-operator">=</span> _num;
+        sender <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        value <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
     }
 }
 
@@ -30,7 +30,7 @@ const html = `<p><code>delegatecall</code> is a low level function similar to <c
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVars</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _contract, <span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-comment">// A&#x27;s storage is set, B is not modified.</span>
-        (<span class="hljs-keyword">bool</span> success, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data) = _contract.<span class="hljs-built_in">delegatecall</span>(
+        (<span class="hljs-keyword">bool</span> success, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data) <span class="hljs-operator">=</span> _contract.<span class="hljs-built_in">delegatecall</span>(
             <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"setVars(uint256)"</span>, _num)
         );
     }

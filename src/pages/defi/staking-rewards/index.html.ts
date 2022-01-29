@@ -13,61 +13,61 @@ const html = `<p>This is a minimal example of a contract that rewards users for 
     IERC20 <span class="hljs-keyword">public</span> rewardsToken;
     IERC20 <span class="hljs-keyword">public</span> stakingToken;
 
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> rewardRate = <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> rewardRate <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> lastUpdateTime;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> rewardPerTokenStored;
 
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> userRewardPerTokenPaid;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> rewards;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> userRewardPerTokenPaid;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">public</span> rewards;
 
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">private</span> _totalSupply;
-    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> =&gt; <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">private</span> _balances;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint</span>) <span class="hljs-keyword">private</span> _balances;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _stakingToken, <span class="hljs-keyword">address</span> _rewardsToken</span>) </span>{
-        stakingToken = IERC20(_stakingToken);
-        rewardsToken = IERC20(_rewardsToken);
+        stakingToken <span class="hljs-operator">=</span> IERC20(_stakingToken);
+        rewardsToken <span class="hljs-operator">=</span> IERC20(_rewardsToken);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rewardPerToken</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">if</span> (_totalSupply == <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> (_totalSupply <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
         <span class="hljs-keyword">return</span>
-            rewardPerTokenStored +
-            (((<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> - lastUpdateTime) * rewardRate * <span class="hljs-number">1e18</span>) / _totalSupply);
+            rewardPerTokenStored <span class="hljs-operator">+</span>
+            (((<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">-</span> lastUpdateTime) <span class="hljs-operator">*</span> rewardRate <span class="hljs-operator">*</span> <span class="hljs-number">1e18</span>) <span class="hljs-operator">/</span> _totalSupply);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">earned</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">return</span>
-            ((_balances[account] *
-                (rewardPerToken() - userRewardPerTokenPaid[account])) / <span class="hljs-number">1e18</span>) +
+            ((_balances[account] <span class="hljs-operator">*</span>
+                (rewardPerToken() <span class="hljs-operator">-</span> userRewardPerTokenPaid[account])) <span class="hljs-operator">/</span> <span class="hljs-number">1e18</span>) <span class="hljs-operator">+</span>
             rewards[account];
     }
 
     <span class="hljs-function"><span class="hljs-keyword">modifier</span> <span class="hljs-title">updateReward</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) </span>{
-        rewardPerTokenStored = rewardPerToken();
-        lastUpdateTime = <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
+        rewardPerTokenStored <span class="hljs-operator">=</span> rewardPerToken();
+        lastUpdateTime <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
 
-        rewards[account] = earned(account);
-        userRewardPerTokenPaid[account] = rewardPerTokenStored;
+        rewards[account] <span class="hljs-operator">=</span> earned(account);
+        userRewardPerTokenPaid[account] <span class="hljs-operator">=</span> rewardPerTokenStored;
         <span class="hljs-keyword">_</span>;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stake</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">updateReward</span>(<span class="hljs-params"><span class="hljs-built_in">msg</span>.sender</span>) </span>{
-        _totalSupply += _amount;
-        _balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] += _amount;
+        _totalSupply <span class="hljs-operator">+</span><span class="hljs-operator">=</span> _amount;
+        _balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> _amount;
         stakingToken.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">updateReward</span>(<span class="hljs-params"><span class="hljs-built_in">msg</span>.sender</span>) </span>{
-        _totalSupply -= _amount;
-        _balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] -= _amount;
+        _totalSupply <span class="hljs-operator">-</span><span class="hljs-operator">=</span> _amount;
+        _balances[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">-</span><span class="hljs-operator">=</span> _amount;
         stakingToken.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _amount);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getReward</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">updateReward</span>(<span class="hljs-params"><span class="hljs-built_in">msg</span>.sender</span>) </span>{
-        <span class="hljs-keyword">uint</span> reward = rewards[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
-        rewards[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">uint</span> reward <span class="hljs-operator">=</span> rewards[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>];
+        rewards[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
         rewardsToken.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, reward);
     }
 }
@@ -77,7 +77,7 @@ const html = `<p>This is a minimal example of a contract that rewards users for 
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title"><span class="hljs-built_in">transfer</span></span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 

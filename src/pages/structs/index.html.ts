@@ -28,7 +28,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 
         <span class="hljs-comment">// initialize an empty struct and then update it</span>
         Todo <span class="hljs-keyword">memory</span> todo;
-        todo.text = _text;
+        todo.text <span class="hljs-operator">=</span> _text;
         <span class="hljs-comment">// todo.completed initialized to false</span>
 
         todos.<span class="hljs-built_in">push</span>(todo);
@@ -37,20 +37,20 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
     <span class="hljs-comment">// Solidity automatically created a getter for &#x27;todos&#x27; so</span>
     <span class="hljs-comment">// you don&#x27;t actually need this function.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> text, <span class="hljs-keyword">bool</span> completed</span>) </span>{
-        Todo <span class="hljs-keyword">storage</span> todo = todos[_index];
+        Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
         <span class="hljs-keyword">return</span> (todo.text, todo.completed);
     }
 
     <span class="hljs-comment">// update text</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        Todo <span class="hljs-keyword">storage</span> todo = todos[_index];
-        todo.text = _text;
+        Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
+        todo.text <span class="hljs-operator">=</span> _text;
     }
 
     <span class="hljs-comment">// update completed</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleCompleted</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        Todo <span class="hljs-keyword">storage</span> todo = todos[_index];
-        todo.completed = !todo.completed;
+        Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
+        todo.completed <span class="hljs-operator">=</span> <span class="hljs-operator">!</span>todo.completed;
     }
 }
 </code></pre>
