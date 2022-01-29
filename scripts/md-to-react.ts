@@ -149,11 +149,6 @@ async function main() {
       importPathToExample: getImportPathToExample(dir),
     }
   )
-
-  await copy(
-    path.join(__dirname, "./template/index.test.tsx"),
-    path.join(dir, "index.test.tsx")
-  )
 }
 
 main()

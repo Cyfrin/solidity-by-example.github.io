@@ -303,6 +303,13 @@ const HACK_ROUTES: Route[] = [
   },
 ]
 
+const TEST_ROUTES: Route[] = [
+  {
+    path: "echidna",
+    title: "Echidna",
+  },
+]
+
 const DEFI_ROUTES = [
   {
     path: "uniswap-v2",
@@ -346,6 +353,13 @@ export const ROUTES_BY_CATEGORY = [
     })),
   },
   {
+    title: "Tests",
+    routes: TEST_ROUTES.map((route) => ({
+      ...route,
+      path: `/tests/${route.path}`,
+    })),
+  },
+  {
     title: "DeFi",
     routes: DEFI_ROUTES.map((route) => ({
       ...route,
@@ -355,9 +369,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2022/01/29 - Echidna",
   "2022/01/14 - Solidity 0.8 import",
   "2022/01/10 - Upgradeable proxy",
-  "2022/01/10 - GitHub PR HyperHoomann",
 ]
 
 function HomePage() {
