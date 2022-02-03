@@ -20,3 +20,19 @@ Inside docker, your code will be stored at `/code`
 ```solidity
 {{{TestEchidna}}}
 ```
+
+### Testing Time and Sender
+
+Echidna can fuzz timestamp. Range of timestamp is set in the configuration. Default is 7 days.
+
+Contract callers can also be set in the configuration. Default accounts are
+
+- `0x10000`
+- `0x20000`
+- `0x00a329C0648769a73afAC7F9381e08fb43DBEA70`
+
+Click [here](https://github.com/crytic/echidna/blob/master/examples/solidity/basic/default.yaml) to see default configuration
+
+```solidity
+{{{EchidnaTestTimeAndCaller}}}
+```

@@ -369,9 +369,9 @@ export const ROUTES_BY_CATEGORY = [
 ]
 
 const UPDATES = [
+  "2022/01/29 - Echidna test timestamp and caller",
   "2022/01/29 - Echidna",
   "2022/01/14 - Solidity 0.8 import",
-  "2022/01/10 - Upgradeable proxy",
 ]
 
 function HomePage() {
