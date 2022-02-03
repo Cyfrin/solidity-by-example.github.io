@@ -85,13 +85,13 @@ echidna-test TestEchidna.sol --contract TestAssert --check-asserts
 <li><code>0x20000</code></li>
 <li><code>0x00a329C0648769a73afAC7F9381e08fb43DBEA70</code></li>
 </ul>
-<p>Click <a href="https://github.com/crytic/echidna/blob/master/examples/solidity/basic/default.yaml">here</a> to see default configuration</p>
+<p>Click <a href="https://github.com/crytic/echidna/blob/master/examples/solidity/basic/default.yaml">here</a> to see the default configuration</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8;</span>
 
 <span class="hljs-comment">/*
 docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
-echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller --check-asserts
+echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
 */</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EchidnaTestTimeAndCaller</span> </span>{
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">private</span> pass <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;

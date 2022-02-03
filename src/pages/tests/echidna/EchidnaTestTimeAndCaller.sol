@@ -3,7 +3,7 @@ pragma solidity ^0.8;
 
 /*
 docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
-echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller --check-asserts
+echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
 */
 contract EchidnaTestTimeAndCaller {
     bool private pass = true;

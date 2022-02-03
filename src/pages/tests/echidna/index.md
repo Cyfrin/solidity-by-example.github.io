@@ -31,7 +31,7 @@ Contract callers can also be set in the configuration. Default accounts are
 - `0x20000`
 - `0x00a329C0648769a73afAC7F9381e08fb43DBEA70`
 
-Click [here](https://github.com/crytic/echidna/blob/master/examples/solidity/basic/default.yaml) to see default configuration
+Click [here](https://github.com/crytic/echidna/blob/master/examples/solidity/basic/default.yaml) to see the default configuration
 
 ```solidity
 {{{EchidnaTestTimeAndCaller}}}
