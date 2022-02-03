@@ -29,6 +29,7 @@ contract EchidnaTestTimeAndCaller {
     }
 
     // Default senders
+    // Change the addresses to see the test fail
     address[3] private senders = [
         address(0x10000),
         address(0x20000),
