@@ -117,6 +117,7 @@ echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
     }
 
     <span class="hljs-comment">// Default senders</span>
+    <span class="hljs-comment">// Change the addresses to see the test fail</span>
     <span class="hljs-keyword">address</span>[<span class="hljs-number">3</span>] <span class="hljs-keyword">private</span> senders <span class="hljs-operator">=</span> [
         <span class="hljs-keyword">address</span>(<span class="hljs-number">0x10000</span>),
         <span class="hljs-keyword">address</span>(<span class="hljs-number">0x20000</span>),
