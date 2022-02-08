@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.26103dff.css",
-    "main.js": "/static/js/main.9aa4f034.js",
+    "main.css": "/static/css/main.9505f2f5.css",
+    "main.js": "/static/js/main.fabc0040.js",
     "static/media/telegram.png": "/static/media/telegram.2c6478d9bd1cbf971420.png",
     "static/media/mode-dark.png": "/static/media/mode-dark.5726a29b11b0940df6a4.png",
     "static/media/discord.png": "/static/media/discord.5cb3ac6f7e7ceaf583cd.png",
     "static/media/logo.png": "/static/media/logo.ed2942c41ca20fd4f70a.png",
     "static/media/logo-dark.png": "/static/media/logo-dark.9591f04e30ed89ce053b.png",
     "index.html": "/index.html",
-    "main.26103dff.css.map": "/static/css/main.26103dff.css.map",
-    "main.9aa4f034.js.map": "/static/js/main.9aa4f034.js.map"
+    "main.9505f2f5.css.map": "/static/css/main.9505f2f5.css.map",
+    "main.fabc0040.js.map": "/static/js/main.fabc0040.js.map"
   },
   "entrypoints": [
-    "static/css/main.26103dff.css",
-    "static/js/main.9aa4f034.js"
+    "static/css/main.9505f2f5.css",
+    "static/js/main.fabc0040.js"
   ]
 }
