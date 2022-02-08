@@ -336,7 +336,10 @@ const DEFI_ROUTES = [
 export const ROUTES_BY_CATEGORY = [
   {
     title: "",
-    routes: SOL_ROUTES,
+    routes: SOL_ROUTES.map((route) => ({
+      ...route,
+      path: `/${route.path}`,
+    })),
   },
   {
     title: "Applications",
@@ -374,7 +377,7 @@ const UPDATES = [
   "2022/01/14 - Solidity 0.8 import",
 ]
 
-function HomePage() {
+export default function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
@@ -424,5 +427,3 @@ function HomePage() {
     </div>
   )
 }
-
-export default HomePage

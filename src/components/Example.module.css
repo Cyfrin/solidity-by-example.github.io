@@ -6,3 +6,9 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
+.prevNext {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
