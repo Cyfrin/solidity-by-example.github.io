@@ -8,7 +8,9 @@ import styles from "./Example.module.css"
 const ROUTES = ROUTES_BY_CATEGORY.map(({ routes }) => routes).flat()
 
 function getPrevNextRoutes(path: string) {
-  const index = ROUTES.findIndex((route) => route.path == path)
+  const index = ROUTES.findIndex(
+    (route) => route.path == path || route.path == `${path}/`
+  )
   if (index > -1) {
     return [ROUTES[index - 1] || null, ROUTES[index + 1] || null]
   }
