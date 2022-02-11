@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.9505f2f5.css",
-    "main.js": "/static/js/main.c9b73b54.js",
+    "main.css": "/static/css/main.8645e9a6.css",
+    "main.js": "/static/js/main.bb48b477.js",
     "static/media/telegram.png": "/static/media/telegram.2c6478d9bd1cbf971420.png",
     "static/media/mode-dark.png": "/static/media/mode-dark.5726a29b11b0940df6a4.png",
     "static/media/discord.png": "/static/media/discord.5cb3ac6f7e7ceaf583cd.png",
     "static/media/logo.png": "/static/media/logo.ed2942c41ca20fd4f70a.png",
     "static/media/logo-dark.png": "/static/media/logo-dark.9591f04e30ed89ce053b.png",
     "index.html": "/index.html",
-    "main.9505f2f5.css.map": "/static/css/main.9505f2f5.css.map",
-    "main.c9b73b54.js.map": "/static/js/main.c9b73b54.js.map"
+    "main.8645e9a6.css.map": "/static/css/main.8645e9a6.css.map",
+    "main.bb48b477.js.map": "/static/js/main.bb48b477.js.map"
   },
   "entrypoints": [
-    "static/css/main.9505f2f5.css",
-    "static/js/main.c9b73b54.js"
+    "static/css/main.8645e9a6.css",
+    "static/js/main.bb48b477.js"
   ]
 }
