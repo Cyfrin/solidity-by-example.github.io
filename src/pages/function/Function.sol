@@ -44,9 +44,9 @@ contract Function {
         y = 2;
     }
 
-    // Use destructing assignment when calling another
+    // Use destructuring assignment when calling another
     // function that returns multiple values.
-    function destructingAssignments()
+    function destructuringAssignments()
         public
         pure
         returns (
@@ -65,7 +65,7 @@ contract Function {
         return (i, b, j, x, y);
     }
 
-    // Cannot use map for neither input nor output
+    // Cannot use map for either input or output
 
     // Can use array for input
     function arrayInput(uint[] memory _arr) public {}
