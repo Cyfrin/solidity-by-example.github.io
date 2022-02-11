@@ -1,21 +1,11 @@
 import React from "react"
-import { useLocation } from "react-router-dom"
-import { ROUTES_BY_CATEGORY } from "../pages/index"
 import SEO from "./SEO"
 import Html from "./Html"
 import styles from "./Example.module.css"
 
-const ROUTES = ROUTES_BY_CATEGORY.map(({ routes }) => routes).flat()
-
-function getPrevNextRoutes(path: string) {
-  // TODO: fix
-  const index = ROUTES.findIndex(
-    (route) => route.path == path || route.path == `${path}/`
-  )
-  if (index > -1) {
-    return [ROUTES[index - 1] || null, ROUTES[index + 1] || null]
-  }
-  return [null, null]
+interface Path {
+  title: string
+  path: string
 }
 
 interface Props {
@@ -23,14 +13,18 @@ interface Props {
   description: string
   version: "0.8.10"
   html: string
+  prev: Path | null
+  next: Path | null
 }
 
-const Example: React.FC<Props> = ({ title, version, description, html }) => {
-  const location = useLocation()
-  const [prev, next] = getPrevNextRoutes(location.pathname)
-
-  console.log("Location", location)
-
+const Example: React.FC<Props> = ({
+  title,
+  version,
+  description,
+  html,
+  prev,
+  next,
+}) => {
   return (
     <div className={styles.component}>
       <SEO
