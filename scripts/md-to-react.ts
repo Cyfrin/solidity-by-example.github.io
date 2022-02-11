@@ -93,6 +93,7 @@ async function mdToHtml(filePath: string) {
     },
   })
     .replace(/&quot;/g, `"`)
+    // replace \ with \\
     .replace(/\\/g, `\\\\`)
 
   // render markdown to html
