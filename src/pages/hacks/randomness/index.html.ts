@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.8.10"
 export const title = "Source of Randomness"
-export const description = "Blockchain is not a reliable source of randomness in Solidity"
+export const description =
+  "Blockchain is not a reliable source of randomness in Solidity"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p><code>blockhash</code> and <code>block.timestamp</code> are not reliable sources for randomness.</p>

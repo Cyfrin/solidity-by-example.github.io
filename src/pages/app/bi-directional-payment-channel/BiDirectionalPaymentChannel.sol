@@ -93,8 +93,8 @@ contract BiDirectionalPaymentChannel {
             */
             bool valid = _signers[i] ==
                 keccak256(abi.encodePacked(_contract, _balances, _nonce))
-                .toEthSignedMessageHash()
-                .recover(_signatures[i]);
+                    .toEthSignedMessageHash()
+                    .recover(_signatures[i]);
 
             if (!valid) {
                 return false;

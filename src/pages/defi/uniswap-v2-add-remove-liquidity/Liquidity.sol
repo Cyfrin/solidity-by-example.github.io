@@ -19,16 +19,16 @@ contract TestUniswapLiquidity {
         IERC20(_tokenB).approve(ROUTER, _amountB);
 
         (uint amountA, uint amountB, uint liquidity) = IUniswapV2Router(ROUTER)
-        .addLiquidity(
-            _tokenA,
-            _tokenB,
-            _amountA,
-            _amountB,
-            1,
-            1,
-            address(this),
-            block.timestamp
-        );
+            .addLiquidity(
+                _tokenA,
+                _tokenB,
+                _amountA,
+                _amountB,
+                1,
+                1,
+                address(this),
+                block.timestamp
+            );
     }
 
     function removeLiquidity(address _tokenA, address _tokenB) external {

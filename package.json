@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
-    "md-to-react": "node scripts/md-to-react.js"
+    "md-to-react": "node scripts/md-to-react.js",
+    "lint": "prettier --write src"
   },
   "eslintConfig": {
     "extends": "react-app"
