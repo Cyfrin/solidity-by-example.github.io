@@ -371,6 +371,30 @@ export const ROUTES_BY_CATEGORY = [
   },
 ]
 
+const ROUTES = ROUTES_BY_CATEGORY.map(({ routes }) => routes).flat()
+const ROUTE_INDEX_BY_PATH = ROUTES.reduce((map, route: Route, i) => {
+  // @ts-ignore
+  map[route.path] = i
+  return map
+}, {})
+
+export function getPrevNextPaths(path: string): {
+  prev: Route | null
+  next: Route | null
+} {
+  // @ts-ignore
+  const index = ROUTE_INDEX_BY_PATH[path]
+  if (index >= 0) {
+    const prev = ROUTES[index - 1] || null
+    const next = ROUTES[index + 1] || null
+    return { prev, next }
+  }
+  return {
+    prev: null,
+    next: null,
+  }
+}
+
 const UPDATES = [
   "2022/01/29 - Echidna test timestamp and caller",
   "2022/01/29 - Echidna",
