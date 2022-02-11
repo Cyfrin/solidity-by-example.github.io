@@ -8,6 +8,7 @@ import styles from "./Example.module.css"
 const ROUTES = ROUTES_BY_CATEGORY.map(({ routes }) => routes).flat()
 
 function getPrevNextRoutes(path: string) {
+  // TODO: fix
   const index = ROUTES.findIndex(
     (route) => route.path == path || route.path == `${path}/`
   )
@@ -27,6 +28,8 @@ interface Props {
 const Example: React.FC<Props> = ({ title, version, description, html }) => {
   const location = useLocation()
   const [prev, next] = getPrevNextRoutes(location.pathname)
+
+  console.log("Location", location)
 
   return (
     <div className={styles.component}>
