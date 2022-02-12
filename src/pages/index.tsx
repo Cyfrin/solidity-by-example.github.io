@@ -242,6 +242,10 @@ const APP_ROUTES: Route[] = [
     path: "dutch-auction",
     title: "Dutch Auction",
   },
+  {
+    path: "crowd-fund",
+    title: "Crowd Fund",
+  },
 ]
 
 const HACK_ROUTES: Route[] = [
@@ -396,9 +400,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/02/12 - Crowd fund",
   "2022/01/29 - Echidna test timestamp and caller",
   "2022/01/29 - Echidna",
-  "2022/01/14 - Solidity 0.8 import",
 ]
 
 export default function HomePage() {

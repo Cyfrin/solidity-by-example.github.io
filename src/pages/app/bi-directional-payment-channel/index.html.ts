@@ -100,8 +100,8 @@ Closing a channel when Alice and Bob do not agree on the final balances
             */</span>
             <span class="hljs-keyword">bool</span> valid <span class="hljs-operator">=</span> _signers[i] <span class="hljs-operator">=</span><span class="hljs-operator">=</span>
                 <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_contract, _balances, _nonce))
-                .toEthSignedMessageHash()
-                .recover(_signatures[i]);
+                    .toEthSignedMessageHash()
+                    .recover(_signatures[i]);
 
             <span class="hljs-keyword">if</span> (<span class="hljs-operator">!</span>valid) {
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;

@@ -1,5 +1,6 @@
 import component_app_bi_directional_payment_channel from "./pages/app/bi-directional-payment-channel"
 import component_app_create2 from "./pages/app/create2"
+import component_app_crowd_fund from "./pages/app/crowd-fund"
 import component_app_deploy_any_contract from "./pages/app/deploy-any-contract"
 import component_app_dutch_auction from "./pages/app/dutch-auction"
 import component_app_english_auction from "./pages/app/english-auction"
@@ -99,6 +100,10 @@ const routes: Route[] = [
   {
     path: "/app/create2",
     component: component_app_create2,
+  },
+  {
+    path: "/app/crowd-fund",
+    component: component_app_crowd_fund,
   },
   {
     path: "/app/deploy-any-contract",

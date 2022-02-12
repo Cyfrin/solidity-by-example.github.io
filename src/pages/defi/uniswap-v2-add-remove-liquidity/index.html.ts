@@ -25,16 +25,16 @@ const html = `<h3 id="add--remove-liquidity">Add / Remove Liquidity</h3>
         IERC20(_tokenB).approve(ROUTER, _amountB);
 
         (<span class="hljs-keyword">uint</span> amountA, <span class="hljs-keyword">uint</span> amountB, <span class="hljs-keyword">uint</span> liquidity) <span class="hljs-operator">=</span> IUniswapV2Router(ROUTER)
-        .addLiquidity(
-            _tokenA,
-            _tokenB,
-            _amountA,
-            _amountB,
-            <span class="hljs-number">1</span>,
-            <span class="hljs-number">1</span>,
-            <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>),
-            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
-        );
+            .addLiquidity(
+                _tokenA,
+                _tokenB,
+                _amountA,
+                _amountB,
+                <span class="hljs-number">1</span>,
+                <span class="hljs-number">1</span>,
+                <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>),
+                <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
+            );
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeLiquidity</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _tokenA, <span class="hljs-keyword">address</span> _tokenB</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
