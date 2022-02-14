@@ -51,9 +51,9 @@ const html = `<p>There are several ways to return outputs from a function.</p>
         y <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
     }
 
-    <span class="hljs-comment">// Use destructing assignment when calling another</span>
+    <span class="hljs-comment">// Use destructuring assignment when calling another</span>
     <span class="hljs-comment">// function that returns multiple values.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destructingAssignments</span>(<span class="hljs-params"></span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destructuringAssignments</span>(<span class="hljs-params"></span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
@@ -72,7 +72,7 @@ const html = `<p>There are several ways to return outputs from a function.</p>
         <span class="hljs-keyword">return</span> (i, b, j, x, y);
     }
 
-    <span class="hljs-comment">// Cannot use map for neither input nor output</span>
+    <span class="hljs-comment">// Cannot use map for either input or output</span>
 
     <span class="hljs-comment">// Can use array for input</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">arrayInput</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> _arr</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{}

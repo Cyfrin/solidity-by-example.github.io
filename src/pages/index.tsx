@@ -400,9 +400,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/02/14 - GitHub PR by gitwinst",
   "2022/02/12 - Crowd fund",
   "2022/01/29 - Echidna test timestamp and caller",
-  "2022/01/29 - Echidna",
 ]
 
 export default function HomePage() {

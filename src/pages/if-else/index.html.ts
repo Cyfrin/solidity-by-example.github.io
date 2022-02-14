@@ -3,7 +3,7 @@ export const version = "0.8.10"
 export const title = "If / Else"
 export const description = "If / Else conditional statement in Solidity"
 
-const html = `<p>Solidity support conditional statements <code>if</code>, <code>else if</code> and <code>else</code>.</p>
+const html = `<p>Solidity supports conditional statements <code>if</code>, <code>else if</code> and <code>else</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
