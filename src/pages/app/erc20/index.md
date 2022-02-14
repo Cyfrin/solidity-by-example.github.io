@@ -17,6 +17,12 @@ Here is the interface for ERC20.
 {{{IERC20}}}
 ```
 
+Example of `ERC20` token contract.
+
+```solidity
+{{{ERC20}}}
+```
+
 ## Create your own ERC20 token
 
 Using <a href="https://github.com/OpenZeppelin/openzeppelin-contracts" target="__blank">Open Zeppelin</a> it's really easy to create your own ERC20 token.
