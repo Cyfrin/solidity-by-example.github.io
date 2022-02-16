@@ -72,6 +72,8 @@ contract EnglishAuction {
     }
 
     function withdraw() external {
+        require(msg.sender != highestBidder, "All bidders except th highest bidder can withdraw their bid");
+        
         uint bal = bids[msg.sender];
         bids[msg.sender] = 0;
         payable(msg.sender).transfer(bal);
