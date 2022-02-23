@@ -335,6 +335,10 @@ const DEFI_ROUTES = [
     path: "staking-rewards",
     title: "Staking Rewards",
   },
+  {
+    path: "constant-sum-amm",
+    title: "Constant Sum AMM",
+  },
 ]
 
 export const ROUTES_BY_CATEGORY = [
@@ -400,9 +404,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/02/22 - Constant sum AMM",
   "2022/02/14 - GitHub PR by gitwinst",
   "2022/02/12 - Crowd fund",
-  "2022/01/29 - Echidna test timestamp and caller",
 ]
 
 export default function HomePage() {
