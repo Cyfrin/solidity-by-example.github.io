@@ -246,6 +246,14 @@ const APP_ROUTES: Route[] = [
     path: "crowd-fund",
     title: "Crowd Fund",
   },
+  {
+    path: "multi-call",
+    title: "Multi Call",
+  },
+  {
+    path: "multi-delegatecall",
+    title: "Multi Delegatecall",
+  },
 ]
 
 const HACK_ROUTES: Route[] = [
@@ -404,9 +412,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/02/26 - Multi call",
   "2022/02/22 - Constant sum AMM",
   "2022/02/14 - GitHub PR by gitwinst",
-  "2022/02/12 - Crowd fund",
 ]
 
 export default function HomePage() {

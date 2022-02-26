@@ -10,6 +10,8 @@ import component_app_ether_wallet from "./pages/app/ether-wallet"
 import component_app_iterable_mapping from "./pages/app/iterable-mapping"
 import component_app_merkle_tree from "./pages/app/merkle-tree"
 import component_app_minimal_proxy from "./pages/app/minimal-proxy"
+import component_app_multi_call from "./pages/app/multi-call"
+import component_app_multi_delegatecall from "./pages/app/multi-delegatecall"
 import component_app_multi_sig_wallet from "./pages/app/multi-sig-wallet"
 import component_app_uni_directional_payment_channel from "./pages/app/uni-directional-payment-channel"
 import component_app_upgradeable_proxy from "./pages/app/upgradeable-proxy"
@@ -141,6 +143,14 @@ const routes: Route[] = [
   {
     path: "/app/minimal-proxy",
     component: component_app_minimal_proxy,
+  },
+  {
+    path: "/app/multi-call",
+    component: component_app_multi_call,
+  },
+  {
+    path: "/app/multi-delegatecall",
+    component: component_app_multi_delegatecall,
   },
   {
     path: "/app/multi-sig-wallet",
