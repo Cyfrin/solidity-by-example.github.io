@@ -79,10 +79,11 @@ const html = `<p>Constant sum AMM <code>X + Y = K</code></p>
         <span class="hljs-comment">/*
         a = amount in
         L = total liquidity
-        s = shares
+        s = shares to mint
         T = total supply
 
-        a / (L + a) = s / (T + s)
+        s should be proportional to increase from L to L + a
+        (L + a) / L = (T + s) / T
 
         s = a * T / L
         */</span>
