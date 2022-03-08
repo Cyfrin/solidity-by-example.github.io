@@ -61,12 +61,12 @@ contract EnglishAuction {
         require(block.timestamp < endAt, "ended");
         require(msg.value > highestBid, "value < highest");
 
+        highestBidder = msg.sender;
+        highestBid = msg.value;
+
         if (highestBidder != address(0)) {
             bids[highestBidder] += highestBid;
         }
-
-        highestBidder = msg.sender;
-        highestBid = msg.value;
 
         emit Bid(msg.sender, msg.value);
     }
@@ -86,6 +86,7 @@ contract EnglishAuction {
 
         ended = true;
         if (highestBidder != address(0)) {
+	    bids[highestBidder] -= highestBid;
             nft.safeTransferFrom(address(this), highestBidder, nftId);
             seller.transfer(highestBid);
         } else {

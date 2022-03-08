@@ -79,12 +79,12 @@ const html = `<p>English auction for NFT.</p>
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">&lt;</span> endAt, <span class="hljs-string">"ended"</span>);
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span> highestBid, <span class="hljs-string">"value &lt; highest"</span>);
 
+        highestBidder <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
+        highestBid <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
+
         <span class="hljs-keyword">if</span> (highestBidder <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>)) {
             bids[highestBidder] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> highestBid;
         }
-
-        highestBidder <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
-        highestBid <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>;
 
         <span class="hljs-keyword">emit</span> Bid(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>);
     }
@@ -104,6 +104,7 @@ const html = `<p>English auction for NFT.</p>
 
         ended <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
         <span class="hljs-keyword">if</span> (highestBidder <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>)) {
+        bids[highestBidder] <span class="hljs-operator">-</span><span class="hljs-operator">=</span> highestBid;
             nft.safeTransferFrom(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), highestBidder, nftId);
             seller.<span class="hljs-built_in">transfer</span>(highestBid);
         } <span class="hljs-keyword">else</span> {
