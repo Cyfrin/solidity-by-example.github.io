@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.8.10"
 export const title = "Staking Rewards"
-export const description = "Staking rewards contract based on Synthetix StakingRewards.sol"
+export const description =
+  "Staking rewards contract based on Synthetix StakingRewards.sol"
 
 const html = `<p>This is a minimal example of a contract that rewards users for staking their token.</p>
 <p>Code is a stripped down version of Synthetix <a href="https://github.com/Synthetixio/synthetix/blob/develop/contracts/StakingRewards.sol" target="__blank">StakingRewards.sol</a></p>
