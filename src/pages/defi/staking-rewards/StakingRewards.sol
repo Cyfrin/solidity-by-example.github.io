@@ -22,7 +22,7 @@ contract StakingRewards {
 
     function rewardPerToken() public view returns (uint) {
         if (_totalSupply == 0) {
-            return 0;
+            return rewardPerTokenStored;
         }
         return
             rewardPerTokenStored +

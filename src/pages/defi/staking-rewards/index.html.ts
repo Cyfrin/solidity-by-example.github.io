@@ -1,8 +1,7 @@
 // metadata
 export const version = "0.8.10"
 export const title = "Staking Rewards"
-export const description =
-  "Staking rewards contract based on Synthetix StakingRewards.sol"
+export const description = "Staking rewards contract based on Synthetix StakingRewards.sol"
 
 const html = `<p>This is a minimal example of a contract that rewards users for staking their token.</p>
 <p>Code is a stripped down version of Synthetix <a href="https://github.com/Synthetixio/synthetix/blob/develop/contracts/StakingRewards.sol" target="__blank">StakingRewards.sol</a></p>
@@ -31,7 +30,7 @@ const html = `<p>This is a minimal example of a contract that rewards users for 
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rewardPerToken</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">if</span> (_totalSupply <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">return</span> rewardPerTokenStored;
         }
         <span class="hljs-keyword">return</span>
             rewardPerTokenStored <span class="hljs-operator">+</span>
