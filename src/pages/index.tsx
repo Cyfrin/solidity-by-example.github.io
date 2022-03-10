@@ -347,6 +347,10 @@ const DEFI_ROUTES = [
     path: "constant-sum-amm",
     title: "Constant Sum AMM",
   },
+  {
+    path: "constant-product-amm",
+    title: "Constant Product AMM",
+  },
 ]
 
 export const ROUTES_BY_CATEGORY = [
@@ -412,9 +416,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/03/10 - Constant product AMM",
   "2022/02/26 - Multi call",
   "2022/02/22 - Constant sum AMM",
-  "2022/02/14 - GitHub PR by gitwinst",
 ]
 
 export default function HomePage() {
