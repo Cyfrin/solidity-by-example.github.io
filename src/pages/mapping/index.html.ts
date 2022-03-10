@@ -4,7 +4,7 @@ export const title = "Mapping"
 export const description = "Example of using mapping in Solidity"
 
 const html = `<p>Maps are created with the syntax <code>mapping(keyType =&gt; valueType)</code>.</p>
-<p><code>keyType</code> can be value types such as <code>uint</code>, <code>address</code> or <code>bytes</code>.</p>
+<p>The <code>keyType</code> can be any built-in value type, bytes, string, or any contract.</p>
 <p><code>valueType</code> can be any type including another mapping or an array.</p>
 <p>Mappings are not iterable.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>

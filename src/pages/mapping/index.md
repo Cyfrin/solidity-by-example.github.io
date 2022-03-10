@@ -6,7 +6,7 @@ description: Example of using mapping in Solidity
 
 Maps are created with the syntax `mapping(keyType => valueType)`.
 
-`keyType` can be value types such as `uint`, `address` or `bytes`.
+The `keyType` can be any built-in value type, bytes, string, or any contract.
 
 `valueType` can be any type including another mapping or an array.
 
