@@ -43,9 +43,8 @@ contract CPAMM {
             ? (token0, token1, reserve0, reserve1)
             : (token1, token0, reserve1, reserve0);
 
-        uint amountIn;
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
-        amountIn = tokenIn.balanceOf(address(this)) - reserveIn;
+        uint amountIn = tokenIn.balanceOf(address(this)) - reserveIn;
 
         /*
         How much dy for dx?

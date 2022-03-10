@@ -49,9 +49,8 @@ const html = `<p>Constant product AMM <code>XY = K</code></p>
             ? (token0, token1, reserve0, reserve1)
             : (token1, token0, reserve1, reserve0);
 
-        <span class="hljs-keyword">uint</span> amountIn;
         tokenIn.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amountIn);
-        amountIn <span class="hljs-operator">=</span> tokenIn.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) <span class="hljs-operator">-</span> reserveIn;
+        <span class="hljs-keyword">uint</span> amountIn <span class="hljs-operator">=</span> tokenIn.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) <span class="hljs-operator">-</span> reserveIn;
 
         <span class="hljs-comment">/*
         How much dy for dx?
