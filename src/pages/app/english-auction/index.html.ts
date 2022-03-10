@@ -9,7 +9,7 @@ const html = `<p>English auction for NFT.</p>
 <li>Seller of NFT deploys this contract.</li>
 <li>Auction lasts for 7 days.</li>
 <li>Participants can bid by depositing ETH greater than the current highest bidder.</li>
-<li>All bidders except the highest bidder can withdraw their bid</li>
+<li>All bidders can withdraw their bid if it is not the current highest bid.</li>
 </ol>
 <h3 id="after-the-auction">After the auction</h3>
 <ol>

@@ -11,7 +11,7 @@ English auction for NFT.
 1. Seller of NFT deploys this contract.
 2. Auction lasts for 7 days.
 3. Participants can bid by depositing ETH greater than the current highest bidder.
-4. All bidders except the highest bidder can withdraw their bid
+4. All bidders can withdraw their bid if it is not the current highest bid.
 
 ### After the auction
 
