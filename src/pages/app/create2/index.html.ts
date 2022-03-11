@@ -8,6 +8,20 @@ const html = `<p>Contract address can be precomputed, before the contract is dep
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Factory</span> </span>{
+    <span class="hljs-comment">// Returns the address of the newly deployed contract</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deploy</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> _owner,
+        <span class="hljs-keyword">uint</span> _foo,
+        <span class="hljs-keyword">bytes32</span> _salt
+    </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>) </span>{
+        <span class="hljs-comment">// This syntax is a newer way to invoke create2 without assembly, you just need to pass salt</span>
+        <span class="hljs-comment">// https://docs.soliditylang.org/en/latest/control-structures.html#salted-contract-creations-create2</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-keyword">new</span> TestContract{<span class="hljs-built_in">salt</span>: _salt}(_owner, _foo));
+    }
+}
+
+<span class="hljs-comment">// This is the older way of doing it using assembly</span>
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FactoryAssembly</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Deployed</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> addr, <span class="hljs-keyword">uint</span> salt</span>)</span>;
 
     <span class="hljs-comment">// 1. Get bytecode of contract to be deployed</span>
