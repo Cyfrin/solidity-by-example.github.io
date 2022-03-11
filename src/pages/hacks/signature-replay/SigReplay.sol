@@ -2,7 +2,7 @@
 pragma solidity ^0.8.10;
 pragma experimental ABIEncoderV2;
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol";
+import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol";
 
 contract MultiSigWallet {
     using ECDSA for bytes32;

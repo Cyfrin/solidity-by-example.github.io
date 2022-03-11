@@ -53,9 +53,9 @@ const html = `<p>You can import local and external files in Solidity.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// https://github.com/owner/repo/blob/branch/path/to/Contract.sol</span>
 <span class="hljs-keyword">import</span> <span class="hljs-string">"https://github.com/owner/repo/blob/branch/path/to/Contract.sol"</span>;
 
-<span class="hljs-comment">// Example import ECDSA.sol from openzeppelin-contract repo, release-v3.3 branch</span>
-<span class="hljs-comment">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol</span>
-<span class="hljs-keyword">import</span> <span class="hljs-string">"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.3/contracts/cryptography/ECDSA.sol"</span>;
+<span class="hljs-comment">// Example import ECDSA.sol from openzeppelin-contract repo, release-v4.5 branch</span>
+<span class="hljs-comment">// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol"</span>;
 </code></pre>
 `
 
