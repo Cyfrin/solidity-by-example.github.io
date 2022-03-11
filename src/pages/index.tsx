@@ -416,9 +416,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/03/11 - Github PR by amimaro",
   "2022/03/10 - Constant product AMM",
   "2022/02/26 - Multi call",
-  "2022/02/22 - Constant sum AMM",
 ]
 
 export default function HomePage() {
