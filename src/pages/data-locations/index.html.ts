@@ -8,7 +8,7 @@ specify the location of the data.</p>
 <ul>
 <li><code>storage</code> - variable is a state variable (store on blockchain)</li>
 <li><code>memory</code> - variable is in memory and it exists while a function is being called</li>
-<li><code>calldata</code> - special data location that contains function arguments, only available for <code>external</code> functions</li>
+<li><code>calldata</code> - special data location that contains function arguments</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
