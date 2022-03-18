@@ -170,6 +170,10 @@ const SOL_ROUTES: Route[] = [
     path: "library",
     title: "Library",
   },
+  {
+    path: "abi-decode",
+    title: "ABI Decode",
+  },
   // crypto
   {
     path: "hashing",
@@ -416,9 +420,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/03/18 - ABI decode",
   "2022/03/14 - Github PR by WorldDogs",
   "2022/03/11 - Github PR by devanonon",
-  "2022/03/11 - Github PR by amimaro",
 ]
 
 export default function HomePage() {
