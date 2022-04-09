@@ -22,6 +22,7 @@ const html = `<p>Here is a simple contract that you can get, increment and decre
 
     <span class="hljs-comment">// Function to decrement count by 1</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dec</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-comment">// This function will fail if count = 0</span>
         count <span class="hljs-operator">-</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 }

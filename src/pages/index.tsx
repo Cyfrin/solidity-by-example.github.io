@@ -420,9 +420,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/04/09 - Gas golf",
   "2022/03/18 - ABI decode",
   "2022/03/14 - Github PR by WorldDogs",
-  "2022/03/11 - Github PR by devanonon",
 ]
 
 export default function HomePage() {
