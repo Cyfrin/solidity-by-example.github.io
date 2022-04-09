@@ -15,7 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "npm run lint && react-snap",
+    "postbuild": "npm run lint && npm run copy-index-to-404",
+    "copy-index-to-404": "cp build/index.html build/404.html",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
@@ -46,7 +47,6 @@
     "mustache": "^4.2.0",
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
-    "react-snap": "^1.23.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
     "yaml": "^1.10.2"
