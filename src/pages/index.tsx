@@ -185,7 +185,7 @@ const SOL_ROUTES: Route[] = [
   },
   {
     path: "gas-golf",
-    title: "Gas optimizations",
+    title: "Gas Optimizations",
   },
 ]
 
