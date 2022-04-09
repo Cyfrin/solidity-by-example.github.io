@@ -183,6 +183,10 @@ const SOL_ROUTES: Route[] = [
     path: "signature",
     title: "Verifying Signature",
   },
+  {
+    path: "gas-golf",
+    title: "Gas optimizations",
+  },
 ]
 
 const APP_ROUTES: Route[] = [
