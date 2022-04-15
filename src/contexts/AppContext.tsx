@@ -30,7 +30,9 @@ function _saveToLocalStorage(theme: Theme) {
   }
 }
 
-interface Props {}
+interface Props {
+  children?: React.ReactNode
+}
 
 export const Provider: React.FC<Props> = ({ children }) => {
   const [state, setState] = useState(INITIAL_STATE)
