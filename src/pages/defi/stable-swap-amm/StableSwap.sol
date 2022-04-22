@@ -122,10 +122,10 @@ contract StableSwap {
     }
 
     /**
-     * @notice Calculate the new balance of token `j` given the new balance of token `i`
+     * @notice Calculate the new balance of token j given the new balance of token i
      * @param i Index of token in
      * @param j Index of token out
-     * @param x New balance of token `i`
+     * @param x New balance of token i
      * @param xp Current precision-adjusted balances
      */
     function _getY(
@@ -187,13 +187,13 @@ contract StableSwap {
     }
 
     /**
-     * @notice Calculate the new balance of token `i` given precision-adjusted
-     * balances `xp` and liquidity `d`
-     * @dev Equation is calculate y is same as `_getY`
+     * @notice Calculate the new balance of token i given precision-adjusted
+     * balances xp and liquidity d
+     * @dev Equation is calculate y is same as _getY
      * @param i Index of token to calculate the new balance
      * @param xp Precision-adjusted balances
      * @param d Liquidity d
-     * @return New balance of token `i`
+     * @return New balance of token i
      */
     function _getYD(
         uint i,
@@ -244,7 +244,7 @@ contract StableSwap {
     }
 
     /**
-     * @notice Swap `dx` amount of token `i` for token `j`
+     * @notice Swap dx amount of token i for token j
      * @param i Index of token in
      * @param j Index of token out
      * @param dx Token in amount
@@ -360,11 +360,11 @@ contract StableSwap {
     }
 
     /**
-     * @notice Calculate amount of token `i` to receive for `shares`
+     * @notice Calculate amount of token i to receive for shares
      * @param shares Shares to burn
      * @param i Index of token to withdraw
-     * @return dy Amount of token `i` to receive
-     *         fee Fee for withdraw. Fee already included in `dy`
+     * @return dy Amount of token i to receive
+     *         fee Fee for withdraw. Fee already included in dy
      */
     function _calcWithdrawOneToken(uint shares, uint i)
         private
@@ -411,10 +411,10 @@ contract StableSwap {
     }
 
     /**
-     * @notice Withdraw liquidity in token `i`
+     * @notice Withdraw liquidity in token i
      * @param shares Shares to burn
      * @param i Token to withdraw
-     * @param minAmountOut Minimum amount of token `i` that must be withdrawn
+     * @param minAmountOut Minimum amount of token i that must be withdrawn
      */
     function removeLiquidityOneToken(
         uint shares,
