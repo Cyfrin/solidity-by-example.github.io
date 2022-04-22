@@ -27,6 +27,7 @@ import component_data_locations from "./pages/data-locations"
 import component_defi_chainlink_price_oracle from "./pages/defi/chainlink-price-oracle"
 import component_defi_constant_product_amm from "./pages/defi/constant-product-amm"
 import component_defi_constant_sum_amm from "./pages/defi/constant-sum-amm"
+import component_defi_stable_swap_amm from "./pages/defi/stable-swap-amm"
 import component_defi_staking_rewards from "./pages/defi/staking-rewards"
 import component_defi_uniswap_v2 from "./pages/defi/uniswap-v2"
 import component_defi_uniswap_v2_add_remove_liquidity from "./pages/defi/uniswap-v2-add-remove-liquidity"
@@ -215,6 +216,10 @@ const routes: Route[] = [
   {
     path: "/defi/constant-sum-amm",
     component: component_defi_constant_sum_amm,
+  },
+  {
+    path: "/defi/stable-swap-amm",
+    component: component_defi_stable_swap_amm,
   },
   {
     path: "/defi/staking-rewards",

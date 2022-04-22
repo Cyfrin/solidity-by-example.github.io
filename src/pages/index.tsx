@@ -363,6 +363,10 @@ const DEFI_ROUTES = [
     path: "constant-product-amm",
     title: "Constant Product AMM",
   },
+  {
+    path: "stable-swap-amm",
+    title: "Stable Swap AMM",
+  },
 ]
 
 export const ROUTES_BY_CATEGORY = [
@@ -428,9 +432,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/04/22 - Stable Swap AMM",
   "2022/04/15 - Time lock",
   "2022/04/15 - Fix typo @Sm4rty-1",
-  "2022/04/09 - Gas golf",
 ]
 
 export default function HomePage() {
