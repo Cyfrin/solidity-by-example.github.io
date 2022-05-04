@@ -4,7 +4,7 @@ export const title = "Vault"
 export const description = "Vault"
 
 const html = `<p>Simple example of vault contract, commonly used in DeFi protocols.</p>
-<p>Most vaults on the mainnet are more complex. Here we will focus on the math for calculating shares to mint on deposit and amount of token to withdraw.</p>
+<p>Most vaults on the mainnet are more complex. Here we will focus on the math for calculating shares to mint on deposit and the amount of token to withdraw.</p>
 <h3 id="how-the-contract-works">How the contract works</h3>
 <ol>
 <li>Some amount of shares are minted when an user deposits.</li>
