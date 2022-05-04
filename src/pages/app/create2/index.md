@@ -1,6 +1,6 @@
 ---
 title: Precompute Contract Address with Create2
-version: 0.8.10
+version: 0.8.13
 description: Precompute contract address with create2
 ---
 

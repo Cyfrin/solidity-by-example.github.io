@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Crowd Fund"
 export const description = "An example of crowd funding contract"
 
@@ -11,7 +11,7 @@ const html = `<p>Crowd fund ERC20 token</p>
 <li>Otherwise, campaign did not reach it&#39;s goal, users can withdraw their pledge.</li>
 </ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IERC20</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span>, <span class="hljs-keyword">uint</span></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;

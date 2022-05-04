@@ -1,6 +1,6 @@
 ---
 title: Crowd Fund
-version: 0.8.10
+version: 0.8.13
 description: An example of crowd funding contract
 ---
 

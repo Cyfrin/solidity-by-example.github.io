@@ -11,7 +11,7 @@ interface Path {
 interface Props {
   title: string
   description: string
-  version: "0.8.10"
+  version: "0.8.13"
   html: string
   prev: Path | null
   next: Path | null

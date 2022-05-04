@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.8.13;
 
 contract MultiCall {
     function multiCall(address[] calldata targets, bytes[] calldata data)

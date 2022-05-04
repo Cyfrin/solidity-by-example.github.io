@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Gas Saving Techniques"
 export const description = "Some gas saving techniques"
 
@@ -12,7 +12,7 @@ const html = `<p>Some gas saving techniques.</p>
 <li>Short circuit</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-comment">// gas golf</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">GasGolf</span> </span>{

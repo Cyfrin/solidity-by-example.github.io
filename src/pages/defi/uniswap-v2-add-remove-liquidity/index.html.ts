@@ -1,11 +1,11 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Uniswap V2 Add Remove Liquidity"
 export const description = "Uniswap V2 add remove liquidity"
 
 const html = `<h3 id="add--remove-liquidity">Add / Remove Liquidity</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestUniswapLiquidity</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> FACTORY <span class="hljs-operator">=</span> <span class="hljs-number">0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f</span>;

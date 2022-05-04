@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Time Lock"
 export const description = "Time Lock"
 
@@ -7,7 +7,7 @@ const html = `<p><code>TimeLock</code> is a contract that publishes a transactio
 After a mimimum waiting period, the transaction can be executed.</p>
 <p><code>TimeLock</code>s are commonly used in DAOs.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TimeLock</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">error</span> <span class="hljs-title">NotOwnerError</span>(<span class="hljs-params"></span>)</span>;

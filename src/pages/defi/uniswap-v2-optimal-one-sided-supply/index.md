@@ -1,6 +1,6 @@
 ---
 title: Uniswap V2 Optimal One Sided Supply
-version: 0.8.10
+version: 0.8.13
 description: Uniswap V2 Optimal One Sided Supply
 ---
 

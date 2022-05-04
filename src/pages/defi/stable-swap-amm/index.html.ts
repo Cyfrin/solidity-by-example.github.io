@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Stable Swap AMM"
 export const description = "Curve's stable swap AMM"
 

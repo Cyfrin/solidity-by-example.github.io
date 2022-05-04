@@ -1,6 +1,6 @@
 ---
 title: Merkle Tree
-version: 0.8.10
+version: 0.8.13
 description: Learn about Merkle tree in Solidity
 ---
 

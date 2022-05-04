@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Upgradeable Proxy"
 export const description = "Example of upgradeable proxy"
 
 const html = `<p>Example of upgradeable proxy contract. Never use this in production.</p>
 <p>This example shows how to use <code>delegatecall</code> and return data when <code>fallback</code> is called.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Proxy</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> implementation;

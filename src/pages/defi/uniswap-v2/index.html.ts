@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Uniswap V2 Swap"
 export const description = "Uniswap V2 swap"
 
 const html = `<h3 id="swap">Swap</h3>
 <p>Swaps an exact amount of input tokens for as many output tokens as possible.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestUniswap</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> UNISWAP_V2_ROUTER <span class="hljs-operator">=</span>

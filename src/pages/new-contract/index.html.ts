@@ -1,12 +1,11 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Contract that Creates other Contracts"
-export const description =
-  "Learn how to create new contracts from inside of a contract with Solidity"
+export const description = "Learn how to create new contracts from inside of a contract with Solidity"
 
 const html = `<p>Contracts can be created by other contracts using the <code>new</code> keyword. Since 0.8.0, <code>new</code> keyword supports <code>create2</code> feature by specifying <code>salt</code> options.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Car</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;

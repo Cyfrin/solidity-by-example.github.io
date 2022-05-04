@@ -1,12 +1,11 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Multi Delegatecall"
-export const description =
-  "An example of contract to call multiple functions in a single transaction"
+export const description = "An example of contract to call multiple functions in a single transaction"
 
 const html = `<p>An example of calling multiple functions with a single transaction, using <code>delegatecall</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MultiDelegatecall</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">error</span> <span class="hljs-title">DelegatecallFailed</span>(<span class="hljs-params"></span>)</span>;

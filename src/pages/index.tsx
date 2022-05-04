@@ -445,13 +445,13 @@ export default function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
-        title="Solidity by Example | 0.8.10"
+        title="Solidity by Example | 0.8.13"
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
         <a href="/">Solidity by Example</a>
       </h1>
-      <div className={styles.subHeader}>v 0.8.10</div>
+      <div className={styles.subHeader}>v 0.8.13</div>
       <div className={styles.main}>
         <p>
           an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with

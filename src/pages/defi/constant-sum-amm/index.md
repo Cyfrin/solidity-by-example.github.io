@@ -1,6 +1,6 @@
 ---
 title: Constant Sum AMM
-version: 0.8.10
+version: 0.8.13
 description: Constant sum AMM
 ---
 

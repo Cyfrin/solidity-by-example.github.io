@@ -1,6 +1,6 @@
 ---
 title: Bypass Contract Size Check
-version: 0.8.10
+version: 0.8.13
 description: An example of bypassing contract size check
 ---
 

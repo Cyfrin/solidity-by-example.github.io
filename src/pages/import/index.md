@@ -1,6 +1,6 @@
 ---
 title: Import
-version: 0.8.10
+version: 0.8.13
 description: Learn how to import other Solidity files
 ---
 

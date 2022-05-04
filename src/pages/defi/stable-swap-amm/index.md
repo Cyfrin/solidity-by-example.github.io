@@ -1,6 +1,6 @@
 ---
 title: Stable Swap AMM
-version: 0.8.10
+version: 0.8.13
 description: Curve's stable swap AMM
 ---
 

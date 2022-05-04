@@ -1,6 +1,6 @@
 ---
 title: Staking Rewards
-version: 0.8.10
+version: 0.8.13
 description: Staking rewards contract based on Synthetix StakingRewards.sol
 ---
 

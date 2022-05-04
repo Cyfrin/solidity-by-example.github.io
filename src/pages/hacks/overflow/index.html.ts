@@ -1,8 +1,7 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Arithmetic Overflow and Underflow"
-export const description =
-  "An example of hacking Solidity with arithmetic overflow / underflow"
+export const description = "An example of hacking Solidity with arithmetic overflow / underflow"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <h5 id="solidity--08">Solidity &lt; 0.8</h5>

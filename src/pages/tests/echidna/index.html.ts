@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Echidna"
 export const description = "An example of testing contracts with Echidna"
 
@@ -15,7 +15,7 @@ const html = `<p>Examples of fuzzing with <a href="https://github.com/crytic/ech
 <li>See the comments below and execute <code>echidna-test</code> commands.</li>
 </ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-comment">/*
 echidna-test TestEchidna.sol --contract TestCounter

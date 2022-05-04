@@ -1,11 +1,11 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Array"
 export const description = "Learn about arrays in Solidity"
 
 const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Array</span> </span>{
     <span class="hljs-comment">// Several ways to initialize an array</span>
@@ -57,7 +57,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 <h3 id="examples-of-removing-array-element">Examples of removing array element</h3>
 <p>Remove array element by shifting elements from right to left</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ArrayRemoveByShifting</span> </span>{
     <span class="hljs-comment">// [1, 2, 3] -- remove(1) --&gt; [1, 3, 3] --&gt; [1, 3]</span>
@@ -95,7 +95,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
 </code></pre>
 <p>Remove array element by copying last element into to the place to remove</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ArrayReplaceFromEnd</span> </span>{
     <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">public</span> arr;

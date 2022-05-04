@@ -1,13 +1,12 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Source of Randomness"
-export const description =
-  "Blockchain is not a reliable source of randomness in Solidity"
+export const description = "Blockchain is not a reliable source of randomness in Solidity"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p><code>blockhash</code> and <code>block.timestamp</code> are not reliable sources for randomness.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-comment">/*
 <span class="hljs-doctag">NOTE:</span> cannot use blockhash in Remix so use ganache-cli

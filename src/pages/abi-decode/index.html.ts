@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "ABI Decode"
 export const description = "ABI decode bytes"
 
 const html = `<p><code>abi.encode</code> encodes data into <code>bytes</code>.</p>
 <p><code>abi.decode</code> decodes <code>bytes</code> back into data.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">AbiDecode</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {

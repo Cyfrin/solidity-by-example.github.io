@@ -1,6 +1,6 @@
 ---
 title: For and While Loop
-version: 0.8.10
+version: 0.8.13
 description: Example of for and while loop in Solidity
 ---
 

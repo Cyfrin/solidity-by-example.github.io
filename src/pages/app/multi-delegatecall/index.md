@@ -1,6 +1,6 @@
 ---
 title: Multi Delegatecall
-version: 0.8.10
+version: 0.8.13
 description: An example of contract to call multiple functions in a single transaction
 ---
 

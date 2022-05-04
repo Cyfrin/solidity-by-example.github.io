@@ -1,6 +1,6 @@
 ---
 title: View and Pure Functions
-version: 0.8.10
+version: 0.8.13
 description: An example of view and pure functions in Solidity
 ---
 

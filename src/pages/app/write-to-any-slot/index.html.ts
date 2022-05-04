@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Write to Any Slot"
 export const description = "Write to Any Slot"
 
@@ -8,7 +8,7 @@ Each slot in the array can store 32 bytes.</p>
 <p>State variables define which slots will be used to store data.</p>
 <p>However using assembly, you can write to any slot.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Storage</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {

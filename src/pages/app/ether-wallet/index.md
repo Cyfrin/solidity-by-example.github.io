@@ -1,6 +1,6 @@
 ---
 title: Ether Wallet
-version: 0.8.10
+version: 0.8.13
 description: Simple example of wallet in Solidity
 ---
 

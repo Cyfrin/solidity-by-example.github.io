@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Mapping"
 export const description = "Example of using mapping in Solidity"
 
@@ -8,7 +8,7 @@ const html = `<p>Maps are created with the syntax <code>mapping(keyType =&gt; va
 <p><code>valueType</code> can be any type including another mapping or an array.</p>
 <p>Mappings are not iterable.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Mapping</span> </span>{
     <span class="hljs-comment">// Mapping from address to uint</span>

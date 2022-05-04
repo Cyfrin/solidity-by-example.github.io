@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Denial of Service"
 export const description = "An example of denial of service hack in Solidity"
 
@@ -7,7 +7,7 @@ const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>There are many ways to attack a smart contract to make it unusable.</p>
 <p>One exploit we introduce here is denial of service by making the function to send Ether fail.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-comment">/*
 The goal of KingOfEther is to become the king by sending more Ether than
@@ -69,7 +69,7 @@ Ether sent from KingOfEther before the new king is set.
 <p>One way to prevent this is to allow the users to withdraw their Ether instead of sending it.</p>
 <p>Here is a example.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">KingOfEther</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> king;

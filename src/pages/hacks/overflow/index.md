@@ -1,6 +1,6 @@
 ---
 title: Arithmetic Overflow and Underflow
-version: 0.8.10
+version: 0.8.13
 description: An example of hacking Solidity with arithmetic overflow / underflow
 ---
 

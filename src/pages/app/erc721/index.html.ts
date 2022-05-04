@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "ERC721"
 export const description = "Example of ERC721 non fungible token in Solidity"
 

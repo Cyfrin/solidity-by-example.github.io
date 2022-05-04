@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.10"
+export const version = "0.8.13"
 export const title = "Vault"
 export const description = "Vault"
 
@@ -12,7 +12,7 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
 <li>User burn shares to withdraw his tokens + yield.</li>
 </ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.10;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Vault</span> </span>{
     IERC20 <span class="hljs-keyword">public</span> <span class="hljs-keyword">immutable</span> token;
