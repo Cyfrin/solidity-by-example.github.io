@@ -356,6 +356,10 @@ const DEFI_ROUTES = [
     title: "Staking Rewards",
   },
   {
+    path: "vault",
+    title: "Vault",
+  },
+  {
     path: "constant-sum-amm",
     title: "Constant Sum AMM",
   },
@@ -432,9 +436,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/05/05 - Vault",
   "2022/04/22 - Stable Swap AMM",
   "2022/04/15 - Time lock",
-  "2022/04/15 - Fix typo @Sm4rty-1",
 ]
 
 export default function HomePage() {
