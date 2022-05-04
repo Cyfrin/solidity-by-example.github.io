@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.8.13"
 export const title = "Front Running"
-export const description = "An example of a Solidity contract vulnerable to front running"
+export const description =
+  "An example of a Solidity contract vulnerable to front running"
 
 const html = `<h3 id="vulnerability">Vulnerability</h3>
 <p>Transactions take some time before they are mined. An attacker can watch the transaction pool
