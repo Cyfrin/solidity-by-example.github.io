@@ -12,7 +12,8 @@ contract EtherWallet {
 
     function withdraw(uint _amount) external {
         require(msg.sender == owner, "caller is not owner");
-        payable(msg.sender).transfer(_amount);
+        (bool sucess, ) = msg.sender.call{value: _amount}("");
+        require(sucess,"Transfer failed.");
     }
 
     function getBalance() external view returns (uint) {
