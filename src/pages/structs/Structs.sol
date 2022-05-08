@@ -10,7 +10,7 @@ contract Todos {
     // An array of 'Todo' structs
     Todo[] public todos;
 
-    function create(string memory _text) public {
+    function create(string calldata _text) public {
         // 3 ways to initialize a struct
         // - calling it like a function
         todos.push(Todo(_text, false));
@@ -34,7 +34,7 @@ contract Todos {
     }
 
     // update text
-    function update(uint _index, string memory _text) public {
+    function update(uint _index, string calldata _text) public {
         Todo storage todo = todos[_index];
         todo.text = _text;
     }
