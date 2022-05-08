@@ -18,7 +18,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
     <span class="hljs-comment">// An array of &#x27;Todo&#x27; structs</span>
     Todo[] <span class="hljs-keyword">public</span> todos;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// 3 ways to initialize a struct</span>
         <span class="hljs-comment">// - calling it like a function</span>
         todos.<span class="hljs-built_in">push</span>(Todo(_text, <span class="hljs-literal">false</span>));
@@ -42,7 +42,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
     }
 
     <span class="hljs-comment">// update text</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
         todo.text <span class="hljs-operator">=</span> _text;
     }

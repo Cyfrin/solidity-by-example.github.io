@@ -436,9 +436,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/05/08 - GitHub PR @qd-qd",
   "2022/05/05 - Vault",
   "2022/04/22 - Stable Swap AMM",
-  "2022/04/15 - Time lock",
 ]
 
 export default function HomePage() {

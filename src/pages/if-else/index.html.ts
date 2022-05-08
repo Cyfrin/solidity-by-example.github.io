@@ -25,6 +25,7 @@ const html = `<p>Solidity supports conditional statements <code>if</code>, <code
         <span class="hljs-comment">// return 2;</span>
 
         <span class="hljs-comment">// shorthand way to write if / else statement</span>
+        <span class="hljs-comment">// the "?" operator is called the ternary operator</span>
         <span class="hljs-keyword">return</span> _x <span class="hljs-operator">&lt;</span> <span class="hljs-number">10</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">2</span>;
     }
 }
