@@ -35,7 +35,6 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        token.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount);
         <span class="hljs-comment">/*
         a = amount
         B = balance of token before deposit
@@ -54,21 +53,22 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
         }
 
         _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, shares);
+        token.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _shares</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        _burn(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _shares);
         <span class="hljs-comment">/*
         a = amount
-        B = balance of token before deposit
+        B = balance of token before withdraw
         T = total supply
-        s = shares to mint
+        s = shares to burn
 
         (T - s) / T = (B - a) / B 
 
         a = sB / T
         */</span>
         <span class="hljs-keyword">uint</span> amount <span class="hljs-operator">=</span> (_shares <span class="hljs-operator">*</span> token.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>))) <span class="hljs-operator">/</span> totalSupply;
+        _burn(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _shares);
         token.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount);
     }
 }
