@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 /*
 HackMe is a contract that uses delegatecall to execute code.
-It it is not obvious that the owner of HackMe can be changed since there is no
+It is not obvious that the owner of HackMe can be changed since there is no
 function inside HackMe to do so. However an attacker can hijack the
 contract by exploiting delegatecall. Let's see how.
 
