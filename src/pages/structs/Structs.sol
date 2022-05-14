@@ -34,7 +34,7 @@ contract Todos {
     }
 
     // update text
-    function update(uint _index, string calldata _text) public {
+    function updateText(uint _index, string calldata _text) public {
         Todo storage todo = todos[_index];
         todo.text = _text;
     }
