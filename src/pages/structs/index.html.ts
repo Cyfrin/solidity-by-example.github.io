@@ -42,7 +42,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
     }
 
     <span class="hljs-comment">// update text</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">update</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateText</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
         todo.text <span class="hljs-operator">=</span> _text;
     }
@@ -58,6 +58,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 <p>File that the struct is declared in</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
+<span class="hljs-comment">// This is saved &#x27;StructDeclaration.sol&#x27;</span>
 
 <span class="hljs-keyword">struct</span> <span class="hljs-title">Todo</span> {
     <span class="hljs-keyword">string</span> text;
