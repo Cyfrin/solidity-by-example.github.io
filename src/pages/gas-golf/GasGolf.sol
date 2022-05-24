@@ -31,7 +31,7 @@ contract GasGolf {
         uint _total = total;
         uint len = nums.length;
 
-        for (uint i = 0; i < len; i=unchecked_inc(i)) {
+        for (uint i = 0; i < len; i = unchecked_inc(i)) {
             uint num = nums[i];
             if (num % 2 == 0 && num < 99) {
                 _total += num;
@@ -40,11 +40,11 @@ contract GasGolf {
 
         total = _total;
     }
-    
-    function unchecked_inc(uint i) internal pure returns(uint){
-      unchecked {
-        ++i;
-      }
-      return i;
+
+    function unchecked_inc(uint i) internal pure returns (uint) {
+        unchecked {
+            ++i;
+        }
+        return i;
     }
 }
