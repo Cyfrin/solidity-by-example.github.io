@@ -70,17 +70,17 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
 
     <span class="hljs-comment">/* verify
     3rd leaf
-    0x1bbd78ae6188015c4a6772eb1526292b5985fc3272ead4c65002240fb9ae5d13
+    0xdca3326ad7e8121bf9cf9c12333e6b2271abe823ec9edfe42f813b1e768fa57b
 
     root
-    0x074b43252ffb4a469154df5fb7fe4ecce30953ba8b7095fe1e006185f017ad10
+    0xcc086fcc038189b4641db2cc4f1de3bb132aefbd65d510d817591550937818c7
 
     index
     2
 
     proof
-    0x948f90037b4ea787c14540d9feb1034d4a5bc251b9b5f8e57d81e4b470027af8
-    0x63ac1b92046d474f84be3aa0ee04ffe5600862228c81803cce07ac40484aee43
+    0x8da9e1c820f9dbd1589fd6585872bc1063588625729e7ab0797cfc63a00bd950
+    0x995788ffc103b987ad50f5e5707fd094419eb12d9552cc423bd0cd86a3861433
     */</span>
 }
 </code></pre>
