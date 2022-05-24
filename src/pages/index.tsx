@@ -436,9 +436,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
-  "2022/05/08 - GitHub PR @aragalie",
-  "2022/05/15 - GitHub PR @s-cryptor",
-  "2022/05/08 - GitHub PR @qd-qd",
+  "2022/05/24 - GitHub PR amimaro",
+  "2022/05/24 - GitHub PR Atarpara",
+  "2022/05/24 - GitHub PR islu",
 ]
 
 export default function HomePage() {

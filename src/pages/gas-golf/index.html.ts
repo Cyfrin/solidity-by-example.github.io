@@ -23,6 +23,7 @@ const html = `<p>Some gas saving techniques.</p>
     <span class="hljs-comment">// loop increments - 48244 gas</span>
     <span class="hljs-comment">// cache array length - 48209 gas</span>
     <span class="hljs-comment">// load array elements to memory - 48047 gas</span>
+    <span class="hljs-comment">// uncheck i overflow/underflow - 47615 gas</span>
 
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> total;
 
@@ -43,7 +44,7 @@ const html = `<p>Some gas saving techniques.</p>
         <span class="hljs-keyword">uint</span> _total <span class="hljs-operator">=</span> total;
         <span class="hljs-keyword">uint</span> len <span class="hljs-operator">=</span> nums.<span class="hljs-built_in">length</span>;
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> len; <span class="hljs-operator">+</span><span class="hljs-operator">+</span>i) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> len; i<span class="hljs-operator">=</span>unchecked_inc(i)) {
             <span class="hljs-keyword">uint</span> num <span class="hljs-operator">=</span> nums[i];
             <span class="hljs-keyword">if</span> (num <span class="hljs-operator">%</span> <span class="hljs-number">2</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;</span><span class="hljs-operator">&amp;</span> num <span class="hljs-operator">&lt;</span> <span class="hljs-number">99</span>) {
                 _total <span class="hljs-operator">+</span><span class="hljs-operator">=</span> num;
@@ -51,6 +52,13 @@ const html = `<p>Some gas saving techniques.</p>
         }
 
         total <span class="hljs-operator">=</span> _total;
+    }
+    
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unchecked_inc</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> i</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span>(<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>{
+      <span class="hljs-keyword">unchecked</span> {
+        <span class="hljs-operator">+</span><span class="hljs-operator">+</span>i;
+      }
+      <span class="hljs-keyword">return</span> i;
     }
 }
 </code></pre>
