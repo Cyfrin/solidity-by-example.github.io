@@ -10,7 +10,7 @@ contract GasGolf {
     // loop increments - 48244 gas
     // cache array length - 48209 gas
     // load array elements to memory - 48047 gas
-    // uncheck i overflow/underflow - 47615 gas
+    // uncheck i overflow/underflow - 47309 gas
 
     uint public total;
 
@@ -31,20 +31,16 @@ contract GasGolf {
         uint _total = total;
         uint len = nums.length;
 
-        for (uint i = 0; i < len; i = unchecked_inc(i)) {
+        for (uint i = 0; i < len; ) {
             uint num = nums[i];
             if (num % 2 == 0 && num < 99) {
                 _total += num;
             }
+            unchecked {
+                ++i;
+            }
         }
 
         total = _total;
-    }
-
-    function unchecked_inc(uint i) internal pure returns (uint) {
-        unchecked {
-            ++i;
-        }
-        return i;
     }
 }
