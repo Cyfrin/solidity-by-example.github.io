@@ -240,6 +240,7 @@ contract ERC721 is IERC721 {
 
     function burn(uint tokenId) external {
         address owner = ownerOf(tokenId);
+        require(msg.sender == owner, "not owner of token");
 
         _approve(owner, address(0), tokenId);
 
