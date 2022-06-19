@@ -246,6 +246,7 @@ const html = `<p>Example of ERC721</p>
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">burn</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> tokenId</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-keyword">address</span> owner <span class="hljs-operator">=</span> ownerOf(tokenId);
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner, <span class="hljs-string">"not owner of token"</span>);
 
         _approve(owner, <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), tokenId);
 
