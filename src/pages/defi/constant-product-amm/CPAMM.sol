@@ -36,15 +36,14 @@ contract CPAMM {
             _tokenIn == address(token0) || _tokenIn == address(token1),
             "invalid token"
         );
+        require(_amountIn > 0, "amount in = 0");
 
         bool isToken0 = _tokenIn == address(token0);
-
         (IERC20 tokenIn, IERC20 tokenOut, uint reserveIn, uint reserveOut) = isToken0
             ? (token0, token1, reserve0, reserve1)
             : (token1, token0, reserve1, reserve0);
 
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
-        uint amountIn = tokenIn.balanceOf(address(this)) - reserveIn;
 
         /*
         How much dy for dx?
@@ -58,26 +57,17 @@ contract CPAMM {
         ydx / (x + dx) = dy
         */
         // 0.3% fee
-        uint amountInWithFee = (amountIn * 997) / 1000;
+        uint amountInWithFee = (_amountIn * 997) / 1000;
         amountOut = (reserveOut * amountInWithFee) / (reserveIn + amountInWithFee);
 
-        (uint res0, uint res1) = isToken0
-            ? (reserveIn + amountIn, reserveOut - amountOut)
-            : (reserveOut - amountOut, reserveIn + amountIn);
-
-        _update(res0, res1);
         tokenOut.transfer(msg.sender, amountOut);
+
+        _update(token0.balanceOf(address(this)), token1.balanceOf(address(this)));
     }
 
     function addLiquidity(uint _amount0, uint _amount1) external returns (uint shares) {
         token0.transferFrom(msg.sender, address(this), _amount0);
         token1.transferFrom(msg.sender, address(this), _amount1);
-
-        uint bal0 = token0.balanceOf(address(this));
-        uint bal1 = token1.balanceOf(address(this));
-
-        uint d0 = bal0 - reserve0;
-        uint d1 = bal1 - reserve1;
 
         /*
         How much dx, dy to add?
@@ -95,7 +85,7 @@ contract CPAMM {
         dy = y / x * dx
         */
         if (reserve0 > 0 || reserve1 > 0) {
-            require(reserve0 * d1 == reserve1 * d0, "x / y != dx / dy");
+            require(reserve0 * _amount1 == reserve1 * _amount0, "x / y != dx / dy");
         }
 
         /*
@@ -148,16 +138,18 @@ contract CPAMM {
         Finally
         (L1 - L0) / L0 = dx / x = dy / y
         */
-
-        if (totalSupply > 0) {
-            shares = _min((d0 * totalSupply) / reserve0, (d1 * totalSupply) / reserve1);
+        if (totalSupply == 0) {
+            shares = _sqrt(_amount0 * _amount1);
         } else {
-            shares = _sqrt(d0 * d1);
+            shares = _min(
+                (_amount0 * totalSupply) / reserve0,
+                (_amount1 * totalSupply) / reserve1
+            );
         }
         require(shares > 0, "shares = 0");
         _mint(msg.sender, shares);
 
-        _update(bal0, bal1);
+        _update(token0.balanceOf(address(this)), token1.balanceOf(address(this)));
     }
 
     function removeLiquidity(uint _shares)
@@ -197,18 +189,21 @@ contract CPAMM {
         Likewise
         dy = s / T * y
         */
-        amount0 = (_shares * reserve0) / totalSupply;
-        amount1 = (_shares * reserve1) / totalSupply;
+
+        // bal0 >= reserve0
+        // bal1 >= reserve1
+        uint bal0 = token0.balanceOf(address(this));
+        uint bal1 = token1.balanceOf(address(this));
+
+        amount0 = (_shares * bal0) / totalSupply;
+        amount1 = (_shares * bal1) / totalSupply;
+        require(amount0 > 0 && amount1 > 0, "amount0 or amount1 = 0");
 
         _burn(msg.sender, _shares);
-        _update(reserve0 - amount0, reserve1 - amount1);
+        _update(bal0 - amount0, bal1 - amount1);
 
-        if (amount0 > 0) {
-            token0.transfer(msg.sender, amount0);
-        }
-        if (amount1 > 0) {
-            token1.transfer(msg.sender, amount1);
-        }
+        token0.transfer(msg.sender, amount0);
+        token1.transfer(msg.sender, amount1);
     }
 
     function _sqrt(uint y) private pure returns (uint z) {
