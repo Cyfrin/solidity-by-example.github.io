@@ -42,15 +42,14 @@ const html = `<p>Constant product AMM <code>XY = K</code></p>
             _tokenIn <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(token0) <span class="hljs-operator">|</span><span class="hljs-operator">|</span> _tokenIn <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(token1),
             <span class="hljs-string">"invalid token"</span>
         );
+        <span class="hljs-built_in">require</span>(_amountIn <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, <span class="hljs-string">"amount in = 0"</span>);
 
         <span class="hljs-keyword">bool</span> isToken0 <span class="hljs-operator">=</span> _tokenIn <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(token0);
-
         (IERC20 tokenIn, IERC20 tokenOut, <span class="hljs-keyword">uint</span> reserveIn, <span class="hljs-keyword">uint</span> reserveOut) <span class="hljs-operator">=</span> isToken0
             ? (token0, token1, reserve0, reserve1)
             : (token1, token0, reserve1, reserve0);
 
         tokenIn.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amountIn);
-        <span class="hljs-keyword">uint</span> amountIn <span class="hljs-operator">=</span> tokenIn.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)) <span class="hljs-operator">-</span> reserveIn;
 
         <span class="hljs-comment">/*
         How much dy for dx?
@@ -64,26 +63,17 @@ const html = `<p>Constant product AMM <code>XY = K</code></p>
         ydx / (x + dx) = dy
         */</span>
         <span class="hljs-comment">// 0.3% fee</span>
-        <span class="hljs-keyword">uint</span> amountInWithFee <span class="hljs-operator">=</span> (amountIn <span class="hljs-operator">*</span> <span class="hljs-number">997</span>) <span class="hljs-operator">/</span> <span class="hljs-number">1000</span>;
+        <span class="hljs-keyword">uint</span> amountInWithFee <span class="hljs-operator">=</span> (_amountIn <span class="hljs-operator">*</span> <span class="hljs-number">997</span>) <span class="hljs-operator">/</span> <span class="hljs-number">1000</span>;
         amountOut <span class="hljs-operator">=</span> (reserveOut <span class="hljs-operator">*</span> amountInWithFee) <span class="hljs-operator">/</span> (reserveIn <span class="hljs-operator">+</span> amountInWithFee);
 
-        (<span class="hljs-keyword">uint</span> res0, <span class="hljs-keyword">uint</span> res1) <span class="hljs-operator">=</span> isToken0
-            ? (reserveIn <span class="hljs-operator">+</span> amountIn, reserveOut <span class="hljs-operator">-</span> amountOut)
-            : (reserveOut <span class="hljs-operator">-</span> amountOut, reserveIn <span class="hljs-operator">+</span> amountIn);
-
-        _update(res0, res1);
         tokenOut.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amountOut);
+
+        _update(token0.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)), token1.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)));
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addLiquidity</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount0, <span class="hljs-keyword">uint</span> _amount1</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> shares</span>) </span>{
         token0.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount0);
         token1.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount1);
-
-        <span class="hljs-keyword">uint</span> bal0 <span class="hljs-operator">=</span> token0.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
-        <span class="hljs-keyword">uint</span> bal1 <span class="hljs-operator">=</span> token1.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
-
-        <span class="hljs-keyword">uint</span> d0 <span class="hljs-operator">=</span> bal0 <span class="hljs-operator">-</span> reserve0;
-        <span class="hljs-keyword">uint</span> d1 <span class="hljs-operator">=</span> bal1 <span class="hljs-operator">-</span> reserve1;
 
         <span class="hljs-comment">/*
         How much dx, dy to add?
@@ -101,7 +91,7 @@ const html = `<p>Constant product AMM <code>XY = K</code></p>
         dy = y / x * dx
         */</span>
         <span class="hljs-keyword">if</span> (reserve0 <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">|</span><span class="hljs-operator">|</span> reserve1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>) {
-            <span class="hljs-built_in">require</span>(reserve0 <span class="hljs-operator">*</span> d1 <span class="hljs-operator">=</span><span class="hljs-operator">=</span> reserve1 <span class="hljs-operator">*</span> d0, <span class="hljs-string">"x / y != dx / dy"</span>);
+            <span class="hljs-built_in">require</span>(reserve0 <span class="hljs-operator">*</span> _amount1 <span class="hljs-operator">=</span><span class="hljs-operator">=</span> reserve1 <span class="hljs-operator">*</span> _amount0, <span class="hljs-string">"x / y != dx / dy"</span>);
         }
 
         <span class="hljs-comment">/*
@@ -154,16 +144,18 @@ const html = `<p>Constant product AMM <code>XY = K</code></p>
         Finally
         (L1 - L0) / L0 = dx / x = dy / y
         */</span>
-
-        <span class="hljs-keyword">if</span> (totalSupply <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>) {
-            shares <span class="hljs-operator">=</span> _min((d0 <span class="hljs-operator">*</span> totalSupply) <span class="hljs-operator">/</span> reserve0, (d1 <span class="hljs-operator">*</span> totalSupply) <span class="hljs-operator">/</span> reserve1);
+        <span class="hljs-keyword">if</span> (totalSupply <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
+            shares <span class="hljs-operator">=</span> _sqrt(_amount0 <span class="hljs-operator">*</span> _amount1);
         } <span class="hljs-keyword">else</span> {
-            shares <span class="hljs-operator">=</span> _sqrt(d0 <span class="hljs-operator">*</span> d1);
+            shares <span class="hljs-operator">=</span> _min(
+                (_amount0 <span class="hljs-operator">*</span> totalSupply) <span class="hljs-operator">/</span> reserve0,
+                (_amount1 <span class="hljs-operator">*</span> totalSupply) <span class="hljs-operator">/</span> reserve1
+            );
         }
         <span class="hljs-built_in">require</span>(shares <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, <span class="hljs-string">"shares = 0"</span>);
         _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, shares);
 
-        _update(bal0, bal1);
+        _update(token0.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)), token1.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>)));
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeLiquidity</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _shares</span>)
@@ -203,18 +195,21 @@ const html = `<p>Constant product AMM <code>XY = K</code></p>
         Likewise
         dy = s / T * y
         */</span>
-        amount0 <span class="hljs-operator">=</span> (_shares <span class="hljs-operator">*</span> reserve0) <span class="hljs-operator">/</span> totalSupply;
-        amount1 <span class="hljs-operator">=</span> (_shares <span class="hljs-operator">*</span> reserve1) <span class="hljs-operator">/</span> totalSupply;
+
+        <span class="hljs-comment">// bal0 &gt;= reserve0</span>
+        <span class="hljs-comment">// bal1 &gt;= reserve1</span>
+        <span class="hljs-keyword">uint</span> bal0 <span class="hljs-operator">=</span> token0.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint</span> bal1 <span class="hljs-operator">=</span> token1.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+
+        amount0 <span class="hljs-operator">=</span> (_shares <span class="hljs-operator">*</span> bal0) <span class="hljs-operator">/</span> totalSupply;
+        amount1 <span class="hljs-operator">=</span> (_shares <span class="hljs-operator">*</span> bal1) <span class="hljs-operator">/</span> totalSupply;
+        <span class="hljs-built_in">require</span>(amount0 <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;</span><span class="hljs-operator">&amp;</span> amount1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, <span class="hljs-string">"amount0 or amount1 = 0"</span>);
 
         _burn(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _shares);
-        _update(reserve0 <span class="hljs-operator">-</span> amount0, reserve1 <span class="hljs-operator">-</span> amount1);
+        _update(bal0 <span class="hljs-operator">-</span> amount0, bal1 <span class="hljs-operator">-</span> amount1);
 
-        <span class="hljs-keyword">if</span> (amount0 <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>) {
-            token0.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount0);
-        }
-        <span class="hljs-keyword">if</span> (amount1 <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>) {
-            token1.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount1);
-        }
+        token0.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount0);
+        token1.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount1);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_sqrt</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> z</span>) </span>{
