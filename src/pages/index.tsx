@@ -436,9 +436,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/07/10 - Update StakingRewards",
   "2022/06/20 - GitHub PR dabit3 - Fix ERC721 burn",
   "2022/06/04 - GitHub PR Atarpara",
-  "2022/05/24 - GitHub PR amimaro",
 ]
 
 export default function HomePage() {
