@@ -28,3 +28,4 @@ memo.js
 .eslintcache
 memo
 crytic-export
+tmp
