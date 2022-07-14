@@ -114,7 +114,7 @@ async function main() {
     routes,
   })
 
-  writeFile(path.join(dir, `routes.tsx`), ts)
+  await writeFile(path.join(dir, `routes.tsx`), ts)
 
   console.log(`${path.join(dir, `routes.tsx`)}`)
 }

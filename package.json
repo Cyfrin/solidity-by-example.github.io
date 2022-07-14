@@ -15,8 +15,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:prod": "serve -s build",
+    "clean": "rm -rf build",
+    "prebuild": "npm run clean",
     "build": "react-scripts build",
-    "postbuild": "npm run lint && npm run copy-index-to-404",
+    "postbuild": "npm run lint && npm run copy-index && npm run copy-index-to-404",
+    "copy-index": "ts-node scripts/build.ts",
     "copy-index-to-404": "cp build/index.html build/404.html",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -48,6 +52,7 @@
     "mustache": "^4.2.0",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "serve": "^14.0.1",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4",
     "yaml": "^2.1.1"
