@@ -8,8 +8,6 @@
 
 ### Memo
 
-- Uses 404.html to re-route all URL to client side router in index.html
-
 ```shell
 ## Deploy ##
 # md to react
