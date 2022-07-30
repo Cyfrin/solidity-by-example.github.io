@@ -348,6 +348,10 @@ const DEFI_ROUTES = [
     title: "Uniswap V2 Optimal One Sided Supply",
   },
   {
+    path: "uniswap-v3-swap",
+    title: "Uniswap V3 Swap",
+  },
+  {
     path: "chainlink-price-oracle",
     title: "Chainlink Price Oracle",
   },
@@ -436,9 +440,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/07/30 - Uniswap V3 swap examples",
   "2022/07/16 - Update ERC721",
   "2022/07/10 - Update StakingRewards",
-  "2022/06/20 - GitHub PR dabit3 - Fix ERC721 burn",
 ]
 
 export default function HomePage() {
