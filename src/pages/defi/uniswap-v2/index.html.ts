@@ -21,9 +21,9 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
     IERC20 <span class="hljs-keyword">private</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
 
     <span class="hljs-comment">// Swap WETH to DAI</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapSingleHopExactAmountIn</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountIn, <span class="hljs-keyword">uint256</span> amountOutMin</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapSingleHopExactAmountIn</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amountIn, <span class="hljs-keyword">uint</span> amountOutMin</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amoutnOut</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amoutnOut</span>)
     </span>{
         weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountIn);
         weth.approve(<span class="hljs-keyword">address</span>(router), amountIn);
@@ -33,8 +33,12 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         path[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span> WETH;
         path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> DAI;
 
-        <span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapExactTokensForTokens(
-            amountIn, amountOutMin, path, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
+        <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapExactTokensForTokens(
+            amountIn,
+            amountOutMin,
+            path,
+            <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
+            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
         );
 
         <span class="hljs-comment">// amounts[0] = WETH amount, amounts[1] = DAI amount</span>
@@ -42,9 +46,9 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
     }
 
     <span class="hljs-comment">// Swap DAI -&gt; WETH -&gt; USDC</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapMultiHopExactAmountIn</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountIn, <span class="hljs-keyword">uint256</span> amountOutMin</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapMultiHopExactAmountIn</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amountIn, <span class="hljs-keyword">uint</span> amountOutMin</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amoutnOut</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amoutnOut</span>)
     </span>{
         dai.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountIn);
         dai.approve(<span class="hljs-keyword">address</span>(router), amountIn);
@@ -55,8 +59,12 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> WETH;
         path[<span class="hljs-number">2</span>] <span class="hljs-operator">=</span> USDC;
 
-        <span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapExactTokensForTokens(
-            amountIn, amountOutMin, path, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
+        <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapExactTokensForTokens(
+            amountIn,
+            amountOutMin,
+            path,
+            <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
+            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
         );
 
         <span class="hljs-comment">// amounts[0] = DAI amount</span>
@@ -66,12 +74,9 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
     }
 
     <span class="hljs-comment">// Swap WETH to DAI</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapSingleHopExactAmountOut</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint256</span> amountOutDesired,
-        <span class="hljs-keyword">uint256</span> amountInMax
-    </span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapSingleHopExactAmountOut</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amountOutDesired, <span class="hljs-keyword">uint</span> amountInMax</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amountOut</span>)
     </span>{
         weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountInMax);
         weth.approve(<span class="hljs-keyword">address</span>(router), amountInMax);
@@ -81,8 +86,12 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         path[<span class="hljs-number">0</span>] <span class="hljs-operator">=</span> WETH;
         path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> DAI;
 
-        <span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapTokensForExactTokens(
-            amountOutDesired, amountInMax, path, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
+        <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapTokensForExactTokens(
+            amountOutDesired,
+            amountInMax,
+            path,
+            <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
+            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
         );
 
         <span class="hljs-comment">// Refund WETH to msg.sender</span>
@@ -94,12 +103,9 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
     }
 
     <span class="hljs-comment">// Swap DAI -&gt; WETH -&gt; USDC</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapMultiHopExactAmountOut</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint256</span> amountOutDesired,
-        <span class="hljs-keyword">uint256</span> amountInMax
-    </span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapMultiHopExactAmountOut</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amountOutDesired, <span class="hljs-keyword">uint</span> amountInMax</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amountOut</span>)
     </span>{
         dai.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountInMax);
         dai.approve(<span class="hljs-keyword">address</span>(router), amountInMax);
@@ -110,8 +116,12 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         path[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span> WETH;
         path[<span class="hljs-number">2</span>] <span class="hljs-operator">=</span> USDC;
 
-        <span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapTokensForExactTokens(
-            amountOutDesired, amountInMax, path, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
+        <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> amounts <span class="hljs-operator">=</span> router.swapTokensForExactTokens(
+            amountOutDesired,
+            amountInMax,
+            path,
+            <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
+            <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
         );
 
         <span class="hljs-comment">// Refund DAI to msg.sender</span>
@@ -125,59 +135,47 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IUniswapV2Router</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactTokensForTokens</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint256</span> amountIn,
-        <span class="hljs-keyword">uint256</span> amountOutMin,
+        <span class="hljs-keyword">uint</span> amountIn,
+        <span class="hljs-keyword">uint</span> amountOutMin,
         <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">calldata</span> path,
         <span class="hljs-keyword">address</span> to,
-        <span class="hljs-keyword">uint256</span> deadline
-    </span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">memory</span> amounts</span>)</span>;
+        <span class="hljs-keyword">uint</span> deadline
+    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> amounts</span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapTokensForExactTokens</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint256</span> amountOut,
-        <span class="hljs-keyword">uint256</span> amountInMax,
+        <span class="hljs-keyword">uint</span> amountOut,
+        <span class="hljs-keyword">uint</span> amountInMax,
         <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">calldata</span> path,
         <span class="hljs-keyword">address</span> to,
-        <span class="hljs-keyword">uint256</span> deadline
-    </span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">memory</span> amounts</span>)</span>;
+        <span class="hljs-keyword">uint</span> deadline
+    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> amounts</span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IERC20</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">totalSupply</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">totalSupply</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">view</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">approve</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> spender, <span class="hljs-keyword">uint256</span> amount</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">approve</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> spender, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> sender, <span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> sender,
+        <span class="hljs-keyword">address</span> recipient,
+        <span class="hljs-keyword">uint</span> amount
+    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint256</span> value</span>)</span>;
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params">
-        <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner,
-        <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender,
-        <span class="hljs-keyword">uint256</span> value
-    </span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> value</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender, <span class="hljs-keyword">uint</span> value</span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IWETH</span> <span class="hljs-keyword">is</span> <span class="hljs-title">IERC20</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span></span>;
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 </code></pre>
 <h3 id="test-with-foundry">Test with Foundry</h3>
@@ -200,8 +198,7 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
 
     UniswapV2SwapExamples <span class="hljs-keyword">private</span> uni <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> UniswapV2SwapExamples();
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{}
 
     <span class="hljs-comment">// Swap WETH -&gt; DAI</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testSwapSingleHopExactAmountIn</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
@@ -210,7 +207,7 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         weth.approve(<span class="hljs-keyword">address</span>(uni), wethAmount);
 
         <span class="hljs-keyword">uint</span> daiAmountMin <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">uint</span> daiAmountOut<span class="hljs-operator">=</span> uni.swapSingleHopExactAmountIn(wethAmount, daiAmountMin);
+        <span class="hljs-keyword">uint</span> daiAmountOut <span class="hljs-operator">=</span> uni.swapSingleHopExactAmountIn(wethAmount, daiAmountMin);
 
         console.log(<span class="hljs-string">"DAI"</span>, daiAmountOut);
         assertGe(daiAmountOut, daiAmountMin, <span class="hljs-string">"amount out &lt; min"</span>);
@@ -231,7 +228,10 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         dai.approve(<span class="hljs-keyword">address</span>(uni), daiAmountIn);
 
         <span class="hljs-keyword">uint</span> usdcAmountOutMin <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">uint</span> usdcAmountOut <span class="hljs-operator">=</span> uni.swapMultiHopExactAmountIn(daiAmountIn, usdcAmountOutMin);
+        <span class="hljs-keyword">uint</span> usdcAmountOut <span class="hljs-operator">=</span> uni.swapMultiHopExactAmountIn(
+            daiAmountIn,
+            usdcAmountOutMin
+        );
 
         console.log(<span class="hljs-string">"USDC"</span>, usdcAmountOut);
         assertGe(usdcAmountOut, usdcAmountOutMin, <span class="hljs-string">"amount out &lt; min"</span>);
@@ -244,7 +244,10 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         weth.approve(<span class="hljs-keyword">address</span>(uni), wethAmount);
 
         <span class="hljs-keyword">uint</span> daiAmountDesired <span class="hljs-operator">=</span> <span class="hljs-number">1e18</span>;
-        <span class="hljs-keyword">uint</span> daiAmountOut <span class="hljs-operator">=</span> uni.swapSingleHopExactAmountOut(daiAmountDesired, wethAmount);
+        <span class="hljs-keyword">uint</span> daiAmountOut <span class="hljs-operator">=</span> uni.swapSingleHopExactAmountOut(
+            daiAmountDesired,
+            wethAmount
+        );
 
         console.log(<span class="hljs-string">"DAI"</span>, daiAmountOut);
         assertEq(daiAmountOut, daiAmountDesired, <span class="hljs-string">"amount out != amount out desired"</span>);
