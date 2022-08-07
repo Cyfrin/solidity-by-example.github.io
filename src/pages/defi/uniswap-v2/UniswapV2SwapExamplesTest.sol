@@ -17,8 +17,7 @@ contract UniswapV2SwapExamplesTest is Test {
 
     UniswapV2SwapExamples private uni = new UniswapV2SwapExamples();
 
-    function setUp() public {
-    }
+    function setUp() public {}
 
     // Swap WETH -> DAI
     function testSwapSingleHopExactAmountIn() public {
@@ -27,7 +26,7 @@ contract UniswapV2SwapExamplesTest is Test {
         weth.approve(address(uni), wethAmount);
 
         uint daiAmountMin = 1;
-        uint daiAmountOut= uni.swapSingleHopExactAmountIn(wethAmount, daiAmountMin);
+        uint daiAmountOut = uni.swapSingleHopExactAmountIn(wethAmount, daiAmountMin);
 
         console.log("DAI", daiAmountOut);
         assertGe(daiAmountOut, daiAmountMin, "amount out < min");
@@ -48,7 +47,10 @@ contract UniswapV2SwapExamplesTest is Test {
         dai.approve(address(uni), daiAmountIn);
 
         uint usdcAmountOutMin = 1;
-        uint usdcAmountOut = uni.swapMultiHopExactAmountIn(daiAmountIn, usdcAmountOutMin);
+        uint usdcAmountOut = uni.swapMultiHopExactAmountIn(
+            daiAmountIn,
+            usdcAmountOutMin
+        );
 
         console.log("USDC", usdcAmountOut);
         assertGe(usdcAmountOut, usdcAmountOutMin, "amount out < min");
@@ -61,7 +63,10 @@ contract UniswapV2SwapExamplesTest is Test {
         weth.approve(address(uni), wethAmount);
 
         uint daiAmountDesired = 1e18;
-        uint daiAmountOut = uni.swapSingleHopExactAmountOut(daiAmountDesired, wethAmount);
+        uint daiAmountOut = uni.swapSingleHopExactAmountOut(
+            daiAmountDesired,
+            wethAmount
+        );
 
         console.log("DAI", daiAmountOut);
         assertEq(daiAmountOut, daiAmountDesired, "amount out != amount out desired");

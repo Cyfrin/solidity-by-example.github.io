@@ -14,9 +14,9 @@ contract UniswapV2SwapExamples {
     IERC20 private dai = IERC20(DAI);
 
     // Swap WETH to DAI
-    function swapSingleHopExactAmountIn(uint256 amountIn, uint256 amountOutMin)
+    function swapSingleHopExactAmountIn(uint amountIn, uint amountOutMin)
         external
-        returns (uint256 amoutnOut)
+        returns (uint amoutnOut)
     {
         weth.transferFrom(msg.sender, address(this), amountIn);
         weth.approve(address(router), amountIn);
@@ -26,8 +26,12 @@ contract UniswapV2SwapExamples {
         path[0] = WETH;
         path[1] = DAI;
 
-        uint256[] memory amounts = router.swapExactTokensForTokens(
-            amountIn, amountOutMin, path, msg.sender, block.timestamp
+        uint[] memory amounts = router.swapExactTokensForTokens(
+            amountIn,
+            amountOutMin,
+            path,
+            msg.sender,
+            block.timestamp
         );
 
         // amounts[0] = WETH amount, amounts[1] = DAI amount
@@ -35,9 +39,9 @@ contract UniswapV2SwapExamples {
     }
 
     // Swap DAI -> WETH -> USDC
-    function swapMultiHopExactAmountIn(uint256 amountIn, uint256 amountOutMin)
+    function swapMultiHopExactAmountIn(uint amountIn, uint amountOutMin)
         external
-        returns (uint256 amoutnOut)
+        returns (uint amoutnOut)
     {
         dai.transferFrom(msg.sender, address(this), amountIn);
         dai.approve(address(router), amountIn);
@@ -48,8 +52,12 @@ contract UniswapV2SwapExamples {
         path[1] = WETH;
         path[2] = USDC;
 
-        uint256[] memory amounts = router.swapExactTokensForTokens(
-            amountIn, amountOutMin, path, msg.sender, block.timestamp
+        uint[] memory amounts = router.swapExactTokensForTokens(
+            amountIn,
+            amountOutMin,
+            path,
+            msg.sender,
+            block.timestamp
         );
 
         // amounts[0] = DAI amount
@@ -59,12 +67,9 @@ contract UniswapV2SwapExamples {
     }
 
     // Swap WETH to DAI
-    function swapSingleHopExactAmountOut(
-        uint256 amountOutDesired,
-        uint256 amountInMax
-    )
+    function swapSingleHopExactAmountOut(uint amountOutDesired, uint amountInMax)
         external
-        returns (uint256 amountOut)
+        returns (uint amountOut)
     {
         weth.transferFrom(msg.sender, address(this), amountInMax);
         weth.approve(address(router), amountInMax);
@@ -74,8 +79,12 @@ contract UniswapV2SwapExamples {
         path[0] = WETH;
         path[1] = DAI;
 
-        uint256[] memory amounts = router.swapTokensForExactTokens(
-            amountOutDesired, amountInMax, path, msg.sender, block.timestamp
+        uint[] memory amounts = router.swapTokensForExactTokens(
+            amountOutDesired,
+            amountInMax,
+            path,
+            msg.sender,
+            block.timestamp
         );
 
         // Refund WETH to msg.sender
@@ -87,12 +96,9 @@ contract UniswapV2SwapExamples {
     }
 
     // Swap DAI -> WETH -> USDC
-    function swapMultiHopExactAmountOut(
-        uint256 amountOutDesired,
-        uint256 amountInMax
-    )
+    function swapMultiHopExactAmountOut(uint amountOutDesired, uint amountInMax)
         external
-        returns (uint256 amountOut)
+        returns (uint amountOut)
     {
         dai.transferFrom(msg.sender, address(this), amountInMax);
         dai.approve(address(router), amountInMax);
@@ -103,8 +109,12 @@ contract UniswapV2SwapExamples {
         path[1] = WETH;
         path[2] = USDC;
 
-        uint256[] memory amounts = router.swapTokensForExactTokens(
-            amountOutDesired, amountInMax, path, msg.sender, block.timestamp
+        uint[] memory amounts = router.swapTokensForExactTokens(
+            amountOutDesired,
+            amountInMax,
+            path,
+            msg.sender,
+            block.timestamp
         );
 
         // Refund DAI to msg.sender
@@ -118,57 +128,45 @@ contract UniswapV2SwapExamples {
 
 interface IUniswapV2Router {
     function swapExactTokensForTokens(
-        uint256 amountIn,
-        uint256 amountOutMin,
+        uint amountIn,
+        uint amountOutMin,
         address[] calldata path,
         address to,
-        uint256 deadline
-    )
-        external
-        returns (uint256[] memory amounts);
+        uint deadline
+    ) external returns (uint[] memory amounts);
 
     function swapTokensForExactTokens(
-        uint256 amountOut,
-        uint256 amountInMax,
+        uint amountOut,
+        uint amountInMax,
         address[] calldata path,
         address to,
-        uint256 deadline
-    )
-        external
-        returns (uint256[] memory amounts);
+        uint deadline
+    ) external returns (uint[] memory amounts);
 }
 
 interface IERC20 {
-    function totalSupply() external view returns (uint256);
+    function totalSupply() external view returns (uint);
 
-    function balanceOf(address account) external view returns (uint256);
+    function balanceOf(address account) external view returns (uint);
 
-    function transfer(address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transfer(address recipient, uint amount) external returns (bool);
 
-    function allowance(address owner, address spender)
-        external
-        view
-        returns (uint256);
+    function allowance(address owner, address spender) external view returns (uint);
 
-    function approve(address spender, uint256 amount)
-        external
-        returns (bool);
+    function approve(address spender, uint amount) external returns (bool);
 
-    function transferFrom(address sender, address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint amount
+    ) external returns (bool);
 
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    event Approval(
-        address indexed owner,
-        address indexed spender,
-        uint256 value
-    );
+    event Transfer(address indexed from, address indexed to, uint value);
+    event Approval(address indexed owner, address indexed spender, uint value);
 }
 
 interface IWETH is IERC20 {
     function deposit() external payable;
-    function withdraw(uint256 amount) external;
+
+    function withdraw(uint amount) external;
 }
