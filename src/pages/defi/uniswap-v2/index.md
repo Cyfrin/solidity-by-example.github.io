@@ -4,10 +4,16 @@ version: 0.8.13
 description: Uniswap V2 swap
 ---
 
-### Swap
+`swapExactTokensForTokens` sells all tokens for another.
 
-Swaps an exact amount of input tokens for as many output tokens as possible.
+`swapTokensForExactTokens` buys specific amount of tokens set by the caller.
 
 ```solidity
-{{{Swap}}}
+{{{UniswapV2SwapExamples}}}
+```
+
+### Test with Foundry
+
+```solidity
+{{{UniswapV2SwapExamplesTest}}}
 ```
