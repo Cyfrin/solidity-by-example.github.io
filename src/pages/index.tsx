@@ -187,6 +187,10 @@ const SOL_ROUTES: Route[] = [
     path: "gas-golf",
     title: "Gas Optimizations",
   },
+  {
+    path: "bitwise",
+    title: "Bitwise Operators",
+  },
 ]
 
 const APP_ROUTES: Route[] = [
@@ -440,9 +444,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/08/14 - Bitwise operators",
   "2022/08/07 - Update Uniswap V2 swap examples",
   "2022/07/30 - Uniswap V3 swap examples",
-  "2022/07/16 - Update ERC721",
 ]
 
 export default function HomePage() {
