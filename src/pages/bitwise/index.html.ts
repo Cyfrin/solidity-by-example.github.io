@@ -23,7 +23,7 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
 
     <span class="hljs-comment">// x     = 1100 = 8 + 4 + 0 + 0 = 12</span>
     <span class="hljs-comment">// y     = 0101 = 0 + 4 + 0 + 1 = 5</span>
-    <span class="hljs-comment">// x | y = 1001 = 8 + 0 + 0 + 1 = 9</span>
+    <span class="hljs-comment">// x ^ y = 1001 = 8 + 0 + 0 + 1 = 9</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">xor</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">return</span> x <span class="hljs-operator">^</span> y;
     }
