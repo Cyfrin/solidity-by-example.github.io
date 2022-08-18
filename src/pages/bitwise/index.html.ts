@@ -93,6 +93,51 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         <span class="hljs-keyword">uint</span> mask <span class="hljs-operator">=</span> ((<span class="hljs-number">1</span> <span class="hljs-operator">&lt;</span><span class="hljs-operator">&lt;</span> n) <span class="hljs-operator">-</span> <span class="hljs-number">1</span>) <span class="hljs-operator">&lt;</span><span class="hljs-operator">&lt;</span> (len <span class="hljs-operator">-</span> n);
         <span class="hljs-keyword">return</span> x <span class="hljs-operator">&amp;</span> mask;
     }
+
+    <span class="hljs-comment">// Find most significant bit using binary search</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mostSignificantBitWithBinarySearch</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint8</span> r</span>)
+    </span>{
+        <span class="hljs-comment">// x &gt;= 2 ** 128</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x100000000000000000000000000000000</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">128</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">128</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 64</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x10000000000000000</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">64</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">64</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 32</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x100000000</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">32</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">32</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 16</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x10000</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">16</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">16</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 8</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x100</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">8</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">8</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 4</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x10</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 2</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x4</span>) {
+            x <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
+            r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
+        }
+        <span class="hljs-comment">// x &gt;= 2 ** 1</span>
+        <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x2</span>) r <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+    }
 }
 </code></pre>
 `
