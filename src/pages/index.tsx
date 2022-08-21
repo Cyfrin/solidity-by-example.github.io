@@ -352,6 +352,10 @@ const DEFI_ROUTES = [
     title: "Uniswap V2 Optimal One Sided Supply",
   },
   {
+    path: "uniswap-v2-flash-swap",
+    title: "Uniswap V2 Flash Swap",
+  },
+  {
     path: "uniswap-v3-swap",
     title: "Uniswap V3 Swap",
   },
@@ -444,9 +448,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/08/21 - Uniswap V2 flash swap",
   "2022/08/14 - Bitwise operators",
   "2022/08/07 - Update Uniswap V2 swap examples",
-  "2022/07/30 - Uniswap V3 swap examples",
 ]
 
 export default function HomePage() {
