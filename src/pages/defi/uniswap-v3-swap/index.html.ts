@@ -173,7 +173,7 @@ const html = `<h3 id="uniswap-v3-swap-examples">Uniswap V3 Swap Examples</h3>
 <ol start="2">
 <li>Execute the following commands to run the test</li>
 </ol>
-<pre><code class="language-shell">FORK_URL=https://eth-mainnet.g.alchemy.com/v2/vtqCl_WPHwVu683HSlNFlL36pTaaWIJw
+<pre><code class="language-shell">FORK_URL=https://eth-mainnet.g.alchemy.com/v2/613t3mfjTevdrCwDl28CVvuk6wSIxRPi
 forge test -vv --gas-report --fork-url $FORK_URL --match-path test/UniswapV3SwapExamples.test.sol
 </code></pre>
 <h3 id="links">Links</h3>
