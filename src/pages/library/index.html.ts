@@ -1,8 +1,7 @@
 // metadata
 export const version = "0.8.13"
 export const title = "Library"
-export const description =
-  "Example of how to write and use libraries in your Solidity code"
+export const description = "Example of how to write and use libraries in your Solidity code"
 
 const html = `<p>Libraries are similar to contracts, but you can&#39;t declare any state variable and
 you can&#39;t send ether.</p>
@@ -10,15 +9,6 @@ you can&#39;t send ether.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
-
-<span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">SafeMath</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">uint</span> z <span class="hljs-operator">=</span> x <span class="hljs-operator">+</span> y;
-        <span class="hljs-built_in">require</span>(z <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> x, <span class="hljs-string">"uint overflow"</span>);
-
-        <span class="hljs-keyword">return</span> z;
-    }
-}
 
 <span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">Math</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sqrt</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> z</span>) </span>{
@@ -36,15 +26,7 @@ you can&#39;t send ether.</p>
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestSafeMath</span> </span>{
-    <span class="hljs-keyword">using</span> <span class="hljs-title">SafeMath</span> <span class="hljs-title"><span class="hljs-keyword">for</span></span> <span class="hljs-title"><span class="hljs-keyword">uint</span></span>;
-
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> MAX_UINT <span class="hljs-operator">=</span> <span class="hljs-number">2</span><span class="hljs-operator">*</span><span class="hljs-operator">*</span><span class="hljs-number">256</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>;
-
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testAdd</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">return</span> x.add(y);
-    }
-
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestMath</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testSquareRoot</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">return</span> Math.sqrt(x);
     }

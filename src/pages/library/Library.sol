@@ -1,15 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-library SafeMath {
-    function add(uint x, uint y) internal pure returns (uint) {
-        uint z = x + y;
-        require(z >= x, "uint overflow");
-
-        return z;
-    }
-}
-
 library Math {
     function sqrt(uint y) internal pure returns (uint z) {
         if (y > 3) {
@@ -26,15 +17,7 @@ library Math {
     }
 }
 
-contract TestSafeMath {
-    using SafeMath for uint;
-
-    uint public MAX_UINT = 2**256 - 1;
-
-    function testAdd(uint x, uint y) public pure returns (uint) {
-        return x.add(y);
-    }
-
+contract TestMath {
     function testSquareRoot(uint x) public pure returns (uint) {
         return Math.sqrt(x);
     }
