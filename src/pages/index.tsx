@@ -360,6 +360,10 @@ const DEFI_ROUTES = [
     title: "Uniswap V3 Swap",
   },
   {
+    path: "uniswap-v3-liquidity",
+    title: "Uniswap V3 Liquidity",
+  },
+  {
     path: "chainlink-price-oracle",
     title: "Chainlink Price Oracle",
   },
@@ -448,9 +452,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/08/31 - Uniswap V3 liquidity",
   "2022/08/21 - Uniswap V2 flash swap",
   "2022/08/14 - Bitwise operators",
-  "2022/08/07 - Update Uniswap V2 swap examples",
 ]
 
 export default function HomePage() {
