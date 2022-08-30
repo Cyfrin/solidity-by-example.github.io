@@ -14,11 +14,9 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onERC721Received</span>(<span class="hljs-params">
         <span class="hljs-keyword">address</span> operator,
         <span class="hljs-keyword">address</span> <span class="hljs-keyword">from</span>,
-        <span class="hljs-keyword">uint256</span> tokenId,
+        <span class="hljs-keyword">uint</span> tokenId,
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">calldata</span> data
-    </span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes4</span></span>)</span>;
+    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes4</span></span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3Liquidity</span> <span class="hljs-keyword">is</span> <span class="hljs-title">IERC721Receiver</span> </span>{
@@ -35,22 +33,19 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onERC721Received</span>(<span class="hljs-params">
         <span class="hljs-keyword">address</span> operator,
         <span class="hljs-keyword">address</span> <span class="hljs-keyword">from</span>,
-        <span class="hljs-keyword">uint256</span> tokenId,
+        <span class="hljs-keyword">uint</span> tokenId,
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">calldata</span>
-    </span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes4</span></span>)
-    </span>{
+    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes4</span></span>) </span>{
         <span class="hljs-keyword">return</span> IERC721Receiver.onERC721Received.<span class="hljs-built_in">selector</span>;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mintNewPosition</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount0ToAdd, <span class="hljs-keyword">uint256</span> amount1ToAdd</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mintNewPosition</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amount0ToAdd, <span class="hljs-keyword">uint</span> amount1ToAdd</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
-            <span class="hljs-keyword">uint256</span> tokenId,
+            <span class="hljs-keyword">uint</span> tokenId,
             <span class="hljs-keyword">uint128</span> liquidity,
-            <span class="hljs-keyword">uint256</span> amount0,
-            <span class="hljs-keyword">uint256</span> amount1
+            <span class="hljs-keyword">uint</span> amount0,
+            <span class="hljs-keyword">uint</span> amount1
         </span>)
     </span>{
         dai.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amount0ToAdd);
@@ -59,14 +54,11 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
         dai.approve(<span class="hljs-keyword">address</span>(nonfungiblePositionManager), amount0ToAdd);
         weth.approve(<span class="hljs-keyword">address</span>(nonfungiblePositionManager), amount1ToAdd);
 
-        INonfungiblePositionManager.MintParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span>
-        INonfungiblePositionManager.MintParams({
+        INonfungiblePositionManager.MintParams
+            <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> INonfungiblePositionManager.MintParams({
                 token0: DAI,
                 token1: WETH,
                 fee: <span class="hljs-number">3000</span>,
-                <span class="hljs-comment">// By using TickMath.MIN_TICK and TickMath.MAX_TICK, </span>
-                <span class="hljs-comment">// we are providing liquidity across the whole range of the pool. </span>
-                <span class="hljs-comment">// Not recommended in production.</span>
                 tickLower: (MIN_TICK <span class="hljs-operator">/</span> TICK_SPACING) <span class="hljs-operator">*</span> TICK_SPACING,
                 tickUpper: (MAX_TICK <span class="hljs-operator">/</span> TICK_SPACING) <span class="hljs-operator">*</span> TICK_SPACING,
                 amount0Desired: amount0ToAdd,
@@ -77,27 +69,28 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
                 deadline: <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
             });
 
-        (tokenId, liquidity, amount0, amount1) <span class="hljs-operator">=</span>
-            nonfungiblePositionManager.mint(params);
+        (tokenId, liquidity, amount0, amount1) <span class="hljs-operator">=</span> nonfungiblePositionManager.mint(
+            params
+        );
 
         <span class="hljs-keyword">if</span> (amount0 <span class="hljs-operator">&lt;</span> amount0ToAdd) {
             dai.approve(<span class="hljs-keyword">address</span>(nonfungiblePositionManager), <span class="hljs-number">0</span>);
-            <span class="hljs-keyword">uint256</span> refund0 <span class="hljs-operator">=</span> amount0ToAdd <span class="hljs-operator">-</span> amount0;
+            <span class="hljs-keyword">uint</span> refund0 <span class="hljs-operator">=</span> amount0ToAdd <span class="hljs-operator">-</span> amount0;
             dai.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, refund0);
         }
         <span class="hljs-keyword">if</span> (amount1 <span class="hljs-operator">&lt;</span> amount1ToAdd) {
             weth.approve(<span class="hljs-keyword">address</span>(nonfungiblePositionManager), <span class="hljs-number">0</span>);
-            <span class="hljs-keyword">uint256</span> refund1 <span class="hljs-operator">=</span> amount1ToAdd <span class="hljs-operator">-</span> amount1;
+            <span class="hljs-keyword">uint</span> refund1 <span class="hljs-operator">=</span> amount1ToAdd <span class="hljs-operator">-</span> amount1;
             weth.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, refund1);
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collectAllFees</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> tokenId</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collectAllFees</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> tokenId</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount0, <span class="hljs-keyword">uint256</span> amount1</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amount0, <span class="hljs-keyword">uint</span> amount1</span>)
     </span>{
-        INonfungiblePositionManager.CollectParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span>
-        INonfungiblePositionManager.CollectParams({
+        INonfungiblePositionManager.CollectParams
+            <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> INonfungiblePositionManager.CollectParams({
                 tokenId: tokenId,
                 recipient: <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>),
                 amount0Max: <span class="hljs-keyword">type</span>(<span class="hljs-keyword">uint128</span>).<span class="hljs-built_in">max</span>,
@@ -108,12 +101,16 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increaseLiquidityCurrentRange</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint256</span> tokenId,
-        <span class="hljs-keyword">uint256</span> amount0ToAdd,
-        <span class="hljs-keyword">uint256</span> amount1ToAdd
+        <span class="hljs-keyword">uint</span> tokenId,
+        <span class="hljs-keyword">uint</span> amount0ToAdd,
+        <span class="hljs-keyword">uint</span> amount1ToAdd
     </span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint128</span> liquidity, <span class="hljs-keyword">uint256</span> amount0, <span class="hljs-keyword">uint256</span> amount1</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
+            <span class="hljs-keyword">uint128</span> liquidity,
+            <span class="hljs-keyword">uint</span> amount0,
+            <span class="hljs-keyword">uint</span> amount1
+        </span>)
     </span>{
         dai.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amount0ToAdd);
         weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amount1ToAdd);
@@ -121,8 +118,8 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
         dai.approve(<span class="hljs-keyword">address</span>(nonfungiblePositionManager), amount0ToAdd);
         weth.approve(<span class="hljs-keyword">address</span>(nonfungiblePositionManager), amount1ToAdd);
 
-        INonfungiblePositionManager.IncreaseLiquidityParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span>
-        INonfungiblePositionManager.IncreaseLiquidityParams({
+        INonfungiblePositionManager.IncreaseLiquidityParams
+            <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> INonfungiblePositionManager.IncreaseLiquidityParams({
                 tokenId: tokenId,
                 amount0Desired: amount0ToAdd,
                 amount1Desired: amount1ToAdd,
@@ -131,16 +128,17 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
                 deadline: <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
             });
 
-        (liquidity, amount0, amount1) <span class="hljs-operator">=</span>
-            nonfungiblePositionManager.increaseLiquidity(params);
+        (liquidity, amount0, amount1) <span class="hljs-operator">=</span> nonfungiblePositionManager.increaseLiquidity(
+            params
+        );
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decreaseLiquidityCurrentRange</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> tokenId, <span class="hljs-keyword">uint128</span> liquidity</span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decreaseLiquidityCurrentRange</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> tokenId, <span class="hljs-keyword">uint128</span> liquidity</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount0, <span class="hljs-keyword">uint256</span> amount1</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amount0, <span class="hljs-keyword">uint</span> amount1</span>)
     </span>{
-        INonfungiblePositionManager.DecreaseLiquidityParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span>
-        INonfungiblePositionManager.DecreaseLiquidityParams({
+        INonfungiblePositionManager.DecreaseLiquidityParams
+            <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> INonfungiblePositionManager.DecreaseLiquidityParams({
                 tokenId: tokenId,
                 liquidity: liquidity,
                 amount0Min: <span class="hljs-number">0</span>,
@@ -148,8 +146,7 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
                 deadline: <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>
             });
 
-        (amount0, amount1) <span class="hljs-operator">=</span>
-            nonfungiblePositionManager.decreaseLiquidity(params);
+        (amount0, amount1) <span class="hljs-operator">=</span> nonfungiblePositionManager.decreaseLiquidity(params);
     }
 }
 
@@ -160,53 +157,57 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
         <span class="hljs-keyword">uint24</span> fee;
         <span class="hljs-keyword">int24</span> tickLower;
         <span class="hljs-keyword">int24</span> tickUpper;
-        <span class="hljs-keyword">uint256</span> amount0Desired;
-        <span class="hljs-keyword">uint256</span> amount1Desired;
-        <span class="hljs-keyword">uint256</span> amount0Min;
-        <span class="hljs-keyword">uint256</span> amount1Min;
+        <span class="hljs-keyword">uint</span> amount0Desired;
+        <span class="hljs-keyword">uint</span> amount1Desired;
+        <span class="hljs-keyword">uint</span> amount0Min;
+        <span class="hljs-keyword">uint</span> amount1Min;
         <span class="hljs-keyword">address</span> recipient;
-        <span class="hljs-keyword">uint256</span> deadline;
+        <span class="hljs-keyword">uint</span> deadline;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mint</span>(<span class="hljs-params">MintParams <span class="hljs-keyword">calldata</span> params</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
-            <span class="hljs-keyword">uint256</span> tokenId,
+            <span class="hljs-keyword">uint</span> tokenId,
             <span class="hljs-keyword">uint128</span> liquidity,
-            <span class="hljs-keyword">uint256</span> amount0,
-            <span class="hljs-keyword">uint256</span> amount1
+            <span class="hljs-keyword">uint</span> amount0,
+            <span class="hljs-keyword">uint</span> amount1
         </span>)</span>;
 
     <span class="hljs-keyword">struct</span> <span class="hljs-title">IncreaseLiquidityParams</span> {
-        <span class="hljs-keyword">uint256</span> tokenId;
-        <span class="hljs-keyword">uint256</span> amount0Desired;
-        <span class="hljs-keyword">uint256</span> amount1Desired;
-        <span class="hljs-keyword">uint256</span> amount0Min;
-        <span class="hljs-keyword">uint256</span> amount1Min;
-        <span class="hljs-keyword">uint256</span> deadline;
+        <span class="hljs-keyword">uint</span> tokenId;
+        <span class="hljs-keyword">uint</span> amount0Desired;
+        <span class="hljs-keyword">uint</span> amount1Desired;
+        <span class="hljs-keyword">uint</span> amount0Min;
+        <span class="hljs-keyword">uint</span> amount1Min;
+        <span class="hljs-keyword">uint</span> deadline;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increaseLiquidity</span>(<span class="hljs-params">IncreaseLiquidityParams <span class="hljs-keyword">calldata</span> params</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint128</span> liquidity, <span class="hljs-keyword">uint256</span> amount0, <span class="hljs-keyword">uint256</span> amount1</span>)</span>;
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
+            <span class="hljs-keyword">uint128</span> liquidity,
+            <span class="hljs-keyword">uint</span> amount0,
+            <span class="hljs-keyword">uint</span> amount1
+        </span>)</span>;
 
     <span class="hljs-keyword">struct</span> <span class="hljs-title">DecreaseLiquidityParams</span> {
-        <span class="hljs-keyword">uint256</span> tokenId;
+        <span class="hljs-keyword">uint</span> tokenId;
         <span class="hljs-keyword">uint128</span> liquidity;
-        <span class="hljs-keyword">uint256</span> amount0Min;
-        <span class="hljs-keyword">uint256</span> amount1Min;
-        <span class="hljs-keyword">uint256</span> deadline;
+        <span class="hljs-keyword">uint</span> amount0Min;
+        <span class="hljs-keyword">uint</span> amount1Min;
+        <span class="hljs-keyword">uint</span> deadline;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decreaseLiquidity</span>(<span class="hljs-params">DecreaseLiquidityParams <span class="hljs-keyword">calldata</span> params</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount0, <span class="hljs-keyword">uint256</span> amount1</span>)</span>;
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amount0, <span class="hljs-keyword">uint</span> amount1</span>)</span>;
 
     <span class="hljs-keyword">struct</span> <span class="hljs-title">CollectParams</span> {
-        <span class="hljs-keyword">uint256</span> tokenId;
+        <span class="hljs-keyword">uint</span> tokenId;
         <span class="hljs-keyword">address</span> recipient;
         <span class="hljs-keyword">uint128</span> amount0Max;
         <span class="hljs-keyword">uint128</span> amount1Max;
@@ -215,42 +216,34 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collect</span>(<span class="hljs-params">CollectParams <span class="hljs-keyword">calldata</span> params</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount0, <span class="hljs-keyword">uint256</span> amount1</span>)</span>;
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> amount0, <span class="hljs-keyword">uint</span> amount1</span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IERC20</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">totalSupply</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">totalSupply</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">view</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">approve</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> spender, <span class="hljs-keyword">uint256</span> amount</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">approve</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> spender, <span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> sender, <span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount</span>)
-        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> sender,
+        <span class="hljs-keyword">address</span> recipient,
+        <span class="hljs-keyword">uint</span> amount
+    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint256</span> value</span>)</span>;
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params">
-        <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner,
-        <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender,
-        <span class="hljs-keyword">uint256</span> value
-    </span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> value</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender, <span class="hljs-keyword">uint</span> value</span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IWETH</span> <span class="hljs-keyword">is</span> <span class="hljs-title">IERC20</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span></span>;
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 </code></pre>
 <h3 id="test-with-foundry">Test with Foundry</h3>
