@@ -322,9 +322,6 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
     }
 }
 </code></pre>
-<ol start="2">
-<li>Execute the following commands to run the test</li>
-</ol>
 <pre><code class="language-shell">FORK_URL=https://eth-mainnet.g.alchemy.com/v2/613t3mfjTevdrCwDl28CVvuk6wSIxRPi
 forge test -vv --gas-report --fork-url $FORK_URL --match-path test/UniswapV3Liquidity.test.sol
 </code></pre>
