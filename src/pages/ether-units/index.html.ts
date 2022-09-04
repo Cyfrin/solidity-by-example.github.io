@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Ether and Wei"
 export const description = "An example of Ether and Wei in Solidity"
+export const codes = [
+  {
+    fileName: "EtherUnits.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEV0aGVyVW5pdHMgewogICAgdWludCBwdWJsaWMgb25lV2VpID0gMSB3ZWk7CiAgICAvLyAxIHdlaSBpcyBlcXVhbCB0byAxCiAgICBib29sIHB1YmxpYyBpc09uZVdlaSA9IDEgd2VpID09IDE7CgogICAgdWludCBwdWJsaWMgb25lRXRoZXIgPSAxIGV0aGVyOwogICAgLy8gMSBldGhlciBpcyBlcXVhbCB0byAxMF4xOCB3ZWkKICAgIGJvb2wgcHVibGljIGlzT25lRXRoZXIgPSAxIGV0aGVyID09IDFlMTg7Cn0K",
+  },
+]
 
 const html = `<p>Transactions are paid with <code>ether</code>.</p>
 <p>Similar to how one dollar is equal to 100 cent, one <code>ether</code> is equal to 10<sup>18</sup> <code>wei</code>.</p>

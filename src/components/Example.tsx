@@ -8,6 +8,11 @@ interface Path {
   path: string
 }
 
+interface Code {
+  fileName: string
+  code: string
+}
+
 interface Props {
   title: string
   description: string
@@ -15,6 +20,7 @@ interface Props {
   html: string
   prev: Path | null
   next: Path | null
+  codes: Code[]
 }
 
 const Example: React.FC<Props> = ({
@@ -24,6 +30,7 @@ const Example: React.FC<Props> = ({
   html,
   prev,
   next,
+  codes,
 }) => {
   return (
     <div className={styles.component}>
@@ -51,12 +58,20 @@ const Example: React.FC<Props> = ({
           )}
         </div>
 
-        <p>
-          Try on{" "}
-          <a href="https://remix.ethereum.org" target="__blank">
-            Remix
-          </a>
-        </p>
+        <h3>Try on Remix</h3>
+        <ul>
+          {codes.map(({ fileName, code }, i) => (
+            <li key={i}>
+              <a
+                href={`https://remix.ethereum.org/?#code=${code}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {fileName}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   )

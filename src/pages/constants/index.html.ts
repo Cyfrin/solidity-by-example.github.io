@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Constants"
 export const description = "Constant variables"
+export const codes = [
+  {
+    fileName: "Constants.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IENvbnN0YW50cyB7CiAgICAvLyBjb2RpbmcgY29udmVudGlvbiB0byB1cHBlcmNhc2UgY29uc3RhbnQgdmFyaWFibGVzCiAgICBhZGRyZXNzIHB1YmxpYyBjb25zdGFudCBNWV9BRERSRVNTID0gMHg3Nzc3ODg4ODk5OTlBYUFBYkJiYkNjY2NkZERkZWVlRWZGRmZDY0NjOwogICAgdWludCBwdWJsaWMgY29uc3RhbnQgTVlfVUlOVCA9IDEyMzsKfQo=",
+  },
+]
 
 const html = `<p>Constants are variables that cannot be modified.</p>
 <p>Their value is hard coded and using constants can save gas cost.</p>

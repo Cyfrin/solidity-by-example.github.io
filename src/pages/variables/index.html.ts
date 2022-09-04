@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Variables"
 export const description = "Local, state and global variables"
+export const codes = [
+  {
+    fileName: "Variables.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IFZhcmlhYmxlcyB7CiAgICAvLyBTdGF0ZSB2YXJpYWJsZXMgYXJlIHN0b3JlZCBvbiB0aGUgYmxvY2tjaGFpbi4KICAgIHN0cmluZyBwdWJsaWMgdGV4dCA9ICJIZWxsbyI7CiAgICB1aW50IHB1YmxpYyBudW0gPSAxMjM7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcoKSBwdWJsaWMgewogICAgICAgIC8vIExvY2FsIHZhcmlhYmxlcyBhcmUgbm90IHNhdmVkIHRvIHRoZSBibG9ja2NoYWluLgogICAgICAgIHVpbnQgaSA9IDQ1NjsKCiAgICAgICAgLy8gSGVyZSBhcmUgc29tZSBnbG9iYWwgdmFyaWFibGVzCiAgICAgICAgdWludCB0aW1lc3RhbXAgPSBibG9jay50aW1lc3RhbXA7IC8vIEN1cnJlbnQgYmxvY2sgdGltZXN0YW1wCiAgICAgICAgYWRkcmVzcyBzZW5kZXIgPSBtc2cuc2VuZGVyOyAvLyBhZGRyZXNzIG9mIHRoZSBjYWxsZXIKICAgIH0KfQo=",
+  },
+]
 
 const html = `<p>There are 3 types of variables in Solidity</p>
 <ul>

@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Immutable"
 export const description = "Immutable variables"
+export const codes = [
+  {
+    fileName: "Immutable.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEltbXV0YWJsZSB7CiAgICAvLyBjb2RpbmcgY29udmVudGlvbiB0byB1cHBlcmNhc2UgY29uc3RhbnQgdmFyaWFibGVzCiAgICBhZGRyZXNzIHB1YmxpYyBpbW11dGFibGUgTVlfQUREUkVTUzsKICAgIHVpbnQgcHVibGljIGltbXV0YWJsZSBNWV9VSU5UOwoKICAgIGNvbnN0cnVjdG9yKHVpbnQgX215VWludCkgewogICAgICAgIE1ZX0FERFJFU1MgPSBtc2cuc2VuZGVyOwogICAgICAgIE1ZX1VJTlQgPSBfbXlVaW50OwogICAgfQp9Cg==",
+  },
+]
 
 const html = `<p>Immutable variables are like constants. Values of immutable variables can be set inside the constructor but cannot be modified afterwards.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>

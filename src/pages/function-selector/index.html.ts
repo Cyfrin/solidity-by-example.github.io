@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Function Selector"
 export const description = "Example of how function selectors are computed"
+export const codes = [
+  {
+    fileName: "FunctionSelector.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEZ1bmN0aW9uU2VsZWN0b3IgewogICAgLyoKICAgICJ0cmFuc2ZlcihhZGRyZXNzLHVpbnQyNTYpIgogICAgMHhhOTA1OWNiYgogICAgInRyYW5zZmVyRnJvbShhZGRyZXNzLGFkZHJlc3MsdWludDI1NikiCiAgICAweDIzYjg3MmRkCiAgICAqLwogICAgZnVuY3Rpb24gZ2V0U2VsZWN0b3Ioc3RyaW5nIGNhbGxkYXRhIF9mdW5jKSBleHRlcm5hbCBwdXJlIHJldHVybnMgKGJ5dGVzNCkgewogICAgICAgIHJldHVybiBieXRlczQoa2VjY2FrMjU2KGJ5dGVzKF9mdW5jKSkpOwogICAgfQp9Cg==",
+  },
+]
 
 const html = `<p>When a function is called, the first 4 bytes of <code>calldata</code> specifies which function to call.</p>
 <p>This 4 bytes is called a function selector.</p>

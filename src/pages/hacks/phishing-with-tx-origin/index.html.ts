@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Phishing with tx.origin"
 export const description = "An example of phishing with tx.origin in Solidity"
+export const codes = [
+  {
+    fileName: "TxOrigin.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCi8qCldhbGxldCBpcyBhIHNpbXBsZSBjb250cmFjdCB3aGVyZSBvbmx5IHRoZSBvd25lciBzaG91bGQgYmUgYWJsZSB0byB0cmFuc2ZlcgpFdGhlciB0byBhbm90aGVyIGFkZHJlc3MuIFdhbGxldC50cmFuc2ZlcigpIHVzZXMgdHgub3JpZ2luIHRvIGNoZWNrIHRoYXQgdGhlCmNhbGxlciBpcyB0aGUgb3duZXIuIExldCdzIHNlZSBob3cgd2UgY2FuIGhhY2sgdGhpcyBjb250cmFjdAoqLwoKLyoKMS4gQWxpY2UgZGVwbG95cyBXYWxsZXQgd2l0aCAxMCBFdGhlcgoyLiBFdmUgZGVwbG95cyBBdHRhY2sgd2l0aCB0aGUgYWRkcmVzcyBvZiBBbGljZSdzIFdhbGxldCBjb250cmFjdC4KMy4gRXZlIHRyaWNrcyBBbGljZSB0byBjYWxsIEF0dGFjay5hdHRhY2soKQo0LiBFdmUgc3VjY2Vzc2Z1bGx5IHN0b2xlIEV0aGVyIGZyb20gQWxpY2UncyB3YWxsZXQKCldoYXQgaGFwcGVuZWQ/CkFsaWNlIHdhcyB0cmlja2VkIGludG8gY2FsbGluZyBBdHRhY2suYXR0YWNrKCkuIEluc2lkZSBBdHRhY2suYXR0YWNrKCksIGl0CnJlcXVlc3RlZCBhIHRyYW5zZmVyIG9mIGFsbCBmdW5kcyBpbiBBbGljZSdzIHdhbGxldCB0byBFdmUncyBhZGRyZXNzLgpTaW5jZSB0eC5vcmlnaW4gaW4gV2FsbGV0LnRyYW5zZmVyKCkgaXMgZXF1YWwgdG8gQWxpY2UncyBhZGRyZXNzLAppdCBhdXRob3JpemVkIHRoZSB0cmFuc2Zlci4gVGhlIHdhbGxldCB0cmFuc2ZlcnJlZCBhbGwgRXRoZXIgdG8gRXZlLgoqLwoKY29udHJhY3QgV2FsbGV0IHsKICAgIGFkZHJlc3MgcHVibGljIG93bmVyOwoKICAgIGNvbnN0cnVjdG9yKCkgcGF5YWJsZSB7CiAgICAgICAgb3duZXIgPSBtc2cuc2VuZGVyOwogICAgfQoKICAgIGZ1bmN0aW9uIHRyYW5zZmVyKGFkZHJlc3MgcGF5YWJsZSBfdG8sIHVpbnQgX2Ftb3VudCkgcHVibGljIHsKICAgICAgICByZXF1aXJlKHR4Lm9yaWdpbiA9PSBvd25lciwgIk5vdCBvd25lciIpOwoKICAgICAgICAoYm9vbCBzZW50LCApID0gX3RvLmNhbGx7dmFsdWU6IF9hbW91bnR9KCIiKTsKICAgICAgICByZXF1aXJlKHNlbnQsICJGYWlsZWQgdG8gc2VuZCBFdGhlciIpOwogICAgfQp9Cgpjb250cmFjdCBBdHRhY2sgewogICAgYWRkcmVzcyBwYXlhYmxlIHB1YmxpYyBvd25lcjsKICAgIFdhbGxldCB3YWxsZXQ7CgogICAgY29uc3RydWN0b3IoV2FsbGV0IF93YWxsZXQpIHsKICAgICAgICB3YWxsZXQgPSBXYWxsZXQoX3dhbGxldCk7CiAgICAgICAgb3duZXIgPSBwYXlhYmxlKG1zZy5zZW5kZXIpOwogICAgfQoKICAgIGZ1bmN0aW9uIGF0dGFjaygpIHB1YmxpYyB7CiAgICAgICAgd2FsbGV0LnRyYW5zZmVyKG93bmVyLCBhZGRyZXNzKHdhbGxldCkuYmFsYW5jZSk7CiAgICB9Cn0K",
+  },
+]
 
 const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&#39;s the difference between <code>msg.sender</code> and <code>tx.origin</code>?</h3>
 <p>If contract A calls B, and B calls C, in C <code>msg.sender</code> is B and <code>tx.origin</code> is A.</p>
@@ -64,7 +70,7 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
 <pre><code class="language-solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
   <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner, <span class="hljs-string">"Not owner"</span>);
 
-  (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> _to.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: _amount}(<span class="hljs-string">""</span>);
+  (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> _to.<span class="hljs-built_in">call</span>{ <span class="hljs-built_in">value</span>: _amount }(<span class="hljs-string">""</span>);
   <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 }
 </code></pre>

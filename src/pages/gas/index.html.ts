@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
+export const codes = [
+  {
+    fileName: "Gas.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgYXJlIG5vdCByZWZ1bmRlZC4KICAgIGZ1bmN0aW9uIGZvcmV2ZXIoKSBwdWJsaWMgewogICAgICAgIC8vIEhlcmUgd2UgcnVuIGEgbG9vcCB1bnRpbCBhbGwgb2YgdGhlIGdhcyBhcmUgc3BlbnQKICAgICAgICAvLyBhbmQgdGhlIHRyYW5zYWN0aW9uIGZhaWxzCiAgICAgICAgd2hpbGUgKHRydWUpIHsKICAgICAgICAgICAgaSArPSAxOwogICAgICAgIH0KICAgIH0KfQo=",
+  },
+]
 
 const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How much <code>ether</code> do you need to pay for a transaction?</h3>
 <p>You pay <code>gas spent * gas price</code> amount of <code>ether</code>, where</p>

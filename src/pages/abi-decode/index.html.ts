@@ -2,6 +2,12 @@
 export const version = "0.8.13"
 export const title = "ABI Decode"
 export const description = "ABI decode bytes"
+export const codes = [
+  {
+    fileName: "AbiDecode.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEFiaURlY29kZSB7CiAgICBzdHJ1Y3QgTXlTdHJ1Y3QgewogICAgICAgIHN0cmluZyBuYW1lOwogICAgICAgIHVpbnRbMl0gbnVtczsKICAgIH0KCiAgICBmdW5jdGlvbiBlbmNvZGUoCiAgICAgICAgdWludCB4LAogICAgICAgIGFkZHJlc3MgYWRkciwKICAgICAgICB1aW50W10gY2FsbGRhdGEgYXJyLAogICAgICAgIE15U3RydWN0IGNhbGxkYXRhIG15U3RydWN0CiAgICApIGV4dGVybmFsIHB1cmUgcmV0dXJucyAoYnl0ZXMgbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuIGFiaS5lbmNvZGUoeCwgYWRkciwgYXJyLCBteVN0cnVjdCk7CiAgICB9CgogICAgZnVuY3Rpb24gZGVjb2RlKGJ5dGVzIGNhbGxkYXRhIGRhdGEpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoCiAgICAgICAgICAgIHVpbnQgeCwKICAgICAgICAgICAgYWRkcmVzcyBhZGRyLAogICAgICAgICAgICB1aW50W10gbWVtb3J5IGFyciwKICAgICAgICAgICAgTXlTdHJ1Y3QgbWVtb3J5IG15U3RydWN0CiAgICAgICAgKQogICAgewogICAgICAgIC8vICh1aW50IHgsIGFkZHJlc3MgYWRkciwgdWludFtdIG1lbW9yeSBhcnIsIE15U3RydWN0IG15U3RydWN0KSA9IC4uLgogICAgICAgICh4LCBhZGRyLCBhcnIsIG15U3RydWN0KSA9IGFiaS5kZWNvZGUoZGF0YSwgKHVpbnQsIGFkZHJlc3MsIHVpbnRbXSwgTXlTdHJ1Y3QpKTsKICAgIH0KfQo=",
+  },
+]
 
 const html = `<p><code>abi.encode</code> encodes data into <code>bytes</code>.</p>
 <p><code>abi.decode</code> decodes <code>bytes</code> back into data.</p>

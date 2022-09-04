@@ -2,6 +2,14 @@
 export const version = "{{{version}}}"
 export const title = "{{{title}}}"
 export const description = "{{{description}}}"
+export const codes = [
+    {{#codes}}
+    {
+        fileName: "{{key}}",
+        code: "{{{val}}}",
+    },
+    {{/codes}}
+]
 
 const html = `{{{html}}}`
 

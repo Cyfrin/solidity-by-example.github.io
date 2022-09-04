@@ -105,6 +105,11 @@ async function mdToHtml(filePath: string) {
       title: metadata.title,
       version: metadata.version,
       description: metadata.description,
+      codes: Object.entries(codes).map(([key, val]) => ({
+        key: `${key}.sol`,
+        // @ts-ignore
+        val: Buffer.from(val).toString("base64"),
+      })),
     }
   )
 }
