@@ -171,6 +171,10 @@ const SOL_ROUTES: Route[] = [
     title: "Library",
   },
   {
+    path: "abi-encode",
+    title: "ABI Encode",
+  },
+  {
     path: "abi-decode",
     title: "ABI Decode",
   },
@@ -452,9 +456,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/09/05 - ABI Encode",
   "2022/08/31 - Uniswap V3 liquidity",
   "2022/08/21 - Uniswap V2 flash swap",
-  "2022/08/14 - Bitwise operators",
 ]
 
 export default function HomePage() {
