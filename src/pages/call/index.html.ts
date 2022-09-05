@@ -33,8 +33,8 @@ const html = `<p><code>call</code> is a low level function to interact with othe
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Caller</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Response</span>(<span class="hljs-params"><span class="hljs-keyword">bool</span> success, <span class="hljs-keyword">bytes</span> data</span>)</span>;
 
-    <span class="hljs-comment">// Let&#x27;s imagine that contract B does not have the source code for</span>
-    <span class="hljs-comment">// contract A, but we do know the address of A and the function to call.</span>
+    <span class="hljs-comment">// Let&#x27;s imagine that contract &#96;Caller&#96; does not have the source code for the</span>
+    <span class="hljs-comment">// contract &#96;Receiver&#96;, but we do know the address of contract &#96;Receiver&#96; and the function to call.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testCallFoo</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _addr</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-comment">// You can send ether and specify a custom gas amount</span>
         (<span class="hljs-keyword">bool</span> success, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data) <span class="hljs-operator">=</span> _addr.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>, <span class="hljs-built_in">gas</span>: <span class="hljs-number">5000</span>}(
