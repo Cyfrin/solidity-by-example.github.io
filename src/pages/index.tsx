@@ -464,9 +464,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/09/15 - GitHub PR by yanukadeneth99",
   "2022/09/15 - Uniswap V3 flash swap",
   "2022/09/12 - Uniswap V3 flash loan",
-  "2022/09/05 - ABI Encode",
 ]
 
 export default function HomePage() {
