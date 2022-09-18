@@ -4,11 +4,16 @@ version: 0.8.13
 description: OTC Exchange examples
 ---
 
-### OTC Exchange Examples
+### Single Desk OTC Exchange Examples
+
+```solidity
+{{{single_desk_otc}}}
+```
+
+### Multi-Desk OTC Exchange Examples
 
 ```solidity
 {{{otc}}}
 ```
-
 ### Links
 

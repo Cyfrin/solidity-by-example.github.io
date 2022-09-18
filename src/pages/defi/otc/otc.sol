@@ -1,27 +1,42 @@
 // SPDX-License-Identifier: GPL-3.0
-
 pragma solidity >=0.7.0 <0.9.0;
 
-contract TokenExchange {
-    address fromAddress;
-    address fromToken;
-    uint256 fromAmount;
-    address toToken;
-    uint256 toAmount;
+contract OTC {
+    uint256 public counter;
 
-    function CreateExchange(address _fromToken, address _toToken, uint256 _fromAmount, uint256 _toAmount) public {
-        IERC20(_fromToken).transferFrom(msg.sender, address(this), _fromAmount);
-        fromAddress = msg.sender;
-        fromToken = _fromToken;
-        fromAmount = _fromAmount;
-        toToken = _toToken;
-        toAmount = _toAmount;
+    struct Order {
+        address owner;
+        address bid_token;
+        address ask_token;
+        uint bid_amount;
+        uint ask_amount;
     }
 
-    function DoChange() public {
-        IERC20(toToken).transferFrom(msg.sender, address(this), toAmount);
-        IERC20(fromToken).transfer(msg.sender, fromAmount);
-        IERC20(toToken).transfer(fromAddress, toAmount);
+    Order[] public orders;
+
+    function give(address bid_token, address ask_token, uint bid_amount, uint ask_amount) public {        
+        IERC20(bid_token).transferFrom(msg.sender, address(this), bid_amount);        
+        orders.push(Order({
+            owner: msg.sender,
+            bid_token: bid_token,
+            ask_token: ask_token,
+            bid_amount: bid_amount,
+            ask_amount: ask_amount
+        }));
+    }
+
+    function take(uint id) public {
+        IERC20(orders[id].ask_token).transferFrom(msg.sender, orders[id].owner, orders[id].ask_amount);
+        IERC20(orders[id].bid_token).transfer(msg.sender, orders[id].bid_amount);
+        orders[id].bid_amount = 0;
+        orders[id].ask_amount = 0;        
+    }
+
+    function withdraw(uint id) public {
+        require(msg.sender == orders[id].owner, "Owner mismatch");
+        IERC20(orders[id].bid_token).transfer(msg.sender, orders[id].bid_amount);
+        orders[id].bid_amount = 0;
+        orders[id].ask_amount = 0;
     }
 }
 
