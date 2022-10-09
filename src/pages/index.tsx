@@ -464,9 +464,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/10/09 - GitHub PR by ihorbond",
   "2022/09/27 - Update function examples",
   "2022/09/15 - GitHub PR by yanukadeneth99",
-  "2022/09/15 - Uniswap V3 flash swap",
 ]
 
 export default function HomePage() {
