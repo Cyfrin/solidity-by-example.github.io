@@ -1,6 +1,6 @@
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
-pragma experimental ABIEncoderV2;
 
 /*
 Opening a channel
@@ -28,11 +28,9 @@ Closing a channel when Alice and Bob do not agree on the final balances
 3. Alice and Bob can withdraw funds once the channel is expired
 */
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/math/SafeMath.sol";
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol";
 
 contract BiDirectionalPaymentChannel {
-    using SafeMath for uint;
     using ECDSA for bytes32;
 
     event ChallengeExit(address indexed sender, uint nonce);
@@ -49,7 +47,7 @@ contract BiDirectionalPaymentChannel {
 
     modifier checkBalances(uint[2] memory _balances) {
         require(
-            address(this).balance >= _balances[0].add(_balances[1]),
+            address(this).balance >= _balances[0] + _balances[1],
             "balance of contract must be >= to the total balance of users"
         );
         _;
@@ -146,7 +144,7 @@ contract BiDirectionalPaymentChannel {
         }
 
         nonce = _nonce;
-        expiresAt = block.timestamp.add(challengePeriod);
+        expiresAt = block.timestamp + challengePeriod;
 
         emit ChallengeExit(msg.sender, nonce);
     }
