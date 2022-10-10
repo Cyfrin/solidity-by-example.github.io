@@ -24,5 +24,5 @@ This mechanism can be abused to re-order transactions to the attacker's advantag
 A commitment scheme is a cryptographic algorithm used to allow someone to commit to a value while keeping it hidden from others with the ability to reveal it later. The values in a commitment scheme are binding, meaning that no one can change them once committed. The scheme has two phases: a commit phase in which a value is chosen and specified, and a reveal phase in which the value is revealed and checked.
 
 ```solidity
-{{{FrontRunningSolution}}}
+{{{PreventFrontRunning}}}
 ```
