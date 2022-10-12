@@ -3,10 +3,10 @@ export const version = "0.8.13"
 export const title = "Vault"
 export const description = "Vault"
 export const codes = [
-  {
-    fileName: "Vault.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IFZhdWx0IHsKICAgIElFUkMyMCBwdWJsaWMgaW1tdXRhYmxlIHRva2VuOwoKICAgIHVpbnQgcHVibGljIHRvdGFsU3VwcGx5OwogICAgbWFwcGluZyhhZGRyZXNzID0+IHVpbnQpIHB1YmxpYyBiYWxhbmNlT2Y7CgogICAgY29uc3RydWN0b3IoYWRkcmVzcyBfdG9rZW4pIHsKICAgICAgICB0b2tlbiA9IElFUkMyMChfdG9rZW4pOwogICAgfQoKICAgIGZ1bmN0aW9uIF9taW50KGFkZHJlc3MgX3RvLCB1aW50IF9zaGFyZXMpIHByaXZhdGUgewogICAgICAgIHRvdGFsU3VwcGx5ICs9IF9zaGFyZXM7CiAgICAgICAgYmFsYW5jZU9mW190b10gKz0gX3NoYXJlczsKICAgIH0KCiAgICBmdW5jdGlvbiBfYnVybihhZGRyZXNzIF9mcm9tLCB1aW50IF9zaGFyZXMpIHByaXZhdGUgewogICAgICAgIHRvdGFsU3VwcGx5IC09IF9zaGFyZXM7CiAgICAgICAgYmFsYW5jZU9mW19mcm9tXSAtPSBfc2hhcmVzOwogICAgfQoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludCBfYW1vdW50KSBleHRlcm5hbCB7CiAgICAgICAgLyoKICAgICAgICBhID0gYW1vdW50CiAgICAgICAgQiA9IGJhbGFuY2Ugb2YgdG9rZW4gYmVmb3JlIGRlcG9zaXQKICAgICAgICBUID0gdG90YWwgc3VwcGx5CiAgICAgICAgcyA9IHNoYXJlcyB0byBtaW50CgogICAgICAgIChUICsgcykgLyBUID0gKGEgKyBCKSAvIEIgCgogICAgICAgIHMgPSBhVCAvIEIKICAgICAgICAqLwogICAgICAgIHVpbnQgc2hhcmVzOwogICAgICAgIGlmICh0b3RhbFN1cHBseSA9PSAwKSB7CiAgICAgICAgICAgIHNoYXJlcyA9IF9hbW91bnQ7CiAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgc2hhcmVzID0gKF9hbW91bnQgKiB0b3RhbFN1cHBseSkgLyB0b2tlbi5iYWxhbmNlT2YoYWRkcmVzcyh0aGlzKSk7CiAgICAgICAgfQoKICAgICAgICBfbWludChtc2cuc2VuZGVyLCBzaGFyZXMpOwogICAgICAgIHRva2VuLnRyYW5zZmVyRnJvbShtc2cuc2VuZGVyLCBhZGRyZXNzKHRoaXMpLCBfYW1vdW50KTsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50IF9zaGFyZXMpIGV4dGVybmFsIHsKICAgICAgICAvKgogICAgICAgIGEgPSBhbW91bnQKICAgICAgICBCID0gYmFsYW5jZSBvZiB0b2tlbiBiZWZvcmUgd2l0aGRyYXcKICAgICAgICBUID0gdG90YWwgc3VwcGx5CiAgICAgICAgcyA9IHNoYXJlcyB0byBidXJuCgogICAgICAgIChUIC0gcykgLyBUID0gKEIgLSBhKSAvIEIgCgogICAgICAgIGEgPSBzQiAvIFQKICAgICAgICAqLwogICAgICAgIHVpbnQgYW1vdW50ID0gKF9zaGFyZXMgKiB0b2tlbi5iYWxhbmNlT2YoYWRkcmVzcyh0aGlzKSkpIC8gdG90YWxTdXBwbHk7CiAgICAgICAgX2J1cm4obXNnLnNlbmRlciwgX3NoYXJlcyk7CiAgICAgICAgdG9rZW4udHJhbnNmZXIobXNnLnNlbmRlciwgYW1vdW50KTsKICAgIH0KfQoKaW50ZXJmYWNlIElFUkMyMCB7CiAgICBmdW5jdGlvbiB0b3RhbFN1cHBseSgpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludCk7CgogICAgZnVuY3Rpb24gYmFsYW5jZU9mKGFkZHJlc3MgYWNjb3VudCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50KTsKCiAgICBmdW5jdGlvbiB0cmFuc2ZlcihhZGRyZXNzIHJlY2lwaWVudCwgdWludCBhbW91bnQpIGV4dGVybmFsIHJldHVybnMgKGJvb2wpOwoKICAgIGZ1bmN0aW9uIGFsbG93YW5jZShhZGRyZXNzIG93bmVyLCBhZGRyZXNzIHNwZW5kZXIpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludCk7CgogICAgZnVuY3Rpb24gYXBwcm92ZShhZGRyZXNzIHNwZW5kZXIsIHVpbnQgYW1vdW50KSBleHRlcm5hbCByZXR1cm5zIChib29sKTsKCiAgICBmdW5jdGlvbiB0cmFuc2ZlckZyb20oCiAgICAgICAgYWRkcmVzcyBzZW5kZXIsCiAgICAgICAgYWRkcmVzcyByZWNpcGllbnQsCiAgICAgICAgdWludCBhbW91bnQKICAgICkgZXh0ZXJuYWwgcmV0dXJucyAoYm9vbCk7CgogICAgZXZlbnQgVHJhbnNmZXIoYWRkcmVzcyBpbmRleGVkIGZyb20sIGFkZHJlc3MgaW5kZXhlZCB0bywgdWludCBhbW91bnQpOwogICAgZXZlbnQgQXBwcm92YWwoYWRkcmVzcyBpbmRleGVkIG93bmVyLCBhZGRyZXNzIGluZGV4ZWQgc3BlbmRlciwgdWludCBhbW91bnQpOwp9Cg==",
-  },
+    {
+        fileName: "Vault.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVA0KcHJhZ21hIHNvbGlkaXR5IF4wLjguMTM7DQoNCmNvbnRyYWN0IFZhdWx0IHsNCiAgICBJRVJDMjAgcHVibGljIGltbXV0YWJsZSB0b2tlbjsNCg0KICAgIHVpbnQgcHVibGljIHRvdGFsU3VwcGx5Ow0KICAgIG1hcHBpbmcoYWRkcmVzcyA9PiB1aW50KSBwdWJsaWMgYmFsYW5jZU9mOw0KDQogICAgY29uc3RydWN0b3IoYWRkcmVzcyBfdG9rZW4pIHsNCiAgICAgICAgdG9rZW4gPSBJRVJDMjAoX3Rva2VuKTsNCiAgICB9DQoNCiAgICBmdW5jdGlvbiBfbWludChhZGRyZXNzIF90bywgdWludCBfc2hhcmVzKSBwcml2YXRlIHsNCiAgICAgICAgdG90YWxTdXBwbHkgKz0gX3NoYXJlczsNCiAgICAgICAgYmFsYW5jZU9mW190b10gKz0gX3NoYXJlczsNCiAgICB9DQoNCiAgICBmdW5jdGlvbiBfYnVybihhZGRyZXNzIF9mcm9tLCB1aW50IF9zaGFyZXMpIHByaXZhdGUgew0KICAgICAgICB0b3RhbFN1cHBseSAtPSBfc2hhcmVzOw0KICAgICAgICBiYWxhbmNlT2ZbX2Zyb21dIC09IF9zaGFyZXM7DQogICAgfQ0KDQogICAgZnVuY3Rpb24gZGVwb3NpdCh1aW50IF9hbW91bnQpIGV4dGVybmFsIHsNCiAgICAgICAgLyoNCiAgICAgICAgYSA9IGFtb3VudA0KICAgICAgICBCID0gYmFsYW5jZSBvZiB0b2tlbiBiZWZvcmUgZGVwb3NpdA0KICAgICAgICBUID0gdG90YWwgc3VwcGx5DQogICAgICAgIHMgPSBzaGFyZXMgdG8gbWludA0KDQogICAgICAgIChUICsgcykgLyBUID0gKGEgKyBCKSAvIEIgDQoNCiAgICAgICAgcyA9IGFUIC8gQg0KICAgICAgICAqLw0KDQogICAgICAgIHVpbnQgc2hhcmVzOw0KICAgICAgICBpZiAodG90YWxTdXBwbHkgPT0gMCkgew0KICAgICAgICAgICAgc2hhcmVzID0gX2Ftb3VudDsNCiAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgIHNoYXJlcyA9IChfYW1vdW50ICogdG90YWxTdXBwbHkpIC8gdG9rZW4uYmFsYW5jZU9mKGFkZHJlc3ModGhpcykpOw0KICAgICAgICB9DQoNCiAgICAgICAgKGJvb2wgdHJhbnNmZXJyZWQpID0gdG9rZW4udHJhbnNmZXJGcm9tKG1zZy5zZW5kZXIsIGFkZHJlc3ModGhpcyksIF9hbW91bnQpOw0KICAgICAgICByZXF1aXJlKHRyYW5zZmVycmVkLCAiRmFpbGVkIHRvIHRyYW5zZmVyIHRva2VucyIpOw0KDQogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIHNoYXJlcyk7DQogICAgfQ0KDQogICAgZnVuY3Rpb24gd2l0aGRyYXcodWludCBfc2hhcmVzKSBleHRlcm5hbCB7DQogICAgICAgIC8qDQogICAgICAgIGEgPSBhbW91bnQNCiAgICAgICAgQiA9IGJhbGFuY2Ugb2YgdG9rZW4gYmVmb3JlIHdpdGhkcmF3DQogICAgICAgIFQgPSB0b3RhbCBzdXBwbHkNCiAgICAgICAgcyA9IHNoYXJlcyB0byBidXJuDQoNCiAgICAgICAgKFQgLSBzKSAvIFQgPSAoQiAtIGEpIC8gQiANCg0KICAgICAgICBhID0gc0IgLyBUDQogICAgICAgICovDQoNCiAgICAgICAgcmVxdWlyZShiYWxhbmNlT2ZbbXNnLnNlbmRlcl0gPj0gX3NoYXJlcywgIkluc3VmZmljaWVudCBzaGFyZXMgaW4geW91ciBhY2NvdW50Iik7DQogICAgICAgIHVpbnQgYW1vdW50ID0gKF9zaGFyZXMgKiB0b2tlbi5iYWxhbmNlT2YoYWRkcmVzcyh0aGlzKSkpIC8gdG90YWxTdXBwbHk7DQoNCiAgICAgICAgKGJvb2wgdHJhbnNmZXJyZWQpID0gdG9rZW4udHJhbnNmZXIobXNnLnNlbmRlciwgYW1vdW50KTsNCiAgICAgICAgcmVxdWlyZSh0cmFuc2ZlcnJlZCwgIkZhaWxlZCB0byB0cmFuc2ZlciB0b2tlbnMiKTsNCg0KICAgICAgICBfYnVybihtc2cuc2VuZGVyLCBfc2hhcmVzKTsNCiAgICB9DQp9DQoNCmludGVyZmFjZSBJRVJDMjAgew0KICAgIGZ1bmN0aW9uIHRvdGFsU3VwcGx5KCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50KTsNCg0KICAgIGZ1bmN0aW9uIGJhbGFuY2VPZihhZGRyZXNzIGFjY291bnQpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludCk7DQoNCiAgICBmdW5jdGlvbiB0cmFuc2ZlcihhZGRyZXNzIHJlY2lwaWVudCwgdWludCBhbW91bnQpIGV4dGVybmFsIHJldHVybnMgKGJvb2wpOw0KDQogICAgZnVuY3Rpb24gYWxsb3dhbmNlKGFkZHJlc3Mgb3duZXIsIGFkZHJlc3Mgc3BlbmRlcikgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50KTsNCg0KICAgIGZ1bmN0aW9uIGFwcHJvdmUoYWRkcmVzcyBzcGVuZGVyLCB1aW50IGFtb3VudCkgZXh0ZXJuYWwgcmV0dXJucyAoYm9vbCk7DQoNCiAgICBmdW5jdGlvbiB0cmFuc2ZlckZyb20oDQogICAgICAgIGFkZHJlc3Mgc2VuZGVyLA0KICAgICAgICBhZGRyZXNzIHJlY2lwaWVudCwNCiAgICAgICAgdWludCBhbW91bnQNCiAgICApIGV4dGVybmFsIHJldHVybnMgKGJvb2wpOw0KDQogICAgZXZlbnQgVHJhbnNmZXIoYWRkcmVzcyBpbmRleGVkIGZyb20sIGFkZHJlc3MgaW5kZXhlZCB0bywgdWludCBhbW91bnQpOw0KICAgIGV2ZW50IEFwcHJvdmFsKGFkZHJlc3MgaW5kZXhlZCBvd25lciwgYWRkcmVzcyBpbmRleGVkIHNwZW5kZXIsIHVpbnQgYW1vdW50KTsNCn0NCg==",
+    },
 ]
 
 const html = `<p>Simple example of vault contract, commonly used in DeFi protocols.</p>
@@ -51,6 +51,7 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
 
         s = aT / B
         */</span>
+
         <span class="hljs-keyword">uint</span> shares;
         <span class="hljs-keyword">if</span> (totalSupply <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
             shares <span class="hljs-operator">=</span> _amount;
@@ -58,8 +59,10 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
             shares <span class="hljs-operator">=</span> (_amount <span class="hljs-operator">*</span> totalSupply) <span class="hljs-operator">/</span> token.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
         }
 
+        (<span class="hljs-keyword">bool</span> transferred) <span class="hljs-operator">=</span> token.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount);
+        <span class="hljs-built_in">require</span>(transferred, <span class="hljs-string">"Failed to transfer tokens"</span>);
+
         _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, shares);
-        token.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), _amount);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _shares</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
@@ -73,9 +76,14 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
 
         a = sB / T
         */</span>
+
+        <span class="hljs-built_in">require</span>(balanceOf[<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>] <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> _shares, <span class="hljs-string">"Insufficient shares in your account"</span>);
         <span class="hljs-keyword">uint</span> amount <span class="hljs-operator">=</span> (_shares <span class="hljs-operator">*</span> token.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>))) <span class="hljs-operator">/</span> totalSupply;
+
+        (<span class="hljs-keyword">bool</span> transferred) <span class="hljs-operator">=</span> token.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount);
+        <span class="hljs-built_in">require</span>(transferred, <span class="hljs-string">"Failed to transfer tokens"</span>);
+
         _burn(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _shares);
-        token.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount);
     }
 }
 
