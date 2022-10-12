@@ -32,6 +32,7 @@ contract Vault {
 
         s = aT / B
         */
+
         uint shares;
         if (totalSupply == 0) {
             shares = _amount;
@@ -39,8 +40,10 @@ contract Vault {
             shares = (_amount * totalSupply) / token.balanceOf(address(this));
         }
 
+        (bool transferred) = token.transferFrom(msg.sender, address(this), _amount);
+        require(transferred, "Failed to transfer tokens");
+
         _mint(msg.sender, shares);
-        token.transferFrom(msg.sender, address(this), _amount);
     }
 
     function withdraw(uint _shares) external {
@@ -54,9 +57,14 @@ contract Vault {
 
         a = sB / T
         */
+
+        require(balanceOf[msg.sender] >= _shares, "Insufficient shares in your account");
         uint amount = (_shares * token.balanceOf(address(this))) / totalSupply;
+
+        (bool transferred) = token.transfer(msg.sender, amount);
+        require(transferred, "Failed to transfer tokens");
+
         _burn(msg.sender, _shares);
-        token.transfer(msg.sender, amount);
     }
 }
 
