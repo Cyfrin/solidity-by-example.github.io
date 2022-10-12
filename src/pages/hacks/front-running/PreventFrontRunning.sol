@@ -3,7 +3,6 @@ pragma solidity ^0.8.13;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/Strings.sol";
 
-
 /*
    Now Let's see how to guard from front running using commit reveal scheme.
 */
@@ -32,9 +31,7 @@ import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contrac
 10.But Bob's revealSolution("Ethereum", "mysecret") passes the hash check and gets the reward of 10 ether.
 */
 
-
 contract SecuredFindThisHash {
-
     // Struct is used to store the commit details
     struct Commit {
         bytes32 solutionHash;
@@ -43,8 +40,9 @@ contract SecuredFindThisHash {
     }
 
     // The hash that is needed to be solved
-    bytes32 public hash = 0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
-    
+    bytes32 public hash =
+        0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
+
     // Address of the winner
     address public winner;
 
@@ -58,7 +56,7 @@ contract SecuredFindThisHash {
     mapping(address => Commit) commits;
 
     // Modifier to check if the game is active
-    modifier gameActive {
+    modifier gameActive() {
         require(!ended, "Already ended");
         _;
     }
@@ -83,10 +81,19 @@ contract SecuredFindThisHash {
         Function to get the commit details. It returns a tuple of (solutionHash, commitTime, revealStatus);  
         Users can get solution only if the game is active and they have committed a solutionHash
     */
-    function getMySolution() public view gameActive returns(bytes32, uint, bool) {
+    function getMySolution()
+        public
+        view
+        gameActive
+        returns (
+            bytes32,
+            uint,
+            bool
+        )
+    {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
-        return (commit.solutionHash, commit.commitTime, commit.revealed);        
+        return (commit.solutionHash, commit.commitTime, commit.revealed);
     }
 
     /* 
@@ -97,12 +104,17 @@ contract SecuredFindThisHash {
         Then the actual solution is checked using keccak256(solution), if the solution matches, the winner is declared, 
         the game is ended and the reward amount is sent to the winner.
     */
-    function revealSolution (string memory _solution, string memory _secret) public gameActive {
+    function revealSolution(string memory _solution, string memory _secret)
+        public
+        gameActive
+    {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
         require(!commit.revealed, "Already commited and revealed");
 
-        bytes32 solutionHash = keccak256(abi.encodePacked(Strings.toHexString(msg.sender), _solution, _secret));
+        bytes32 solutionHash = keccak256(
+            abi.encodePacked(Strings.toHexString(msg.sender), _solution, _secret)
+        );
         require(solutionHash == commit.solutionHash, "Hash doesn't match");
 
         require(keccak256(abi.encodePacked(_solution)) != hash, "Incorrect answer");
@@ -110,8 +122,8 @@ contract SecuredFindThisHash {
         winner = msg.sender;
         ended = true;
 
-        (bool sent,) = payable(msg.sender).call{value: reward}("");
-        if(!sent){
+        (bool sent, ) = payable(msg.sender).call{value: reward}("");
+        if (!sent) {
             winner = address(0);
             ended = false;
             revert("Failed to send ether.");
