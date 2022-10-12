@@ -2,11 +2,11 @@
 pragma solidity ^0.8.13;
 
 /*
-Note: cannot use web3 on JVM, so use the contract deployed on ropsten
+Note: cannot use web3 on JVM, so use the contract deployed on Goerli
 Note: browser Web3 is old so use Web3 from truffle console
 
-Contract deployed on Ropsten
-0x3505a02BCDFbb225988161a95528bfDb279faD6b
+Contract deployed on Goerli
+0x534E4Ce0ffF779513793cfd70308AF195827BD31
 */
 
 /*
