@@ -24,7 +24,7 @@ contract TestMath {
 }
 
 // Array function to delete element at index and re-organize the array
-// so that their are no gaps between the elements.
+// so that there are no gaps between the elements.
 library Array {
     function remove(uint[] storage arr, uint index) public {
         // Move the last element into the place to delete
