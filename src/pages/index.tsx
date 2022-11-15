@@ -384,6 +384,10 @@ const DEFI_ROUTES = [
     title: "Staking Rewards",
   },
   {
+    path: "discrete-staking-rewards",
+    title: "Discrete Staking Rewards",
+  },
+  {
     path: "vault",
     title: "Vault",
   },
@@ -464,9 +468,9 @@ export function getPrevNextPaths(path: string): {
 }
 
 const UPDATES = [
+  "2022/11/15 - Discrete staking rewards",
   "2022/10/12 - GitHub PR by gowtham-the-dev",
   "2022/10/09 - GitHub PR by ihorbond",
-  "2022/09/27 - Update function examples",
 ]
 
 export default function HomePage() {
