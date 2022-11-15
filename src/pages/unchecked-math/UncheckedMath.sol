@@ -1,19 +1,22 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-// TODO: log gas usage
 contract UncheckedMath {
     function add(uint x, uint y) external pure returns (uint) {
-        return x + y;
+        // 22291 gas
+        // return x + y;
 
+        // 22103 gas
         unchecked {
             return x + y;
         }
     }
 
     function sub(uint x, uint y) external pure returns (uint) {
-        return x - y;
+        // 22329 gas
+        // return x - y;
 
+        // 22147 gas
         unchecked {
             return x - y;
         }
