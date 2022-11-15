@@ -3,6 +3,12 @@ import SEO from "../components/SEO"
 import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
+const UPDATES = [
+  "2022/11/15 - Unchecked math",
+  "2022/11/15 - Discrete staking rewards",
+  "2022/10/09 - GitHub PR by ihorbond",
+]
+
 interface Route {
   path: string
   title: string
@@ -194,6 +200,10 @@ const SOL_ROUTES: Route[] = [
   {
     path: "bitwise",
     title: "Bitwise Operators",
+  },
+  {
+    path: "unchecked-math",
+    title: "Unchecked Math",
   },
 ]
 
@@ -466,12 +476,6 @@ export function getPrevNextPaths(path: string): {
     next: null,
   }
 }
-
-const UPDATES = [
-  "2022/11/15 - Discrete staking rewards",
-  "2022/10/12 - GitHub PR by gowtham-the-dev",
-  "2022/10/09 - GitHub PR by ihorbond",
-]
 
 export default function HomePage() {
   return (

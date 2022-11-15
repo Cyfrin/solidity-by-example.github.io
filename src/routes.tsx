@@ -88,6 +88,7 @@ import component_structs from "./pages/structs"
 import component_super from "./pages/super"
 import component_tests_echidna from "./pages/tests/echidna"
 import component_try_catch from "./pages/try-catch"
+import component_unchecked_math from "./pages/unchecked-math"
 import component_variables from "./pages/variables"
 import component_view_and_pure_functions from "./pages/view-and-pure-functions"
 import component_visibility from "./pages/visibility"
@@ -469,6 +470,10 @@ const routes: Route[] = [
     {
         path: "/try-catch",
         component: component_try_catch
+    },
+    {
+        path: "/unchecked-math",
+        component: component_unchecked_math
     },
     {
         path: "/variables",
