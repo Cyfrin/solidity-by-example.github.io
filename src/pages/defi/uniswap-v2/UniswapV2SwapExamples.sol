@@ -16,7 +16,7 @@ contract UniswapV2SwapExamples {
     // Swap WETH to DAI
     function swapSingleHopExactAmountIn(uint amountIn, uint amountOutMin)
         external
-        returns (uint amoutnOut)
+        returns (uint amountOut)
     {
         weth.transferFrom(msg.sender, address(this), amountIn);
         weth.approve(address(router), amountIn);
@@ -41,7 +41,7 @@ contract UniswapV2SwapExamples {
     // Swap DAI -> WETH -> USDC
     function swapMultiHopExactAmountIn(uint amountIn, uint amountOutMin)
         external
-        returns (uint amoutnOut)
+        returns (uint amountOut)
     {
         dai.transferFrom(msg.sender, address(this), amountIn);
         dai.approve(address(router), amountIn);
