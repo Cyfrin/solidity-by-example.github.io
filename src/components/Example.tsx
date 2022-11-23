@@ -35,7 +35,7 @@ const Example: React.FC<Props> = ({
   return (
     <div className={styles.component}>
       <SEO
-        title={`${title} | Solidity by Example | ${version}`}
+        title={`${title} | Sway by Example | ${version}`}
         description={description}
       />
       <div className={styles.content}>
@@ -58,7 +58,7 @@ const Example: React.FC<Props> = ({
           )}
         </div>
 
-        <h3>Try on Remix</h3>
+        {/* <h3>Try on Remix</h3>
         <ul>
           {codes.map(({ fileName, code }, i) => (
             <li key={i}>
@@ -71,7 +71,7 @@ const Example: React.FC<Props> = ({
               </a>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   )

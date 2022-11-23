@@ -1,6 +1,6 @@
 # solidity-by-example.github.io
 
-[Solidity By Example](https://solidity-by-example.org)
+[Sway By Example](https://solidity-by-example.org)
 
 ### License
 

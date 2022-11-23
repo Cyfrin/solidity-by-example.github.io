@@ -25,186 +25,186 @@ const SOL_ROUTES: Route[] = [
   },
   {
     path: "primitives",
-    title: "Primitive Data Types",
+    title: "Ownership",
   },
   {
     path: "variables",
-    title: "Variables",
+    title: "Initialization",
   },
   {
     path: "constants",
-    title: "Constants",
+    title: "Block headers",
   },
-  {
-    path: "immutable",
-    title: "Immutable",
-  },
-  {
-    path: "state-variables",
-    title: "Reading and Writing to a State Variable",
-  },
-  {
-    path: "ether-units",
-    title: "Ether and Wei",
-  },
-  {
-    path: "gas",
-    title: "Gas and Gas Price",
-  },
-  // Flow control
-  {
-    path: "if-else",
-    title: "If / Else",
-  },
-  {
-    path: "loop",
-    title: "For and While Loop",
-  },
-  // collection data types
-  {
-    path: "mapping",
-    title: "Mapping",
-  },
-  {
-    path: "array",
-    title: "Array",
-  },
-  // custom data types
-  {
-    path: "enum",
-    title: "Enum",
-  },
-  {
-    path: "structs",
-    title: "Structs",
-  },
-  {
-    path: "data-locations",
-    title: "Data Locations - Storage, Memory and Calldata",
-  },
-  // function
-  {
-    path: "function",
-    title: "Function",
-  },
-  {
-    path: "view-and-pure-functions",
-    title: "View and Pure Functions",
-  },
-  {
-    path: "error",
-    title: "Error",
-  },
-  {
-    path: "function-modifier",
-    title: "Function Modifier",
-  },
-  {
-    path: "events",
-    title: "Events",
-  },
-  // inheritance
-  {
-    path: "constructor",
-    title: "Constructor",
-  },
-  {
-    path: "inheritance",
-    title: "Inheritance",
-  },
-  {
-    path: "shadowing-inherited-state-variables",
-    title: "Shadowing Inherited State Variables",
-  },
-  {
-    path: "super",
-    title: "Calling Parent Contracts",
-  },
-  {
-    path: "visibility",
-    title: "Visibility",
-  },
-  {
-    path: "interface",
-    title: "Interface",
-  },
-  // send / receive ether
-  {
-    path: "payable",
-    title: "Payable",
-  },
-  {
-    path: "sending-ether",
-    title: "Sending Ether - Transfer, Send, and Call",
-  },
-  {
-    path: "fallback",
-    title: "Fallback",
-  },
-  // contract interaction
-  {
-    path: "call",
-    title: "Call",
-  },
-  {
-    path: "delegatecall",
-    title: "Delegatecall",
-  },
-  {
-    path: "function-selector",
-    title: "Function Selector",
-  },
+  // {
+  //   path: "immutable",
+  //   title: "Immutable",
+  // },
+  // {
+  //   path: "state-variables",
+  //   title: "Reading and Writing to a State Variable",
+  // },
+  // {
+  //   path: "ether-units",
+  //   title: "Ether and Wei",
+  // },
+  // {
+  //   path: "gas",
+  //   title: "Gas and Gas Price",
+  // },
+  // // Flow control
+  // {
+  //   path: "if-else",
+  //   title: "If / Else",
+  // },
+  // {
+  //   path: "loop",
+  //   title: "For and While Loop",
+  // },
+  // // collection data types
+  // {
+  //   path: "mapping",
+  //   title: "Mapping",
+  // },
+  // {
+  //   path: "array",
+  //   title: "Array",
+  // },
+  // // custom data types
+  // {
+  //   path: "enum",
+  //   title: "Enum",
+  // },
+  // {
+  //   path: "structs",
+  //   title: "Structs",
+  // },
+  // {
+  //   path: "data-locations",
+  //   title: "Data Locations - Storage, Memory and Calldata",
+  // },
+  // // function
+  // {
+  //   path: "function",
+  //   title: "Function",
+  // },
+  // {
+  //   path: "view-and-pure-functions",
+  //   title: "View and Pure Functions",
+  // },
+  // {
+  //   path: "error",
+  //   title: "Error",
+  // },
+  // {
+  //   path: "function-modifier",
+  //   title: "Function Modifier",
+  // },
+  // {
+  //   path: "events",
+  //   title: "Events",
+  // },
+  // // inheritance
+  // {
+  //   path: "constructor",
+  //   title: "Constructor",
+  // },
+  // {
+  //   path: "inheritance",
+  //   title: "Inheritance",
+  // },
+  // {
+  //   path: "shadowing-inherited-state-variables",
+  //   title: "Shadowing Inherited State Variables",
+  // },
+  // {
+  //   path: "super",
+  //   title: "Calling Parent Contracts",
+  // },
+  // {
+  //   path: "visibility",
+  //   title: "Visibility",
+  // },
+  // {
+  //   path: "interface",
+  //   title: "Interface",
+  // },
+  // // send / receive ether
+  // {
+  //   path: "payable",
+  //   title: "Payable",
+  // },
+  // {
+  //   path: "sending-ether",
+  //   title: "Sending Ether - Transfer, Send, and Call",
+  // },
+  // {
+  //   path: "fallback",
+  //   title: "Fallback",
+  // },
+  // // contract interaction
+  // {
+  //   path: "call",
+  //   title: "Call",
+  // },
+  // {
+  //   path: "delegatecall",
+  //   title: "Delegatecall",
+  // },
+  // {
+  //   path: "function-selector",
+  //   title: "Function Selector",
+  // },
 
-  {
-    path: "calling-contract",
-    title: "Calling Other Contract",
-  },
-  {
-    path: "new-contract",
-    title: "Creating Contracts from a Contract",
-  },
-  // misc
-  {
-    path: "try-catch",
-    title: "Try / Catch",
-  },
-  {
-    path: "import",
-    title: "Import",
-  },
-  {
-    path: "library",
-    title: "Library",
-  },
-  {
-    path: "abi-encode",
-    title: "ABI Encode",
-  },
-  {
-    path: "abi-decode",
-    title: "ABI Decode",
-  },
-  // crypto
-  {
-    path: "hashing",
-    title: "Hashing with Keccak256",
-  },
-  {
-    path: "signature",
-    title: "Verifying Signature",
-  },
-  {
-    path: "gas-golf",
-    title: "Gas Optimizations",
-  },
-  {
-    path: "bitwise",
-    title: "Bitwise Operators",
-  },
-  {
-    path: "unchecked-math",
-    title: "Unchecked Math",
-  },
+  // {
+  //   path: "calling-contract",
+  //   title: "Calling Other Contract",
+  // },
+  // {
+  //   path: "new-contract",
+  //   title: "Creating Contracts from a Contract",
+  // },
+  // // misc
+  // {
+  //   path: "try-catch",
+  //   title: "Try / Catch",
+  // },
+  // {
+  //   path: "import",
+  //   title: "Import",
+  // },
+  // {
+  //   path: "library",
+  //   title: "Library",
+  // },
+  // {
+  //   path: "abi-encode",
+  //   title: "ABI Encode",
+  // },
+  // {
+  //   path: "abi-decode",
+  //   title: "ABI Decode",
+  // },
+  // // crypto
+  // {
+  //   path: "hashing",
+  //   title: "Hashing with Keccak256",
+  // },
+  // {
+  //   path: "signature",
+  //   title: "Verifying Signature",
+  // },
+  // {
+  //   path: "gas-golf",
+  //   title: "Gas Optimizations",
+  // },
+  // {
+  //   path: "bitwise",
+  //   title: "Bitwise Operators",
+  // },
+  // {
+  //   path: "unchecked-math",
+  //   title: "Unchecked Math",
+  // },
 ]
 
 const APP_ROUTES: Route[] = [
@@ -355,95 +355,95 @@ const TEST_ROUTES: Route[] = [
 const DEFI_ROUTES = [
   {
     path: "uniswap-v2",
-    title: "Uniswap V2 Swap",
+    title: "Staking Contracts",
   },
-  {
-    path: "uniswap-v2-add-remove-liquidity",
-    title: "Uniswap V2 Add Remove Liquidity",
-  },
-  {
-    path: "uniswap-v2-optimal-one-sided-supply",
-    title: "Uniswap V2 Optimal One Sided Supply",
-  },
-  {
-    path: "uniswap-v2-flash-swap",
-    title: "Uniswap V2 Flash Swap",
-  },
-  {
-    path: "uniswap-v3-swap",
-    title: "Uniswap V3 Swap",
-  },
-  {
-    path: "uniswap-v3-liquidity",
-    title: "Uniswap V3 Liquidity",
-  },
-  {
-    path: "uniswap-v3-flash",
-    title: "Uniswap V3 Flash Loan",
-  },
-  {
-    path: "uniswap-v3-flash-swap",
-    title: "Uniswap V3 Flash Swap Arbitrage",
-  },
-  {
-    path: "chainlink-price-oracle",
-    title: "Chainlink Price Oracle",
-  },
-  {
-    path: "staking-rewards",
-    title: "Staking Rewards",
-  },
-  {
-    path: "discrete-staking-rewards",
-    title: "Discrete Staking Rewards",
-  },
-  {
-    path: "vault",
-    title: "Vault",
-  },
-  {
-    path: "constant-sum-amm",
-    title: "Constant Sum AMM",
-  },
-  {
-    path: "constant-product-amm",
-    title: "Constant Product AMM",
-  },
-  {
-    path: "stable-swap-amm",
-    title: "Stable Swap AMM",
-  },
+  // {
+  //   path: "uniswap-v2-add-remove-liquidity",
+  //   title: "Uniswap V2 Add Remove Liquidity",
+  // },
+  // {
+  //   path: "uniswap-v2-optimal-one-sided-supply",
+  //   title: "Uniswap V2 Optimal One Sided Supply",
+  // },
+  // {
+  //   path: "uniswap-v2-flash-swap",
+  //   title: "Uniswap V2 Flash Swap",
+  // },
+  // {
+  //   path: "uniswap-v3-swap",
+  //   title: "Uniswap V3 Swap",
+  // },
+  // {
+  //   path: "uniswap-v3-liquidity",
+  //   title: "Uniswap V3 Liquidity",
+  // },
+  // {
+  //   path: "uniswap-v3-flash",
+  //   title: "Uniswap V3 Flash Loan",
+  // },
+  // {
+  //   path: "uniswap-v3-flash-swap",
+  //   title: "Uniswap V3 Flash Swap Arbitrage",
+  // },
+  // {
+  //   path: "chainlink-price-oracle",
+  //   title: "Chainlink Price Oracle",
+  // },
+  // {
+  //   path: "staking-rewards",
+  //   title: "Staking Rewards",
+  // },
+  // {
+  //   path: "discrete-staking-rewards",
+  //   title: "Discrete Staking Rewards",
+  // },
+  // {
+  //   path: "vault",
+  //   title: "Vault",
+  // },
+  // {
+  //   path: "constant-sum-amm",
+  //   title: "Constant Sum AMM",
+  // },
+  // {
+  //   path: "constant-product-amm",
+  //   title: "Constant Product AMM",
+  // },
+  // {
+  //   path: "stable-swap-amm",
+  //   title: "Stable Swap AMM",
+  // },
 ]
 
 export const ROUTES_BY_CATEGORY = [
   {
-    title: "",
+    title: "Basics",
     routes: SOL_ROUTES.map((route) => ({
       ...route,
       path: `/${route.path}`,
     })),
   },
-  {
-    title: "Applications",
-    routes: APP_ROUTES.map((route) => ({
-      ...route,
-      path: `/app/${route.path}`,
-    })),
-  },
-  {
-    title: "Hacks",
-    routes: HACK_ROUTES.map((route) => ({
-      ...route,
-      path: `/hacks/${route.path}`,
-    })),
-  },
-  {
-    title: "Tests",
-    routes: TEST_ROUTES.map((route) => ({
-      ...route,
-      path: `/tests/${route.path}`,
-    })),
-  },
+  // {
+  //   title: "Applications",
+  //   routes: APP_ROUTES.map((route) => ({
+  //     ...route,
+  //     path: `/app/${route.path}`,
+  //   })),
+  // },
+  // {
+  //   title: "Hacks",
+  //   routes: HACK_ROUTES.map((route) => ({
+  //     ...route,
+  //     path: `/hacks/${route.path}`,
+  //   })),
+  // },
+  // {
+  //   title: "Tests",
+  //   routes: TEST_ROUTES.map((route) => ({
+  //     ...route,
+  //     path: `/tests/${route.path}`,
+  //   })),
+  // },
   {
     title: "DeFi",
     routes: DEFI_ROUTES.map((route) => ({
@@ -481,20 +481,21 @@ export default function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
-        title="Solidity by Example | 0.8.13"
+        title="Sway by Example | v0.31.1"
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
-        <a href="/">Solidity by Example</a>
+        <a href="/">Sway by Example 🌴</a>
       </h1>
-      <div className={styles.subHeader}>v 0.8.13</div>
+      <div className={styles.subHeader}>v0.31.1</div>
       <div className={styles.main}>
         <p>
-          an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with
+          an introduction to <a href="https://fuellabs.github.io/sway/latest/" target="_blank" rel="noopener noreferrer">Sway</a> with
           simple examples
         </p>
 
-        <div className={styles.youTube}>
+        {/* YOUTUBE STUFF */}
+        {/* <div className={styles.youTube}>
           <img src={youTube} alt="logo" className={styles.youTubeLogo} />
           <a
             href="https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA"
@@ -502,13 +503,14 @@ export default function HomePage() {
           >
             Most code are explained here
           </a>
-        </div>
+        </div> */}
 
-        <div className={styles.updates}>
+        {/* UPDATES */}
+        {/* <div className={styles.updates}>
           {UPDATES.map((text, i) => (
             <div key={i}>{text}</div>
           ))}
-        </div>
+        </div> */}
 
         {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
           <div key={i}>
