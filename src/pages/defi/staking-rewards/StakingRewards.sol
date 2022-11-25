@@ -99,11 +99,9 @@ contract StakingRewards {
         duration = _duration;
     }
 
-    function notifyRewardAmount(uint _amount)
-        external
-        onlyOwner
-        updateReward(address(0))
-    {
+    function notifyRewardAmount(
+        uint _amount
+    ) external onlyOwner updateReward(address(0)) {
         if (block.timestamp >= finishAt) {
             rewardRate = _amount / duration;
         } else {

@@ -4,11 +4,9 @@ pragma solidity ^0.8.13;
 contract MultiDelegatecall {
     error DelegatecallFailed();
 
-    function multiDelegatecall(bytes[] memory data)
-        external
-        payable
-        returns (bytes[] memory results)
-    {
+    function multiDelegatecall(
+        bytes[] memory data
+    ) external payable returns (bytes[] memory results) {
         results = new bytes[](data.length);
 
         for (uint i; i < data.length; i++) {

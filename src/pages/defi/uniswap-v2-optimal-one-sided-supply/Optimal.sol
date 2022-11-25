@@ -34,11 +34,7 @@ contract TestUniswapOptimalOneSidedSupply {
     1. Swap optimal amount from token A to token B
     2. Add liquidity
     */
-    function zap(
-        address _tokenA,
-        address _tokenB,
-        uint _amountA
-    ) external {
+    function zap(address _tokenA, address _tokenB, uint _amountA) external {
         require(_tokenA == WETH || _tokenB == WETH, "!weth");
 
         IERC20(_tokenA).transferFrom(msg.sender, address(this), _amountA);
@@ -59,11 +55,7 @@ contract TestUniswapOptimalOneSidedSupply {
         _addLiquidity(_tokenA, _tokenB);
     }
 
-    function _swap(
-        address _from,
-        address _to,
-        uint _amount
-    ) internal {
+    function _swap(address _from, address _to, uint _amount) internal {
         IERC20(_from).approve(ROUTER, _amount);
 
         address[] memory path = new address[](2);
@@ -109,13 +101,7 @@ interface IUniswapV2Router {
         uint amountBMin,
         address to,
         uint deadline
-    )
-        external
-        returns (
-            uint amountA,
-            uint amountB,
-            uint liquidity
-        );
+    ) external returns (uint amountA, uint amountB, uint liquidity);
 
     function swapExactTokensForTokens(
         uint amountIn,
@@ -138,11 +124,7 @@ interface IUniswapV2Pair {
     function getReserves()
         external
         view
-        returns (
-            uint112 reserve0,
-            uint112 reserve1,
-            uint32 blockTimestampLast
-        );
+        returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);
 }
 
 interface IERC20 {

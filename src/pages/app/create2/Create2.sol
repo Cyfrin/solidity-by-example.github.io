@@ -28,11 +28,10 @@ contract FactoryAssembly {
 
     // 2. Compute the address of the contract to be deployed
     // NOTE: _salt is a random number used to create an address
-    function getAddress(bytes memory bytecode, uint _salt)
-        public
-        view
-        returns (address)
-    {
+    function getAddress(
+        bytes memory bytecode,
+        uint _salt
+    ) public view returns (address) {
         bytes32 hash = keccak256(
             abi.encodePacked(bytes1(0xff), address(this), _salt, keccak256(bytecode))
         );

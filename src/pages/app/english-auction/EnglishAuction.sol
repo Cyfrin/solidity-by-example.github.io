@@ -2,17 +2,9 @@
 pragma solidity ^0.8.13;
 
 interface IERC721 {
-    function safeTransferFrom(
-        address from,
-        address to,
-        uint tokenId
-    ) external;
+    function safeTransferFrom(address from, address to, uint tokenId) external;
 
-    function transferFrom(
-        address,
-        address,
-        uint
-    ) external;
+    function transferFrom(address, address, uint) external;
 }
 
 contract EnglishAuction {
@@ -33,11 +25,7 @@ contract EnglishAuction {
     uint public highestBid;
     mapping(address => uint) public bids;
 
-    constructor(
-        address _nft,
-        uint _nftId,
-        uint _startingBid
-    ) {
+    constructor(address _nft, uint _nftId, uint _startingBid) {
         nft = IERC721(_nft);
         nftId = _nftId;
 

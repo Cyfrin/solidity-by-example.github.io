@@ -26,11 +26,7 @@ contract CarFactory {
         cars.push(car);
     }
 
-    function create2(
-        address _owner,
-        string memory _model,
-        bytes32 _salt
-    ) public {
+    function create2(address _owner, string memory _model, bytes32 _salt) public {
         Car car = (new Car){salt: _salt}(_owner, _model);
         cars.push(car);
     }
@@ -44,15 +40,12 @@ contract CarFactory {
         cars.push(car);
     }
 
-    function getCar(uint _index)
+    function getCar(
+        uint _index
+    )
         public
         view
-        returns (
-            address owner,
-            string memory model,
-            address carAddr,
-            uint balance
-        )
+        returns (address owner, string memory model, address carAddr, uint balance)
     {
         Car car = cars[_index];
 

@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 
 contract Account {
     uint public balance;
-    uint public constant MAX_UINT = 2**256 - 1;
+    uint public constant MAX_UINT = 2 ** 256 - 1;
 
     function deposit(uint _amount) public {
         uint oldBalance = balance;

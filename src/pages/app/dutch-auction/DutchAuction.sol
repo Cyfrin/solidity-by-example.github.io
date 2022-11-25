@@ -2,11 +2,7 @@
 pragma solidity ^0.8.13;
 
 interface IERC721 {
-    function transferFrom(
-        address _from,
-        address _to,
-        uint _nftId
-    ) external;
+    function transferFrom(address _from, address _to, uint _nftId) external;
 }
 
 contract DutchAuction {
@@ -21,12 +17,7 @@ contract DutchAuction {
     uint public immutable expiresAt;
     uint public immutable discountRate;
 
-    constructor(
-        uint _startingPrice,
-        uint _discountRate,
-        address _nft,
-        uint _nftId
-    ) {
+    constructor(uint _startingPrice, uint _discountRate, address _nft, uint _nftId) {
         seller = payable(msg.sender);
         startingPrice = _startingPrice;
         startAt = block.timestamp;

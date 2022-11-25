@@ -14,10 +14,10 @@ contract UniswapV2SwapExamples {
     IERC20 private dai = IERC20(DAI);
 
     // Swap WETH to DAI
-    function swapSingleHopExactAmountIn(uint amountIn, uint amountOutMin)
-        external
-        returns (uint amountOut)
-    {
+    function swapSingleHopExactAmountIn(
+        uint amountIn,
+        uint amountOutMin
+    ) external returns (uint amountOut) {
         weth.transferFrom(msg.sender, address(this), amountIn);
         weth.approve(address(router), amountIn);
 
@@ -39,10 +39,10 @@ contract UniswapV2SwapExamples {
     }
 
     // Swap DAI -> WETH -> USDC
-    function swapMultiHopExactAmountIn(uint amountIn, uint amountOutMin)
-        external
-        returns (uint amountOut)
-    {
+    function swapMultiHopExactAmountIn(
+        uint amountIn,
+        uint amountOutMin
+    ) external returns (uint amountOut) {
         dai.transferFrom(msg.sender, address(this), amountIn);
         dai.approve(address(router), amountIn);
 
@@ -67,10 +67,10 @@ contract UniswapV2SwapExamples {
     }
 
     // Swap WETH to DAI
-    function swapSingleHopExactAmountOut(uint amountOutDesired, uint amountInMax)
-        external
-        returns (uint amountOut)
-    {
+    function swapSingleHopExactAmountOut(
+        uint amountOutDesired,
+        uint amountInMax
+    ) external returns (uint amountOut) {
         weth.transferFrom(msg.sender, address(this), amountInMax);
         weth.approve(address(router), amountInMax);
 
@@ -96,10 +96,10 @@ contract UniswapV2SwapExamples {
     }
 
     // Swap DAI -> WETH -> USDC
-    function swapMultiHopExactAmountOut(uint amountOutDesired, uint amountInMax)
-        external
-        returns (uint amountOut)
-    {
+    function swapMultiHopExactAmountOut(
+        uint amountOutDesired,
+        uint amountInMax
+    ) external returns (uint amountOut) {
         dai.transferFrom(msg.sender, address(this), amountInMax);
         dai.approve(address(router), amountInMax);
 

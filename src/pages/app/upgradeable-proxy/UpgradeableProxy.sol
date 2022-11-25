@@ -51,15 +51,7 @@ contract BuggyProxy {
 }
 
 contract Dev {
-    function selectors()
-        external
-        view
-        returns (
-            bytes4,
-            bytes4,
-            bytes4
-        )
-    {
+    function selectors() external view returns (bytes4, bytes4, bytes4) {
         return (
             Proxy.admin.selector,
             Proxy.implementation.selector,
@@ -222,11 +214,9 @@ library StorageSlot {
         address value;
     }
 
-    function getAddressSlot(bytes32 slot)
-        internal
-        pure
-        returns (AddressSlot storage r)
-    {
+    function getAddressSlot(
+        bytes32 slot
+    ) internal pure returns (AddressSlot storage r) {
         assembly {
             r.slot := slot
         }

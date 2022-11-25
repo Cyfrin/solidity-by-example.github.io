@@ -4,11 +4,7 @@ pragma solidity ^0.8.13;
 interface IERC20 {
     function transfer(address, uint) external returns (bool);
 
-    function transferFrom(
-        address,
-        address,
-        uint
-    ) external returns (bool);
+    function transferFrom(address, address, uint) external returns (bool);
 }
 
 contract CrowdFund {
@@ -53,11 +49,7 @@ contract CrowdFund {
         token = IERC20(_token);
     }
 
-    function launch(
-        uint _goal,
-        uint32 _startAt,
-        uint32 _endAt
-    ) external {
+    function launch(uint _goal, uint32 _startAt, uint32 _endAt) external {
         require(_startAt >= block.timestamp, "start at < now");
         require(_endAt >= _startAt, "end at < start at");
         require(_endAt <= block.timestamp + 90 days, "end at > max duration");

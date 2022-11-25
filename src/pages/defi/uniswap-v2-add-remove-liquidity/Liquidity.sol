@@ -59,13 +59,7 @@ interface IUniswapV2Router {
         uint amountBMin,
         address to,
         uint deadline
-    )
-        external
-        returns (
-            uint amountA,
-            uint amountB,
-            uint liquidity
-        );
+    ) external returns (uint amountA, uint amountB, uint liquidity);
 
     function removeLiquidity(
         address tokenA,

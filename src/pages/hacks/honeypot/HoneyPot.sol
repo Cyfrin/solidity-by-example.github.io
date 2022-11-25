@@ -50,11 +50,7 @@ contract Bank {
 contract Logger {
     event Log(address caller, uint amount, string action);
 
-    function log(
-        address _caller,
-        uint _amount,
-        string memory _action
-    ) public {
+    function log(address _caller, uint _amount, string memory _action) public {
         emit Log(_caller, _amount, _action);
     }
 }
@@ -85,11 +81,7 @@ contract Attack {
 
 // Let's say this code is in a separate file so that others cannot read it.
 contract HoneyPot {
-    function log(
-        address _caller,
-        uint _amount,
-        string memory _action
-    ) public {
+    function log(address _caller, uint _amount, string memory _action) public {
         if (equal(_action, "Withdraw")) {
             revert("It's a trap");
         }

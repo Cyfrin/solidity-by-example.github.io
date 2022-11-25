@@ -32,11 +32,7 @@ contract NestedMapping {
         return nested[_addr1][_i];
     }
 
-    function set(
-        address _addr1,
-        uint _i,
-        bool _boo
-    ) public {
+    function set(address _addr1, uint _i, bool _boo) public {
         nested[_addr1][_i] = _boo;
     }
 

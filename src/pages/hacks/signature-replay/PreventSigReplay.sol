@@ -39,11 +39,10 @@ contract MultiSigWallet {
         return keccak256(abi.encodePacked(address(this), _to, _amount, _nonce));
     }
 
-    function _checkSigs(bytes[2] memory _sigs, bytes32 _txHash)
-        private
-        view
-        returns (bool)
-    {
+    function _checkSigs(
+        bytes[2] memory _sigs,
+        bytes32 _txHash
+    ) private view returns (bool) {
         bytes32 ethSignedHash = _txHash.toEthSignedMessageHash();
 
         for (uint i = 0; i < _sigs.length; i++) {

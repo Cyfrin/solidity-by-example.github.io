@@ -15,11 +15,7 @@ contract UniswapV3Flash {
 
     IUniswapV3Pool private immutable pool;
 
-    constructor(
-        address _token0,
-        address _token1,
-        uint24 _fee
-    ) {
+    constructor(address _token0, address _token1, uint24 _fee) {
         token0 = IERC20(_token0);
         token1 = IERC20(_token1);
         pool = IUniswapV3Pool(getPool(_token0, _token1, _fee));
@@ -85,11 +81,10 @@ library PoolAddress {
         return PoolKey({token0: tokenA, token1: tokenB, fee: fee});
     }
 
-    function computeAddress(address factory, PoolKey memory key)
-        internal
-        pure
-        returns (address pool)
-    {
+    function computeAddress(
+        address factory,
+        PoolKey memory key
+    ) internal pure returns (address pool) {
         require(key.token0 < key.token1);
         pool = address(
             uint160(

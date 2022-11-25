@@ -16,15 +16,12 @@ contract AbiDecode {
         return abi.encode(x, addr, arr, myStruct);
     }
 
-    function decode(bytes calldata data)
+    function decode(
+        bytes calldata data
+    )
         external
         pure
-        returns (
-            uint x,
-            address addr,
-            uint[] memory arr,
-            MyStruct memory myStruct
-        )
+        returns (uint x, address addr, uint[] memory arr, MyStruct memory myStruct)
     {
         // (uint x, address addr, uint[] memory arr, MyStruct myStruct) = ...
         (x, addr, arr, myStruct) = abi.decode(data, (uint, address, uint[], MyStruct));

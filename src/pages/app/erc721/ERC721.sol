@@ -10,11 +10,7 @@ interface IERC721 is IERC165 {
 
     function ownerOf(uint tokenId) external view returns (address owner);
 
-    function safeTransferFrom(
-        address from,
-        address to,
-        uint tokenId
-    ) external;
+    function safeTransferFrom(address from, address to, uint tokenId) external;
 
     function safeTransferFrom(
         address from,
@@ -23,11 +19,7 @@ interface IERC721 is IERC165 {
         bytes calldata data
     ) external;
 
-    function transferFrom(
-        address from,
-        address to,
-        uint tokenId
-    ) external;
+    function transferFrom(address from, address to, uint tokenId) external;
 
     function approve(address to, uint tokenId) external;
 
@@ -35,10 +27,10 @@ interface IERC721 is IERC165 {
 
     function setApprovalForAll(address operator, bool _approved) external;
 
-    function isApprovedForAll(address owner, address operator)
-        external
-        view
-        returns (bool);
+    function isApprovedForAll(
+        address owner,
+        address operator
+    ) external view returns (bool);
 }
 
 interface IERC721Receiver {
@@ -119,11 +111,7 @@ contract ERC721 is IERC721 {
             spender == _approvals[id]);
     }
 
-    function transferFrom(
-        address from,
-        address to,
-        uint id
-    ) public {
+    function transferFrom(address from, address to, uint id) public {
         require(from == _ownerOf[id], "from != owner");
         require(to != address(0), "transfer to zero address");
 
@@ -138,11 +126,7 @@ contract ERC721 is IERC721 {
         emit Transfer(from, to, id);
     }
 
-    function safeTransferFrom(
-        address from,
-        address to,
-        uint id
-    ) external {
+    function safeTransferFrom(address from, address to, uint id) external {
         transferFrom(from, to, id);
 
         require(

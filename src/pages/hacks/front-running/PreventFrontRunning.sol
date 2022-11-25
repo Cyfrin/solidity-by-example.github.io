@@ -81,16 +81,7 @@ contract SecuredFindThisHash {
         Function to get the commit details. It returns a tuple of (solutionHash, commitTime, revealStatus);  
         Users can get solution only if the game is active and they have committed a solutionHash
     */
-    function getMySolution()
-        public
-        view
-        gameActive
-        returns (
-            bytes32,
-            uint,
-            bool
-        )
-    {
+    function getMySolution() public view gameActive returns (bytes32, uint, bool) {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
         return (commit.solutionHash, commit.commitTime, commit.revealed);
@@ -104,10 +95,10 @@ contract SecuredFindThisHash {
         Then the actual solution is checked using keccak256(solution), if the solution matches, the winner is declared, 
         the game is ended and the reward amount is sent to the winner.
     */
-    function revealSolution(string memory _solution, string memory _secret)
-        public
-        gameActive
-    {
+    function revealSolution(
+        string memory _solution,
+        string memory _secret
+    ) public gameActive {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
         require(!commit.revealed, "Already commited and revealed");

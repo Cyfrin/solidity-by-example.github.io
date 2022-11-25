@@ -34,7 +34,7 @@ contract StableSwap {
     // Amplification coefficient multiplied by N^(N - 1)
     // Higher value makes the curve more flat
     // Lower value makes the curve more like constant product AMM
-    uint private constant A = 1000 * (N**(N - 1));
+    uint private constant A = 1000 * (N ** (N - 1));
     // 0.03%
     uint private constant SWAP_FEE = 300;
     // Liquidity fee is derived from 2 constraints
@@ -195,11 +195,7 @@ contract StableSwap {
      * @param d Liquidity d
      * @return New balance of token i
      */
-    function _getYD(
-        uint i,
-        uint[N] memory xp,
-        uint d
-    ) private pure returns (uint) {
+    function _getYD(uint i, uint[N] memory xp, uint d) private pure returns (uint) {
         uint a = A * N;
         uint s;
         uint c = d;
@@ -238,7 +234,7 @@ contract StableSwap {
         uint d = _getD(_xp());
         uint _totalSupply = totalSupply;
         if (_totalSupply > 0) {
-            return (d * 10**DECIMALS) / _totalSupply;
+            return (d * 10 ** DECIMALS) / _totalSupply;
         }
         return 0;
     }
@@ -250,12 +246,7 @@ contract StableSwap {
      * @param dx Token in amount
      * @param minDy Minimum token out
      */
-    function swap(
-        uint i,
-        uint j,
-        uint dx,
-        uint minDy
-    ) external returns (uint dy) {
+    function swap(uint i, uint j, uint dx, uint minDy) external returns (uint dy) {
         require(i != j, "i = j");
 
         IERC20(tokens[i]).transferFrom(msg.sender, address(this), dx);
@@ -281,10 +272,10 @@ contract StableSwap {
         IERC20(tokens[j]).transfer(msg.sender, dy);
     }
 
-    function addLiquidity(uint[N] calldata amounts, uint minShares)
-        external
-        returns (uint shares)
-    {
+    function addLiquidity(
+        uint[N] calldata amounts,
+        uint minShares
+    ) external returns (uint shares) {
         // calculate current liquidity d0
         uint _totalSupply = totalSupply;
         uint d0;
@@ -340,10 +331,10 @@ contract StableSwap {
         _mint(msg.sender, shares);
     }
 
-    function removeLiquidity(uint shares, uint[N] calldata minAmountsOut)
-        external
-        returns (uint[N] memory amountsOut)
-    {
+    function removeLiquidity(
+        uint shares,
+        uint[N] calldata minAmountsOut
+    ) external returns (uint[N] memory amountsOut) {
         uint _totalSupply = totalSupply;
 
         for (uint i; i < N; ++i) {
@@ -366,11 +357,10 @@ contract StableSwap {
      * @return dy Amount of token i to receive
      *         fee Fee for withdraw. Fee already included in dy
      */
-    function _calcWithdrawOneToken(uint shares, uint i)
-        private
-        view
-        returns (uint dy, uint fee)
-    {
+    function _calcWithdrawOneToken(
+        uint shares,
+        uint i
+    ) private view returns (uint dy, uint fee) {
         uint _totalSupply = totalSupply;
         uint[N] memory xp = _xp();
 
@@ -402,11 +392,10 @@ contract StableSwap {
         fee = dy0 - dy;
     }
 
-    function calcWithdrawOneToken(uint shares, uint i)
-        external
-        view
-        returns (uint dy, uint fee)
-    {
+    function calcWithdrawOneToken(
+        uint shares,
+        uint i
+    ) external view returns (uint dy, uint fee) {
         return _calcWithdrawOneToken(shares, i);
     }
 

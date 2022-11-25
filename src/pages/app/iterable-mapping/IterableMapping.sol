@@ -22,11 +22,7 @@ library IterableMapping {
         return map.keys.length;
     }
 
-    function set(
-        Map storage map,
-        address key,
-        uint val
-    ) public {
+    function set(Map storage map, address key, uint val) public {
         if (map.inserted[key]) {
             map.values[key] = val;
         } else {

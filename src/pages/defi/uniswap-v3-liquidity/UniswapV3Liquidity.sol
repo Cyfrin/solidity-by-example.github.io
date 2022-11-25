@@ -33,15 +33,10 @@ contract UniswapV3Liquidity is IERC721Receiver {
         return IERC721Receiver.onERC721Received.selector;
     }
 
-    function mintNewPosition(uint amount0ToAdd, uint amount1ToAdd)
-        external
-        returns (
-            uint tokenId,
-            uint128 liquidity,
-            uint amount0,
-            uint amount1
-        )
-    {
+    function mintNewPosition(
+        uint amount0ToAdd,
+        uint amount1ToAdd
+    ) external returns (uint tokenId, uint128 liquidity, uint amount0, uint amount1) {
         dai.transferFrom(msg.sender, address(this), amount0ToAdd);
         weth.transferFrom(msg.sender, address(this), amount1ToAdd);
 
@@ -79,10 +74,9 @@ contract UniswapV3Liquidity is IERC721Receiver {
         }
     }
 
-    function collectAllFees(uint tokenId)
-        external
-        returns (uint amount0, uint amount1)
-    {
+    function collectAllFees(
+        uint tokenId
+    ) external returns (uint amount0, uint amount1) {
         INonfungiblePositionManager.CollectParams
             memory params = INonfungiblePositionManager.CollectParams({
                 tokenId: tokenId,
@@ -98,14 +92,7 @@ contract UniswapV3Liquidity is IERC721Receiver {
         uint tokenId,
         uint amount0ToAdd,
         uint amount1ToAdd
-    )
-        external
-        returns (
-            uint128 liquidity,
-            uint amount0,
-            uint amount1
-        )
-    {
+    ) external returns (uint128 liquidity, uint amount0, uint amount1) {
         dai.transferFrom(msg.sender, address(this), amount0ToAdd);
         weth.transferFrom(msg.sender, address(this), amount1ToAdd);
 
@@ -127,10 +114,10 @@ contract UniswapV3Liquidity is IERC721Receiver {
         );
     }
 
-    function decreaseLiquidityCurrentRange(uint tokenId, uint128 liquidity)
-        external
-        returns (uint amount0, uint amount1)
-    {
+    function decreaseLiquidityCurrentRange(
+        uint tokenId,
+        uint128 liquidity
+    ) external returns (uint amount0, uint amount1) {
         INonfungiblePositionManager.DecreaseLiquidityParams
             memory params = INonfungiblePositionManager.DecreaseLiquidityParams({
                 tokenId: tokenId,
@@ -159,15 +146,12 @@ interface INonfungiblePositionManager {
         uint deadline;
     }
 
-    function mint(MintParams calldata params)
+    function mint(
+        MintParams calldata params
+    )
         external
         payable
-        returns (
-            uint tokenId,
-            uint128 liquidity,
-            uint amount0,
-            uint amount1
-        );
+        returns (uint tokenId, uint128 liquidity, uint amount0, uint amount1);
 
     struct IncreaseLiquidityParams {
         uint tokenId;
@@ -178,14 +162,9 @@ interface INonfungiblePositionManager {
         uint deadline;
     }
 
-    function increaseLiquidity(IncreaseLiquidityParams calldata params)
-        external
-        payable
-        returns (
-            uint128 liquidity,
-            uint amount0,
-            uint amount1
-        );
+    function increaseLiquidity(
+        IncreaseLiquidityParams calldata params
+    ) external payable returns (uint128 liquidity, uint amount0, uint amount1);
 
     struct DecreaseLiquidityParams {
         uint tokenId;
@@ -195,10 +174,9 @@ interface INonfungiblePositionManager {
         uint deadline;
     }
 
-    function decreaseLiquidity(DecreaseLiquidityParams calldata params)
-        external
-        payable
-        returns (uint amount0, uint amount1);
+    function decreaseLiquidity(
+        DecreaseLiquidityParams calldata params
+    ) external payable returns (uint amount0, uint amount1);
 
     struct CollectParams {
         uint tokenId;
@@ -207,10 +185,9 @@ interface INonfungiblePositionManager {
         uint128 amount1Max;
     }
 
-    function collect(CollectParams calldata params)
-        external
-        payable
-        returns (uint amount0, uint amount1);
+    function collect(
+        CollectParams calldata params
+    ) external payable returns (uint amount0, uint amount1);
 }
 
 interface IERC20 {

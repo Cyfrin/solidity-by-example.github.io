@@ -152,10 +152,9 @@ contract CPAMM {
         _update(token0.balanceOf(address(this)), token1.balanceOf(address(this)));
     }
 
-    function removeLiquidity(uint _shares)
-        external
-        returns (uint amount0, uint amount1)
-    {
+    function removeLiquidity(
+        uint _shares
+    ) external returns (uint amount0, uint amount1) {
         /*
         Claim
         dx, dy = amount of liquidity to remove

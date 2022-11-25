@@ -76,11 +76,7 @@ contract BitwiseOps {
 
     // Get first n bits from x
     // len = length of bits in x = position of most significant bit of x, + 1
-    function getFirstNBits(
-        uint x,
-        uint n,
-        uint len
-    ) external pure returns (uint) {
+    function getFirstNBits(uint x, uint n, uint len) external pure returns (uint) {
         // Example
         // x        = 1110 = 14, n = 2, len = 4
         // mask     = 1100 = 12
@@ -90,11 +86,9 @@ contract BitwiseOps {
     }
 
     // Find most significant bit using binary search
-    function mostSignificantBitWithBinarySearch(uint x)
-        external
-        pure
-        returns (uint8 r)
-    {
+    function mostSignificantBitWithBinarySearch(
+        uint x
+    ) external pure returns (uint8 r) {
         // x >= 2 ** 128
         if (x >= 0x100000000000000000000000000000000) {
             x >>= 128;

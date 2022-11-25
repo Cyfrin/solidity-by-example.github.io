@@ -75,10 +75,10 @@ interface IUniswapV2Pair {
 }
 
 interface IUniswapV2Factory {
-    function getPair(address tokenA, address tokenB)
-        external
-        view
-        returns (address pair);
+    function getPair(
+        address tokenA,
+        address tokenB
+    ) external view returns (address pair);
 }
 
 interface IERC20 {
