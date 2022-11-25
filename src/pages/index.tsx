@@ -4,9 +4,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2022/11/26 - Simple bytecode contract",
   "2022/11/26 - GitHub PR by maruf0011",
   "2022/11/15 - GitHub PR by thurendous",
-  "2022/11/15 - GitHub PR by grbickon",
 ]
 
 interface Route {
@@ -231,6 +231,10 @@ const APP_ROUTES: Route[] = [
   {
     path: "erc721",
     title: "ERC721",
+  },
+  {
+    path: "simple-bytecode-contract",
+    title: "Simple Bytecode Contract",
   },
   {
     path: "create2",

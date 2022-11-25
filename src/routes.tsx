@@ -15,6 +15,7 @@ import component_app_minimal_proxy from "./pages/app/minimal-proxy"
 import component_app_multi_call from "./pages/app/multi-call"
 import component_app_multi_delegatecall from "./pages/app/multi-delegatecall"
 import component_app_multi_sig_wallet from "./pages/app/multi-sig-wallet"
+import component_app_simple_bytecode_contract from "./pages/app/simple-bytecode-contract"
 import component_app_time_lock from "./pages/app/time-lock"
 import component_app_uni_directional_payment_channel from "./pages/app/uni-directional-payment-channel"
 import component_app_upgradeable_proxy from "./pages/app/upgradeable-proxy"
@@ -178,6 +179,10 @@ const routes: Route[] = [
   {
     path: "/app/multi-sig-wallet",
     component: component_app_multi_sig_wallet,
+  },
+  {
+    path: "/app/simple-bytecode-contract",
+    component: component_app_simple_bytecode_contract,
   },
   {
     path: "/app/time-lock",
