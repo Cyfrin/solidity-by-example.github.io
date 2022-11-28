@@ -8,9 +8,13 @@ description: Learn about bitwise operators in Solidity
 {{{Bitwise}}}
 ```
 
+### Most significant bit
+
 ```solidity
 {{{MostSignificantBitFunction}}}
 ```
+
+### Most significant bit in assembly
 
 ```solidity
 {{{MostSignificantBitAssembly}}}
