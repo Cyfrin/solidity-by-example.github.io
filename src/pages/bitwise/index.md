@@ -7,3 +7,11 @@ description: Learn about bitwise operators in Solidity
 ```solidity
 {{{Bitwise}}}
 ```
+
+```solidity
+{{{MostSignificantBitFunction}}}
+```
+
+```solidity
+{{{MostSignificantBitAssembly}}}
+```
