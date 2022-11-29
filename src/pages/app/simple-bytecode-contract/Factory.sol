@@ -9,7 +9,7 @@ contract Factory {
         address addr;
         assembly {
             // create(value, offset, size)
-            addr := create(0, add(bytecode, 0x20), 0x16)
+            addr := create(0, add(bytecode, 0x20), 0x13)
         }
         require(addr != address(0));
 
@@ -27,11 +27,15 @@ Run time code - return 42
 602a60005260206000f3
 
 // Store 42 to memory
+mstore(p, v) - store v at memory p to p + 32
+
 PUSH1 0x2a
 PUSH1 0
 MSTORE
 
 // Return 32 bytes from memory
+return(p, s) - end execution and return data from memory p to p + s
+
 PUSH1 0x20
 PUSH1 0
 RETURN
