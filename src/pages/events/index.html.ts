@@ -3,10 +3,10 @@ export const version = "0.8.17"
 export const title = "Events"
 export const description = "Example of how to emit events in Solidity"
 export const codes = [
-    {
-        fileName: "Events.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IEV2ZW50IHsKICAgIC8vIEV2ZW50IGRlY2xhcmF0aW9uCiAgICAvLyBVcCB0byAzIHBhcmFtZXRlcnMgY2FuIGJlIGluZGV4ZWQuCiAgICAvLyBJbmRleGVkIHBhcmFtZXRlcnMgaGVscHMgeW91IGZpbHRlciB0aGUgbG9ncyBieSB0aGUgaW5kZXhlZCBwYXJhbWV0ZXIKICAgIGV2ZW50IExvZyhhZGRyZXNzIGluZGV4ZWQgc2VuZGVyLCBzdHJpbmcgbWVzc2FnZSk7CiAgICBldmVudCBBbm90aGVyTG9nKCk7CgogICAgZnVuY3Rpb24gdGVzdCgpIHB1YmxpYyB7CiAgICAgICAgZW1pdCBMb2cobXNnLnNlbmRlciwgIkhlbGxvIFdvcmxkISIpOwogICAgICAgIGVtaXQgTG9nKG1zZy5zZW5kZXIsICJIZWxsbyBFVk0hIik7CiAgICAgICAgZW1pdCBBbm90aGVyTG9nKCk7CiAgICB9Cn0K",
-    },
+  {
+    fileName: "Events.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IEV2ZW50IHsKICAgIC8vIEV2ZW50IGRlY2xhcmF0aW9uCiAgICAvLyBVcCB0byAzIHBhcmFtZXRlcnMgY2FuIGJlIGluZGV4ZWQuCiAgICAvLyBJbmRleGVkIHBhcmFtZXRlcnMgaGVscHMgeW91IGZpbHRlciB0aGUgbG9ncyBieSB0aGUgaW5kZXhlZCBwYXJhbWV0ZXIKICAgIGV2ZW50IExvZyhhZGRyZXNzIGluZGV4ZWQgc2VuZGVyLCBzdHJpbmcgbWVzc2FnZSk7CiAgICBldmVudCBBbm90aGVyTG9nKCk7CgogICAgZnVuY3Rpb24gdGVzdCgpIHB1YmxpYyB7CiAgICAgICAgZW1pdCBMb2cobXNnLnNlbmRlciwgIkhlbGxvIFdvcmxkISIpOwogICAgICAgIGVtaXQgTG9nKG1zZy5zZW5kZXIsICJIZWxsbyBFVk0hIik7CiAgICAgICAgZW1pdCBBbm90aGVyTG9nKCk7CiAgICB9Cn0K",
+  },
 ]
 
 const html = `<p><code>Events</code> allow logging to the Ethereum blockchain. Some use cases for events are:</p>
