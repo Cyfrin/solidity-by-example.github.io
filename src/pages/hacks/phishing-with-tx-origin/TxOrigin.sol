@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.17;
 
 /*
 Wallet is a simple contract where only the owner should be able to transfer

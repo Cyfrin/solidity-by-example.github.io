@@ -1,6 +1,6 @@
 ---
 title: Uniswap V3 Flash Swap Arbitrage
-version: 0.8.13
+version: 0.8.17
 description: Uniswap V3 Flash Swap Arbitrage
 ---
 

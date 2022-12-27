@@ -1,6 +1,6 @@
 ---
 title: Honeypot
-version: 0.8.13
+version: 0.8.17
 description: An example of honeypot in Solidity
 ---
 

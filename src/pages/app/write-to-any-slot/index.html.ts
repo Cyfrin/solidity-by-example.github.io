@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.13"
+export const version = "0.8.17"
 export const title = "Write to Any Slot"
 export const description = "Write to Any Slot"
 export const codes = [
-  {
-    fileName: "Slot.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IFN0b3JhZ2UgewogICAgc3RydWN0IE15U3RydWN0IHsKICAgICAgICB1aW50IHZhbHVlOwogICAgfQoKICAgIC8vIHN0cnVjdCBzdG9yZWQgYXQgc2xvdCAwCiAgICBNeVN0cnVjdCBwdWJsaWMgczAgPSBNeVN0cnVjdCgxMjMpOwogICAgLy8gc3RydWN0IHN0b3JlZCBhdCBzbG90IDEKICAgIE15U3RydWN0IHB1YmxpYyBzMSA9IE15U3RydWN0KDQ1Nik7CiAgICAvLyBzdHJ1Y3Qgc3RvcmVkIGF0IHNsb3QgMgogICAgTXlTdHJ1Y3QgcHVibGljIHMyID0gTXlTdHJ1Y3QoNzg5KTsKCiAgICBmdW5jdGlvbiBfZ2V0KHVpbnQgaSkgaW50ZXJuYWwgcHVyZSByZXR1cm5zIChNeVN0cnVjdCBzdG9yYWdlIHMpIHsKICAgICAgICAvLyBnZXQgc3RydWN0IHN0b3JlZCBhdCBzbG90IGkKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIHMuc2xvdCA6PSBpCiAgICAgICAgfQogICAgfQoKICAgIC8qCiAgICBnZXQoMCkgcmV0dXJucyAxMjMKICAgIGdldCgxKSByZXR1cm5zIDQ1NgogICAgZ2V0KDIpIHJldHVybnMgNzg5CiAgICAqLwogICAgZnVuY3Rpb24gZ2V0KHVpbnQgaSkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgLy8gZ2V0IHZhbHVlIGluc2lkZSBNeVN0cnVjdCBzdG9yZWQgYXQgc2xvdCBpCiAgICAgICAgcmV0dXJuIF9nZXQoaSkudmFsdWU7CiAgICB9CgogICAgLyoKICAgIFdlIGNhbiBzYXZlIGRhdGEgdG8gYW55IHNsb3QgaW5jbHVkaW5nIHNsb3QgOTk5IHdoaWNoIGlzIG5vcm1hbGx5IHVuYWNjZXNzYmxlLgoKICAgIHNldCg5OTkpID0gODg4IAogICAgKi8KICAgIGZ1bmN0aW9uIHNldCh1aW50IGksIHVpbnQgeCkgZXh0ZXJuYWwgewogICAgICAgIC8vIHNldCB2YWx1ZSBvZiBNeVN0cnVjdCB0byB4IGFuZCBzdG9yZSBpdCBhdCBzbG90IGkKICAgICAgICBfZ2V0KGkpLnZhbHVlID0geDsKICAgIH0KfQo=",
-  },
+    {
+        fileName: "Slot.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IFN0b3JhZ2UgewogICAgc3RydWN0IE15U3RydWN0IHsKICAgICAgICB1aW50IHZhbHVlOwogICAgfQoKICAgIC8vIHN0cnVjdCBzdG9yZWQgYXQgc2xvdCAwCiAgICBNeVN0cnVjdCBwdWJsaWMgczAgPSBNeVN0cnVjdCgxMjMpOwogICAgLy8gc3RydWN0IHN0b3JlZCBhdCBzbG90IDEKICAgIE15U3RydWN0IHB1YmxpYyBzMSA9IE15U3RydWN0KDQ1Nik7CiAgICAvLyBzdHJ1Y3Qgc3RvcmVkIGF0IHNsb3QgMgogICAgTXlTdHJ1Y3QgcHVibGljIHMyID0gTXlTdHJ1Y3QoNzg5KTsKCiAgICBmdW5jdGlvbiBfZ2V0KHVpbnQgaSkgaW50ZXJuYWwgcHVyZSByZXR1cm5zIChNeVN0cnVjdCBzdG9yYWdlIHMpIHsKICAgICAgICAvLyBnZXQgc3RydWN0IHN0b3JlZCBhdCBzbG90IGkKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIHMuc2xvdCA6PSBpCiAgICAgICAgfQogICAgfQoKICAgIC8qCiAgICBnZXQoMCkgcmV0dXJucyAxMjMKICAgIGdldCgxKSByZXR1cm5zIDQ1NgogICAgZ2V0KDIpIHJldHVybnMgNzg5CiAgICAqLwogICAgZnVuY3Rpb24gZ2V0KHVpbnQgaSkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgLy8gZ2V0IHZhbHVlIGluc2lkZSBNeVN0cnVjdCBzdG9yZWQgYXQgc2xvdCBpCiAgICAgICAgcmV0dXJuIF9nZXQoaSkudmFsdWU7CiAgICB9CgogICAgLyoKICAgIFdlIGNhbiBzYXZlIGRhdGEgdG8gYW55IHNsb3QgaW5jbHVkaW5nIHNsb3QgOTk5IHdoaWNoIGlzIG5vcm1hbGx5IHVuYWNjZXNzYmxlLgoKICAgIHNldCg5OTkpID0gODg4IAogICAgKi8KICAgIGZ1bmN0aW9uIHNldCh1aW50IGksIHVpbnQgeCkgZXh0ZXJuYWwgewogICAgICAgIC8vIHNldCB2YWx1ZSBvZiBNeVN0cnVjdCB0byB4IGFuZCBzdG9yZSBpdCBhdCBzbG90IGkKICAgICAgICBfZ2V0KGkpLnZhbHVlID0geDsKICAgIH0KfQo=",
+    },
 ]
 
 const html = `<p>Solidity storage is like an array of length 2^256.
@@ -14,7 +14,7 @@ Each slot in the array can store 32 bytes.</p>
 <p>State variables define which slots will be used to store data.</p>
 <p>However using assembly, you can write to any slot.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Storage</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {

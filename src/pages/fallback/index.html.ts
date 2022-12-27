@@ -1,12 +1,12 @@
 // metadata
-export const version = "0.8.13"
+export const version = "0.8.17"
 export const title = "Fallback"
 export const description = "Example of how to use fallback in Solidity"
 export const codes = [
-  {
-    fileName: "Fallback.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEZhbGxiYWNrIHsKICAgIGV2ZW50IExvZyhzdHJpbmcgZnVuYywgdWludCBnYXMpOwoKICAgIC8vIEZhbGxiYWNrIGZ1bmN0aW9uIG11c3QgYmUgZGVjbGFyZWQgYXMgZXh0ZXJuYWwuCiAgICBmYWxsYmFjaygpIGV4dGVybmFsIHBheWFibGUgewogICAgICAgIC8vIHNlbmQgLyB0cmFuc2ZlciAoZm9yd2FyZHMgMjMwMCBnYXMgdG8gdGhpcyBmYWxsYmFjayBmdW5jdGlvbikKICAgICAgICAvLyBjYWxsIChmb3J3YXJkcyBhbGwgb2YgdGhlIGdhcykKICAgICAgICBlbWl0IExvZygiZmFsbGJhY2siLCBnYXNsZWZ0KCkpOwogICAgfQoKICAgIC8vIFJlY2VpdmUgaXMgYSB2YXJpYW50IG9mIGZhbGxiYWNrIHRoYXQgaXMgdHJpZ2dlcmVkIHdoZW4gbXNnLmRhdGEgaXMgZW1wdHkKICAgIHJlY2VpdmUoKSBleHRlcm5hbCBwYXlhYmxlIHsKICAgICAgICBlbWl0IExvZygicmVjZWl2ZSIsIGdhc2xlZnQoKSk7CiAgICB9CgogICAgLy8gSGVscGVyIGZ1bmN0aW9uIHRvIGNoZWNrIHRoZSBiYWxhbmNlIG9mIHRoaXMgY29udHJhY3QKICAgIGZ1bmN0aW9uIGdldEJhbGFuY2UoKSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIGFkZHJlc3ModGhpcykuYmFsYW5jZTsKICAgIH0KfQoKY29udHJhY3QgU2VuZFRvRmFsbGJhY2sgewogICAgZnVuY3Rpb24gdHJhbnNmZXJUb0ZhbGxiYWNrKGFkZHJlc3MgcGF5YWJsZSBfdG8pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICBfdG8udHJhbnNmZXIobXNnLnZhbHVlKTsKICAgIH0KCiAgICBmdW5jdGlvbiBjYWxsRmFsbGJhY2soYWRkcmVzcyBwYXlhYmxlIF90bykgcHVibGljIHBheWFibGUgewogICAgICAgIChib29sIHNlbnQsICkgPSBfdG8uY2FsbHt2YWx1ZTogbXNnLnZhbHVlfSgiIik7CiAgICAgICAgcmVxdWlyZShzZW50LCAiRmFpbGVkIHRvIHNlbmQgRXRoZXIiKTsKICAgIH0KfQo=",
-  },
+    {
+        fileName: "Fallback.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IEZhbGxiYWNrIHsKICAgIGV2ZW50IExvZyhzdHJpbmcgZnVuYywgdWludCBnYXMpOwoKICAgIC8vIEZhbGxiYWNrIGZ1bmN0aW9uIG11c3QgYmUgZGVjbGFyZWQgYXMgZXh0ZXJuYWwuCiAgICBmYWxsYmFjaygpIGV4dGVybmFsIHBheWFibGUgewogICAgICAgIC8vIHNlbmQgLyB0cmFuc2ZlciAoZm9yd2FyZHMgMjMwMCBnYXMgdG8gdGhpcyBmYWxsYmFjayBmdW5jdGlvbikKICAgICAgICAvLyBjYWxsIChmb3J3YXJkcyBhbGwgb2YgdGhlIGdhcykKICAgICAgICBlbWl0IExvZygiZmFsbGJhY2siLCBnYXNsZWZ0KCkpOwogICAgfQoKICAgIC8vIFJlY2VpdmUgaXMgYSB2YXJpYW50IG9mIGZhbGxiYWNrIHRoYXQgaXMgdHJpZ2dlcmVkIHdoZW4gbXNnLmRhdGEgaXMgZW1wdHkKICAgIHJlY2VpdmUoKSBleHRlcm5hbCBwYXlhYmxlIHsKICAgICAgICBlbWl0IExvZygicmVjZWl2ZSIsIGdhc2xlZnQoKSk7CiAgICB9CgogICAgLy8gSGVscGVyIGZ1bmN0aW9uIHRvIGNoZWNrIHRoZSBiYWxhbmNlIG9mIHRoaXMgY29udHJhY3QKICAgIGZ1bmN0aW9uIGdldEJhbGFuY2UoKSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIGFkZHJlc3ModGhpcykuYmFsYW5jZTsKICAgIH0KfQoKY29udHJhY3QgU2VuZFRvRmFsbGJhY2sgewogICAgZnVuY3Rpb24gdHJhbnNmZXJUb0ZhbGxiYWNrKGFkZHJlc3MgcGF5YWJsZSBfdG8pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICBfdG8udHJhbnNmZXIobXNnLnZhbHVlKTsKICAgIH0KCiAgICBmdW5jdGlvbiBjYWxsRmFsbGJhY2soYWRkcmVzcyBwYXlhYmxlIF90bykgcHVibGljIHBheWFibGUgewogICAgICAgIChib29sIHNlbnQsICkgPSBfdG8uY2FsbHt2YWx1ZTogbXNnLnZhbHVlfSgiIik7CiAgICAgICAgcmVxdWlyZShzZW50LCAiRmFpbGVkIHRvIHNlbmQgRXRoZXIiKTsKICAgIH0KfQo=",
+    },
 ]
 
 const html = `<p><code>fallback</code> is a function that does not take any arguments and does not return anything.</p>
@@ -17,7 +17,7 @@ const html = `<p><code>fallback</code> is a function that does not take any argu
 </ul>
 <p><code>fallback</code> has a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Fallback</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> func, <span class="hljs-keyword">uint</span> gas</span>)</span>;

@@ -1,6 +1,6 @@
 ---
 title: Constructor
-version: 0.8.13
+version: 0.8.17
 description: Learn how to initialize smart contracts in Solidity using a constructor
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Enum
-version: 0.8.13
+version: 0.8.17
 description: Example of enums in Solidity
 ---
 

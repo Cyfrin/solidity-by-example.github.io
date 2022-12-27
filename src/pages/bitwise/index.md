@@ -1,6 +1,6 @@
 ---
 title: Bitwise Operators
-version: 0.8.13
+version: 0.8.17
 description: Learn about bitwise operators in Solidity
 ---
 

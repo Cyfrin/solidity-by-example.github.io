@@ -1,6 +1,6 @@
 ---
 title: Visibility
-version: 0.8.13
+version: 0.8.17
 description: An example of external, internal, private and public functions in Solidity
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Phishing with tx.origin
-version: 0.8.13
+version: 0.8.17
 description: An example of phishing with tx.origin in Solidity
 ---
 
@@ -28,4 +28,5 @@ function transfer(address payable _to, uint256 _amount) public {
   (bool sent, ) = _to.call{ value: _amount }("");
   require(sent, "Failed to send Ether");
 }
+
 ```

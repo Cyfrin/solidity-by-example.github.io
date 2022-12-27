@@ -1,6 +1,6 @@
 ---
 title: English Auction
-version: 0.8.13
+version: 0.8.17
 description: An example of English auction in Solidity
 ---
 

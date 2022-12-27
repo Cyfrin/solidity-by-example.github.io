@@ -1,6 +1,6 @@
 ---
 title: Error
-version: 0.8.13
+version: 0.8.17
 description: Example of how to throw errors in Solidity
 ---
 

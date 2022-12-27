@@ -1,6 +1,6 @@
 ---
 title: Try Catch
-version: 0.8.13
+version: 0.8.17
 description: An example of try / catch in Solidity
 ---
 

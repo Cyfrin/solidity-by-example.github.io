@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.17;
 
 contract DiscreteStakingRewards {
     IERC20 public immutable stakingToken;

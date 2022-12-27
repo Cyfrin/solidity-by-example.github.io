@@ -1,6 +1,6 @@
 ---
 title: Denial of Service
-version: 0.8.13
+version: 0.8.17
 description: An example of denial of service hack in Solidity
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Structs
-version: 0.8.13
+version: 0.8.17
 description: An example of how to use structs in Solidity
 ---
 

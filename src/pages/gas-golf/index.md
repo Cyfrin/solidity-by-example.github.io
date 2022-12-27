@@ -1,6 +1,6 @@
 ---
 title: Gas Saving Techniques
-version: 0.8.13
+version: 0.8.17
 description: Some gas saving techniques
 ---
 
