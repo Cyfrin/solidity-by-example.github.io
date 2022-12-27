@@ -5,7 +5,7 @@ export const description = "An example of Dutch auction in Solidity"
 export const codes = [
   {
     fileName: "DutchAuction.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmludGVyZmFjZSBJRVJDNzIxIHsKICAgIGZ1bmN0aW9uIHRyYW5zZmVyRnJvbSgKICAgICAgICBhZGRyZXNzIF9mcm9tLAogICAgICAgIGFkZHJlc3MgX3RvLAogICAgICAgIHVpbnQgX25mdElkCiAgICApIGV4dGVybmFsOwp9Cgpjb250cmFjdCBEdXRjaEF1Y3Rpb24gewogICAgdWludCBwcml2YXRlIGNvbnN0YW50IERVUkFUSU9OID0gNyBkYXlzOwoKICAgIElFUkM3MjEgcHVibGljIGltbXV0YWJsZSBuZnQ7CiAgICB1aW50IHB1YmxpYyBpbW11dGFibGUgbmZ0SWQ7CgogICAgYWRkcmVzcyBwYXlhYmxlIHB1YmxpYyBpbW11dGFibGUgc2VsbGVyOwogICAgdWludCBwdWJsaWMgaW1tdXRhYmxlIHN0YXJ0aW5nUHJpY2U7CiAgICB1aW50IHB1YmxpYyBpbW11dGFibGUgc3RhcnRBdDsKICAgIHVpbnQgcHVibGljIGltbXV0YWJsZSBleHBpcmVzQXQ7CiAgICB1aW50IHB1YmxpYyBpbW11dGFibGUgZGlzY291bnRSYXRlOwoKICAgIGNvbnN0cnVjdG9yKAogICAgICAgIHVpbnQgX3N0YXJ0aW5nUHJpY2UsCiAgICAgICAgdWludCBfZGlzY291bnRSYXRlLAogICAgICAgIGFkZHJlc3MgX25mdCwKICAgICAgICB1aW50IF9uZnRJZAogICAgKSB7CiAgICAgICAgc2VsbGVyID0gcGF5YWJsZShtc2cuc2VuZGVyKTsKICAgICAgICBzdGFydGluZ1ByaWNlID0gX3N0YXJ0aW5nUHJpY2U7CiAgICAgICAgc3RhcnRBdCA9IGJsb2NrLnRpbWVzdGFtcDsKICAgICAgICBleHBpcmVzQXQgPSBibG9jay50aW1lc3RhbXAgKyBEVVJBVElPTjsKICAgICAgICBkaXNjb3VudFJhdGUgPSBfZGlzY291bnRSYXRlOwoKICAgICAgICByZXF1aXJlKF9zdGFydGluZ1ByaWNlID49IF9kaXNjb3VudFJhdGUgKiBEVVJBVElPTiwgInN0YXJ0aW5nIHByaWNlIDwgbWluIik7CgogICAgICAgIG5mdCA9IElFUkM3MjEoX25mdCk7CiAgICAgICAgbmZ0SWQgPSBfbmZ0SWQ7CiAgICB9CgogICAgZnVuY3Rpb24gZ2V0UHJpY2UoKSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgdWludCB0aW1lRWxhcHNlZCA9IGJsb2NrLnRpbWVzdGFtcCAtIHN0YXJ0QXQ7CiAgICAgICAgdWludCBkaXNjb3VudCA9IGRpc2NvdW50UmF0ZSAqIHRpbWVFbGFwc2VkOwogICAgICAgIHJldHVybiBzdGFydGluZ1ByaWNlIC0gZGlzY291bnQ7CiAgICB9CgogICAgZnVuY3Rpb24gYnV5KCkgZXh0ZXJuYWwgcGF5YWJsZSB7CiAgICAgICAgcmVxdWlyZShibG9jay50aW1lc3RhbXAgPCBleHBpcmVzQXQsICJhdWN0aW9uIGV4cGlyZWQiKTsKCiAgICAgICAgdWludCBwcmljZSA9IGdldFByaWNlKCk7CiAgICAgICAgcmVxdWlyZShtc2cudmFsdWUgPj0gcHJpY2UsICJFVEggPCBwcmljZSIpOwoKICAgICAgICBuZnQudHJhbnNmZXJGcm9tKHNlbGxlciwgbXNnLnNlbmRlciwgbmZ0SWQpOwogICAgICAgIHVpbnQgcmVmdW5kID0gbXNnLnZhbHVlIC0gcHJpY2U7CiAgICAgICAgaWYgKHJlZnVuZCA+IDApIHsKICAgICAgICAgICAgcGF5YWJsZShtc2cuc2VuZGVyKS50cmFuc2ZlcihyZWZ1bmQpOwogICAgICAgIH0KICAgICAgICBzZWxmZGVzdHJ1Y3Qoc2VsbGVyKTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmludGVyZmFjZSBJRVJDNzIxIHsKICAgIGZ1bmN0aW9uIHRyYW5zZmVyRnJvbShhZGRyZXNzIF9mcm9tLCBhZGRyZXNzIF90bywgdWludCBfbmZ0SWQpIGV4dGVybmFsOwp9Cgpjb250cmFjdCBEdXRjaEF1Y3Rpb24gewogICAgdWludCBwcml2YXRlIGNvbnN0YW50IERVUkFUSU9OID0gNyBkYXlzOwoKICAgIElFUkM3MjEgcHVibGljIGltbXV0YWJsZSBuZnQ7CiAgICB1aW50IHB1YmxpYyBpbW11dGFibGUgbmZ0SWQ7CgogICAgYWRkcmVzcyBwYXlhYmxlIHB1YmxpYyBpbW11dGFibGUgc2VsbGVyOwogICAgdWludCBwdWJsaWMgaW1tdXRhYmxlIHN0YXJ0aW5nUHJpY2U7CiAgICB1aW50IHB1YmxpYyBpbW11dGFibGUgc3RhcnRBdDsKICAgIHVpbnQgcHVibGljIGltbXV0YWJsZSBleHBpcmVzQXQ7CiAgICB1aW50IHB1YmxpYyBpbW11dGFibGUgZGlzY291bnRSYXRlOwoKICAgIGNvbnN0cnVjdG9yKHVpbnQgX3N0YXJ0aW5nUHJpY2UsIHVpbnQgX2Rpc2NvdW50UmF0ZSwgYWRkcmVzcyBfbmZ0LCB1aW50IF9uZnRJZCkgewogICAgICAgIHNlbGxlciA9IHBheWFibGUobXNnLnNlbmRlcik7CiAgICAgICAgc3RhcnRpbmdQcmljZSA9IF9zdGFydGluZ1ByaWNlOwogICAgICAgIHN0YXJ0QXQgPSBibG9jay50aW1lc3RhbXA7CiAgICAgICAgZXhwaXJlc0F0ID0gYmxvY2sudGltZXN0YW1wICsgRFVSQVRJT047CiAgICAgICAgZGlzY291bnRSYXRlID0gX2Rpc2NvdW50UmF0ZTsKCiAgICAgICAgcmVxdWlyZShfc3RhcnRpbmdQcmljZSA+PSBfZGlzY291bnRSYXRlICogRFVSQVRJT04sICJzdGFydGluZyBwcmljZSA8IG1pbiIpOwoKICAgICAgICBuZnQgPSBJRVJDNzIxKF9uZnQpOwogICAgICAgIG5mdElkID0gX25mdElkOwogICAgfQoKICAgIGZ1bmN0aW9uIGdldFByaWNlKCkgcHVibGljIHZpZXcgcmV0dXJucyAodWludCkgewogICAgICAgIHVpbnQgdGltZUVsYXBzZWQgPSBibG9jay50aW1lc3RhbXAgLSBzdGFydEF0OwogICAgICAgIHVpbnQgZGlzY291bnQgPSBkaXNjb3VudFJhdGUgKiB0aW1lRWxhcHNlZDsKICAgICAgICByZXR1cm4gc3RhcnRpbmdQcmljZSAtIGRpc2NvdW50OwogICAgfQoKICAgIGZ1bmN0aW9uIGJ1eSgpIGV4dGVybmFsIHBheWFibGUgewogICAgICAgIHJlcXVpcmUoYmxvY2sudGltZXN0YW1wIDwgZXhwaXJlc0F0LCAiYXVjdGlvbiBleHBpcmVkIik7CgogICAgICAgIHVpbnQgcHJpY2UgPSBnZXRQcmljZSgpOwogICAgICAgIHJlcXVpcmUobXNnLnZhbHVlID49IHByaWNlLCAiRVRIIDwgcHJpY2UiKTsKCiAgICAgICAgbmZ0LnRyYW5zZmVyRnJvbShzZWxsZXIsIG1zZy5zZW5kZXIsIG5mdElkKTsKICAgICAgICB1aW50IHJlZnVuZCA9IG1zZy52YWx1ZSAtIHByaWNlOwogICAgICAgIGlmIChyZWZ1bmQgPiAwKSB7CiAgICAgICAgICAgIHBheWFibGUobXNnLnNlbmRlcikudHJhbnNmZXIocmVmdW5kKTsKICAgICAgICB9CiAgICAgICAgc2VsZmRlc3RydWN0KHNlbGxlcik7CiAgICB9Cn0K",
   },
 ]
 
@@ -22,11 +22,7 @@ const html = `<p>Dutch auction for NFT.</p>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.13;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IERC721</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params">
-        <span class="hljs-keyword">address</span> _from,
-        <span class="hljs-keyword">address</span> _to,
-        <span class="hljs-keyword">uint</span> _nftId
-    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _from, <span class="hljs-keyword">address</span> _to, <span class="hljs-keyword">uint</span> _nftId</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">DutchAuction</span> </span>{
@@ -41,12 +37,7 @@ const html = `<p>Dutch auction for NFT.</p>
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">immutable</span> expiresAt;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">immutable</span> discountRate;
 
-    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint</span> _startingPrice,
-        <span class="hljs-keyword">uint</span> _discountRate,
-        <span class="hljs-keyword">address</span> _nft,
-        <span class="hljs-keyword">uint</span> _nftId
-    </span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _startingPrice, <span class="hljs-keyword">uint</span> _discountRate, <span class="hljs-keyword">address</span> _nft, <span class="hljs-keyword">uint</span> _nftId</span>) </span>{
         seller <span class="hljs-operator">=</span> <span class="hljs-keyword">payable</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>);
         startingPrice <span class="hljs-operator">=</span> _startingPrice;
         startAt <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;

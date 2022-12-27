@@ -5,7 +5,7 @@ export const description = "Example of how to write functions in Solidity"
 export const codes = [
   {
     fileName: "Function.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEZ1bmN0aW9uIHsKICAgIC8vIEZ1bmN0aW9ucyBjYW4gcmV0dXJuIG11bHRpcGxlIHZhbHVlcy4KICAgIGZ1bmN0aW9uIHJldHVybk1hbnkoKQogICAgICAgIHB1YmxpYwogICAgICAgIHB1cmUKICAgICAgICByZXR1cm5zICgKICAgICAgICAgICAgdWludCwKICAgICAgICAgICAgYm9vbCwKICAgICAgICAgICAgdWludAogICAgICAgICkKICAgIHsKICAgICAgICByZXR1cm4gKDEsIHRydWUsIDIpOwogICAgfQoKICAgIC8vIFJldHVybiB2YWx1ZXMgY2FuIGJlIG5hbWVkLgogICAgZnVuY3Rpb24gbmFtZWQoKQogICAgICAgIHB1YmxpYwogICAgICAgIHB1cmUKICAgICAgICByZXR1cm5zICgKICAgICAgICAgICAgdWludCB4LAogICAgICAgICAgICBib29sIGIsCiAgICAgICAgICAgIHVpbnQgeQogICAgICAgICkKICAgIHsKICAgICAgICByZXR1cm4gKDEsIHRydWUsIDIpOwogICAgfQoKICAgIC8vIFJldHVybiB2YWx1ZXMgY2FuIGJlIGFzc2lnbmVkIHRvIHRoZWlyIG5hbWUuCiAgICAvLyBJbiB0aGlzIGNhc2UgdGhlIHJldHVybiBzdGF0ZW1lbnQgY2FuIGJlIG9taXR0ZWQuCiAgICBmdW5jdGlvbiBhc3NpZ25lZCgpCiAgICAgICAgcHVibGljCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKAogICAgICAgICAgICB1aW50IHgsCiAgICAgICAgICAgIGJvb2wgYiwKICAgICAgICAgICAgdWludCB5CiAgICAgICAgKQogICAgewogICAgICAgIHggPSAxOwogICAgICAgIGIgPSB0cnVlOwogICAgICAgIHkgPSAyOwogICAgfQoKICAgIC8vIFVzZSBkZXN0cnVjdHVyaW5nIGFzc2lnbm1lbnQgd2hlbiBjYWxsaW5nIGFub3RoZXIKICAgIC8vIGZ1bmN0aW9uIHRoYXQgcmV0dXJucyBtdWx0aXBsZSB2YWx1ZXMuCiAgICBmdW5jdGlvbiBkZXN0cnVjdHVyaW5nQXNzaWdubWVudHMoKQogICAgICAgIHB1YmxpYwogICAgICAgIHB1cmUKICAgICAgICByZXR1cm5zICgKICAgICAgICAgICAgdWludCwKICAgICAgICAgICAgYm9vbCwKICAgICAgICAgICAgdWludCwKICAgICAgICAgICAgdWludCwKICAgICAgICAgICAgdWludAogICAgICAgICkKICAgIHsKICAgICAgICAodWludCBpLCBib29sIGIsIHVpbnQgaikgPSByZXR1cm5NYW55KCk7CgogICAgICAgIC8vIFZhbHVlcyBjYW4gYmUgbGVmdCBvdXQuCiAgICAgICAgKHVpbnQgeCwgLCB1aW50IHkpID0gKDQsIDUsIDYpOwoKICAgICAgICByZXR1cm4gKGksIGIsIGosIHgsIHkpOwogICAgfQoKICAgIC8vIENhbm5vdCB1c2UgbWFwIGZvciBlaXRoZXIgaW5wdXQgb3Igb3V0cHV0CgogICAgLy8gQ2FuIHVzZSBhcnJheSBmb3IgaW5wdXQKICAgIGZ1bmN0aW9uIGFycmF5SW5wdXQodWludFtdIG1lbW9yeSBfYXJyKSBwdWJsaWMge30KCiAgICAvLyBDYW4gdXNlIGFycmF5IGZvciBvdXRwdXQKICAgIHVpbnRbXSBwdWJsaWMgYXJyOwoKICAgIGZ1bmN0aW9uIGFycmF5T3V0cHV0KCkgcHVibGljIHZpZXcgcmV0dXJucyAodWludFtdIG1lbW9yeSkgewogICAgICAgIHJldHVybiBhcnI7CiAgICB9Cn0KCi8vIENhbGwgZnVuY3Rpb24gd2l0aCBrZXktdmFsdWUgaW5wdXRzCmNvbnRyYWN0IFhZWiB7CiAgICBmdW5jdGlvbiBzb21lRnVuY1dpdGhNYW55SW5wdXRzKAogICAgICAgIHVpbnQgeCwKICAgICAgICB1aW50IHksCiAgICAgICAgdWludCB6LAogICAgICAgIGFkZHJlc3MgYSwKICAgICAgICBib29sIGIsCiAgICAgICAgc3RyaW5nIG1lbW9yeSBjCiAgICApIHB1YmxpYyBwdXJlIHJldHVybnMgKHVpbnQpIHt9CgogICAgZnVuY3Rpb24gY2FsbEZ1bmMoKSBleHRlcm5hbCBwdXJlIHJldHVybnMgKHVpbnQpIHsKICAgICAgICByZXR1cm4gc29tZUZ1bmNXaXRoTWFueUlucHV0cygxLCAyLCAzLCBhZGRyZXNzKDApLCB0cnVlLCAiYyIpOwogICAgfQoKICAgIGZ1bmN0aW9uIGNhbGxGdW5jV2l0aEtleVZhbHVlKCkgZXh0ZXJuYWwgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuCiAgICAgICAgICAgIHNvbWVGdW5jV2l0aE1hbnlJbnB1dHMoe2E6IGFkZHJlc3MoMCksIGI6IHRydWUsIGM6ICJjIiwgeDogMSwgeTogMiwgejogM30pOwogICAgfQp9Cg==",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmNvbnRyYWN0IEZ1bmN0aW9uIHsKICAgIC8vIEZ1bmN0aW9ucyBjYW4gcmV0dXJuIG11bHRpcGxlIHZhbHVlcy4KICAgIGZ1bmN0aW9uIHJldHVybk1hbnkoKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50LCBib29sLCB1aW50KSB7CiAgICAgICAgcmV0dXJuICgxLCB0cnVlLCAyKTsKICAgIH0KCiAgICAvLyBSZXR1cm4gdmFsdWVzIGNhbiBiZSBuYW1lZC4KICAgIGZ1bmN0aW9uIG5hbWVkKCkgcHVibGljIHB1cmUgcmV0dXJucyAodWludCB4LCBib29sIGIsIHVpbnQgeSkgewogICAgICAgIHJldHVybiAoMSwgdHJ1ZSwgMik7CiAgICB9CgogICAgLy8gUmV0dXJuIHZhbHVlcyBjYW4gYmUgYXNzaWduZWQgdG8gdGhlaXIgbmFtZS4KICAgIC8vIEluIHRoaXMgY2FzZSB0aGUgcmV0dXJuIHN0YXRlbWVudCBjYW4gYmUgb21pdHRlZC4KICAgIGZ1bmN0aW9uIGFzc2lnbmVkKCkgcHVibGljIHB1cmUgcmV0dXJucyAodWludCB4LCBib29sIGIsIHVpbnQgeSkgewogICAgICAgIHggPSAxOwogICAgICAgIGIgPSB0cnVlOwogICAgICAgIHkgPSAyOwogICAgfQoKICAgIC8vIFVzZSBkZXN0cnVjdHVyaW5nIGFzc2lnbm1lbnQgd2hlbiBjYWxsaW5nIGFub3RoZXIKICAgIC8vIGZ1bmN0aW9uIHRoYXQgcmV0dXJucyBtdWx0aXBsZSB2YWx1ZXMuCiAgICBmdW5jdGlvbiBkZXN0cnVjdHVyaW5nQXNzaWdubWVudHMoKQogICAgICAgIHB1YmxpYwogICAgICAgIHB1cmUKICAgICAgICByZXR1cm5zICh1aW50LCBib29sLCB1aW50LCB1aW50LCB1aW50KQogICAgewogICAgICAgICh1aW50IGksIGJvb2wgYiwgdWludCBqKSA9IHJldHVybk1hbnkoKTsKCiAgICAgICAgLy8gVmFsdWVzIGNhbiBiZSBsZWZ0IG91dC4KICAgICAgICAodWludCB4LCAsIHVpbnQgeSkgPSAoNCwgNSwgNik7CgogICAgICAgIHJldHVybiAoaSwgYiwgaiwgeCwgeSk7CiAgICB9CgogICAgLy8gQ2Fubm90IHVzZSBtYXAgZm9yIGVpdGhlciBpbnB1dCBvciBvdXRwdXQKCiAgICAvLyBDYW4gdXNlIGFycmF5IGZvciBpbnB1dAogICAgZnVuY3Rpb24gYXJyYXlJbnB1dCh1aW50W10gbWVtb3J5IF9hcnIpIHB1YmxpYyB7fQoKICAgIC8vIENhbiB1c2UgYXJyYXkgZm9yIG91dHB1dAogICAgdWludFtdIHB1YmxpYyBhcnI7CgogICAgZnVuY3Rpb24gYXJyYXlPdXRwdXQoKSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50W10gbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuIGFycjsKICAgIH0KfQoKLy8gQ2FsbCBmdW5jdGlvbiB3aXRoIGtleS12YWx1ZSBpbnB1dHMKY29udHJhY3QgWFlaIHsKICAgIGZ1bmN0aW9uIHNvbWVGdW5jV2l0aE1hbnlJbnB1dHMoCiAgICAgICAgdWludCB4LAogICAgICAgIHVpbnQgeSwKICAgICAgICB1aW50IHosCiAgICAgICAgYWRkcmVzcyBhLAogICAgICAgIGJvb2wgYiwKICAgICAgICBzdHJpbmcgbWVtb3J5IGMKICAgICkgcHVibGljIHB1cmUgcmV0dXJucyAodWludCkge30KCiAgICBmdW5jdGlvbiBjYWxsRnVuYygpIGV4dGVybmFsIHB1cmUgcmV0dXJucyAodWludCkgewogICAgICAgIHJldHVybiBzb21lRnVuY1dpdGhNYW55SW5wdXRzKDEsIDIsIDMsIGFkZHJlc3MoMCksIHRydWUsICJjIik7CiAgICB9CgogICAgZnVuY3Rpb24gY2FsbEZ1bmNXaXRoS2V5VmFsdWUoKSBleHRlcm5hbCBwdXJlIHJldHVybnMgKHVpbnQpIHsKICAgICAgICByZXR1cm4KICAgICAgICAgICAgc29tZUZ1bmNXaXRoTWFueUlucHV0cyh7YTogYWRkcmVzcygwKSwgYjogdHJ1ZSwgYzogImMiLCB4OiAxLCB5OiAyLCB6OiAzfSk7CiAgICB9Cn0K",
   },
 ]
 
@@ -16,42 +16,18 @@ const html = `<p>There are several ways to return outputs from a function.</p>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Function</span> </span>{
     <span class="hljs-comment">// Functions can return multiple values.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">returnMany</span>(<span class="hljs-params"></span>)
-        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
-            <span class="hljs-keyword">uint</span>,
-            <span class="hljs-keyword">bool</span>,
-            <span class="hljs-keyword">uint</span>
-        </span>)
-    </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">returnMany</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>, <span class="hljs-keyword">bool</span>, <span class="hljs-keyword">uint</span></span>) </span>{
         <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span>, <span class="hljs-literal">true</span>, <span class="hljs-number">2</span>);
     }
 
     <span class="hljs-comment">// Return values can be named.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">named</span>(<span class="hljs-params"></span>)
-        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
-            <span class="hljs-keyword">uint</span> x,
-            <span class="hljs-keyword">bool</span> b,
-            <span class="hljs-keyword">uint</span> y
-        </span>)
-    </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">named</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">bool</span> b, <span class="hljs-keyword">uint</span> y</span>) </span>{
         <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span>, <span class="hljs-literal">true</span>, <span class="hljs-number">2</span>);
     }
 
     <span class="hljs-comment">// Return values can be assigned to their name.</span>
     <span class="hljs-comment">// In this case the return statement can be omitted.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">assigned</span>(<span class="hljs-params"></span>)
-        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
-            <span class="hljs-keyword">uint</span> x,
-            <span class="hljs-keyword">bool</span> b,
-            <span class="hljs-keyword">uint</span> y
-        </span>)
-    </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">assigned</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">bool</span> b, <span class="hljs-keyword">uint</span> y</span>) </span>{
         x <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
         b <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
         y <span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
@@ -62,13 +38,7 @@ const html = `<p>There are several ways to return outputs from a function.</p>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destructuringAssignments</span>(<span class="hljs-params"></span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
-            <span class="hljs-keyword">uint</span>,
-            <span class="hljs-keyword">bool</span>,
-            <span class="hljs-keyword">uint</span>,
-            <span class="hljs-keyword">uint</span>,
-            <span class="hljs-keyword">uint</span>
-        </span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span>, <span class="hljs-keyword">bool</span>, <span class="hljs-keyword">uint</span>, <span class="hljs-keyword">uint</span>, <span class="hljs-keyword">uint</span></span>)
     </span>{
         (<span class="hljs-keyword">uint</span> i, <span class="hljs-keyword">bool</span> b, <span class="hljs-keyword">uint</span> j) <span class="hljs-operator">=</span> returnMany();
 

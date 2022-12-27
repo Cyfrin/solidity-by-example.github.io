@@ -13,7 +13,7 @@ export const codes = [
   },
   {
     fileName: "MyToken.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmltcG9ydCAiaHR0cHM6Ly9naXRodWIuY29tL09wZW5aZXBwZWxpbi9vcGVuemVwcGVsaW4tY29udHJhY3RzL2Jsb2IvdjQuMC4wL2NvbnRyYWN0cy90b2tlbi9FUkMyMC9FUkMyMC5zb2wiOwoKY29udHJhY3QgTXlUb2tlbiBpcyBFUkMyMCB7CiAgICBjb25zdHJ1Y3RvcihzdHJpbmcgbWVtb3J5IG5hbWUsIHN0cmluZyBtZW1vcnkgc3ltYm9sKSBFUkMyMChuYW1lLCBzeW1ib2wpIHsKICAgICAgICAvLyBNaW50IDEwMCB0b2tlbnMgdG8gbXNnLnNlbmRlcgogICAgICAgIC8vIFNpbWlsYXIgdG8gaG93CiAgICAgICAgLy8gMSBkb2xsYXIgPSAxMDAgY2VudHMKICAgICAgICAvLyAxIHRva2VuID0gMSAqICgxMCAqKiBkZWNpbWFscykKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAgKiAxMCoqdWludChkZWNpbWFscygpKSk7CiAgICB9Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xMzsKCmltcG9ydCAiaHR0cHM6Ly9naXRodWIuY29tL09wZW5aZXBwZWxpbi9vcGVuemVwcGVsaW4tY29udHJhY3RzL2Jsb2IvdjQuMC4wL2NvbnRyYWN0cy90b2tlbi9FUkMyMC9FUkMyMC5zb2wiOwoKY29udHJhY3QgTXlUb2tlbiBpcyBFUkMyMCB7CiAgICBjb25zdHJ1Y3RvcihzdHJpbmcgbWVtb3J5IG5hbWUsIHN0cmluZyBtZW1vcnkgc3ltYm9sKSBFUkMyMChuYW1lLCBzeW1ib2wpIHsKICAgICAgICAvLyBNaW50IDEwMCB0b2tlbnMgdG8gbXNnLnNlbmRlcgogICAgICAgIC8vIFNpbWlsYXIgdG8gaG93CiAgICAgICAgLy8gMSBkb2xsYXIgPSAxMDAgY2VudHMKICAgICAgICAvLyAxIHRva2VuID0gMSAqICgxMCAqKiBkZWNpbWFscykKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAgKiAxMCAqKiB1aW50KGRlY2ltYWxzKCkpKTsKICAgIH0KfQo=",
   },
   {
     fileName: "TokenSwap.sol",
@@ -119,7 +119,7 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
         <span class="hljs-comment">// Similar to how</span>
         <span class="hljs-comment">// 1 dollar = 100 cents</span>
         <span class="hljs-comment">// 1 token = 1 * (10 ** decimals)</span>
-        _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-number">100</span> <span class="hljs-operator">*</span> <span class="hljs-number">10</span><span class="hljs-operator">*</span><span class="hljs-operator">*</span><span class="hljs-keyword">uint</span>(decimals()));
+        _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-number">100</span> <span class="hljs-operator">*</span> <span class="hljs-number">10</span> <span class="hljs-operator">*</span><span class="hljs-operator">*</span> <span class="hljs-keyword">uint</span>(decimals()));
     }
 }
 </code></pre>
