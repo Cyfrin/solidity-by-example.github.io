@@ -4,9 +4,7 @@ version: 0.8.17
 description: Example of how to use fallback in Solidity
 ---
 
-`fallback` is a function that does not take any arguments and does not return anything.
-
-It is executed either when
+`fallback` is a special function that is executed either when
 
 - a function that does not exist is called or
 - Ether is sent directly to a contract but `receive()` does not exist or `msg.data` is not empty
@@ -15,4 +13,10 @@ It is executed either when
 
 ```solidity
 {{{Fallback}}}
+```
+
+`fallback` can optionally take `bytes` for input and output
+
+```solidity
+{{{FallbackWithData}}}
 ```
