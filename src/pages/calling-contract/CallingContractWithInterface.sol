@@ -43,5 +43,12 @@ contract Caller {
         (uint x, uint value) = calleContract.setXandSendEther{value: msg.value}(_x);
     }
     
+    /**  
+     * or 
+     function setXandSendEther(uint _x, address _calleAddress) public payable {
+        (uint x, uint value) = ICallee(_calleAddress).setXandSendEther{value: msg.value}(_x);
+    }
+    
+    */
     
 }
