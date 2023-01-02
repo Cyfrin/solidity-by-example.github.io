@@ -9,7 +9,7 @@ export const codes = [
   },
   {
     fileName: "FallbackWithData.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IEZhbGxiYWNrV2l0aERhdGEgewogICAgYWRkcmVzcyBpbW11dGFibGUgdGFyZ2V0OwoKICAgIGV2ZW50IExvZyhieXRlcyByZXMpOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX3RhcmdldCkgewogICAgICAgIHRhcmdldCA9IF90YXJnZXQ7CiAgICB9CgogICAgZmFsbGJhY2soYnl0ZXMgY2FsbGRhdGEgZGF0YSkgZXh0ZXJuYWwgcGF5YWJsZSByZXR1cm5zIChieXRlcyBtZW1vcnkpIHsKICAgICAgICAoYm9vbCBvaywgYnl0ZXMgbWVtb3J5IHJlcykgPSB0YXJnZXQuY2FsbHt2YWx1ZTogbXNnLnZhbHVlfShkYXRhKTsKICAgICAgICByZXF1aXJlKG9rLCAiY2FsbCBmYWlsZWQiKTsKCiAgICAgICAgZW1pdCBMb2cocmVzKTsKCiAgICAgICAgcmV0dXJuIHJlczsKICAgIH0KfQoKY29udHJhY3QgVGVzdEZhbGxiYWNrIHsKICAgIGZ1bmN0aW9uIHRlc3QoKSBleHRlcm5hbCBwYXlhYmxlIHJldHVybnMgKHVpbnQpIHsKICAgICAgICByZXR1cm4gMHhGRkZGRkZGRkZGRkZGOwogICAgfQoKICAgIGZ1bmN0aW9uIGdldFRlc3REYXRhKCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zIChieXRlcyBtZW1vcnkpIHsKICAgICAgICByZXR1cm4gYWJpLmVuY29kZUNhbGwodGhpcy50ZXN0LCAoKSk7CiAgICB9Cn0K",
+    code: "cHJhZ21hIHNvbGlkaXR5IF4wLjguMTc7CgovLyBUZXN0RmFsbGJhY2sgLT4gRmFsbGJhY2tXaXRoRGF0YSAtPiBDb3VudGVyCmNvbnRyYWN0IEZhbGxiYWNrV2l0aERhdGEgewogICAgYWRkcmVzcyBpbW11dGFibGUgdGFyZ2V0OwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX3RhcmdldCkgewogICAgICAgIHRhcmdldCA9IF90YXJnZXQ7CiAgICB9CgogICAgZmFsbGJhY2soYnl0ZXMgY2FsbGRhdGEgZGF0YSkgZXh0ZXJuYWwgcGF5YWJsZSByZXR1cm5zIChieXRlcyBtZW1vcnkpIHsKICAgICAgICAoYm9vbCBvaywgYnl0ZXMgbWVtb3J5IHJlcykgPSB0YXJnZXQuY2FsbHt2YWx1ZTogbXNnLnZhbHVlfShkYXRhKTsKICAgICAgICByZXF1aXJlKG9rLCAiY2FsbCBmYWlsZWQiKTsKICAgICAgICByZXR1cm4gcmVzOwogICAgfQp9Cgpjb250cmFjdCBDb3VudGVyIHsKICAgIHVpbnQgcHVibGljIGNvdW50OwoKICAgIGZ1bmN0aW9uIGdldCgpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludCkgewogICAgICAgIHJldHVybiBjb3VudDsKICAgIH0KCiAgICBmdW5jdGlvbiBpbmMoKSBleHRlcm5hbCByZXR1cm5zICh1aW50KSB7CiAgICAgICAgY291bnQgKz0gMTsKICAgICAgICByZXR1cm4gY291bnQ7CiAgICB9Cn0KCmNvbnRyYWN0IFRlc3RGYWxsYmFjayB7CiAgICBldmVudCBMb2coYnl0ZXMgcmVzKTsKCiAgICBmdW5jdGlvbiB0ZXN0KGFkZHJlc3MgX2ZhbGxiYWNrLCBieXRlcyBjYWxsZGF0YSBkYXRhKSBleHRlcm5hbCB7CiAgICAgICAgKGJvb2wgb2ssIGJ5dGVzIG1lbW9yeSByZXMpID0gX2ZhbGxiYWNrLmNhbGwoZGF0YSk7CiAgICAgICAgcmVxdWlyZShvaywgImNhbGwgZmFpbGVkIik7CiAgICAgICAgZW1pdCBMb2cocmVzKTsKICAgIH0KCiAgICBmdW5jdGlvbiBnZXRUZXN0RGF0YSgpIGV4dGVybmFsIHB1cmUgcmV0dXJucyAoYnl0ZXMgbWVtb3J5LCBieXRlcyBtZW1vcnkpIHsKICAgICAgICByZXR1cm4gKGFiaS5lbmNvZGVDYWxsKENvdW50ZXIuZ2V0LCAoKSksIGFiaS5lbmNvZGVDYWxsKENvdW50ZXIuaW5jLCAoKSkpOwogICAgfQp9Cg==",
   },
 ]
 
@@ -55,13 +55,11 @@ const html = `<p><code>fallback</code> is a special function that is executed ei
 }
 </code></pre>
 <p><code>fallback</code> can optionally take <code>bytes</code> for input and output</p>
-<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
+<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
+<span class="hljs-comment">// TestFallback -&gt; FallbackWithData -&gt; Counter</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FallbackWithData</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">immutable</span> target;
-
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> res</span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _target</span>) </span>{
         target <span class="hljs-operator">=</span> _target;
@@ -70,20 +68,34 @@ const html = `<p><code>fallback</code> is a special function that is executed ei
     <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">calldata</span> data</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
         (<span class="hljs-keyword">bool</span> ok, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> res) <span class="hljs-operator">=</span> target.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(data);
         <span class="hljs-built_in">require</span>(ok, <span class="hljs-string">"call failed"</span>);
-
-        <span class="hljs-keyword">emit</span> Log(res);
-
         <span class="hljs-keyword">return</span> res;
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestFallback</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0xFFFFFFFFFFFFF</span>;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Counter</span> </span>{
+    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> count;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        <span class="hljs-keyword">return</span> count;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTestData</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeCall</span>(<span class="hljs-built_in">this</span>.test, ());
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">inc</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+        count <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">return</span> count;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestFallback</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">bytes</span> res</span>)</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _fallback, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">calldata</span> data</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
+        (<span class="hljs-keyword">bool</span> ok, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> res) <span class="hljs-operator">=</span> _fallback.<span class="hljs-built_in">call</span>(data);
+        <span class="hljs-built_in">require</span>(ok, <span class="hljs-string">"call failed"</span>);
+        <span class="hljs-keyword">emit</span> Log(res);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getTestData</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span>, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
+        <span class="hljs-keyword">return</span> (<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeCall</span>(Counter.get, ()), <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeCall</span>(Counter.inc, ()));
     }
 }
 </code></pre>
