@@ -17,6 +17,11 @@ function Footer() {
           Smart Contract Engineer
         </a>
       </div>
+      <div className={styles.row}>
+        <a href="https://vyper-by-example.org/" target="__blank">
+          Vyper By Example
+        </a>
+      </div>
       <div className={styles.social}>
         <div className={styles.row}>
           <img src={discord} alt="discord" className={styles.discord} />
