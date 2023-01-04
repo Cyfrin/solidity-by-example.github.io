@@ -1,42 +1,32 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-contract Storage {
-    struct MyStruct {
-        uint value;
+library StorageSlot {
+    // Wrap address in a struct so that it can be passed around as a storage pointer
+    struct AddressSlot {
+        address value;
     }
 
-    // struct stored at slot 0
-    MyStruct public s0 = MyStruct(123);
-    // struct stored at slot 1
-    MyStruct public s1 = MyStruct(456);
-    // struct stored at slot 2
-    MyStruct public s2 = MyStruct(789);
-
-    function _get(uint i) internal pure returns (MyStruct storage s) {
-        // get struct stored at slot i
+    function getAddressSlot(
+        bytes32 slot
+    ) internal pure returns (AddressSlot storage pointer) {
         assembly {
-            s.slot := i
+            // Get the pointer to AddressSlot stored at slot
+            pointer.slot := slot
         }
     }
+}
 
-    /*
-    get(0) returns 123
-    get(1) returns 456
-    get(2) returns 789
-    */
-    function get(uint i) external view returns (uint) {
-        // get value inside MyStruct stored at slot i
-        return _get(i).value;
+contract TestSlot {
+    bytes32 public constant TEST_SLOT = keccak256("TEST_SLOT");
+
+    function write(address _addr) external {
+        StorageSlot.AddressSlot storage data = StorageSlot.getAddressSlot(TEST_SLOT);
+        data.value = _addr;
     }
 
-    /*
-    We can save data to any slot including slot 999 which is normally unaccessble.
-
-    set(999) = 888 
-    */
-    function set(uint i, uint x) external {
-        // set value of MyStruct to x and store it at slot i
-        _get(i).value = x;
+    function get() external view returns (address) {
+        StorageSlot.AddressSlot storage data = StorageSlot.getAddressSlot(TEST_SLOT);
+        return data.value;
     }
 }
