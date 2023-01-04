@@ -18,5 +18,5 @@ description: Example of how to use fallback in Solidity
 `fallback` can optionally take `bytes` for input and output
 
 ```solidity
-{{{FallbackWithData}}}
+{{{FallbackInputOutput}}}
 ```

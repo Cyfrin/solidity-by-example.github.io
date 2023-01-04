@@ -1,7 +1,7 @@
 pragma solidity ^0.8.17;
 
-// TestFallback -> FallbackWithData -> Counter
-contract FallbackWithData {
+// TestFallbackInputOutput -> FallbackInputOutput -> Counter
+contract FallbackInputOutput {
     address immutable target;
 
     constructor(address _target) {
@@ -28,7 +28,7 @@ contract Counter {
     }
 }
 
-contract TestFallback {
+contract TestFallbackInputOutput {
     event Log(bytes res);
 
     function test(address _fallback, bytes calldata data) external {
