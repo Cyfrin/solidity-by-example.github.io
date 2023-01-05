@@ -30,7 +30,7 @@ function App() {
                 <Route
                   key={route.path}
                   path={route.path}
-                  element={route.component({ prev, next })}
+                  element={React.createElement(route.component, { prev, next })}
                 />
               )
             })}
