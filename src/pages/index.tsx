@@ -4,9 +4,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/01/05 GitHub PR Syuizen",
   "2022/12/31 - GitHub PR 0xronin",
   "2022/12/27 - Fallback input and output",
-  "2022/12/27 - Solidity 0.8.17",
 ]
 
 interface Route {
