@@ -58,7 +58,7 @@ contract TestToken {
 
 // functions outside contract
 
-function helper(uint x) view returns (uint) {
+function helper(uint x) pure returns (uint) {
     return x * 2;
 }
 
@@ -78,7 +78,7 @@ contract TestHelper {
 // * import {symbol1 as alias, symbol2} from "filename";
 import {Unauthorized, helper as h1} from "./Sol08.sol";
 
-function helper(uint x) view returns (uint) {}
+function helper1(uint x) view returns (uint) {}
 
 contract Import {}
 
