@@ -89,7 +89,7 @@ contract SecuredFindThisHash {
 
     /* 
         Function to reveal the commit and get the reward. 
-        Users can get reveal solution only if the game is active and they have committed a solutionHash and not revealed yet.
+        Users can get reveal solution only if the game is active and they have committed a solutionHash before this block and not revealed yet.
         It generates an keccak256(msg.sender + solution + secret) and checks it with the previously commited hash.  
         Front runners will not be able to pass this check since the msg.sender is different.
         Then the actual solution is checked using keccak256(solution), if the solution matches, the winner is declared, 
@@ -101,6 +101,7 @@ contract SecuredFindThisHash {
     ) public gameActive {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
+        require(commit.commitTime < block.timestamp, "Cannot reveal in the same block");
         require(!commit.revealed, "Already commited and revealed");
 
         bytes32 solutionHash = keccak256(
