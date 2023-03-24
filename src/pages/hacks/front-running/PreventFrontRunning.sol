@@ -109,7 +109,7 @@ contract SecuredFindThisHash {
         );
         require(solutionHash == commit.solutionHash, "Hash doesn't match");
 
-        require(keccak256(abi.encodePacked(_solution)) != hash, "Incorrect answer");
+        require(keccak256(abi.encodePacked(_solution)) == hash, "Incorrect answer");
 
         winner = msg.sender;
         ended = true;
