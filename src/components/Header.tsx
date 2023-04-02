@@ -3,13 +3,10 @@ import { useAppContext, Theme } from "../contexts/AppContext"
 import styles from "./Header.module.css"
 import DarkMode from "./svg/DarkMode"
 import LightMode from "./svg/LightMode"
-import logoLight from "./logo.png"
-import logoDark from "./logo-dark.png"
+import Solidity from "./svg/Solidity"
 
 function Header() {
   const { state, setTheme } = useAppContext()
-
-  let logo = state.theme == "dark" ? logoDark : logoLight
 
   function onClickTheme() {
     setTheme(state.theme == "light" ? "dark" : "light")
@@ -19,7 +16,11 @@ function Header() {
   return (
     <div className={styles.component}>
       <a href="/">
-        <img src={logo} alt="logo" className={styles.logo} />
+        <Solidity
+          className={styles.logo}
+          size={60}
+          fill={state.theme == "dark" ? "rgb(0, 255, 0)" : "currentColor"}
+        />
       </a>
 
       <h3 className={styles.header}>
