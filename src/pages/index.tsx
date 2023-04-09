@@ -4,9 +4,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/04/09 - GitHub PR ErbaZZ",
   "2023/02/19 - GitHub PR Drblessing",
   "2023/01/05 GitHub PR Syuizen",
-  "2022/12/31 - GitHub PR 0xronin",
 ]
 
 interface Route {
