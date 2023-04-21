@@ -9,6 +9,18 @@ const UPDATES = [
   "2023/01/05 GitHub PR Syuizen",
 ]
 
+interface Translation {
+  lang: string
+  url: string
+}
+
+const TRANSLATIONS: Translation[] = [
+  {
+    lang: "Persian",
+    url: "https://dpanosian.com/fa/solidity-by-example",
+  },
+]
+
 interface Route {
   path: string
   title: string
@@ -527,6 +539,17 @@ export default function HomePage() {
             </ul>
           </div>
         ))}
+
+        <div>
+          <h3 className={styles.category}>Translations</h3>
+          {TRANSLATIONS.map(({ lang, url }) => (
+            <li className={styles.listItem} key={url}>
+              <a href={url} target="__blank">
+                {lang}
+              </a>
+            </li>
+          ))}
+        </div>
       </div>
     </div>
   )
