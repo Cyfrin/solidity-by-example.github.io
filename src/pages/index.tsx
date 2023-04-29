@@ -4,9 +4,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/04/30 - Gassless token transfer",
   "2023/04/09 - GitHub PR ErbaZZ",
   "2023/02/19 - GitHub PR Drblessing",
-  "2023/01/05 GitHub PR Syuizen",
 ]
 
 interface Translation {
@@ -243,6 +243,10 @@ const APP_ROUTES: Route[] = [
   {
     path: "erc721",
     title: "ERC721",
+  },
+  {
+    path: "gassless-token-transfer",
+    title: "Gassless Token Transfer",
   },
   {
     path: "simple-bytecode-contract",
