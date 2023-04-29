@@ -83,10 +83,15 @@ abstract contract ERC20 {
         return true;
     }
 
-    function transferFrom(address from, address to, uint256 amount) public virtual returns (bool) {
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) public virtual returns (bool) {
         uint256 allowed = allowance[from][msg.sender]; // Saves gas for limited approvals.
 
-        if (allowed != type(uint256).max) allowance[from][msg.sender] = allowed - amount;
+        if (allowed != type(uint256).max)
+            allowance[from][msg.sender] = allowed - amount;
 
         balanceOf[from] -= amount;
 
@@ -105,10 +110,15 @@ abstract contract ERC20 {
                              EIP-2612 LOGIC
     //////////////////////////////////////////////////////////////*/
 
-    function permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)
-        public
-        virtual
-    {
+    function permit(
+        address owner,
+        address spender,
+        uint256 value,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) public virtual {
         require(deadline >= block.timestamp, "PERMIT_DEADLINE_EXPIRED");
 
         // Unchecked because the only math done is incrementing
@@ -138,7 +148,10 @@ abstract contract ERC20 {
                 s
             );
 
-            require(recoveredAddress != address(0) && recoveredAddress == owner, "INVALID_SIGNER");
+            require(
+                recoveredAddress != address(0) && recoveredAddress == owner,
+                "INVALID_SIGNER"
+            );
 
             allowance[recoveredAddress][spender] = value;
         }
@@ -147,19 +160,25 @@ abstract contract ERC20 {
     }
 
     function DOMAIN_SEPARATOR() public view virtual returns (bytes32) {
-        return block.chainid == INITIAL_CHAIN_ID ? INITIAL_DOMAIN_SEPARATOR : computeDomainSeparator();
+        return
+            block.chainid == INITIAL_CHAIN_ID
+                ? INITIAL_DOMAIN_SEPARATOR
+                : computeDomainSeparator();
     }
 
     function computeDomainSeparator() internal view virtual returns (bytes32) {
-        return keccak256(
-            abi.encode(
-                keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
-                keccak256(bytes(name)),
-                keccak256("1"),
-                block.chainid,
-                address(this)
-            )
-        );
+        return
+            keccak256(
+                abi.encode(
+                    keccak256(
+                        "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"
+                    ),
+                    keccak256(bytes(name)),
+                    keccak256("1"),
+                    block.chainid,
+                    address(this)
+                )
+            );
     }
 
     /*//////////////////////////////////////////////////////////////
@@ -192,7 +211,11 @@ abstract contract ERC20 {
 }
 
 contract ERC20Permit is ERC20 {
-    constructor(string memory _name, string memory _symbol, uint8 _decimals) ERC20(_name, _symbol, _decimals) {}
+    constructor(
+        string memory _name,
+        string memory _symbol,
+        uint8 _decimals
+    ) ERC20(_name, _symbol, _decimals) {}
 
     function mint(address to, uint256 amount) public {
         _mint(to, amount);
