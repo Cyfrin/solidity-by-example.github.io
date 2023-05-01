@@ -2,6 +2,7 @@ import fs from "fs"
 import assert from "assert"
 import path from "path"
 import mustache from "mustache"
+import { buildRoute } from "./lib"
 
 const { readdir, stat, readFile, writeFile } = fs.promises
 
@@ -9,27 +10,6 @@ interface Route {
   routePath: string
   importPath: string
   componentName: string
-}
-
-function buildRoutePath(folders: string[]) {
-  const routePath = ["/"]
-
-  // ignore path up to /pages
-  const start = folders.findIndex((file) => file === "pages")
-  assert(start > 0, `Cannot find pages folder`)
-
-  for (let i = start + 1; i < folders.length; i++) {
-    const file = folders[i]
-
-    // ignore index.tsx
-    if (file === "index.tsx") {
-      continue
-    }
-
-    routePath.push(file)
-  }
-
-  return path.join(...routePath)
 }
 
 // build import path relative to src
@@ -95,7 +75,7 @@ async function main() {
   const routes: Route[] = files.map((file) => {
     const folders = file.split("/")
 
-    const routePath = buildRoutePath(folders)
+    const routePath = buildRoute(folders)
 
     return {
       routePath: routePath === "/" ? "" : routePath,
