@@ -2,6 +2,7 @@
 title: Constructor
 version: 0.8.17
 description: Learn how to initialize smart contracts in Solidity using a constructor
+keywords: [constructor, constructors, contract, inheritance]
 ---
 
 A `constructor` is an optional function that is executed upon contract creation.

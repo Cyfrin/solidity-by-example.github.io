@@ -2,6 +2,7 @@
 title: Array
 version: 0.8.17
 description: Learn about arrays in Solidity
+keywords: [data, variable, variables, array, arrays]
 ---
 
 Array can have a compile-time fixed size or a dynamic size.

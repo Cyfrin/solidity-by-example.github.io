@@ -2,6 +2,7 @@
 title: Verifying Signature
 version: 0.8.17
 description: An example of how to verify signatures in Solidity
+keywords: [cryptography, verify, verifying, signature, signatures, ecrecover]
 ---
 
 Messages can be signed off chain and then verified on chain using a smart contract.

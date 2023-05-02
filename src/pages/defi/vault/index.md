@@ -2,6 +2,7 @@
 title: Vault
 version: 0.8.17
 description: Vault
+keywords: [defi, vault]
 ---
 
 Simple example of vault contract, commonly used in DeFi protocols.

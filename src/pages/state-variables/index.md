@@ -2,6 +2,7 @@
 title: Reading and Writing to a State Variable
 version: 0.8.17
 description: Reading and Writing to a State Variable
+keywords: [reading, writing, state, variable, variables, app, application]
 ---
 
 To write or update a state variable you need to send a transaction.

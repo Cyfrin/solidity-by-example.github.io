@@ -2,6 +2,7 @@
 title: Re-Entrancy
 version: 0.8.17
 description: An example of re-entrancy attack in Solidity
+keywords: [hack, security, re-entrancy]
 ---
 
 ### Vulnerability

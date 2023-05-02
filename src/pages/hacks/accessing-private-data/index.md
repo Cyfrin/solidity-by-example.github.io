@@ -2,6 +2,7 @@
 title: Accessing Private Data
 version: 0.8.17
 description: An example of accessing private data from a Solidity smart contract
+keywords: [hack, security, access, accessing, private, data, storage]
 ---
 
 ### Vulnerability

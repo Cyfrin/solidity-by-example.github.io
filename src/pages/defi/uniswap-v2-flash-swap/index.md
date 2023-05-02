@@ -2,6 +2,7 @@
 title: Uniswap V2 Flash Swap
 version: 0.8.17
 description: Uniswap V2 flash swap
+keywords: [defi, uniswap, v2, flash, swap, amm]
 ---
 
 ### Uniswap V2 Flash Swap Example

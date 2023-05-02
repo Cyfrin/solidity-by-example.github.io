@@ -2,6 +2,7 @@
 title: For and While Loop
 version: 0.8.17
 description: Example of for and while loop in Solidity
+keywords: [for, loop, loops, while, do]
 ---
 
 Solidity supports `for`, `while`, and `do while` loops.

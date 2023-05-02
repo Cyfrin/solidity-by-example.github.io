@@ -2,6 +2,7 @@
 title: Multi-Sig Wallet
 version: 0.8.17
 description: An example of multi-sig wallet in Solidity
+keywords: [app, application, multi, sig, signature, wallet]
 ---
 
 Let's create an multi-sig wallet. Here are the specifications.

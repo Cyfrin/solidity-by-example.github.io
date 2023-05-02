@@ -1,0 +1,966 @@
+{
+  "visibility": [
+    "/visibility"
+  ],
+  "function": [
+    "/visibility",
+    "/view-and-pure-functions",
+    "/sending-ether",
+    "/hashing",
+    "/function-selector",
+    "/function-modifier",
+    "/function",
+    "/fallback",
+    "/delegatecall",
+    "/calling-contract",
+    "/call"
+  ],
+  "functions": [
+    "/visibility",
+    "/view-and-pure-functions",
+    "/sending-ether",
+    "/hashing",
+    "/function-selector",
+    "/function-modifier",
+    "/function",
+    "/fallback",
+    "/delegatecall",
+    "/calling-contract",
+    "/call"
+  ],
+  "internal": [
+    "/visibility"
+  ],
+  "private": [
+    "/visibility",
+    "/hacks/accessing-private-data"
+  ],
+  "public": [
+    "/visibility"
+  ],
+  "external": [
+    "/visibility",
+    "/hacks/hiding-malicious-code-with-external-contract"
+  ],
+  "view": [
+    "/view-and-pure-functions"
+  ],
+  "pure": [
+    "/view-and-pure-functions"
+  ],
+  "variable": [
+    "/variables",
+    "/structs",
+    "/state-variables",
+    "/shadowing-inherited-state-variables",
+    "/primitives",
+    "/mapping",
+    "/immutable",
+    "/ether-units",
+    "/enum",
+    "/constants",
+    "/array"
+  ],
+  "variables": [
+    "/variables",
+    "/structs",
+    "/state-variables",
+    "/shadowing-inherited-state-variables",
+    "/primitives",
+    "/mapping",
+    "/immutable",
+    "/ether-units",
+    "/enum",
+    "/constants",
+    "/array"
+  ],
+  "local": [
+    "/variables"
+  ],
+  "global": [
+    "/variables"
+  ],
+  "state": [
+    "/variables",
+    "/state-variables",
+    "/shadowing-inherited-state-variables"
+  ],
+  "data": [
+    "/variables",
+    "/structs",
+    "/primitives",
+    "/mapping",
+    "/immutable",
+    "/hacks/accessing-private-data",
+    "/ether-units",
+    "/enum",
+    "/data-locations",
+    "/constants",
+    "/array",
+    "/app/iterable-mapping"
+  ],
+  "gas": [
+    "/unchecked-math",
+    "/gas-golf",
+    "/gas"
+  ],
+  "unchecked": [
+    "/unchecked-math"
+  ],
+  "math": [
+    "/unchecked-math"
+  ],
+  "overflow": [
+    "/unchecked-math",
+    "/hacks/overflow"
+  ],
+  "underflow": [
+    "/unchecked-math",
+    "/hacks/overflow"
+  ],
+  "try": [
+    "/try-catch"
+  ],
+  "catch": [
+    "/try-catch"
+  ],
+  "error": [
+    "/try-catch",
+    "/error"
+  ],
+  "errors": [
+    "/try-catch",
+    "/error"
+  ],
+  "test": [
+    "/tests/echidna"
+  ],
+  "echidna": [
+    "/tests/echidna"
+  ],
+  "calling": [
+    "/super",
+    "/calling-contract"
+  ],
+  "parent": [
+    "/super"
+  ],
+  "contract": [
+    "/super",
+    "/new-contract",
+    "/interface",
+    "/inheritance",
+    "/hello-world",
+    "/hacks/hiding-malicious-code-with-external-contract",
+    "/hacks/contract-size",
+    "/first-app",
+    "/delegatecall",
+    "/constructor",
+    "/calling-contract",
+    "/call",
+    "/app/simple-bytecode-contract",
+    "/app/minimal-proxy",
+    "/app/deploy-any-contract",
+    "/app/create2"
+  ],
+  "contracts": [
+    "/super",
+    "/new-contract",
+    "/interface",
+    "/inheritance",
+    "/first-app",
+    "/delegatecall",
+    "/calling-contract",
+    "/call"
+  ],
+  "inheritance": [
+    "/super",
+    "/shadowing-inherited-state-variables",
+    "/inheritance",
+    "/constructor"
+  ],
+  "super": [
+    "/super",
+    "/inheritance"
+  ],
+  "struct": [
+    "/structs"
+  ],
+  "structs": [
+    "/structs"
+  ],
+  "type": [
+    "/structs",
+    "/primitives"
+  ],
+  "types": [
+    "/structs",
+    "/primitives"
+  ],
+  "reading": [
+    "/state-variables"
+  ],
+  "writing": [
+    "/state-variables"
+  ],
+  "app": [
+    "/state-variables",
+    "/hello-world",
+    "/first-app",
+    "/app/write-to-any-slot",
+    "/app/upgradeable-proxy",
+    "/app/uni-directional-payment-channel",
+    "/app/time-lock",
+    "/app/simple-bytecode-contract",
+    "/app/multi-sig-wallet",
+    "/app/multi-delegatecall",
+    "/app/multi-call",
+    "/app/minimal-proxy",
+    "/app/merkle-tree",
+    "/app/iterable-mapping",
+    "/app/gassless-token-transfer",
+    "/app/ether-wallet",
+    "/app/erc721",
+    "/app/erc20",
+    "/app/english-auction",
+    "/app/dutch-auction",
+    "/app/deploy-any-contract",
+    "/app/crowd-fund",
+    "/app/create2",
+    "/app/bi-directional-payment-channel"
+  ],
+  "application": [
+    "/state-variables",
+    "/hello-world",
+    "/first-app",
+    "/app/write-to-any-slot",
+    "/app/upgradeable-proxy",
+    "/app/uni-directional-payment-channel",
+    "/app/time-lock",
+    "/app/simple-bytecode-contract",
+    "/app/multi-sig-wallet",
+    "/app/multi-delegatecall",
+    "/app/multi-call",
+    "/app/minimal-proxy",
+    "/app/merkle-tree",
+    "/app/iterable-mapping",
+    "/app/gassless-token-transfer",
+    "/app/ether-wallet",
+    "/app/erc721",
+    "/app/erc20",
+    "/app/english-auction",
+    "/app/dutch-auction",
+    "/app/deploy-any-contract",
+    "/app/crowd-fund",
+    "/app/create2",
+    "/app/bi-directional-payment-channel"
+  ],
+  "cryptography": [
+    "/signature",
+    "/hashing",
+    "/hacks/signature-replay",
+    "/app/uni-directional-payment-channel",
+    "/app/merkle-tree",
+    "/app/bi-directional-payment-channel"
+  ],
+  "verify": [
+    "/signature"
+  ],
+  "verifying": [
+    "/signature"
+  ],
+  "signature": [
+    "/signature",
+    "/hacks/signature-replay",
+    "/app/uni-directional-payment-channel",
+    "/app/multi-sig-wallet",
+    "/app/bi-directional-payment-channel"
+  ],
+  "signatures": [
+    "/signature"
+  ],
+  "ecrecover": [
+    "/signature"
+  ],
+  "shadow": [
+    "/shadowing-inherited-state-variables"
+  ],
+  "shadowing": [
+    "/shadowing-inherited-state-variables"
+  ],
+  "sending": [
+    "/sending-ether"
+  ],
+  "send": [
+    "/sending-ether",
+    "/sending-ether",
+    "/payable",
+    "/fallback"
+  ],
+  "ether": [
+    "/sending-ether",
+    "/payable",
+    "/fallback",
+    "/ether-units",
+    "/app/ether-wallet"
+  ],
+  "eth": [
+    "/sending-ether",
+    "/payable",
+    "/fallback",
+    "/app/ether-wallet"
+  ],
+  "transfer": [
+    "/sending-ether",
+    "/fallback",
+    "/app/gassless-token-transfer"
+  ],
+  "call": [
+    "/sending-ether",
+    "/delegatecall",
+    "/calling-contract",
+    "/call",
+    "/app/multi-call"
+  ],
+  "fallback": [
+    "/sending-ether",
+    "/fallback"
+  ],
+  "receive": [
+    "/sending-ether",
+    "/fallback"
+  ],
+  "payable": [
+    "/sending-ether",
+    "/payable",
+    "/fallback"
+  ],
+  "primitive": [
+    "/primitives"
+  ],
+  "primitives": [
+    "/primitives"
+  ],
+  "boolean": [
+    "/primitives"
+  ],
+  "uint256": [
+    "/primitives"
+  ],
+  "int256": [
+    "/primitives"
+  ],
+  "address": [
+    "/primitives",
+    "/app/create2"
+  ],
+  "uint": [
+    "/primitives"
+  ],
+  "int": [
+    "/primitives"
+  ],
+  "new": [
+    "/new-contract",
+    "/new-contract"
+  ],
+  "create": [
+    "/new-contract"
+  ],
+  "creates": [
+    "/new-contract"
+  ],
+  "create2": [
+    "/new-contract",
+    "/app/create2"
+  ],
+  "salt": [
+    "/new-contract"
+  ],
+  "mapping": [
+    "/mapping",
+    "/app/iterable-mapping"
+  ],
+  "for": [
+    "/loop"
+  ],
+  "loop": [
+    "/loop"
+  ],
+  "loops": [
+    "/loop"
+  ],
+  "while": [
+    "/loop"
+  ],
+  "do": [
+    "/loop"
+  ],
+  "library": [
+    "/library"
+  ],
+  "interface": [
+    "/interface"
+  ],
+  "interfaces": [
+    "/interface"
+  ],
+  "override": [
+    "/inheritance"
+  ],
+  "virtual": [
+    "/inheritance"
+  ],
+  "is": [
+    "/inheritance"
+  ],
+  "import": [
+    "/import",
+    "/enum"
+  ],
+  "constant": [
+    "/immutable",
+    "/defi/constant-sum-amm",
+    "/defi/constant-product-amm",
+    "/constants"
+  ],
+  "constants": [
+    "/immutable",
+    "/constants"
+  ],
+  "immutable": [
+    "/immutable"
+  ],
+  "immutables": [
+    "/immutable"
+  ],
+  "if": [
+    "/if-else"
+  ],
+  "else": [
+    "/if-else"
+  ],
+  "conditional": [
+    "/if-else"
+  ],
+  "statement": [
+    "/if-else"
+  ],
+  "statements": [
+    "/if-else"
+  ],
+  "hello": [
+    "/hello-world"
+  ],
+  "world": [
+    "/hello-world"
+  ],
+  "hash": [
+    "/hashing"
+  ],
+  "hashing": [
+    "/hashing"
+  ],
+  "keccak256": [
+    "/hashing"
+  ],
+  "hack": [
+    "/hacks/signature-replay",
+    "/hacks/self-destruct",
+    "/hacks/re-entrancy",
+    "/hacks/randomness",
+    "/hacks/phishing-with-tx-origin",
+    "/hacks/overflow",
+    "/hacks/honeypot",
+    "/hacks/hiding-malicious-code-with-external-contract",
+    "/hacks/front-running",
+    "/hacks/denial-of-service",
+    "/hacks/delegatecall",
+    "/hacks/contract-size",
+    "/hacks/block-timestamp-manipulation",
+    "/hacks/accessing-private-data"
+  ],
+  "security": [
+    "/hacks/signature-replay",
+    "/hacks/self-destruct",
+    "/hacks/re-entrancy",
+    "/hacks/randomness",
+    "/hacks/phishing-with-tx-origin",
+    "/hacks/overflow",
+    "/hacks/honeypot",
+    "/hacks/hiding-malicious-code-with-external-contract",
+    "/hacks/front-running",
+    "/hacks/denial-of-service",
+    "/hacks/delegatecall",
+    "/hacks/contract-size",
+    "/hacks/block-timestamp-manipulation",
+    "/hacks/accessing-private-data"
+  ],
+  "replay": [
+    "/hacks/signature-replay"
+  ],
+  "selfdestruct": [
+    "/hacks/self-destruct"
+  ],
+  "re-entrancy": [
+    "/hacks/re-entrancy"
+  ],
+  "source": [
+    "/hacks/randomness"
+  ],
+  "random": [
+    "/hacks/randomness"
+  ],
+  "randomness": [
+    "/hacks/randomness"
+  ],
+  "blockhash": [
+    "/hacks/randomness"
+  ],
+  "block": [
+    "/hacks/randomness",
+    "/hacks/block-timestamp-manipulation"
+  ],
+  "timestamp": [
+    "/hacks/randomness",
+    "/hacks/block-timestamp-manipulation"
+  ],
+  "phishing": [
+    "/hacks/phishing-with-tx-origin"
+  ],
+  "tx.origin": [
+    "/hacks/phishing-with-tx-origin"
+  ],
+  "arithmetic": [
+    "/hacks/overflow"
+  ],
+  "honeypot": [
+    "/hacks/honeypot"
+  ],
+  "hide": [
+    "/hacks/hiding-malicious-code-with-external-contract"
+  ],
+  "hiding": [
+    "/hacks/hiding-malicious-code-with-external-contract"
+  ],
+  "malicious": [
+    "/hacks/hiding-malicious-code-with-external-contract"
+  ],
+  "code": [
+    "/hacks/hiding-malicious-code-with-external-contract"
+  ],
+  "front": [
+    "/hacks/front-running"
+  ],
+  "running": [
+    "/hacks/front-running"
+  ],
+  "denial": [
+    "/hacks/denial-of-service"
+  ],
+  "service": [
+    "/hacks/denial-of-service"
+  ],
+  "delegatecall": [
+    "/hacks/delegatecall",
+    "/delegatecall",
+    "/app/upgradeable-proxy",
+    "/app/multi-delegatecall"
+  ],
+  "bypass": [
+    "/hacks/contract-size"
+  ],
+  "size": [
+    "/hacks/contract-size"
+  ],
+  "check": [
+    "/hacks/contract-size"
+  ],
+  "extcodesize": [
+    "/hacks/contract-size"
+  ],
+  "manipulation": [
+    "/hacks/block-timestamp-manipulation"
+  ],
+  "access": [
+    "/hacks/accessing-private-data"
+  ],
+  "accessing": [
+    "/hacks/accessing-private-data"
+  ],
+  "storage": [
+    "/hacks/accessing-private-data",
+    "/data-locations",
+    "/app/write-to-any-slot"
+  ],
+  "golf": [
+    "/gas-golf"
+  ],
+  "selector": [
+    "/function-selector"
+  ],
+  "selectors": [
+    "/function-selector"
+  ],
+  "modifier": [
+    "/function-modifier"
+  ],
+  "modifiers": [
+    "/function-modifier"
+  ],
+  "_": [
+    "/function-modifier"
+  ],
+  "first": [
+    "/first-app"
+  ],
+  "counter": [
+    "/first-app"
+  ],
+  "event": [
+    "/events"
+  ],
+  "events": [
+    "/events"
+  ],
+  "wei": [
+    "/ether-units"
+  ],
+  "units": [
+    "/ether-units"
+  ],
+  "require": [
+    "/error"
+  ],
+  "revert": [
+    "/error"
+  ],
+  "assert": [
+    "/error"
+  ],
+  "enum": [
+    "/enum"
+  ],
+  "imports": [
+    "/enum"
+  ],
+  "defi": [
+    "/defi/vault",
+    "/defi/uniswap-v3-swap",
+    "/defi/uniswap-v3-liquidity",
+    "/defi/uniswap-v3-flash-swap",
+    "/defi/uniswap-v3-flash",
+    "/defi/uniswap-v2-optimal-one-sided-supply",
+    "/defi/uniswap-v2-flash-swap",
+    "/defi/uniswap-v2-add-remove-liquidity",
+    "/defi/uniswap-v2",
+    "/defi/staking-rewards",
+    "/defi/stable-swap-amm",
+    "/defi/discrete-staking-rewards",
+    "/defi/constant-sum-amm",
+    "/defi/constant-product-amm",
+    "/defi/chainlink-price-oracle"
+  ],
+  "vault": [
+    "/defi/vault"
+  ],
+  "uniswap": [
+    "/defi/uniswap-v3-swap",
+    "/defi/uniswap-v3-liquidity",
+    "/defi/uniswap-v3-flash-swap",
+    "/defi/uniswap-v3-flash",
+    "/defi/uniswap-v2-optimal-one-sided-supply",
+    "/defi/uniswap-v2-flash-swap",
+    "/defi/uniswap-v2-add-remove-liquidity",
+    "/defi/uniswap-v2"
+  ],
+  "v3": [
+    "/defi/uniswap-v3-swap",
+    "/defi/uniswap-v3-liquidity",
+    "/defi/uniswap-v3-flash-swap",
+    "/defi/uniswap-v3-flash"
+  ],
+  "swap": [
+    "/defi/uniswap-v3-swap",
+    "/defi/uniswap-v3-flash-swap",
+    "/defi/uniswap-v2-flash-swap",
+    "/defi/uniswap-v2",
+    "/defi/stable-swap-amm"
+  ],
+  "amm": [
+    "/defi/uniswap-v3-swap",
+    "/defi/uniswap-v3-liquidity",
+    "/defi/uniswap-v3-flash-swap",
+    "/defi/uniswap-v3-flash",
+    "/defi/uniswap-v2-optimal-one-sided-supply",
+    "/defi/uniswap-v2-flash-swap",
+    "/defi/uniswap-v2-add-remove-liquidity",
+    "/defi/uniswap-v2",
+    "/defi/stable-swap-amm",
+    "/defi/constant-sum-amm",
+    "/defi/constant-product-amm"
+  ],
+  "liquidity": [
+    "/defi/uniswap-v3-liquidity",
+    "/defi/uniswap-v2-add-remove-liquidity"
+  ],
+  "arbitrage": [
+    "/defi/uniswap-v3-flash-swap"
+  ],
+  "flash": [
+    "/defi/uniswap-v3-flash",
+    "/defi/uniswap-v2-flash-swap"
+  ],
+  "loan": [
+    "/defi/uniswap-v3-flash"
+  ],
+  "v2": [
+    "/defi/uniswap-v2-optimal-one-sided-supply",
+    "/defi/uniswap-v2-flash-swap",
+    "/defi/uniswap-v2-add-remove-liquidity",
+    "/defi/uniswap-v2"
+  ],
+  "optimal": [
+    "/defi/uniswap-v2-optimal-one-sided-supply"
+  ],
+  "one": [
+    "/defi/uniswap-v2-optimal-one-sided-supply"
+  ],
+  "sided": [
+    "/defi/uniswap-v2-optimal-one-sided-supply"
+  ],
+  "supply": [
+    "/defi/uniswap-v2-optimal-one-sided-supply"
+  ],
+  "add": [
+    "/defi/uniswap-v2-add-remove-liquidity"
+  ],
+  "remove": [
+    "/defi/uniswap-v2-add-remove-liquidity"
+  ],
+  "staking": [
+    "/defi/staking-rewards",
+    "/defi/discrete-staking-rewards"
+  ],
+  "reward": [
+    "/defi/staking-rewards",
+    "/defi/discrete-staking-rewards"
+  ],
+  "rewards": [
+    "/defi/staking-rewards",
+    "/defi/discrete-staking-rewards"
+  ],
+  "curve": [
+    "/defi/stable-swap-amm"
+  ],
+  "stable": [
+    "/defi/stable-swap-amm"
+  ],
+  "discrete": [
+    "/defi/discrete-staking-rewards"
+  ],
+  "sum": [
+    "/defi/constant-sum-amm"
+  ],
+  "product": [
+    "/defi/constant-product-amm"
+  ],
+  "chainlink": [
+    "/defi/chainlink-price-oracle"
+  ],
+  "price": [
+    "/defi/chainlink-price-oracle"
+  ],
+  "oracle": [
+    "/defi/chainlink-price-oracle"
+  ],
+  "oracles": [
+    "/defi/chainlink-price-oracle"
+  ],
+  "location": [
+    "/data-locations"
+  ],
+  "locations": [
+    "/data-locations"
+  ],
+  "memory": [
+    "/data-locations"
+  ],
+  "calldata": [
+    "/data-locations"
+  ],
+  "constructor": [
+    "/constructor"
+  ],
+  "constructors": [
+    "/constructor"
+  ],
+  "other": [
+    "/calling-contract"
+  ],
+  "bitwise": [
+    "/bitwise"
+  ],
+  "most": [
+    "/bitwise"
+  ],
+  "significant": [
+    "/bitwise"
+  ],
+  "bit": [
+    "/bitwise"
+  ],
+  "assembly": [
+    "/bitwise"
+  ],
+  "array": [
+    "/array"
+  ],
+  "arrays": [
+    "/array"
+  ],
+  "write": [
+    "/app/write-to-any-slot"
+  ],
+  "any": [
+    "/app/write-to-any-slot",
+    "/app/deploy-any-contract"
+  ],
+  "slot": [
+    "/app/write-to-any-slot"
+  ],
+  "upgradeable": [
+    "/app/upgradeable-proxy"
+  ],
+  "proxy": [
+    "/app/upgradeable-proxy",
+    "/app/minimal-proxy"
+  ],
+  "uni-directional": [
+    "/app/uni-directional-payment-channel"
+  ],
+  "payment": [
+    "/app/uni-directional-payment-channel",
+    "/app/bi-directional-payment-channel"
+  ],
+  "channel": [
+    "/app/uni-directional-payment-channel",
+    "/app/bi-directional-payment-channel"
+  ],
+  "time": [
+    "/app/time-lock"
+  ],
+  "lock": [
+    "/app/time-lock"
+  ],
+  "simple": [
+    "/app/simple-bytecode-contract"
+  ],
+  "bytecode": [
+    "/app/simple-bytecode-contract"
+  ],
+  "multi": [
+    "/app/multi-sig-wallet",
+    "/app/multi-delegatecall",
+    "/app/multi-call"
+  ],
+  "sig": [
+    "/app/multi-sig-wallet"
+  ],
+  "wallet": [
+    "/app/multi-sig-wallet",
+    "/app/ether-wallet"
+  ],
+  "staticcall": [
+    "/app/multi-call"
+  ],
+  "minimal": [
+    "/app/minimal-proxy"
+  ],
+  "merkle": [
+    "/app/merkle-tree"
+  ],
+  "tree": [
+    "/app/merkle-tree"
+  ],
+  "iterable": [
+    "/app/iterable-mapping"
+  ],
+  "gassless": [
+    "/app/gassless-token-transfer"
+  ],
+  "token": [
+    "/app/gassless-token-transfer",
+    "/app/erc20"
+  ],
+  "ERC20": [
+    "/app/gassless-token-transfer"
+  ],
+  "permit": [
+    "/app/gassless-token-transfer"
+  ],
+  "erc721": [
+    "/app/erc721"
+  ],
+  "nft": [
+    "/app/erc721"
+  ],
+  "erc20": [
+    "/app/erc20"
+  ],
+  "english": [
+    "/app/english-auction"
+  ],
+  "auction": [
+    "/app/english-auction",
+    "/app/dutch-auction"
+  ],
+  "auctions": [
+    "/app/english-auction",
+    "/app/dutch-auction"
+  ],
+  "dutch": [
+    "/app/dutch-auction"
+  ],
+  "deploy": [
+    "/app/deploy-any-contract"
+  ],
+  "crowd": [
+    "/app/crowd-fund"
+  ],
+  "fund": [
+    "/app/crowd-fund"
+  ],
+  "funding": [
+    "/app/crowd-fund"
+  ],
+  "precompute": [
+    "/app/create2"
+  ],
+  "bi-directional": [
+    "/app/bi-directional-payment-channel"
+  ],
+  "abi": [
+    "/abi-encode",
+    "/abi-decode"
+  ],
+  "encode": [
+    "/abi-encode"
+  ],
+  "bytes": [
+    "/abi-encode",
+    "/abi-decode"
+  ],
+  "encodeWithSelector": [
+    "/abi-encode"
+  ],
+  "encodeWithSignature": [
+    "/abi-encode"
+  ],
+  "encodeCall": [
+    "/abi-encode"
+  ],
+  "decode": [
+    "/abi-decode"
+  ]
+}

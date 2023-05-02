@@ -2,6 +2,7 @@
 title: Data Locations - Storage, Memory and Calldata
 version: 0.8.17
 description: Data locations - storage, memory and calldata
+keywords: [data, location, locations, storage, memory, calldata]
 ---
 
 Variables are declared as either `storage`, `memory` or `calldata` to explicitly

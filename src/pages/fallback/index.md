@@ -2,6 +2,7 @@
 title: Fallback
 version: 0.8.17
 description: Example of how to use fallback in Solidity
+keywords: [fallback, function, functions, receive, payable, send, ether, eth, transfer]
 ---
 
 `fallback` is a special function that is executed either when

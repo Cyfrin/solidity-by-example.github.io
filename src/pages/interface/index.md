@@ -2,6 +2,7 @@
 title: Interface
 version: 0.8.17
 description: An example of interface in Solidity
+keywords: [interface, interfaces, contract, contracts]
 ---
 
 You can interact with other contracts by declaring an `Interface`.

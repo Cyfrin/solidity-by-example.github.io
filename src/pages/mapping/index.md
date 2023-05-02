@@ -2,6 +2,7 @@
 title: Mapping
 version: 0.8.17
 description: Example of using mapping in Solidity
+keywords: [data, variable, variables, mapping]
 ---
 
 Maps are created with the syntax `mapping(keyType => valueType)`.

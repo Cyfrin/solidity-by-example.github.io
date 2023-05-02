@@ -2,6 +2,7 @@
 title: Calling Other Contract
 version: 0.8.17
 description: In Solidity, contract can call other contracts in several ways
+keywords: [calling, other, contract, contracts, call, function, functions]
 ---
 
 Contract can call other contracts in 2 ways.
