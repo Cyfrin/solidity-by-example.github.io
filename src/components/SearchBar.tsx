@@ -1,24 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from "./SearchBar.module.css"
 
 interface Props {
+  value: string
   onChange: (q: string) => void
 }
 
-const SearchBar: React.FC<Props> = ({ onChange }) => {
-  const [query, setQuery] = useState("")
-
+const SearchBar: React.FC<Props> = ({ value, onChange }) => {
   function _onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const q = e.target.value
-    setQuery(q)
-    onChange(q.trim())
+    onChange(e.target.value)
   }
 
   return (
     <input
       className={styles.input}
       placeholder="Search"
-      value={query}
+      value={value}
       onChange={_onChange}
     />
   )

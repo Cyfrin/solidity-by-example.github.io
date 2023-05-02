@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useSearchParams } from "react-router-dom"
 import SEO from "../components/SEO"
 import SearchBar from "../components/SearchBar"
 import { search, unique } from "../lib/search"
@@ -500,17 +501,30 @@ export function getPrevNextPaths(path: string): {
 }
 
 export default function HomePage() {
+  const [query, setQuery] = useState("")
+  const [searchParams, setSearchParams] = useSearchParams()
   const [searchResults, setSearchResults] = useState<{ [key: string]: boolean } | null>(
     null
   )
 
+  useEffect(() => {
+    const q = searchParams.get("q")
+    if (q != null && q.length > 0) {
+      onChangeSearchQuery(q)
+    }
+  }, [])
+
   function onChangeSearchQuery(query: string) {
-    if (query.length == 0) {
+    setQuery(query)
+
+    const q = query.trim()
+
+    if (q.length == 0) {
       setSearchResults(null)
       return
     }
 
-    const words = unique(query.split(" "))
+    const words = unique(q.split(" "))
     const pages: { [key: string]: boolean } = {}
 
     for (const word of words) {
@@ -523,6 +537,14 @@ export default function HomePage() {
     setSearchResults(pages)
   }
 
+  function onClickLink(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    const q = query.trim()
+
+    if (q.length > 0) {
+      setSearchParams({ q })
+    }
+  }
+
   function renderLinks() {
     if (searchResults) {
       if (Object.keys(searchResults).length == 0) {
@@ -533,7 +555,9 @@ export default function HomePage() {
         <ul className={styles.list}>
           {ROUTES.filter(({ path }) => searchResults[path]).map(({ path, title }) => (
             <li className={styles.listItem} key={path}>
-              <a href={path}>{title}</a>
+              <a href={path} onClick={onClickLink}>
+                {title}
+              </a>
             </li>
           ))}
         </ul>
@@ -603,7 +627,7 @@ export default function HomePage() {
         </div>
 
         <div className={styles.search}>
-          <SearchBar onChange={onChangeSearchQuery} />
+          <SearchBar value={query} onChange={onChangeSearchQuery} />
         </div>
 
         {renderLinks()}
