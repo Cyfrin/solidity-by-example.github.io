@@ -42,8 +42,7 @@ library IterableMapping {
         delete map.values[key];
 
         uint index = map.indexOf[key];
-        uint lastIndex = map.keys.length - 1;
-        address lastKey = map.keys[lastIndex];
+        address lastKey = map.keys[map.keys.length - 1];
 
         map.indexOf[lastKey] = index;
         delete map.indexOf[key];
