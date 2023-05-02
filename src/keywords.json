@@ -286,10 +286,10 @@
   "/app/minimal-proxy": ["app", "application", "minimal", "proxy", "contract"],
   "/app/merkle-tree": ["app", "application", "merkle", "tree", "cryptography"],
   "/app/iterable-mapping": ["app", "application", "mapping", "data", "iterable"],
-  "/app/gassless-token-transfer": [
+  "/app/gasless-token-transfer": [
     "app",
     "application",
-    "gassless",
+    "gasless",
     "token",
     "transfer",
     "ERC20",

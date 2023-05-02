@@ -32,7 +32,7 @@ interface IERC20Permit {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-contract GasslessTokenTransfer {
+contract GaslessTokenTransfer {
     function send(
         address token,
         address sender,

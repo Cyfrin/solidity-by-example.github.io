@@ -10,6 +10,9 @@ export function insert(tree: Tree, word: string) {
     if (!t[w]) {
       t[w] = {}
     }
+    if (i == word.length - 1) {
+      t[w] = { "": {} }
+    }
     t = t[w]
   }
 }
