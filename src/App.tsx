@@ -14,7 +14,7 @@ function App() {
     loadLocalStorage()
   }, [])
 
-  if (state.initialized) {
+  if (!state.initialized) {
     return null
   }
 
