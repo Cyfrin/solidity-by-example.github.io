@@ -1,4 +1,5 @@
 import React from "react"
+import Search from "./svg/Search"
 import styles from "./SearchBar.module.css"
 
 interface Props {
@@ -12,12 +13,15 @@ const SearchBar: React.FC<Props> = ({ value, onChange }) => {
   }
 
   return (
-    <input
-      className={styles.input}
-      placeholder="Search"
-      value={value}
-      onChange={_onChange}
-    />
+    <div className={styles.component}>
+      <Search size={18} className={styles.icon} />
+      <input
+        className={styles.input}
+        placeholder="Search"
+        value={value}
+        onChange={_onChange}
+      />
+    </div>
   )
 }
 
