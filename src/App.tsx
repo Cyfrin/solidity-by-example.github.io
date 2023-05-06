@@ -19,7 +19,7 @@ function App() {
   }
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router basename={import.meta.env.VITE_PUBLIC_URL}>
       <div className={styles.component}>
         <Header />
         <div className={styles.main}>
