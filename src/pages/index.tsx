@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import SEO from "../components/SEO"
 import SearchBar from "../components/SearchBar"
+import useDebounce from "../hooks/useDebounce"
 import { search, unique } from "../lib/search"
 import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
@@ -510,17 +511,19 @@ export default function HomePage() {
   useEffect(() => {
     const q = searchParams.get("q")
     if (q != null && q.length > 0) {
-      onChangeSearchQuery(q)
+      setQuery(q)
+      _search(q, false)
     }
   }, [])
 
-  function onChangeSearchQuery(query: string) {
-    setQuery(query)
-
+  function _search(query: string, save: boolean) {
     const q = query.trim()
 
     if (q.length == 0) {
       setSearchResults(null)
+      if (save) {
+        setSearchParams({ q: "" })
+      }
       return
     }
 
@@ -535,14 +538,16 @@ export default function HomePage() {
     }
 
     setSearchResults(pages)
-  }
-
-  function onClickLink(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    const q = query.trim()
-
-    if (q.length > 0) {
+    if (save) {
       setSearchParams({ q })
     }
+  }
+
+  const _searchWithDelay = useDebounce((query: string) => _search(query, true), 500, [])
+
+  function onChangeSearchQuery(query: string) {
+    setQuery(query)
+    _searchWithDelay(query)
   }
 
   function renderLinks() {
@@ -555,9 +560,7 @@ export default function HomePage() {
         <ul className={styles.list}>
           {ROUTES.filter(({ path }) => searchResults[path]).map(({ path, title }) => (
             <li className={styles.listItem} key={path}>
-              <a href={path} onClick={onClickLink}>
-                {title}
-              </a>
+              <a href={path}>{title}</a>
             </li>
           ))}
         </ul>
