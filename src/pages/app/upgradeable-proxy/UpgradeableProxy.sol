@@ -32,7 +32,7 @@ contract BuggyProxy {
     }
 
     function _delegate() private {
-        (bool ok, bytes memory res) = implementation.delegatecall(msg.data);
+        (bool ok,) = implementation.delegatecall(msg.data);
         require(ok, "delegatecall failed");
     }
 
