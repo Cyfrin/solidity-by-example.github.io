@@ -8,5 +8,13 @@ keywords: [defi, uniswap, v2, add, remove, liquidity, amm]
 ### Add / Remove Liquidity
 
 ```solidity
-{{{Liquidity}}}
+{{{UniswapV2Liquidity}}}
+```
+
+### Test with Foundry
+
+`forge test --fork-url <ethereum-mainnet-rpc>`
+
+```solidity
+{{{UniswapV2LiquidityTest}}}
 ```
