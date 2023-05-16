@@ -2,6 +2,7 @@
 title: Gas
 version: 0.8.17
 description: Example of gas and gas limit in Solidity
+keywords: [gas]
 ---
 
 ### How much `ether` do you need to pay for a transaction?

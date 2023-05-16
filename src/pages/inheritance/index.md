@@ -2,6 +2,7 @@
 title: Inheritance
 version: 0.8.17
 description: Example of inheritance in Solidity
+keywords: [inheritance, super, override, virtual, is, contract, contracts]
 ---
 
 Solidity supports multiple inheritance. Contracts can inherit other contract by using the `is` keyword.

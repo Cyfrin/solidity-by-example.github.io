@@ -2,6 +2,7 @@
 title: Import
 version: 0.8.17
 description: Learn how to import other Solidity files
+keywords: [import]
 ---
 
 You can import local and external files in Solidity.

@@ -2,6 +2,7 @@
 title: Deploy Any Contract
 version: 0.8.17
 description: Deploy Any Contract
+keywords: [app, application, deploy, any, contract]
 ---
 
 Deploy any contract by calling `Proxy.deploy(bytes memory _code)`

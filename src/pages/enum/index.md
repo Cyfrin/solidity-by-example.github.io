@@ -2,6 +2,7 @@
 title: Enum
 version: 0.8.17
 description: Example of enums in Solidity
+keywords: [data, variable, variables, enum, import, imports]
 ---
 
 Solidity supports enumerables and they are useful to model choice and keep track of state.

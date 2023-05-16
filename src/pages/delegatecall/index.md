@@ -2,6 +2,7 @@
 title: Delegatecall
 version: 0.8.17
 description: Example of how to use deletegatecall in Solidity
+keywords: [delegatecall, call, contract, contracts, function, functions]
 ---
 
 `delegatecall` is a low level function similar to `call`.

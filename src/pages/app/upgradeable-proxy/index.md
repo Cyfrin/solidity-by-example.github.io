@@ -2,6 +2,7 @@
 title: Upgradeable Proxy
 version: 0.8.17
 description: Example of upgradeable proxy
+keywords: [app, application, delegatecall, upgradeable, proxy]
 ---
 
 Example of upgradeable proxy contract. Never use this in production.

@@ -2,6 +2,7 @@
 title: Uni-Directional Payment Channel
 version: 0.8.17
 description: An example of uni-directional payment channels in Solidity
+keywords: [app, application, uni-directional, payment, channel, signature, cryptography]
 ---
 
 Payment channels allow participants to repeatedly transfer Ether off chain.

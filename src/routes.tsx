@@ -9,6 +9,7 @@ import component_app_english_auction from "./pages/app/english-auction"
 import component_app_erc20 from "./pages/app/erc20"
 import component_app_erc721 from "./pages/app/erc721"
 import component_app_ether_wallet from "./pages/app/ether-wallet"
+import component_app_gasless_token_transfer from "./pages/app/gasless-token-transfer"
 import component_app_iterable_mapping from "./pages/app/iterable-mapping"
 import component_app_merkle_tree from "./pages/app/merkle-tree"
 import component_app_minimal_proxy from "./pages/app/minimal-proxy"
@@ -155,6 +156,10 @@ const routes: Route[] = [
   {
     path: "/app/ether-wallet",
     component: component_app_ether_wallet,
+  },
+  {
+    path: "/app/gasless-token-transfer",
+    component: component_app_gasless_token_transfer,
   },
   {
     path: "/app/iterable-mapping",

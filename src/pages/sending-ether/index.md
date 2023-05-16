@@ -2,6 +2,21 @@
 title: Sending Ether (transfer, send, call)
 version: 0.8.17
 description: An example of sending Ether in Solidity
+keywords:
+  [
+    sending,
+    send,
+    ether,
+    eth,
+    transfer,
+    send,
+    call,
+    fallback,
+    receive,
+    payable,
+    function,
+    functions,
+  ]
 ---
 
 ### How to send Ether?

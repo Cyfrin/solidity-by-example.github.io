@@ -2,6 +2,7 @@
 title: Bitwise Operators
 version: 0.8.17
 description: Learn about bitwise operators in Solidity
+keywords: [bitwise, most, significant, bit, assembly]
 ---
 
 ```solidity

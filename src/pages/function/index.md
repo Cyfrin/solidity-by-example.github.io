@@ -2,6 +2,7 @@
 title: Function
 version: 0.8.17
 description: Example of how to write functions in Solidity
+keywords: [function, functions]
 ---
 
 There are several ways to return outputs from a function.

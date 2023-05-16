@@ -2,6 +2,7 @@
 title: Arithmetic Overflow and Underflow
 version: 0.8.17
 description: An example of hacking Solidity with arithmetic overflow / underflow
+keywords: [hack, security, arithmetic, overflow, underflow]
 ---
 
 ### Vulnerability

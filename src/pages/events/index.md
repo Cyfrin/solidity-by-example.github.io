@@ -2,6 +2,7 @@
 title: Events
 version: 0.8.17
 description: Example of how to emit events in Solidity
+keywords: [event, events]
 ---
 
 `Events` allow logging to the Ethereum blockchain. Some use cases for events are:

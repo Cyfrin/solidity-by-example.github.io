@@ -2,15 +2,25 @@
 export const version = "0.8.17"
 export const title = "Simple Bytecode Contract"
 export const description = "Simple example of contract written in bytecode"
+
+export const keywords = [
+    "app",
+    "application",
+    "simple",
+    "bytecode",
+    "contract",
+]
+
 export const codes = [
-  {
-    fileName: "Factory.sol",
-    code: "cHJhZ21hIHNvbGlkaXR5IF4wLjguMTc7Cgpjb250cmFjdCBGYWN0b3J5IHsKICAgIGV2ZW50IExvZyhhZGRyZXNzIGFkZHIpOwoKICAgIC8vIERlcGxveXMgYSBjb250cmFjdCB0aGF0IGFsd2F5cyByZXR1cm5zIDQyCiAgICBmdW5jdGlvbiBkZXBsb3koKSBleHRlcm5hbCB7CiAgICAgICAgYnl0ZXMgbWVtb3J5IGJ5dGVjb2RlID0gaGV4IjY5NjAyYTYwMDA1MjYwMjA2MDAwZjM2MDAwNTI2MDBhNjAxNmYzIjsKICAgICAgICBhZGRyZXNzIGFkZHI7CiAgICAgICAgYXNzZW1ibHkgewogICAgICAgICAgICAvLyBjcmVhdGUodmFsdWUsIG9mZnNldCwgc2l6ZSkKICAgICAgICAgICAgYWRkciA6PSBjcmVhdGUoMCwgYWRkKGJ5dGVjb2RlLCAweDIwKSwgMHgxMykKICAgICAgICB9CiAgICAgICAgcmVxdWlyZShhZGRyICE9IGFkZHJlc3MoMCkpOwoKICAgICAgICBlbWl0IExvZyhhZGRyKTsKICAgIH0KfQoKaW50ZXJmYWNlIElDb250cmFjdCB7CiAgICBmdW5jdGlvbiBnZXRNZWFuaW5nT2ZMaWZlKCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50KTsKfQoKLy8gaHR0cHM6Ly93d3cuZXZtLmNvZGVzL3BsYXlncm91bmQKLyoKUnVuIHRpbWUgY29kZSAtIHJldHVybiA0Mgo2MDJhNjAwMDUyNjAyMDYwMDBmMwoKLy8gU3RvcmUgNDIgdG8gbWVtb3J5Cm1zdG9yZShwLCB2KSAtIHN0b3JlIHYgYXQgbWVtb3J5IHAgdG8gcCArIDMyCgpQVVNIMSAweDJhClBVU0gxIDAKTVNUT1JFCgovLyBSZXR1cm4gMzIgYnl0ZXMgZnJvbSBtZW1vcnkKcmV0dXJuKHAsIHMpIC0gZW5kIGV4ZWN1dGlvbiBhbmQgcmV0dXJuIGRhdGEgZnJvbSBtZW1vcnkgcCB0byBwICsgcwoKUFVTSDEgMHgyMApQVVNIMSAwClJFVFVSTgoKQ3JlYXRpb24gY29kZSAtIHJldHVybiBydW50aW1lIGNvZGUKNjk2MDJhNjAwMDUyNjAyMDYwMDBmMzYwMDA1MjYwMGE2MDE2ZjMKCi8vIFN0b3JlIHJ1biB0aW1lIGNvZGUgdG8gbWVtb3J5ClBVU0gxMCAwWDYwMmE2MDAwNTI2MDIwNjAwMGYzClBVU0gxIDAKTVNUT1JFCgovLyBSZXR1cm4gMTAgYnl0ZXMgZnJvbSBtZW1vcnkgc3RhcnRpbmcgYXQgb2Zmc2V0IDIyClBVU0gxIDB4MGEKUFVTSDEgMHgxNgpSRVRVUk4KKi8K",
-  },
+    {
+        fileName: "Factory.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IEZhY3RvcnkgewogICAgZXZlbnQgTG9nKGFkZHJlc3MgYWRkcik7CgogICAgLy8gRGVwbG95cyBhIGNvbnRyYWN0IHRoYXQgYWx3YXlzIHJldHVybnMgNDIKICAgIGZ1bmN0aW9uIGRlcGxveSgpIGV4dGVybmFsIHsKICAgICAgICBieXRlcyBtZW1vcnkgYnl0ZWNvZGUgPSBoZXgiNjk2MDJhNjAwMDUyNjAyMDYwMDBmMzYwMDA1MjYwMGE2MDE2ZjMiOwogICAgICAgIGFkZHJlc3MgYWRkcjsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIC8vIGNyZWF0ZSh2YWx1ZSwgb2Zmc2V0LCBzaXplKQogICAgICAgICAgICBhZGRyIDo9IGNyZWF0ZSgwLCBhZGQoYnl0ZWNvZGUsIDB4MjApLCAweDEzKQogICAgICAgIH0KICAgICAgICByZXF1aXJlKGFkZHIgIT0gYWRkcmVzcygwKSk7CgogICAgICAgIGVtaXQgTG9nKGFkZHIpOwogICAgfQp9CgppbnRlcmZhY2UgSUNvbnRyYWN0IHsKICAgIGZ1bmN0aW9uIGdldE1lYW5pbmdPZkxpZmUoKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKHVpbnQpOwp9CgovLyBodHRwczovL3d3dy5ldm0uY29kZXMvcGxheWdyb3VuZAovKgpSdW4gdGltZSBjb2RlIC0gcmV0dXJuIDQyCjYwMmE2MDAwNTI2MDIwNjAwMGYzCgovLyBTdG9yZSA0MiB0byBtZW1vcnkKbXN0b3JlKHAsIHYpIC0gc3RvcmUgdiBhdCBtZW1vcnkgcCB0byBwICsgMzIKClBVU0gxIDB4MmEKUFVTSDEgMApNU1RPUkUKCi8vIFJldHVybiAzMiBieXRlcyBmcm9tIG1lbW9yeQpyZXR1cm4ocCwgcykgLSBlbmQgZXhlY3V0aW9uIGFuZCByZXR1cm4gZGF0YSBmcm9tIG1lbW9yeSBwIHRvIHAgKyBzCgpQVVNIMSAweDIwClBVU0gxIDAKUkVUVVJOCgpDcmVhdGlvbiBjb2RlIC0gcmV0dXJuIHJ1bnRpbWUgY29kZQo2OTYwMmE2MDAwNTI2MDIwNjAwMGYzNjAwMDUyNjAwYTYwMTZmMwoKLy8gU3RvcmUgcnVuIHRpbWUgY29kZSB0byBtZW1vcnkKUFVTSDEwIDBYNjAyYTYwMDA1MjYwMjA2MDAwZjMKUFVTSDEgMApNU1RPUkUKCi8vIFJldHVybiAxMCBieXRlcyBmcm9tIG1lbW9yeSBzdGFydGluZyBhdCBvZmZzZXQgMjIKUFVTSDEgMHgwYQpQVVNIMSAweDE2ClJFVFVSTgoqLwo=",
+    },
 ]
 
 const html = `<p>Simple example of contract written in bytecode</p>
-<pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Factory</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> addr</span>)</span>;

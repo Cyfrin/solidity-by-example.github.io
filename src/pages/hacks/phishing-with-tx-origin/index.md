@@ -2,6 +2,7 @@
 title: Phishing with tx.origin
 version: 0.8.17
 description: An example of phishing with tx.origin in Solidity
+keywords: [hack, security, phishing, tx.origin]
 ---
 
 ### What's the difference between `msg.sender` and `tx.origin`?

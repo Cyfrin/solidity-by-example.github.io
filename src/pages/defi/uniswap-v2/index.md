@@ -2,6 +2,7 @@
 title: Uniswap V2 Swap
 version: 0.8.17
 description: Uniswap V2 swap
+keywords: [defi, uniswap, v2, swap, amm]
 ---
 
 `swapExactTokensForTokens` sells all tokens for another.

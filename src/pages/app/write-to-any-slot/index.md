@@ -2,6 +2,7 @@
 title: Write to Any Slot
 version: 0.8.17
 description: Write to Any Slot
+keywords: [app, application, write, any, slot, storage]
 ---
 
 Solidity storage is like an array of length 2^256.

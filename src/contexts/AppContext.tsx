@@ -2,14 +2,14 @@ import React, { useState, createContext, useContext, useMemo } from "react"
 
 export type Theme = "light" | "dark"
 
-interface AppState {
+interface State {
   theme: Theme
-  loading: boolean
+  initialized: boolean
 }
 
-const INITIAL_STATE: AppState = {
+const INITIAL_STATE: State = {
   theme: "light",
-  loading: true,
+  initialized: false,
 }
 
 const AppContext = createContext({
@@ -64,7 +64,7 @@ export const Provider: React.FC<Props> = ({ children }) => {
 
     setState((state) => ({
       ...state,
-      loading: false,
+      initialized: true,
     }))
   }
 

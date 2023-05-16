@@ -2,6 +2,7 @@
 title: ABI Decode
 version: 0.8.17
 description: ABI decode bytes
+keywords: [abi, decode, bytes]
 ---
 
 `abi.encode` encodes data into `bytes`.

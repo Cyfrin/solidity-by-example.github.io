@@ -2,6 +2,7 @@
 title: View and Pure Functions
 version: 0.8.17
 description: An example of view and pure functions in Solidity
+keywords: [view, pure, function, functions]
 ---
 
 Getter functions can be declared `view` or `pure`.

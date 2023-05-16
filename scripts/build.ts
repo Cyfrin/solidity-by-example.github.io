@@ -5,43 +5,15 @@ import fs from "fs"
 import assert from "assert"
 import path from "path"
 
-const { readdir, stat, readFile, writeFile } = fs.promises
+const { readFile, writeFile } = fs.promises
 
-async function getFiles(): Promise<string[]> {
-  // traverse
-  const queue = [path.join(__dirname, "..", "src/pages")]
-
-  const files: string[] = []
-  while (true) {
-    const dir = queue.pop()
-
-    if (!dir) {
-      break
-    }
-
-    const dirs = await readdir(dir)
-
-    for (const fileName of dirs) {
-      const filePath = path.join(dir, fileName)
-
-      const fileStat = await stat(filePath)
-
-      if (fileStat.isDirectory()) {
-        queue.push(filePath)
-      } else if (fileName === "index.tsx") {
-        files.push(filePath)
-      }
-    }
-  }
-
-  return files
-}
+import { getFiles } from "./lib"
 
 async function main() {
   const BUILD_DIR = path.join(__dirname, "..", "build")
   const index = (await readFile(path.join(BUILD_DIR, "index.html"))).toString()
 
-  const files = await getFiles()
+  const files = await getFiles(path.join(__dirname, "..", "src/pages"), "index.tsx")
 
   const routes = []
   for (const file of files) {

@@ -2,6 +2,7 @@
 title: Error
 version: 0.8.17
 description: Example of how to throw errors in Solidity
+keywords: [error, errors, require, revert, assert]
 ---
 
 An error will undo all changes made to the state during a transaction.

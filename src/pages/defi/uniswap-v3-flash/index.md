@@ -2,6 +2,7 @@
 title: Uniswap V3 Flash Loan
 version: 0.8.17
 description: Uniswap V3 Flash Loan
+keywords: [defi, uniswap, v3, flash, loan, amm]
 ---
 
 ### Uniswap V3 Flash Loan Example

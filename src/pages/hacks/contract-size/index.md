@@ -2,6 +2,7 @@
 title: Bypass Contract Size Check
 version: 0.8.17
 description: An example of bypassing contract size check
+keywords: [hack, security, bypass, contract, size, check, extcodesize]
 ---
 
 ### Vulnerability

@@ -2,6 +2,7 @@
 title: Crowd Fund
 version: 0.8.17
 description: An example of crowd funding contract
+keywords: [app, application, crowd, fund, funding]
 ---
 
 Crowd fund ERC20 token

@@ -29,12 +29,14 @@ body.light {
   --color: #252519;
   --code-bg: #f5f5f5;
   --link-color: #261a3b;
+  --input-bg: #f1f1f1;
 }
 body.dark {
   --bg-color: #161b22;
   --color: rgb(201, 209, 217);
   --code-bg: #0d1117;
   --link-color: #f6f6f6;
+  --input-bg: white;
 }
 pre {
   padding: 15px;

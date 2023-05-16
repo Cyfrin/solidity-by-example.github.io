@@ -2,6 +2,7 @@
 title: Multi Call
 version: 0.8.17
 description: An example of contract to aggregate multiple calls.
+keywords: [app, application, multi, call, staticcall]
 ---
 
 An example of contract that aggregates multiple queries using a for loop and `staticcall`.

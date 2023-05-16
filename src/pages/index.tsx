@@ -1,12 +1,28 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import { useSearchParams } from "react-router-dom"
 import SEO from "../components/SEO"
+import SearchBar from "../components/SearchBar"
+import useDebounce from "../hooks/useDebounce"
+import { search, unique } from "../lib/search"
 import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
-  "2023/02/19 - GitHub PR Drblessing",
-  "2023/01/05 GitHub PR Syuizen",
-  "2022/12/31 - GitHub PR 0xronin",
+  "2023/05/14 - GitHub PR Drblessing",
+  "2023/05/02 - GitHub PR Drblessing",
+  "2023/04/30 - Gasless token transfer",
+]
+
+interface Translation {
+  lang: string
+  url: string
+}
+
+const TRANSLATIONS: Translation[] = [
+  {
+    lang: "Persian",
+    url: "https://dpanosian.com/fa/solidity-by-example",
+  },
 ]
 
 interface Route {
@@ -231,6 +247,10 @@ const APP_ROUTES: Route[] = [
   {
     path: "erc721",
     title: "ERC721",
+  },
+  {
+    path: "gasless-token-transfer",
+    title: "Gasless Token Transfer",
   },
   {
     path: "simple-bytecode-contract",
@@ -482,6 +502,101 @@ export function getPrevNextPaths(path: string): {
 }
 
 export default function HomePage() {
+  const [query, setQuery] = useState("")
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchResults, setSearchResults] = useState<{ [key: string]: boolean } | null>(
+    null
+  )
+
+  useEffect(() => {
+    const q = searchParams.get("q")
+    if (q != null && q.length > 0) {
+      setQuery(q)
+      _search(q, false)
+    }
+  }, [])
+
+  function _search(query: string, save: boolean) {
+    const q = query.trim()
+
+    if (q.length == 0) {
+      setSearchResults(null)
+      if (save) {
+        setSearchParams({ q: "" })
+      }
+      return
+    }
+
+    const words = unique(q.split(" "))
+    const pages: { [key: string]: boolean } = {}
+
+    for (const word of words) {
+      const res = search(word)
+      for (const page of res) {
+        pages[page] = true
+      }
+    }
+
+    setSearchResults(pages)
+    if (save) {
+      setSearchParams({ q })
+    }
+  }
+
+  const _searchWithDelay = useDebounce((query: string) => _search(query, true), 500, [])
+
+  function onChangeSearchQuery(query: string) {
+    setQuery(query)
+    _searchWithDelay(query)
+  }
+
+  function renderLinks() {
+    if (searchResults) {
+      if (Object.keys(searchResults).length == 0) {
+        return <div>No results</div>
+      }
+
+      return (
+        <ul className={styles.list}>
+          {ROUTES.filter(({ path }) => searchResults[path]).map(({ path, title }) => (
+            <li className={styles.listItem} key={path}>
+              <a href={path}>{title}</a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    return (
+      <>
+        {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
+          <div key={i}>
+            {title && <h3 className={styles.category}>{title}</h3>}
+
+            <ul className={styles.list}>
+              {routes.map(({ path, title }) => (
+                <li className={styles.listItem} key={path}>
+                  <a href={path}>{title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        <div>
+          <h3 className={styles.category}>Translations</h3>
+          {TRANSLATIONS.map(({ lang, url }) => (
+            <li className={styles.listItem} key={url}>
+              <a href={url} target="__blank">
+                {lang}
+              </a>
+            </li>
+          ))}
+        </div>
+      </>
+    )
+  }
+
   return (
     <div className={styles.component}>
       <SEO
@@ -514,19 +629,11 @@ export default function HomePage() {
           ))}
         </div>
 
-        {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
-          <div key={i}>
-            {title && <h3 className={styles.category}>{title}</h3>}
+        <div className={styles.search}>
+          <SearchBar value={query} onChange={onChangeSearchQuery} />
+        </div>
 
-            <ul className={styles.list}>
-              {routes.map(({ path, title }) => (
-                <li className={styles.listItem} key={path}>
-                  <a href={path}>{title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {renderLinks()}
       </div>
     </div>
   )
