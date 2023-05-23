@@ -43,6 +43,7 @@ contract DAO {
 
     function execute(uint256 proposalId) external payable {
         Proposal storage proposal = proposals[proposalId];
+        require(proposal.approved, "not approved");
         require(!proposal.executed, "executed");
 
         proposal.executed = true;
