@@ -8,9 +8,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/05/23 - Deploy different contracts at same address",
   "2023/05/14 - GitHub PR Drblessing",
   "2023/05/02 - GitHub PR Drblessing",
-  "2023/04/30 - Gasless token transfer",
 ]
 
 interface Translation {
@@ -366,6 +366,10 @@ const HACK_ROUTES: Route[] = [
   {
     path: "contract-size",
     title: "Bypass Contract Size Check",
+  },
+  {
+    path: "deploy-different-contracts-same-address",
+    title: "Deploy Different Contracts at Same Address",
   },
 ]
 

@@ -8,6 +8,10 @@
 
 ### Memo
 
+TODO: remove react helmet
+TODO: update marked
+TODO: code split / dynamic imports
+
 ```shell
 ## Deploy ##
 # md to react
