@@ -22,14 +22,8 @@ contract UniswapV2AddLiquidityTest is Test {
         assertEq(WETH.balanceOf(address(this)), 1e6 * 1e18, "WETH balance incorrect");
 
         // Approve uni for transferring
-        WETH.approve(address(uni), 1e64);
-
-        // USDT implements a non-standard approve function
-        // need to call it manually
-        (bool success, ) = address(USDT).call(
-            abi.encodeCall(USDT.approve, (address(uni), 1e64))
-        );
-        require(success, "USDT approve failed");
+        safeApprove(WETH, address(uni), 1e64);
+        safeApprove(USDT, address(uni), 1e64);
 
         uni.addLiquidity(address(WETH), address(USDT), 1 * 1e18, 3000.05 * 1e6);
 
@@ -49,5 +43,37 @@ contract UniswapV2AddLiquidityTest is Test {
         assertEq(PAIR.balanceOf(address(uni)), 0, "LP tokens balance != 0");
         assertGt(USDT.balanceOf(address(uni)), 0, "USDT balance = 0");
         assertGt(WETH.balanceOf(address(uni)), 0, "WETH balance = 0");
+    }
+
+
+    /**
+     * @dev Required for tokens that do not follow the ERC20 standard.
+     * For example, USDT `transferFrom` doesn't return a bool.
+     * This function ensures that we are never blocked by a token's `transferFrom` implementation.
+     * Without it, the `transferFrom` call would fail.
+     */
+    function safeTransferFrom(
+        IERC20 token,
+        address sender,
+        address recipient,
+        uint amount
+    ) internal {
+        (bool successTransferFrom, ) = address(token).call(
+            abi.encodeCall(IERC20.transferFrom, (sender, recipient, amount))
+        );
+        require(successTransferFrom, "transferFrom failed");
+    }
+
+    /**
+     * @dev Required for tokens that do not follow the ERC20 standard.
+     * For example, USDT `approve` doesn't return a bool.
+     * This function ensures that we are never blocked by a token's `approve` implementation.
+     * Without it, the `approve` call would fail.
+     */
+    function safeApprove(IERC20 token, address spender, uint amount) internal {
+        (bool successApprove, ) = address(token).call(
+            abi.encodeCall(IERC20.approve, (spender, amount))
+        );
+        require(successApprove, "approve failed");
     }
 }
