@@ -13,21 +13,11 @@ contract UniswapV2AddLiquidity {
         uint _amountA,
         uint _amountB
     ) external {
-        IERC20(_tokenA).transferFrom(msg.sender, address(this), _amountA);
-        // IERC201(_tokenB).transferFrom(msg.sender, address(this), _amountB);
-        // Manualy transfer from USDT
-        (bool successTransferFrom, ) = address(_tokenB).call(
-            abi.encodeCall(IERC20.transferFrom, (msg.sender, address(this), _amountB))
-        );
-        require(successTransferFrom, "USDT transferFrom failed");
+        safeTransferFrom(IERC20(_tokenA), msg.sender, address(this), _amountA);
+        safeTransferFrom(IERC20(_tokenB), msg.sender, address(this), _amountB);
 
-        IERC20(_tokenA).approve(ROUTER, _amountA);
-
-        // Manually approve USDT
-        (bool success, ) = address(_tokenB).call(
-            abi.encodeCall(IERC20.approve, (address(ROUTER), _amountB))
-        );
-        require(success, "USDT approve failed");
+        safeApprove(IERC20(_tokenA), ROUTER, _amountA);
+        safeApprove(IERC20(_tokenB), ROUTER, _amountB);
 
         (uint amountA, uint amountB, uint liquidity) = IUniswapV2Router(ROUTER)
             .addLiquidity(
@@ -46,7 +36,7 @@ contract UniswapV2AddLiquidity {
         address pair = IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
 
         uint liquidity = IERC20(pair).balanceOf(address(this));
-        IERC20(pair).approve(ROUTER, liquidity);
+        safeApprove(IERC20(pair), ROUTER, liquidity);
 
         (uint amountA, uint amountB) = IUniswapV2Router(ROUTER).removeLiquidity(
             _tokenA,
@@ -57,6 +47,37 @@ contract UniswapV2AddLiquidity {
             address(this),
             block.timestamp
         );
+    }
+
+    /**
+     * @dev Required for tokens that do not follow the ERC20 standard.
+     * For example, USDT `transferFrom` doesn't return a bool.
+     * This function ensures that we are never blocked by a token's `transferFrom` implementation.
+     * Without it, the `transferFrom` call would fail.
+     */
+    function safeTransferFrom(
+        IERC20 token,
+        address sender,
+        address recipient,
+        uint amount
+    ) internal {
+        (bool successTransferFrom, ) = address(token).call(
+            abi.encodeCall(IERC20.transferFrom, (sender, recipient, amount))
+        );
+        require(successTransferFrom, "transferFrom failed");
+    }
+
+    /**
+     * @dev Required for tokens that do not follow the ERC20 standard.
+     * For example, USDT `approve` doesn't return a bool.
+     * This function ensures that we are never blocked by a token's `approve` implementation.
+     * Without it, the `approve` call would fail.
+     */
+    function safeApprove(IERC20 token, address spender, uint amount) internal {
+        (bool successApprove, ) = address(token).call(
+            abi.encodeCall(IERC20.approve, (spender, amount))
+        );
+        require(successApprove, "approve failed");
     }
 }
 
@@ -73,7 +94,7 @@ interface IUniswapV2Router {
     ) external returns (uint amountA, uint amountB, uint liquidity);
 
     function removeLiquidity(
-        address tokenA,
+        address tokenA,`
         address tokenB,
         uint liquidity,
         uint amountAMin,
