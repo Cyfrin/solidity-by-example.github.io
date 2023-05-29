@@ -48,9 +48,9 @@ contract UniswapV2AddLiquidityTest is Test {
 
     /**
      * @dev Required for tokens that do not follow the ERC20 standard.
-     * For example, USDT `transferFrom` doesn't return a bool.
-     * This function ensures that we are never blocked by a token's `transferFrom` implementation.
-     * Without it, the `transferFrom` call would fail.
+     * For example, USDT transferFrom doesn't return a bool.
+     * This function ensures that we are never blocked by a token's transferFrom implementation.
+     * Without it, the transferFrom call would fail.
      */
     function safeTransferFrom(
         IERC20 token,
@@ -66,9 +66,9 @@ contract UniswapV2AddLiquidityTest is Test {
 
     /**
      * @dev Required for tokens that do not follow the ERC20 standard.
-     * For example, USDT `approve` doesn't return a bool.
-     * This function ensures that we are never blocked by a token's `approve` implementation.
-     * Without it, the `approve` call would fail.
+     * For example, USDT approve doesn't return a bool.
+     * This function ensures that we are never blocked by a token's approve implementation.
+     * Without it, the approve call would fail.
      */
     function safeApprove(IERC20 token, address spender, uint amount) internal {
         (bool successApprove, ) = address(token).call(
