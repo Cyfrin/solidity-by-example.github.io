@@ -50,10 +50,9 @@ contract UniswapV2AddLiquidity {
     }
 
     /**
-     * @dev Required for tokens that do not follow the ERC20 standard.
-     * For example, USDT transferFrom doesn't return a bool.
-     * This function ensures that we are never blocked by a token's transferFrom implementation.
-     * Without it, the transferFrom call would fail.
+     * @dev The transferFrom function may or may not return a bool.
+     * The ERC-20 spec returns a bool, but some tokens don't follow the spec.
+     * Need to check if data is empty or true.
      */
     function safeTransferFrom(
         IERC20 token,
@@ -61,23 +60,22 @@ contract UniswapV2AddLiquidity {
         address recipient,
         uint amount
     ) internal {
-        (bool successTransferFrom, ) = address(token).call(
+        (bool success, bytes memory returnData) = address(token).call(
             abi.encodeCall(IERC20.transferFrom, (sender, recipient, amount))
         );
-        require(successTransferFrom, "transferFrom failed");
+        require(success && (returnData.length == 0 || abi.decode(returnData, (bool))), "Transfer from fail");
     }
 
     /**
-     * @dev Required for tokens that do not follow the ERC20 standard.
-     * For example, USDT approve doesn't return a bool.
-     * This function ensures that we are never blocked by a token's approve implementation.
-     * Without it, the approve call would fail.
+     * @dev The approve function may or may not return a bool.
+     * The ERC-20 spec returns a bool, but some tokens don't follow the spec.
+     * Need to check if data is empty or true.
      */
     function safeApprove(IERC20 token, address spender, uint amount) internal {
-        (bool successApprove, ) = address(token).call(
+        (bool success, bytes memory returnData) = address(token).call(
             abi.encodeCall(IERC20.approve, (spender, amount))
         );
-        require(successApprove, "approve failed");
+        require(success && (returnData.length == 0 || abi.decode(returnData, (bool))), "Approve fail");
     }
 }
 
