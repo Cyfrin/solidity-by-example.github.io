@@ -63,7 +63,10 @@ contract UniswapV2AddLiquidity {
         (bool success, bytes memory returnData) = address(token).call(
             abi.encodeCall(IERC20.transferFrom, (sender, recipient, amount))
         );
-        require(success && (returnData.length == 0 || abi.decode(returnData, (bool))), "Transfer from fail");
+        require(
+            success && (returnData.length == 0 || abi.decode(returnData, (bool))),
+            "Transfer from fail"
+        );
     }
 
     /**
@@ -75,7 +78,10 @@ contract UniswapV2AddLiquidity {
         (bool success, bytes memory returnData) = address(token).call(
             abi.encodeCall(IERC20.approve, (spender, amount))
         );
-        require(success && (returnData.length == 0 || abi.decode(returnData, (bool))), "Approve fail");
+        require(
+            success && (returnData.length == 0 || abi.decode(returnData, (bool))),
+            "Approve fail"
+        );
     }
 }
 

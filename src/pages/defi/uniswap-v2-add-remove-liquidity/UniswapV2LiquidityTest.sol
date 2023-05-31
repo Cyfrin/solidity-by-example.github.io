@@ -45,7 +45,6 @@ contract UniswapV2AddLiquidityTest is Test {
         assertGt(WETH.balanceOf(address(uni)), 0, "WETH balance = 0");
     }
 
-
     /**
      * @dev The transferFrom function may or may not return a bool.
      * The ERC-20 spec returns a bool, but some tokens don't follow the spec.
@@ -60,7 +59,10 @@ contract UniswapV2AddLiquidityTest is Test {
         (bool success, bytes memory returnData) = address(token).call(
             abi.encodeCall(IERC20.transferFrom, (sender, recipient, amount))
         );
-        require(success && (returnData.length == 0 || abi.decode(returnData, (bool))), "Transfer from fail");
+        require(
+            success && (returnData.length == 0 || abi.decode(returnData, (bool))),
+            "Transfer from fail"
+        );
     }
 
     /**
@@ -72,6 +74,9 @@ contract UniswapV2AddLiquidityTest is Test {
         (bool success, bytes memory returnData) = address(token).call(
             abi.encodeCall(IERC20.approve, (spender, amount))
         );
-        require(success && (returnData.length == 0 || abi.decode(returnData, (bool))), "Approve fail");
+        require(
+            success && (returnData.length == 0 || abi.decode(returnData, (bool))),
+            "Approve fail"
+        );
     }
 }
