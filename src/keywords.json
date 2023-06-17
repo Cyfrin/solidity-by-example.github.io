@@ -8,13 +8,54 @@
     "public",
     "external"
   ],
-  "/view-and-pure-functions": ["view", "pure", "function", "functions"],
-  "/variables": ["variable", "variables", "local", "global", "state", "data"],
-  "/unchecked-math": ["gas", "unchecked", "math", "overflow", "underflow"],
-  "/try-catch": ["try", "catch", "error", "errors"],
-  "/tests/echidna": ["test", "echidna"],
-  "/super": ["calling", "parent", "contract", "contracts", "inheritance", "super"],
-  "/structs": ["struct", "structs", "data", "type", "types", "variable", "variables"],
+  "/view-and-pure-functions": [
+    "view",
+    "pure",
+    "function",
+    "functions"
+  ],
+  "/variables": [
+    "variable",
+    "variables",
+    "local",
+    "global",
+    "state",
+    "data"
+  ],
+  "/unchecked-math": [
+    "gas",
+    "unchecked",
+    "math",
+    "overflow",
+    "underflow"
+  ],
+  "/try-catch": [
+    "try",
+    "catch",
+    "error",
+    "errors"
+  ],
+  "/tests/echidna": [
+    "test",
+    "echidna"
+  ],
+  "/super": [
+    "calling",
+    "parent",
+    "contract",
+    "contracts",
+    "inheritance",
+    "super"
+  ],
+  "/structs": [
+    "struct",
+    "structs",
+    "data",
+    "type",
+    "types",
+    "variable",
+    "variables"
+  ],
   "/state-variables": [
     "reading",
     "writing",
@@ -69,7 +110,12 @@
     "uint",
     "int"
   ],
-  "/payable": ["payable", "eth", "send", "ether"],
+  "/payable": [
+    "payable",
+    "eth",
+    "send",
+    "ether"
+  ],
   "/new-contract": [
     "new",
     "contract",
@@ -80,10 +126,28 @@
     "create2",
     "salt"
   ],
-  "/mapping": ["data", "variable", "variables", "mapping"],
-  "/loop": ["for", "loop", "loops", "while", "do"],
-  "/library": ["library"],
-  "/interface": ["interface", "interfaces", "contract", "contracts"],
+  "/mapping": [
+    "data",
+    "variable",
+    "variables",
+    "mapping"
+  ],
+  "/loop": [
+    "for",
+    "loop",
+    "loops",
+    "while",
+    "do"
+  ],
+  "/library": [
+    "library"
+  ],
+  "/interface": [
+    "interface",
+    "interfaces",
+    "contract",
+    "contracts"
+  ],
   "/inheritance": [
     "inheritance",
     "super",
@@ -93,7 +157,9 @@
     "contract",
     "contracts"
   ],
-  "/import": ["import"],
+  "/import": [
+    "import"
+  ],
   "/immutable": [
     "constant",
     "constants",
@@ -103,9 +169,28 @@
     "variable",
     "variables"
   ],
-  "/if-else": ["if", "else", "conditional", "statement", "statements"],
-  "/hello-world": ["contract", "app", "application", "hello", "world"],
-  "/hashing": ["hash", "hashing", "function", "functions", "keccak256", "cryptography"],
+  "/if-else": [
+    "if",
+    "else",
+    "conditional",
+    "statement",
+    "statements"
+  ],
+  "/hello-world": [
+    "contract",
+    "app",
+    "application",
+    "hello",
+    "world"
+  ],
+  "/hashing": [
+    "hash",
+    "hashing",
+    "function",
+    "functions",
+    "keccak256",
+    "cryptography"
+  ],
   "/hacks/signature-replay": [
     "hack",
     "security",
@@ -113,8 +198,16 @@
     "signature",
     "replay"
   ],
-  "/hacks/self-destruct": ["hack", "security", "selfdestruct"],
-  "/hacks/re-entrancy": ["hack", "security", "re-entrancy"],
+  "/hacks/self-destruct": [
+    "hack",
+    "security",
+    "selfdestruct"
+  ],
+  "/hacks/re-entrancy": [
+    "hack",
+    "security",
+    "re-entrancy"
+  ],
   "/hacks/randomness": [
     "hack",
     "security",
@@ -125,9 +218,24 @@
     "block",
     "timestamp"
   ],
-  "/hacks/phishing-with-tx-origin": ["hack", "security", "phishing", "tx.origin"],
-  "/hacks/overflow": ["hack", "security", "arithmetic", "overflow", "underflow"],
-  "/hacks/honeypot": ["hack", "security", "honeypot"],
+  "/hacks/phishing-with-tx-origin": [
+    "hack",
+    "security",
+    "phishing",
+    "tx.origin"
+  ],
+  "/hacks/overflow": [
+    "hack",
+    "security",
+    "arithmetic",
+    "overflow",
+    "underflow"
+  ],
+  "/hacks/honeypot": [
+    "hack",
+    "security",
+    "honeypot"
+  ],
   "/hacks/hiding-malicious-code-with-external-contract": [
     "hack",
     "security",
@@ -138,7 +246,12 @@
     "external",
     "contract"
   ],
-  "/hacks/front-running": ["hack", "security", "front", "running"],
+  "/hacks/front-running": [
+    "hack",
+    "security",
+    "front",
+    "running"
+  ],
   "/hacks/deploy-different-contracts-same-address": [
     "hack",
     "security",
@@ -151,8 +264,17 @@
     "same",
     "address"
   ],
-  "/hacks/denial-of-service": ["hack", "security", "denial", "service"],
-  "/hacks/delegatecall": ["hack", "security", "delegatecall"],
+  "/hacks/denial-of-service": [
+    "hack",
+    "security",
+    "denial",
+    "service"
+  ],
+  "/hacks/delegatecall": [
+    "hack",
+    "security",
+    "delegatecall"
+  ],
   "/hacks/contract-size": [
     "hack",
     "security",
@@ -178,12 +300,38 @@
     "data",
     "storage"
   ],
-  "/gas-golf": ["gas", "golf"],
-  "/gas": ["gas"],
-  "/function-selector": ["function", "functions", "selector", "selectors"],
-  "/function-modifier": ["function", "functions", "modifier", "modifiers", "_"],
-  "/function": ["function", "functions"],
-  "/first-app": ["contract", "contracts", "app", "first", "application", "counter"],
+  "/gas-golf": [
+    "gas",
+    "golf"
+  ],
+  "/gas": [
+    "gas"
+  ],
+  "/function-selector": [
+    "function",
+    "functions",
+    "selector",
+    "selectors"
+  ],
+  "/function-modifier": [
+    "function",
+    "functions",
+    "modifier",
+    "modifiers",
+    "_"
+  ],
+  "/function": [
+    "function",
+    "functions"
+  ],
+  "/first-app": [
+    "contract",
+    "contracts",
+    "app",
+    "first",
+    "application",
+    "counter"
+  ],
   "/fallback": [
     "fallback",
     "function",
@@ -195,10 +343,33 @@
     "eth",
     "transfer"
   ],
-  "/events": ["event", "events"],
-  "/ether-units": ["data", "variables", "variable", "ether", "wei", "units"],
-  "/error": ["error", "errors", "require", "revert", "assert"],
-  "/enum": ["data", "variable", "variables", "enum", "import", "imports"],
+  "/events": [
+    "event",
+    "events"
+  ],
+  "/ether-units": [
+    "data",
+    "variables",
+    "variable",
+    "ether",
+    "wei",
+    "units"
+  ],
+  "/error": [
+    "error",
+    "errors",
+    "require",
+    "revert",
+    "assert"
+  ],
+  "/enum": [
+    "data",
+    "variable",
+    "variables",
+    "enum",
+    "import",
+    "imports"
+  ],
   "/delegatecall": [
     "delegatecall",
     "call",
@@ -207,11 +378,40 @@
     "function",
     "functions"
   ],
-  "/defi/vault": ["defi", "vault"],
-  "/defi/uniswap-v3-swap": ["defi", "uniswap", "v3", "swap", "amm"],
-  "/defi/uniswap-v3-liquidity": ["defi", "uniswap", "v3", "liquidity", "amm"],
-  "/defi/uniswap-v3-flash-swap": ["defi", "uniswap", "v3", "swap", "arbitrage", "amm"],
-  "/defi/uniswap-v3-flash": ["defi", "uniswap", "v3", "flash", "loan", "amm"],
+  "/defi/vault": [
+    "defi",
+    "vault"
+  ],
+  "/defi/uniswap-v3-swap": [
+    "defi",
+    "uniswap",
+    "v3",
+    "swap",
+    "amm"
+  ],
+  "/defi/uniswap-v3-liquidity": [
+    "defi",
+    "uniswap",
+    "v3",
+    "liquidity",
+    "amm"
+  ],
+  "/defi/uniswap-v3-flash-swap": [
+    "defi",
+    "uniswap",
+    "v3",
+    "swap",
+    "arbitrage",
+    "amm"
+  ],
+  "/defi/uniswap-v3-flash": [
+    "defi",
+    "uniswap",
+    "v3",
+    "flash",
+    "loan",
+    "amm"
+  ],
   "/defi/uniswap-v2-optimal-one-sided-supply": [
     "defi",
     "uniswap",
@@ -222,7 +422,14 @@
     "supply",
     "amm"
   ],
-  "/defi/uniswap-v2-flash-swap": ["defi", "uniswap", "v2", "flash", "swap", "amm"],
+  "/defi/uniswap-v2-flash-swap": [
+    "defi",
+    "uniswap",
+    "v2",
+    "flash",
+    "swap",
+    "amm"
+  ],
   "/defi/uniswap-v2-add-remove-liquidity": [
     "defi",
     "uniswap",
@@ -232,9 +439,26 @@
     "liquidity",
     "amm"
   ],
-  "/defi/uniswap-v2": ["defi", "uniswap", "v2", "swap", "amm"],
-  "/defi/staking-rewards": ["defi", "staking", "reward", "rewards"],
-  "/defi/stable-swap-amm": ["defi", "curve", "stable", "swap", "amm"],
+  "/defi/uniswap-v2": [
+    "defi",
+    "uniswap",
+    "v2",
+    "swap",
+    "amm"
+  ],
+  "/defi/staking-rewards": [
+    "defi",
+    "staking",
+    "reward",
+    "rewards"
+  ],
+  "/defi/stable-swap-amm": [
+    "defi",
+    "curve",
+    "stable",
+    "swap",
+    "amm"
+  ],
   "/defi/discrete-staking-rewards": [
     "defi",
     "discrete",
@@ -242,12 +466,46 @@
     "reward",
     "rewards"
   ],
-  "/defi/constant-sum-amm": ["defi", "constant", "sum", "amm"],
-  "/defi/constant-product-amm": ["defi", "constant", "product", "amm"],
-  "/defi/chainlink-price-oracle": ["defi", "chainlink", "price", "oracle", "oracles"],
-  "/data-locations": ["data", "location", "locations", "storage", "memory", "calldata"],
-  "/constructor": ["constructor", "constructors", "contract", "inheritance"],
-  "/constants": ["constant", "constants", "data", "variable", "variables"],
+  "/defi/constant-sum-amm": [
+    "defi",
+    "constant",
+    "sum",
+    "amm"
+  ],
+  "/defi/constant-product-amm": [
+    "defi",
+    "constant",
+    "product",
+    "amm"
+  ],
+  "/defi/chainlink-price-oracle": [
+    "defi",
+    "chainlink",
+    "price",
+    "oracle",
+    "oracles"
+  ],
+  "/data-locations": [
+    "data",
+    "location",
+    "locations",
+    "storage",
+    "memory",
+    "calldata"
+  ],
+  "/constructor": [
+    "constructor",
+    "constructors",
+    "contract",
+    "inheritance"
+  ],
+  "/constants": [
+    "constant",
+    "constants",
+    "data",
+    "variable",
+    "variables"
+  ],
   "/calling-contract": [
     "calling",
     "other",
@@ -257,10 +515,35 @@
     "function",
     "functions"
   ],
-  "/call": ["contract", "contracts", "call", "function", "functions"],
-  "/bitwise": ["bitwise", "most", "significant", "bit", "assembly"],
-  "/array": ["data", "variable", "variables", "array", "arrays"],
-  "/app/write-to-any-slot": ["app", "application", "write", "any", "slot", "storage"],
+  "/call": [
+    "contract",
+    "contracts",
+    "call",
+    "function",
+    "functions"
+  ],
+  "/bitwise": [
+    "bitwise",
+    "most",
+    "significant",
+    "bit",
+    "assembly"
+  ],
+  "/array": [
+    "data",
+    "variable",
+    "variables",
+    "array",
+    "arrays"
+  ],
+  "/app/write-to-any-slot": [
+    "app",
+    "application",
+    "write",
+    "any",
+    "slot",
+    "storage"
+  ],
   "/app/upgradeable-proxy": [
     "app",
     "application",
@@ -277,7 +560,12 @@
     "signature",
     "cryptography"
   ],
-  "/app/time-lock": ["app", "application", "time", "lock"],
+  "/app/time-lock": [
+    "app",
+    "application",
+    "time",
+    "lock"
+  ],
   "/app/simple-bytecode-contract": [
     "app",
     "application",
@@ -293,11 +581,40 @@
     "signature",
     "wallet"
   ],
-  "/app/multi-delegatecall": ["app", "application", "multi", "delegatecall"],
-  "/app/multi-call": ["app", "application", "multi", "call", "staticcall"],
-  "/app/minimal-proxy": ["app", "application", "minimal", "proxy", "contract"],
-  "/app/merkle-tree": ["app", "application", "merkle", "tree", "cryptography"],
-  "/app/iterable-mapping": ["app", "application", "mapping", "data", "iterable"],
+  "/app/multi-delegatecall": [
+    "app",
+    "application",
+    "multi",
+    "delegatecall"
+  ],
+  "/app/multi-call": [
+    "app",
+    "application",
+    "multi",
+    "call",
+    "staticcall"
+  ],
+  "/app/minimal-proxy": [
+    "app",
+    "application",
+    "minimal",
+    "proxy",
+    "contract"
+  ],
+  "/app/merkle-tree": [
+    "app",
+    "application",
+    "merkle",
+    "tree",
+    "cryptography"
+  ],
+  "/app/iterable-mapping": [
+    "app",
+    "application",
+    "mapping",
+    "data",
+    "iterable"
+  ],
   "/app/gasless-token-transfer": [
     "app",
     "application",
@@ -307,13 +624,62 @@
     "ERC20",
     "permit"
   ],
-  "/app/ether-wallet": ["app", "application", "ether", "eth", "wallet"],
-  "/app/erc721": ["app", "application", "erc721", "nft"],
-  "/app/erc20": ["app", "application", "erc20", "token"],
-  "/app/english-auction": ["app", "application", "english", "auction", "auctions"],
-  "/app/dutch-auction": ["app", "application", "dutch", "auction", "auctions"],
-  "/app/deploy-any-contract": ["app", "application", "deploy", "any", "contract"],
-  "/app/crowd-fund": ["app", "application", "crowd", "fund", "funding"],
+  "/app/ether-wallet": [
+    "app",
+    "application",
+    "ether",
+    "eth",
+    "wallet"
+  ],
+  "/app/erc721": [
+    "app",
+    "application",
+    "erc721",
+    "ierc721",
+    "nft"
+  ],
+  "/app/erc20": [
+    "app",
+    "application",
+    "erc20",
+    "ierc20",
+    "token"
+  ],
+  "/app/erc1155": [
+    "app",
+    "application",
+    "erc1155",
+    "nft",
+    "ierc1155"
+  ],
+  "/app/english-auction": [
+    "app",
+    "application",
+    "english",
+    "auction",
+    "auctions"
+  ],
+  "/app/dutch-auction": [
+    "app",
+    "application",
+    "dutch",
+    "auction",
+    "auctions"
+  ],
+  "/app/deploy-any-contract": [
+    "app",
+    "application",
+    "deploy",
+    "any",
+    "contract"
+  ],
+  "/app/crowd-fund": [
+    "app",
+    "application",
+    "crowd",
+    "fund",
+    "funding"
+  ],
   "/app/create2": [
     "app",
     "application",
@@ -339,5 +705,9 @@
     "encodeWithSignature",
     "encodeCall"
   ],
-  "/abi-decode": ["abi", "decode", "bytes"]
+  "/abi-decode": [
+    "abi",
+    "decode",
+    "bytes"
+  ]
 }
