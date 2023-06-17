@@ -56,6 +56,10 @@ contract StableSwap {
     uint public totalSupply;
     mapping(address => uint) public balanceOf;
 
+    constructor(address[N] memory _tokens) {
+        tokens = _tokens;
+    }
+
     function _mint(address _to, uint _amount) private {
         balanceOf[_to] += _amount;
         totalSupply += _amount;
