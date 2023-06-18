@@ -1,5 +1,4 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React, { useEffect } from "react"
 
 interface Props {
   title: string
@@ -7,12 +6,16 @@ interface Props {
 }
 
 const SEO: React.FC<Props> = ({ title, description }) => {
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="Description" content={description} />
-    </Helmet>
-  )
+  useEffect(() => {
+    document.title = title
+
+    const element = document.querySelector("meta[name='description']")
+    if (element) {
+      element.setAttribute("content", description)
+    }
+  }, [])
+
+  return null
 }
 
 export default SEO
