@@ -3,6 +3,9 @@ export const version = "0.8.17"
 export const title = "Library"
 export const description =
   "Example of how to write and use libraries in your Solidity code"
+
+export const keywords = ["library"]
+
 export const codes = [
   {
     fileName: "Library.sol",
@@ -67,7 +70,6 @@ you can&#39;t send ether.</p>
         <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

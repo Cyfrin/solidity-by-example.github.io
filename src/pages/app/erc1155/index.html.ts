@@ -285,7 +285,6 @@ const html = `<p>Example of ERC1155</p>
         _batchBurn(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, ids, values);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

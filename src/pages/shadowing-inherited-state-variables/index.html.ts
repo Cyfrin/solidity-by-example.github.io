@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Shadowing Inherited State Variables"
 export const description = "An example of shadowing state variables by inheritance"
+
+export const keywords = [
+  "state",
+  "variables",
+  "variable",
+  "shadow",
+  "shadowing",
+  "inheritance",
+]
+
 export const codes = [
   {
     fileName: "Shadow.sol",
@@ -37,7 +47,6 @@ in the child contract.</p>
 
     <span class="hljs-comment">// C.getName returns "Contract C"</span>
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

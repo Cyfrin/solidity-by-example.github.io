@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Chainlink Price Oracle"
 export const description = "Chainlink Price Oracle"
+
+export const keywords = ["defi", "chainlink", "price", "oracle", "oracles"]
+
 export const codes = [
   {
     fileName: "Chainlink.sol",
@@ -9,7 +12,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="eth--usd-price-oracle">ETH / USD Price Oracle</h3>
+const html = `<h3>ETH / USD Price Oracle</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -48,7 +51,6 @@ const html = `<h3 id="eth--usd-price-oracle">ETH / USD Price Oracle</h3>
             <span class="hljs-keyword">uint80</span> answeredInRound
         </span>)</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

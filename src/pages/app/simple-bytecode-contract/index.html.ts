@@ -69,7 +69,6 @@ PUSH1 0x0a
 PUSH1 0x16
 RETURN
 */</span>
-</code></pre>
-`
+</code></pre>`
 
 export default html

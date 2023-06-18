@@ -3,6 +3,9 @@ export const version = "0.8.17"
 export const title = "Self Destruct"
 export const description =
   "An example of how to delete your smart contract by calling seldestruct in Solidity"
+
+export const keywords = ["hack", "security", "selfdestruct"]
+
 export const codes = [
   {
     fileName: "ForceEther.sol",
@@ -17,7 +20,7 @@ export const codes = [
 const html = `<p>Contracts can be deleted from the blockchain by calling <code>selfdestruct</code>.</p>
 <p><code>selfdestruct</code> sends all remaining Ether stored in the contract to a
 designated address.</p>
-<h3 id="vulnerability">Vulnerability</h3>
+<h3>Vulnerability</h3>
 <p>A malicious contract can use <code>selfdestruct</code> to
 force sending Ether to any contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -78,8 +81,7 @@ Now no one can deposit and the winner cannot be set.
         <span class="hljs-built_in">selfdestruct</span>(addr);
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <p>Don&#39;t rely on <code>address(this).balance</code></p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
@@ -107,7 +109,6 @@ Now no one can deposit and the winner cannot be set.
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

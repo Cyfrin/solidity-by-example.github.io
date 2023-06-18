@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Delegatecall"
 export const description = "Example of how to use deletegatecall in Solidity"
+
+export const keywords = [
+  "delegatecall",
+  "call",
+  "contract",
+  "contracts",
+  "function",
+  "functions",
+]
+
 export const codes = [
   {
     fileName: "Delegatecall.sol",
@@ -41,7 +51,6 @@ const html = `<p><code>delegatecall</code> is a low level function similar to <c
         );
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

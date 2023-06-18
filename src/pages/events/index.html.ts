@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Events"
 export const description = "Example of how to emit events in Solidity"
+
+export const keywords = ["event", "events"]
+
 export const codes = [
   {
     fileName: "Events.sol",
@@ -30,7 +33,6 @@ const html = `<p><code>Events</code> allow logging to the Ethereum blockchain. S
         <span class="hljs-keyword">emit</span> AnotherLog();
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

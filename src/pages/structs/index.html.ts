@@ -2,6 +2,17 @@
 export const version = "0.8.17"
 export const title = "Structs"
 export const description = "An example of how to use structs in Solidity"
+
+export const keywords = [
+  "struct",
+  "structs",
+  "data",
+  "type",
+  "types",
+  "variable",
+  "variables",
+]
+
 export const codes = [
   {
     fileName: "StructDeclaration.sol",
@@ -67,8 +78,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
         todo.completed <span class="hljs-operator">=</span> <span class="hljs-operator">!</span>todo.completed;
     }
 }
-</code></pre>
-<h3 id="declaring-and-importing-struct">Declaring and importing Struct</h3>
+</code></pre><h3>Declaring and importing Struct</h3>
 <p>File that the struct is declared in</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
@@ -78,8 +88,7 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
     <span class="hljs-keyword">string</span> text;
     <span class="hljs-keyword">bool</span> completed;
 }
-</code></pre>
-<p>File that imports the struct above</p>
+</code></pre><p>File that imports the struct above</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -89,7 +98,6 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
     <span class="hljs-comment">// An array of &#x27;Todo&#x27; structs</span>
     Todo[] <span class="hljs-keyword">public</span> todos;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

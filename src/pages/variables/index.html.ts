@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Variables"
 export const description = "Local, state and global variables"
+
+export const keywords = ["variable", "variables", "local", "global", "state", "data"]
+
 export const codes = [
   {
     fileName: "Variables.sol",
@@ -40,7 +43,6 @@ const html = `<p>There are 3 types of variables in Solidity</p>
         <span class="hljs-keyword">address</span> sender <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>; <span class="hljs-comment">// address of the caller</span>
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

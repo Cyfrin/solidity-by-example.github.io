@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Re-Entrancy"
 export const description = "An example of re-entrancy attack in Solidity"
+
+export const keywords = ["hack", "security", "re-entrancy"]
+
 export const codes = [
   {
     fileName: "ReEntrancy.sol",
@@ -13,7 +16,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p>Let&#39;s say that contract <code>A</code> calls contract <code>B</code>.</p>
 <p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -94,8 +97,7 @@ Here is how the functions were called
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <ul>
 <li>Ensure all state changes happen before calling external contracts</li>
 <li>Use function modifiers that prevent re-entrancy</li>
@@ -114,7 +116,6 @@ Here is how the functions were called
         locked <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

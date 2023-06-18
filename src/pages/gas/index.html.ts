@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
+
+export const keywords = ["gas"]
+
 export const codes = [
   {
     fileName: "Gas.sol",
@@ -9,7 +12,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How much <code>ether</code> do you need to pay for a transaction?</h3>
+const html = `<h3>How much <code>ether</code> do you need to pay for a transaction?</h3>
 <p>You pay <code>gas spent * gas price</code> amount of <code>ether</code>, where</p>
 <ul>
 <li><code>gas</code> is a unit of computation</li>
@@ -18,7 +21,7 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
 </ul>
 <p>Transactions with higher gas price have higher priority to be included in a block.</p>
 <p>Unspent gas will be refunded.</p>
-<h3 id="gas-limit">Gas Limit</h3>
+<h3>Gas Limit</h3>
 <p>There are 2 upper bounds to the amount of gas you can spend</p>
 <ul>
 <li><code>gas limit</code> (max amount of gas you&#39;re willing to use for your transaction, set by you)</li>
@@ -41,7 +44,6 @@ const html = `<h3 id="how-much-ether-do-you-need-to-pay-for-a-transaction">How m
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

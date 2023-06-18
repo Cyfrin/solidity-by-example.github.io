@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Hashing with Keccak256"
 export const description = "Example of hashing using Keccak256 in Solidity"
+
+export const keywords = [
+  "hash",
+  "hashing",
+  "function",
+  "functions",
+  "keccak256",
+  "cryptography",
+]
+
 export const codes = [
   {
     fileName: "Keccak256.sol",
@@ -50,7 +60,6 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_word)) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> answer;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

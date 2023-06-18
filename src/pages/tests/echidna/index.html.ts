@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Echidna"
 export const description = "An example of testing contracts with Echidna"
+
+export const keywords = ["test", "echidna"]
+
 export const codes = [
   {
     fileName: "EchidnaTestTimeAndCaller.sol",
@@ -19,8 +22,7 @@ const html = `<p>Examples of fuzzing with <a href="https://github.com/crytic/ech
 <li>In the folder where your contract is stored execute the following command.</li>
 </ol>
 <pre><code class="language-shell">docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
-</code></pre>
-<p>Inside docker, your code will be stored at <code>/code</code></p>
+</code></pre><p>Inside docker, your code will be stored at <code>/code</code></p>
 <ol start="3">
 <li>See the comments below and execute <code>echidna-test</code> commands.</li>
 </ol>
@@ -86,8 +88,7 @@ echidna-test TestEchidna.sol --contract TestAssert --check-asserts
         }
     }
 }
-</code></pre>
-<h3 id="testing-time-and-sender">Testing Time and Sender</h3>
+</code></pre><h3>Testing Time and Sender</h3>
 <p>Echidna can fuzz timestamp. Range of timestamp is set in the configuration. Default is 7 days.</p>
 <p>Contract callers can also be set in the configuration. Default accounts are</p>
 <ul>
@@ -152,7 +153,6 @@ echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Try Catch"
 export const description = "An example of try / catch in Solidity"
+
+export const keywords = ["try", "catch", "error", "errors"]
+
 export const codes = [
   {
     fileName: "TryCatch.sol",
@@ -68,7 +71,6 @@ const html = `<p><code>try / catch</code> can only catch errors from external fu
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

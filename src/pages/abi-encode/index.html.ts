@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "ABI Encode"
 export const description = "ABI encode"
+
+export const keywords = [
+  "abi",
+  "encode",
+  "bytes",
+  "encodeWithSelector",
+  "encodeWithSignature",
+  "encodeCall",
+]
+
 export const codes = [
   {
     fileName: "AbiEncode.sol",
@@ -47,7 +57,6 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeCall</span>(IERC20.<span class="hljs-built_in">transfer</span>, (to, amount));
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

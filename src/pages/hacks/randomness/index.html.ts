@@ -3,6 +3,18 @@ export const version = "0.8.17"
 export const title = "Source of Randomness"
 export const description =
   "Blockchain is not a reliable source of randomness in Solidity"
+
+export const keywords = [
+  "hack",
+  "security",
+  "source",
+  "random",
+  "randomness",
+  "blockhash",
+  "block",
+  "timestamp",
+]
+
 export const codes = [
   {
     fileName: "Randomness.sol",
@@ -10,7 +22,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p><code>blockhash</code> and <code>block.timestamp</code> are not reliable sources for randomness.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
@@ -69,8 +81,7 @@ Attack computed the correct answer by simply copying the code that computes the 
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <ul>
 <li>Don&#39;t use <code>blockhash</code> and <code>block.timestamp</code> as source of randomness</li>
 </ul>

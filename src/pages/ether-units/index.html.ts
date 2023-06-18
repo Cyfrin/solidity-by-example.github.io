@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Ether and Wei"
 export const description = "An example of Ether and Wei in Solidity"
+
+export const keywords = ["data", "variables", "variable", "ether", "wei", "units"]
+
 export const codes = [
   {
     fileName: "EtherUnits.sol",
@@ -23,7 +26,6 @@ const html = `<p>Transactions are paid with <code>ether</code>.</p>
     <span class="hljs-comment">// 1 ether is equal to 10^18 wei</span>
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isOneEther <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1e18</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

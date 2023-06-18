@@ -2,6 +2,17 @@
 export const version = "0.8.17"
 export const title = "Immutable"
 export const description = "Immutable variables"
+
+export const keywords = [
+  "constant",
+  "constants",
+  "immutable",
+  "immutables",
+  "data",
+  "variable",
+  "variables",
+]
+
 export const codes = [
   {
     fileName: "Immutable.sol",
@@ -23,7 +34,6 @@ const html = `<p>Immutable variables are like constants. Values of immutable var
         MY_UINT <span class="hljs-operator">=</span> _myUint;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Function"
 export const description = "Example of how to write functions in Solidity"
+
+export const keywords = ["function", "functions"]
+
 export const codes = [
   {
     fileName: "Function.sol",
@@ -81,7 +84,6 @@ const html = `<p>There are several ways to return outputs from a function.</p>
             someFuncWithManyInputs({a: <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), b: <span class="hljs-literal">true</span>, c: <span class="hljs-string">"c"</span>, x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span>, z: <span class="hljs-number">3</span>});
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "ERC721"
 export const description = "Example of ERC721 non fungible token in Solidity"
+
+export const keywords = ["app", "application", "erc721", "ierc721", "nft"]
+
 export const codes = [
   {
     fileName: "ERC721.sol",
@@ -198,7 +201,6 @@ const html = `<p>Example of ERC721</p>
         _burn(id);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Enum"
 export const description = "Example of enums in Solidity"
+
+export const keywords = ["data", "variable", "variables", "enum", "import", "imports"]
+
 export const codes = [
   {
     fileName: "Enum.sol",
@@ -61,8 +64,7 @@ const html = `<p>Solidity supports enumerables and they are useful to model choi
         <span class="hljs-keyword">delete</span> status;
     }
 }
-</code></pre>
-<h3 id="declaring-and-importing-enum">Declaring and importing Enum</h3>
+</code></pre><h3>Declaring and importing Enum</h3>
 <p>File that the enum is declared in</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
@@ -75,8 +77,7 @@ const html = `<p>Solidity supports enumerables and they are useful to model choi
     Rejected,
     Canceled
 }
-</code></pre>
-<p>File that imports the enum above</p>
+</code></pre><p>File that imports the enum above</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -85,7 +86,6 @@ const html = `<p>Solidity supports enumerables and they are useful to model choi
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Enum</span> </span>{
     Status <span class="hljs-keyword">public</span> status;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

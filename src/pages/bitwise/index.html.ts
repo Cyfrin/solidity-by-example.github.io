@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Bitwise Operators"
 export const description = "Learn about bitwise operators in Solidity"
+
+export const keywords = ["bitwise", "most", "significant", "bit", "assembly"]
+
 export const codes = [
   {
     fileName: "Bitwise.sol",
@@ -104,8 +107,7 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         <span class="hljs-keyword">return</span> x <span class="hljs-operator">&amp;</span> mask;
     }
 }
-</code></pre>
-<h3 id="most-significant-bit">Most significant bit</h3>
+</code></pre><h3>Most significant bit</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -151,8 +153,7 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         <span class="hljs-keyword">if</span> (x <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">0x2</span>) msb <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 }
-</code></pre>
-<h3 id="most-significant-bit-in-assembly">Most significant bit in assembly</h3>
+</code></pre><h3>Most significant bit in assembly</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -200,7 +201,6 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Delegatecall"
 export const description = "An example of exploits using delegatecall in Solidity"
+
+export const keywords = ["hack", "security", "delegatecall"]
+
 export const codes = [
   {
     fileName: "Delegatecall_1.sol",
@@ -13,7 +16,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p><code>delegatecall</code> is tricky to use and wrong usage or incorrect understanding
 can lead to devastating results.</p>
 <p>You must keep 2 things in mind when using <code>delegatecall</code></p>
@@ -81,8 +84,7 @@ caller of HackMe, in this case Attack.
         hackMe.<span class="hljs-built_in">call</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"pwn()"</span>));
     }
 }
-</code></pre>
-<p>Here is another example.</p>
+</code></pre><p>Here is another example.</p>
 <p>You will need to understand how Solidity stores
 state variables before you can understand this exploit.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -156,8 +158,7 @@ change the owner.
         owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <ul>
 <li>Use stateless <code>Library</code></li>
 </ul>

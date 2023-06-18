@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Deploy Any Contract"
 export const description = "Deploy Any Contract"
+
+export const keywords = ["app", "application", "deploy", "any", "contract"]
+
 export const codes = [
   {
     fileName: "Proxy.sol",
@@ -75,7 +78,6 @@ const html = `<p>Deploy any contract by calling <code>Proxy.deploy(bytes memory 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"setOwner(address)"</span>, _owner);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

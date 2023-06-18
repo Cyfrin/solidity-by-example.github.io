@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Unchecked Math"
 export const description = "An example of unchecked math in Solidity"
+
+export const keywords = ["gas", "unchecked", "math", "overflow", "underflow"]
+
 export const codes = [
   {
     fileName: "UncheckedMath.sol",
@@ -45,7 +48,6 @@ const html = `<p>Overflow and underflow of numbers in Solidity 0.8 throw an erro
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

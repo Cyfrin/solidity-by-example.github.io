@@ -2,6 +2,23 @@
 export const version = "0.8.17"
 export const title = "Primitive Data Types"
 export const description = "Primitive data types"
+
+export const keywords = [
+  "primitive",
+  "primitives",
+  "data",
+  "type",
+  "types",
+  "variable",
+  "variables",
+  "boolean",
+  "uint256",
+  "int256",
+  "address",
+  "uint",
+  "int",
+]
+
 export const codes = [
   {
     fileName: "Primitives.sol",
@@ -71,7 +88,6 @@ const html = `<p>Here we introduce you to some primitive data types available in
     <span class="hljs-keyword">int</span> <span class="hljs-keyword">public</span> defaultInt; <span class="hljs-comment">// 0</span>
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> defaultAddr; <span class="hljs-comment">// 0x0000000000000000000000000000000000000000</span>
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,19 @@
 export const version = "0.8.17"
 export const title = "Fallback"
 export const description = "Example of how to use fallback in Solidity"
+
+export const keywords = [
+  "fallback",
+  "function",
+  "functions",
+  "receive",
+  "payable",
+  "send",
+  "ether",
+  "eth",
+  "transfer",
+]
+
 export const codes = [
   {
     fileName: "Fallback.sol",
@@ -53,8 +66,7 @@ const html = `<p><code>fallback</code> is a special function that is executed ei
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
-</code></pre>
-<p><code>fallback</code> can optionally take <code>bytes</code> for input and output</p>
+</code></pre><p><code>fallback</code> can optionally take <code>bytes</code> for input and output</p>
 <pre><code class="language-solidity"><span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
 <span class="hljs-comment">// TestFallbackInputOutput -&gt; FallbackInputOutput -&gt; Counter</span>
@@ -98,7 +110,6 @@ const html = `<p><code>fallback</code> is a special function that is executed ei
         <span class="hljs-keyword">return</span> (<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeCall</span>(Counter.get, ()), <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeCall</span>(Counter.inc, ()));
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

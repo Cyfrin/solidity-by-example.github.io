@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Verifying Signature"
 export const description = "An example of how to verify signatures in Solidity"
+
+export const keywords = [
+  "cryptography",
+  "verify",
+  "verifying",
+  "signature",
+  "signatures",
+  "ecrecover",
+]
+
 export const codes = [
   {
     fileName: "Signature.sol",
@@ -134,7 +144,6 @@ How to Sign and Verify
         <span class="hljs-comment">// implicitly return (r, s, v)</span>
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

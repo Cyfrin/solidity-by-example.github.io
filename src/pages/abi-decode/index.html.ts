@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "ABI Decode"
 export const description = "ABI decode bytes"
+
+export const keywords = ["abi", "decode", "bytes"]
+
 export const codes = [
   {
     fileName: "AbiDecode.sol",
@@ -40,7 +43,6 @@ const html = `<p><code>abi.encode</code> encodes data into <code>bytes</code>.</
         (x, addr, arr, myStruct) <span class="hljs-operator">=</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">decode</span>(data, (<span class="hljs-keyword">uint</span>, <span class="hljs-keyword">address</span>, <span class="hljs-keyword">uint</span>[], MyStruct));
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

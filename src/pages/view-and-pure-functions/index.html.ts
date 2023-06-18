@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "View and Pure Functions"
 export const description = "An example of view and pure functions in Solidity"
+
+export const keywords = ["view", "pure", "function", "functions"]
+
 export const codes = [
   {
     fileName: "ViewAndPureFunctions.sol",
@@ -28,7 +31,6 @@ const html = `<p>Getter functions can be declared <code>view</code> or <code>pur
         <span class="hljs-keyword">return</span> i <span class="hljs-operator">+</span> j;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

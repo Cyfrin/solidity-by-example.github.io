@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Multi Call"
 export const description = "An example of contract to aggregate multiple calls."
+
+export const keywords = ["app", "application", "multi", "call", "staticcall"]
+
 export const codes = [
   {
     fileName: "MultiCall.sol",
@@ -35,8 +38,7 @@ const html = `<p>An example of contract that aggregates multiple queries using a
         <span class="hljs-keyword">return</span> results;
     }
 }
-</code></pre>
-<p>Contract to test <code>MultiCall</code></p>
+</code></pre><p>Contract to test <code>MultiCall</code></p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -49,7 +51,6 @@ const html = `<p>An example of contract that aggregates multiple queries using a
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSelector</span>(<span class="hljs-built_in">this</span>.test.<span class="hljs-built_in">selector</span>, _i);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

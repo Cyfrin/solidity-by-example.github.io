@@ -26,8 +26,7 @@ export const codes = [
 
 const html = `<p>Contract address deployed with <code>create</code> is computed in the following way.</p>
 <pre><code>contract address = last 20 bytes of sha3(rlp_encode(sender, nonce))
-</code></pre>
-<p>where <code>sender</code> is the address of the deployer and <code>nonce</code> is the number of transactions sent by <code>sender</code>.</p>
+</code></pre><p>where <code>sender</code> is the address of the deployer and <code>nonce</code> is the number of transactions sent by <code>sender</code>.</p>
 <p>Hence it is possible to deploy different contracts at the same address if we can somehow reset the <code>nonce</code>.</p>
 <p>Below is an example of how a DAO can be hacked.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -138,7 +137,6 @@ DeployerDeployer -- create2 --&gt; Deployer -- create --&gt; Attack
         <span class="hljs-built_in">selfdestruct</span>(<span class="hljs-keyword">payable</span>(<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>)));
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

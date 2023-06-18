@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Interface"
 export const description = "An example of interface in Solidity"
+
+export const keywords = ["interface", "interfaces", "contract", "contracts"]
+
 export const codes = [
   {
     fileName: "Interface.sol",
@@ -71,7 +74,6 @@ const html = `<p>You can interact with other contracts by declaring an <code>Int
         <span class="hljs-keyword">return</span> (reserve0, reserve1);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

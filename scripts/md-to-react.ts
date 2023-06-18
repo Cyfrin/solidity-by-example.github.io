@@ -3,14 +3,38 @@ import fs from "fs"
 import path from "path"
 import mustache from "mustache"
 import { marked } from "marked"
+import { markedHighlight } from "marked-highlight"
 import hljs from "highlight.js"
 // @ts-ignore
 import { solidity } from "highlightjs-solidity"
 // @ts-ignore
 import { exists, removeExt, getExt, renderTemplateToFile, parseYaml } from "./lib"
 
-hljs.registerLanguage("solidity", solidity)
 const { readFile, readdir } = fs.promises
+
+marked.use({
+  mangle: false,
+  headerIds: false,
+})
+
+marked.use(
+  markedHighlight({
+    highlight: (code, lang) => {
+      let language = lang
+      // text
+      if (lang == "") {
+        language = "plaintext"
+      }
+      // use python
+      else if (lang === "vyper") {
+        language = "python"
+      }
+      return hljs.highlight(code, { language }).value
+    },
+  })
+)
+
+hljs.registerLanguage("solidity", solidity)
 
 async function findSolidityFiles(dir: string): Promise<string[]> {
   const files = await readdir(dir)
@@ -41,14 +65,8 @@ async function mdToHtml(filePath: string) {
   const { content, metadata } = await parseYaml(filePath)
 
   const markdown = mustache.render(content, codes)
-  const html = marked(markdown, {
-    highlight: (code, language) => {
-      if (language === "solidity") {
-        return hljs.highlight(code, { language }).value
-      }
-      return code
-    },
-  })
+  const html = marked
+    .parse(markdown)
     .replace(/&quot;/g, `"`)
     // replace \ with \\
     .replace(/\\/g, `\\\\`)

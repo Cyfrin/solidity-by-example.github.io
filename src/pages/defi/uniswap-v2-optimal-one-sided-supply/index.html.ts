@@ -2,6 +2,18 @@
 export const version = "0.8.17"
 export const title = "Uniswap V2 Optimal One Sided Supply"
 export const description = "Uniswap V2 Optimal One Sided Supply"
+
+export const keywords = [
+  "defi",
+  "uniswap",
+  "v2",
+  "optimal",
+  "one",
+  "sided",
+  "supply",
+  "amm",
+]
+
 export const codes = [
   {
     fileName: "Optimal.sol",
@@ -9,7 +21,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
+const html = `<h3>Optimal One Sided Supply</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -156,7 +168,6 @@ const html = `<h3 id="optimal-one-sided-supply">Optimal One Sided Supply</h3>
         <span class="hljs-keyword">uint</span> amount
     </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

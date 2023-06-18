@@ -88,8 +88,7 @@ const html = `<p>Gasless ERC20 token transfer with Meta transaction</p>
         IERC20Permit(token).transferFrom(sender, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, fee);
     }
 }
-</code></pre>
-<p>Example <code>ERC20</code> that implements <code>permit</code> copied from solmate</p>
+</code></pre><p>Example <code>ERC20</code> that implements <code>permit</code> copied from solmate</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: AGPL-3.0-only</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> &gt;=0.8.0;</span>
 
@@ -313,7 +312,6 @@ const html = `<p>Gasless ERC20 token transfer with Meta transaction</p>
         _mint(to, amount);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

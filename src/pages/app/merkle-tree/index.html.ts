@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Merkle Tree"
 export const description = "Learn about Merkle tree in Solidity"
+
+export const keywords = ["app", "application", "merkle", "tree", "cryptography"]
+
 export const codes = [
   {
     fileName: "MerkleTree.sol",
@@ -89,7 +92,6 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
     0x995788ffc103b987ad50f5e5707fd094419eb12d9552cc423bd0cd86a3861433
     */</span>
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

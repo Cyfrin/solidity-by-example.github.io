@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "First Application"
 export const description = "Example of smart contract in Solidity"
+
+export const keywords = [
+  "contract",
+  "contracts",
+  "app",
+  "first",
+  "application",
+  "counter",
+]
+
 export const codes = [
   {
     fileName: "Counter.sol",
@@ -32,7 +42,6 @@ const html = `<p>Here is a simple contract that you can get, increment and decre
         count <span class="hljs-operator">-</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

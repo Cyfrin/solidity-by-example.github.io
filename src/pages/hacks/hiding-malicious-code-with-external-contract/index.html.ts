@@ -3,6 +3,18 @@ export const version = "0.8.17"
 export const title = "Hiding Malicious Code with External Contract"
 export const description =
   "An example of exploit where malicious code is hidden in an external contract in Solidity"
+
+export const keywords = [
+  "hack",
+  "security",
+  "hide",
+  "hiding",
+  "malicious",
+  "code",
+  "external",
+  "contract",
+]
+
 export const codes = [
   {
     fileName: "ExternalContract.sol",
@@ -10,7 +22,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p>In Solidity any address can be casted into specific contract,
 even if the contract at the address is not the one being casted.</p>
 <p>This can be exploited to hide malicious code. Let&#39;s see how.</p>
@@ -66,8 +78,7 @@ will actually execute the code at Mal.
         <span class="hljs-keyword">emit</span> Log(<span class="hljs-string">"Mal was called"</span>);
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <ul>
 <li>Initialize a new contract inside the constructor</li>
 <li>Make the address of external contract <code>public</code> so that the code of the
@@ -78,7 +89,6 @@ external contract can be reviewed</li>
 <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
     bar <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Bar();
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

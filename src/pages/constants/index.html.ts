@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Constants"
 export const description = "Constant variables"
+
+export const keywords = ["constant", "constants", "data", "variable", "variables"]
+
 export const codes = [
   {
     fileName: "Constants.sol",
@@ -19,7 +22,6 @@ const html = `<p>Constants are variables that cannot be modified.</p>
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> MY_ADDRESS <span class="hljs-operator">=</span> <span class="hljs-number">0x777788889999AaAAbBbbCcccddDdeeeEfFFfCcCc</span>;
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> MY_UINT <span class="hljs-operator">=</span> <span class="hljs-number">123</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

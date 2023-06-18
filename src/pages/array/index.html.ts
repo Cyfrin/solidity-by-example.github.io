@@ -70,8 +70,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
         <span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">memory</span> a <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">uint</span>[](<span class="hljs-number">5</span>);
     }
 }
-</code></pre>
-<h3 id="examples-of-removing-array-element">Examples of removing array element</h3>
+</code></pre><h3>Examples of removing array element</h3>
 <p>Remove array element by shifting elements from right to left</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
@@ -109,8 +108,7 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
         <span class="hljs-built_in">assert</span>(arr.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>);
     }
 }
-</code></pre>
-<p>Remove array element by copying last element into to the place to remove</p>
+</code></pre><p>Remove array element by copying last element into to the place to remove</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -144,7 +142,6 @@ const html = `<p>Array can have a compile-time fixed size or a dynamic size.</p>
         <span class="hljs-built_in">assert</span>(arr[<span class="hljs-number">1</span>] <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">4</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Ether Wallet"
 export const description = "Simple example of wallet in Solidity"
+
+export const keywords = ["app", "application", "ether", "eth", "wallet"]
+
 export const codes = [
   {
     fileName: "EtherWallet.sol",
@@ -35,7 +38,6 @@ const html = `<p>An example of a basic wallet.</p>
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

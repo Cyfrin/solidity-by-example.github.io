@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Crowd Fund"
 export const description = "An example of crowd funding contract"
+
+export const keywords = ["app", "application", "crowd", "fund", "funding"]
+
 export const codes = [
   {
     fileName: "CrowdFund.sol",
@@ -142,7 +145,6 @@ const html = `<p>Crowd fund ERC20 token</p>
         <span class="hljs-keyword">emit</span> Refund(_id, <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, bal);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

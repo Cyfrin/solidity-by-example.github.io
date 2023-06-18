@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Precompute Contract Address with Create2"
 export const description = "Precompute contract address with create2"
+
+export const keywords = [
+  "app",
+  "application",
+  "create2",
+  "precompute",
+  "contract",
+  "address",
+]
+
 export const codes = [
   {
     fileName: "Create2.sol",
@@ -100,7 +110,6 @@ const html = `<p>Contract address can be precomputed, before the contract is dep
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

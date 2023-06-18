@@ -3,6 +3,9 @@ export const version = "0.8.17"
 export const title = "Staking Rewards"
 export const description =
   "Staking rewards contract based on Synthetix StakingRewards.sol"
+
+export const keywords = ["defi", "staking", "reward", "rewards"]
+
 export const codes = [
   {
     fileName: "StakingRewards.sol",
@@ -12,7 +15,7 @@ export const codes = [
 
 const html = `<p>This is a minimal example of a contract that rewards users for staking their token.</p>
 <p>Code is a stripped down version of Synthetix <a href="https://github.com/Synthetixio/synthetix/blob/develop/contracts/StakingRewards.sol" target="__blank">StakingRewards.sol</a></p>
-<h3 id="staking-rewards">Staking Rewards</h3>
+<h3>Staking Rewards</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8;</span>
 
@@ -159,7 +162,6 @@ const html = `<p>This is a minimal example of a contract that rewards users for 
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> value</span>)</span>;
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender, <span class="hljs-keyword">uint</span> value</span>)</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Dutch Auction"
 export const description = "An example of Dutch auction in Solidity"
+
+export const keywords = ["app", "application", "dutch", "auction", "auctions"]
+
 export const codes = [
   {
     fileName: "DutchAuction.sol",
@@ -10,7 +13,7 @@ export const codes = [
 ]
 
 const html = `<p>Dutch auction for NFT.</p>
-<h3 id="auction">Auction</h3>
+<h3>Auction</h3>
 <ol>
 <li>Seller of NFT deploys this contract setting a starting price for the NFT.</li>
 <li>Auction lasts for 7 days.</li>
@@ -70,7 +73,6 @@ const html = `<p>Dutch auction for NFT.</p>
         <span class="hljs-built_in">selfdestruct</span>(seller);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

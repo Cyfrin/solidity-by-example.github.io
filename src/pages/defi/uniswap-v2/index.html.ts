@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Uniswap V2 Swap"
 export const description = "Uniswap V2 swap"
+
+export const keywords = ["defi", "uniswap", "v2", "swap", "amm"]
+
 export const codes = [
   {
     fileName: "UniswapV2SwapExamples.sol",
@@ -187,8 +190,7 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
-</code></pre>
-<h3 id="test-with-foundry">Test with Foundry</h3>
+</code></pre><h3>Test with Foundry</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -284,7 +286,6 @@ const html = `<p><code>swapExactTokensForTokens</code> sells all tokens for anot
         assertEq(amountOut, amountOutDesired, <span class="hljs-string">"amount out != amount out desired"</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Discrete Staking Rewards"
 export const description = "Discrete staking rewards"
+
+export const keywords = ["defi", "discrete", "staking", "reward", "rewards"]
+
 export const codes = [
   {
     fileName: "DiscreteStakingRewards.sol",
@@ -10,7 +13,7 @@ export const codes = [
 ]
 
 const html = `<p>Similar to staking rewards contract. Difference is that reward amount may vary at each second.</p>
-<h3 id="discrete-staking-rewards">Discrete Staking Rewards</h3>
+<h3>Discrete Staking Rewards</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -101,7 +104,6 @@ const html = `<p>Similar to staking rewards contract. Difference is that reward 
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> value</span>)</span>;
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender, <span class="hljs-keyword">uint</span> value</span>)</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

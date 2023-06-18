@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Data Locations - Storage, Memory and Calldata"
 export const description = "Data locations - storage, memory and calldata"
+
+export const keywords = [
+  "data",
+  "location",
+  "locations",
+  "storage",
+  "memory",
+  "calldata",
+]
+
 export const codes = [
   {
     fileName: "DataLocations.sol",
@@ -54,7 +64,6 @@ specify the location of the data.</p>
         <span class="hljs-comment">// do something with calldata array</span>
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

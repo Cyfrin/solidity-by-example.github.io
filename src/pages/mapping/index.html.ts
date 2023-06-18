@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Mapping"
 export const description = "Example of using mapping in Solidity"
+
+export const keywords = ["data", "variable", "variables", "mapping"]
+
 export const codes = [
   {
     fileName: "Mapping.sol",
@@ -55,7 +58,6 @@ const html = `<p>Maps are created with the syntax <code>mapping(keyType =&gt; va
         <span class="hljs-keyword">delete</span> nested[_addr1][_i];
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

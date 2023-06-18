@@ -3,6 +3,17 @@ export const version = "0.8.17"
 export const title = "Calling Other Contract"
 export const description =
   "In Solidity, contract can call other contracts in several ways"
+
+export const keywords = [
+  "calling",
+  "other",
+  "contract",
+  "contracts",
+  "call",
+  "function",
+  "functions",
+]
+
 export const codes = [
   {
     fileName: "CallingContract.sol",
@@ -48,7 +59,6 @@ const html = `<p>Contract can call other contracts in 2 ways.</p>
         (<span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> value) <span class="hljs-operator">=</span> _callee.setXandSendEther{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_x);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

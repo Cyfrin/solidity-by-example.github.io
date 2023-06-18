@@ -3,6 +3,17 @@ export const version = "0.8.17"
 export const title = "Accessing Private Data"
 export const description =
   "An example of accessing private data from a Solidity smart contract"
+
+export const keywords = [
+  "hack",
+  "security",
+  "access",
+  "accessing",
+  "private",
+  "data",
+  "storage",
+]
+
 export const codes = [
   {
     fileName: "Vault.sol",
@@ -10,7 +21,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p>All data on a smart contract can be read.</p>
 <p>Let&#39;s see how we can read <code>private</code> data. In the process you will learn how Solidity stores state variables.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -119,8 +130,7 @@ user 1
 web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xb39221ace053465ec3453ce2b36430bd138b997ecea25c1043da0c366812b828", console.log)
 web3.eth.getStorageAt("0x534E4Ce0ffF779513793cfd70308AF195827BD31", "0xb39221ace053465ec3453ce2b36430bd138b997ecea25c1043da0c366812b829", console.log)
 */</span>
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <ul>
 <li>Don&#39;t store sensitive information on the blockchain.</li>
 </ul>

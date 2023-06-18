@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "ERC20"
 export const description = "Example of ERC20 token in Solidity"
+
+export const keywords = ["app", "application", "erc20", "ierc20", "token"]
+
 export const codes = [
   {
     fileName: "ERC20.sol",
@@ -52,8 +55,7 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> value</span>)</span>;
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender, <span class="hljs-keyword">uint</span> value</span>)</span>;
 }
-</code></pre>
-<p>Example of <code>ERC20</code> token contract.</p>
+</code></pre><p>Example of <code>ERC20</code> token contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -104,8 +106,7 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
         <span class="hljs-keyword">emit</span> Transfer(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), amount);
     }
 }
-</code></pre>
-<h2 id="create-your-own-erc20-token">Create your own ERC20 token</h2>
+</code></pre><h2>Create your own ERC20 token</h2>
 <p>Using <a href="https://github.com/OpenZeppelin/openzeppelin-contracts" target="__blank">Open Zeppelin</a> it&#39;s really easy to create your own ERC20 token.</p>
 <p>Here is an example</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -122,13 +123,11 @@ const html = `<p>Any contract that follow the <a href="https://eips.ethereum.org
         _mint(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-number">100</span> <span class="hljs-operator">*</span> <span class="hljs-number">10</span> <span class="hljs-operator">*</span><span class="hljs-operator">*</span> <span class="hljs-keyword">uint</span>(decimals()));
     }
 }
-</code></pre>
-<h2 id="contract-to-swap-tokens">Contract to swap tokens</h2>
+</code></pre><h2>Contract to swap tokens</h2>
 <p>Here is an example contract, <code>TokenSwap</code>, to trade one ERC20 token for another.</p>
 <p>This contract will swap tokens by calling</p>
 <pre><code class="language-solidity">transferFrom(<span class="hljs-keyword">address</span> sender, <span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount)
-</code></pre>
-<p>which will transfer <code>amount</code> of token from <code>sender</code> to <code>recipient</code>.</p>
+</code></pre><p>which will transfer <code>amount</code> of token from <code>sender</code> to <code>recipient</code>.</p>
 <p>For <code>transferFrom</code> to succeed, <code>sender</code> must</p>
 <ul>
 <li>have more than <code>amount</code> tokens in their balance</li>
@@ -202,7 +201,6 @@ How to swap tokens
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Token transfer failed"</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

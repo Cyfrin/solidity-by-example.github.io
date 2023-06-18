@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Time Lock"
 export const description = "Time Lock"
+
+export const keywords = ["app", "application", "time", "lock"]
+
 export const codes = [
   {
     fileName: "TimeLock.sol",
@@ -158,7 +161,6 @@ After a mimimum waiting period, the transaction can be executed.</p>
         <span class="hljs-keyword">emit</span> Cancel(_txId);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

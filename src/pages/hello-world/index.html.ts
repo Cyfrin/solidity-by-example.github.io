@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Hello World"
 export const description = "Hello world in Solidity"
+
+export const keywords = ["contract", "app", "application", "hello", "world"]
+
 export const codes = [
   {
     fileName: "HelloWorld.sol",
@@ -17,7 +20,6 @@ const html = `<p><code>pragma</code> specifies the compiler version of Solidity.
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">HelloWorld</span> </span>{
     <span class="hljs-keyword">string</span> <span class="hljs-keyword">public</span> greet <span class="hljs-operator">=</span> <span class="hljs-string">"Hello World!"</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

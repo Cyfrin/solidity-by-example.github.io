@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "For and While Loop"
 export const description = "Example of for and while loop in Solidity"
+
+export const keywords = ["for", "loop", "loops", "while", "do"]
+
 export const codes = [
   {
     fileName: "Loop.sol",
@@ -36,7 +39,6 @@ const html = `<p>Solidity supports <code>for</code>, <code>while</code>, and <co
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

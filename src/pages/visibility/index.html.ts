@@ -3,6 +3,17 @@ export const version = "0.8.17"
 export const title = "Visibility"
 export const description =
   "An example of external, internal, private and public functions in Solidity"
+
+export const keywords = [
+  "visibility",
+  "function",
+  "functions",
+  "internal",
+  "private",
+  "public",
+  "external",
+]
+
 export const codes = [
   {
     fileName: "Visibility.sol",
@@ -85,7 +96,6 @@ const html = `<p>Functions and state variables have to declare whether they are 
         <span class="hljs-keyword">return</span> internalFunc();
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

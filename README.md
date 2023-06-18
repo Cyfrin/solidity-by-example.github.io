@@ -8,8 +8,6 @@
 
 ### Memo
 
-TODO: remove react helmet (HERE)
-TODO: update marked
 TODO: code split / dynamic imports
 
 ```shell

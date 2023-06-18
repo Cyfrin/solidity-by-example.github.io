@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "If / Else"
 export const description = "If / Else conditional statement in Solidity"
+
+export const keywords = ["if", "else", "conditional", "statement", "statements"]
+
 export const codes = [
   {
     fileName: "IfElse.sol",
@@ -35,7 +38,6 @@ const html = `<p>Solidity supports conditional statements <code>if</code>, <code
         <span class="hljs-keyword">return</span> _x <span class="hljs-operator">&lt;</span> <span class="hljs-number">10</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">2</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

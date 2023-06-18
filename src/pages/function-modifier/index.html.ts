@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Function Modifier"
 export const description = "Example of how to write function modifier in Solidity"
+
+export const keywords = ["function", "functions", "modifier", "modifiers", "_"]
+
 export const codes = [
   {
     fileName: "FunctionModifier.sol",
@@ -71,7 +74,6 @@ const html = `<p>Modifiers are code that can be run before and / or after a func
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

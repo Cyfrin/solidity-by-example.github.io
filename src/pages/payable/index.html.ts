@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Payable"
 export const description = "An example of how to use the keyword payable in Solidity"
+
+export const keywords = ["payable", "eth", "send", "ether"]
+
 export const codes = [
   {
     fileName: "Payable.sol",
@@ -49,7 +52,6 @@ const html = `<p>Functions and addresses declared <code>payable</code> can recei
         <span class="hljs-built_in">require</span>(success, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

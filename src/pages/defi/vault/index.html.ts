@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Vault"
 export const description = "Vault"
+
+export const keywords = ["defi", "vault"]
+
 export const codes = [
   {
     fileName: "Vault.sol",
@@ -11,7 +14,7 @@ export const codes = [
 
 const html = `<p>Simple example of vault contract, commonly used in DeFi protocols.</p>
 <p>Most vaults on the mainnet are more complex. Here we will focus on the math for calculating shares to mint on deposit and the amount of token to withdraw.</p>
-<h3 id="how-the-contract-works">How the contract works</h3>
+<h3>How the contract works</h3>
 <ol>
 <li>Some amount of shares are minted when an user deposits.</li>
 <li>The DeFi protocol would use the users&#39; deposits to generate yield (somehow).</li>
@@ -99,7 +102,6 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint</span> amount</span>)</span>;
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Approval</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> owner, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> spender, <span class="hljs-keyword">uint</span> amount</span>)</span>;
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Phishing with tx.origin"
 export const description = "An example of phishing with tx.origin in Solidity"
+
+export const keywords = ["hack", "security", "phishing", "tx.origin"]
+
 export const codes = [
   {
     fileName: "TxOrigin.sol",
@@ -9,9 +12,9 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="whats-the-difference-between-msgsender-and-txorigin">What&#39;s the difference between <code>msg.sender</code> and <code>tx.origin</code>?</h3>
+const html = `<h3>What&#39;s the difference between <code>msg.sender</code> and <code>tx.origin</code>?</h3>
 <p>If contract A calls B, and B calls C, in C <code>msg.sender</code> is B and <code>tx.origin</code> is A.</p>
-<h3 id="vulnerability">Vulnerability</h3>
+<h3>Vulnerability</h3>
 <p>A malicious contract can deceive the owner of a contract into calling a
 function that only the owner should be able to call.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -64,8 +67,7 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
         wallet.<span class="hljs-built_in">transfer</span>(owner, <span class="hljs-keyword">address</span>(wallet).<span class="hljs-built_in">balance</span>);
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <p>Use <code>msg.sender</code> instead of <code>tx.origin</code></p>
 <pre><code class="language-solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
   <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner, <span class="hljs-string">"Not owner"</span>);
@@ -73,7 +75,6 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
   (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> _to.<span class="hljs-built_in">call</span>{ <span class="hljs-built_in">value</span>: _amount }(<span class="hljs-string">""</span>);
   <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

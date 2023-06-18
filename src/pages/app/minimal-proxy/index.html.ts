@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Minimal Proxy Contract"
 export const description = "Deploy contracts cheaply with minimal proxy contract"
+
+export const keywords = ["app", "application", "minimal", "proxy", "contract"]
+
 export const codes = [
   {
     fileName: "MinimalProxy.sol",
@@ -81,7 +84,6 @@ const html = `<p>If you have a contract that will be deployed multiple times, us
         }
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,17 @@
 export const version = "0.8.17"
 export const title = "Uni-Directional Payment Channel"
 export const description = "An example of uni-directional payment channels in Solidity"
+
+export const keywords = [
+  "app",
+  "application",
+  "uni-directional",
+  "payment",
+  "channel",
+  "signature",
+  "cryptography",
+]
+
 export const codes = [
   {
     fileName: "UniDirectionalPaymentChannel.sol",
@@ -81,7 +92,6 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
         <span class="hljs-built_in">selfdestruct</span>(sender);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

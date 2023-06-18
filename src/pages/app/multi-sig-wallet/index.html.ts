@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Multi-Sig Wallet"
 export const description = "An example of multi-sig wallet in Solidity"
+
+export const keywords = ["app", "application", "multi", "sig", "signature", "wallet"]
+
 export const codes = [
   {
     fileName: "MultiSigWallet.sol",
@@ -193,8 +196,7 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         );
     }
 }
-</code></pre>
-<p>Here is a contract to test sending transactions from the multi-sig wallet</p>
+</code></pre><p>Here is a contract to test sending transactions from the multi-sig wallet</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -209,7 +211,6 @@ const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specificatio
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"callMe(uint256)"</span>, <span class="hljs-number">123</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

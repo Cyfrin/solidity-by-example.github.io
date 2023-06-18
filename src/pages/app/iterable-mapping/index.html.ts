@@ -94,7 +94,6 @@ const html = `<p>You cannot iterate through a <code>mapping</code>. So here is a
         <span class="hljs-built_in">assert</span>(map.getKeyAtIndex(<span class="hljs-number">2</span>) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">2</span>));
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

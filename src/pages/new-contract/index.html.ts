@@ -3,6 +3,18 @@ export const version = "0.8.17"
 export const title = "Contract that Creates other Contracts"
 export const description =
   "Learn how to create new contracts from inside of a contract with Solidity"
+
+export const keywords = [
+  "new",
+  "contract",
+  "create",
+  "contracts",
+  "creates",
+  "new",
+  "create2",
+  "salt",
+]
+
 export const codes = [
   {
     fileName: "NewContract.sol",
@@ -65,7 +77,6 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         <span class="hljs-keyword">return</span> (car.owner(), car.model(), car.carAddr(), <span class="hljs-keyword">address</span>(car).<span class="hljs-built_in">balance</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

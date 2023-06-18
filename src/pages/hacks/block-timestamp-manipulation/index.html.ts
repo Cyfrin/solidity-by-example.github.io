@@ -3,6 +3,9 @@ export const version = "0.8.17"
 export const title = "Block Timestamp Manipulation"
 export const description =
   "An example of a Solidity contract vulnerable to block timestamp manipulation"
+
+export const keywords = ["hack", "security", "block", "timestamp", "manipulation"]
+
 export const codes = [
   {
     fileName: "BlockTimestamp.sol",
@@ -10,7 +13,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p><code>block.timestamp</code> can be manipulated by miners with the following constraints</p>
 <ul>
 <li>it cannot be stamped with an earlier time than its parent</li>
@@ -51,8 +54,7 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
         }
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <ul>
 <li>Don&#39;t use <code>block.timestamp</code> for a source of entropy and random number</li>
 </ul>

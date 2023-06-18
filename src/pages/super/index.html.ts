@@ -2,6 +2,16 @@
 export const version = "0.8.17"
 export const title = "Calling Parent Contracts"
 export const description = "An example of calling parent contracts in Solidity"
+
+export const keywords = [
+  "calling",
+  "parent",
+  "contract",
+  "contracts",
+  "inheritance",
+  "super",
+]
+
 export const codes = [
   {
     fileName: "Super.sol",
@@ -77,7 +87,6 @@ B   C
         <span class="hljs-built_in">super</span>.bar();
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

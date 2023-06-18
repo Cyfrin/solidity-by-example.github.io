@@ -2,6 +2,17 @@
 export const version = "0.8.17"
 export const title = "Bi-Directional Payment Channel"
 export const description = "An example of bi-directional payment channels in Solidity"
+
+export const keywords = [
+  "app",
+  "application",
+  "bi-directional",
+  "payment",
+  "channel",
+  "signature",
+  "cryptography",
+]
+
 export const codes = [
   {
     fileName: "BiDirectionalPaymentChannel.sol",
@@ -173,7 +184,6 @@ Closing a channel when Alice and Bob do not agree on the final balances
         <span class="hljs-keyword">emit</span> Withdraw(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amount);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

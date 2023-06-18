@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Write to Any Slot"
 export const description = "Write to Any Slot"
+
+export const keywords = ["app", "application", "write", "any", "slot", "storage"]
+
 export const codes = [
   {
     fileName: "Slot.sol",
@@ -45,7 +48,6 @@ Each slot in the array can store 32 bytes.</p>
         <span class="hljs-keyword">return</span> data.<span class="hljs-built_in">value</span>;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

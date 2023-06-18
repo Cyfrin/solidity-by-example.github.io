@@ -2,6 +2,17 @@
 export const version = "0.8.17"
 export const title = "Inheritance"
 export const description = "Example of inheritance in Solidity"
+
+export const keywords = [
+  "inheritance",
+  "super",
+  "override",
+  "virtual",
+  "is",
+  "contract",
+  "contracts",
+]
+
 export const codes = [
   {
     fileName: "Inheritance.sol",
@@ -75,7 +86,6 @@ F  D,E
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>.foo();
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

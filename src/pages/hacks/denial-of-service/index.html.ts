@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Denial of Service"
 export const description = "An example of denial of service hack in Solidity"
+
+export const keywords = ["hack", "security", "denial", "service"]
+
 export const codes = [
   {
     fileName: "DenialOfService.sol",
@@ -13,7 +16,7 @@ export const codes = [
   },
 ]
 
-const html = `<h3 id="vulnerability">Vulnerability</h3>
+const html = `<h3>Vulnerability</h3>
 <p>There are many ways to attack a smart contract to make it unusable.</p>
 <p>One exploit we introduce here is denial of service by making the function to send Ether fail.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -74,8 +77,7 @@ Ether sent from KingOfEther before the new king is set.
         kingOfEther.claimThrone{<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}();
     }
 }
-</code></pre>
-<h3 id="preventative-techniques">Preventative Techniques</h3>
+</code></pre><h3>Preventative Techniques</h3>
 <p>One way to prevent this is to allow the users to withdraw their Ether instead of sending it.</p>
 <p>Here is a example.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -105,7 +107,6 @@ Ether sent from KingOfEther before the new king is set.
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Error"
 export const description = "Example of how to throw errors in Solidity"
+
+export const keywords = ["error", "errors", "require", "revert", "assert"]
+
 export const codes = [
   {
     fileName: "Account.sol",
@@ -63,8 +66,7 @@ assertion probably means that there is a bug.</li>
         }
     }
 }
-</code></pre>
-<p>Here is another example</p>
+</code></pre><p>Here is another example</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
 
@@ -99,7 +101,6 @@ assertion probably means that there is a bug.</li>
         <span class="hljs-built_in">assert</span>(balance <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> oldBalance);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

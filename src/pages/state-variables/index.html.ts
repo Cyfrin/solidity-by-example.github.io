@@ -2,6 +2,17 @@
 export const version = "0.8.17"
 export const title = "Reading and Writing to a State Variable"
 export const description = "Reading and Writing to a State Variable"
+
+export const keywords = [
+  "reading",
+  "writing",
+  "state",
+  "variable",
+  "variables",
+  "app",
+  "application",
+]
+
 export const codes = [
   {
     fileName: "SimpleStorage.sol",
@@ -28,7 +39,6 @@ const html = `<p>To write or update a state variable you need to send a transact
         <span class="hljs-keyword">return</span> num;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

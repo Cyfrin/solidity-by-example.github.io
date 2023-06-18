@@ -3,6 +3,9 @@ export const version = "0.8.17"
 export const title = "Constructor"
 export const description =
   "Learn how to initialize smart contracts in Solidity using a constructor"
+
+export const keywords = ["constructor", "constructors", "contract", "inheritance"]
+
 export const codes = [
   {
     fileName: "Constructor.sol",
@@ -65,7 +68,6 @@ const html = `<p>A <code>constructor</code> is an optional function that is exec
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">E</span> <span class="hljs-keyword">is</span> <span class="hljs-title">X</span>, <span class="hljs-title">Y</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title">Y</span>(<span class="hljs-params"><span class="hljs-string">"Y was called"</span></span>) <span class="hljs-title">X</span>(<span class="hljs-params"><span class="hljs-string">"X was called"</span></span>) </span>{}
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

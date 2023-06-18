@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Gas Saving Techniques"
 export const description = "Some gas saving techniques"
+
+export const keywords = ["gas", "golf"]
+
 export const codes = [
   {
     fileName: "GasGolf.sol",
@@ -63,7 +66,6 @@ const html = `<p>Some gas saving techniques.</p>
         total <span class="hljs-operator">=</span> _total;
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

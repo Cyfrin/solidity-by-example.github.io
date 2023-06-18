@@ -3,6 +3,9 @@ export const version = "0.8.17"
 export const title = "Multi Delegatecall"
 export const description =
   "An example of contract to call multiple functions in a single transaction"
+
+export const keywords = ["app", "application", "multi", "delegatecall"]
+
 export const codes = [
   {
     fileName: "MultiDelegatecall.sol",
@@ -71,7 +74,6 @@ const html = `<p>An example of calling multiple functions with a single transact
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSelector</span>(TestMultiDelegatecall.mint.<span class="hljs-built_in">selector</span>);
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html

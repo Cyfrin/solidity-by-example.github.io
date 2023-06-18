@@ -2,6 +2,9 @@
 export const version = "0.8.17"
 export const title = "Honeypot"
 export const description = "An example of honeypot in Solidity"
+
+export const keywords = ["hack", "security", "honeypot"]
+
 export const codes = [
   {
     fileName: "HoneyPot.sol",
@@ -10,7 +13,7 @@ export const codes = [
 ]
 
 const html = `<p>A honeypot is a trap to catch hackers.</p>
-<h3 id="vulnerability">Vulnerability</h3>
+<h3>Vulnerability</h3>
 <p>Combining two exploits, reentrancy and hiding malicious code, we can build a contract</p>
 <p>that will catch malicious users.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -107,7 +110,6 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(_a)) <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(_b));
     }
 }
-</code></pre>
-`
+</code></pre>`
 
 export default html
