@@ -8,9 +8,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/06/19 - Chinese translation",
   "2023/06/17 - ERC1155",
   "2023/05/31 - GitHub PR Drblessing",
-  "2023/05/23 - Deploy different contracts at same address",
 ]
 
 interface Translation {
@@ -19,6 +19,10 @@ interface Translation {
 }
 
 const TRANSLATIONS: Translation[] = [
+  {
+    lang: "Chinese",
+    url: "https://github.com/Web3-Club/solidity-by-example_Chinese",
+  },
   {
     lang: "Persian",
     url: "https://dpanosian.com/fa/solidity-by-example",
