@@ -20,7 +20,7 @@ interface Translation {
 
 const TRANSLATIONS: Translation[] = [
   {
-    lang: "Chinese",
+    lang: "Simplified Chinese",
     url: "https://github.com/Web3-Club/solidity-by-example_Chinese",
   },
   {
