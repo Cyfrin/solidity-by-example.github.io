@@ -8,9 +8,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/07/12 - Spanish translation",
   "2023/06/19 - Chinese translation",
   "2023/06/17 - ERC1155",
-  "2023/05/31 - GitHub PR Drblessing",
 ]
 
 interface Translation {
@@ -26,6 +26,10 @@ const TRANSLATIONS: Translation[] = [
   {
     lang: "Persian",
     url: "https://dpanosian.com/fa/solidity-by-example",
+  },
+  {
+    lang: "Spanish",
+    url: "https://github.com/lcadafalch/solidity_attacks",
   },
 ]
 
