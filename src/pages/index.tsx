@@ -8,9 +8,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/07/29 - GitHub PR harkeshbirman",
   "2023/07/12 - Spanish translation",
   "2023/06/19 - Chinese translation",
-  "2023/06/17 - ERC1155",
 ]
 
 interface Translation {

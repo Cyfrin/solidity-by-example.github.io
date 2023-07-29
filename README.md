@@ -9,6 +9,7 @@
 ### Memo
 
 TODO: code split / dynamic imports
+TODO: side nav
 
 ```shell
 ## Deploy ##
