@@ -1,6 +1,6 @@
 ---
 title: ABI Decode
-version: 0.8.17
+version: 0.8.20
 description: ABI decode bytes
 keywords: [abi, decode, bytes]
 ---

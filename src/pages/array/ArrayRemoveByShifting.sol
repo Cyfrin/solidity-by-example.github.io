@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.20;
 
 contract ArrayRemoveByShifting {
     // [1, 2, 3] -- remove(1) --> [1, 3, 3] --> [1, 3]

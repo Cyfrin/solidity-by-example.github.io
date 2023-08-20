@@ -13,6 +13,16 @@ npm i
 npm start
 ```
 
+### Production
+
+```shell
+npm run build
+# Preview produciton
+npm run preview
+# Deploy
+npm run deploy
+```
+
 ### Memo
 
 TODO: code split / dynamic imports
@@ -36,8 +46,8 @@ npx ts-node --project ./scripts/tsconfig.json scripts/build-search-index.ts
 npm run deploy
 
 ## Compile Solidity ##
-solc-select install 0.8.17
-solc-select use 0.8.17
+solc-select install 0.8.20
+solc-select use 0.8.20
 
 # compile single file
 solc src/pages/hello-world/HelloWorld.sol

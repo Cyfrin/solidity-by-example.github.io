@@ -1,6 +1,6 @@
 ---
 title: Uniswap V3 Swap Examples
-version: 0.8.17
+version: 0.8.20
 description: Uniswap V3 swap examples
 keywords: [defi, uniswap, v3, swap, amm]
 ---

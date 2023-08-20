@@ -8,9 +8,9 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+  "2023/08/20 - Solidity 0.8.20",
   "2023/07/29 - GitHub PR harkeshbirman",
   "2023/07/12 - Spanish translation",
-  "2023/06/19 - Chinese translation",
 ]
 
 interface Translation {
@@ -616,13 +616,13 @@ export default function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
-        title="Solidity by Example | 0.8.17"
+        title="Solidity by Example | 0.8.20"
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
         <a href="/">Solidity by Example</a>
       </h1>
-      <div className={styles.subHeader}>v 0.8.17</div>
+      <div className={styles.subHeader}>v 0.8.20</div>
       <div className={styles.main}>
         <p>
           an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with

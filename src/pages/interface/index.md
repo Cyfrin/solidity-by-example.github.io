@@ -1,6 +1,6 @@
 ---
 title: Interface
-version: 0.8.17
+version: 0.8.20
 description: An example of interface in Solidity
 keywords: [interface, interfaces, contract, contracts]
 ---

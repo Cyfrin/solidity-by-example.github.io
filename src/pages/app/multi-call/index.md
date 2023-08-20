@@ -1,6 +1,6 @@
 ---
 title: Multi Call
-version: 0.8.17
+version: 0.8.20
 description: An example of contract to aggregate multiple calls.
 keywords: [app, application, multi, call, staticcall]
 ---

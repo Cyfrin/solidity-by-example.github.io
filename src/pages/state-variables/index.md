@@ -1,6 +1,6 @@
 ---
 title: Reading and Writing to a State Variable
-version: 0.8.17
+version: 0.8.20
 description: Reading and Writing to a State Variable
 keywords: [reading, writing, state, variable, variables, app, application]
 ---

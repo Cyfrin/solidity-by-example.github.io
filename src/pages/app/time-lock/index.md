@@ -1,6 +1,6 @@
 ---
 title: Time Lock
-version: 0.8.17
+version: 0.8.20
 description: Time Lock
 keywords: [app, application, time, lock]
 ---

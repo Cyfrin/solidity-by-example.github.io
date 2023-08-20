@@ -1,6 +1,6 @@
 ---
 title: Self Destruct
-version: 0.8.17
+version: 0.8.20
 description: An example of how to delete your smart contract by calling seldestruct in Solidity
 keywords: [hack, security, selfdestruct]
 ---

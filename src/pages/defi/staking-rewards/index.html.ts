@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.17"
+export const version = "0.8.20"
 export const title = "Staking Rewards"
 export const description =
   "Staking rewards contract based on Synthetix StakingRewards.sol"

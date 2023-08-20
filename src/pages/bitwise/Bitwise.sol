@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.20;
 
 contract BitwiseOps {
     // x     = 1110 = 8 + 4 + 2 + 0 = 14

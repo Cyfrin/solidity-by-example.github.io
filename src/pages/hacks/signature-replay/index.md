@@ -1,6 +1,6 @@
 ---
 title: Signature Replay
-version: 0.8.17
+version: 0.8.20
 description: An example of a contract vulnerable to signature replay attack
 keywords: [hack, security, cryptography, signature, replay]
 ---

@@ -1,6 +1,6 @@
 ---
 title: English Auction
-version: 0.8.17
+version: 0.8.20
 description: An example of English auction in Solidity
 keywords: [app, application, english, auction, auctions]
 ---

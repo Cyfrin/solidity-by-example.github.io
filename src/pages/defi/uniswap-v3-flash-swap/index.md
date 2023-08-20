@@ -1,6 +1,6 @@
 ---
 title: Uniswap V3 Flash Swap Arbitrage
-version: 0.8.17
+version: 0.8.20
 description: Uniswap V3 Flash Swap Arbitrage
 keywords: [defi, uniswap, v3, swap, arbitrage, amm]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Deploy Any Contract
-version: 0.8.17
+version: 0.8.20
 description: Deploy Any Contract
 keywords: [app, application, deploy, any, contract]
 ---

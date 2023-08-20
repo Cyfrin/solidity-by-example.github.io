@@ -1,6 +1,6 @@
 ---
 title: Uniswap V3 Liquidity Examples
-version: 0.8.17
+version: 0.8.20
 description: Uniswap V3 liquidity examples
 keywords: [defi, uniswap, v3, liquidity, amm]
 ---

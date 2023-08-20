@@ -1,6 +1,6 @@
 ---
 title: Library
-version: 0.8.17
+version: 0.8.20
 description: Example of how to write and use libraries in your Solidity code
 keywords: [library]
 ---

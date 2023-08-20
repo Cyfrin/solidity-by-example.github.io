@@ -1,6 +1,6 @@
 ---
 title: Error
-version: 0.8.17
+version: 0.8.20
 description: Example of how to throw errors in Solidity
 keywords: [error, errors, require, revert, assert]
 ---

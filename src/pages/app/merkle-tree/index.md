@@ -1,6 +1,6 @@
 ---
 title: Merkle Tree
-version: 0.8.17
+version: 0.8.20
 description: Learn about Merkle tree in Solidity
 keywords: [app, application, merkle, tree, cryptography]
 ---

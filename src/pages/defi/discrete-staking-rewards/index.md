@@ -1,6 +1,6 @@
 ---
 title: Discrete Staking Rewards
-version: 0.8.17
+version: 0.8.20
 description: Discrete staking rewards
 keywords: [defi, discrete, staking, reward, rewards]
 ---

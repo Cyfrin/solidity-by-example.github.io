@@ -1,6 +1,6 @@
 ---
 title: Constant Product AMM
-version: 0.8.17
+version: 0.8.20
 description: Constant product AMM
 keywords: [defi, constant, product, amm]
 ---

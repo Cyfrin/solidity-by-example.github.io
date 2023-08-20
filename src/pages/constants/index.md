@@ -1,6 +1,6 @@
 ---
 title: Constants
-version: 0.8.17
+version: 0.8.20
 description: Constant variables
 keywords: [constant, constants, data, variable, variables]
 ---

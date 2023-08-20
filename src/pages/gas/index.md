@@ -1,6 +1,6 @@
 ---
 title: Gas
-version: 0.8.17
+version: 0.8.20
 description: Example of gas and gas limit in Solidity
 keywords: [gas]
 ---

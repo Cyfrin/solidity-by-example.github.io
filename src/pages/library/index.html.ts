@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.17"
+export const version = "0.8.20"
 export const title = "Library"
 export const description =
   "Example of how to write and use libraries in your Solidity code"
@@ -9,7 +9,7 @@ export const keywords = ["library"]
 export const codes = [
   {
     fileName: "Library.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmxpYnJhcnkgTWF0aCB7CiAgICBmdW5jdGlvbiBzcXJ0KHVpbnQgeSkgaW50ZXJuYWwgcHVyZSByZXR1cm5zICh1aW50IHopIHsKICAgICAgICBpZiAoeSA+IDMpIHsKICAgICAgICAgICAgeiA9IHk7CiAgICAgICAgICAgIHVpbnQgeCA9IHkgLyAyICsgMTsKICAgICAgICAgICAgd2hpbGUgKHggPCB6KSB7CiAgICAgICAgICAgICAgICB6ID0geDsKICAgICAgICAgICAgICAgIHggPSAoeSAvIHggKyB4KSAvIDI7CiAgICAgICAgICAgIH0KICAgICAgICB9IGVsc2UgaWYgKHkgIT0gMCkgewogICAgICAgICAgICB6ID0gMTsKICAgICAgICB9CiAgICAgICAgLy8gZWxzZSB6ID0gMCAoZGVmYXVsdCB2YWx1ZSkKICAgIH0KfQoKY29udHJhY3QgVGVzdE1hdGggewogICAgZnVuY3Rpb24gdGVzdFNxdWFyZVJvb3QodWludCB4KSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIE1hdGguc3FydCh4KTsKICAgIH0KfQoKLy8gQXJyYXkgZnVuY3Rpb24gdG8gZGVsZXRlIGVsZW1lbnQgYXQgaW5kZXggYW5kIHJlLW9yZ2FuaXplIHRoZSBhcnJheQovLyBzbyB0aGF0IHRoZXJlIGFyZSBubyBnYXBzIGJldHdlZW4gdGhlIGVsZW1lbnRzLgpsaWJyYXJ5IEFycmF5IHsKICAgIGZ1bmN0aW9uIHJlbW92ZSh1aW50W10gc3RvcmFnZSBhcnIsIHVpbnQgaW5kZXgpIHB1YmxpYyB7CiAgICAgICAgLy8gTW92ZSB0aGUgbGFzdCBlbGVtZW50IGludG8gdGhlIHBsYWNlIHRvIGRlbGV0ZQogICAgICAgIHJlcXVpcmUoYXJyLmxlbmd0aCA+IDAsICJDYW4ndCByZW1vdmUgZnJvbSBlbXB0eSBhcnJheSIpOwogICAgICAgIGFycltpbmRleF0gPSBhcnJbYXJyLmxlbmd0aCAtIDFdOwogICAgICAgIGFyci5wb3AoKTsKICAgIH0KfQoKY29udHJhY3QgVGVzdEFycmF5IHsKICAgIHVzaW5nIEFycmF5IGZvciB1aW50W107CgogICAgdWludFtdIHB1YmxpYyBhcnI7CgogICAgZnVuY3Rpb24gdGVzdEFycmF5UmVtb3ZlKCkgcHVibGljIHsKICAgICAgICBmb3IgKHVpbnQgaSA9IDA7IGkgPCAzOyBpKyspIHsKICAgICAgICAgICAgYXJyLnB1c2goaSk7CiAgICAgICAgfQoKICAgICAgICBhcnIucmVtb3ZlKDEpOwoKICAgICAgICBhc3NlcnQoYXJyLmxlbmd0aCA9PSAyKTsKICAgICAgICBhc3NlcnQoYXJyWzBdID09IDApOwogICAgICAgIGFzc2VydChhcnJbMV0gPT0gMik7CiAgICB9Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmxpYnJhcnkgTWF0aCB7CiAgICBmdW5jdGlvbiBzcXJ0KHVpbnQgeSkgaW50ZXJuYWwgcHVyZSByZXR1cm5zICh1aW50IHopIHsKICAgICAgICBpZiAoeSA+IDMpIHsKICAgICAgICAgICAgeiA9IHk7CiAgICAgICAgICAgIHVpbnQgeCA9IHkgLyAyICsgMTsKICAgICAgICAgICAgd2hpbGUgKHggPCB6KSB7CiAgICAgICAgICAgICAgICB6ID0geDsKICAgICAgICAgICAgICAgIHggPSAoeSAvIHggKyB4KSAvIDI7CiAgICAgICAgICAgIH0KICAgICAgICB9IGVsc2UgaWYgKHkgIT0gMCkgewogICAgICAgICAgICB6ID0gMTsKICAgICAgICB9CiAgICAgICAgLy8gZWxzZSB6ID0gMCAoZGVmYXVsdCB2YWx1ZSkKICAgIH0KfQoKY29udHJhY3QgVGVzdE1hdGggewogICAgZnVuY3Rpb24gdGVzdFNxdWFyZVJvb3QodWludCB4KSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIE1hdGguc3FydCh4KTsKICAgIH0KfQoKLy8gQXJyYXkgZnVuY3Rpb24gdG8gZGVsZXRlIGVsZW1lbnQgYXQgaW5kZXggYW5kIHJlLW9yZ2FuaXplIHRoZSBhcnJheQovLyBzbyB0aGF0IHRoZXJlIGFyZSBubyBnYXBzIGJldHdlZW4gdGhlIGVsZW1lbnRzLgpsaWJyYXJ5IEFycmF5IHsKICAgIGZ1bmN0aW9uIHJlbW92ZSh1aW50W10gc3RvcmFnZSBhcnIsIHVpbnQgaW5kZXgpIHB1YmxpYyB7CiAgICAgICAgLy8gTW92ZSB0aGUgbGFzdCBlbGVtZW50IGludG8gdGhlIHBsYWNlIHRvIGRlbGV0ZQogICAgICAgIHJlcXVpcmUoYXJyLmxlbmd0aCA+IDAsICJDYW4ndCByZW1vdmUgZnJvbSBlbXB0eSBhcnJheSIpOwogICAgICAgIGFycltpbmRleF0gPSBhcnJbYXJyLmxlbmd0aCAtIDFdOwogICAgICAgIGFyci5wb3AoKTsKICAgIH0KfQoKY29udHJhY3QgVGVzdEFycmF5IHsKICAgIHVzaW5nIEFycmF5IGZvciB1aW50W107CgogICAgdWludFtdIHB1YmxpYyBhcnI7CgogICAgZnVuY3Rpb24gdGVzdEFycmF5UmVtb3ZlKCkgcHVibGljIHsKICAgICAgICBmb3IgKHVpbnQgaSA9IDA7IGkgPCAzOyBpKyspIHsKICAgICAgICAgICAgYXJyLnB1c2goaSk7CiAgICAgICAgfQoKICAgICAgICBhcnIucmVtb3ZlKDEpOwoKICAgICAgICBhc3NlcnQoYXJyLmxlbmd0aCA9PSAyKTsKICAgICAgICBhc3NlcnQoYXJyWzBdID09IDApOwogICAgICAgIGFzc2VydChhcnJbMV0gPT0gMik7CiAgICB9Cn0K",
   },
 ]
 
@@ -18,7 +18,7 @@ you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">Math</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sqrt</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">internal</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span> z</span>) </span>{

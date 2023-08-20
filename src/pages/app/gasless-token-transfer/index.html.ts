@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.17"
+export const version = "0.8.20"
 export const title = "Gasless Token Transfer"
 export const description = "Gasless ERC20 token transfer with Meta transaction"
 

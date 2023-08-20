@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.20;
 
 contract MostSignificantBitAssembly {
     function mostSignificantBit(uint x) external pure returns (uint msb) {

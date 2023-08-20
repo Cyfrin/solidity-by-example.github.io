@@ -1,6 +1,6 @@
 ---
 title: Staking Rewards
-version: 0.8.17
+version: 0.8.20
 description: Staking rewards contract based on Synthetix StakingRewards.sol
 keywords: [defi, staking, reward, rewards]
 ---

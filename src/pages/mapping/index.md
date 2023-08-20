@@ -1,6 +1,6 @@
 ---
 title: Mapping
-version: 0.8.17
+version: 0.8.20
 description: Example of using mapping in Solidity
 keywords: [data, variable, variables, mapping]
 ---

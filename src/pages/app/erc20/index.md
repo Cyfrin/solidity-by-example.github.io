@@ -1,6 +1,6 @@
 ---
 title: ERC20
-version: 0.8.17
+version: 0.8.20
 description: Example of ERC20 token in Solidity
 keywords: [app, application, erc20, ierc20, token]
 ---

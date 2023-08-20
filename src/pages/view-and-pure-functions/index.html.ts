@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.17"
+export const version = "0.8.20"
 export const title = "View and Pure Functions"
 export const description = "An example of view and pure functions in Solidity"
 
@@ -8,7 +8,7 @@ export const keywords = ["view", "pure", "function", "functions"]
 export const codes = [
   {
     fileName: "ViewAndPureFunctions.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNzsKCmNvbnRyYWN0IFZpZXdBbmRQdXJlIHsKICAgIHVpbnQgcHVibGljIHggPSAxOwoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSB0aGUgc3RhdGUuCiAgICBmdW5jdGlvbiBhZGRUb1godWludCB5KSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIHggKyB5OwogICAgfQoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSBvciByZWFkIGZyb20gdGhlIHN0YXRlLgogICAgZnVuY3Rpb24gYWRkKHVpbnQgaSwgdWludCBqKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIGkgKyBqOwogICAgfQp9Cg==",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFZpZXdBbmRQdXJlIHsKICAgIHVpbnQgcHVibGljIHggPSAxOwoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSB0aGUgc3RhdGUuCiAgICBmdW5jdGlvbiBhZGRUb1godWludCB5KSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIHggKyB5OwogICAgfQoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSBvciByZWFkIGZyb20gdGhlIHN0YXRlLgogICAgZnVuY3Rpb24gYWRkKHVpbnQgaSwgdWludCBqKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIGkgKyBqOwogICAgfQp9Cg==",
   },
 ]
 
@@ -16,7 +16,7 @@ const html = `<p>Getter functions can be declared <code>view</code> or <code>pur
 <p><code>View</code> function declares that no state will be changed.</p>
 <p><code>Pure</code> function declares that no state variable will be changed or read.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.17;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ViewAndPure</span> </span>{
     <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> x <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;

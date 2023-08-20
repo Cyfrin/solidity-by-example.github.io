@@ -1,6 +1,6 @@
 ---
 title: Hiding Malicious Code with External Contract
-version: 0.8.17
+version: 0.8.20
 description: An example of exploit where malicious code is hidden in an external contract in Solidity
 keywords: [hack, security, hide, hiding, malicious, code, external, contract]
 ---

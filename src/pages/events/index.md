@@ -1,6 +1,6 @@
 ---
 title: Events
-version: 0.8.17
+version: 0.8.20
 description: Example of how to emit events in Solidity
 keywords: [event, events]
 ---
