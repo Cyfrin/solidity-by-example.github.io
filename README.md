@@ -6,6 +6,13 @@
 
 [MIT License](LICENSE)
 
+### Development
+
+```shell
+npm i
+npm start
+```
+
 ### Memo
 
 TODO: code split / dynamic imports
