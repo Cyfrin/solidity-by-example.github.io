@@ -1,45 +1,45 @@
 .component {
-  margin: 15px;
-  color: var(--color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    margin: 15px;
+    color: var(--color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .row .bar {
-  margin-left: 5px;
-  margin-right: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .row a,
 .row a:visited {
-  color: var(--link-color);
+    color: var(--link-color);
 }
 .khan {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 .social {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .sce {
-  width: 30px;
-  margin: 5px;
-  border-radius: 4px;
+    width: 30px;
+    margin: 5px;
+    border-radius: 4px;
 }
 .telegram {
-  width: 30px;
-  margin: 5px;
+    width: 30px;
+    margin: 5px;
 }
 .discord {
-  width: 30px;
-  margin: 5px;
+    width: 30px;
+    margin: 5px;
 }
 .youTube {
-  width: 30px;
-  margin: 5px;
+    width: 30px;
+    margin: 5px;
 }

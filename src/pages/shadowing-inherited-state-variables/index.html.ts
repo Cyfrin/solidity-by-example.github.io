@@ -4,19 +4,19 @@ export const title = "Shadowing Inherited State Variables"
 export const description = "An example of shadowing state variables by inheritance"
 
 export const keywords = [
-  "state",
-  "variables",
-  "variable",
-  "shadow",
-  "shadowing",
-  "inheritance",
+    "state",
+    "variables",
+    "variable",
+    "shadow",
+    "shadowing",
+    "inheritance",
 ]
 
 export const codes = [
-  {
-    fileName: "Shadow.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEEgewogICAgc3RyaW5nIHB1YmxpYyBuYW1lID0gIkNvbnRyYWN0IEEiOwoKICAgIGZ1bmN0aW9uIGdldE5hbWUoKSBwdWJsaWMgdmlldyByZXR1cm5zIChzdHJpbmcgbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuIG5hbWU7CiAgICB9Cn0KCi8vIFNoYWRvd2luZyBpcyBkaXNhbGxvd2VkIGluIFNvbGlkaXR5IDAuNgovLyBUaGlzIHdpbGwgbm90IGNvbXBpbGUKLy8gY29udHJhY3QgQiBpcyBBIHsKLy8gICAgIHN0cmluZyBwdWJsaWMgbmFtZSA9ICJDb250cmFjdCBCIjsKLy8gfQoKY29udHJhY3QgQyBpcyBBIHsKICAgIC8vIFRoaXMgaXMgdGhlIGNvcnJlY3Qgd2F5IHRvIG92ZXJyaWRlIGluaGVyaXRlZCBzdGF0ZSB2YXJpYWJsZXMuCiAgICBjb25zdHJ1Y3RvcigpIHsKICAgICAgICBuYW1lID0gIkNvbnRyYWN0IEMiOwogICAgfQoKICAgIC8vIEMuZ2V0TmFtZSByZXR1cm5zICJDb250cmFjdCBDIgp9Cg==",
-  },
+    {
+        fileName: "Shadow.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEEgewogICAgc3RyaW5nIHB1YmxpYyBuYW1lID0gIkNvbnRyYWN0IEEiOwoKICAgIGZ1bmN0aW9uIGdldE5hbWUoKSBwdWJsaWMgdmlldyByZXR1cm5zIChzdHJpbmcgbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuIG5hbWU7CiAgICB9Cn0KCi8vIFNoYWRvd2luZyBpcyBkaXNhbGxvd2VkIGluIFNvbGlkaXR5IDAuNgovLyBUaGlzIHdpbGwgbm90IGNvbXBpbGUKLy8gY29udHJhY3QgQiBpcyBBIHsKLy8gICAgIHN0cmluZyBwdWJsaWMgbmFtZSA9ICJDb250cmFjdCBCIjsKLy8gfQoKY29udHJhY3QgQyBpcyBBIHsKICAgIC8vIFRoaXMgaXMgdGhlIGNvcnJlY3Qgd2F5IHRvIG92ZXJyaWRlIGluaGVyaXRlZCBzdGF0ZSB2YXJpYWJsZXMuCiAgICBjb25zdHJ1Y3RvcigpIHsKICAgICAgICBuYW1lID0gIkNvbnRyYWN0IEMiOwogICAgfQoKICAgIC8vIEMuZ2V0TmFtZSByZXR1cm5zICJDb250cmFjdCBDIgp9Cg==",
+    },
 ]
 
 const html = `<p>Unlike functions, state variables cannot be overridden by re-declaring it

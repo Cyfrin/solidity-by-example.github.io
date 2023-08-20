@@ -1,148 +1,148 @@
 :root {
-  --black: #252519;
+    --black: #252519;
 }
 /* custom scroll */
 ::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #cccccc;
+    background-color: #cccccc;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  line-height: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 20px;
 
-  background-color: var(--bg-color);
-  color: var(--color);
-  /* transition: background-color 0.5s; */
-  /* min-width: 400px; */
+    background-color: var(--bg-color);
+    color: var(--color);
+    /* transition: background-color 0.5s; */
+    /* min-width: 400px; */
 }
 body.light {
-  --bg-color: white;
-  --color: #252519;
-  --code-bg: #f5f5f5;
-  --link-color: #261a3b;
-  --input-bg: #f1f1f1;
+    --bg-color: white;
+    --color: #252519;
+    --code-bg: #f5f5f5;
+    --link-color: #261a3b;
+    --input-bg: #f1f1f1;
 }
 body.dark {
-  --bg-color: #161b22;
-  --color: rgb(201, 209, 217);
-  --code-bg: #0d1117;
-  --link-color: #f6f6f6;
-  --input-bg: white;
+    --bg-color: #161b22;
+    --color: rgb(201, 209, 217);
+    --code-bg: #0d1117;
+    --link-color: #f6f6f6;
+    --input-bg: white;
 }
 pre {
-  padding: 15px;
-  margin: 0;
-  font-size: 14px;
-  /* position: relative; */
-  overflow-x: scroll;
+    padding: 15px;
+    margin: 0;
+    font-size: 14px;
+    /* position: relative; */
+    overflow-x: scroll;
 }
 
 pre .buttons {
-  color: var(--color);
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+    color: var(--color);
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 pre .buttons button {
-  color: inherit;
-  background: transparent;
-  border: none;
-  cursor: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    cursor: inherit;
 }
 pre .buttons button:hover {
-  color: #008cff;
+    color: #008cff;
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  color: rgb(231, 76, 60);
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    color: rgb(231, 76, 60);
 }
 .language-solidity {
-  display: block;
-  color: var(--color);
+    display: block;
+    color: var(--color);
 }
 a,
 a:visited {
-  color: var(--link-color);
+    color: var(--link-color);
 }
 h2 {
-  font-size: 32px;
-  line-height: 40px;
+    font-size: 32px;
+    line-height: 40px;
 }
 em {
-  font-style: italic;
+    font-style: italic;
 }
 
 pre {
-  background-color: var(--code-bg);
+    background-color: var(--code-bg);
 }
 
 /* code */
 
 /* foundation */
 body.light .hljs {
-  background: #eee;
-  color: black;
+    background: #eee;
+    color: black;
 }
 
 body.light .hljs-link,
 body.light .hljs-emphasis,
 body.light .hljs-attribute,
 body.light .hljs-addition {
-  color: #070;
+    color: #070;
 }
 
 body.light .hljs-emphasis {
-  font-style: italic;
+    font-style: italic;
 }
 
 body.light .hljs-strong,
 body.light .hljs-string,
 body.light .hljs-deletion {
-  color: #d14;
+    color: #d14;
 }
 
 body.light .hljs-strong {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 body.light .hljs-quote,
 body.light .hljs-comment {
-  color: #5f5f55;
-  font-style: italic;
+    color: #5f5f55;
+    font-style: italic;
 }
 
 body.light .hljs-section,
 body.light .hljs-title {
-  color: #900;
+    color: #900;
 }
 
 body.light .hljs-class .hljs-title,
 body.light .hljs-title.class_,
 body.light .hljs-type {
-  color: #458;
+    color: #458;
 }
 
 body.light .hljs-variable,
 body.light .hljs-template-variable {
-  color: #336699;
+    color: #336699;
 }
 
 body.light .hljs-bullet {
-  color: #997700;
+    color: #997700;
 }
 
 body.light .hljs-meta {
-  color: #3344bb;
+    color: #3344bb;
 }
 
 body.light .hljs-code,
@@ -150,23 +150,23 @@ body.light .hljs-number,
 body.light .hljs-literal,
 body.light .hljs-keyword,
 body.light .hljs-selector-tag {
-  color: #0758fc;
+    color: #0758fc;
 }
 
 body.light .hljs-regexp {
-  background-color: #fff0ff;
-  color: #880088;
+    background-color: #fff0ff;
+    color: #880088;
 }
 
 body.light .hljs-symbol {
-  color: #990073;
+    color: #990073;
 }
 
 body.light .hljs-tag,
 body.light .hljs-name,
 body.light .hljs-selector-id,
 body.light .hljs-selector-class {
-  color: #007700;
+    color: #007700;
 }
 
 /*!
@@ -181,8 +181,8 @@ body.light .hljs-selector-class {
 */
 
 body.dark .hljs {
-  color: #c9d1d9;
-  background: #0d1117;
+    color: #c9d1d9;
+    background: #0d1117;
 }
 
 body.dark .hljs-doctag,
@@ -192,14 +192,14 @@ body.dark .hljs-template-tag,
 body.dark .hljs-template-variable,
 body.dark .hljs-type,
 body.dark .hljs-variable.language_ {
-  color: #ff7b72;
+    color: #ff7b72;
 }
 
 body.dak .hljs-title,
 body.dak .hljs-title.class_,
 body.dak .hljs-title.class_.inherited__,
 body.dak .hljs-title.function_ {
-  color: #d2a8ff;
+    color: #d2a8ff;
 }
 
 body.dark .hljs-attr,
@@ -212,64 +212,64 @@ body.dark .hljs-variable,
 body.dark .hljs-selector-attr,
 body.dark .hljs-selector-class,
 body.dark .hljs-selector-id {
-  color: #79c0ff;
+    color: #79c0ff;
 }
 
 body.dark .hljs-regexp,
 body.dark .hljs-string,
 body.dark .hljs-meta .hljs-string {
-  color: #a5d6ff;
+    color: #a5d6ff;
 }
 
 body.dark .hljs-built_in,
 body.dark .hljs-symbol {
-  color: #ffa657;
+    color: #ffa657;
 }
 
 body.dary .hljs-comment,
 body.dary .hljs-code,
 body.dary .hljs-formula {
-  color: #8b949e;
+    color: #8b949e;
 }
 
 body.dark .hljs-name,
 body.dark .hljs-quote,
 body.dark .hljs-selector-tag,
 body.dark .hljs-selector-pseudo {
-  color: #7ee787;
+    color: #7ee787;
 }
 
 body.dark .hljs-subst {
-  color: #c9d1d9;
+    color: #c9d1d9;
 }
 
 body.dark .hljs-section {
-  color: #1f6feb;
-  font-weight: bold;
+    color: #1f6feb;
+    font-weight: bold;
 }
 
 body.dark .hljs-bullet {
-  color: #f2cc60;
+    color: #f2cc60;
 }
 
 body.dark .hljs-emphasis {
-  color: #c9d1d9;
-  font-style: italic;
+    color: #c9d1d9;
+    font-style: italic;
 }
 
 body.dark .hljs-strong {
-  color: #c9d1d9;
-  font-weight: bold;
+    color: #c9d1d9;
+    font-weight: bold;
 }
 
 body.dark .hljs-addition {
-  color: #aff5b4;
-  background-color: #033a16;
+    color: #aff5b4;
+    background-color: #033a16;
 }
 
 body.dark .hljs-deletion {
-  color: #ffdcd7;
-  background-color: #67060c;
+    color: #ffdcd7;
+    background-color: #67060c;
 }
 
 body.dark .hljs-char.escape_,

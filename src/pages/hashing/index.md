@@ -9,9 +9,9 @@ keywords: [hash, hashing, function, functions, keccak256, cryptography]
 
 Some use cases are:
 
-- Creating a deterministic unique ID from a input
-- Commit-Reveal scheme
-- Compact cryptographic signature (by signing the hash instead of a larger input)
+-   Creating a deterministic unique ID from a input
+-   Commit-Reveal scheme
+-   Compact cryptographic signature (by signing the hash instead of a larger input)
 
 ```solidity
 {{{Keccak256}}}

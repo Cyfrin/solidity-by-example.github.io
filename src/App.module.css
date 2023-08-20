@@ -1,17 +1,17 @@
 .component {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  margin: auto;
-  padding: 10px;
-  /* align-items: center; */
-  /* background-color: red; */
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    /* align-items: center; */
+    /* background-color: red; */
 }
 
 /* @media only screen and (max-width: 600px) {
@@ -21,9 +21,9 @@
 } */
 
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }

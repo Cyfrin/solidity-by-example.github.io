@@ -2,23 +2,23 @@
 export const version = "0.8.20"
 export const title = "Calling Other Contract"
 export const description =
-  "In Solidity, contract can call other contracts in several ways"
+    "In Solidity, contract can call other contracts in several ways"
 
 export const keywords = [
-  "calling",
-  "other",
-  "contract",
-  "contracts",
-  "call",
-  "function",
-  "functions",
+    "calling",
+    "other",
+    "contract",
+    "contracts",
+    "call",
+    "function",
+    "functions",
 ]
 
 export const codes = [
-  {
-    fileName: "CallingContract.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IENhbGxlZSB7CiAgICB1aW50IHB1YmxpYyB4OwogICAgdWludCBwdWJsaWMgdmFsdWU7CgogICAgZnVuY3Rpb24gc2V0WCh1aW50IF94KSBwdWJsaWMgcmV0dXJucyAodWludCkgewogICAgICAgIHggPSBfeDsKICAgICAgICByZXR1cm4geDsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXRYYW5kU2VuZEV0aGVyKHVpbnQgX3gpIHB1YmxpYyBwYXlhYmxlIHJldHVybnMgKHVpbnQsIHVpbnQpIHsKICAgICAgICB4ID0gX3g7CiAgICAgICAgdmFsdWUgPSBtc2cudmFsdWU7CgogICAgICAgIHJldHVybiAoeCwgdmFsdWUpOwogICAgfQp9Cgpjb250cmFjdCBDYWxsZXIgewogICAgZnVuY3Rpb24gc2V0WChDYWxsZWUgX2NhbGxlZSwgdWludCBfeCkgcHVibGljIHsKICAgICAgICB1aW50IHggPSBfY2FsbGVlLnNldFgoX3gpOwogICAgfQoKICAgIGZ1bmN0aW9uIHNldFhGcm9tQWRkcmVzcyhhZGRyZXNzIF9hZGRyLCB1aW50IF94KSBwdWJsaWMgewogICAgICAgIENhbGxlZSBjYWxsZWUgPSBDYWxsZWUoX2FkZHIpOwogICAgICAgIGNhbGxlZS5zZXRYKF94KTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXRYYW5kU2VuZEV0aGVyKENhbGxlZSBfY2FsbGVlLCB1aW50IF94KSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgKHVpbnQgeCwgdWludCB2YWx1ZSkgPSBfY2FsbGVlLnNldFhhbmRTZW5kRXRoZXJ7dmFsdWU6IG1zZy52YWx1ZX0oX3gpOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "CallingContract.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IENhbGxlZSB7CiAgICB1aW50IHB1YmxpYyB4OwogICAgdWludCBwdWJsaWMgdmFsdWU7CgogICAgZnVuY3Rpb24gc2V0WCh1aW50IF94KSBwdWJsaWMgcmV0dXJucyAodWludCkgewogICAgICAgIHggPSBfeDsKICAgICAgICByZXR1cm4geDsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXRYYW5kU2VuZEV0aGVyKHVpbnQgX3gpIHB1YmxpYyBwYXlhYmxlIHJldHVybnMgKHVpbnQsIHVpbnQpIHsKICAgICAgICB4ID0gX3g7CiAgICAgICAgdmFsdWUgPSBtc2cudmFsdWU7CgogICAgICAgIHJldHVybiAoeCwgdmFsdWUpOwogICAgfQp9Cgpjb250cmFjdCBDYWxsZXIgewogICAgZnVuY3Rpb24gc2V0WChDYWxsZWUgX2NhbGxlZSwgdWludCBfeCkgcHVibGljIHsKICAgICAgICB1aW50IHggPSBfY2FsbGVlLnNldFgoX3gpOwogICAgfQoKICAgIGZ1bmN0aW9uIHNldFhGcm9tQWRkcmVzcyhhZGRyZXNzIF9hZGRyLCB1aW50IF94KSBwdWJsaWMgewogICAgICAgIENhbGxlZSBjYWxsZWUgPSBDYWxsZWUoX2FkZHIpOwogICAgICAgIGNhbGxlZS5zZXRYKF94KTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXRYYW5kU2VuZEV0aGVyKENhbGxlZSBfY2FsbGVlLCB1aW50IF94KSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgKHVpbnQgeCwgdWludCB2YWx1ZSkgPSBfY2FsbGVlLnNldFhhbmRTZW5kRXRoZXJ7dmFsdWU6IG1zZy52YWx1ZX0oX3gpOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>Contract can call other contracts in 2 ways.</p>

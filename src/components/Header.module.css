@@ -1,22 +1,22 @@
 .component {
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .component a {
-  text-decoration: none;
+    text-decoration: none;
 }
 .logo {
-  width: 60px;
+    width: 60px;
 }
 .header {
-  margin: 0;
-  margin-right: auto;
+    margin: 0;
+    margin-right: auto;
 }
 .mode {
-  background-color: transparent;
-  border: 0px;
-  margin-right: 20px;
-  cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+    margin-right: 20px;
+    cursor: pointer;
 }

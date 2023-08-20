@@ -18,9 +18,9 @@ This can be exploited to hide malicious code. Let's see how.
 
 ### Preventative Techniques
 
-- Initialize a new contract inside the constructor
-- Make the address of external contract `public` so that the code of the
-  external contract can be reviewed
+-   Initialize a new contract inside the constructor
+-   Make the address of external contract `public` so that the code of the
+    external contract can be reviewed
 
 ```solidity
 Bar public bar;

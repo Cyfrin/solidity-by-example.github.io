@@ -4,19 +4,19 @@ export const title = "Delegatecall"
 export const description = "Example of how to use deletegatecall in Solidity"
 
 export const keywords = [
-  "delegatecall",
-  "call",
-  "contract",
-  "contracts",
-  "function",
-  "functions",
+    "delegatecall",
+    "call",
+    "contract",
+    "contracts",
+    "function",
+    "functions",
 ]
 
 export const codes = [
-  {
-    fileName: "Delegatecall.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8vIE5PVEU6IERlcGxveSB0aGlzIGNvbnRyYWN0IGZpcnN0CmNvbnRyYWN0IEIgewogICAgLy8gTk9URTogc3RvcmFnZSBsYXlvdXQgbXVzdCBiZSB0aGUgc2FtZSBhcyBjb250cmFjdCBBCiAgICB1aW50IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKHVpbnQgX251bSkgcHVibGljIHBheWFibGUgewogICAgICAgIG51bSA9IF9udW07CiAgICAgICAgc2VuZGVyID0gbXNnLnNlbmRlcjsKICAgICAgICB2YWx1ZSA9IG1zZy52YWx1ZTsKICAgIH0KfQoKY29udHJhY3QgQSB7CiAgICB1aW50IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKGFkZHJlc3MgX2NvbnRyYWN0LCB1aW50IF9udW0pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICAvLyBBJ3Mgc3RvcmFnZSBpcyBzZXQsIEIgaXMgbm90IG1vZGlmaWVkLgogICAgICAgIChib29sIHN1Y2Nlc3MsIGJ5dGVzIG1lbW9yeSBkYXRhKSA9IF9jb250cmFjdC5kZWxlZ2F0ZWNhbGwoCiAgICAgICAgICAgIGFiaS5lbmNvZGVXaXRoU2lnbmF0dXJlKCJzZXRWYXJzKHVpbnQyNTYpIiwgX251bSkKICAgICAgICApOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Delegatecall.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8vIE5PVEU6IERlcGxveSB0aGlzIGNvbnRyYWN0IGZpcnN0CmNvbnRyYWN0IEIgewogICAgLy8gTk9URTogc3RvcmFnZSBsYXlvdXQgbXVzdCBiZSB0aGUgc2FtZSBhcyBjb250cmFjdCBBCiAgICB1aW50IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKHVpbnQgX251bSkgcHVibGljIHBheWFibGUgewogICAgICAgIG51bSA9IF9udW07CiAgICAgICAgc2VuZGVyID0gbXNnLnNlbmRlcjsKICAgICAgICB2YWx1ZSA9IG1zZy52YWx1ZTsKICAgIH0KfQoKY29udHJhY3QgQSB7CiAgICB1aW50IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKGFkZHJlc3MgX2NvbnRyYWN0LCB1aW50IF9udW0pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICAvLyBBJ3Mgc3RvcmFnZSBpcyBzZXQsIEIgaXMgbm90IG1vZGlmaWVkLgogICAgICAgIChib29sIHN1Y2Nlc3MsIGJ5dGVzIG1lbW9yeSBkYXRhKSA9IF9jb250cmFjdC5kZWxlZ2F0ZWNhbGwoCiAgICAgICAgICAgIGFiaS5lbmNvZGVXaXRoU2lnbmF0dXJlKCJzZXRWYXJzKHVpbnQyNTYpIiwgX251bSkKICAgICAgICApOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p><code>delegatecall</code> is a low level function similar to <code>call</code>.</p>

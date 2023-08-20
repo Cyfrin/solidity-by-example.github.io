@@ -6,10 +6,10 @@ export const description = "An example of view and pure functions in Solidity"
 export const keywords = ["view", "pure", "function", "functions"]
 
 export const codes = [
-  {
-    fileName: "ViewAndPureFunctions.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFZpZXdBbmRQdXJlIHsKICAgIHVpbnQgcHVibGljIHggPSAxOwoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSB0aGUgc3RhdGUuCiAgICBmdW5jdGlvbiBhZGRUb1godWludCB5KSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIHggKyB5OwogICAgfQoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSBvciByZWFkIGZyb20gdGhlIHN0YXRlLgogICAgZnVuY3Rpb24gYWRkKHVpbnQgaSwgdWludCBqKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIGkgKyBqOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "ViewAndPureFunctions.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFZpZXdBbmRQdXJlIHsKICAgIHVpbnQgcHVibGljIHggPSAxOwoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSB0aGUgc3RhdGUuCiAgICBmdW5jdGlvbiBhZGRUb1godWludCB5KSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIHggKyB5OwogICAgfQoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSBvciByZWFkIGZyb20gdGhlIHN0YXRlLgogICAgZnVuY3Rpb24gYWRkKHVpbnQgaSwgdWludCBqKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50KSB7CiAgICAgICAgcmV0dXJuIGkgKyBqOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>Getter functions can be declared <code>view</code> or <code>pure</code>.</p>

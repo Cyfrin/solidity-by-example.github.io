@@ -15,4 +15,4 @@ keywords: [hack, security, source, random, randomness, blockhash, block, timesta
 
 ### Preventative Techniques
 
-- Don't use `blockhash` and `block.timestamp` as source of randomness
+-   Don't use `blockhash` and `block.timestamp` as source of randomness

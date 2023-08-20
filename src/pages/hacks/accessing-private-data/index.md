@@ -17,4 +17,4 @@ Let's see how we can read `private` data. In the process you will learn how Soli
 
 ### Preventative Techniques
 
-- Don't store sensitive information on the blockchain.
+-   Don't store sensitive information on the blockchain.

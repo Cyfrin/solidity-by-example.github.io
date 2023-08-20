@@ -1,14 +1,14 @@
 .component {
-  /* NOTE -20px from .main in App.module.css */
-  width: min(100vw - 20px, 1000px);
+    /* NOTE -20px from .main in App.module.css */
+    width: min(100vw - 20px, 1000px);
 }
 .content {
-  margin-top: 15px;
-  margin-bottom: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .prevNext {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

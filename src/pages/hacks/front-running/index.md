@@ -17,8 +17,8 @@ This mechanism can be abused to re-order transactions to the attacker's advantag
 
 ### Preventative Techniques
 
-- use commit-reveal scheme (https://medium.com/swlh/exploring-commit-reveal-schemes-on-ethereum-c4ff5a777db8)
-- use submarine send (https://libsubmarine.org/)
+-   use commit-reveal scheme (https://medium.com/swlh/exploring-commit-reveal-schemes-on-ethereum-c4ff5a777db8)
+-   use submarine send (https://libsubmarine.org/)
 
 ### Commit-Reveal Schemes
 

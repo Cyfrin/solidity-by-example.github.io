@@ -8,40 +8,43 @@ import routes from "./routes"
 import { getPrevNextPaths } from "./pages/index"
 
 function App() {
-  const { state, loadLocalStorage } = useAppContext()
+    const { state, loadLocalStorage } = useAppContext()
 
-  useEffect(() => {
-    loadLocalStorage()
-  }, [])
+    useEffect(() => {
+        loadLocalStorage()
+    }, [])
 
-  if (!state.initialized) {
-    return null
-  }
+    if (!state.initialized) {
+        return null
+    }
 
-  return (
-    <Router basename={import.meta.env.VITE_PUBLIC_URL}>
-      <div className={styles.component}>
-        <Header />
-        <div className={styles.main}>
-          <Routes>
-            {routes.map((route) => {
-              const { prev, next } = getPrevNextPaths(route.path)
-              return (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  element={React.createElement(route.component, { prev, next })}
-                />
-              )
-            })}
-          </Routes>
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
-    </Router>
-  )
+    return (
+        <Router basename={import.meta.env.VITE_PUBLIC_URL}>
+            <div className={styles.component}>
+                <Header />
+                <div className={styles.main}>
+                    <Routes>
+                        {routes.map((route) => {
+                            const { prev, next } = getPrevNextPaths(route.path)
+                            return (
+                                <Route
+                                    key={route.path}
+                                    path={route.path}
+                                    element={React.createElement(route.component, {
+                                        prev,
+                                        next,
+                                    })}
+                                />
+                            )
+                        })}
+                    </Routes>
+                </div>
+                <div className={styles.footer}>
+                    <Footer />
+                </div>
+            </div>
+        </Router>
+    )
 }
 
 export default App
