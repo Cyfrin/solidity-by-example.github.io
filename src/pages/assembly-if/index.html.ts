@@ -3,12 +3,7 @@ export const version = "0.8.20"
 export const title = "Assembly Conditional Statements"
 export const description = "Example of conditional statements in assembly"
 
-export const keywords = [
-    "assembly",
-    "yul",
-    "if",
-    "switch",
-]
+export const keywords = ["assembly", "yul", "if", "switch"]
 
 export const codes = [
     {

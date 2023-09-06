@@ -3,13 +3,7 @@ export const version = "0.8.20"
 export const title = "Assembly Math"
 export const description = "Example of math in assembly"
 
-export const keywords = [
-    "assembly",
-    "yul",
-    "math",
-    "add",
-    "mul",
-]
+export const keywords = ["assembly", "yul", "math", "add", "mul"]
 
 export const codes = [
     {

@@ -3,11 +3,7 @@ export const version = "0.8.20"
 export const title = "Assembly Variable"
 export const description = "Example of how to declare variable inside assembly"
 
-export const keywords = [
-    "assembly",
-    "variable",
-    "yul",
-]
+export const keywords = ["assembly", "variable", "yul"]
 
 export const codes = [
     {

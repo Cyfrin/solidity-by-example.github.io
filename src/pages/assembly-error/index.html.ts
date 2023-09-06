@@ -3,12 +3,7 @@ export const version = "0.8.20"
 export const title = "Assembly Error"
 export const description = "Example of error in assembly"
 
-export const keywords = [
-    "assembly",
-    "yul",
-    "error",
-    "revert",
-]
+export const keywords = ["assembly", "yul", "error", "revert"]
 
 export const codes = [
     {
