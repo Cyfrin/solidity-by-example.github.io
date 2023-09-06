@@ -42,9 +42,6 @@ npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
 # build search index
 npx ts-node --project ./scripts/tsconfig.json scripts/build-search-index.ts
 
-# deploy
-npm run deploy
-
 ## Compile Solidity ##
 solc-select install 0.8.20
 solc-select use 0.8.20
