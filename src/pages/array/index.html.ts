@@ -3,7 +3,13 @@ export const version = "0.8.20"
 export const title = "Array"
 export const description = "Learn about arrays in Solidity"
 
-export const keywords = ["data", "variable", "variables", "array", "arrays"]
+export const keywords = [
+    "data",
+    "variable",
+    "variables",
+    "array",
+    "arrays",
+]
 
 export const codes = [
     {

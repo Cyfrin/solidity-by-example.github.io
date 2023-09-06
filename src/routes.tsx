@@ -1,5 +1,6 @@
 import component_abi_decode from "./pages/abi-decode"
 import component_abi_encode from "./pages/abi-encode"
+import component_app_assembly_bin_exp from "./pages/app/assembly-bin-exp"
 import component_app_bi_directional_payment_channel from "./pages/app/bi-directional-payment-channel"
 import component_app_create2 from "./pages/app/create2"
 import component_app_crowd_fund from "./pages/app/crowd-fund"
@@ -23,6 +24,11 @@ import component_app_uni_directional_payment_channel from "./pages/app/uni-direc
 import component_app_upgradeable_proxy from "./pages/app/upgradeable-proxy"
 import component_app_write_to_any_slot from "./pages/app/write-to-any-slot"
 import component_array from "./pages/array"
+import component_assembly_error from "./pages/assembly-error"
+import component_assembly_if from "./pages/assembly-if"
+import component_assembly_loop from "./pages/assembly-loop"
+import component_assembly_math from "./pages/assembly-math"
+import component_assembly_variable from "./pages/assembly-variable"
 import component_bitwise from "./pages/bitwise"
 import component_call from "./pages/call"
 import component_calling_contract from "./pages/calling-contract"
@@ -124,6 +130,10 @@ const routes: Route[] = [
         component: component_abi_encode,
     },
     {
+        path: "/app/assembly-bin-exp",
+        component: component_app_assembly_bin_exp,
+    },
+    {
         path: "/app/bi-directional-payment-channel",
         component: component_app_bi_directional_payment_channel,
     },
@@ -214,6 +224,26 @@ const routes: Route[] = [
     {
         path: "/array",
         component: component_array,
+    },
+    {
+        path: "/assembly-error",
+        component: component_assembly_error,
+    },
+    {
+        path: "/assembly-if",
+        component: component_assembly_if,
+    },
+    {
+        path: "/assembly-loop",
+        component: component_assembly_loop,
+    },
+    {
+        path: "/assembly-math",
+        component: component_assembly_math,
+    },
+    {
+        path: "/assembly-variable",
+        component: component_assembly_variable,
     },
     {
         path: "/bitwise",

@@ -8,6 +8,7 @@ import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
 const UPDATES = [
+    "2023/09/06 - Assembly binary exponentiation",
     "2023/08/20 - Solidity 0.8.20",
     "2023/07/29 - GitHub PR harkeshbirman",
     "2023/07/12 - Spanish translation",
@@ -229,6 +230,26 @@ const SOL_ROUTES: Route[] = [
         path: "unchecked-math",
         title: "Unchecked Math",
     },
+    {
+        path: "assembly-variable",
+        title: "Assembly Variable",
+    },
+    {
+        path: "assembly-if",
+        title: "Assembly Conditional Statements",
+    },
+    {
+        path: "assembly-loop",
+        title: "Assembly Loop",
+    },
+    {
+        path: "assembly-error",
+        title: "Assembly Error",
+    },
+    {
+        path: "assembly-math",
+        title: "Assembly Math",
+    },
 ]
 
 const APP_ROUTES: Route[] = [
@@ -319,6 +340,10 @@ const APP_ROUTES: Route[] = [
     {
         path: "time-lock",
         title: "Time Lock",
+    },
+    {
+        path: "assembly-bin-exp",
+        title: "Assembly Binary Exponentiation",
     },
 ]
 

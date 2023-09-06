@@ -280,6 +280,11 @@
     ],
     "/call": ["contract", "contracts", "call", "function", "functions"],
     "/bitwise": ["bitwise", "most", "significant", "bit", "assembly"],
+    "/assembly-variable": ["assembly", "variable", "yul"],
+    "/assembly-math": ["assembly", "yul", "math", "add", "mul"],
+    "/assembly-loop": ["assembly", "loop", "yul", "while", "for"],
+    "/assembly-if": ["assembly", "yul", "if", "switch"],
+    "/assembly-error": ["assembly", "yul", "error", "revert"],
     "/array": ["data", "variable", "variables", "array", "arrays"],
     "/app/write-to-any-slot": ["app", "application", "write", "any", "slot", "storage"],
     "/app/upgradeable-proxy": [
@@ -353,6 +358,7 @@
         "signature",
         "cryptography"
     ],
+    "/app/assembly-bin-exp": ["assembly", "yul", "binary", "exponentiation", "math"],
     "/abi-encode": [
         "abi",
         "encode",
