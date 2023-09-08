@@ -19,5 +19,4 @@ contract AssemblyLoop {
             }
         }
     }
-    
 }
