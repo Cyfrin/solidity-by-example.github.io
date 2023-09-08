@@ -3,13 +3,7 @@ export const version = "0.8.20"
 export const title = "Assembly Loop"
 export const description = "Example of loop in assembly"
 
-export const keywords = [
-    "assembly",
-    "loop",
-    "yul",
-    "while",
-    "for",
-]
+export const keywords = ["assembly", "loop", "yul", "while", "for"]
 
 export const codes = [
     {

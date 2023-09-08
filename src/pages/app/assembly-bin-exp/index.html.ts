@@ -3,13 +3,7 @@ export const version = "0.8.20"
 export const title = "Assembly Binary Exponentiation"
 export const description = "Example of binary exponentiation in assembly"
 
-export const keywords = [
-    "assembly",
-    "yul",
-    "binary",
-    "exponentiation",
-    "math",
-]
+export const keywords = ["assembly", "yul", "binary", "exponentiation", "math"]
 
 export const codes = [
     {
