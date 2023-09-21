@@ -29,7 +29,7 @@ contract AssemblyBinExp {
                 // n = n / 2, while n > 0, n = n / 2
                 for { n := div(n, 2) } n { n := div(n, 2) } {
                     let xx := mul(x, x)
-                    // Check overflow? revert if xx / x != x
+                    // Check overflow - revert if xx / x != x
                     if iszero(eq(div(xx, x), x)) { revert(0, 0) }
                     // Round (xx + half) / b
                     let xxRound := add(xx, half)
