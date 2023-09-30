@@ -17,11 +17,6 @@ function Footer() {
           Smart Contract Engineer
         </a>
       </div>
-      <div className={styles.row}>
-        <a href="https://vyper-by-example.org/" target="__blank">
-          Vyper By Example
-        </a>
-      </div>
       <div className={styles.social}>
         <div className={styles.row}>
           <img src={discord} alt="discord" className={styles.discord} />
@@ -47,17 +42,11 @@ function Footer() {
       </div>
       <div className={styles.row}>
         Donate
-        <span role="img" aria-label="smiley">
-          🙂
-        </span>
-      </div>
-      <div className={styles.row}>
+        <span>🙂</span>
         <a href={`https://etherscan.io/address/${ADDRESS}`} target="__blank">
           {ADDRESS.slice(0, 6)}...{ADDRESS.slice(-6, -1)}
         </a>
-      </div>
-      <div className={styles.row}>
-        your ETH will directly go to
+        <span className={styles.to}>to</span>
         <a href="https://khanacademy.org" target="__blank" className={styles.khan}>
           Khan Academy
         </a>

@@ -18,8 +18,8 @@
 .row a:visited {
   color: var(--link-color);
 }
-.khan {
-  margin-left: 10px;
+.to {
+  margin: 0 5px 0 5px;
 }
 .social {
   display: flex;
@@ -27,19 +27,19 @@
   align-items: center;
 }
 .sce {
-  width: 30px;
+  width: 20px;
   margin: 5px;
   border-radius: 4px;
 }
 .telegram {
-  width: 30px;
+  width: 20px;
   margin: 5px;
 }
 .discord {
-  width: 30px;
+  width: 20px;
   margin: 5px;
 }
 .youTube {
-  width: 30px;
+  width: 20px;
   margin: 5px;
 }
