@@ -1,17 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useLayoutEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { useAppContext } from "./contexts/AppContext"
 import styles from "./App.module.css"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Layout from "./components/Layout"
 import routes from "./routes"
-import { getPrevNextPaths } from "./pages/index"
+import { getPrevNextPaths } from "./nav"
 
 function App() {
-  const { state, loadLocalStorage } = useAppContext()
+  const { state, init } = useAppContext()
 
-  useEffect(() => {
-    loadLocalStorage()
+  useLayoutEffect(() => {
+    init({
+      width: window.document.body.clientWidth,
+    })
   }, [])
 
   if (!state.initialized) {
@@ -20,29 +21,23 @@ function App() {
 
   return (
     <Router basename={import.meta.env.VITE_PUBLIC_URL}>
-      <div className={styles.component}>
-        <Header />
-        <div className={styles.main}>
-          <Routes>
-            {routes.map((route) => {
-              const { prev, next } = getPrevNextPaths(route.path)
-              return (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  element={React.createElement(route.component, {
-                    prev,
-                    next,
-                  })}
-                />
-              )
-            })}
-          </Routes>
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
-      </div>
+      <Layout>
+        <Routes>
+          {routes.map((route) => {
+            const { prev, next } = getPrevNextPaths(route.path)
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={React.createElement(route.component, {
+                  prev,
+                  next,
+                })}
+              />
+            )
+          })}
+        </Routes>
+      </Layout>
     </Router>
   )
 }

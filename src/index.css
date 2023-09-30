@@ -1,5 +1,7 @@
 :root {
   --black: #252519;
+  --black: #252519;
+  --side-nav-width: 240px;
 }
 /* custom scroll */
 ::-webkit-scrollbar {
@@ -30,6 +32,7 @@ body.light {
   --code-bg: #f5f5f5;
   --link-color: #261a3b;
   --input-bg: #f1f1f1;
+  --link-active-color: #00ff0054;
 }
 body.dark {
   --bg-color: #161b22;
@@ -37,6 +40,7 @@ body.dark {
   --code-bg: #0d1117;
   --link-color: #f6f6f6;
   --input-bg: white;
+  --link-active-color: #00ff0054;
 }
 pre {
   padding: 15px;

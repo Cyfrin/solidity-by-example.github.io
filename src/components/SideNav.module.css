@@ -1,0 +1,32 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.title {
+  color: var(--link-color);
+  padding: 0;
+  margin: 0;
+}
+.listItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0 10px 0;
+  padding-left: 10px;
+}
+.listItemActive {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0 10px 0;
+  padding-left: 10px;
+  background-color: var(--link-active-color);
+}
+.link {
+  font-size: 0.9rem;
+  text-decoration: none;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

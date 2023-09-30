@@ -4,27 +4,30 @@ export type Theme = "light" | "dark"
 
 interface State {
   theme: Theme
+  sideNav: boolean
   initialized: boolean
 }
 
 const INITIAL_STATE: State = {
   theme: "light",
+  sideNav: true,
   initialized: false,
 }
 
 const AppContext = createContext({
   state: INITIAL_STATE,
+  init: (params: { width: number }) => {},
   setTheme: (theme: Theme) => {},
-  loadLocalStorage: () => {},
+  toggleSideNav: () => {},
 })
 
 export function useAppContext() {
   return useContext(AppContext)
 }
 
-function _saveToLocalStorage(theme: Theme) {
+function _saveToLocalStorage(key: string, val: any) {
   try {
-    localStorage.setItem("theme", theme)
+    localStorage.setItem(key, val)
   } catch (error) {
     console.error(error)
   }
@@ -47,16 +50,24 @@ export const Provider: React.FC<Props> = ({ children }) => {
     }
   }
 
-  function loadLocalStorage() {
+  function init(params: { width: number }) {
     try {
       // @ts-ignore
       const theme: Theme = localStorage.getItem("theme") || "light"
+      let sideNav = params.width >= 500
+      {
+        const val = localStorage.getItem("sideNav")
+        if (val) {
+          sideNav = val == "true"
+        }
+      }
 
       _setTheme(theme)
 
       setState((state) => ({
         ...state,
         theme,
+        sideNav,
       }))
     } catch (error) {
       console.error(error)
@@ -71,7 +82,13 @@ export const Provider: React.FC<Props> = ({ children }) => {
   function setTheme(theme: Theme) {
     _setTheme(theme)
     setState({ ...state, theme })
-    _saveToLocalStorage(theme)
+    _saveToLocalStorage("theme", theme)
+  }
+
+  function toggleSideNav() {
+    const sideNav = !state.sideNav
+    setState({ ...state, sideNav })
+    _saveToLocalStorage("sideNav", sideNav)
   }
 
   return (
@@ -79,8 +96,9 @@ export const Provider: React.FC<Props> = ({ children }) => {
       value={useMemo(
         () => ({
           state,
-          loadLocalStorage,
+          init,
           setTheme,
+          toggleSideNav,
         }),
         [state],
       )}

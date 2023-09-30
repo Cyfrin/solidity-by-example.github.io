@@ -1,10 +1,9 @@
 .component {
-  /* NOTE -20px from .main in App.module.css */
-  width: min(100vw - 20px, 1000px);
+  width: 100%;
+  max-width: 1000px;
 }
 .content {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px 10px 15px 10px;
 }
 .prevNext {
   margin: 20px;

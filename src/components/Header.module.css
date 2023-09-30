@@ -1,14 +1,25 @@
 .component {
-  text-align: left;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 10px 20px;
+  background-color: var(--bg-color);
+  min-width: var(--min-main-width);
+  white-space: nowrap;
+}
+.a {
+  text-decoration: none;
+}
+.center {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.component a {
-  text-decoration: none;
-}
 .logo {
-  width: 60px;
+  margin: 0 5px 0 5px;
 }
 .header {
   margin: 0;
@@ -17,6 +28,8 @@
 .mode {
   background-color: transparent;
   border: 0px;
-  margin-right: 20px;
+  cursor: pointer;
+}
+.hamburger {
   cursor: pointer;
 }
