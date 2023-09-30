@@ -9,8 +9,8 @@ Any contract that follow the <a href="https://eips.ethereum.org/EIPS/eip-20" tar
 
 ERC20 tokens provide functionalities to
 
--   transfer tokens
--   allow others to transfer tokens on behalf of the token holder
+- transfer tokens
+- allow others to transfer tokens on behalf of the token holder
 
 Here is the interface for ERC20.
 
@@ -49,8 +49,8 @@ which will transfer `amount` of token from `sender` to `recipient`.
 
 For `transferFrom` to succeed, `sender` must
 
--   have more than `amount` tokens in their balance
--   allowed `TokenSwap` to withdraw `amount` tokens by calling `approve`
+- have more than `amount` tokens in their balance
+- allowed `TokenSwap` to withdraw `amount` tokens by calling `approve`
 
 prior to `TokenSwap` calling `transferFrom`
 

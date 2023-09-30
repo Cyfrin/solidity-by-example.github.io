@@ -28,9 +28,9 @@ Echidna can fuzz timestamp. Range of timestamp is set in the configuration. Defa
 
 Contract callers can also be set in the configuration. Default accounts are
 
--   `0x10000`
--   `0x20000`
--   `0x00a329C0648769a73afAC7F9381e08fb43DBEA70`
+- `0x10000`
+- `0x20000`
+- `0x00a329C0648769a73afAC7F9381e08fb43DBEA70`
 
 ```solidity
 {{{EchidnaTestTimeAndCaller}}}

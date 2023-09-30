@@ -9,11 +9,11 @@ You can interact with other contracts by declaring an `Interface`.
 
 Interface
 
--   cannot have any functions implemented
--   can inherit from other interfaces
--   all declared functions must be external
--   cannot declare a constructor
--   cannot declare state variables
+- cannot have any functions implemented
+- can inherit from other interfaces
+- all declared functions must be external
+- cannot declare a constructor
+- cannot declare state variables
 
 ```solidity
 {{{Interface}}}

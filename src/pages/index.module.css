@@ -1,43 +1,43 @@
 .component {
-    max-width: 420px;
+  max-width: 420px;
 }
 .component ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 .updates {
-    padding: 5px;
-    padding-left: 15px;
-    border-radius: 5px;
+  padding: 5px;
+  padding-left: 15px;
+  border-radius: 5px;
 }
 .category {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 .search {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .listItem {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
 }
 .label {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 .header a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .youTube {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0 10px 0;
 }
 .youTubeLogo {
-    width: 30px;
-    padding-right: 10px;
+  width: 30px;
+  padding-right: 10px;
 }

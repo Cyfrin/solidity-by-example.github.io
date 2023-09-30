@@ -10,16 +10,16 @@ const root = createRoot(container!)
 const rootElement = document.getElementById("root")
 // @ts-ignore
 if (rootElement.hasChildNodes()) {
-    hydrateRoot(
-        rootElement!,
-        <AppContextProvider>
-            <App />
-        </AppContextProvider>,
-    )
+  hydrateRoot(
+    rootElement!,
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>,
+  )
 } else {
-    root.render(
-        <AppContextProvider>
-            <App />
-        </AppContextProvider>,
-    )
+  root.render(
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>,
+  )
 }

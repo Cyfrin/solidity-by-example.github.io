@@ -6,10 +6,10 @@ export const description = "Example of how to declare variable inside assembly"
 export const keywords = ["assembly", "variable", "yul"]
 
 export const codes = [
-    {
-        fileName: "AssemblyVariable.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEFzc2VtYmx5VmFyaWFibGUgewogICAgZnVuY3Rpb24geXVsX2xldCgpIHB1YmxpYyBwdXJlIHJldHVybnMgKHVpbnQgeikgewogICAgICAgIGFzc2VtYmx5IHsKICAgICAgICAgICAgLy8gTGFuZ3VhZ2UgdXNlZCBmb3IgYXNzZW1ibHkgaXMgY2FsbGVkIFl1bAogICAgICAgICAgICAvLyBMb2NhbCB2YXJpYWJsZXMKICAgICAgICAgICAgbGV0IHggOj0gMTIzCiAgICAgICAgICAgIHogOj0gNDU2CiAgICAgICAgfQogICAgfQp9Cg==",
-    },
+  {
+    fileName: "AssemblyVariable.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEFzc2VtYmx5VmFyaWFibGUgewogICAgZnVuY3Rpb24geXVsX2xldCgpIHB1YmxpYyBwdXJlIHJldHVybnMgKHVpbnQgeikgewogICAgICAgIGFzc2VtYmx5IHsKICAgICAgICAgICAgLy8gTGFuZ3VhZ2UgdXNlZCBmb3IgYXNzZW1ibHkgaXMgY2FsbGVkIFl1bAogICAgICAgICAgICAvLyBMb2NhbCB2YXJpYWJsZXMKICAgICAgICAgICAgbGV0IHggOj0gMTIzCiAgICAgICAgICAgIHogOj0gNDU2CiAgICAgICAgfQogICAgfQp9Cg==",
+  },
 ]
 
 const html = `<p>Example of how to declare variables inside <code>assembly</code></p>

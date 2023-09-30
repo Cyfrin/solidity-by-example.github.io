@@ -30,4 +30,4 @@ state variables before you can understand this exploit.
 
 ### Preventative Techniques
 
--   Use stateless `Library`
+- Use stateless `Library`

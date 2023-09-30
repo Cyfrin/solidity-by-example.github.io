@@ -7,11 +7,11 @@ keywords: [gas, golf]
 
 Some gas saving techniques.
 
--   Replacing `memory` with `calldata`
--   Loading state variable to memory
--   Replace for loop `i++` with `++i`
--   Caching array elements
--   Short circuit
+- Replacing `memory` with `calldata`
+- Loading state variable to memory
+- Replace for loop `i++` with `++i`
+- Caching array elements
+- Short circuit
 
 ```solidity
 {{{GasGolf}}}

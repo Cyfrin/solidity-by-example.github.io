@@ -21,6 +21,6 @@ Default behaviour of Solidity 0.8 for overflow / underflow is to throw an error.
 
 ### Preventative Techniques
 
--   Use <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol" target="__blank">SafeMath</a> to will prevent arithmetic overflow and underflow
+- Use <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol" target="__blank">SafeMath</a> to will prevent arithmetic overflow and underflow
 
--   Solidity 0.8 defaults to throwing an error for overflow / underflow
+- Solidity 0.8 defaults to throwing an error for overflow / underflow

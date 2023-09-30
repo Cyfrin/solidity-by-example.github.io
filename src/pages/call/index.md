@@ -13,9 +13,9 @@ However it is not the recommend way to call existing functions.
 
 ### Few reasons why low-level call is not recommended
 
--   Reverts are not bubbled up
--   Type checks are bypassed
--   Function existence checks are omitted
+- Reverts are not bubbled up
+- Type checks are bypassed
+- Function existence checks are omitted
 
 ```solidity
 {{{Call}}}
