@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract Payable {
-    // Payable address can receive Ether
+    // Payable address can send Ether via transfer or send
     address payable public owner;
 
     // Payable constructor can receive Ether
@@ -25,7 +25,6 @@ contract Payable {
         uint amount = address(this).balance;
 
         // send all Ether to owner
-        // Owner can receive Ether since the address of owner is payable
         (bool success, ) = owner.call{value: amount}("");
         require(success, "Failed to send Ether");
     }

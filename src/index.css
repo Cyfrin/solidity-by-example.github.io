@@ -1,7 +1,7 @@
 :root {
   --black: #252519;
-  --black: #252519;
   --side-nav-width: 240px;
+  --min-main-width: 300px;
 }
 /* custom scroll */
 ::-webkit-scrollbar {
