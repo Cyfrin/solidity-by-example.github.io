@@ -5,15 +5,16 @@ export type Tree = {
 export function insert(tree: Tree, word: string) {
   let t = tree
   for (let i = 0; i < word.length; i++) {
-    const w = word[i]
+    const c = word[i]
+    const prev = word[i - 1] || null
 
-    if (!t[w]) {
-      t[w] = {}
+    if (!t[c] || prev == c) {
+      t[c] = {}
     }
     if (i == word.length - 1) {
-      t[w] = { "": {} }
+      t[c] = { ...t[c], "": {} }
     }
-    t = t[w]
+    t = t[c]
   }
 }
 
@@ -39,7 +40,6 @@ function collect(tree: Tree): string[] {
     }
 
     path += k
-    // console.log(level, k, node, path)
 
     const keys: string[] = Object.keys(node)
 
