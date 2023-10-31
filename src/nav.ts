@@ -10,8 +10,8 @@ export interface Translation {
 
 export const TRANSLATIONS: Translation[] = [
   {
-    lang: "Simplified Chinese",
-    url: "https://github.com/Web3-Club/solidity-by-example_Chinese",
+    lang: "Armenian",
+    url: "https://pranatech.org/solidity-by-example-hy/",
   },
   {
     lang: "Persian",
@@ -20,6 +20,10 @@ export const TRANSLATIONS: Translation[] = [
   {
     lang: "Spanish",
     url: "https://github.com/lcadafalch/solidity_attacks",
+  },
+  {
+    lang: "Simplified Chinese",
+    url: "https://github.com/Web3-Club/solidity-by-example_Chinese",
   },
 ]
 
