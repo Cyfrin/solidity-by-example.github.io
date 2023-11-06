@@ -9,10 +9,9 @@ import youTube from "../components/youtube.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2023/11/06 - GitHub PR sunnyStefi",
   "2023/09/06 - Assembly binary exponentiation",
   "2023/08/20 - Solidity 0.8.20",
-  "2023/07/29 - GitHub PR harkeshbirman",
-  "2023/07/12 - Spanish translation",
 ]
 
 export default function HomePage() {
