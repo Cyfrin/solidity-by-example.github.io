@@ -7,15 +7,9 @@ import { markedHighlight } from "marked-highlight"
 import hljs from "highlight.js"
 // @ts-ignore
 import { solidity } from "highlightjs-solidity"
-// @ts-ignore
 import { exists, removeExt, getExt, renderTemplateToFile, parseYaml } from "./lib"
 
 const { readFile, readdir } = fs.promises
-
-marked.use({
-  mangle: false,
-  headerIds: false,
-})
 
 marked.use(
   markedHighlight({
