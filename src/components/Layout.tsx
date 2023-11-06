@@ -11,18 +11,16 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
   const { state } = useAppContext()
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     if (ref.current) {
-      // @ts-ignore
-      ref.current.scrollTop = sessionStorage.getItem("scroll") || 0
+      ref.current.scrollTop = parseInt(sessionStorage.getItem("scroll") || "0") || 0
     }
   }, [])
 
   function onClick(path: string) {
-    // @ts-ignore
-    sessionStorage.setItem("scroll", ref.current?.scrollTop)
+    sessionStorage.setItem("scroll", (ref.current?.scrollTop || 0).toString())
     window.location.href = path
   }
 
