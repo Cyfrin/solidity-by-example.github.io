@@ -48,10 +48,9 @@ async function mdToHtml(filePath: string) {
   // get solidity code
   const solidityFileNames = await findSolidityFiles(dir)
 
-  const codes = {}
+  const codes: { [key: string]: string } = {}
   for (const solFileName of solidityFileNames) {
     const source = (await readFile(path.join(dir, solFileName))).toString()
-    // @ts-ignore
     codes[removeExt(solFileName)] = source
   }
 
@@ -77,7 +76,6 @@ async function mdToHtml(filePath: string) {
       keywords: metadata.keywords,
       codes: Object.entries(codes).map(([key, val]) => ({
         key: `${key}.sol`,
-        // @ts-ignore
         val: Buffer.from(val).toString("base64"),
       })),
     },
