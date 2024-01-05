@@ -242,6 +242,7 @@
     "reward",
     "rewards"
   ],
+  "/defi/dai-proxy": ["defi", "dai", "proxy"],
   "/defi/constant-sum-amm": ["defi", "constant", "sum", "amm"],
   "/defi/constant-product-amm": ["defi", "constant", "product", "amm"],
   "/defi/chainlink-price-oracle": ["defi", "chainlink", "price", "oracle", "oracles"],

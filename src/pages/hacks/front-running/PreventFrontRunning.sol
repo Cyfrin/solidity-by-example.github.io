@@ -91,7 +91,7 @@ contract SecuredFindThisHash {
         Function to reveal the commit and get the reward. 
         Users can get reveal solution only if the game is active and they have committed a solutionHash before this block and not revealed yet.
         It generates an keccak256(msg.sender + solution + secret) and checks it with the previously commited hash.  
-        Front runners will not be able to pass this check since the msg.sender is different.
+        Assuming that a commit was already included on chain, front runners will not be able to pass this check since the msg.sender is different.
         Then the actual solution is checked using keccak256(solution), if the solution matches, the winner is declared, 
         the game is ended and the reward amount is sent to the winner.
     */

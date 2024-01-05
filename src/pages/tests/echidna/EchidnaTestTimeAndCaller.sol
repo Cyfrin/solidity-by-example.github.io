@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8;
+pragma solidity ^0.8.20;
 
 /*
 docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox

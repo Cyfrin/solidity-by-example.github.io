@@ -443,6 +443,10 @@ export const DEFI_ROUTES = [
     title: "Chainlink Price Oracle",
   },
   {
+    path: "dai-proxy",
+    title: "DAI Proxy",
+  },
+  {
     path: "staking-rewards",
     title: "Staking Rewards",
   },

@@ -389,6 +389,7 @@
     "/defi/staking-rewards",
     "/defi/stable-swap-amm",
     "/defi/discrete-staking-rewards",
+    "/defi/dai-proxy",
     "/defi/constant-sum-amm",
     "/defi/constant-product-amm",
     "/defi/chainlink-price-oracle"
@@ -452,6 +453,8 @@
   "curve": ["/defi/stable-swap-amm"],
   "stable": ["/defi/stable-swap-amm"],
   "discrete": ["/defi/discrete-staking-rewards"],
+  "dai": ["/defi/dai-proxy"],
+  "proxy": ["/defi/dai-proxy", "/app/upgradeable-proxy", "/app/minimal-proxy"],
   "sum": ["/defi/constant-sum-amm"],
   "product": ["/defi/constant-product-amm"],
   "chainlink": ["/defi/chainlink-price-oracle"],
@@ -494,7 +497,6 @@
   "any": ["/app/write-to-any-slot", "/app/deploy-any-contract"],
   "slot": ["/app/write-to-any-slot"],
   "upgradeable": ["/app/upgradeable-proxy"],
-  "proxy": ["/app/upgradeable-proxy", "/app/minimal-proxy"],
   "uni-directional": ["/app/uni-directional-payment-channel"],
   "payment": [
     "/app/uni-directional-payment-channel",

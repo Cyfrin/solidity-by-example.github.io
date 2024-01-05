@@ -26,7 +26,6 @@ npm run deploy
 ### Memo
 
 TODO: code split / dynamic imports
-TODO: side nav
 
 ```shell
 ## Deploy ##

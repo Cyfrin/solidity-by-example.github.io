@@ -38,6 +38,7 @@ import component_data_locations from "./pages/data-locations"
 import component_defi_chainlink_price_oracle from "./pages/defi/chainlink-price-oracle"
 import component_defi_constant_product_amm from "./pages/defi/constant-product-amm"
 import component_defi_constant_sum_amm from "./pages/defi/constant-sum-amm"
+import component_defi_dai_proxy from "./pages/defi/dai-proxy"
 import component_defi_discrete_staking_rewards from "./pages/defi/discrete-staking-rewards"
 import component_defi_stable_swap_amm from "./pages/defi/stable-swap-amm"
 import component_defi_staking_rewards from "./pages/defi/staking-rewards"
@@ -280,6 +281,10 @@ const routes: Route[] = [
   {
     path: "/defi/constant-sum-amm",
     component: component_defi_constant_sum_amm,
+  },
+  {
+    path: "/defi/dai-proxy",
+    component: component_defi_dai_proxy,
   },
   {
     path: "/defi/discrete-staking-rewards",
