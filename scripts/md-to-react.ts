@@ -58,8 +58,7 @@ async function mdToHtml(filePath: string) {
   const { content, metadata } = await parseYaml(filePath)
 
   const markdown = mustache.render(content, codes)
-  const html = marked
-    .parse(markdown)
+  const html = (await marked.parse(markdown))
     .replace(/&quot;/g, `"`)
     // replace \ with \\
     .replace(/\\/g, `\\\\`)
