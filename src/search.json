@@ -281,6 +281,7 @@
   "hashing": ["/hashing"],
   "keccak256": ["/hashing"],
   "hack": [
+    "/hacks/vault-inflation",
     "/hacks/signature-replay",
     "/hacks/self-destruct",
     "/hacks/re-entrancy",
@@ -298,6 +299,7 @@
     "/hacks/accessing-private-data"
   ],
   "security": [
+    "/hacks/vault-inflation",
     "/hacks/signature-replay",
     "/hacks/self-destruct",
     "/hacks/re-entrancy",
@@ -314,6 +316,9 @@
     "/hacks/block-timestamp-manipulation",
     "/hacks/accessing-private-data"
   ],
+  "inflation": ["/hacks/vault-inflation"],
+  "erc4626": ["/hacks/vault-inflation"],
+  "vault": ["/hacks/vault-inflation", "/defi/vault"],
   "replay": ["/hacks/signature-replay"],
   "selfdestruct": ["/hacks/self-destruct"],
   "re-entrancy": ["/hacks/re-entrancy"],
@@ -394,7 +399,6 @@
     "/defi/constant-product-amm",
     "/defi/chainlink-price-oracle"
   ],
-  "vault": ["/defi/vault"],
   "uniswap": [
     "/defi/uniswap-v3-swap",
     "/defi/uniswap-v3-liquidity",
