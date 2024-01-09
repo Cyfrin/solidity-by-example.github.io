@@ -396,6 +396,10 @@ const HACK_ROUTES: Route[] = [
     path: "deploy-different-contracts-same-address",
     title: "Deploy Different Contracts at Same Address",
   },
+  {
+    path: "vault-inflation",
+    title: "Vault Inflation Attack",
+  },
 ]
 
 export const TEST_ROUTES: Route[] = [
