@@ -29,6 +29,8 @@ body {
 body.light {
   --bg-color: white;
   --color: #252519;
+  --color-1: #212529;
+  --hover-color-1: #212529;
   --code-bg: #f5f5f5;
   --link-color: #261a3b;
   --input-bg: #f1f1f1;
@@ -37,6 +39,8 @@ body.light {
 body.dark {
   --bg-color: #161b22;
   --color: rgb(201, 209, 217);
+  --color-1: #c9d1d9;
+  --hover-color-1: white;
   --code-bg: #0d1117;
   --link-color: #f6f6f6;
   --input-bg: white;
@@ -282,4 +286,27 @@ body.dark .hljs-params,
 body.dark .hljs-property,
 body.dark .hljs-punctuation,
 body.dark .hljs-tag {
+}
+
+/* copy */
+.copy-wrapper {
+  position: relative;
+  /* set to 100% to enable y scroll */
+  height: 100%;
+}
+.copy {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-top: 4px;
+  margin-right: 12px;
+  color: var(--color-1);
+  background-color: transparent;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.copy:hover {
+  color: var(--hover-color-1);
+  transition: color linear 0.2s;
 }
