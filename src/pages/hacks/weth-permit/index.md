@@ -15,7 +15,7 @@ This is because the `fallback` inside `WETH` is execute when `permit` is called.
 
 ### Example
 
-0. Alice gives infinit approval for `ERC20Bank` to spend `WETH`
+0. Alice gives infinite approval for `ERC20Bank` to spend `WETH`
 1. Alice calls `deposit`, deposits 1 WETH into `ERC20Bank`
 2. Attacker calls `depositWithPermit`, passes an empty signature and transfers all tokens from Alice into `ERC20Bank`, crediting the attacker for the deposit.
 3. Attacker withdraws all tokens credited to him.
