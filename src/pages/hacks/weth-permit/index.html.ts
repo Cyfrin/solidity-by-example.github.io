@@ -38,7 +38,7 @@ const html = `<h3>Vulnerability</h3>
 <p>This is because the <code>fallback</code> inside <code>WETH</code> is execute when <code>permit</code> is called.</p>
 <h3>Example</h3>
 <ol start="0">
-<li>Alice gives infinit approval for <code>ERC20Bank</code> to spend <code>WETH</code></li>
+<li>Alice gives infinite approval for <code>ERC20Bank</code> to spend <code>WETH</code></li>
 <li>Alice calls <code>deposit</code>, deposits 1 WETH into <code>ERC20Bank</code></li>
 <li>Attacker calls <code>depositWithPermit</code>, passes an empty signature and transfers all tokens from Alice into <code>ERC20Bank</code>, crediting the attacker for the deposit.</li>
 <li>Attacker withdraws all tokens credited to him.</li>
