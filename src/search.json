@@ -281,6 +281,7 @@
   "hashing": ["/hashing"],
   "keccak256": ["/hashing"],
   "hack": [
+    "/hacks/weth-permit",
     "/hacks/vault-inflation",
     "/hacks/signature-replay",
     "/hacks/self-destruct",
@@ -299,6 +300,7 @@
     "/hacks/accessing-private-data"
   ],
   "security": [
+    "/hacks/weth-permit",
     "/hacks/vault-inflation",
     "/hacks/signature-replay",
     "/hacks/self-destruct",
@@ -316,6 +318,8 @@
     "/hacks/block-timestamp-manipulation",
     "/hacks/accessing-private-data"
   ],
+  "weth": ["/hacks/weth-permit"],
+  "permit": ["/hacks/weth-permit", "/app/gasless-token-transfer"],
   "inflation": ["/hacks/vault-inflation"],
   "erc4626": ["/hacks/vault-inflation"],
   "vault": ["/hacks/vault-inflation", "/defi/vault"],
@@ -525,7 +529,6 @@
   "gasless": ["/app/gasless-token-transfer"],
   "token": ["/app/gasless-token-transfer", "/app/erc20"],
   "ERC20": ["/app/gasless-token-transfer"],
-  "permit": ["/app/gasless-token-transfer"],
   "erc721": ["/app/erc721"],
   "ierc721": ["/app/erc721"],
   "nft": ["/app/erc721", "/app/erc1155"],

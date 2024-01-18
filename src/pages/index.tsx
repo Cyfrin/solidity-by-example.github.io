@@ -9,9 +9,9 @@ import youTube from "../components/youtube.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2024/01/18 - WETH permit hack",
   "2024/01/09 - Vault inflation attack",
   "2024/01/05 - DAI proxy",
-  "2023/11/06 - GitHub PR sunnyStefi",
 ]
 
 export default function HomePage() {

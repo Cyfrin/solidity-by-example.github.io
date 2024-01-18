@@ -79,6 +79,7 @@ import component_hacks_re_entrancy from "./pages/hacks/re-entrancy"
 import component_hacks_self_destruct from "./pages/hacks/self-destruct"
 import component_hacks_signature_replay from "./pages/hacks/signature-replay"
 import component_hacks_vault_inflation from "./pages/hacks/vault-inflation"
+import component_hacks_weth_permit from "./pages/hacks/weth-permit"
 import component_hashing from "./pages/hashing"
 import component_hello_world from "./pages/hello-world"
 import component_if_else from "./pages/if-else"
@@ -446,6 +447,10 @@ const routes: Route[] = [
   {
     path: "/hacks/vault-inflation",
     component: component_hacks_vault_inflation,
+  },
+  {
+    path: "/hacks/weth-permit",
+    component: component_hacks_weth_permit,
   },
   {
     path: "/hashing",

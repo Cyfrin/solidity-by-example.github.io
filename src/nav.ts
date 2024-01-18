@@ -400,6 +400,10 @@ const HACK_ROUTES: Route[] = [
     path: "vault-inflation",
     title: "Vault Inflation Attack",
   },
+  {
+    path: "weth-permit",
+    title: "WETH Permit",
+  },
 ]
 
 export const TEST_ROUTES: Route[] = [

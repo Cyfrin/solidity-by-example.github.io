@@ -106,6 +106,7 @@
   "/if-else": ["if", "else", "conditional", "statement", "statements"],
   "/hello-world": ["contract", "app", "application", "hello", "world"],
   "/hashing": ["hash", "hashing", "function", "functions", "keccak256", "cryptography"],
+  "/hacks/weth-permit": ["hack", "security", "weth", "permit"],
   "/hacks/vault-inflation": ["hack", "security", "inflation", "erc4626", "vault"],
   "/hacks/signature-replay": [
     "hack",
