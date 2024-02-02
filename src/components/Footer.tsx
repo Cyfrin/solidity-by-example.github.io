@@ -5,9 +5,6 @@ import youTube from "./youtube.png"
 import telegram from "./telegram.png"
 import discord from "./discord.png"
 
-// Khan Academy
-const ADDRESS = "0x95a647B3d8a3F11176BAdB799b9499C671fa243a"
-
 function Footer() {
   return (
     <div className={styles.component}>
@@ -39,17 +36,6 @@ function Footer() {
             YouTube
           </a>
         </div>
-      </div>
-      <div className={styles.row}>
-        Donate
-        <span>🙂</span>
-        <a href={`https://etherscan.io/address/${ADDRESS}`} target="__blank">
-          {ADDRESS.slice(0, 6)}...{ADDRESS.slice(-6, -1)}
-        </a>
-        <span className={styles.to}>to</span>
-        <a href="https://khanacademy.org" target="__blank" className={styles.khan}>
-          Khan Academy
-        </a>
       </div>
       <div className={styles.row}>
         <a href="mailto:contact@solidity-by-example.org">
