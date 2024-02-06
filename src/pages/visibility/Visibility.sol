@@ -59,7 +59,7 @@ contract Child is Base {
     //     return privateFunc();
     // }
 
-    // Internal function call be called inside child contracts.
+    // Internal function can be called inside child contracts.
     function testInternalFunc() public pure override returns (string memory) {
         return internalFunc();
     }
