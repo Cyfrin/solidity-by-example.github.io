@@ -41,3 +41,9 @@
   width: 30px;
   padding-right: 10px;
 }
+.cryptoJobsList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
+import { CRYPTO_JOBS_LIST_URL } from "../config"
 import SEO from "../components/SEO"
 import SearchBar from "../components/SearchBar"
 import useDebounce from "../hooks/useDebounce"
@@ -130,6 +131,12 @@ export default function HomePage() {
           <img src={youTube} alt="logo" className={styles.youTubeLogo} />
           <a href="https://www.youtube.com/@smartcontractprogrammer" target="__blank">
             Most code are explained here
+          </a>
+        </div>
+
+        <div className={styles.cryptoJobsList}>
+          <a href={CRYPTO_JOBS_LIST_URL} target="__blank">
+            Looking for remote Solidity jobs?
           </a>
         </div>
 

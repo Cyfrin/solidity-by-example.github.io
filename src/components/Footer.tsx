@@ -1,4 +1,5 @@
 import React from "react"
+import { CRYPTO_JOBS_LIST_URL } from "../config"
 import styles from "./Footer.module.css"
 import sce from "./sce.png"
 import youTube from "./youtube.png"
@@ -47,14 +48,18 @@ function Footer() {
           href="https://github.com/solidity-by-example/solidity-by-example.github.io"
           target="__blank"
         >
-          source
+          Source
         </a>
         <div className={styles.bar}>|</div>
         <a
           href="https://github.com/solidity-by-example/solidity-by-example.github.io/blob/gh-pages/LICENSE"
           target="__blank"
         >
-          license
+          License
+        </a>
+        <div className={styles.bar}>|</div>
+        <a href={CRYPTO_JOBS_LIST_URL} target="__blank">
+          Solidity jobs
         </a>
       </div>
     </div>
