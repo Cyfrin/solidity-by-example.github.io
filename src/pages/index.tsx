@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom"
 import { CRYPTO_JOBS_LIST_URL } from "../config"
 import SEO from "../components/SEO"
 import SearchBar from "../components/SearchBar"
+import CryptoJobsList from "../components/svg/CryptoJobsList"
 import useDebounce from "../hooks/useDebounce"
 import { search, unique } from "../lib/search"
 import styles from "./index.module.css"
@@ -123,7 +124,7 @@ export default function HomePage() {
       <div className={styles.subHeader}>v 0.8.20</div>
       <div className={styles.main}>
         <p>
-          an introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with
+          Introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with
           simple examples
         </p>
 
@@ -135,8 +136,9 @@ export default function HomePage() {
         </div>
 
         <div className={styles.cryptoJobsList}>
+          <CryptoJobsList size={24} className={styles.cryptoJobsListLogo} />
           <a href={CRYPTO_JOBS_LIST_URL} target="__blank">
-            Looking for remote Solidity jobs?
+            Looking for Solidity jobs?
           </a>
         </div>
 
