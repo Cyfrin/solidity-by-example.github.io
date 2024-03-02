@@ -15,7 +15,7 @@ export const TRANSLATIONS: Translation[] = [
   },
   {
     lang: "Persian",
-    url: "https://dpanosian.com/fa/solidity-by-example",
+    url: "https://solidifa.ir/solidity-by-example/",
   },
   {
     lang: "Spanish",
