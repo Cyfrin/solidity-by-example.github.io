@@ -4,8 +4,7 @@ import path from "path"
 
 import { copy, get_files } from "./lib"
 
-async function main() {
-  const src = path.join(__dirname, "..", "contracts/src")
+async function cp(src: string) {
   const dst = path.join(__dirname, "..", "src/pages")
   const files = await get_files(src, /\.sol$/)
 
@@ -14,6 +13,11 @@ async function main() {
     assert(relative_path, "empty relative path")
     await copy(file, path.join(dst, relative_path))
   }
+}
+
+async function main() {
+  await cp(path.join(__dirname, "..", "contracts/src"))
+  await cp(path.join(__dirname, "..", "contracts/tests"))
 }
 
 main()
