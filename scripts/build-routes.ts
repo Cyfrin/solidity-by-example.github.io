@@ -2,7 +2,7 @@ import fs from "fs"
 import assert from "assert"
 import path from "path"
 import mustache from "mustache"
-import { buildRoute } from "./lib"
+import { buildRoute, get_files } from "./lib"
 
 const { readdir, stat, readFile, writeFile } = fs.promises
 
@@ -37,40 +37,13 @@ function getComponentName(routePath: string): string {
   return `component${routePath.replace(/[/.-]/g, "_")}`
 }
 
-async function getFiles(): Promise<string[]> {
-  // traverse
-  const queue = [path.join(__dirname, "..", "src/pages")]
-
-  const files: string[] = []
-  while (true) {
-    const dir = queue.pop()
-
-    if (!dir) {
-      break
-    }
-
-    const dirs = await readdir(dir)
-
-    for (const fileName of dirs) {
-      const filePath = path.join(dir, fileName)
-
-      const fileStat = await stat(filePath)
-
-      if (fileStat.isDirectory()) {
-        queue.push(filePath)
-      } else if (fileName === "index.tsx") {
-        files.push(filePath)
-      }
-    }
-  }
-
-  return files
-}
-
 async function main() {
   const dir = path.join(__dirname, "..", "src")
 
-  const files = await getFiles()
+  const files = await get_files(
+    path.join(__dirname, "..", "src/pages"),
+    new RegExp("indx.tsx")
+  )
 
   const routes: Route[] = files.map((file) => {
     const folders = file.split("/")

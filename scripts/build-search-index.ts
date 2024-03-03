@@ -1,14 +1,14 @@
 import fs from "fs"
 import assert from "assert"
 import path from "path"
-import { getFiles, parseYaml, buildRoute } from "./lib"
+import { get_files, parseYaml, buildRoute } from "./lib"
 const { writeFile } = fs.promises
 
 async function main() {
   const SEARCH_OUT_PATH = path.join(__dirname, "..", "src/search.json")
   const KEY_OUT_PATH = path.join(__dirname, "..", "src/keywords.json")
 
-  const files = await getFiles(path.join(__dirname, "..", "src/pages"), "index.md")
+  const files = await get_files(path.join(__dirname, "..", "src/pages"), new RegExp("index.md"))
 
   // keyword => pages
   // Create object without constructor

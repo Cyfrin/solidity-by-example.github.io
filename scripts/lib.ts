@@ -53,29 +53,28 @@ export async function renderTemplateToFile(
   console.log(`Created ${writeToPath}`)
 }
 
-export async function getFiles(dir: string, target: string): Promise<string[]> {
+export async function get_files(root: string, reg_exp: RegExp): Promise<string[]> {
   // traverse
-  const queue = [dir]
+  const queue = [root]
 
   const files: string[] = []
   while (true) {
-    const _dir = queue.pop()
+    const dir = queue.pop()
 
-    if (!_dir) {
+    if (!dir) {
       break
     }
 
-    const dirs = await readdir(_dir)
+    const dirs = await readdir(dir)
 
-    for (const fileName of dirs) {
-      const filePath = path.join(_dir, fileName)
+    for (const file_name of dirs) {
+      const file_path = path.join(dir, file_name)
+      const file_stat = await stat(file_path)
 
-      const fileStat = await stat(filePath)
-
-      if (fileStat.isDirectory()) {
-        queue.push(filePath)
-      } else if (fileName == target) {
-        files.push(filePath)
+      if (file_stat.isDirectory()) {
+        queue.push(file_path)
+      } else if (reg_exp.test(file_name)) {
+        files.push(file_path)
       }
     }
   }
