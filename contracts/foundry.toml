@@ -5,7 +5,7 @@ libs = ["lib"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 
-solc_version = "0.8.20"
+# solc_version = "0.8.20"
 
 [fmt]
 line_length = 80
