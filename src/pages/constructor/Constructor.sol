@@ -22,9 +22,7 @@ contract Y {
 // There are 2 ways to initialize parent contract with parameters.
 
 // Pass the parameters here in the inheritance list.
-contract B is X("Input to X"), Y("Input to Y") {
-
-}
+contract B is X("Input to X"), Y("Input to Y") {}
 
 contract C is X, Y {
     // Pass the parameters here in the constructor,

@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "DaiProxyTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjIwOwoKaW1wb3J0IHtUZXN0LCBjb25zb2xlfSBmcm9tICJmb3JnZS1zdGQvVGVzdC5zb2wiOwppbXBvcnQgIi4uLy4uL3NyYy9kYWkvRGFpUHJveHkuc29sIjsKCmFkZHJlc3MgY29uc3RhbnQgVkFUID0gMHgzNUQxYjNGM0Q3OTY2QTFERmUyMDdhYTQ1MTRDMTJhMjU5QTA0OTJCOwoKdWludDI1NiBjb25zdGFudCBXQUQgPSAxZTE4Owp1aW50MjU2IGNvbnN0YW50IFJBWSA9IDFlMjc7CnVpbnQyNTYgY29uc3RhbnQgUkFEID0gMWU0NTsKCnVpbnQyNTYgY29uc3RhbnQgRVRIX0FNT1VOVCA9IDEwMCAqIDFlMTg7CnVpbnQyNTYgY29uc3RhbnQgREFJX0FNT1VOVCA9IDEwMDAwICogMWUxODsKCi8vIGZvcmdlIHRlc3QgLS1mb3JrLXVybCAkRk9SS19VUkwgLS1tYXRjaC1wYXRoIHRlc3QvZGFpL0RhaVByb3h5LnRlc3Quc29sIC12dnYKY29udHJhY3QgRGFpUHJveHlUZXN0IGlzIFRlc3QgewogICAgSUVSQzIwIHByaXZhdGUgY29uc3RhbnQgZGFpID0gSUVSQzIwKERBSSk7CiAgICBJQ2RwTWFuYWdlciBwcml2YXRlIGNvbnN0YW50IGNkcE1hbmFnZXIgPSBJQ2RwTWFuYWdlcihDRFBfTUFOQUdFUik7CiAgICBJVmF0IHByaXZhdGUgY29uc3RhbnQgdmF0ID0gSVZhdChWQVQpOwogICAgRGFpUHJveHkgcHJpdmF0ZSBwcm94eTsKCiAgICBmdW5jdGlvbiBzZXRVcCgpIHB1YmxpYyB7CiAgICAgICAgcHJveHkgPSBuZXcgRGFpUHJveHkoKTsKCiAgICAgICAgLy8gQ2hlY2sgbWluIGJvcnJvdwogICAgICAgIElWYXQuSWxrIG1lbW9yeSBpbGsgPSB2YXQuaWxrcyhFVEhfQyk7CiAgICAgICAgYXNzZXJ0R2UoREFJX0FNT1VOVCAqIFJBWSwgaWxrLmR1c3QsICJEQUkgYm9ycm93IGFtb3VudCA8IGR1c3QiKTsKCiAgICAgICAgLy8gSW50ZXJlc3QgcmF0ZSBhY2N1bXVsYXRvcgogICAgICAgIGNvbnNvbGUubG9nKCJpbGsucmF0ZSIsIGlsay5yYXRlKTsKICAgIH0KCiAgICBmdW5jdGlvbiBwcmludChhZGRyZXNzIHVybkFkZHIpIHByaXZhdGUgewogICAgICAgIElWYXQuVXJuIG1lbW9yeSB1cm4gPSB2YXQudXJucyhFVEhfQywgdXJuQWRkcik7CiAgICAgICAgY29uc29sZS5sb2coIi0tLS0tLS0tLS0tLS0tLS0tLS0tIik7CiAgICAgICAgY29uc29sZS5sb2coInZhdWx0IGNvbGxhdGVyYWwgW3dhZF0iLCB1cm4uaW5rKTsKICAgICAgICBjb25zb2xlLmxvZygidmF1bHQgZGVidCAgICAgICBbd2FkXSIsIHVybi5hcnQpOwogICAgICAgIGNvbnNvbGUubG9nKCJEQUkgaW4gcHJveHkgICAgIFt3YWRdIiwgZGFpLmJhbGFuY2VPZihhZGRyZXNzKHByb3h5KSkpOwogICAgICAgIGNvbnNvbGUubG9nKCJFVEggaW4gcHJveHkgICAgIFt3YWRdIiwgYWRkcmVzcyhwcm94eSkuYmFsYW5jZSk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF9wcm94eSgpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiBjZHBJZCA9IHByb3h5LmNkcElkKCk7CiAgICAgICAgYWRkcmVzcyB1cm5BZGRyID0gY2RwTWFuYWdlci51cm5zKGNkcElkKTsKCiAgICAgICAgY29uc29sZS5sb2coIkJlZm9yZSBsb2NrIEVUSCIpOwogICAgICAgIHByaW50KHVybkFkZHIpOwoKICAgICAgICBwcm94eS5sb2NrRXRoe3ZhbHVlOiBFVEhfQU1PVU5UfSgpOwogICAgICAgIGNvbnNvbGUubG9nKCIiKTsKICAgICAgICBjb25zb2xlLmxvZygiQWZ0ZXIgbG9jayBFVEgiKTsKICAgICAgICBwcmludCh1cm5BZGRyKTsKCiAgICAgICAgcHJveHkuYm9ycm93KERBSV9BTU9VTlQpOwogICAgICAgIGNvbnNvbGUubG9nKCIiKTsKICAgICAgICBjb25zb2xlLmxvZygiQWZ0ZXIgYm9ycm93IERBSSIpOwogICAgICAgIHByaW50KHVybkFkZHIpOwoKICAgICAgICBwcm94eS5yZXBheShEQUlfQU1PVU5UIC8gMik7CiAgICAgICAgY29uc29sZS5sb2coIiIpOwogICAgICAgIGNvbnNvbGUubG9nKCJBZnRlciBwYXJ0aWFsIHJlcGF5IERBSSIpOwogICAgICAgIHByaW50KHVybkFkZHIpOwogICAgICAgIAogICAgICAgIHByb3h5LnJlcGF5QWxsKCk7CiAgICAgICAgY29uc29sZS5sb2coIiIpOwogICAgICAgIGNvbnNvbGUubG9nKCJBZnRlciByZXBheSBhbGwgREFJIik7CiAgICAgICAgcHJpbnQodXJuQWRkcik7CgogICAgICAgIHByb3h5LnVubG9ja0V0aChFVEhfQU1PVU5UKTsKICAgICAgICBjb25zb2xlLmxvZygiIik7CiAgICAgICAgY29uc29sZS5sb2coIkFmdGVyIHVubG9jayBFVEgiKTsKICAgICAgICBwcmludCh1cm5BZGRyKTsKICAgIH0KfQoKaW50ZXJmYWNlIElWYXQgewogICAgLy8gQ29sbGF0ZXJhbCB0eXBlCiAgICBzdHJ1Y3QgSWxrIHsKICAgICAgICB1aW50MjU2IEFydDsgLy8gVG90YWwgbm9ybWFsaXplZCBkZWJ0ICAgICAgW3dhZF0KICAgICAgICB1aW50MjU2IHJhdGU7IC8vIEFjY3VtdWxhdGVkIHJhdGVzICAgICAgICAgW3JheV0KICAgICAgICB1aW50MjU2IHNwb3Q7IC8vIFByaWNlIHdpdGggc2FmZXR5IG1hcmdpbiAgW3JheV0KICAgICAgICB1aW50MjU2IGxpbmU7IC8vIERlYnQgY2VpbGluZyAgICAgICAgICAgICAgW3JhZF0KICAgICAgICB1aW50MjU2IGR1c3Q7IC8vIFVybiBkZWJ0IGZsb29yICAgICAgICAgICAgW3JhZF0KICAgIH0KCiAgICAvLyBWYXVsdAogICAgc3RydWN0IFVybiB7CiAgICAgICAgdWludDI1NiBpbms7IC8vIExvY2tlZCBjb2xsYXRlcmFsICBbd2FkXQogICAgICAgIHVpbnQyNTYgYXJ0OyAvLyBOb3JtYWxpc2VkIGRlYnQgICAgW3dhZF0KICAgIH0KCiAgICBmdW5jdGlvbiBpbGtzKGJ5dGVzMzIgaWxrKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKElsayBtZW1vcnkpOwogICAgZnVuY3Rpb24gdXJucyhieXRlczMyIGlsaywgYWRkcmVzcyB1c2VyKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgdmlldwogICAgICAgIHJldHVybnMgKFVybiBtZW1vcnkpOwp9CgppbnRlcmZhY2UgSUNkcE1hbmFnZXIgewogICAgZnVuY3Rpb24gdXJucyh1aW50MjU2IGNkcElkKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKGFkZHJlc3MgdXJuKTsKfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjIwOwoKaW1wb3J0IHtUZXN0LCBjb25zb2xlMn0gZnJvbSAiZm9yZ2Utc3RkL1Rlc3Quc29sIjsKaW1wb3J0ICIuLi8uLi8uLi9zcmMvZGVmaS9kYWktcHJveHkvRGFpUHJveHkuc29sIjsKCmFkZHJlc3MgY29uc3RhbnQgVkFUID0gMHgzNUQxYjNGM0Q3OTY2QTFERmUyMDdhYTQ1MTRDMTJhMjU5QTA0OTJCOwoKdWludDI1NiBjb25zdGFudCBXQUQgPSAxZTE4Owp1aW50MjU2IGNvbnN0YW50IFJBWSA9IDFlMjc7CnVpbnQyNTYgY29uc3RhbnQgUkFEID0gMWU0NTsKCnVpbnQyNTYgY29uc3RhbnQgRVRIX0FNT1VOVCA9IDEwMCAqIDFlMTg7CnVpbnQyNTYgY29uc3RhbnQgREFJX0FNT1VOVCA9IDEwMDAwICogMWUxODsKCi8vIGZvcmdlIHRlc3QgLS1mb3JrLXVybCAkRk9SS19VUkwgLS1tYXRjaC1wYXRoIHRlc3QvZGFpL0RhaVByb3h5LnRlc3Quc29sIC12dnYKY29udHJhY3QgRGFpUHJveHlUZXN0IGlzIFRlc3QgewogICAgSUVSQzIwIHByaXZhdGUgY29uc3RhbnQgZGFpID0gSUVSQzIwKERBSSk7CiAgICBJQ2RwTWFuYWdlciBwcml2YXRlIGNvbnN0YW50IGNkcE1hbmFnZXIgPSBJQ2RwTWFuYWdlcihDRFBfTUFOQUdFUik7CiAgICBJVmF0IHByaXZhdGUgY29uc3RhbnQgdmF0ID0gSVZhdChWQVQpOwogICAgRGFpUHJveHkgcHJpdmF0ZSBwcm94eTsKCiAgICBmdW5jdGlvbiBzZXRVcCgpIHB1YmxpYyB7CiAgICAgICAgcHJveHkgPSBuZXcgRGFpUHJveHkoKTsKCiAgICAgICAgLy8gQ2hlY2sgbWluIGJvcnJvdwogICAgICAgIElWYXQuSWxrIG1lbW9yeSBpbGsgPSB2YXQuaWxrcyhFVEhfQyk7CiAgICAgICAgYXNzZXJ0R2UoREFJX0FNT1VOVCAqIFJBWSwgaWxrLmR1c3QsICJEQUkgYm9ycm93IGFtb3VudCA8IGR1c3QiKTsKCiAgICAgICAgLy8gSW50ZXJlc3QgcmF0ZSBhY2N1bXVsYXRvcgogICAgICAgIGNvbnNvbGUyLmxvZygiaWxrLnJhdGUiLCBpbGsucmF0ZSk7CiAgICB9CgogICAgZnVuY3Rpb24gcHJpbnQoYWRkcmVzcyB1cm5BZGRyKSBwcml2YXRlIHsKICAgICAgICBJVmF0LlVybiBtZW1vcnkgdXJuID0gdmF0LnVybnMoRVRIX0MsIHVybkFkZHIpOwogICAgICAgIGNvbnNvbGUyLmxvZygiLS0tLS0tLS0tLS0tLS0tLS0tLS0iKTsKICAgICAgICBjb25zb2xlMi5sb2coInZhdWx0IGNvbGxhdGVyYWwgW3dhZF0iLCB1cm4uaW5rKTsKICAgICAgICBjb25zb2xlMi5sb2coInZhdWx0IGRlYnQgICAgICAgW3dhZF0iLCB1cm4uYXJ0KTsKICAgICAgICBjb25zb2xlMi5sb2coIkRBSSBpbiBwcm94eSAgICAgW3dhZF0iLCBkYWkuYmFsYW5jZU9mKGFkZHJlc3MocHJveHkpKSk7CiAgICAgICAgY29uc29sZTIubG9nKCJFVEggaW4gcHJveHkgICAgIFt3YWRdIiwgYWRkcmVzcyhwcm94eSkuYmFsYW5jZSk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF9wcm94eSgpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiBjZHBJZCA9IHByb3h5LmNkcElkKCk7CiAgICAgICAgYWRkcmVzcyB1cm5BZGRyID0gY2RwTWFuYWdlci51cm5zKGNkcElkKTsKCiAgICAgICAgY29uc29sZTIubG9nKCJCZWZvcmUgbG9jayBFVEgiKTsKICAgICAgICBwcmludCh1cm5BZGRyKTsKCiAgICAgICAgcHJveHkubG9ja0V0aHt2YWx1ZTogRVRIX0FNT1VOVH0oKTsKICAgICAgICBjb25zb2xlMi5sb2coIiIpOwogICAgICAgIGNvbnNvbGUyLmxvZygiQWZ0ZXIgbG9jayBFVEgiKTsKICAgICAgICBwcmludCh1cm5BZGRyKTsKCiAgICAgICAgcHJveHkuYm9ycm93KERBSV9BTU9VTlQpOwogICAgICAgIGNvbnNvbGUyLmxvZygiIik7CiAgICAgICAgY29uc29sZTIubG9nKCJBZnRlciBib3Jyb3cgREFJIik7CiAgICAgICAgcHJpbnQodXJuQWRkcik7CgogICAgICAgIHByb3h5LnJlcGF5KERBSV9BTU9VTlQgLyAyKTsKICAgICAgICBjb25zb2xlMi5sb2coIiIpOwogICAgICAgIGNvbnNvbGUyLmxvZygiQWZ0ZXIgcGFydGlhbCByZXBheSBEQUkiKTsKICAgICAgICBwcmludCh1cm5BZGRyKTsKCiAgICAgICAgcHJveHkucmVwYXlBbGwoKTsKICAgICAgICBjb25zb2xlMi5sb2coIiIpOwogICAgICAgIGNvbnNvbGUyLmxvZygiQWZ0ZXIgcmVwYXkgYWxsIERBSSIpOwogICAgICAgIHByaW50KHVybkFkZHIpOwoKICAgICAgICBwcm94eS51bmxvY2tFdGgoRVRIX0FNT1VOVCk7CiAgICAgICAgY29uc29sZTIubG9nKCIiKTsKICAgICAgICBjb25zb2xlMi5sb2coIkFmdGVyIHVubG9jayBFVEgiKTsKICAgICAgICBwcmludCh1cm5BZGRyKTsKICAgIH0KfQoKaW50ZXJmYWNlIElWYXQgewogICAgLy8gQ29sbGF0ZXJhbCB0eXBlCiAgICBzdHJ1Y3QgSWxrIHsKICAgICAgICB1aW50MjU2IEFydDsgLy8gVG90YWwgbm9ybWFsaXplZCBkZWJ0ICAgICAgW3dhZF0KICAgICAgICB1aW50MjU2IHJhdGU7IC8vIEFjY3VtdWxhdGVkIHJhdGVzICAgICAgICAgW3JheV0KICAgICAgICB1aW50MjU2IHNwb3Q7IC8vIFByaWNlIHdpdGggc2FmZXR5IG1hcmdpbiAgW3JheV0KICAgICAgICB1aW50MjU2IGxpbmU7IC8vIERlYnQgY2VpbGluZyAgICAgICAgICAgICAgW3JhZF0KICAgICAgICB1aW50MjU2IGR1c3Q7IC8vIFVybiBkZWJ0IGZsb29yICAgICAgICAgICAgW3JhZF0KICAgIH0KCiAgICAvLyBWYXVsdAogICAgc3RydWN0IFVybiB7CiAgICAgICAgdWludDI1NiBpbms7IC8vIExvY2tlZCBjb2xsYXRlcmFsICBbd2FkXQogICAgICAgIHVpbnQyNTYgYXJ0OyAvLyBOb3JtYWxpc2VkIGRlYnQgICAgW3dhZF0KICAgIH0KCiAgICBmdW5jdGlvbiBpbGtzKGJ5dGVzMzIgaWxrKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKElsayBtZW1vcnkpOwogICAgZnVuY3Rpb24gdXJucyhieXRlczMyIGlsaywgYWRkcmVzcyB1c2VyKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgdmlldwogICAgICAgIHJldHVybnMgKFVybiBtZW1vcnkpOwp9CgppbnRlcmZhY2UgSUNkcE1hbmFnZXIgewogICAgZnVuY3Rpb24gdXJucyh1aW50MjU2IGNkcElkKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKGFkZHJlc3MgdXJuKTsKfQo=",
   },
 ]
 
@@ -156,8 +156,8 @@ const html = `<h3>Example</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> 0.8.20;</span>
 
-<span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>, <span class="hljs-title">console</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">"../../src/dai/DaiProxy.sol"</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>, <span class="hljs-title">console2</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/dai-proxy/DaiProxy.sol"</span>;
 
 <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> VAT <span class="hljs-operator">=</span> <span class="hljs-number">0x35D1b3F3D7966A1DFe207aa4514C12a259A0492B</span>;
 
@@ -183,48 +183,48 @@ const html = `<h3>Example</h3>
         assertGe(DAI_AMOUNT <span class="hljs-operator">*</span> RAY, ilk.dust, <span class="hljs-string">"DAI borrow amount &lt; dust"</span>);
 
         <span class="hljs-comment">// Interest rate accumulator</span>
-        console.log(<span class="hljs-string">"ilk.rate"</span>, ilk.rate);
+        console2.log(<span class="hljs-string">"ilk.rate"</span>, ilk.rate);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">print</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> urnAddr</span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> </span>{
         IVat.Urn <span class="hljs-keyword">memory</span> urn <span class="hljs-operator">=</span> vat.urns(ETH_C, urnAddr);
-        console.log(<span class="hljs-string">"--------------------"</span>);
-        console.log(<span class="hljs-string">"vault collateral [wad]"</span>, urn.ink);
-        console.log(<span class="hljs-string">"vault debt       [wad]"</span>, urn.art);
-        console.log(<span class="hljs-string">"DAI in proxy     [wad]"</span>, dai.balanceOf(<span class="hljs-keyword">address</span>(proxy)));
-        console.log(<span class="hljs-string">"ETH in proxy     [wad]"</span>, <span class="hljs-keyword">address</span>(proxy).<span class="hljs-built_in">balance</span>);
+        console2.log(<span class="hljs-string">"--------------------"</span>);
+        console2.log(<span class="hljs-string">"vault collateral [wad]"</span>, urn.ink);
+        console2.log(<span class="hljs-string">"vault debt       [wad]"</span>, urn.art);
+        console2.log(<span class="hljs-string">"DAI in proxy     [wad]"</span>, dai.balanceOf(<span class="hljs-keyword">address</span>(proxy)));
+        console2.log(<span class="hljs-string">"ETH in proxy     [wad]"</span>, <span class="hljs-keyword">address</span>(proxy).<span class="hljs-built_in">balance</span>);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_proxy</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">uint256</span> cdpId <span class="hljs-operator">=</span> proxy.cdpId();
         <span class="hljs-keyword">address</span> urnAddr <span class="hljs-operator">=</span> cdpManager.urns(cdpId);
 
-        console.log(<span class="hljs-string">"Before lock ETH"</span>);
+        console2.log(<span class="hljs-string">"Before lock ETH"</span>);
         print(urnAddr);
 
         proxy.lockEth{<span class="hljs-built_in">value</span>: ETH_AMOUNT}();
-        console.log(<span class="hljs-string">""</span>);
-        console.log(<span class="hljs-string">"After lock ETH"</span>);
+        console2.log(<span class="hljs-string">""</span>);
+        console2.log(<span class="hljs-string">"After lock ETH"</span>);
         print(urnAddr);
 
         proxy.borrow(DAI_AMOUNT);
-        console.log(<span class="hljs-string">""</span>);
-        console.log(<span class="hljs-string">"After borrow DAI"</span>);
+        console2.log(<span class="hljs-string">""</span>);
+        console2.log(<span class="hljs-string">"After borrow DAI"</span>);
         print(urnAddr);
 
         proxy.repay(DAI_AMOUNT <span class="hljs-operator">/</span> <span class="hljs-number">2</span>);
-        console.log(<span class="hljs-string">""</span>);
-        console.log(<span class="hljs-string">"After partial repay DAI"</span>);
+        console2.log(<span class="hljs-string">""</span>);
+        console2.log(<span class="hljs-string">"After partial repay DAI"</span>);
         print(urnAddr);
-        
+
         proxy.repayAll();
-        console.log(<span class="hljs-string">""</span>);
-        console.log(<span class="hljs-string">"After repay all DAI"</span>);
+        console2.log(<span class="hljs-string">""</span>);
+        console2.log(<span class="hljs-string">"After repay all DAI"</span>);
         print(urnAddr);
 
         proxy.unlockEth(ETH_AMOUNT);
-        console.log(<span class="hljs-string">""</span>);
-        console.log(<span class="hljs-string">"After unlock ETH"</span>);
+        console2.log(<span class="hljs-string">""</span>);
+        console2.log(<span class="hljs-string">"After unlock ETH"</span>);
         print(urnAddr);
     }
 }

@@ -32,7 +32,6 @@ function buildImportPath(folders: string[]) {
 
   return importPath.join("/")
 }
-
 function getComponentName(routePath: string): string {
   return `component${routePath.replace(/[/.-]/g, "_")}`
 }
@@ -42,7 +41,7 @@ async function main() {
 
   const files = await get_files(
     path.join(__dirname, "..", "src/pages"),
-    new RegExp("indx.tsx")
+    new RegExp("index.tsx"),
   )
 
   const routes: Route[] = files.map((file) => {

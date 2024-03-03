@@ -5,24 +5,28 @@ library IterableMapping {
     // Iterable mapping from address to uint;
     struct Map {
         address[] keys;
-        mapping(address => uint) values;
-        mapping(address => uint) indexOf;
+        mapping(address => uint256) values;
+        mapping(address => uint256) indexOf;
         mapping(address => bool) inserted;
     }
 
-    function get(Map storage map, address key) public view returns (uint) {
+    function get(Map storage map, address key) public view returns (uint256) {
         return map.values[key];
     }
 
-    function getKeyAtIndex(Map storage map, uint index) public view returns (address) {
+    function getKeyAtIndex(Map storage map, uint256 index)
+        public
+        view
+        returns (address)
+    {
         return map.keys[index];
     }
 
-    function size(Map storage map) public view returns (uint) {
+    function size(Map storage map) public view returns (uint256) {
         return map.keys.length;
     }
 
-    function set(Map storage map, address key, uint val) public {
+    function set(Map storage map, address key, uint256 val) public {
         if (map.inserted[key]) {
             map.values[key] = val;
         } else {
@@ -41,7 +45,7 @@ library IterableMapping {
         delete map.inserted[key];
         delete map.values[key];
 
-        uint index = map.indexOf[key];
+        uint256 index = map.indexOf[key];
         address lastKey = map.keys[map.keys.length - 1];
 
         map.indexOf[lastKey] = index;
@@ -64,9 +68,8 @@ contract TestIterableMap {
         map.set(address(2), 200); // update
         map.set(address(3), 300);
 
-        for (uint i = 0; i < map.size(); i++) {
+        for (uint256 i = 0; i < map.size(); i++) {
             address key = map.getKeyAtIndex(i);
-
             assert(map.get(key) == i * 100);
         }
 

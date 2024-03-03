@@ -2,11 +2,12 @@
 pragma solidity ^0.8.20;
 
 contract UniswapV3Flash {
-    address private constant FACTORY = 0x1F98431c8aD98523631AE4a59f267346ea31F984;
+    address private constant FACTORY =
+        0x1F98431c8aD98523631AE4a59f267346ea31F984;
 
     struct FlashCallbackData {
-        uint amount0;
-        uint amount1;
+        uint256 amount0;
+        uint256 amount1;
         address caller;
     }
 
@@ -21,29 +22,30 @@ contract UniswapV3Flash {
         pool = IUniswapV3Pool(getPool(_token0, _token1, _fee));
     }
 
-    function getPool(
-        address _token0,
-        address _token1,
-        uint24 _fee
-    ) public pure returns (address) {
-        PoolAddress.PoolKey memory poolKey = PoolAddress.getPoolKey(
-            _token0,
-            _token1,
-            _fee
-        );
+    function getPool(address _token0, address _token1, uint24 _fee)
+        public
+        pure
+        returns (address)
+    {
+        PoolAddress.PoolKey memory poolKey =
+            PoolAddress.getPoolKey(_token0, _token1, _fee);
         return PoolAddress.computeAddress(FACTORY, poolKey);
     }
 
-    function flash(uint amount0, uint amount1) external {
+    function flash(uint256 amount0, uint256 amount1) external {
         bytes memory data = abi.encode(
-            FlashCallbackData({amount0: amount0, amount1: amount1, caller: msg.sender})
+            FlashCallbackData({
+                amount0: amount0,
+                amount1: amount1,
+                caller: msg.sender
+            })
         );
         IUniswapV3Pool(pool).flash(address(this), amount0, amount1, data);
     }
 
     function uniswapV3FlashCallback(
-        uint fee0,
-        uint fee1,
+        uint256 fee0,
+        uint256 fee1,
         bytes calldata data
     ) external {
         require(msg.sender == address(pool), "not authorized");
@@ -72,28 +74,31 @@ library PoolAddress {
         uint24 fee;
     }
 
-    function getPoolKey(
-        address tokenA,
-        address tokenB,
-        uint24 fee
-    ) internal pure returns (PoolKey memory) {
+    function getPoolKey(address tokenA, address tokenB, uint24 fee)
+        internal
+        pure
+        returns (PoolKey memory)
+    {
         if (tokenA > tokenB) (tokenA, tokenB) = (tokenB, tokenA);
         return PoolKey({token0: tokenA, token1: tokenB, fee: fee});
     }
 
-    function computeAddress(
-        address factory,
-        PoolKey memory key
-    ) internal pure returns (address pool) {
+    function computeAddress(address factory, PoolKey memory key)
+        internal
+        pure
+        returns (address pool)
+    {
         require(key.token0 < key.token1);
         pool = address(
             uint160(
-                uint(
+                uint256(
                     keccak256(
                         abi.encodePacked(
                             hex"ff",
                             factory,
-                            keccak256(abi.encode(key.token0, key.token1, key.fee)),
+                            keccak256(
+                                abi.encode(key.token0, key.token1, key.fee)
+                            ),
                             POOL_INIT_CODE_HASH
                         )
                     )
@@ -106,35 +111,29 @@ library PoolAddress {
 interface IUniswapV3Pool {
     function flash(
         address recipient,
-        uint amount0,
-        uint amount1,
+        uint256 amount0,
+        uint256 amount1,
         bytes calldata data
     ) external;
 }
 
 interface IERC20 {
-    function totalSupply() external view returns (uint);
-
-    function balanceOf(address account) external view returns (uint);
-
-    function transfer(address recipient, uint amount) external returns (bool);
-
-    function allowance(address owner, address spender) external view returns (uint);
-
-    function approve(address spender, uint amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint amount
-    ) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed owner, address indexed spender, uint value);
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }
 
 interface IWETH is IERC20 {
     function deposit() external payable;
-
-    function withdraw(uint amount) external;
+    function withdraw(uint256 amount) external;
 }

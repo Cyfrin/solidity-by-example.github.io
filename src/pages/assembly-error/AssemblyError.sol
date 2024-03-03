@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract AssemblyError {
-    function yul_revert(uint x) public pure {
+    function yul_revert(uint256 x) public pure {
         assembly {
             // revert(p, s) - end execution
             //                revert state changes

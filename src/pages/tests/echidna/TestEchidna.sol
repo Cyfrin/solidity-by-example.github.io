@@ -5,7 +5,7 @@ pragma solidity ^0.8.20;
 echidna-test TestEchidna.sol --contract TestCounter
 */
 contract Counter {
-    uint public count;
+    uint256 public count;
 
     function inc() external {
         count += 1;
@@ -39,20 +39,20 @@ echidna-test TestEchidna.sol --contract TestAssert --check-asserts
 contract TestAssert {
     // Asserts not detected in 0.8.
     // Switch to 0.7 to test assertions
-    function test_assert(uint _i) external {
+    function test_assert(uint256 _i) external {
         assert(_i < 10);
     }
 
     // More complex example
-    function abs(uint x, uint y) private pure returns (uint) {
+    function abs(uint256 x, uint256 y) private pure returns (uint256) {
         if (x >= y) {
             return x - y;
         }
         return y - x;
     }
 
-    function test_abs(uint x, uint y) external {
-        uint z = abs(x, y);
+    function test_abs(uint256 x, uint256 y) external {
+        uint256 z = abs(x, y);
         if (x >= y) {
             assert(z <= x);
         } else {

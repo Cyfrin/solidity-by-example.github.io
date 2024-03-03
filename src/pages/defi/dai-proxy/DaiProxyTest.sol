@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
-import {Test, console} from "forge-std/Test.sol";
-import "../../src/dai/DaiProxy.sol";
+import {Test, console2} from "forge-std/Test.sol";
+import "../../../src/defi/dai-proxy/DaiProxy.sol";
 
 address constant VAT = 0x35D1b3F3D7966A1DFe207aa4514C12a259A0492B;
 
@@ -28,48 +28,48 @@ contract DaiProxyTest is Test {
         assertGe(DAI_AMOUNT * RAY, ilk.dust, "DAI borrow amount < dust");
 
         // Interest rate accumulator
-        console.log("ilk.rate", ilk.rate);
+        console2.log("ilk.rate", ilk.rate);
     }
 
     function print(address urnAddr) private {
         IVat.Urn memory urn = vat.urns(ETH_C, urnAddr);
-        console.log("--------------------");
-        console.log("vault collateral [wad]", urn.ink);
-        console.log("vault debt       [wad]", urn.art);
-        console.log("DAI in proxy     [wad]", dai.balanceOf(address(proxy)));
-        console.log("ETH in proxy     [wad]", address(proxy).balance);
+        console2.log("--------------------");
+        console2.log("vault collateral [wad]", urn.ink);
+        console2.log("vault debt       [wad]", urn.art);
+        console2.log("DAI in proxy     [wad]", dai.balanceOf(address(proxy)));
+        console2.log("ETH in proxy     [wad]", address(proxy).balance);
     }
 
     function test_proxy() public {
         uint256 cdpId = proxy.cdpId();
         address urnAddr = cdpManager.urns(cdpId);
 
-        console.log("Before lock ETH");
+        console2.log("Before lock ETH");
         print(urnAddr);
 
         proxy.lockEth{value: ETH_AMOUNT}();
-        console.log("");
-        console.log("After lock ETH");
+        console2.log("");
+        console2.log("After lock ETH");
         print(urnAddr);
 
         proxy.borrow(DAI_AMOUNT);
-        console.log("");
-        console.log("After borrow DAI");
+        console2.log("");
+        console2.log("After borrow DAI");
         print(urnAddr);
 
         proxy.repay(DAI_AMOUNT / 2);
-        console.log("");
-        console.log("After partial repay DAI");
+        console2.log("");
+        console2.log("After partial repay DAI");
         print(urnAddr);
-        
+
         proxy.repayAll();
-        console.log("");
-        console.log("After repay all DAI");
+        console2.log("");
+        console2.log("After repay all DAI");
         print(urnAddr);
 
         proxy.unlockEth(ETH_AMOUNT);
-        console.log("");
-        console.log("After unlock ETH");
+        console2.log("");
+        console2.log("After unlock ETH");
         print(urnAddr);
     }
 }

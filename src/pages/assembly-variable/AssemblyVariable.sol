@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract AssemblyVariable {
-    function yul_let() public pure returns (uint z) {
+    function yul_let() public pure returns (uint256 z) {
         assembly {
             // Language used for assembly is called Yul
             // Local variables

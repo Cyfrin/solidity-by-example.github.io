@@ -8,7 +8,7 @@ export const keywords = ["app", "application", "merkle", "tree", "cryptography"]
 export const codes = [
   {
     fileName: "MerkleTree.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IE1lcmtsZVByb29mIHsKICAgIGZ1bmN0aW9uIHZlcmlmeSgKICAgICAgICBieXRlczMyW10gbWVtb3J5IHByb29mLAogICAgICAgIGJ5dGVzMzIgcm9vdCwKICAgICAgICBieXRlczMyIGxlYWYsCiAgICAgICAgdWludCBpbmRleAogICAgKSBwdWJsaWMgcHVyZSByZXR1cm5zIChib29sKSB7CiAgICAgICAgYnl0ZXMzMiBoYXNoID0gbGVhZjsKCiAgICAgICAgZm9yICh1aW50IGkgPSAwOyBpIDwgcHJvb2YubGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgYnl0ZXMzMiBwcm9vZkVsZW1lbnQgPSBwcm9vZltpXTsKCiAgICAgICAgICAgIGlmIChpbmRleCAlIDIgPT0gMCkgewogICAgICAgICAgICAgICAgaGFzaCA9IGtlY2NhazI1NihhYmkuZW5jb2RlUGFja2VkKGhhc2gsIHByb29mRWxlbWVudCkpOwogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgICAgaGFzaCA9IGtlY2NhazI1NihhYmkuZW5jb2RlUGFja2VkKHByb29mRWxlbWVudCwgaGFzaCkpOwogICAgICAgICAgICB9CgogICAgICAgICAgICBpbmRleCA9IGluZGV4IC8gMjsKICAgICAgICB9CgogICAgICAgIHJldHVybiBoYXNoID09IHJvb3Q7CiAgICB9Cn0KCmNvbnRyYWN0IFRlc3RNZXJrbGVQcm9vZiBpcyBNZXJrbGVQcm9vZiB7CiAgICBieXRlczMyW10gcHVibGljIGhhc2hlczsKCiAgICBjb25zdHJ1Y3RvcigpIHsKICAgICAgICBzdHJpbmdbNF0gbWVtb3J5IHRyYW5zYWN0aW9ucyA9IFsKICAgICAgICAgICAgImFsaWNlIC0+IGJvYiIsCiAgICAgICAgICAgICJib2IgLT4gZGF2ZSIsCiAgICAgICAgICAgICJjYXJvbCAtPiBhbGljZSIsCiAgICAgICAgICAgICJkYXZlIC0+IGJvYiIKICAgICAgICBdOwoKICAgICAgICBmb3IgKHVpbnQgaSA9IDA7IGkgPCB0cmFuc2FjdGlvbnMubGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgaGFzaGVzLnB1c2goa2VjY2FrMjU2KGFiaS5lbmNvZGVQYWNrZWQodHJhbnNhY3Rpb25zW2ldKSkpOwogICAgICAgIH0KCiAgICAgICAgdWludCBuID0gdHJhbnNhY3Rpb25zLmxlbmd0aDsKICAgICAgICB1aW50IG9mZnNldCA9IDA7CgogICAgICAgIHdoaWxlIChuID4gMCkgewogICAgICAgICAgICBmb3IgKHVpbnQgaSA9IDA7IGkgPCBuIC0gMTsgaSArPSAyKSB7CiAgICAgICAgICAgICAgICBoYXNoZXMucHVzaCgKICAgICAgICAgICAgICAgICAgICBrZWNjYWsyNTYoCiAgICAgICAgICAgICAgICAgICAgICAgIGFiaS5lbmNvZGVQYWNrZWQoaGFzaGVzW29mZnNldCArIGldLCBoYXNoZXNbb2Zmc2V0ICsgaSArIDFdKQogICAgICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgICk7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgb2Zmc2V0ICs9IG47CiAgICAgICAgICAgIG4gPSBuIC8gMjsKICAgICAgICB9CiAgICB9CgogICAgZnVuY3Rpb24gZ2V0Um9vdCgpIHB1YmxpYyB2aWV3IHJldHVybnMgKGJ5dGVzMzIpIHsKICAgICAgICByZXR1cm4gaGFzaGVzW2hhc2hlcy5sZW5ndGggLSAxXTsKICAgIH0KCiAgICAvKiB2ZXJpZnkKICAgIDNyZCBsZWFmCiAgICAweGRjYTMzMjZhZDdlODEyMWJmOWNmOWMxMjMzM2U2YjIyNzFhYmU4MjNlYzllZGZlNDJmODEzYjFlNzY4ZmE1N2IKCiAgICByb290CiAgICAweGNjMDg2ZmNjMDM4MTg5YjQ2NDFkYjJjYzRmMWRlM2JiMTMyYWVmYmQ2NWQ1MTBkODE3NTkxNTUwOTM3ODE4YzcKCiAgICBpbmRleAogICAgMgoKICAgIHByb29mCiAgICAweDhkYTllMWM4MjBmOWRiZDE1ODlmZDY1ODU4NzJiYzEwNjM1ODg2MjU3MjllN2FiMDc5N2NmYzYzYTAwYmQ5NTAKICAgIDB4OTk1Nzg4ZmZjMTAzYjk4N2FkNTBmNWU1NzA3ZmQwOTQ0MTllYjEyZDk1NTJjYzQyM2JkMGNkODZhMzg2MTQzMwogICAgKi8KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IE1lcmtsZVByb29mIHsKICAgIGZ1bmN0aW9uIHZlcmlmeSgKICAgICAgICBieXRlczMyW10gbWVtb3J5IHByb29mLAogICAgICAgIGJ5dGVzMzIgcm9vdCwKICAgICAgICBieXRlczMyIGxlYWYsCiAgICAgICAgdWludDI1NiBpbmRleAogICAgKSBwdWJsaWMgcHVyZSByZXR1cm5zIChib29sKSB7CiAgICAgICAgYnl0ZXMzMiBoYXNoID0gbGVhZjsKCiAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgcHJvb2YubGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgYnl0ZXMzMiBwcm9vZkVsZW1lbnQgPSBwcm9vZltpXTsKCiAgICAgICAgICAgIGlmIChpbmRleCAlIDIgPT0gMCkgewogICAgICAgICAgICAgICAgaGFzaCA9IGtlY2NhazI1NihhYmkuZW5jb2RlUGFja2VkKGhhc2gsIHByb29mRWxlbWVudCkpOwogICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAgICAgaGFzaCA9IGtlY2NhazI1NihhYmkuZW5jb2RlUGFja2VkKHByb29mRWxlbWVudCwgaGFzaCkpOwogICAgICAgICAgICB9CgogICAgICAgICAgICBpbmRleCA9IGluZGV4IC8gMjsKICAgICAgICB9CgogICAgICAgIHJldHVybiBoYXNoID09IHJvb3Q7CiAgICB9Cn0KCmNvbnRyYWN0IFRlc3RNZXJrbGVQcm9vZiBpcyBNZXJrbGVQcm9vZiB7CiAgICBieXRlczMyW10gcHVibGljIGhhc2hlczsKCiAgICBjb25zdHJ1Y3RvcigpIHsKICAgICAgICBzdHJpbmdbNF0gbWVtb3J5IHRyYW5zYWN0aW9ucyA9CiAgICAgICAgICAgIFsiYWxpY2UgLT4gYm9iIiwgImJvYiAtPiBkYXZlIiwgImNhcm9sIC0+IGFsaWNlIiwgImRhdmUgLT4gYm9iIl07CgogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IHRyYW5zYWN0aW9ucy5sZW5ndGg7IGkrKykgewogICAgICAgICAgICBoYXNoZXMucHVzaChrZWNjYWsyNTYoYWJpLmVuY29kZVBhY2tlZCh0cmFuc2FjdGlvbnNbaV0pKSk7CiAgICAgICAgfQoKICAgICAgICB1aW50MjU2IG4gPSB0cmFuc2FjdGlvbnMubGVuZ3RoOwogICAgICAgIHVpbnQyNTYgb2Zmc2V0ID0gMDsKCiAgICAgICAgd2hpbGUgKG4gPiAwKSB7CiAgICAgICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IG4gLSAxOyBpICs9IDIpIHsKICAgICAgICAgICAgICAgIGhhc2hlcy5wdXNoKAogICAgICAgICAgICAgICAgICAgIGtlY2NhazI1NigKICAgICAgICAgICAgICAgICAgICAgICAgYWJpLmVuY29kZVBhY2tlZCgKICAgICAgICAgICAgICAgICAgICAgICAgICAgIGhhc2hlc1tvZmZzZXQgKyBpXSwgaGFzaGVzW29mZnNldCArIGkgKyAxXQogICAgICAgICAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICAgICAgICAgKQogICAgICAgICAgICAgICAgKTsKICAgICAgICAgICAgfQogICAgICAgICAgICBvZmZzZXQgKz0gbjsKICAgICAgICAgICAgbiA9IG4gLyAyOwogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiBnZXRSb290KCkgcHVibGljIHZpZXcgcmV0dXJucyAoYnl0ZXMzMikgewogICAgICAgIHJldHVybiBoYXNoZXNbaGFzaGVzLmxlbmd0aCAtIDFdOwogICAgfQoKICAgIC8qIHZlcmlmeQogICAgM3JkIGxlYWYKICAgIDB4ZGNhMzMyNmFkN2U4MTIxYmY5Y2Y5YzEyMzMzZTZiMjI3MWFiZTgyM2VjOWVkZmU0MmY4MTNiMWU3NjhmYTU3YgoKICAgIHJvb3QKICAgIDB4Y2MwODZmY2MwMzgxODliNDY0MWRiMmNjNGYxZGUzYmIxMzJhZWZiZDY1ZDUxMGQ4MTc1OTE1NTA5Mzc4MThjNwoKICAgIGluZGV4CiAgICAyCgogICAgcHJvb2YKICAgIDB4OGRhOWUxYzgyMGY5ZGJkMTU4OWZkNjU4NTg3MmJjMTA2MzU4ODYyNTcyOWU3YWIwNzk3Y2ZjNjNhMDBiZDk1MAogICAgMHg5OTU3ODhmZmMxMDNiOTg3YWQ1MGY1ZTU3MDdmZDA5NDQxOWViMTJkOTU1MmNjNDIzYmQwY2Q4NmEzODYxNDMzCiAgICAqLwp9Cg==",
   },
 ]
 
@@ -22,11 +22,11 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
         <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof,
         <span class="hljs-keyword">bytes32</span> root,
         <span class="hljs-keyword">bytes32</span> leaf,
-        <span class="hljs-keyword">uint</span> index
+        <span class="hljs-keyword">uint256</span> index
     </span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>) </span>{
         <span class="hljs-keyword">bytes32</span> hash <span class="hljs-operator">=</span> leaf;
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> proof.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> proof.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
             <span class="hljs-keyword">bytes32</span> proofElement <span class="hljs-operator">=</span> proof[i];
 
             <span class="hljs-keyword">if</span> (index <span class="hljs-operator">%</span> <span class="hljs-number">2</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
@@ -46,25 +46,23 @@ const html = `<p>Merkle tree allows you to cryptographically prove that an eleme
     <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">public</span> hashes;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">string</span>[<span class="hljs-number">4</span>] <span class="hljs-keyword">memory</span> transactions <span class="hljs-operator">=</span> [
-            <span class="hljs-string">"alice -&gt; bob"</span>,
-            <span class="hljs-string">"bob -&gt; dave"</span>,
-            <span class="hljs-string">"carol -&gt; alice"</span>,
-            <span class="hljs-string">"dave -&gt; bob"</span>
-        ];
+        <span class="hljs-keyword">string</span>[<span class="hljs-number">4</span>] <span class="hljs-keyword">memory</span> transactions <span class="hljs-operator">=</span>
+            [<span class="hljs-string">"alice -&gt; bob"</span>, <span class="hljs-string">"bob -&gt; dave"</span>, <span class="hljs-string">"carol -&gt; alice"</span>, <span class="hljs-string">"dave -&gt; bob"</span>];
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> transactions.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> transactions.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
             hashes.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(transactions[i])));
         }
 
-        <span class="hljs-keyword">uint</span> n <span class="hljs-operator">=</span> transactions.<span class="hljs-built_in">length</span>;
-        <span class="hljs-keyword">uint</span> offset <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">uint256</span> n <span class="hljs-operator">=</span> transactions.<span class="hljs-built_in">length</span>;
+        <span class="hljs-keyword">uint256</span> offset <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
         <span class="hljs-keyword">while</span> (n <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>) {
-            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> n <span class="hljs-operator">-</span> <span class="hljs-number">1</span>; i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> n <span class="hljs-operator">-</span> <span class="hljs-number">1</span>; i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>) {
                 hashes.<span class="hljs-built_in">push</span>(
                     <span class="hljs-built_in">keccak256</span>(
-                        <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(hashes[offset <span class="hljs-operator">+</span> i], hashes[offset <span class="hljs-operator">+</span> i <span class="hljs-operator">+</span> <span class="hljs-number">1</span>])
+                        <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(
+                            hashes[offset <span class="hljs-operator">+</span> i], hashes[offset <span class="hljs-operator">+</span> i <span class="hljs-operator">+</span> <span class="hljs-number">1</span>]
+                        )
                     )
                 );
             }

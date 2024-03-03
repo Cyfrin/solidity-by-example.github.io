@@ -24,7 +24,7 @@ export const codes = [
   },
   {
     fileName: "Structs.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFRvZG9zIHsKICAgIHN0cnVjdCBUb2RvIHsKICAgICAgICBzdHJpbmcgdGV4dDsKICAgICAgICBib29sIGNvbXBsZXRlZDsKICAgIH0KCiAgICAvLyBBbiBhcnJheSBvZiAnVG9kbycgc3RydWN0cwogICAgVG9kb1tdIHB1YmxpYyB0b2RvczsKCiAgICBmdW5jdGlvbiBjcmVhdGUoc3RyaW5nIGNhbGxkYXRhIF90ZXh0KSBwdWJsaWMgewogICAgICAgIC8vIDMgd2F5cyB0byBpbml0aWFsaXplIGEgc3RydWN0CiAgICAgICAgLy8gLSBjYWxsaW5nIGl0IGxpa2UgYSBmdW5jdGlvbgogICAgICAgIHRvZG9zLnB1c2goVG9kbyhfdGV4dCwgZmFsc2UpKTsKCiAgICAgICAgLy8ga2V5IHZhbHVlIG1hcHBpbmcKICAgICAgICB0b2Rvcy5wdXNoKFRvZG8oe3RleHQ6IF90ZXh0LCBjb21wbGV0ZWQ6IGZhbHNlfSkpOwoKICAgICAgICAvLyBpbml0aWFsaXplIGFuIGVtcHR5IHN0cnVjdCBhbmQgdGhlbiB1cGRhdGUgaXQKICAgICAgICBUb2RvIG1lbW9yeSB0b2RvOwogICAgICAgIHRvZG8udGV4dCA9IF90ZXh0OwogICAgICAgIC8vIHRvZG8uY29tcGxldGVkIGluaXRpYWxpemVkIHRvIGZhbHNlCgogICAgICAgIHRvZG9zLnB1c2godG9kbyk7CiAgICB9CgogICAgLy8gU29saWRpdHkgYXV0b21hdGljYWxseSBjcmVhdGVkIGEgZ2V0dGVyIGZvciAndG9kb3MnIHNvCiAgICAvLyB5b3UgZG9uJ3QgYWN0dWFsbHkgbmVlZCB0aGlzIGZ1bmN0aW9uLgogICAgZnVuY3Rpb24gZ2V0KHVpbnQgX2luZGV4KSBwdWJsaWMgdmlldyByZXR1cm5zIChzdHJpbmcgbWVtb3J5IHRleHQsIGJvb2wgY29tcGxldGVkKSB7CiAgICAgICAgVG9kbyBzdG9yYWdlIHRvZG8gPSB0b2Rvc1tfaW5kZXhdOwogICAgICAgIHJldHVybiAodG9kby50ZXh0LCB0b2RvLmNvbXBsZXRlZCk7CiAgICB9CgogICAgLy8gdXBkYXRlIHRleHQKICAgIGZ1bmN0aW9uIHVwZGF0ZVRleHQodWludCBfaW5kZXgsIHN0cmluZyBjYWxsZGF0YSBfdGV4dCkgcHVibGljIHsKICAgICAgICBUb2RvIHN0b3JhZ2UgdG9kbyA9IHRvZG9zW19pbmRleF07CiAgICAgICAgdG9kby50ZXh0ID0gX3RleHQ7CiAgICB9CgogICAgLy8gdXBkYXRlIGNvbXBsZXRlZAogICAgZnVuY3Rpb24gdG9nZ2xlQ29tcGxldGVkKHVpbnQgX2luZGV4KSBwdWJsaWMgewogICAgICAgIFRvZG8gc3RvcmFnZSB0b2RvID0gdG9kb3NbX2luZGV4XTsKICAgICAgICB0b2RvLmNvbXBsZXRlZCA9ICF0b2RvLmNvbXBsZXRlZDsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFRvZG9zIHsKICAgIHN0cnVjdCBUb2RvIHsKICAgICAgICBzdHJpbmcgdGV4dDsKICAgICAgICBib29sIGNvbXBsZXRlZDsKICAgIH0KCiAgICAvLyBBbiBhcnJheSBvZiAnVG9kbycgc3RydWN0cwogICAgVG9kb1tdIHB1YmxpYyB0b2RvczsKCiAgICBmdW5jdGlvbiBjcmVhdGUoc3RyaW5nIGNhbGxkYXRhIF90ZXh0KSBwdWJsaWMgewogICAgICAgIC8vIDMgd2F5cyB0byBpbml0aWFsaXplIGEgc3RydWN0CiAgICAgICAgLy8gLSBjYWxsaW5nIGl0IGxpa2UgYSBmdW5jdGlvbgogICAgICAgIHRvZG9zLnB1c2goVG9kbyhfdGV4dCwgZmFsc2UpKTsKCiAgICAgICAgLy8ga2V5IHZhbHVlIG1hcHBpbmcKICAgICAgICB0b2Rvcy5wdXNoKFRvZG8oe3RleHQ6IF90ZXh0LCBjb21wbGV0ZWQ6IGZhbHNlfSkpOwoKICAgICAgICAvLyBpbml0aWFsaXplIGFuIGVtcHR5IHN0cnVjdCBhbmQgdGhlbiB1cGRhdGUgaXQKICAgICAgICBUb2RvIG1lbW9yeSB0b2RvOwogICAgICAgIHRvZG8udGV4dCA9IF90ZXh0OwogICAgICAgIC8vIHRvZG8uY29tcGxldGVkIGluaXRpYWxpemVkIHRvIGZhbHNlCgogICAgICAgIHRvZG9zLnB1c2godG9kbyk7CiAgICB9CgogICAgLy8gU29saWRpdHkgYXV0b21hdGljYWxseSBjcmVhdGVkIGEgZ2V0dGVyIGZvciAndG9kb3MnIHNvCiAgICAvLyB5b3UgZG9uJ3QgYWN0dWFsbHkgbmVlZCB0aGlzIGZ1bmN0aW9uLgogICAgZnVuY3Rpb24gZ2V0KHVpbnQyNTYgX2luZGV4KQogICAgICAgIHB1YmxpYwogICAgICAgIHZpZXcKICAgICAgICByZXR1cm5zIChzdHJpbmcgbWVtb3J5IHRleHQsIGJvb2wgY29tcGxldGVkKQogICAgewogICAgICAgIFRvZG8gc3RvcmFnZSB0b2RvID0gdG9kb3NbX2luZGV4XTsKICAgICAgICByZXR1cm4gKHRvZG8udGV4dCwgdG9kby5jb21wbGV0ZWQpOwogICAgfQoKICAgIC8vIHVwZGF0ZSB0ZXh0CiAgICBmdW5jdGlvbiB1cGRhdGVUZXh0KHVpbnQyNTYgX2luZGV4LCBzdHJpbmcgY2FsbGRhdGEgX3RleHQpIHB1YmxpYyB7CiAgICAgICAgVG9kbyBzdG9yYWdlIHRvZG8gPSB0b2Rvc1tfaW5kZXhdOwogICAgICAgIHRvZG8udGV4dCA9IF90ZXh0OwogICAgfQoKICAgIC8vIHVwZGF0ZSBjb21wbGV0ZWQKICAgIGZ1bmN0aW9uIHRvZ2dsZUNvbXBsZXRlZCh1aW50MjU2IF9pbmRleCkgcHVibGljIHsKICAgICAgICBUb2RvIHN0b3JhZ2UgdG9kbyA9IHRvZG9zW19pbmRleF07CiAgICAgICAgdG9kby5jb21wbGV0ZWQgPSAhdG9kby5jb21wbGV0ZWQ7CiAgICB9Cn0K",
   },
 ]
 
@@ -61,19 +61,23 @@ const html = `<p>You can define your own type by creating a <code>struct</code>.
 
     <span class="hljs-comment">// Solidity automatically created a getter for &#x27;todos&#x27; so</span>
     <span class="hljs-comment">// you don&#x27;t actually need this function.</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> text, <span class="hljs-keyword">bool</span> completed</span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _index</span>)
+        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">view</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> text, <span class="hljs-keyword">bool</span> completed</span>)
+    </span>{
         Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
         <span class="hljs-keyword">return</span> (todo.text, todo.completed);
     }
 
     <span class="hljs-comment">// update text</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateText</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateText</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _index, <span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _text</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
         todo.text <span class="hljs-operator">=</span> _text;
     }
 
     <span class="hljs-comment">// update completed</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleCompleted</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleCompleted</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _index</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         Todo <span class="hljs-keyword">storage</span> todo <span class="hljs-operator">=</span> todos[_index];
         todo.completed <span class="hljs-operator">=</span> <span class="hljs-operator">!</span>todo.completed;
     }

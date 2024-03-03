@@ -22,17 +22,17 @@ contract Payable {
     // Function to withdraw all Ether from this contract.
     function withdraw() public {
         // get the amount of Ether stored in this contract
-        uint amount = address(this).balance;
+        uint256 amount = address(this).balance;
 
         // send all Ether to owner
-        (bool success, ) = owner.call{value: amount}("");
+        (bool success,) = owner.call{value: amount}("");
         require(success, "Failed to send Ether");
     }
 
     // Function to transfer Ether from this contract to address from input
-    function transfer(address payable _to, uint _amount) public {
+    function transfer(address payable _to, uint256 _amount) public {
         // Note that "to" is declared as payable
-        (bool success, ) = _to.call{value: _amount}("");
+        (bool success,) = _to.call{value: _amount}("");
         require(success, "Failed to send Ether");
     }
 }

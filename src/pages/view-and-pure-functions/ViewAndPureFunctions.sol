@@ -2,15 +2,15 @@
 pragma solidity ^0.8.20;
 
 contract ViewAndPure {
-    uint public x = 1;
+    uint256 public x = 1;
 
     // Promise not to modify the state.
-    function addToX(uint y) public view returns (uint) {
+    function addToX(uint256 y) public view returns (uint256) {
         return x + y;
     }
 
     // Promise not to modify or read from the state.
-    function add(uint i, uint j) public pure returns (uint) {
+    function add(uint256 i, uint256 j) public pure returns (uint256) {
         return i + j;
     }
 }

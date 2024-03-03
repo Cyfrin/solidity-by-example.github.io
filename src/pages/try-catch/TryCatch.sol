@@ -11,7 +11,7 @@ contract Foo {
         owner = _owner;
     }
 
-    function myFunc(uint x) public pure returns (string memory) {
+    function myFunc(uint256 x) public pure returns (string memory) {
         require(x != 0, "require failed");
         return "my func was called";
     }
@@ -31,7 +31,7 @@ contract Bar {
     // Example of try / catch with external call
     // tryCatchExternalCall(0) => Log("external call failed")
     // tryCatchExternalCall(1) => Log("my func was called")
-    function tryCatchExternalCall(uint _i) public {
+    function tryCatchExternalCall(uint256 _i) public {
         try foo.myFunc(_i) returns (string memory result) {
             emit Log(result);
         } catch {

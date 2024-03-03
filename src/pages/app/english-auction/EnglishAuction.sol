@@ -2,30 +2,30 @@
 pragma solidity ^0.8.20;
 
 interface IERC721 {
-    function safeTransferFrom(address from, address to, uint tokenId) external;
-
-    function transferFrom(address, address, uint) external;
+    function safeTransferFrom(address from, address to, uint256 tokenId)
+        external;
+    function transferFrom(address, address, uint256) external;
 }
 
 contract EnglishAuction {
     event Start();
-    event Bid(address indexed sender, uint amount);
-    event Withdraw(address indexed bidder, uint amount);
-    event End(address winner, uint amount);
+    event Bid(address indexed sender, uint256 amount);
+    event Withdraw(address indexed bidder, uint256 amount);
+    event End(address winner, uint256 amount);
 
     IERC721 public nft;
-    uint public nftId;
+    uint256 public nftId;
 
     address payable public seller;
-    uint public endAt;
+    uint256 public endAt;
     bool public started;
     bool public ended;
 
     address public highestBidder;
-    uint public highestBid;
-    mapping(address => uint) public bids;
+    uint256 public highestBid;
+    mapping(address => uint256) public bids;
 
-    constructor(address _nft, uint _nftId, uint _startingBid) {
+    constructor(address _nft, uint256 _nftId, uint256 _startingBid) {
         nft = IERC721(_nft);
         nftId = _nftId;
 
@@ -60,7 +60,7 @@ contract EnglishAuction {
     }
 
     function withdraw() external {
-        uint bal = bids[msg.sender];
+        uint256 bal = bids[msg.sender];
         bids[msg.sender] = 0;
         payable(msg.sender).transfer(bal);
 

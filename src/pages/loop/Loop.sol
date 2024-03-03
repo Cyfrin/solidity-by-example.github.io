@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 contract Loop {
     function loop() public {
         // for loop
-        for (uint i = 0; i < 10; i++) {
+        for (uint256 i = 0; i < 10; i++) {
             if (i == 3) {
                 // Skip to next iteration with continue
                 continue;
@@ -16,7 +16,7 @@ contract Loop {
         }
 
         // while loop
-        uint j;
+        uint256 j;
         while (j < 10) {
             j++;
         }

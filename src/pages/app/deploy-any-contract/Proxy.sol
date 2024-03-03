@@ -6,7 +6,11 @@ contract Proxy {
 
     receive() external payable {}
 
-    function deploy(bytes memory _code) external payable returns (address addr) {
+    function deploy(bytes memory _code)
+        external
+        payable
+        returns (address addr)
+    {
         assembly {
             // create(v, p, n)
             // v = amount of ETH to send
@@ -21,7 +25,7 @@ contract Proxy {
     }
 
     function execute(address _target, bytes memory _data) external payable {
-        (bool success, ) = _target.call{value: msg.value}(_data);
+        (bool success,) = _target.call{value: msg.value}(_data);
         require(success, "failed");
     }
 }
@@ -37,11 +41,11 @@ contract TestContract1 {
 
 contract TestContract2 {
     address public owner = msg.sender;
-    uint public value = msg.value;
-    uint public x;
-    uint public y;
+    uint256 public value = msg.value;
+    uint256 public x;
+    uint256 public y;
 
-    constructor(uint _x, uint _y) payable {
+    constructor(uint256 _x, uint256 _y) payable {
         x = _x;
         y = _y;
     }
@@ -53,7 +57,11 @@ contract Helper {
         return bytecode;
     }
 
-    function getBytecode2(uint _x, uint _y) external pure returns (bytes memory) {
+    function getBytecode2(uint256 _x, uint256 _y)
+        external
+        pure
+        returns (bytes memory)
+    {
         bytes memory bytecode = type(TestContract2).creationCode;
         return abi.encodePacked(bytecode, abi.encode(_x, _y));
     }

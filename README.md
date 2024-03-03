@@ -29,6 +29,8 @@ TODO: code split / dynamic imports
 
 ```shell
 ## Deploy ##
+# copy files from contracts
+npx ts-node scripts/copy.tsx
 # md to react
 npx ts-node --project ./scripts/tsconfig.json scripts/md-to-react.ts src/pages/array
 

@@ -8,7 +8,7 @@ export const keywords = ["function", "functions", "selector", "selectors"]
 export const codes = [
   {
     fileName: "FunctionSelector.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEZ1bmN0aW9uU2VsZWN0b3IgewogICAgLyoKICAgICJ0cmFuc2ZlcihhZGRyZXNzLHVpbnQyNTYpIgogICAgMHhhOTA1OWNiYgogICAgInRyYW5zZmVyRnJvbShhZGRyZXNzLGFkZHJlc3MsdWludDI1NikiCiAgICAweDIzYjg3MmRkCiAgICAqLwogICAgZnVuY3Rpb24gZ2V0U2VsZWN0b3Ioc3RyaW5nIGNhbGxkYXRhIF9mdW5jKSBleHRlcm5hbCBwdXJlIHJldHVybnMgKGJ5dGVzNCkgewogICAgICAgIHJldHVybiBieXRlczQoa2VjY2FrMjU2KGJ5dGVzKF9mdW5jKSkpOwogICAgfQp9Cg==",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEZ1bmN0aW9uU2VsZWN0b3IgewogICAgLyoKICAgICJ0cmFuc2ZlcihhZGRyZXNzLHVpbnQyNTYpIgogICAgMHhhOTA1OWNiYgogICAgInRyYW5zZmVyRnJvbShhZGRyZXNzLGFkZHJlc3MsdWludDI1NikiCiAgICAweDIzYjg3MmRkCiAgICAqLwogICAgZnVuY3Rpb24gZ2V0U2VsZWN0b3Ioc3RyaW5nIGNhbGxkYXRhIF9mdW5jKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJ5dGVzNCkKICAgIHsKICAgICAgICByZXR1cm4gYnl0ZXM0KGtlY2NhazI1NihieXRlcyhfZnVuYykpKTsKICAgIH0KfQo=",
   },
 ]
 
@@ -29,7 +29,11 @@ const html = `<p>When a function is called, the first 4 bytes of <code>calldata<
     "transferFrom(address,address,uint256)"
     0x23b872dd
     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSelector</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _func</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes4</span></span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSelector</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">calldata</span> _func</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes4</span></span>)
+    </span>{
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">bytes4</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-keyword">bytes</span>(_func)));
     }
 }

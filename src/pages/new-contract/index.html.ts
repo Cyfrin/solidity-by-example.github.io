@@ -18,7 +18,7 @@ export const keywords = [
 export const codes = [
   {
     fileName: "NewContract.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IENhciB7CiAgICBhZGRyZXNzIHB1YmxpYyBvd25lcjsKICAgIHN0cmluZyBwdWJsaWMgbW9kZWw7CiAgICBhZGRyZXNzIHB1YmxpYyBjYXJBZGRyOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX293bmVyLCBzdHJpbmcgbWVtb3J5IF9tb2RlbCkgcGF5YWJsZSB7CiAgICAgICAgb3duZXIgPSBfb3duZXI7CiAgICAgICAgbW9kZWwgPSBfbW9kZWw7CiAgICAgICAgY2FyQWRkciA9IGFkZHJlc3ModGhpcyk7CiAgICB9Cn0KCmNvbnRyYWN0IENhckZhY3RvcnkgewogICAgQ2FyW10gcHVibGljIGNhcnM7CgogICAgZnVuY3Rpb24gY3JlYXRlKGFkZHJlc3MgX293bmVyLCBzdHJpbmcgbWVtb3J5IF9tb2RlbCkgcHVibGljIHsKICAgICAgICBDYXIgY2FyID0gbmV3IENhcihfb3duZXIsIF9tb2RlbCk7CiAgICAgICAgY2Fycy5wdXNoKGNhcik7CiAgICB9CgogICAgZnVuY3Rpb24gY3JlYXRlQW5kU2VuZEV0aGVyKGFkZHJlc3MgX293bmVyLCBzdHJpbmcgbWVtb3J5IF9tb2RlbCkgcHVibGljIHBheWFibGUgewogICAgICAgIENhciBjYXIgPSAobmV3IENhcil7dmFsdWU6IG1zZy52YWx1ZX0oX293bmVyLCBfbW9kZWwpOwogICAgICAgIGNhcnMucHVzaChjYXIpOwogICAgfQoKICAgIGZ1bmN0aW9uIGNyZWF0ZTIoYWRkcmVzcyBfb3duZXIsIHN0cmluZyBtZW1vcnkgX21vZGVsLCBieXRlczMyIF9zYWx0KSBwdWJsaWMgewogICAgICAgIENhciBjYXIgPSAobmV3IENhcil7c2FsdDogX3NhbHR9KF9vd25lciwgX21vZGVsKTsKICAgICAgICBjYXJzLnB1c2goY2FyKTsKICAgIH0KCiAgICBmdW5jdGlvbiBjcmVhdGUyQW5kU2VuZEV0aGVyKAogICAgICAgIGFkZHJlc3MgX293bmVyLAogICAgICAgIHN0cmluZyBtZW1vcnkgX21vZGVsLAogICAgICAgIGJ5dGVzMzIgX3NhbHQKICAgICkgcHVibGljIHBheWFibGUgewogICAgICAgIENhciBjYXIgPSAobmV3IENhcil7dmFsdWU6IG1zZy52YWx1ZSwgc2FsdDogX3NhbHR9KF9vd25lciwgX21vZGVsKTsKICAgICAgICBjYXJzLnB1c2goY2FyKTsKICAgIH0KCiAgICBmdW5jdGlvbiBnZXRDYXIoCiAgICAgICAgdWludCBfaW5kZXgKICAgICkKICAgICAgICBwdWJsaWMKICAgICAgICB2aWV3CiAgICAgICAgcmV0dXJucyAoYWRkcmVzcyBvd25lciwgc3RyaW5nIG1lbW9yeSBtb2RlbCwgYWRkcmVzcyBjYXJBZGRyLCB1aW50IGJhbGFuY2UpCiAgICB7CiAgICAgICAgQ2FyIGNhciA9IGNhcnNbX2luZGV4XTsKCiAgICAgICAgcmV0dXJuIChjYXIub3duZXIoKSwgY2FyLm1vZGVsKCksIGNhci5jYXJBZGRyKCksIGFkZHJlc3MoY2FyKS5iYWxhbmNlKTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IENhciB7CiAgICBhZGRyZXNzIHB1YmxpYyBvd25lcjsKICAgIHN0cmluZyBwdWJsaWMgbW9kZWw7CiAgICBhZGRyZXNzIHB1YmxpYyBjYXJBZGRyOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX293bmVyLCBzdHJpbmcgbWVtb3J5IF9tb2RlbCkgcGF5YWJsZSB7CiAgICAgICAgb3duZXIgPSBfb3duZXI7CiAgICAgICAgbW9kZWwgPSBfbW9kZWw7CiAgICAgICAgY2FyQWRkciA9IGFkZHJlc3ModGhpcyk7CiAgICB9Cn0KCmNvbnRyYWN0IENhckZhY3RvcnkgewogICAgQ2FyW10gcHVibGljIGNhcnM7CgogICAgZnVuY3Rpb24gY3JlYXRlKGFkZHJlc3MgX293bmVyLCBzdHJpbmcgbWVtb3J5IF9tb2RlbCkgcHVibGljIHsKICAgICAgICBDYXIgY2FyID0gbmV3IENhcihfb3duZXIsIF9tb2RlbCk7CiAgICAgICAgY2Fycy5wdXNoKGNhcik7CiAgICB9CgogICAgZnVuY3Rpb24gY3JlYXRlQW5kU2VuZEV0aGVyKGFkZHJlc3MgX293bmVyLCBzdHJpbmcgbWVtb3J5IF9tb2RlbCkKICAgICAgICBwdWJsaWMKICAgICAgICBwYXlhYmxlCiAgICB7CiAgICAgICAgQ2FyIGNhciA9IChuZXcgQ2FyKXt2YWx1ZTogbXNnLnZhbHVlfShfb3duZXIsIF9tb2RlbCk7CiAgICAgICAgY2Fycy5wdXNoKGNhcik7CiAgICB9CgogICAgZnVuY3Rpb24gY3JlYXRlMihhZGRyZXNzIF9vd25lciwgc3RyaW5nIG1lbW9yeSBfbW9kZWwsIGJ5dGVzMzIgX3NhbHQpCiAgICAgICAgcHVibGljCiAgICB7CiAgICAgICAgQ2FyIGNhciA9IChuZXcgQ2FyKXtzYWx0OiBfc2FsdH0oX293bmVyLCBfbW9kZWwpOwogICAgICAgIGNhcnMucHVzaChjYXIpOwogICAgfQoKICAgIGZ1bmN0aW9uIGNyZWF0ZTJBbmRTZW5kRXRoZXIoCiAgICAgICAgYWRkcmVzcyBfb3duZXIsCiAgICAgICAgc3RyaW5nIG1lbW9yeSBfbW9kZWwsCiAgICAgICAgYnl0ZXMzMiBfc2FsdAogICAgKSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgQ2FyIGNhciA9IChuZXcgQ2FyKXt2YWx1ZTogbXNnLnZhbHVlLCBzYWx0OiBfc2FsdH0oX293bmVyLCBfbW9kZWwpOwogICAgICAgIGNhcnMucHVzaChjYXIpOwogICAgfQoKICAgIGZ1bmN0aW9uIGdldENhcih1aW50MjU2IF9pbmRleCkKICAgICAgICBwdWJsaWMKICAgICAgICB2aWV3CiAgICAgICAgcmV0dXJucyAoCiAgICAgICAgICAgIGFkZHJlc3Mgb3duZXIsCiAgICAgICAgICAgIHN0cmluZyBtZW1vcnkgbW9kZWwsCiAgICAgICAgICAgIGFkZHJlc3MgY2FyQWRkciwKICAgICAgICAgICAgdWludDI1NiBiYWxhbmNlCiAgICAgICAgKQogICAgewogICAgICAgIENhciBjYXIgPSBjYXJzW19pbmRleF07CgogICAgICAgIHJldHVybiAoY2FyLm93bmVyKCksIGNhci5tb2RlbCgpLCBjYXIuY2FyQWRkcigpLCBhZGRyZXNzKGNhcikuYmFsYW5jZSk7CiAgICB9Cn0K",
   },
 ]
 
@@ -46,12 +46,17 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createAndSendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createAndSendEther</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model</span>)
+        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
+    </span>{
         Car car <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">value</span>: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">value</span>}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create2</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model, <span class="hljs-keyword">bytes32</span> _salt</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create2</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _model, <span class="hljs-keyword">bytes32</span> _salt</span>)
+        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+    </span>{
         Car car <span class="hljs-operator">=</span> (<span class="hljs-keyword">new</span> Car){<span class="hljs-built_in">salt</span>: _salt}(_owner, _model);
         cars.<span class="hljs-built_in">push</span>(car);
     }
@@ -65,12 +70,15 @@ const html = `<p>Contracts can be created by other contracts using the <code>new
         cars.<span class="hljs-built_in">push</span>(car);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCar</span>(<span class="hljs-params">
-        <span class="hljs-keyword">uint</span> _index
-    </span>)
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCar</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _index</span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">view</span></span>
-        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> model, <span class="hljs-keyword">address</span> carAddr, <span class="hljs-keyword">uint</span> balance</span>)
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params">
+            <span class="hljs-keyword">address</span> owner,
+            <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> model,
+            <span class="hljs-keyword">address</span> carAddr,
+            <span class="hljs-keyword">uint256</span> balance
+        </span>)
     </span>{
         Car car <span class="hljs-operator">=</span> cars[_index];
 

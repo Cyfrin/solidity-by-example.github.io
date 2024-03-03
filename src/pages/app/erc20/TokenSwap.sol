@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/IERC20.sol";
+import "./IERC20.sol";
 
 /*
 How to swap tokens
@@ -19,18 +19,18 @@ How to swap tokens
 contract TokenSwap {
     IERC20 public token1;
     address public owner1;
-    uint public amount1;
+    uint256 public amount1;
     IERC20 public token2;
     address public owner2;
-    uint public amount2;
+    uint256 public amount2;
 
     constructor(
         address _token1,
         address _owner1,
-        uint _amount1,
+        uint256 _amount1,
         address _token2,
         address _owner2,
-        uint _amount2
+        uint256 _amount2
     ) {
         token1 = IERC20(_token1);
         owner1 = _owner1;
@@ -59,7 +59,7 @@ contract TokenSwap {
         IERC20 token,
         address sender,
         address recipient,
-        uint amount
+        uint256 amount
     ) private {
         bool sent = token.transferFrom(sender, recipient, amount);
         require(sent, "Token transfer failed");

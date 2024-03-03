@@ -19,7 +19,7 @@ contract Factory {
 }
 
 interface IContract {
-    function getMeaningOfLife() external view returns (uint);
+    function getMeaningOfLife() external view returns (uint256);
 }
 
 // https://www.evm.codes/playground

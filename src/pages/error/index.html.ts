@@ -8,11 +8,11 @@ export const keywords = ["error", "errors", "require", "revert", "assert"]
 export const codes = [
   {
     fileName: "Account.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEFjY291bnQgewogICAgdWludCBwdWJsaWMgYmFsYW5jZTsKICAgIHVpbnQgcHVibGljIGNvbnN0YW50IE1BWF9VSU5UID0gMiAqKiAyNTYgLSAxOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludCBfYW1vdW50KSBwdWJsaWMgewogICAgICAgIHVpbnQgb2xkQmFsYW5jZSA9IGJhbGFuY2U7CiAgICAgICAgdWludCBuZXdCYWxhbmNlID0gYmFsYW5jZSArIF9hbW91bnQ7CgogICAgICAgIC8vIGJhbGFuY2UgKyBfYW1vdW50IGRvZXMgbm90IG92ZXJmbG93IGlmIGJhbGFuY2UgKyBfYW1vdW50ID49IGJhbGFuY2UKICAgICAgICByZXF1aXJlKG5ld0JhbGFuY2UgPj0gb2xkQmFsYW5jZSwgIk92ZXJmbG93Iik7CgogICAgICAgIGJhbGFuY2UgPSBuZXdCYWxhbmNlOwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA+PSBvbGRCYWxhbmNlKTsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50IF9hbW91bnQpIHB1YmxpYyB7CiAgICAgICAgdWludCBvbGRCYWxhbmNlID0gYmFsYW5jZTsKCiAgICAgICAgLy8gYmFsYW5jZSAtIF9hbW91bnQgZG9lcyBub3QgdW5kZXJmbG93IGlmIGJhbGFuY2UgPj0gX2Ftb3VudAogICAgICAgIHJlcXVpcmUoYmFsYW5jZSA+PSBfYW1vdW50LCAiVW5kZXJmbG93Iik7CgogICAgICAgIGlmIChiYWxhbmNlIDwgX2Ftb3VudCkgewogICAgICAgICAgICByZXZlcnQoIlVuZGVyZmxvdyIpOwogICAgICAgIH0KCiAgICAgICAgYmFsYW5jZSAtPSBfYW1vdW50OwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA8PSBvbGRCYWxhbmNlKTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEFjY291bnQgewogICAgdWludDI1NiBwdWJsaWMgYmFsYW5jZTsKICAgIHVpbnQyNTYgcHVibGljIGNvbnN0YW50IE1BWF9VSU5UID0gMiAqKiAyNTYgLSAxOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludDI1NiBfYW1vdW50KSBwdWJsaWMgewogICAgICAgIHVpbnQyNTYgb2xkQmFsYW5jZSA9IGJhbGFuY2U7CiAgICAgICAgdWludDI1NiBuZXdCYWxhbmNlID0gYmFsYW5jZSArIF9hbW91bnQ7CgogICAgICAgIC8vIGJhbGFuY2UgKyBfYW1vdW50IGRvZXMgbm90IG92ZXJmbG93IGlmIGJhbGFuY2UgKyBfYW1vdW50ID49IGJhbGFuY2UKICAgICAgICByZXF1aXJlKG5ld0JhbGFuY2UgPj0gb2xkQmFsYW5jZSwgIk92ZXJmbG93Iik7CgogICAgICAgIGJhbGFuY2UgPSBuZXdCYWxhbmNlOwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA+PSBvbGRCYWxhbmNlKTsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50MjU2IF9hbW91bnQpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiBvbGRCYWxhbmNlID0gYmFsYW5jZTsKCiAgICAgICAgLy8gYmFsYW5jZSAtIF9hbW91bnQgZG9lcyBub3QgdW5kZXJmbG93IGlmIGJhbGFuY2UgPj0gX2Ftb3VudAogICAgICAgIHJlcXVpcmUoYmFsYW5jZSA+PSBfYW1vdW50LCAiVW5kZXJmbG93Iik7CgogICAgICAgIGlmIChiYWxhbmNlIDwgX2Ftb3VudCkgewogICAgICAgICAgICByZXZlcnQoIlVuZGVyZmxvdyIpOwogICAgICAgIH0KCiAgICAgICAgYmFsYW5jZSAtPSBfYW1vdW50OwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA8PSBvbGRCYWxhbmNlKTsKICAgIH0KfQo=",
   },
   {
     fileName: "Error.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEVycm9yIHsKICAgIGZ1bmN0aW9uIHRlc3RSZXF1aXJlKHVpbnQgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXF1aXJlIHNob3VsZCBiZSB1c2VkIHRvIHZhbGlkYXRlIGNvbmRpdGlvbnMgc3VjaCBhczoKICAgICAgICAvLyAtIGlucHV0cwogICAgICAgIC8vIC0gY29uZGl0aW9ucyBiZWZvcmUgZXhlY3V0aW9uCiAgICAgICAgLy8gLSByZXR1cm4gdmFsdWVzIGZyb20gY2FsbHMgdG8gb3RoZXIgZnVuY3Rpb25zCiAgICAgICAgcmVxdWlyZShfaSA+IDEwLCAiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0UmV2ZXJ0KHVpbnQgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXZlcnQgaXMgdXNlZnVsIHdoZW4gdGhlIGNvbmRpdGlvbiB0byBjaGVjayBpcyBjb21wbGV4LgogICAgICAgIC8vIFRoaXMgY29kZSBkb2VzIHRoZSBleGFjdCBzYW1lIHRoaW5nIGFzIHRoZSBleGFtcGxlIGFib3ZlCiAgICAgICAgaWYgKF9pIDw9IDEwKSB7CiAgICAgICAgICAgIHJldmVydCgiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgICAgICB9CiAgICB9CgogICAgdWludCBwdWJsaWMgbnVtOwoKICAgIGZ1bmN0aW9uIHRlc3RBc3NlcnQoKSBwdWJsaWMgdmlldyB7CiAgICAgICAgLy8gQXNzZXJ0IHNob3VsZCBvbmx5IGJlIHVzZWQgdG8gdGVzdCBmb3IgaW50ZXJuYWwgZXJyb3JzLAogICAgICAgIC8vIGFuZCB0byBjaGVjayBpbnZhcmlhbnRzLgoKICAgICAgICAvLyBIZXJlIHdlIGFzc2VydCB0aGF0IG51bSBpcyBhbHdheXMgZXF1YWwgdG8gMAogICAgICAgIC8vIHNpbmNlIGl0IGlzIGltcG9zc2libGUgdG8gdXBkYXRlIHRoZSB2YWx1ZSBvZiBudW0KICAgICAgICBhc3NlcnQobnVtID09IDApOwogICAgfQoKICAgIC8vIGN1c3RvbSBlcnJvcgogICAgZXJyb3IgSW5zdWZmaWNpZW50QmFsYW5jZSh1aW50IGJhbGFuY2UsIHVpbnQgd2l0aGRyYXdBbW91bnQpOwoKICAgIGZ1bmN0aW9uIHRlc3RDdXN0b21FcnJvcih1aW50IF93aXRoZHJhd0Ftb3VudCkgcHVibGljIHZpZXcgewogICAgICAgIHVpbnQgYmFsID0gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgICAgIGlmIChiYWwgPCBfd2l0aGRyYXdBbW91bnQpIHsKICAgICAgICAgICAgcmV2ZXJ0IEluc3VmZmljaWVudEJhbGFuY2Uoe2JhbGFuY2U6IGJhbCwgd2l0aGRyYXdBbW91bnQ6IF93aXRoZHJhd0Ftb3VudH0pOwogICAgICAgIH0KICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEVycm9yIHsKICAgIGZ1bmN0aW9uIHRlc3RSZXF1aXJlKHVpbnQyNTYgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXF1aXJlIHNob3VsZCBiZSB1c2VkIHRvIHZhbGlkYXRlIGNvbmRpdGlvbnMgc3VjaCBhczoKICAgICAgICAvLyAtIGlucHV0cwogICAgICAgIC8vIC0gY29uZGl0aW9ucyBiZWZvcmUgZXhlY3V0aW9uCiAgICAgICAgLy8gLSByZXR1cm4gdmFsdWVzIGZyb20gY2FsbHMgdG8gb3RoZXIgZnVuY3Rpb25zCiAgICAgICAgcmVxdWlyZShfaSA+IDEwLCAiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0UmV2ZXJ0KHVpbnQyNTYgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXZlcnQgaXMgdXNlZnVsIHdoZW4gdGhlIGNvbmRpdGlvbiB0byBjaGVjayBpcyBjb21wbGV4LgogICAgICAgIC8vIFRoaXMgY29kZSBkb2VzIHRoZSBleGFjdCBzYW1lIHRoaW5nIGFzIHRoZSBleGFtcGxlIGFib3ZlCiAgICAgICAgaWYgKF9pIDw9IDEwKSB7CiAgICAgICAgICAgIHJldmVydCgiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgICAgICB9CiAgICB9CgogICAgdWludDI1NiBwdWJsaWMgbnVtOwoKICAgIGZ1bmN0aW9uIHRlc3RBc3NlcnQoKSBwdWJsaWMgdmlldyB7CiAgICAgICAgLy8gQXNzZXJ0IHNob3VsZCBvbmx5IGJlIHVzZWQgdG8gdGVzdCBmb3IgaW50ZXJuYWwgZXJyb3JzLAogICAgICAgIC8vIGFuZCB0byBjaGVjayBpbnZhcmlhbnRzLgoKICAgICAgICAvLyBIZXJlIHdlIGFzc2VydCB0aGF0IG51bSBpcyBhbHdheXMgZXF1YWwgdG8gMAogICAgICAgIC8vIHNpbmNlIGl0IGlzIGltcG9zc2libGUgdG8gdXBkYXRlIHRoZSB2YWx1ZSBvZiBudW0KICAgICAgICBhc3NlcnQobnVtID09IDApOwogICAgfQoKICAgIC8vIGN1c3RvbSBlcnJvcgogICAgZXJyb3IgSW5zdWZmaWNpZW50QmFsYW5jZSh1aW50MjU2IGJhbGFuY2UsIHVpbnQyNTYgd2l0aGRyYXdBbW91bnQpOwoKICAgIGZ1bmN0aW9uIHRlc3RDdXN0b21FcnJvcih1aW50MjU2IF93aXRoZHJhd0Ftb3VudCkgcHVibGljIHZpZXcgewogICAgICAgIHVpbnQyNTYgYmFsID0gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgICAgIGlmIChiYWwgPCBfd2l0aGRyYXdBbW91bnQpIHsKICAgICAgICAgICAgcmV2ZXJ0IEluc3VmZmljaWVudEJhbGFuY2UoewogICAgICAgICAgICAgICAgYmFsYW5jZTogYmFsLAogICAgICAgICAgICAgICAgd2l0aGRyYXdBbW91bnQ6IF93aXRoZHJhd0Ftb3VudAogICAgICAgICAgICB9KTsKICAgICAgICB9CiAgICB9Cn0K",
   },
 ]
 
@@ -29,7 +29,7 @@ assertion probably means that there is a bug.</li>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title"><span class="hljs-built_in">Error</span></span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRequire</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRequire</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> </span>{
         <span class="hljs-comment">// Require should be used to validate conditions such as:</span>
         <span class="hljs-comment">// - inputs</span>
         <span class="hljs-comment">// - conditions before execution</span>
@@ -37,7 +37,7 @@ assertion probably means that there is a bug.</li>
         <span class="hljs-built_in">require</span>(_i <span class="hljs-operator">&gt;</span> <span class="hljs-number">10</span>, <span class="hljs-string">"Input must be greater than 10"</span>);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRevert</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRevert</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> </span>{
         <span class="hljs-comment">// Revert is useful when the condition to check is complex.</span>
         <span class="hljs-comment">// This code does the exact same thing as the example above</span>
         <span class="hljs-keyword">if</span> (_i <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> <span class="hljs-number">10</span>) {
@@ -45,7 +45,7 @@ assertion probably means that there is a bug.</li>
         }
     }
 
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> num;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> num;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testAssert</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> </span>{
         <span class="hljs-comment">// Assert should only be used to test for internal errors,</span>
@@ -57,12 +57,15 @@ assertion probably means that there is a bug.</li>
     }
 
     <span class="hljs-comment">// custom error</span>
-    <span class="hljs-function"><span class="hljs-keyword">error</span> <span class="hljs-title">InsufficientBalance</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> balance, <span class="hljs-keyword">uint</span> withdrawAmount</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">error</span> <span class="hljs-title">InsufficientBalance</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> balance, <span class="hljs-keyword">uint256</span> withdrawAmount</span>)</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testCustomError</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _withdrawAmount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> </span>{
-        <span class="hljs-keyword">uint</span> bal <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testCustomError</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _withdrawAmount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> </span>{
+        <span class="hljs-keyword">uint256</span> bal <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>;
         <span class="hljs-keyword">if</span> (bal <span class="hljs-operator">&lt;</span> _withdrawAmount) {
-            <span class="hljs-keyword">revert</span> InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
+            <span class="hljs-keyword">revert</span> InsufficientBalance({
+                balance: bal,
+                withdrawAmount: _withdrawAmount
+            });
         }
     }
 }
@@ -71,12 +74,12 @@ assertion probably means that there is a bug.</li>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Account</span> </span>{
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> balance;
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> MAX_UINT <span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-operator">*</span><span class="hljs-operator">*</span> <span class="hljs-number">256</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> balance;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> MAX_UINT <span class="hljs-operator">=</span> <span class="hljs-number">2</span> <span class="hljs-operator">*</span><span class="hljs-operator">*</span> <span class="hljs-number">256</span> <span class="hljs-operator">-</span> <span class="hljs-number">1</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">uint</span> oldBalance <span class="hljs-operator">=</span> balance;
-        <span class="hljs-keyword">uint</span> newBalance <span class="hljs-operator">=</span> balance <span class="hljs-operator">+</span> _amount;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint256</span> oldBalance <span class="hljs-operator">=</span> balance;
+        <span class="hljs-keyword">uint256</span> newBalance <span class="hljs-operator">=</span> balance <span class="hljs-operator">+</span> _amount;
 
         <span class="hljs-comment">// balance + _amount does not overflow if balance + _amount &gt;= balance</span>
         <span class="hljs-built_in">require</span>(newBalance <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> oldBalance, <span class="hljs-string">"Overflow"</span>);
@@ -86,8 +89,8 @@ assertion probably means that there is a bug.</li>
         <span class="hljs-built_in">assert</span>(balance <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> oldBalance);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">uint</span> oldBalance <span class="hljs-operator">=</span> balance;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint256</span> oldBalance <span class="hljs-operator">=</span> balance;
 
         <span class="hljs-comment">// balance - _amount does not underflow if balance &gt;= _amount</span>
         <span class="hljs-built_in">require</span>(balance <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> _amount, <span class="hljs-string">"Underflow"</span>);

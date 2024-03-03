@@ -33,9 +33,11 @@ contract FindThisHash {
     constructor() payable {}
 
     function solve(string memory solution) public {
-        require(hash == keccak256(abi.encodePacked(solution)), "Incorrect answer");
+        require(
+            hash == keccak256(abi.encodePacked(solution)), "Incorrect answer"
+        );
 
-        (bool sent, ) = msg.sender.call{value: 10 ether}("");
+        (bool sent,) = msg.sender.call{value: 10 ether}("");
         require(sent, "Failed to send Ether");
     }
 }

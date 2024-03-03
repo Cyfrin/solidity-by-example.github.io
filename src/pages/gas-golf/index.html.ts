@@ -8,7 +8,7 @@ export const keywords = ["gas", "golf"]
 export const codes = [
   {
     fileName: "GasGolf.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8vIGdhcyBnb2xmCmNvbnRyYWN0IEdhc0dvbGYgewogICAgLy8gc3RhcnQgLSA1MDkwOCBnYXMKICAgIC8vIHVzZSBjYWxsZGF0YSAtIDQ5MTYzIGdhcwogICAgLy8gbG9hZCBzdGF0ZSB2YXJpYWJsZXMgdG8gbWVtb3J5IC0gNDg5NTIgZ2FzCiAgICAvLyBzaG9ydCBjaXJjdWl0IC0gNDg2MzQgZ2FzCiAgICAvLyBsb29wIGluY3JlbWVudHMgLSA0ODI0NCBnYXMKICAgIC8vIGNhY2hlIGFycmF5IGxlbmd0aCAtIDQ4MjA5IGdhcwogICAgLy8gbG9hZCBhcnJheSBlbGVtZW50cyB0byBtZW1vcnkgLSA0ODA0NyBnYXMKICAgIC8vIHVuY2hlY2sgaSBvdmVyZmxvdy91bmRlcmZsb3cgLSA0NzMwOSBnYXMKCiAgICB1aW50IHB1YmxpYyB0b3RhbDsKCiAgICAvLyBzdGFydCAtIG5vdCBnYXMgb3B0aW1pemVkCiAgICAvLyBmdW5jdGlvbiBzdW1JZkV2ZW5BbmRMZXNzVGhhbjk5KHVpbnRbXSBtZW1vcnkgbnVtcykgZXh0ZXJuYWwgewogICAgLy8gICAgIGZvciAodWludCBpID0gMDsgaSA8IG51bXMubGVuZ3RoOyBpICs9IDEpIHsKICAgIC8vICAgICAgICAgYm9vbCBpc0V2ZW4gPSBudW1zW2ldICUgMiA9PSAwOwogICAgLy8gICAgICAgICBib29sIGlzTGVzc1RoYW45OSA9IG51bXNbaV0gPCA5OTsKICAgIC8vICAgICAgICAgaWYgKGlzRXZlbiAmJiBpc0xlc3NUaGFuOTkpIHsKICAgIC8vICAgICAgICAgICAgIHRvdGFsICs9IG51bXNbaV07CiAgICAvLyAgICAgICAgIH0KICAgIC8vICAgICB9CiAgICAvLyB9CgogICAgLy8gZ2FzIG9wdGltaXplZAogICAgLy8gWzEsIDIsIDMsIDQsIDUsIDEwMF0KICAgIGZ1bmN0aW9uIHN1bUlmRXZlbkFuZExlc3NUaGFuOTkodWludFtdIGNhbGxkYXRhIG51bXMpIGV4dGVybmFsIHsKICAgICAgICB1aW50IF90b3RhbCA9IHRvdGFsOwogICAgICAgIHVpbnQgbGVuID0gbnVtcy5sZW5ndGg7CgogICAgICAgIGZvciAodWludCBpID0gMDsgaSA8IGxlbjsgKSB7CiAgICAgICAgICAgIHVpbnQgbnVtID0gbnVtc1tpXTsKICAgICAgICAgICAgaWYgKG51bSAlIDIgPT0gMCAmJiBudW0gPCA5OSkgewogICAgICAgICAgICAgICAgX3RvdGFsICs9IG51bTsKICAgICAgICAgICAgfQogICAgICAgICAgICB1bmNoZWNrZWQgewogICAgICAgICAgICAgICAgKytpOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICB0b3RhbCA9IF90b3RhbDsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8vIGdhcyBnb2xmCmNvbnRyYWN0IEdhc0dvbGYgewogICAgLy8gc3RhcnQgLSA1MDkwOCBnYXMKICAgIC8vIHVzZSBjYWxsZGF0YSAtIDQ5MTYzIGdhcwogICAgLy8gbG9hZCBzdGF0ZSB2YXJpYWJsZXMgdG8gbWVtb3J5IC0gNDg5NTIgZ2FzCiAgICAvLyBzaG9ydCBjaXJjdWl0IC0gNDg2MzQgZ2FzCiAgICAvLyBsb29wIGluY3JlbWVudHMgLSA0ODI0NCBnYXMKICAgIC8vIGNhY2hlIGFycmF5IGxlbmd0aCAtIDQ4MjA5IGdhcwogICAgLy8gbG9hZCBhcnJheSBlbGVtZW50cyB0byBtZW1vcnkgLSA0ODA0NyBnYXMKICAgIC8vIHVuY2hlY2sgaSBvdmVyZmxvdy91bmRlcmZsb3cgLSA0NzMwOSBnYXMKCiAgICB1aW50MjU2IHB1YmxpYyB0b3RhbDsKCiAgICAvLyBzdGFydCAtIG5vdCBnYXMgb3B0aW1pemVkCiAgICAvLyBmdW5jdGlvbiBzdW1JZkV2ZW5BbmRMZXNzVGhhbjk5KHVpbnRbXSBtZW1vcnkgbnVtcykgZXh0ZXJuYWwgewogICAgLy8gICAgIGZvciAodWludCBpID0gMDsgaSA8IG51bXMubGVuZ3RoOyBpICs9IDEpIHsKICAgIC8vICAgICAgICAgYm9vbCBpc0V2ZW4gPSBudW1zW2ldICUgMiA9PSAwOwogICAgLy8gICAgICAgICBib29sIGlzTGVzc1RoYW45OSA9IG51bXNbaV0gPCA5OTsKICAgIC8vICAgICAgICAgaWYgKGlzRXZlbiAmJiBpc0xlc3NUaGFuOTkpIHsKICAgIC8vICAgICAgICAgICAgIHRvdGFsICs9IG51bXNbaV07CiAgICAvLyAgICAgICAgIH0KICAgIC8vICAgICB9CiAgICAvLyB9CgogICAgLy8gZ2FzIG9wdGltaXplZAogICAgLy8gWzEsIDIsIDMsIDQsIDUsIDEwMF0KICAgIGZ1bmN0aW9uIHN1bUlmRXZlbkFuZExlc3NUaGFuOTkodWludDI1NltdIGNhbGxkYXRhIG51bXMpIGV4dGVybmFsIHsKICAgICAgICB1aW50MjU2IF90b3RhbCA9IHRvdGFsOwogICAgICAgIHVpbnQyNTYgbGVuID0gbnVtcy5sZW5ndGg7CgogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IGxlbjspIHsKICAgICAgICAgICAgdWludDI1NiBudW0gPSBudW1zW2ldOwogICAgICAgICAgICBpZiAobnVtICUgMiA9PSAwICYmIG51bSA8IDk5KSB7CiAgICAgICAgICAgICAgICBfdG90YWwgKz0gbnVtOwogICAgICAgICAgICB9CiAgICAgICAgICAgIHVuY2hlY2tlZCB7CiAgICAgICAgICAgICAgICArK2k7CiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIHRvdGFsID0gX3RvdGFsOwogICAgfQp9Cg==",
   },
 ]
 
@@ -34,7 +34,7 @@ const html = `<p>Some gas saving techniques.</p>
     <span class="hljs-comment">// load array elements to memory - 48047 gas</span>
     <span class="hljs-comment">// uncheck i overflow/underflow - 47309 gas</span>
 
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> total;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> total;
 
     <span class="hljs-comment">// start - not gas optimized</span>
     <span class="hljs-comment">// function sumIfEvenAndLessThan99(uint[] memory nums) external {</span>
@@ -49,12 +49,12 @@ const html = `<p>Some gas saving techniques.</p>
 
     <span class="hljs-comment">// gas optimized</span>
     <span class="hljs-comment">// [1, 2, 3, 4, 5, 100]</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumIfEvenAndLessThan99</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span>[] <span class="hljs-keyword">calldata</span> nums</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-keyword">uint</span> _total <span class="hljs-operator">=</span> total;
-        <span class="hljs-keyword">uint</span> len <span class="hljs-operator">=</span> nums.<span class="hljs-built_in">length</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sumIfEvenAndLessThan99</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">calldata</span> nums</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
+        <span class="hljs-keyword">uint256</span> _total <span class="hljs-operator">=</span> total;
+        <span class="hljs-keyword">uint256</span> len <span class="hljs-operator">=</span> nums.<span class="hljs-built_in">length</span>;
 
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> len; ) {
-            <span class="hljs-keyword">uint</span> num <span class="hljs-operator">=</span> nums[i];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> len;) {
+            <span class="hljs-keyword">uint256</span> num <span class="hljs-operator">=</span> nums[i];
             <span class="hljs-keyword">if</span> (num <span class="hljs-operator">%</span> <span class="hljs-number">2</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span> <span class="hljs-operator">&amp;</span><span class="hljs-operator">&amp;</span> num <span class="hljs-operator">&lt;</span> <span class="hljs-number">99</span>) {
                 _total <span class="hljs-operator">+</span><span class="hljs-operator">=</span> num;
             }

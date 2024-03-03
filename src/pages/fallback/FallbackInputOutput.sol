@@ -16,13 +16,13 @@ contract FallbackInputOutput {
 }
 
 contract Counter {
-    uint public count;
+    uint256 public count;
 
-    function get() external view returns (uint) {
+    function get() external view returns (uint256) {
         return count;
     }
 
-    function inc() external returns (uint) {
+    function inc() external returns (uint256) {
         count += 1;
         return count;
     }
@@ -38,6 +38,7 @@ contract TestFallbackInputOutput {
     }
 
     function getTestData() external pure returns (bytes memory, bytes memory) {
-        return (abi.encodeCall(Counter.get, ()), abi.encodeCall(Counter.inc, ()));
+        return
+            (abi.encodeCall(Counter.get, ()), abi.encodeCall(Counter.inc, ()));
     }
 }

@@ -3,23 +3,23 @@ pragma solidity ^0.8.20;
 
 contract Array {
     // Several ways to initialize an array
-    uint[] public arr;
-    uint[] public arr2 = [1, 2, 3];
+    uint256[] public arr;
+    uint256[] public arr2 = [1, 2, 3];
     // Fixed sized array, all elements initialize to 0
-    uint[10] public myFixedSizeArr;
+    uint256[10] public myFixedSizeArr;
 
-    function get(uint i) public view returns (uint) {
+    function get(uint256 i) public view returns (uint256) {
         return arr[i];
     }
 
     // Solidity can return the entire array.
     // But this function should be avoided for
     // arrays that can grow indefinitely in length.
-    function getArr() public view returns (uint[] memory) {
+    function getArr() public view returns (uint256[] memory) {
         return arr;
     }
 
-    function push(uint i) public {
+    function push(uint256 i) public {
         // Append to array
         // This will increase the array length by 1.
         arr.push(i);
@@ -31,11 +31,11 @@ contract Array {
         arr.pop();
     }
 
-    function getLength() public view returns (uint) {
+    function getLength() public view returns (uint256) {
         return arr.length;
     }
 
-    function remove(uint index) public {
+    function remove(uint256 index) public {
         // Delete does not change the array length.
         // It resets the value at index to it's default value,
         // in this case 0
@@ -44,6 +44,6 @@ contract Array {
 
     function examples() external {
         // create array in memory, only fixed size can be created
-        uint[] memory a = new uint[](5);
+        uint256[] memory a = new uint256[](5);
     }
 }

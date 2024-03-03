@@ -38,7 +38,9 @@ contract DAO {
     function approve(address target) external {
         require(msg.sender == owner, "not authorized");
 
-        proposals.push(Proposal({target: target, approved: true, executed: false}));
+        proposals.push(
+            Proposal({target: target, approved: true, executed: false})
+        );
     }
 
     function execute(uint256 proposalId) external payable {
@@ -48,7 +50,7 @@ contract DAO {
 
         proposal.executed = true;
 
-        (bool ok, ) = proposal.target.delegatecall(
+        (bool ok,) = proposal.target.delegatecall(
             abi.encodeWithSignature("executeProposal()")
         );
         require(ok, "delegatecall failed");
@@ -83,7 +85,7 @@ contract DeployerDeployer {
     event Log(address addr);
 
     function deploy() external {
-        bytes32 salt = keccak256(abi.encode(uint(123)));
+        bytes32 salt = keccak256(abi.encode(uint256(123)));
         address addr = address(new Deployer{salt: salt}());
         emit Log(addr);
     }

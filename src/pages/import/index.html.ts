@@ -8,7 +8,7 @@ export const keywords = ["import"]
 export const codes = [
   {
     fileName: "Foo.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCnN0cnVjdCBQb2ludCB7CiAgICB1aW50IHg7CiAgICB1aW50IHk7Cn0KCmVycm9yIFVuYXV0aG9yaXplZChhZGRyZXNzIGNhbGxlcik7CgpmdW5jdGlvbiBhZGQodWludCB4LCB1aW50IHkpIHB1cmUgcmV0dXJucyAodWludCkgewogICAgcmV0dXJuIHggKyB5Owp9Cgpjb250cmFjdCBGb28gewogICAgc3RyaW5nIHB1YmxpYyBuYW1lID0gIkZvbyI7Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCnN0cnVjdCBQb2ludCB7CiAgICB1aW50MjU2IHg7CiAgICB1aW50MjU2IHk7Cn0KCmVycm9yIFVuYXV0aG9yaXplZChhZGRyZXNzIGNhbGxlcik7CgpmdW5jdGlvbiBhZGQodWludDI1NiB4LCB1aW50MjU2IHkpIHB1cmUgcmV0dXJucyAodWludDI1NikgewogICAgcmV0dXJuIHggKyB5Owp9Cgpjb250cmFjdCBGb28gewogICAgc3RyaW5nIHB1YmxpYyBuYW1lID0gIkZvbyI7Cn0K",
   },
   {
     fileName: "Import.sol",
@@ -26,13 +26,13 @@ const html = `<p>You can import local and external files in Solidity.</p>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
 
 <span class="hljs-keyword">struct</span> <span class="hljs-title">Point</span> {
-    <span class="hljs-keyword">uint</span> x;
-    <span class="hljs-keyword">uint</span> y;
+    <span class="hljs-keyword">uint256</span> x;
+    <span class="hljs-keyword">uint256</span> y;
 }
 
 <span class="hljs-function"><span class="hljs-keyword">error</span> <span class="hljs-title">Unauthorized</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> caller</span>)</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> x, <span class="hljs-keyword">uint</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint</span></span>) </span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> x, <span class="hljs-keyword">uint256</span> y</span>) <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>) </span>{
     <span class="hljs-keyword">return</span> x <span class="hljs-operator">+</span> y;
 }
 

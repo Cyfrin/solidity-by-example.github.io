@@ -22,7 +22,7 @@ contract UniswapV2FlashSwapTest is Test {
         // Approve flash swap fee
         weth.approve(address(uni), 1e18);
 
-        uint amountToBorrow = 10 * 1e18;
+        uint256 amountToBorrow = 10 * 1e18;
         uni.flashSwap(amountToBorrow);
 
         assertGt(uni.amountToRepay(), amountToBorrow);

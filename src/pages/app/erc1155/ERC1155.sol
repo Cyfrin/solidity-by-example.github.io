@@ -9,7 +9,6 @@ interface IERC1155 {
         uint256 value,
         bytes calldata data
     ) external;
-
     function safeBatchTransferFrom(
         address from,
         address to,
@@ -17,20 +16,19 @@ interface IERC1155 {
         uint256[] calldata values,
         bytes calldata data
     ) external;
-
-    function balanceOf(address owner, uint256 id) external view returns (uint256);
-
-    function balanceOfBatch(
-        address[] calldata owners,
-        uint256[] calldata ids
-    ) external view returns (uint256[] memory);
-
+    function balanceOf(address owner, uint256 id)
+        external
+        view
+        returns (uint256);
+    function balanceOfBatch(address[] calldata owners, uint256[] calldata ids)
+        external
+        view
+        returns (uint256[] memory);
     function setApprovalForAll(address operator, bool approved) external;
-
-    function isApprovedForAll(
-        address owner,
-        address operator
-    ) external view returns (bool);
+    function isApprovedForAll(address owner, address operator)
+        external
+        view
+        returns (bool);
 }
 
 interface IERC1155TokenReceiver {
@@ -67,9 +65,7 @@ contract ERC1155 is IERC1155 {
         uint256[] values
     );
     event ApprovalForAll(
-        address indexed owner,
-        address indexed operator,
-        bool approved
+        address indexed owner, address indexed operator, bool approved
     );
     event URI(string value, uint256 indexed id);
 
@@ -78,13 +74,14 @@ contract ERC1155 is IERC1155 {
     // owner => operator => approved
     mapping(address => mapping(address => bool)) public isApprovedForAll;
 
-    function balanceOfBatch(
-        address[] calldata owners,
-        uint256[] calldata ids
-    ) external view returns (uint256[] memory balances) {
+    function balanceOfBatch(address[] calldata owners, uint256[] calldata ids)
+        external
+        view
+        returns (uint256[] memory balances)
+    {
         require(owners.length == ids.length, "owners length != ids length");
 
-        balances = new uint[](owners.length);
+        balances = new uint256[](owners.length);
 
         unchecked {
             for (uint256 i = 0; i < owners.length; i++) {
@@ -119,11 +116,7 @@ contract ERC1155 is IERC1155 {
         if (to.code.length > 0) {
             require(
                 IERC1155TokenReceiver(to).onERC1155Received(
-                    msg.sender,
-                    from,
-                    id,
-                    value,
-                    data
+                    msg.sender, from, id, value, data
                 ) == IERC1155TokenReceiver.onERC1155Received.selector,
                 "unsafe transfer"
             );
@@ -154,11 +147,7 @@ contract ERC1155 is IERC1155 {
         if (to.code.length > 0) {
             require(
                 IERC1155TokenReceiver(to).onERC1155BatchReceived(
-                    msg.sender,
-                    from,
-                    ids,
-                    values,
-                    data
+                    msg.sender, from, ids, values, data
                 ) == IERC1155TokenReceiver.onERC1155BatchReceived.selector,
                 "unsafe transfer"
             );
@@ -166,18 +155,23 @@ contract ERC1155 is IERC1155 {
     }
 
     // ERC165
-    function supportsInterface(bytes4 interfaceId) external view returns (bool) {
-        return
-            interfaceId == 0x01ffc9a7 || // ERC165 Interface ID for ERC165
-            interfaceId == 0xd9b67a26 || // ERC165 Interface ID for ERC1155
-            interfaceId == 0x0e89341c; // ERC165 Interface ID for ERC1155MetadataURI
+    function supportsInterface(bytes4 interfaceId)
+        external
+        view
+        returns (bool)
+    {
+        return interfaceId == 0x01ffc9a7 // ERC165 Interface ID for ERC165
+            || interfaceId == 0xd9b67a26 // ERC165 Interface ID for ERC1155
+            || interfaceId == 0x0e89341c; // ERC165 Interface ID for ERC1155MetadataURI
     }
 
     // ERC1155 Metadata URI
     function uri(uint256 id) public view virtual returns (string memory) {}
 
     // Internal functions
-    function _mint(address to, uint256 id, uint256 value, bytes memory data) internal {
+    function _mint(address to, uint256 id, uint256 value, bytes memory data)
+        internal
+    {
         require(to != address(0), "to = 0 address");
 
         balanceOf[to][id] += value;
@@ -187,11 +181,7 @@ contract ERC1155 is IERC1155 {
         if (to.code.length > 0) {
             require(
                 IERC1155TokenReceiver(to).onERC1155Received(
-                    msg.sender,
-                    address(0),
-                    id,
-                    value,
-                    data
+                    msg.sender, address(0), id, value, data
                 ) == IERC1155TokenReceiver.onERC1155Received.selector,
                 "unsafe transfer"
             );
@@ -216,11 +206,7 @@ contract ERC1155 is IERC1155 {
         if (to.code.length > 0) {
             require(
                 IERC1155TokenReceiver(to).onERC1155BatchReceived(
-                    msg.sender,
-                    address(0),
-                    ids,
-                    values,
-                    data
+                    msg.sender, address(0), ids, values, data
                 ) == IERC1155TokenReceiver.onERC1155BatchReceived.selector,
                 "unsafe transfer"
             );
@@ -266,7 +252,9 @@ contract MyMultiToken is ERC1155 {
         _burn(msg.sender, id, value);
     }
 
-    function batchBurn(uint256[] calldata ids, uint256[] calldata values) external {
+    function batchBurn(uint256[] calldata ids, uint256[] calldata values)
+        external
+    {
         _batchBurn(msg.sender, ids, values);
     }
 }

@@ -2,12 +2,12 @@
 pragma solidity ^0.8.20;
 
 contract ArrayReplaceFromEnd {
-    uint[] public arr;
+    uint256[] public arr;
 
     // Deleting an element creates a gap in the array.
     // One trick to keep the array compact is to
     // move the last element into the place to delete.
-    function remove(uint index) public {
+    function remove(uint256 index) public {
         // Move the last element into the place to delete
         arr[index] = arr[arr.length - 1];
         // Remove the last element

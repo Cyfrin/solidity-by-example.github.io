@@ -2,14 +2,14 @@
 pragma solidity ^0.8.20;
 
 contract AssemblyMath {
-    function yul_add(uint x, uint y) public pure returns (uint z) {
+    function yul_add(uint256 x, uint256 y) public pure returns (uint256 z) {
         assembly {
             z := add(x, y)
             if lt(z, x) { revert(0, 0) }
         }
     }
-    
-    function yul_mul(uint x, uint y) public pure returns (uint z) {
+
+    function yul_mul(uint256 x, uint256 y) public pure returns (uint256 z) {
         assembly {
             switch x
             case 0 { z := 0 }
@@ -19,15 +19,19 @@ contract AssemblyMath {
             }
         }
     }
-    
+
     // Round to nearest multiple of b
-    function yul_fixed_point_round(uint x, uint b) public pure returns (uint z) {
+    function yul_fixed_point_round(uint256 x, uint256 b)
+        public
+        pure
+        returns (uint256 z)
+    {
         assembly {
             // b = 100
             // x = 90
             // z = 90 / 100 * 100 = 0, want z = 100
             // z := mul(div(x, b), b)
-            
+
             let half := div(b, 2)
             z := add(x, half)
             z := mul(div(z, b), b)

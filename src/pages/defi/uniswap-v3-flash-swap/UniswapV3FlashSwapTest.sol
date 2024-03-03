@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "forge-std/Test.sol";
-import "forge-std/console.sol";
-
-import "../src/UniswapV3FlashSwap.sol";
+import {Test, console2} from "forge-std/Test.sol";
+import "../../../src/defi/uniswap-v3-flash-swap/UniswapV3FlashSwap.sol";
 
 contract UniswapV3FlashSwapTest is Test {
     address private constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
@@ -24,18 +22,18 @@ contract UniswapV3FlashSwapTest is Test {
         uint24 fee1 = 500;
 
         // Approve WETH fee
-        uint wethMaxFee = 1e18;
+        uint256 wethMaxFee = 1e18;
         weth.deposit{value: wethMaxFee}();
         weth.approve(address(uni), wethMaxFee);
 
-        uint balBefore = weth.balanceOf(address(this));
+        uint256 balBefore = weth.balanceOf(address(this));
         uni.flashSwap(pool0, fee1, WETH, USDC, 10 * 1e18);
-        uint balAfter = weth.balanceOf(address(this));
+        uint256 balAfter = weth.balanceOf(address(this));
 
         if (balAfter >= balBefore) {
-            console.log("WETH profit", balAfter - balBefore);
+            console2.log("WETH profit", balAfter - balBefore);
         } else {
-            console.log("WETH loss", balBefore - balAfter);
+            console2.log("WETH loss", balBefore - balAfter);
         }
     }
 }

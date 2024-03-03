@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract Error {
-    function testRequire(uint _i) public pure {
+    function testRequire(uint256 _i) public pure {
         // Require should be used to validate conditions such as:
         // - inputs
         // - conditions before execution
@@ -10,7 +10,7 @@ contract Error {
         require(_i > 10, "Input must be greater than 10");
     }
 
-    function testRevert(uint _i) public pure {
+    function testRevert(uint256 _i) public pure {
         // Revert is useful when the condition to check is complex.
         // This code does the exact same thing as the example above
         if (_i <= 10) {
@@ -18,7 +18,7 @@ contract Error {
         }
     }
 
-    uint public num;
+    uint256 public num;
 
     function testAssert() public view {
         // Assert should only be used to test for internal errors,
@@ -30,12 +30,15 @@ contract Error {
     }
 
     // custom error
-    error InsufficientBalance(uint balance, uint withdrawAmount);
+    error InsufficientBalance(uint256 balance, uint256 withdrawAmount);
 
-    function testCustomError(uint _withdrawAmount) public view {
-        uint bal = address(this).balance;
+    function testCustomError(uint256 _withdrawAmount) public view {
+        uint256 bal = address(this).balance;
         if (bal < _withdrawAmount) {
-            revert InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
+            revert InsufficientBalance({
+                balance: bal,
+                withdrawAmount: _withdrawAmount
+            });
         }
     }
 }

@@ -6,109 +6,72 @@ pragma solidity >=0.8.0;
 /// @author Modified from Uniswap (https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/UniswapV2ERC20.sol)
 /// @dev Do not manually set balances without updating totalSupply, as the sum of all user balances must not exceed it.
 abstract contract ERC20 {
-    /*//////////////////////////////////////////////////////////////
-                                 EVENTS
-    //////////////////////////////////////////////////////////////*/
-
     event Transfer(address indexed from, address indexed to, uint256 amount);
-
-    event Approval(address indexed owner, address indexed spender, uint256 amount);
-
-    /*//////////////////////////////////////////////////////////////
-                            METADATA STORAGE
-    //////////////////////////////////////////////////////////////*/
+    event Approval(
+        address indexed owner, address indexed spender, uint256 amount
+    );
 
     string public name;
-
     string public symbol;
-
     uint8 public immutable decimals;
-
-    /*//////////////////////////////////////////////////////////////
-                              ERC20 STORAGE
-    //////////////////////////////////////////////////////////////*/
-
     uint256 public totalSupply;
-
     mapping(address => uint256) public balanceOf;
-
     mapping(address => mapping(address => uint256)) public allowance;
-
-    /*//////////////////////////////////////////////////////////////
-                            EIP-2612 STORAGE
-    //////////////////////////////////////////////////////////////*/
-
     uint256 internal immutable INITIAL_CHAIN_ID;
-
     bytes32 internal immutable INITIAL_DOMAIN_SEPARATOR;
-
     mapping(address => uint256) public nonces;
-
-    /*//////////////////////////////////////////////////////////////
-                               CONSTRUCTOR
-    //////////////////////////////////////////////////////////////*/
 
     constructor(string memory _name, string memory _symbol, uint8 _decimals) {
         name = _name;
         symbol = _symbol;
         decimals = _decimals;
-
         INITIAL_CHAIN_ID = block.chainid;
         INITIAL_DOMAIN_SEPARATOR = computeDomainSeparator();
     }
 
-    /*//////////////////////////////////////////////////////////////
-                               ERC20 LOGIC
-    //////////////////////////////////////////////////////////////*/
-
-    function approve(address spender, uint256 amount) public virtual returns (bool) {
+    function approve(address spender, uint256 amount)
+        public
+        virtual
+        returns (bool)
+    {
         allowance[msg.sender][spender] = amount;
-
         emit Approval(msg.sender, spender, amount);
-
         return true;
     }
 
-    function transfer(address to, uint256 amount) public virtual returns (bool) {
+    function transfer(address to, uint256 amount)
+        public
+        virtual
+        returns (bool)
+    {
         balanceOf[msg.sender] -= amount;
 
-        // Cannot overflow because the sum of all user
-        // balances can't exceed the max uint256 value.
         unchecked {
             balanceOf[to] += amount;
         }
 
         emit Transfer(msg.sender, to, amount);
-
         return true;
     }
 
-    function transferFrom(
-        address from,
-        address to,
-        uint256 amount
-    ) public virtual returns (bool) {
+    function transferFrom(address from, address to, uint256 amount)
+        public
+        virtual
+        returns (bool)
+    {
         uint256 allowed = allowance[from][msg.sender]; // Saves gas for limited approvals.
-
-        if (allowed != type(uint256).max)
+        if (allowed != type(uint256).max) {
             allowance[from][msg.sender] = allowed - amount;
-
+        }
         balanceOf[from] -= amount;
 
-        // Cannot overflow because the sum of all user
-        // balances can't exceed the max uint256 value.
         unchecked {
             balanceOf[to] += amount;
         }
 
         emit Transfer(from, to, amount);
-
         return true;
     }
-
-    /*//////////////////////////////////////////////////////////////
-                             EIP-2612 LOGIC
-    //////////////////////////////////////////////////////////////*/
 
     function permit(
         address owner,
@@ -121,8 +84,6 @@ abstract contract ERC20 {
     ) public virtual {
         require(deadline >= block.timestamp, "PERMIT_DEADLINE_EXPIRED");
 
-        // Unchecked because the only math done is incrementing
-        // the owner's nonce which cannot realistically overflow.
         unchecked {
             address recoveredAddress = ecrecover(
                 keccak256(
@@ -160,36 +121,28 @@ abstract contract ERC20 {
     }
 
     function DOMAIN_SEPARATOR() public view virtual returns (bytes32) {
-        return
-            block.chainid == INITIAL_CHAIN_ID
-                ? INITIAL_DOMAIN_SEPARATOR
-                : computeDomainSeparator();
+        return block.chainid == INITIAL_CHAIN_ID
+            ? INITIAL_DOMAIN_SEPARATOR
+            : computeDomainSeparator();
     }
 
     function computeDomainSeparator() internal view virtual returns (bytes32) {
-        return
-            keccak256(
-                abi.encode(
-                    keccak256(
-                        "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"
-                    ),
-                    keccak256(bytes(name)),
-                    keccak256("1"),
-                    block.chainid,
-                    address(this)
-                )
-            );
+        return keccak256(
+            abi.encode(
+                keccak256(
+                    "EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"
+                ),
+                keccak256(bytes(name)),
+                keccak256("1"),
+                block.chainid,
+                address(this)
+            )
+        );
     }
-
-    /*//////////////////////////////////////////////////////////////
-                        INTERNAL MINT/BURN LOGIC
-    //////////////////////////////////////////////////////////////*/
 
     function _mint(address to, uint256 amount) internal virtual {
         totalSupply += amount;
 
-        // Cannot overflow because the sum of all user
-        // balances can't exceed the max uint256 value.
         unchecked {
             balanceOf[to] += amount;
         }
@@ -200,8 +153,6 @@ abstract contract ERC20 {
     function _burn(address from, uint256 amount) internal virtual {
         balanceOf[from] -= amount;
 
-        // Cannot underflow because a user's balance
-        // will never be larger than the total supply.
         unchecked {
             totalSupply -= amount;
         }
@@ -211,11 +162,9 @@ abstract contract ERC20 {
 }
 
 contract ERC20Permit is ERC20 {
-    constructor(
-        string memory _name,
-        string memory _symbol,
-        uint8 _decimals
-    ) ERC20(_name, _symbol, _decimals) {}
+    constructor(string memory _name, string memory _symbol, uint8 _decimals)
+        ERC20(_name, _symbol, _decimals)
+    {}
 
     function mint(address to, uint256 amount) public {
         _mint(to, amount);

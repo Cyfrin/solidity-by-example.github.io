@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract Counter {
-    uint public count;
+    uint256 public count;
 
     function increment() external {
         count += 1;
@@ -10,7 +10,7 @@ contract Counter {
 }
 
 interface ICounter {
-    function count() external view returns (uint);
+    function count() external view returns (uint256);
 
     function increment() external;
 }
@@ -20,17 +20,17 @@ contract MyContract {
         ICounter(_counter).increment();
     }
 
-    function getCount(address _counter) external view returns (uint) {
+    function getCount(address _counter) external view returns (uint256) {
         return ICounter(_counter).count();
     }
 }
 
 // Uniswap example
 interface UniswapV2Factory {
-    function getPair(
-        address tokenA,
-        address tokenB
-    ) external view returns (address pair);
+    function getPair(address tokenA, address tokenB)
+        external
+        view
+        returns (address pair);
 }
 
 interface UniswapV2Pair {
@@ -45,9 +45,10 @@ contract UniswapExample {
     address private dai = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
     address private weth = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
 
-    function getTokenReserves() external view returns (uint, uint) {
+    function getTokenReserves() external view returns (uint256, uint256) {
         address pair = UniswapV2Factory(factory).getPair(dai, weth);
-        (uint reserve0, uint reserve1, ) = UniswapV2Pair(pair).getReserves();
+        (uint256 reserve0, uint256 reserve1,) =
+            UniswapV2Pair(pair).getReserves();
         return (reserve0, reserve1);
     }
 }

@@ -21,12 +21,17 @@ contract CarFactory {
         cars.push(car);
     }
 
-    function createAndSendEther(address _owner, string memory _model) public payable {
+    function createAndSendEther(address _owner, string memory _model)
+        public
+        payable
+    {
         Car car = (new Car){value: msg.value}(_owner, _model);
         cars.push(car);
     }
 
-    function create2(address _owner, string memory _model, bytes32 _salt) public {
+    function create2(address _owner, string memory _model, bytes32 _salt)
+        public
+    {
         Car car = (new Car){salt: _salt}(_owner, _model);
         cars.push(car);
     }
@@ -40,12 +45,15 @@ contract CarFactory {
         cars.push(car);
     }
 
-    function getCar(
-        uint _index
-    )
+    function getCar(uint256 _index)
         public
         view
-        returns (address owner, string memory model, address carAddr, uint balance)
+        returns (
+            address owner,
+            string memory model,
+            address carAddr,
+            uint256 balance
+        )
     {
         Car car = cars[_index];
 

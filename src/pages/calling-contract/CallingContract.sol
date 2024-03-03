@@ -2,15 +2,19 @@
 pragma solidity ^0.8.20;
 
 contract Callee {
-    uint public x;
-    uint public value;
+    uint256 public x;
+    uint256 public value;
 
-    function setX(uint _x) public returns (uint) {
+    function setX(uint256 _x) public returns (uint256) {
         x = _x;
         return x;
     }
 
-    function setXandSendEther(uint _x) public payable returns (uint, uint) {
+    function setXandSendEther(uint256 _x)
+        public
+        payable
+        returns (uint256, uint256)
+    {
         x = _x;
         value = msg.value;
 
@@ -19,16 +23,17 @@ contract Callee {
 }
 
 contract Caller {
-    function setX(Callee _callee, uint _x) public {
-        uint x = _callee.setX(_x);
+    function setX(Callee _callee, uint256 _x) public {
+        uint256 x = _callee.setX(_x);
     }
 
-    function setXFromAddress(address _addr, uint _x) public {
+    function setXFromAddress(address _addr, uint256 _x) public {
         Callee callee = Callee(_addr);
         callee.setX(_x);
     }
 
-    function setXandSendEther(Callee _callee, uint _x) public payable {
-        (uint x, uint value) = _callee.setXandSendEther{value: msg.value}(_x);
+    function setXandSendEther(Callee _callee, uint256 _x) public payable {
+        (uint256 x, uint256 value) =
+            _callee.setXandSendEther{value: msg.value}(_x);
     }
 }

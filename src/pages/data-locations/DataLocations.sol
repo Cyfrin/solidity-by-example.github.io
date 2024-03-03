@@ -2,12 +2,14 @@
 pragma solidity ^0.8.20;
 
 contract DataLocations {
-    uint[] public arr;
-    mapping(uint => address) map;
+    uint256[] public arr;
+    mapping(uint256 => address) map;
+
     struct MyStruct {
-        uint foo;
+        uint256 foo;
     }
-    mapping(uint => MyStruct) myStructs;
+
+    mapping(uint256 => MyStruct) myStructs;
 
     function f() public {
         // call _f with state variables
@@ -20,19 +22,19 @@ contract DataLocations {
     }
 
     function _f(
-        uint[] storage _arr,
-        mapping(uint => address) storage _map,
+        uint256[] storage _arr,
+        mapping(uint256 => address) storage _map,
         MyStruct storage _myStruct
     ) internal {
         // do something with storage variables
     }
 
     // You can return memory variables
-    function g(uint[] memory _arr) public returns (uint[] memory) {
+    function g(uint256[] memory _arr) public returns (uint256[] memory) {
         // do something with memory array
     }
 
-    function h(uint[] calldata _arr) external {
+    function h(uint256[] calldata _arr) external {
         // do something with calldata array
     }
 }

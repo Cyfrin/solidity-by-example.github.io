@@ -11,7 +11,7 @@ contract ReceiveEther {
               / \
             yes  no
             /     \
-receive() exists?  fallback()
+    receive() exists?  fallback()
          /   \
         yes   no
         /      \
@@ -24,7 +24,7 @@ receive() exists?  fallback()
     // Fallback function is called when msg.data is not empty
     fallback() external payable {}
 
-    function getBalance() public view returns (uint) {
+    function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
 }

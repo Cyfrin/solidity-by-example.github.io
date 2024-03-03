@@ -7,7 +7,7 @@ echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
 */
 contract EchidnaTestTimeAndCaller {
     bool private pass = true;
-    uint private createdAt = block.timestamp;
+    uint256 private createdAt = block.timestamp;
 
     /*
     test will fail if Echidna can call setFail()
@@ -23,7 +23,7 @@ contract EchidnaTestTimeAndCaller {
         Otherwise Echidna will not be able to call this function.
         Max block delay can be extended by specifying it in a configuration file.
         */
-        uint delay = 7 days;
+        uint256 delay = 7 days;
         require(block.timestamp >= createdAt + delay);
         pass = false;
     }
@@ -47,7 +47,7 @@ contract EchidnaTestTimeAndCaller {
 
     // Check default senders. Sender should be one of the 3 default accounts.
     function echidna_test_sender() public view returns (bool) {
-        for (uint i; i < 3; i++) {
+        for (uint256 i; i < 3; i++) {
             if (sender == senders[i]) {
                 return true;
             }

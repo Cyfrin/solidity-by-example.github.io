@@ -2,13 +2,13 @@
 pragma solidity ^0.8.20;
 
 struct Point {
-    uint x;
-    uint y;
+    uint256 x;
+    uint256 y;
 }
 
 error Unauthorized(address caller);
 
-function add(uint x, uint y) pure returns (uint) {
+function add(uint256 x, uint256 y) pure returns (uint256) {
     return x + y;
 }
 

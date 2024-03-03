@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/Strings.sol";
-
 /*
    Now Let's see how to guard from front running using commit reveal scheme.
 */
@@ -35,7 +33,7 @@ contract SecuredFindThisHash {
     // Struct is used to store the commit details
     struct Commit {
         bytes32 solutionHash;
-        uint commitTime;
+        uint256 commitTime;
         bool revealed;
     }
 
@@ -47,7 +45,7 @@ contract SecuredFindThisHash {
     address public winner;
 
     // Price to be rewarded
-    uint public reward;
+    uint256 public reward;
 
     // Status of game
     bool public ended;
@@ -81,12 +79,16 @@ contract SecuredFindThisHash {
         Function to get the commit details. It returns a tuple of (solutionHash, commitTime, revealStatus);  
         Users can get solution only if the game is active and they have committed a solutionHash
     */
-    function getMySolution() public view gameActive returns (bytes32, uint, bool) {
+    function getMySolution()
+        public
+        view
+        gameActive
+        returns (bytes32, uint256, bool)
+    {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
         return (commit.solutionHash, commit.commitTime, commit.revealed);
     }
-
     /* 
         Function to reveal the commit and get the reward. 
         Users can get reveal solution only if the game is active and they have committed a solutionHash before this block and not revealed yet.
@@ -95,26 +97,31 @@ contract SecuredFindThisHash {
         Then the actual solution is checked using keccak256(solution), if the solution matches, the winner is declared, 
         the game is ended and the reward amount is sent to the winner.
     */
-    function revealSolution(
-        string memory _solution,
-        string memory _secret
-    ) public gameActive {
+
+    function revealSolution(string memory _solution, string memory _secret)
+        public
+        gameActive
+    {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
-        require(commit.commitTime < block.timestamp, "Cannot reveal in the same block");
+        require(
+            commit.commitTime < block.timestamp,
+            "Cannot reveal in the same block"
+        );
         require(!commit.revealed, "Already commited and revealed");
 
-        bytes32 solutionHash = keccak256(
-            abi.encodePacked(Strings.toHexString(msg.sender), _solution, _secret)
-        );
+        bytes32 solutionHash =
+            keccak256(abi.encodePacked(msg.sender, _solution, _secret));
         require(solutionHash == commit.solutionHash, "Hash doesn't match");
 
-        require(keccak256(abi.encodePacked(_solution)) == hash, "Incorrect answer");
+        require(
+            keccak256(abi.encodePacked(_solution)) == hash, "Incorrect answer"
+        );
 
         winner = msg.sender;
         ended = true;
 
-        (bool sent, ) = payable(msg.sender).call{value: reward}("");
+        (bool sent,) = payable(msg.sender).call{value: reward}("");
         if (!sent) {
             winner = address(0);
             ended = false;

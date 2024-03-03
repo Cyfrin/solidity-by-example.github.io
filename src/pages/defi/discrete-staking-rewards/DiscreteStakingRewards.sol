@@ -5,30 +5,38 @@ contract DiscreteStakingRewards {
     IERC20 public immutable stakingToken;
     IERC20 public immutable rewardToken;
 
-    mapping(address => uint) public balanceOf;
-    uint public totalSupply;
+    mapping(address => uint256) public balanceOf;
+    uint256 public totalSupply;
 
-    uint private constant MULTIPLIER = 1e18;
-    uint private rewardIndex;
-    mapping(address => uint) private rewardIndexOf;
-    mapping(address => uint) private earned;
+    uint256 private constant MULTIPLIER = 1e18;
+    uint256 private rewardIndex;
+    mapping(address => uint256) private rewardIndexOf;
+    mapping(address => uint256) private earned;
 
     constructor(address _stakingToken, address _rewardToken) {
         stakingToken = IERC20(_stakingToken);
         rewardToken = IERC20(_rewardToken);
     }
 
-    function updateRewardIndex(uint reward) external {
+    function updateRewardIndex(uint256 reward) external {
         rewardToken.transferFrom(msg.sender, address(this), reward);
         rewardIndex += (reward * MULTIPLIER) / totalSupply;
     }
 
-    function _calculateRewards(address account) private view returns (uint) {
-        uint shares = balanceOf[account];
+    function _calculateRewards(address account)
+        private
+        view
+        returns (uint256)
+    {
+        uint256 shares = balanceOf[account];
         return (shares * (rewardIndex - rewardIndexOf[account])) / MULTIPLIER;
     }
 
-    function calculateRewardsEarned(address account) external view returns (uint) {
+    function calculateRewardsEarned(address account)
+        external
+        view
+        returns (uint256)
+    {
         return earned[account] + _calculateRewards(account);
     }
 
@@ -37,7 +45,7 @@ contract DiscreteStakingRewards {
         rewardIndexOf[account] = rewardIndex;
     }
 
-    function stake(uint amount) external {
+    function stake(uint256 amount) external {
         _updateRewards(msg.sender);
 
         balanceOf[msg.sender] += amount;
@@ -46,7 +54,7 @@ contract DiscreteStakingRewards {
         stakingToken.transferFrom(msg.sender, address(this), amount);
     }
 
-    function unstake(uint amount) external {
+    function unstake(uint256 amount) external {
         _updateRewards(msg.sender);
 
         balanceOf[msg.sender] -= amount;
@@ -55,10 +63,10 @@ contract DiscreteStakingRewards {
         stakingToken.transfer(msg.sender, amount);
     }
 
-    function claim() external returns (uint) {
+    function claim() external returns (uint256) {
         _updateRewards(msg.sender);
 
-        uint reward = earned[msg.sender];
+        uint256 reward = earned[msg.sender];
         if (reward > 0) {
             earned[msg.sender] = 0;
             rewardToken.transfer(msg.sender, reward);
@@ -69,22 +77,17 @@ contract DiscreteStakingRewards {
 }
 
 interface IERC20 {
-    function totalSupply() external view returns (uint);
-
-    function balanceOf(address account) external view returns (uint);
-
-    function transfer(address recipient, uint amount) external returns (bool);
-
-    function allowance(address owner, address spender) external view returns (uint);
-
-    function approve(address spender, uint amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint amount
-    ) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed owner, address indexed spender, uint value);
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }

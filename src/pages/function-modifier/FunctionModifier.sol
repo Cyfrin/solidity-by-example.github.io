@@ -5,7 +5,7 @@ contract FunctionModifier {
     // We will use these variables to demonstrate how to use
     // modifiers.
     address public owner;
-    uint public x = 10;
+    uint256 public x = 10;
     bool public locked;
 
     constructor() {
@@ -30,7 +30,11 @@ contract FunctionModifier {
         _;
     }
 
-    function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
+    function changeOwner(address _newOwner)
+        public
+        onlyOwner
+        validAddress(_newOwner)
+    {
         owner = _newOwner;
     }
 
@@ -45,7 +49,7 @@ contract FunctionModifier {
         locked = false;
     }
 
-    function decrement(uint i) public noReentrancy {
+    function decrement(uint256 i) public noReentrancy {
         x -= i;
 
         if (i > 1) {

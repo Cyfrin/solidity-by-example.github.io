@@ -9,7 +9,7 @@ export const keywords = ["hack", "security", "block", "timestamp", "manipulation
 export const codes = [
   {
     fileName: "BlockTimestamp.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8qClJvdWxldHRlIGlzIGEgZ2FtZSB3aGVyZSB5b3UgY2FuIHdpbiBhbGwgb2YgdGhlIEV0aGVyIGluIHRoZSBjb250cmFjdAppZiB5b3UgY2FuIHN1Ym1pdCBhIHRyYW5zYWN0aW9uIGF0IGEgc3BlY2lmaWMgdGltaW5nLgpBIHBsYXllciBuZWVkcyB0byBzZW5kIDEwIEV0aGVyIGFuZCB3aW5zIGlmIHRoZSBibG9jay50aW1lc3RhbXAgJSAxNSA9PSAwLgoqLwoKLyoKMS4gRGVwbG95IFJvdWxldHRlIHdpdGggMTAgRXRoZXIKMi4gRXZlIHJ1bnMgYSBwb3dlcmZ1bCBtaW5lciB0aGF0IGNhbiBtYW5pcHVsYXRlIHRoZSBibG9jayB0aW1lc3RhbXAuCjMuIEV2ZSBzZXRzIHRoZSBibG9jay50aW1lc3RhbXAgdG8gYSBudW1iZXIgaW4gdGhlIGZ1dHVyZSB0aGF0IGlzIGRpdmlzaWJsZSBieQogICAxNSBhbmQgZmluZHMgdGhlIHRhcmdldCBibG9jayBoYXNoLgo0LiBFdmUncyBibG9jayBpcyBzdWNjZXNzZnVsbHkgaW5jbHVkZWQgaW50byB0aGUgY2hhaW4sIEV2ZSB3aW5zIHRoZQogICBSb3VsZXR0ZSBnYW1lLgoqLwoKY29udHJhY3QgUm91bGV0dGUgewogICAgdWludCBwdWJsaWMgcGFzdEJsb2NrVGltZTsKCiAgICBjb25zdHJ1Y3RvcigpIHBheWFibGUge30KCiAgICBmdW5jdGlvbiBzcGluKCkgZXh0ZXJuYWwgcGF5YWJsZSB7CiAgICAgICAgcmVxdWlyZShtc2cudmFsdWUgPT0gMTAgZXRoZXIpOyAvLyBtdXN0IHNlbmQgMTAgZXRoZXIgdG8gcGxheQogICAgICAgIHJlcXVpcmUoYmxvY2sudGltZXN0YW1wICE9IHBhc3RCbG9ja1RpbWUpOyAvLyBvbmx5IDEgdHJhbnNhY3Rpb24gcGVyIGJsb2NrCgogICAgICAgIHBhc3RCbG9ja1RpbWUgPSBibG9jay50aW1lc3RhbXA7CgogICAgICAgIGlmIChibG9jay50aW1lc3RhbXAgJSAxNSA9PSAwKSB7CiAgICAgICAgICAgIChib29sIHNlbnQsICkgPSBtc2cuc2VuZGVyLmNhbGx7dmFsdWU6IGFkZHJlc3ModGhpcykuYmFsYW5jZX0oIiIpOwogICAgICAgICAgICByZXF1aXJlKHNlbnQsICJGYWlsZWQgdG8gc2VuZCBFdGhlciIpOwogICAgICAgIH0KICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8qClJvdWxldHRlIGlzIGEgZ2FtZSB3aGVyZSB5b3UgY2FuIHdpbiBhbGwgb2YgdGhlIEV0aGVyIGluIHRoZSBjb250cmFjdAppZiB5b3UgY2FuIHN1Ym1pdCBhIHRyYW5zYWN0aW9uIGF0IGEgc3BlY2lmaWMgdGltaW5nLgpBIHBsYXllciBuZWVkcyB0byBzZW5kIDEwIEV0aGVyIGFuZCB3aW5zIGlmIHRoZSBibG9jay50aW1lc3RhbXAgJSAxNSA9PSAwLgoqLwoKLyoKMS4gRGVwbG95IFJvdWxldHRlIHdpdGggMTAgRXRoZXIKMi4gRXZlIHJ1bnMgYSBwb3dlcmZ1bCBtaW5lciB0aGF0IGNhbiBtYW5pcHVsYXRlIHRoZSBibG9jayB0aW1lc3RhbXAuCjMuIEV2ZSBzZXRzIHRoZSBibG9jay50aW1lc3RhbXAgdG8gYSBudW1iZXIgaW4gdGhlIGZ1dHVyZSB0aGF0IGlzIGRpdmlzaWJsZSBieQogICAxNSBhbmQgZmluZHMgdGhlIHRhcmdldCBibG9jayBoYXNoLgo0LiBFdmUncyBibG9jayBpcyBzdWNjZXNzZnVsbHkgaW5jbHVkZWQgaW50byB0aGUgY2hhaW4sIEV2ZSB3aW5zIHRoZQogICBSb3VsZXR0ZSBnYW1lLgoqLwoKY29udHJhY3QgUm91bGV0dGUgewogICAgdWludDI1NiBwdWJsaWMgcGFzdEJsb2NrVGltZTsKCiAgICBjb25zdHJ1Y3RvcigpIHBheWFibGUge30KCiAgICBmdW5jdGlvbiBzcGluKCkgZXh0ZXJuYWwgcGF5YWJsZSB7CiAgICAgICAgcmVxdWlyZShtc2cudmFsdWUgPT0gMTAgZXRoZXIpOyAvLyBtdXN0IHNlbmQgMTAgZXRoZXIgdG8gcGxheQogICAgICAgIHJlcXVpcmUoYmxvY2sudGltZXN0YW1wICE9IHBhc3RCbG9ja1RpbWUpOyAvLyBvbmx5IDEgdHJhbnNhY3Rpb24gcGVyIGJsb2NrCgogICAgICAgIHBhc3RCbG9ja1RpbWUgPSBibG9jay50aW1lc3RhbXA7CgogICAgICAgIGlmIChibG9jay50aW1lc3RhbXAgJSAxNSA9PSAwKSB7CiAgICAgICAgICAgIChib29sIHNlbnQsKSA9IG1zZy5zZW5kZXIuY2FsbHt2YWx1ZTogYWRkcmVzcyh0aGlzKS5iYWxhbmNlfSgiIik7CiAgICAgICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CiAgICAgICAgfQogICAgfQp9Cg==",
   },
 ]
 
@@ -38,7 +38,7 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
 */</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Roulette</span> </span>{
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> pastBlockTime;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> pastBlockTime;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{}
 
@@ -49,7 +49,7 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
         pastBlockTime <span class="hljs-operator">=</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>;
 
         <span class="hljs-keyword">if</span> (<span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span> <span class="hljs-operator">%</span> <span class="hljs-number">15</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>) {
-            (<span class="hljs-keyword">bool</span> sent, ) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>}(<span class="hljs-string">""</span>);
+            (<span class="hljs-keyword">bool</span> sent,) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>).<span class="hljs-built_in">balance</span>}(<span class="hljs-string">""</span>);
             <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
         }
     }

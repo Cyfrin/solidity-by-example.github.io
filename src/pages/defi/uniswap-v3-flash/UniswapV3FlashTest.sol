@@ -23,11 +23,11 @@ contract UniswapV3FlashTest is Test {
         weth.deposit{value: 1e18}();
         weth.approve(address(uni), 1e18);
 
-        uint balBefore = weth.balanceOf(address(this));
+        uint256 balBefore = weth.balanceOf(address(this));
         uni.flash(0, 100 * 1e18);
-        uint balAfter = weth.balanceOf(address(this));
+        uint256 balAfter = weth.balanceOf(address(this));
 
-        uint fee = balBefore - balAfter;
+        uint256 fee = balBefore - balAfter;
         console.log("WETH fee", fee);
     }
 }

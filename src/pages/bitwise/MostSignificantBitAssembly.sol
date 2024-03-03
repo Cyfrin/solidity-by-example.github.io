@@ -2,7 +2,11 @@
 pragma solidity ^0.8.20;
 
 contract MostSignificantBitAssembly {
-    function mostSignificantBit(uint x) external pure returns (uint msb) {
+    function mostSignificantBit(uint256 x)
+        external
+        pure
+        returns (uint256 msb)
+    {
         assembly {
             let f := shl(7, gt(x, 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF))
             x := shr(f, x)

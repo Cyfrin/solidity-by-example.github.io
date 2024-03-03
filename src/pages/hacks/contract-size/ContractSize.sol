@@ -6,7 +6,7 @@ contract Target {
         // This method relies on extcodesize, which returns 0 for contracts in
         // construction, since the code is only stored at the end of the
         // constructor execution.
-        uint size;
+        uint256 size;
         assembly {
             size := extcodesize(account)
         }

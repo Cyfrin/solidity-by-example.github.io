@@ -17,34 +17,23 @@ contract UniswapV3FlashSwap {
         uint24 fee1,
         address tokenIn,
         address tokenOut,
-        uint amountIn
+        uint256 amountIn
     ) external {
         bool zeroForOne = tokenIn < tokenOut;
-        uint160 sqrtPriceLimitX96 = zeroForOne
-            ? MIN_SQRT_RATIO + 1
-            : MAX_SQRT_RATIO - 1;
+        uint160 sqrtPriceLimitX96 =
+            zeroForOne ? MIN_SQRT_RATIO + 1 : MAX_SQRT_RATIO - 1;
         bytes memory data = abi.encode(
-            msg.sender,
-            pool0,
-            fee1,
-            tokenIn,
-            tokenOut,
-            amountIn,
-            zeroForOne
+            msg.sender, pool0, fee1, tokenIn, tokenOut, amountIn, zeroForOne
         );
 
         IUniswapV3Pool(pool0).swap(
-            address(this),
-            zeroForOne,
-            int(amountIn),
-            sqrtPriceLimitX96,
-            data
+            address(this), zeroForOne, int256(amountIn), sqrtPriceLimitX96, data
         );
     }
 
     function uniswapV3SwapCallback(
-        int amount0,
-        int amount1,
+        int256 amount0,
+        int256 amount1,
         bytes calldata data
     ) external {
         (
@@ -53,27 +42,29 @@ contract UniswapV3FlashSwap {
             uint24 fee1,
             address tokenIn,
             address tokenOut,
-            uint amountIn,
+            uint256 amountIn,
             bool zeroForOne
-        ) = abi.decode(data, (address, address, uint24, address, address, uint, bool));
+        ) = abi.decode(
+            data, (address, address, uint24, address, address, uint256, bool)
+        );
 
         require(msg.sender == address(pool0), "not authorized");
 
-        uint amountOut;
+        uint256 amountOut;
         if (zeroForOne) {
-            amountOut = uint(-amount1);
+            amountOut = uint256(-amount1);
         } else {
-            amountOut = uint(-amount0);
+            amountOut = uint256(-amount0);
         }
 
-        uint buyBackAmount = _swap(tokenOut, tokenIn, fee1, amountOut);
+        uint256 buyBackAmount = _swap(tokenOut, tokenIn, fee1, amountOut);
 
         if (buyBackAmount >= amountIn) {
-            uint profit = buyBackAmount - amountIn;
+            uint256 profit = buyBackAmount - amountIn;
             IERC20(tokenIn).transfer(address(pool0), amountIn);
             IERC20(tokenIn).transfer(caller, profit);
         } else {
-            uint loss = amountIn - buyBackAmount;
+            uint256 loss = amountIn - buyBackAmount;
             IERC20(tokenIn).transferFrom(caller, address(this), loss);
             IERC20(tokenIn).transfer(address(pool0), amountIn);
         }
@@ -83,21 +74,21 @@ contract UniswapV3FlashSwap {
         address tokenIn,
         address tokenOut,
         uint24 fee,
-        uint amountIn
-    ) private returns (uint amountOut) {
+        uint256 amountIn
+    ) private returns (uint256 amountOut) {
         IERC20(tokenIn).approve(address(router), amountIn);
 
         ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
             .ExactInputSingleParams({
-                tokenIn: tokenIn,
-                tokenOut: tokenOut,
-                fee: fee,
-                recipient: address(this),
-                deadline: block.timestamp,
-                amountIn: amountIn,
-                amountOutMinimum: 0,
-                sqrtPriceLimitX96: 0
-            });
+            tokenIn: tokenIn,
+            tokenOut: tokenOut,
+            fee: fee,
+            recipient: address(this),
+            deadline: block.timestamp,
+            amountIn: amountIn,
+            amountOutMinimum: 0,
+            sqrtPriceLimitX96: 0
+        });
 
         amountOut = router.exactInputSingle(params);
     }
@@ -109,50 +100,45 @@ interface ISwapRouter {
         address tokenOut;
         uint24 fee;
         address recipient;
-        uint deadline;
-        uint amountIn;
-        uint amountOutMinimum;
+        uint256 deadline;
+        uint256 amountIn;
+        uint256 amountOutMinimum;
         uint160 sqrtPriceLimitX96;
     }
 
-    function exactInputSingle(
-        ExactInputSingleParams calldata params
-    ) external payable returns (uint amountOut);
+    function exactInputSingle(ExactInputSingleParams calldata params)
+        external
+        payable
+        returns (uint256 amountOut);
 }
 
 interface IUniswapV3Pool {
     function swap(
         address recipient,
         bool zeroForOne,
-        int amountSpecified,
+        int256 amountSpecified,
         uint160 sqrtPriceLimitX96,
         bytes calldata data
-    ) external returns (int amount0, int amount1);
+    ) external returns (int256 amount0, int256 amount1);
 }
 
 interface IERC20 {
-    function totalSupply() external view returns (uint);
-
-    function balanceOf(address account) external view returns (uint);
-
-    function transfer(address recipient, uint amount) external returns (bool);
-
-    function allowance(address owner, address spender) external view returns (uint);
-
-    function approve(address spender, uint amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint amount
-    ) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed owner, address indexed spender, uint value);
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }
 
 interface IWETH is IERC20 {
     function deposit() external payable;
-
-    function withdraw(uint amount) external;
+    function withdraw(uint256 amount) external;
 }

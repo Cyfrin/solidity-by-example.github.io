@@ -8,7 +8,7 @@ export const keywords = ["gas"]
 export const codes = [
   {
     fileName: "Gas.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgYXJlIG5vdCByZWZ1bmRlZC4KICAgIGZ1bmN0aW9uIGZvcmV2ZXIoKSBwdWJsaWMgewogICAgICAgIC8vIEhlcmUgd2UgcnVuIGEgbG9vcCB1bnRpbCBhbGwgb2YgdGhlIGdhcyBhcmUgc3BlbnQKICAgICAgICAvLyBhbmQgdGhlIHRyYW5zYWN0aW9uIGZhaWxzCiAgICAgICAgd2hpbGUgKHRydWUpIHsKICAgICAgICAgICAgaSArPSAxOwogICAgICAgIH0KICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50MjU2IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgYXJlIG5vdCByZWZ1bmRlZC4KICAgIGZ1bmN0aW9uIGZvcmV2ZXIoKSBwdWJsaWMgewogICAgICAgIC8vIEhlcmUgd2UgcnVuIGEgbG9vcCB1bnRpbCBhbGwgb2YgdGhlIGdhcyBhcmUgc3BlbnQKICAgICAgICAvLyBhbmQgdGhlIHRyYW5zYWN0aW9uIGZhaWxzCiAgICAgICAgd2hpbGUgKHRydWUpIHsKICAgICAgICAgICAgaSArPSAxOwogICAgICAgIH0KICAgIH0KfQo=",
   },
 ]
 
@@ -31,7 +31,7 @@ const html = `<h3>How much <code>ether</code> do you need to pay for a transacti
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Gas</span> </span>{
-    <span class="hljs-keyword">uint</span> <span class="hljs-keyword">public</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
     <span class="hljs-comment">// Using up all of the gas that you send causes your transaction to fail.</span>
     <span class="hljs-comment">// State changes are undone.</span>

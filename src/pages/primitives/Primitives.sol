@@ -13,8 +13,8 @@ contract Primitives {
         uint256 ranges from 0 to 2 ** 256 - 1
     */
     uint8 public u8 = 1;
-    uint public u256 = 456;
-    uint public u = 123; // uint is an alias for uint256
+    uint256 public u256 = 456;
+    uint256 public u = 123; // uint is an alias for uint256
 
     /*
     Negative numbers are allowed for int types.
@@ -24,12 +24,12 @@ contract Primitives {
     int128 ranges from -2 ** 127 to 2 ** 127 - 1
     */
     int8 public i8 = -1;
-    int public i256 = 456;
-    int public i = -123; // int is same as int256
+    int256 public i256 = 456;
+    int256 public i = -123; // int is same as int256
 
     // minimum and maximum of int
-    int public minInt = type(int).min;
-    int public maxInt = type(int).max;
+    int256 public minInt = type(int256).min;
+    int256 public maxInt = type(int256).max;
 
     address public addr = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
 
@@ -49,7 +49,7 @@ contract Primitives {
     // Default values
     // Unassigned variables have a default value
     bool public defaultBoo; // false
-    uint public defaultUint; // 0
-    int public defaultInt; // 0
+    uint256 public defaultUint; // 0
+    int256 public defaultInt; // 0
     address public defaultAddr; // 0x0000000000000000000000000000000000000000
 }

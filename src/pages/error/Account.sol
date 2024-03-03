@@ -2,12 +2,12 @@
 pragma solidity ^0.8.20;
 
 contract Account {
-    uint public balance;
-    uint public constant MAX_UINT = 2 ** 256 - 1;
+    uint256 public balance;
+    uint256 public constant MAX_UINT = 2 ** 256 - 1;
 
-    function deposit(uint _amount) public {
-        uint oldBalance = balance;
-        uint newBalance = balance + _amount;
+    function deposit(uint256 _amount) public {
+        uint256 oldBalance = balance;
+        uint256 newBalance = balance + _amount;
 
         // balance + _amount does not overflow if balance + _amount >= balance
         require(newBalance >= oldBalance, "Overflow");
@@ -17,8 +17,8 @@ contract Account {
         assert(balance >= oldBalance);
     }
 
-    function withdraw(uint _amount) public {
-        uint oldBalance = balance;
+    function withdraw(uint256 _amount) public {
+        uint256 oldBalance = balance;
 
         // balance - _amount does not underflow if balance >= _amount
         require(balance >= _amount, "Underflow");

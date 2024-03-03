@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 contract UncheckedMath {
-    function add(uint x, uint y) external pure returns (uint) {
+    function add(uint256 x, uint256 y) external pure returns (uint256) {
         // 22291 gas
         // return x + y;
 
@@ -12,7 +12,7 @@ contract UncheckedMath {
         }
     }
 
-    function sub(uint x, uint y) external pure returns (uint) {
+    function sub(uint256 x, uint256 y) external pure returns (uint256) {
         // 22329 gas
         // return x - y;
 
@@ -22,11 +22,11 @@ contract UncheckedMath {
         }
     }
 
-    function sumOfCubes(uint x, uint y) external pure returns (uint) {
+    function sumOfCubes(uint256 x, uint256 y) external pure returns (uint256) {
         // Wrap complex math logic inside unchecked
         unchecked {
-            uint x3 = x * x * x;
-            uint y3 = y * y * y;
+            uint256 x3 = x * x * x;
+            uint256 y3 = y * y * y;
 
             return x3 + y3;
         }

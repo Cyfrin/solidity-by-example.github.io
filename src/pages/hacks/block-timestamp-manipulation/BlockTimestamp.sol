@@ -17,7 +17,7 @@ A player needs to send 10 Ether and wins if the block.timestamp % 15 == 0.
 */
 
 contract Roulette {
-    uint public pastBlockTime;
+    uint256 public pastBlockTime;
 
     constructor() payable {}
 
@@ -28,7 +28,7 @@ contract Roulette {
         pastBlockTime = block.timestamp;
 
         if (block.timestamp % 15 == 0) {
-            (bool sent, ) = msg.sender.call{value: address(this).balance}("");
+            (bool sent,) = msg.sender.call{value: address(this).balance}("");
             require(sent, "Failed to send Ether");
         }
     }

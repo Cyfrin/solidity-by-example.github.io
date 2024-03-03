@@ -23,56 +23,56 @@ TODO: test?
 */
 
 library Math {
-    function abs(uint x, uint y) internal pure returns (uint) {
+    function abs(uint256 x, uint256 y) internal pure returns (uint256) {
         return x >= y ? x - y : y - x;
     }
 }
 
 contract StableSwap {
     // Number of tokens
-    uint private constant N = 3;
+    uint256 private constant N = 3;
     // Amplification coefficient multiplied by N^(N - 1)
     // Higher value makes the curve more flat
     // Lower value makes the curve more like constant product AMM
-    uint private constant A = 1000 * (N ** (N - 1));
+    uint256 private constant A = 1000 * (N ** (N - 1));
     // 0.03%
-    uint private constant SWAP_FEE = 300;
+    uint256 private constant SWAP_FEE = 300;
     // Liquidity fee is derived from 2 constraints
     // 1. Fee is 0 for adding / removing liquidity that results in a balanced pool
     // 2. Swapping in a balanced pool is like adding and then removing liquidity
     //    from a balanced pool
     // swap fee = add liquidity fee + remove liquidity fee
-    uint private constant LIQUIDITY_FEE = (SWAP_FEE * N) / (4 * (N - 1));
-    uint private constant FEE_DENOMINATOR = 1e6;
+    uint256 private constant LIQUIDITY_FEE = (SWAP_FEE * N) / (4 * (N - 1));
+    uint256 private constant FEE_DENOMINATOR = 1e6;
 
     address[N] public tokens;
     // Normalize each token to 18 decimals
     // Example - DAI (18 decimals), USDC (6 decimals), USDT (6 decimals)
-    uint[N] private multipliers = [1, 1e12, 1e12];
-    uint[N] public balances;
+    uint256[N] private multipliers = [1, 1e12, 1e12];
+    uint256[N] public balances;
 
     // 1 share = 1e18, 18 decimals
-    uint private constant DECIMALS = 18;
-    uint public totalSupply;
-    mapping(address => uint) public balanceOf;
+    uint256 private constant DECIMALS = 18;
+    uint256 public totalSupply;
+    mapping(address => uint256) public balanceOf;
 
     constructor(address[N] memory _tokens) {
         tokens = _tokens;
     }
 
-    function _mint(address _to, uint _amount) private {
+    function _mint(address _to, uint256 _amount) private {
         balanceOf[_to] += _amount;
         totalSupply += _amount;
     }
 
-    function _burn(address _from, uint _amount) private {
+    function _burn(address _from, uint256 _amount) private {
         balanceOf[_from] -= _amount;
         totalSupply -= _amount;
     }
 
     // Return precision-adjusted balances, adjusted to 18 decimals
-    function _xp() private view returns (uint[N] memory xp) {
-        for (uint i; i < N; ++i) {
+    function _xp() private view returns (uint256[N] memory xp) {
+        for (uint256 i; i < N; ++i) {
             xp[i] = balances[i] * multipliers[i];
         }
     }
@@ -83,7 +83,7 @@ contract StableSwap {
      * @param xp Precision-adjusted balances
      * @return D
      */
-    function _getD(uint[N] memory xp) private pure returns (uint) {
+    function _getD(uint256[N] memory xp) private pure returns (uint256) {
         /*
         Newton's method to compute D
         -----------------------------
@@ -98,21 +98,21 @@ contract StableSwap {
         s = sum(x_i)
         p = (D_n)^(n + 1) / (n^n prod(x_i))
         */
-        uint a = A * N; // An^n
+        uint256 a = A * N; // An^n
 
-        uint s; // x_0 + x_1 + ... + x_(n-1)
-        for (uint i; i < N; ++i) {
+        uint256 s; // x_0 + x_1 + ... + x_(n-1)
+        for (uint256 i; i < N; ++i) {
             s += xp[i];
         }
 
         // Newton's method
         // Initial guess, d <= s
-        uint d = s;
-        uint d_prev;
-        for (uint i; i < 255; ++i) {
+        uint256 d = s;
+        uint256 d_prev;
+        for (uint256 i; i < 255; ++i) {
             // p = D^(n + 1) / (n^n * x_0 * ... * x_(n-1))
-            uint p = d;
-            for (uint j; j < N; ++j) {
+            uint256 p = d;
+            for (uint256 j; j < N; ++j) {
                 p = (p * d) / (N * xp[j]);
             }
             d_prev = d;
@@ -132,12 +132,11 @@ contract StableSwap {
      * @param x New balance of token i
      * @param xp Current precision-adjusted balances
      */
-    function _getY(
-        uint i,
-        uint j,
-        uint x,
-        uint[N] memory xp
-    ) private pure returns (uint) {
+    function _getY(uint256 i, uint256 j, uint256 x, uint256[N] memory xp)
+        private
+        pure
+        returns (uint256)
+    {
         /*
         Newton's method to compute y
         -----------------------------
@@ -155,13 +154,13 @@ contract StableSwap {
         b = s + D / (An^n)
         c = D^(n + 1) / (n^n * p * An^n)
         */
-        uint a = A * N;
-        uint d = _getD(xp);
-        uint s;
-        uint c = d;
+        uint256 a = A * N;
+        uint256 d = _getD(xp);
+        uint256 s;
+        uint256 c = d;
 
-        uint _x;
-        for (uint k; k < N; ++k) {
+        uint256 _x;
+        for (uint256 k; k < N; ++k) {
             if (k == i) {
                 _x = x;
             } else if (k == j) {
@@ -174,13 +173,13 @@ contract StableSwap {
             c = (c * d) / (N * _x);
         }
         c = (c * d) / (N * a);
-        uint b = s + d / a;
+        uint256 b = s + d / a;
 
         // Newton's method
-        uint y_prev;
+        uint256 y_prev;
         // Initial guess, y <= d
-        uint y = d;
-        for (uint _i; _i < 255; ++_i) {
+        uint256 y = d;
+        for (uint256 _i; _i < 255; ++_i) {
             y_prev = y;
             y = (y * y + c) / (2 * y + b - d);
             if (Math.abs(y, y_prev) <= 1) {
@@ -199,13 +198,17 @@ contract StableSwap {
      * @param d Liquidity d
      * @return New balance of token i
      */
-    function _getYD(uint i, uint[N] memory xp, uint d) private pure returns (uint) {
-        uint a = A * N;
-        uint s;
-        uint c = d;
+    function _getYD(uint256 i, uint256[N] memory xp, uint256 d)
+        private
+        pure
+        returns (uint256)
+    {
+        uint256 a = A * N;
+        uint256 s;
+        uint256 c = d;
 
-        uint _x;
-        for (uint k; k < N; ++k) {
+        uint256 _x;
+        for (uint256 k; k < N; ++k) {
             if (k != i) {
                 _x = xp[k];
             } else {
@@ -216,13 +219,13 @@ contract StableSwap {
             c = (c * d) / (N * _x);
         }
         c = (c * d) / (N * a);
-        uint b = s + d / a;
+        uint256 b = s + d / a;
 
         // Newton's method
-        uint y_prev;
+        uint256 y_prev;
         // Initial guess, y <= d
-        uint y = d;
-        for (uint _i; _i < 255; ++_i) {
+        uint256 y = d;
+        for (uint256 _i; _i < 255; ++_i) {
             y_prev = y;
             y = (y * y + c) / (2 * y + b - d);
             if (Math.abs(y, y_prev) <= 1) {
@@ -234,9 +237,9 @@ contract StableSwap {
 
     // Estimate value of 1 share
     // How many tokens is one share worth?
-    function getVirtualPrice() external view returns (uint) {
-        uint d = _getD(_xp());
-        uint _totalSupply = totalSupply;
+    function getVirtualPrice() external view returns (uint256) {
+        uint256 d = _getD(_xp());
+        uint256 _totalSupply = totalSupply;
         if (_totalSupply > 0) {
             return (d * 10 ** DECIMALS) / _totalSupply;
         }
@@ -250,23 +253,26 @@ contract StableSwap {
      * @param dx Token in amount
      * @param minDy Minimum token out
      */
-    function swap(uint i, uint j, uint dx, uint minDy) external returns (uint dy) {
+    function swap(uint256 i, uint256 j, uint256 dx, uint256 minDy)
+        external
+        returns (uint256 dy)
+    {
         require(i != j, "i = j");
 
         IERC20(tokens[i]).transferFrom(msg.sender, address(this), dx);
 
         // Calculate dy
-        uint[N] memory xp = _xp();
-        uint x = xp[i] + dx * multipliers[i];
+        uint256[N] memory xp = _xp();
+        uint256 x = xp[i] + dx * multipliers[i];
 
-        uint y0 = xp[j];
-        uint y1 = _getY(i, j, x, xp);
+        uint256 y0 = xp[j];
+        uint256 y1 = _getY(i, j, x, xp);
         // y0 must be >= y1, since x has increased
         // -1 to round down
         dy = (y0 - y1 - 1) / multipliers[j];
 
         // Subtract fee from dy
-        uint fee = (dy * SWAP_FEE) / FEE_DENOMINATOR;
+        uint256 fee = (dy * SWAP_FEE) / FEE_DENOMINATOR;
         dy -= fee;
         require(dy >= minDy, "dy < min");
 
@@ -276,24 +282,26 @@ contract StableSwap {
         IERC20(tokens[j]).transfer(msg.sender, dy);
     }
 
-    function addLiquidity(
-        uint[N] calldata amounts,
-        uint minShares
-    ) external returns (uint shares) {
+    function addLiquidity(uint256[N] calldata amounts, uint256 minShares)
+        external
+        returns (uint256 shares)
+    {
         // calculate current liquidity d0
-        uint _totalSupply = totalSupply;
-        uint d0;
-        uint[N] memory old_xs = _xp();
+        uint256 _totalSupply = totalSupply;
+        uint256 d0;
+        uint256[N] memory old_xs = _xp();
         if (_totalSupply > 0) {
             d0 = _getD(old_xs);
         }
 
         // Transfer tokens in
-        uint[N] memory new_xs;
-        for (uint i; i < N; ++i) {
-            uint amount = amounts[i];
+        uint256[N] memory new_xs;
+        for (uint256 i; i < N; ++i) {
+            uint256 amount = amounts[i];
             if (amount > 0) {
-                IERC20(tokens[i]).transferFrom(msg.sender, address(this), amount);
+                IERC20(tokens[i]).transferFrom(
+                    msg.sender, address(this), amount
+                );
                 new_xs[i] = old_xs[i] + amount * multipliers[i];
             } else {
                 new_xs[i] = old_xs[i];
@@ -301,16 +309,16 @@ contract StableSwap {
         }
 
         // Calculate new liquidity d1
-        uint d1 = _getD(new_xs);
+        uint256 d1 = _getD(new_xs);
         require(d1 > d0, "liquidity didn't increase");
 
         // Reccalcuate D accounting for fee on imbalance
-        uint d2;
+        uint256 d2;
         if (_totalSupply > 0) {
-            for (uint i; i < N; ++i) {
+            for (uint256 i; i < N; ++i) {
                 // TODO: why old_xs[i] * d1 / d0? why not d1 / N?
-                uint idealBalance = (old_xs[i] * d1) / d0;
-                uint diff = Math.abs(new_xs[i], idealBalance);
+                uint256 idealBalance = (old_xs[i] * d1) / d0;
+                uint256 diff = Math.abs(new_xs[i], idealBalance);
                 new_xs[i] -= (LIQUIDITY_FEE * diff) / FEE_DENOMINATOR;
             }
 
@@ -320,7 +328,7 @@ contract StableSwap {
         }
 
         // Update balances
-        for (uint i; i < N; ++i) {
+        for (uint256 i; i < N; ++i) {
             balances[i] += amounts[i];
         }
 
@@ -335,14 +343,14 @@ contract StableSwap {
         _mint(msg.sender, shares);
     }
 
-    function removeLiquidity(
-        uint shares,
-        uint[N] calldata minAmountsOut
-    ) external returns (uint[N] memory amountsOut) {
-        uint _totalSupply = totalSupply;
+    function removeLiquidity(uint256 shares, uint256[N] calldata minAmountsOut)
+        external
+        returns (uint256[N] memory amountsOut)
+    {
+        uint256 _totalSupply = totalSupply;
 
-        for (uint i; i < N; ++i) {
-            uint amountOut = (balances[i] * shares) / _totalSupply;
+        for (uint256 i; i < N; ++i) {
+            uint256 amountOut = (balances[i] * shares) / _totalSupply;
             require(amountOut >= minAmountsOut[i], "out < min");
 
             balances[i] -= amountOut;
@@ -361,25 +369,26 @@ contract StableSwap {
      * @return dy Amount of token i to receive
      *         fee Fee for withdraw. Fee already included in dy
      */
-    function _calcWithdrawOneToken(
-        uint shares,
-        uint i
-    ) private view returns (uint dy, uint fee) {
-        uint _totalSupply = totalSupply;
-        uint[N] memory xp = _xp();
+    function _calcWithdrawOneToken(uint256 shares, uint256 i)
+        private
+        view
+        returns (uint256 dy, uint256 fee)
+    {
+        uint256 _totalSupply = totalSupply;
+        uint256[N] memory xp = _xp();
 
         // Calculate d0 and d1
-        uint d0 = _getD(xp);
-        uint d1 = d0 - (d0 * shares) / _totalSupply;
+        uint256 d0 = _getD(xp);
+        uint256 d1 = d0 - (d0 * shares) / _totalSupply;
 
         // Calculate reduction in y if D = d1
-        uint y0 = _getYD(i, xp, d1);
+        uint256 y0 = _getYD(i, xp, d1);
         // d1 <= d0 so y must be <= xp[i]
-        uint dy0 = (xp[i] - y0) / multipliers[i];
+        uint256 dy0 = (xp[i] - y0) / multipliers[i];
 
         // Calculate imbalance fee, update xp with fees
-        uint dx;
-        for (uint j; j < N; ++j) {
+        uint256 dx;
+        for (uint256 j; j < N; ++j) {
             if (j == i) {
                 dx = (xp[j] * d1) / d0 - y0;
             } else {
@@ -390,16 +399,17 @@ contract StableSwap {
         }
 
         // Recalculate y with xp including imbalance fees
-        uint y1 = _getYD(i, xp, d1);
+        uint256 y1 = _getYD(i, xp, d1);
         // - 1 to round down
         dy = (xp[i] - y1 - 1) / multipliers[i];
         fee = dy0 - dy;
     }
 
-    function calcWithdrawOneToken(
-        uint shares,
-        uint i
-    ) external view returns (uint dy, uint fee) {
+    function calcWithdrawOneToken(uint256 shares, uint256 i)
+        external
+        view
+        returns (uint256 dy, uint256 fee)
+    {
         return _calcWithdrawOneToken(shares, i);
     }
 
@@ -410,11 +420,11 @@ contract StableSwap {
      * @param minAmountOut Minimum amount of token i that must be withdrawn
      */
     function removeLiquidityOneToken(
-        uint shares,
-        uint i,
-        uint minAmountOut
-    ) external returns (uint amountOut) {
-        (amountOut, ) = _calcWithdrawOneToken(shares, i);
+        uint256 shares,
+        uint256 i,
+        uint256 minAmountOut
+    ) external returns (uint256 amountOut) {
+        (amountOut,) = _calcWithdrawOneToken(shares, i);
         require(amountOut >= minAmountOut, "out < min");
 
         balances[i] -= amountOut;
@@ -425,22 +435,17 @@ contract StableSwap {
 }
 
 interface IERC20 {
-    function totalSupply() external view returns (uint);
-
-    function balanceOf(address account) external view returns (uint);
-
-    function transfer(address recipient, uint amount) external returns (bool);
-
-    function allowance(address owner, address spender) external view returns (uint);
-
-    function approve(address spender, uint amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint amount
-    ) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint amount);
-    event Approval(address indexed owner, address indexed spender, uint amount);
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }
