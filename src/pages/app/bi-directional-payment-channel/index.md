@@ -12,3 +12,7 @@ Payments can go both ways, `Alice` pays `Bob` and `Bob` pays `Alice`.
 ```solidity
 {{{BiDirectionalPaymentChannel}}}
 ```
+
+```solidity
+{{{ECDSA}}}
+```

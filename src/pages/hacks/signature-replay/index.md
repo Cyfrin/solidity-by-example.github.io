@@ -29,3 +29,7 @@ Sign messages with `nonce` and address of the contract.
 ```solidity
 {{{PreventSigReplay}}}
 ```
+
+```solidity
+{{{ECDSA}}}
+```

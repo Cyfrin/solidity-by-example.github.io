@@ -19,3 +19,7 @@ This is called a uni-directional payment channel since the payment can go only i
 ```solidity
 {{{UniDirectionalPaymentChannel}}}
 ```
+
+```solidity
+{{{ECDSA}}}
+```

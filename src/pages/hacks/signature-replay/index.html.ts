@@ -165,6 +165,157 @@ if the signer&#39;s intention was to approve a transaction once.</p>
 0x120f8ed8f2fa55498f2ef0a22f26e39b9b51ed29cc93fe0ef3ed1756f58fad0c6eb5a1d6f3671f8d5163639fdc40bb8720de6d8f2523077ad6d1138a60923b801c
 0xa240a487de1eb5bb971e920cb0677a47ddc6421e38f7b048f8aa88266b2c884a10455a52dc76a203a1a9a953418469f9eec2c59e87201bbc8db0e4d9796935cb1b
 */</span>
+</code></pre><pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
+
+<span class="hljs-comment">// OpenZeppelin Contracts (last updated v4.5.0) (utils/cryptography/ECDSA.sol)</span>
+
+<span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">ECDSA</span> </span>{
+    <span class="hljs-keyword">enum</span> <span class="hljs-title">RecoverError</span> {
+        NoError,
+        InvalidSignature,
+        InvalidSignatureLength,
+        InvalidSignatureS,
+        InvalidSignatureV
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_throwError</span>(<span class="hljs-params">RecoverError <span class="hljs-keyword">error</span></span>) <span class="hljs-title"><span class="hljs-keyword">private</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-function"><span class="hljs-keyword">error</span> == <span class="hljs-title">RecoverError</span>.<span class="hljs-title">NoError</span>) </span>{
+            <span class="hljs-keyword">return</span>; <span class="hljs-comment">// no error: do nothing</span>
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-function"><span class="hljs-keyword">error</span> == <span class="hljs-title">RecoverError</span>.<span class="hljs-title">InvalidSignature</span>) </span>{
+            <span class="hljs-keyword">revert</span>(<span class="hljs-string">"ECDSA: invalid signature"</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-function"><span class="hljs-keyword">error</span> == <span class="hljs-title">RecoverError</span>.<span class="hljs-title">InvalidSignatureLength</span>) </span>{
+            <span class="hljs-keyword">revert</span>(<span class="hljs-string">"ECDSA: invalid signature length"</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-function"><span class="hljs-keyword">error</span> == <span class="hljs-title">RecoverError</span>.<span class="hljs-title">InvalidSignatureS</span>) </span>{
+            <span class="hljs-keyword">revert</span>(<span class="hljs-string">"ECDSA: invalid signature &#x27;s&#x27; value"</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-function"><span class="hljs-keyword">error</span> == <span class="hljs-title">RecoverError</span>.<span class="hljs-title">InvalidSignatureV</span>) </span>{
+            <span class="hljs-keyword">revert</span>(<span class="hljs-string">"ECDSA: invalid signature &#x27;v&#x27; value"</span>);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tryRecover</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> signature</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span>, RecoverError</span>)
+    </span>{
+        <span class="hljs-comment">// Check the signature length</span>
+        <span class="hljs-comment">// - case 65: r,s,v signature (standard)</span>
+        <span class="hljs-comment">// - case 64: r,vs signature (cf https://eips.ethereum.org/EIPS/eip-2098) _Available since v4.1._</span>
+        <span class="hljs-keyword">if</span> (signature.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">65</span>) {
+            <span class="hljs-keyword">bytes32</span> r;
+            <span class="hljs-keyword">bytes32</span> s;
+            <span class="hljs-keyword">uint8</span> v;
+            <span class="hljs-comment">// ecrecover takes the signature parameters, and the only way to get them</span>
+            <span class="hljs-comment">// currently is to use assembly.</span>
+            <span class="hljs-keyword">assembly</span> {
+                r <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(signature, <span class="hljs-number">0x20</span>))
+                s <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(signature, <span class="hljs-number">0x40</span>))
+                v <span class="hljs-operator">:=</span> <span class="hljs-built_in">byte</span>(<span class="hljs-number">0</span>, <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(signature, <span class="hljs-number">0x60</span>)))
+            }
+            <span class="hljs-keyword">return</span> tryRecover(hash, v, r, s);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (signature.<span class="hljs-built_in">length</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">64</span>) {
+            <span class="hljs-keyword">bytes32</span> r;
+            <span class="hljs-keyword">bytes32</span> vs;
+            <span class="hljs-comment">// ecrecover takes the signature parameters, and the only way to get them</span>
+            <span class="hljs-comment">// currently is to use assembly.</span>
+            <span class="hljs-keyword">assembly</span> {
+                r <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(signature, <span class="hljs-number">0x20</span>))
+                vs <span class="hljs-operator">:=</span> <span class="hljs-built_in">mload</span>(<span class="hljs-built_in">add</span>(signature, <span class="hljs-number">0x40</span>))
+            }
+            <span class="hljs-keyword">return</span> tryRecover(hash, r, vs);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), RecoverError.InvalidSignatureLength);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recover</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> signature</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>)
+    </span>{
+        (<span class="hljs-keyword">address</span> recovered, RecoverError <span class="hljs-function"><span class="hljs-keyword">error</span>) = <span class="hljs-title">tryRecover</span>(<span class="hljs-params">hash, signature</span>)</span>;
+        _throwError(<span class="hljs-function"><span class="hljs-keyword">error</span>)</span>;
+        <span class="hljs-keyword">return</span> recovered;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tryRecover</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash, <span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> vs</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span>, RecoverError</span>)
+    </span>{
+        <span class="hljs-keyword">bytes32</span> s <span class="hljs-operator">=</span> vs
+            <span class="hljs-operator">&amp;</span> <span class="hljs-keyword">bytes32</span>(
+                <span class="hljs-number">0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</span>
+            );
+        <span class="hljs-keyword">uint8</span> v <span class="hljs-operator">=</span> <span class="hljs-keyword">uint8</span>((<span class="hljs-keyword">uint256</span>(vs) <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span> <span class="hljs-number">255</span>) <span class="hljs-operator">+</span> <span class="hljs-number">27</span>);
+        <span class="hljs-keyword">return</span> tryRecover(hash, v, r, s);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recover</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash, <span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> vs</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>)
+    </span>{
+        (<span class="hljs-keyword">address</span> recovered, RecoverError <span class="hljs-function"><span class="hljs-keyword">error</span>) = <span class="hljs-title">tryRecover</span>(<span class="hljs-params">hash, r, vs</span>)</span>;
+        _throwError(<span class="hljs-function"><span class="hljs-keyword">error</span>)</span>;
+        <span class="hljs-keyword">return</span> recovered;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tryRecover</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash, <span class="hljs-keyword">uint8</span> v, <span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> s</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span>, RecoverError</span>)
+    </span>{
+        <span class="hljs-comment">// EIP-2 still allows signature malleability for ecrecover(). Remove this possibility and make the signature</span>
+        <span class="hljs-comment">// unique. Appendix F in the Ethereum Yellow paper (https://ethereum.github.io/yellowpaper/paper.pdf), defines</span>
+        <span class="hljs-comment">// the valid range for s in (301): 0 &lt; s &lt; secp256k1n ÷ 2 + 1, and for v in (302): v ∈ {27, 28}. Most</span>
+        <span class="hljs-comment">// signatures from current libraries generate a unique signature with an s-value in the lower half order.</span>
+        <span class="hljs-comment">//</span>
+        <span class="hljs-comment">// If your library generates malleable signatures, such as s-values in the upper range, calculate a new s-value</span>
+        <span class="hljs-comment">// with 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141 - s1 and flip v from 27 to 28 or</span>
+        <span class="hljs-comment">// vice versa. If your library also generates signatures with 0/1 for v instead 27/28, add 27 to v to accept</span>
+        <span class="hljs-comment">// these malleable signatures as well.</span>
+        <span class="hljs-keyword">if</span> (
+            <span class="hljs-keyword">uint256</span>(s)
+                <span class="hljs-operator">&gt;</span> <span class="hljs-number">0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0</span>
+        ) {
+            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), RecoverError.InvalidSignatureS);
+        }
+        <span class="hljs-keyword">if</span> (v <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-number">27</span> <span class="hljs-operator">&amp;</span><span class="hljs-operator">&amp;</span> v <span class="hljs-operator">!</span><span class="hljs-operator">=</span> <span class="hljs-number">28</span>) {
+            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), RecoverError.InvalidSignatureV);
+        }
+
+        <span class="hljs-comment">// If the signature is valid (and not malleable), return the signer address</span>
+        <span class="hljs-keyword">address</span> signer <span class="hljs-operator">=</span> <span class="hljs-built_in">ecrecover</span>(hash, v, r, s);
+        <span class="hljs-keyword">if</span> (signer <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>)) {
+            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">address</span>(<span class="hljs-number">0</span>), RecoverError.InvalidSignature);
+        }
+
+        <span class="hljs-keyword">return</span> (signer, RecoverError.NoError);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recover</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash, <span class="hljs-keyword">uint8</span> v, <span class="hljs-keyword">bytes32</span> r, <span class="hljs-keyword">bytes32</span> s</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">address</span></span>)
+    </span>{
+        (<span class="hljs-keyword">address</span> recovered, RecoverError <span class="hljs-function"><span class="hljs-keyword">error</span>) = <span class="hljs-title">tryRecover</span>(<span class="hljs-params">hash, v, r, s</span>)</span>;
+        _throwError(<span class="hljs-function"><span class="hljs-keyword">error</span>)</span>;
+        <span class="hljs-keyword">return</span> recovered;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toEthSignedMessageHash</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> hash</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span></span>)
+    </span>{
+        <span class="hljs-comment">// 32 is the length in bytes of hash,</span>
+        <span class="hljs-comment">// enforced by the type signature above</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">keccak256</span>(
+            <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-string">"\\x19Ethereum Signed Message:\\n32"</span>, hash)
+        );
+    }
+}
 </code></pre>`
 
 export default html
