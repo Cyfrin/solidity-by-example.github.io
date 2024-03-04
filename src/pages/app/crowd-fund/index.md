@@ -1,6 +1,6 @@
 ---
 title: Crowd Fund
-version: 0.8.20
+version: 0.8.24
 description: An example of crowd funding contract
 keywords: [app, application, crowd, fund, funding]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Fallback
-version: 0.8.20
+version: 0.8.24
 description: Example of how to use fallback in Solidity
 keywords: [fallback, function, functions, receive, payable, send, ether, eth, transfer]
 ---

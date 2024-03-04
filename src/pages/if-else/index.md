@@ -1,6 +1,6 @@
 ---
 title: If / Else
-version: 0.8.20
+version: 0.8.24
 description: If / Else conditional statement in Solidity
 keywords: [if, else, conditional, statement, statements]
 ---

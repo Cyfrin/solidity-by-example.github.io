@@ -1,6 +1,6 @@
 ---
 title: Structs
-version: 0.8.20
+version: 0.8.24
 description: An example of how to use structs in Solidity
 keywords: [struct, structs, data, type, types, variable, variables]
 ---

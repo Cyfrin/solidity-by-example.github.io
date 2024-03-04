@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.24;
 
 contract UniswapV2SwapExamples {
     address private constant UNISWAP_V2_ROUTER =

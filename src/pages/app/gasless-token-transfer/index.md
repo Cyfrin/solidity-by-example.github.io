@@ -1,6 +1,6 @@
 ---
 title: Gasless Token Transfer
-version: 0.8.20
+version: 0.8.24
 description: Gasless ERC20 token transfer with Meta transaction
 keywords: [app, application, gasless, token, transfer, ERC20, permit]
 ---

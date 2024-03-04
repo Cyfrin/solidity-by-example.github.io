@@ -1,6 +1,6 @@
 ---
 title: Chainlink Price Oracle
-version: 0.8.20
+version: 0.8.24
 description: Chainlink Price Oracle
 keywords: [defi, chainlink, price, oracle, oracles]
 ---

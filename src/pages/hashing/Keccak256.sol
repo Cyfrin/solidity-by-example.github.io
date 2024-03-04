@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.24;
 
 contract HashFunction {
     function hash(string memory _text, uint256 _num, address _addr)

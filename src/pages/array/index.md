@@ -1,6 +1,6 @@
 ---
 title: Array
-version: 0.8.20
+version: 0.8.24
 description: Learn about arrays in Solidity
 keywords: [data, variable, variables, array, arrays]
 ---

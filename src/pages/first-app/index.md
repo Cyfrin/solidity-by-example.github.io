@@ -1,6 +1,6 @@
 ---
 title: First Application
-version: 0.8.20
+version: 0.8.24
 description: Example of smart contract in Solidity
 keywords: [contract, contracts, app, first, application, counter]
 ---

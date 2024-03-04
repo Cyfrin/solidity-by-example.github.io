@@ -1,6 +1,6 @@
 ---
 title: Delegatecall
-version: 0.8.20
+version: 0.8.24
 description: An example of exploits using delegatecall in Solidity
 keywords: [hack, security, delegatecall]
 ---

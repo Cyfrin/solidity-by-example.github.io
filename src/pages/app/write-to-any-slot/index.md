@@ -1,6 +1,6 @@
 ---
 title: Write to Any Slot
-version: 0.8.20
+version: 0.8.24
 description: Write to Any Slot
 keywords: [app, application, write, any, slot, storage]
 ---

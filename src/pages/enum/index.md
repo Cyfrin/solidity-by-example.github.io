@@ -1,6 +1,6 @@
 ---
 title: Enum
-version: 0.8.20
+version: 0.8.24
 description: Example of enums in Solidity
 keywords: [data, variable, variables, enum, import, imports]
 ---

@@ -1,28 +1,28 @@
 // metadata
-export const version = "0.8.20"
+export const version = "0.8.24"
 export const title = "Immutable"
 export const description = "Immutable variables"
 
 export const keywords = [
-  "constant",
-  "constants",
-  "immutable",
-  "immutables",
-  "data",
-  "variable",
-  "variables",
+    "constant",
+    "constants",
+    "immutable",
+    "immutables",
+    "data",
+    "variable",
+    "variables",
 ]
 
 export const codes = [
-  {
-    fileName: "Immutable.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEltbXV0YWJsZSB7CiAgICAvLyBjb2RpbmcgY29udmVudGlvbiB0byB1cHBlcmNhc2UgY29uc3RhbnQgdmFyaWFibGVzCiAgICBhZGRyZXNzIHB1YmxpYyBpbW11dGFibGUgTVlfQUREUkVTUzsKICAgIHVpbnQyNTYgcHVibGljIGltbXV0YWJsZSBNWV9VSU5UOwoKICAgIGNvbnN0cnVjdG9yKHVpbnQyNTYgX215VWludCkgewogICAgICAgIE1ZX0FERFJFU1MgPSBtc2cuc2VuZGVyOwogICAgICAgIE1ZX1VJTlQgPSBfbXlVaW50OwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Immutable.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEltbXV0YWJsZSB7CiAgICAvLyBjb2RpbmcgY29udmVudGlvbiB0byB1cHBlcmNhc2UgY29uc3RhbnQgdmFyaWFibGVzCiAgICBhZGRyZXNzIHB1YmxpYyBpbW11dGFibGUgTVlfQUREUkVTUzsKICAgIHVpbnQyNTYgcHVibGljIGltbXV0YWJsZSBNWV9VSU5UOwoKICAgIGNvbnN0cnVjdG9yKHVpbnQyNTYgX215VWludCkgewogICAgICAgIE1ZX0FERFJFU1MgPSBtc2cuc2VuZGVyOwogICAgICAgIE1ZX1VJTlQgPSBfbXlVaW50OwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>Immutable variables are like constants. Values of immutable variables can be set inside the constructor but cannot be modified afterwards.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Immutable</span> </span>{
     <span class="hljs-comment">// coding convention to uppercase constant variables</span>

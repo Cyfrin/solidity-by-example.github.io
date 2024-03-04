@@ -1,22 +1,28 @@
 // metadata
-export const version = "0.8.20"
+export const version = "0.8.24"
 export const title = "For and While Loop"
 export const description = "Example of for and while loop in Solidity"
 
-export const keywords = ["for", "loop", "loops", "while", "do"]
+export const keywords = [
+    "for",
+    "loop",
+    "loops",
+    "while",
+    "do",
+]
 
 export const codes = [
-  {
-    fileName: "Loop.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyB7CiAgICAgICAgLy8gZm9yIGxvb3AKICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCAxMDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChpID09IDMpIHsKICAgICAgICAgICAgICAgIC8vIFNraXAgdG8gbmV4dCBpdGVyYXRpb24gd2l0aCBjb250aW51ZQogICAgICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGkgPT0gNSkgewogICAgICAgICAgICAgICAgLy8gRXhpdCBsb29wIHdpdGggYnJlYWsKICAgICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICAvLyB3aGlsZSBsb29wCiAgICAgICAgdWludDI1NiBqOwogICAgICAgIHdoaWxlIChqIDwgMTApIHsKICAgICAgICAgICAgaisrOwogICAgICAgIH0KICAgIH0KfQo=",
-  },
+    {
+        fileName: "Loop.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyB7CiAgICAgICAgLy8gZm9yIGxvb3AKICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCAxMDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChpID09IDMpIHsKICAgICAgICAgICAgICAgIC8vIFNraXAgdG8gbmV4dCBpdGVyYXRpb24gd2l0aCBjb250aW51ZQogICAgICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGkgPT0gNSkgewogICAgICAgICAgICAgICAgLy8gRXhpdCBsb29wIHdpdGggYnJlYWsKICAgICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICAvLyB3aGlsZSBsb29wCiAgICAgICAgdWludDI1NiBqOwogICAgICAgIHdoaWxlIChqIDwgMTApIHsKICAgICAgICAgICAgaisrOwogICAgICAgIH0KICAgIH0KfQo=",
+    },
 ]
 
 const html = `<p>Solidity supports <code>for</code>, <code>while</code>, and <code>do while</code> loops.</p>
 <p>Don&#39;t write loops that are unbounded as this can hit the gas limit, causing your transaction to fail.</p>
 <p>For the reason above, <code>while</code> and <code>do while</code> loops are rarely used.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Loop</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{

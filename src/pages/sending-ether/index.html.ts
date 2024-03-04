@@ -1,28 +1,28 @@
 // metadata
-export const version = "0.8.20"
+export const version = "0.8.24"
 export const title = "Sending Ether (transfer, send, call)"
 export const description = "An example of sending Ether in Solidity"
 
 export const keywords = [
-  "sending",
-  "send",
-  "ether",
-  "eth",
-  "transfer",
-  "send",
-  "call",
-  "fallback",
-  "receive",
-  "payable",
-  "function",
-  "functions",
+    "sending",
+    "send",
+    "ether",
+    "eth",
+    "transfer",
+    "send",
+    "call",
+    "fallback",
+    "receive",
+    "payable",
+    "function",
+    "functions",
 ]
 
 export const codes = [
-  {
-    fileName: "SendingEther.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IFJlY2VpdmVFdGhlciB7CiAgICAvKgogICAgV2hpY2ggZnVuY3Rpb24gaXMgY2FsbGVkLCBmYWxsYmFjaygpIG9yIHJlY2VpdmUoKT8KCiAgICAgICAgICAgc2VuZCBFdGhlcgogICAgICAgICAgICAgICB8CiAgICAgICAgIG1zZy5kYXRhIGlzIGVtcHR5PwogICAgICAgICAgICAgIC8gXAogICAgICAgICAgICB5ZXMgIG5vCiAgICAgICAgICAgIC8gICAgIFwKICAgIHJlY2VpdmUoKSBleGlzdHM/ICBmYWxsYmFjaygpCiAgICAgICAgIC8gICBcCiAgICAgICAgeWVzICAgbm8KICAgICAgICAvICAgICAgXAogICAgcmVjZWl2ZSgpICAgZmFsbGJhY2soKQogICAgKi8KCiAgICAvLyBGdW5jdGlvbiB0byByZWNlaXZlIEV0aGVyLiBtc2cuZGF0YSBtdXN0IGJlIGVtcHR5CiAgICByZWNlaXZlKCkgZXh0ZXJuYWwgcGF5YWJsZSB7fQoKICAgIC8vIEZhbGxiYWNrIGZ1bmN0aW9uIGlzIGNhbGxlZCB3aGVuIG1zZy5kYXRhIGlzIG5vdCBlbXB0eQogICAgZmFsbGJhY2soKSBleHRlcm5hbCBwYXlhYmxlIHt9CgogICAgZnVuY3Rpb24gZ2V0QmFsYW5jZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKHVpbnQyNTYpIHsKICAgICAgICByZXR1cm4gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgfQp9Cgpjb250cmFjdCBTZW5kRXRoZXIgewogICAgZnVuY3Rpb24gc2VuZFZpYVRyYW5zZmVyKGFkZHJlc3MgcGF5YWJsZSBfdG8pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICAvLyBUaGlzIGZ1bmN0aW9uIGlzIG5vIGxvbmdlciByZWNvbW1lbmRlZCBmb3Igc2VuZGluZyBFdGhlci4KICAgICAgICBfdG8udHJhbnNmZXIobXNnLnZhbHVlKTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZW5kVmlhU2VuZChhZGRyZXNzIHBheWFibGUgX3RvKSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgLy8gU2VuZCByZXR1cm5zIGEgYm9vbGVhbiB2YWx1ZSBpbmRpY2F0aW5nIHN1Y2Nlc3Mgb3IgZmFpbHVyZS4KICAgICAgICAvLyBUaGlzIGZ1bmN0aW9uIGlzIG5vdCByZWNvbW1lbmRlZCBmb3Igc2VuZGluZyBFdGhlci4KICAgICAgICBib29sIHNlbnQgPSBfdG8uc2VuZChtc2cudmFsdWUpOwogICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CiAgICB9CgogICAgZnVuY3Rpb24gc2VuZFZpYUNhbGwoYWRkcmVzcyBwYXlhYmxlIF90bykgcHVibGljIHBheWFibGUgewogICAgICAgIC8vIENhbGwgcmV0dXJucyBhIGJvb2xlYW4gdmFsdWUgaW5kaWNhdGluZyBzdWNjZXNzIG9yIGZhaWx1cmUuCiAgICAgICAgLy8gVGhpcyBpcyB0aGUgY3VycmVudCByZWNvbW1lbmRlZCBtZXRob2QgdG8gdXNlLgogICAgICAgIChib29sIHNlbnQsIGJ5dGVzIG1lbW9yeSBkYXRhKSA9IF90by5jYWxse3ZhbHVlOiBtc2cudmFsdWV9KCIiKTsKICAgICAgICByZXF1aXJlKHNlbnQsICJGYWlsZWQgdG8gc2VuZCBFdGhlciIpOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "SendingEther.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IFJlY2VpdmVFdGhlciB7CiAgICAvKgogICAgV2hpY2ggZnVuY3Rpb24gaXMgY2FsbGVkLCBmYWxsYmFjaygpIG9yIHJlY2VpdmUoKT8KCiAgICAgICAgICAgc2VuZCBFdGhlcgogICAgICAgICAgICAgICB8CiAgICAgICAgIG1zZy5kYXRhIGlzIGVtcHR5PwogICAgICAgICAgICAgIC8gXAogICAgICAgICAgICB5ZXMgIG5vCiAgICAgICAgICAgIC8gICAgIFwKICAgIHJlY2VpdmUoKSBleGlzdHM/ICBmYWxsYmFjaygpCiAgICAgICAgIC8gICBcCiAgICAgICAgeWVzICAgbm8KICAgICAgICAvICAgICAgXAogICAgcmVjZWl2ZSgpICAgZmFsbGJhY2soKQogICAgKi8KCiAgICAvLyBGdW5jdGlvbiB0byByZWNlaXZlIEV0aGVyLiBtc2cuZGF0YSBtdXN0IGJlIGVtcHR5CiAgICByZWNlaXZlKCkgZXh0ZXJuYWwgcGF5YWJsZSB7fQoKICAgIC8vIEZhbGxiYWNrIGZ1bmN0aW9uIGlzIGNhbGxlZCB3aGVuIG1zZy5kYXRhIGlzIG5vdCBlbXB0eQogICAgZmFsbGJhY2soKSBleHRlcm5hbCBwYXlhYmxlIHt9CgogICAgZnVuY3Rpb24gZ2V0QmFsYW5jZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKHVpbnQyNTYpIHsKICAgICAgICByZXR1cm4gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgfQp9Cgpjb250cmFjdCBTZW5kRXRoZXIgewogICAgZnVuY3Rpb24gc2VuZFZpYVRyYW5zZmVyKGFkZHJlc3MgcGF5YWJsZSBfdG8pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICAvLyBUaGlzIGZ1bmN0aW9uIGlzIG5vIGxvbmdlciByZWNvbW1lbmRlZCBmb3Igc2VuZGluZyBFdGhlci4KICAgICAgICBfdG8udHJhbnNmZXIobXNnLnZhbHVlKTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZW5kVmlhU2VuZChhZGRyZXNzIHBheWFibGUgX3RvKSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgLy8gU2VuZCByZXR1cm5zIGEgYm9vbGVhbiB2YWx1ZSBpbmRpY2F0aW5nIHN1Y2Nlc3Mgb3IgZmFpbHVyZS4KICAgICAgICAvLyBUaGlzIGZ1bmN0aW9uIGlzIG5vdCByZWNvbW1lbmRlZCBmb3Igc2VuZGluZyBFdGhlci4KICAgICAgICBib29sIHNlbnQgPSBfdG8uc2VuZChtc2cudmFsdWUpOwogICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CiAgICB9CgogICAgZnVuY3Rpb24gc2VuZFZpYUNhbGwoYWRkcmVzcyBwYXlhYmxlIF90bykgcHVibGljIHBheWFibGUgewogICAgICAgIC8vIENhbGwgcmV0dXJucyBhIGJvb2xlYW4gdmFsdWUgaW5kaWNhdGluZyBzdWNjZXNzIG9yIGZhaWx1cmUuCiAgICAgICAgLy8gVGhpcyBpcyB0aGUgY3VycmVudCByZWNvbW1lbmRlZCBtZXRob2QgdG8gdXNlLgogICAgICAgIChib29sIHNlbnQsIGJ5dGVzIG1lbW9yeSBkYXRhKSA9IF90by5jYWxse3ZhbHVlOiBtc2cudmFsdWV9KCIiKTsKICAgICAgICByZXF1aXJlKHNlbnQsICJGYWlsZWQgdG8gc2VuZCBFdGhlciIpOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<h3>How to send Ether?</h3>
@@ -47,7 +47,7 @@ const html = `<h3>How to send Ether?</h3>
 <li>using re-entrancy guard modifier</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ReceiveEther</span> </span>{
     <span class="hljs-comment">/*

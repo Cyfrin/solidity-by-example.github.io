@@ -1,6 +1,6 @@
 ---
 title: Constant Sum AMM
-version: 0.8.20
+version: 0.8.24
 description: Constant sum AMM
 keywords: [defi, constant, sum, amm]
 ---

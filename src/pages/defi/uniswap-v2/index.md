@@ -1,6 +1,6 @@
 ---
 title: Uniswap V2 Swap
-version: 0.8.20
+version: 0.8.24
 description: Uniswap V2 swap
 keywords: [defi, uniswap, v2, swap, amm]
 ---

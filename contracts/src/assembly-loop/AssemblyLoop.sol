@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.24;
 
 contract AssemblyLoop {
     function yul_for_loop() public pure returns (uint256 z) {

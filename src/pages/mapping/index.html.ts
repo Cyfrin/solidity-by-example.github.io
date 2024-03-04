@@ -1,15 +1,20 @@
 // metadata
-export const version = "0.8.20"
+export const version = "0.8.24"
 export const title = "Mapping"
 export const description = "Example of using mapping in Solidity"
 
-export const keywords = ["data", "variable", "variables", "mapping"]
+export const keywords = [
+    "data",
+    "variable",
+    "variables",
+    "mapping",
+]
 
 export const codes = [
-  {
-    fileName: "Mapping.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IE1hcHBpbmcgewogICAgLy8gTWFwcGluZyBmcm9tIGFkZHJlc3MgdG8gdWludAogICAgbWFwcGluZyhhZGRyZXNzID0+IHVpbnQyNTYpIHB1YmxpYyBteU1hcDsKCiAgICBmdW5jdGlvbiBnZXQoYWRkcmVzcyBfYWRkcikgcHVibGljIHZpZXcgcmV0dXJucyAodWludDI1NikgewogICAgICAgIC8vIE1hcHBpbmcgYWx3YXlzIHJldHVybnMgYSB2YWx1ZS4KICAgICAgICAvLyBJZiB0aGUgdmFsdWUgd2FzIG5ldmVyIHNldCwgaXQgd2lsbCByZXR1cm4gdGhlIGRlZmF1bHQgdmFsdWUuCiAgICAgICAgcmV0dXJuIG15TWFwW19hZGRyXTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXQoYWRkcmVzcyBfYWRkciwgdWludDI1NiBfaSkgcHVibGljIHsKICAgICAgICAvLyBVcGRhdGUgdGhlIHZhbHVlIGF0IHRoaXMgYWRkcmVzcwogICAgICAgIG15TWFwW19hZGRyXSA9IF9pOwogICAgfQoKICAgIGZ1bmN0aW9uIHJlbW92ZShhZGRyZXNzIF9hZGRyKSBwdWJsaWMgewogICAgICAgIC8vIFJlc2V0IHRoZSB2YWx1ZSB0byB0aGUgZGVmYXVsdCB2YWx1ZS4KICAgICAgICBkZWxldGUgbXlNYXBbX2FkZHJdOwogICAgfQp9Cgpjb250cmFjdCBOZXN0ZWRNYXBwaW5nIHsKICAgIC8vIE5lc3RlZCBtYXBwaW5nIChtYXBwaW5nIGZyb20gYWRkcmVzcyB0byBhbm90aGVyIG1hcHBpbmcpCiAgICBtYXBwaW5nKGFkZHJlc3MgPT4gbWFwcGluZyh1aW50MjU2ID0+IGJvb2wpKSBwdWJsaWMgbmVzdGVkOwoKICAgIGZ1bmN0aW9uIGdldChhZGRyZXNzIF9hZGRyMSwgdWludDI1NiBfaSkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIC8vIFlvdSBjYW4gZ2V0IHZhbHVlcyBmcm9tIGEgbmVzdGVkIG1hcHBpbmcKICAgICAgICAvLyBldmVuIHdoZW4gaXQgaXMgbm90IGluaXRpYWxpemVkCiAgICAgICAgcmV0dXJuIG5lc3RlZFtfYWRkcjFdW19pXTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXQoYWRkcmVzcyBfYWRkcjEsIHVpbnQyNTYgX2ksIGJvb2wgX2JvbykgcHVibGljIHsKICAgICAgICBuZXN0ZWRbX2FkZHIxXVtfaV0gPSBfYm9vOwogICAgfQoKICAgIGZ1bmN0aW9uIHJlbW92ZShhZGRyZXNzIF9hZGRyMSwgdWludDI1NiBfaSkgcHVibGljIHsKICAgICAgICBkZWxldGUgbmVzdGVkW19hZGRyMV1bX2ldOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Mapping.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IE1hcHBpbmcgewogICAgLy8gTWFwcGluZyBmcm9tIGFkZHJlc3MgdG8gdWludAogICAgbWFwcGluZyhhZGRyZXNzID0+IHVpbnQyNTYpIHB1YmxpYyBteU1hcDsKCiAgICBmdW5jdGlvbiBnZXQoYWRkcmVzcyBfYWRkcikgcHVibGljIHZpZXcgcmV0dXJucyAodWludDI1NikgewogICAgICAgIC8vIE1hcHBpbmcgYWx3YXlzIHJldHVybnMgYSB2YWx1ZS4KICAgICAgICAvLyBJZiB0aGUgdmFsdWUgd2FzIG5ldmVyIHNldCwgaXQgd2lsbCByZXR1cm4gdGhlIGRlZmF1bHQgdmFsdWUuCiAgICAgICAgcmV0dXJuIG15TWFwW19hZGRyXTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXQoYWRkcmVzcyBfYWRkciwgdWludDI1NiBfaSkgcHVibGljIHsKICAgICAgICAvLyBVcGRhdGUgdGhlIHZhbHVlIGF0IHRoaXMgYWRkcmVzcwogICAgICAgIG15TWFwW19hZGRyXSA9IF9pOwogICAgfQoKICAgIGZ1bmN0aW9uIHJlbW92ZShhZGRyZXNzIF9hZGRyKSBwdWJsaWMgewogICAgICAgIC8vIFJlc2V0IHRoZSB2YWx1ZSB0byB0aGUgZGVmYXVsdCB2YWx1ZS4KICAgICAgICBkZWxldGUgbXlNYXBbX2FkZHJdOwogICAgfQp9Cgpjb250cmFjdCBOZXN0ZWRNYXBwaW5nIHsKICAgIC8vIE5lc3RlZCBtYXBwaW5nIChtYXBwaW5nIGZyb20gYWRkcmVzcyB0byBhbm90aGVyIG1hcHBpbmcpCiAgICBtYXBwaW5nKGFkZHJlc3MgPT4gbWFwcGluZyh1aW50MjU2ID0+IGJvb2wpKSBwdWJsaWMgbmVzdGVkOwoKICAgIGZ1bmN0aW9uIGdldChhZGRyZXNzIF9hZGRyMSwgdWludDI1NiBfaSkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIC8vIFlvdSBjYW4gZ2V0IHZhbHVlcyBmcm9tIGEgbmVzdGVkIG1hcHBpbmcKICAgICAgICAvLyBldmVuIHdoZW4gaXQgaXMgbm90IGluaXRpYWxpemVkCiAgICAgICAgcmV0dXJuIG5lc3RlZFtfYWRkcjFdW19pXTsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXQoYWRkcmVzcyBfYWRkcjEsIHVpbnQyNTYgX2ksIGJvb2wgX2JvbykgcHVibGljIHsKICAgICAgICBuZXN0ZWRbX2FkZHIxXVtfaV0gPSBfYm9vOwogICAgfQoKICAgIGZ1bmN0aW9uIHJlbW92ZShhZGRyZXNzIF9hZGRyMSwgdWludDI1NiBfaSkgcHVibGljIHsKICAgICAgICBkZWxldGUgbmVzdGVkW19hZGRyMV1bX2ldOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>Maps are created with the syntax <code>mapping(keyType =&gt; valueType)</code>.</p>
@@ -17,7 +22,7 @@ const html = `<p>Maps are created with the syntax <code>mapping(keyType =&gt; va
 <p><code>valueType</code> can be any type including another mapping or an array.</p>
 <p>Mappings are not iterable.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Mapping</span> </span>{
     <span class="hljs-comment">// Mapping from address to uint</span>

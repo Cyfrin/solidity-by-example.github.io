@@ -1,6 +1,6 @@
 ---
 title: Minimal Proxy Contract
-version: 0.8.20
+version: 0.8.24
 description: Deploy contracts cheaply with minimal proxy contract
 keywords: [app, application, minimal, proxy, contract]
 ---

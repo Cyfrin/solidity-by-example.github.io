@@ -11,9 +11,9 @@ import youTube from "../components/youtube.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2024/03/04 - Solidity 0.8.24",
   "2024/02/14 - Github PR erfanHosseinPanahi",
   "2024/01/18 - WETH permit hack",
-  "2024/01/09 - Vault inflation attack",
 ]
 
 export default function HomePage() {
@@ -115,13 +115,13 @@ export default function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
-        title="Solidity by Example | 0.8.20"
+        title="Solidity by Example | 0.8.24"
         description="Learn smart contract programming using Solidity"
       />
       <h1 className={styles.header}>
         <a href="/">Solidity by Example</a>
       </h1>
-      <div className={styles.subHeader}>v 0.8.20</div>
+      <div className={styles.subHeader}>v 0.8.24</div>
       <div className={styles.main}>
         <p>
           Introduction to <a href="https://solidity.readthedocs.io">Solidity</a> with

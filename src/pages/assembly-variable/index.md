@@ -1,6 +1,6 @@
 ---
 title: Assembly Variable
-version: 0.8.20
+version: 0.8.24
 description: Example of how to declare variable inside assembly
 keywords: [assembly, variable, yul]
 ---

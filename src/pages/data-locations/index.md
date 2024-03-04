@@ -1,6 +1,6 @@
 ---
 title: Data Locations - Storage, Memory and Calldata
-version: 0.8.20
+version: 0.8.24
 description: Data locations - storage, memory and calldata
 keywords: [data, location, locations, storage, memory, calldata]
 ---

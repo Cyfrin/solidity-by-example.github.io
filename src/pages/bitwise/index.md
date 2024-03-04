@@ -1,6 +1,6 @@
 ---
 title: Bitwise Operators
-version: 0.8.20
+version: 0.8.24
 description: Learn about bitwise operators in Solidity
 keywords: [bitwise, most, significant, bit, assembly]
 ---

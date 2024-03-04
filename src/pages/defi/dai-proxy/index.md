@@ -1,6 +1,6 @@
 ---
 title: DAI Proxy Examples
-version: 0.8.20
+version: 0.8.24
 description: Borrow and repay DAI using DssProxy
 keywords: [defi, dai, proxy]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Multi-Sig Wallet
-version: 0.8.20
+version: 0.8.24
 description: An example of multi-sig wallet in Solidity
 keywords: [app, application, multi, sig, signature, wallet]
 ---

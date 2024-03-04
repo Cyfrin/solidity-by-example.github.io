@@ -1,22 +1,22 @@
 // metadata
-export const version = "0.8.20"
+export const version = "0.8.24"
 export const title = "Hashing with Keccak256"
 export const description = "Example of hashing using Keccak256 in Solidity"
 
 export const keywords = [
-  "hash",
-  "hashing",
-  "function",
-  "functions",
-  "keccak256",
-  "cryptography",
+    "hash",
+    "hashing",
+    "function",
+    "functions",
+    "keccak256",
+    "cryptography",
 ]
 
 export const codes = [
-  {
-    fileName: "Keccak256.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEhhc2hGdW5jdGlvbiB7CiAgICBmdW5jdGlvbiBoYXNoKHN0cmluZyBtZW1vcnkgX3RleHQsIHVpbnQyNTYgX251bSwgYWRkcmVzcyBfYWRkcikKICAgICAgICBwdWJsaWMKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoYnl0ZXMzMikKICAgIHsKICAgICAgICByZXR1cm4ga2VjY2FrMjU2KGFiaS5lbmNvZGVQYWNrZWQoX3RleHQsIF9udW0sIF9hZGRyKSk7CiAgICB9CgogICAgLy8gRXhhbXBsZSBvZiBoYXNoIGNvbGxpc2lvbgogICAgLy8gSGFzaCBjb2xsaXNpb24gY2FuIG9jY3VyIHdoZW4geW91IHBhc3MgbW9yZSB0aGFuIG9uZSBkeW5hbWljIGRhdGEgdHlwZQogICAgLy8gdG8gYWJpLmVuY29kZVBhY2tlZC4gSW4gc3VjaCBjYXNlLCB5b3Ugc2hvdWxkIHVzZSBhYmkuZW5jb2RlIGluc3RlYWQuCiAgICBmdW5jdGlvbiBjb2xsaXNpb24oc3RyaW5nIG1lbW9yeSBfdGV4dCwgc3RyaW5nIG1lbW9yeSBfYW5vdGhlclRleHQpCiAgICAgICAgcHVibGljCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJ5dGVzMzIpCiAgICB7CiAgICAgICAgLy8gZW5jb2RlUGFja2VkKEFBQSwgQkJCKSAtPiBBQUFCQkIKICAgICAgICAvLyBlbmNvZGVQYWNrZWQoQUEsIEFCQkIpIC0+IEFBQUJCQgogICAgICAgIHJldHVybiBrZWNjYWsyNTYoYWJpLmVuY29kZVBhY2tlZChfdGV4dCwgX2Fub3RoZXJUZXh0KSk7CiAgICB9Cn0KCmNvbnRyYWN0IEd1ZXNzVGhlTWFnaWNXb3JkIHsKICAgIGJ5dGVzMzIgcHVibGljIGFuc3dlciA9CiAgICAgICAgMHg2MDI5OGY3OGNjMGI0NzE3MGJhNzljMTBhYTM4NTFkNzY0OGJkOTZmMmY4ZTQ2YTE5ZGJjNzc3YzM2ZmIwYzAwOwoKICAgIC8vIE1hZ2ljIHdvcmQgaXMgIlNvbGlkaXR5IgogICAgZnVuY3Rpb24gZ3Vlc3Moc3RyaW5nIG1lbW9yeSBfd29yZCkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIHJldHVybiBrZWNjYWsyNTYoYWJpLmVuY29kZVBhY2tlZChfd29yZCkpID09IGFuc3dlcjsKICAgIH0KfQo=",
-  },
+    {
+        fileName: "Keccak256.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEhhc2hGdW5jdGlvbiB7CiAgICBmdW5jdGlvbiBoYXNoKHN0cmluZyBtZW1vcnkgX3RleHQsIHVpbnQyNTYgX251bSwgYWRkcmVzcyBfYWRkcikKICAgICAgICBwdWJsaWMKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoYnl0ZXMzMikKICAgIHsKICAgICAgICByZXR1cm4ga2VjY2FrMjU2KGFiaS5lbmNvZGVQYWNrZWQoX3RleHQsIF9udW0sIF9hZGRyKSk7CiAgICB9CgogICAgLy8gRXhhbXBsZSBvZiBoYXNoIGNvbGxpc2lvbgogICAgLy8gSGFzaCBjb2xsaXNpb24gY2FuIG9jY3VyIHdoZW4geW91IHBhc3MgbW9yZSB0aGFuIG9uZSBkeW5hbWljIGRhdGEgdHlwZQogICAgLy8gdG8gYWJpLmVuY29kZVBhY2tlZC4gSW4gc3VjaCBjYXNlLCB5b3Ugc2hvdWxkIHVzZSBhYmkuZW5jb2RlIGluc3RlYWQuCiAgICBmdW5jdGlvbiBjb2xsaXNpb24oc3RyaW5nIG1lbW9yeSBfdGV4dCwgc3RyaW5nIG1lbW9yeSBfYW5vdGhlclRleHQpCiAgICAgICAgcHVibGljCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJ5dGVzMzIpCiAgICB7CiAgICAgICAgLy8gZW5jb2RlUGFja2VkKEFBQSwgQkJCKSAtPiBBQUFCQkIKICAgICAgICAvLyBlbmNvZGVQYWNrZWQoQUEsIEFCQkIpIC0+IEFBQUJCQgogICAgICAgIHJldHVybiBrZWNjYWsyNTYoYWJpLmVuY29kZVBhY2tlZChfdGV4dCwgX2Fub3RoZXJUZXh0KSk7CiAgICB9Cn0KCmNvbnRyYWN0IEd1ZXNzVGhlTWFnaWNXb3JkIHsKICAgIGJ5dGVzMzIgcHVibGljIGFuc3dlciA9CiAgICAgICAgMHg2MDI5OGY3OGNjMGI0NzE3MGJhNzljMTBhYTM4NTFkNzY0OGJkOTZmMmY4ZTQ2YTE5ZGJjNzc3YzM2ZmIwYzAwOwoKICAgIC8vIE1hZ2ljIHdvcmQgaXMgIlNvbGlkaXR5IgogICAgZnVuY3Rpb24gZ3Vlc3Moc3RyaW5nIG1lbW9yeSBfd29yZCkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIHJldHVybiBrZWNjYWsyNTYoYWJpLmVuY29kZVBhY2tlZChfd29yZCkpID09IGFuc3dlcjsKICAgIH0KfQo=",
+    },
 ]
 
 const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the input.</p>
@@ -27,7 +27,7 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">HashFunction</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hash</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _text, <span class="hljs-keyword">uint256</span> _num, <span class="hljs-keyword">address</span> _addr</span>)

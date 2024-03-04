@@ -1,6 +1,6 @@
 ---
 title: Upgradeable Proxy
-version: 0.8.20
+version: 0.8.24
 description: Example of upgradeable proxy
 keywords: [app, application, delegatecall, upgradeable, proxy]
 ---

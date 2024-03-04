@@ -1,19 +1,25 @@
 // metadata
-export const version = "0.8.20"
+export const version = "0.8.24"
 export const title = "Error"
 export const description = "Example of how to throw errors in Solidity"
 
-export const keywords = ["error", "errors", "require", "revert", "assert"]
+export const keywords = [
+    "error",
+    "errors",
+    "require",
+    "revert",
+    "assert",
+]
 
 export const codes = [
-  {
-    fileName: "Account.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEFjY291bnQgewogICAgdWludDI1NiBwdWJsaWMgYmFsYW5jZTsKICAgIHVpbnQyNTYgcHVibGljIGNvbnN0YW50IE1BWF9VSU5UID0gMiAqKiAyNTYgLSAxOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludDI1NiBfYW1vdW50KSBwdWJsaWMgewogICAgICAgIHVpbnQyNTYgb2xkQmFsYW5jZSA9IGJhbGFuY2U7CiAgICAgICAgdWludDI1NiBuZXdCYWxhbmNlID0gYmFsYW5jZSArIF9hbW91bnQ7CgogICAgICAgIC8vIGJhbGFuY2UgKyBfYW1vdW50IGRvZXMgbm90IG92ZXJmbG93IGlmIGJhbGFuY2UgKyBfYW1vdW50ID49IGJhbGFuY2UKICAgICAgICByZXF1aXJlKG5ld0JhbGFuY2UgPj0gb2xkQmFsYW5jZSwgIk92ZXJmbG93Iik7CgogICAgICAgIGJhbGFuY2UgPSBuZXdCYWxhbmNlOwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA+PSBvbGRCYWxhbmNlKTsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50MjU2IF9hbW91bnQpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiBvbGRCYWxhbmNlID0gYmFsYW5jZTsKCiAgICAgICAgLy8gYmFsYW5jZSAtIF9hbW91bnQgZG9lcyBub3QgdW5kZXJmbG93IGlmIGJhbGFuY2UgPj0gX2Ftb3VudAogICAgICAgIHJlcXVpcmUoYmFsYW5jZSA+PSBfYW1vdW50LCAiVW5kZXJmbG93Iik7CgogICAgICAgIGlmIChiYWxhbmNlIDwgX2Ftb3VudCkgewogICAgICAgICAgICByZXZlcnQoIlVuZGVyZmxvdyIpOwogICAgICAgIH0KCiAgICAgICAgYmFsYW5jZSAtPSBfYW1vdW50OwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA8PSBvbGRCYWxhbmNlKTsKICAgIH0KfQo=",
-  },
-  {
-    fileName: "Error.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yMDsKCmNvbnRyYWN0IEVycm9yIHsKICAgIGZ1bmN0aW9uIHRlc3RSZXF1aXJlKHVpbnQyNTYgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXF1aXJlIHNob3VsZCBiZSB1c2VkIHRvIHZhbGlkYXRlIGNvbmRpdGlvbnMgc3VjaCBhczoKICAgICAgICAvLyAtIGlucHV0cwogICAgICAgIC8vIC0gY29uZGl0aW9ucyBiZWZvcmUgZXhlY3V0aW9uCiAgICAgICAgLy8gLSByZXR1cm4gdmFsdWVzIGZyb20gY2FsbHMgdG8gb3RoZXIgZnVuY3Rpb25zCiAgICAgICAgcmVxdWlyZShfaSA+IDEwLCAiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0UmV2ZXJ0KHVpbnQyNTYgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXZlcnQgaXMgdXNlZnVsIHdoZW4gdGhlIGNvbmRpdGlvbiB0byBjaGVjayBpcyBjb21wbGV4LgogICAgICAgIC8vIFRoaXMgY29kZSBkb2VzIHRoZSBleGFjdCBzYW1lIHRoaW5nIGFzIHRoZSBleGFtcGxlIGFib3ZlCiAgICAgICAgaWYgKF9pIDw9IDEwKSB7CiAgICAgICAgICAgIHJldmVydCgiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgICAgICB9CiAgICB9CgogICAgdWludDI1NiBwdWJsaWMgbnVtOwoKICAgIGZ1bmN0aW9uIHRlc3RBc3NlcnQoKSBwdWJsaWMgdmlldyB7CiAgICAgICAgLy8gQXNzZXJ0IHNob3VsZCBvbmx5IGJlIHVzZWQgdG8gdGVzdCBmb3IgaW50ZXJuYWwgZXJyb3JzLAogICAgICAgIC8vIGFuZCB0byBjaGVjayBpbnZhcmlhbnRzLgoKICAgICAgICAvLyBIZXJlIHdlIGFzc2VydCB0aGF0IG51bSBpcyBhbHdheXMgZXF1YWwgdG8gMAogICAgICAgIC8vIHNpbmNlIGl0IGlzIGltcG9zc2libGUgdG8gdXBkYXRlIHRoZSB2YWx1ZSBvZiBudW0KICAgICAgICBhc3NlcnQobnVtID09IDApOwogICAgfQoKICAgIC8vIGN1c3RvbSBlcnJvcgogICAgZXJyb3IgSW5zdWZmaWNpZW50QmFsYW5jZSh1aW50MjU2IGJhbGFuY2UsIHVpbnQyNTYgd2l0aGRyYXdBbW91bnQpOwoKICAgIGZ1bmN0aW9uIHRlc3RDdXN0b21FcnJvcih1aW50MjU2IF93aXRoZHJhd0Ftb3VudCkgcHVibGljIHZpZXcgewogICAgICAgIHVpbnQyNTYgYmFsID0gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgICAgIGlmIChiYWwgPCBfd2l0aGRyYXdBbW91bnQpIHsKICAgICAgICAgICAgcmV2ZXJ0IEluc3VmZmljaWVudEJhbGFuY2UoewogICAgICAgICAgICAgICAgYmFsYW5jZTogYmFsLAogICAgICAgICAgICAgICAgd2l0aGRyYXdBbW91bnQ6IF93aXRoZHJhd0Ftb3VudAogICAgICAgICAgICB9KTsKICAgICAgICB9CiAgICB9Cn0K",
-  },
+    {
+        fileName: "Account.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEFjY291bnQgewogICAgdWludDI1NiBwdWJsaWMgYmFsYW5jZTsKICAgIHVpbnQyNTYgcHVibGljIGNvbnN0YW50IE1BWF9VSU5UID0gMiAqKiAyNTYgLSAxOwoKICAgIGZ1bmN0aW9uIGRlcG9zaXQodWludDI1NiBfYW1vdW50KSBwdWJsaWMgewogICAgICAgIHVpbnQyNTYgb2xkQmFsYW5jZSA9IGJhbGFuY2U7CiAgICAgICAgdWludDI1NiBuZXdCYWxhbmNlID0gYmFsYW5jZSArIF9hbW91bnQ7CgogICAgICAgIC8vIGJhbGFuY2UgKyBfYW1vdW50IGRvZXMgbm90IG92ZXJmbG93IGlmIGJhbGFuY2UgKyBfYW1vdW50ID49IGJhbGFuY2UKICAgICAgICByZXF1aXJlKG5ld0JhbGFuY2UgPj0gb2xkQmFsYW5jZSwgIk92ZXJmbG93Iik7CgogICAgICAgIGJhbGFuY2UgPSBuZXdCYWxhbmNlOwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA+PSBvbGRCYWxhbmNlKTsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50MjU2IF9hbW91bnQpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiBvbGRCYWxhbmNlID0gYmFsYW5jZTsKCiAgICAgICAgLy8gYmFsYW5jZSAtIF9hbW91bnQgZG9lcyBub3QgdW5kZXJmbG93IGlmIGJhbGFuY2UgPj0gX2Ftb3VudAogICAgICAgIHJlcXVpcmUoYmFsYW5jZSA+PSBfYW1vdW50LCAiVW5kZXJmbG93Iik7CgogICAgICAgIGlmIChiYWxhbmNlIDwgX2Ftb3VudCkgewogICAgICAgICAgICByZXZlcnQoIlVuZGVyZmxvdyIpOwogICAgICAgIH0KCiAgICAgICAgYmFsYW5jZSAtPSBfYW1vdW50OwoKICAgICAgICBhc3NlcnQoYmFsYW5jZSA8PSBvbGRCYWxhbmNlKTsKICAgIH0KfQo=",
+    },
+    {
+        fileName: "Error.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEVycm9yIHsKICAgIGZ1bmN0aW9uIHRlc3RSZXF1aXJlKHVpbnQyNTYgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXF1aXJlIHNob3VsZCBiZSB1c2VkIHRvIHZhbGlkYXRlIGNvbmRpdGlvbnMgc3VjaCBhczoKICAgICAgICAvLyAtIGlucHV0cwogICAgICAgIC8vIC0gY29uZGl0aW9ucyBiZWZvcmUgZXhlY3V0aW9uCiAgICAgICAgLy8gLSByZXR1cm4gdmFsdWVzIGZyb20gY2FsbHMgdG8gb3RoZXIgZnVuY3Rpb25zCiAgICAgICAgcmVxdWlyZShfaSA+IDEwLCAiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0UmV2ZXJ0KHVpbnQyNTYgX2kpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBSZXZlcnQgaXMgdXNlZnVsIHdoZW4gdGhlIGNvbmRpdGlvbiB0byBjaGVjayBpcyBjb21wbGV4LgogICAgICAgIC8vIFRoaXMgY29kZSBkb2VzIHRoZSBleGFjdCBzYW1lIHRoaW5nIGFzIHRoZSBleGFtcGxlIGFib3ZlCiAgICAgICAgaWYgKF9pIDw9IDEwKSB7CiAgICAgICAgICAgIHJldmVydCgiSW5wdXQgbXVzdCBiZSBncmVhdGVyIHRoYW4gMTAiKTsKICAgICAgICB9CiAgICB9CgogICAgdWludDI1NiBwdWJsaWMgbnVtOwoKICAgIGZ1bmN0aW9uIHRlc3RBc3NlcnQoKSBwdWJsaWMgdmlldyB7CiAgICAgICAgLy8gQXNzZXJ0IHNob3VsZCBvbmx5IGJlIHVzZWQgdG8gdGVzdCBmb3IgaW50ZXJuYWwgZXJyb3JzLAogICAgICAgIC8vIGFuZCB0byBjaGVjayBpbnZhcmlhbnRzLgoKICAgICAgICAvLyBIZXJlIHdlIGFzc2VydCB0aGF0IG51bSBpcyBhbHdheXMgZXF1YWwgdG8gMAogICAgICAgIC8vIHNpbmNlIGl0IGlzIGltcG9zc2libGUgdG8gdXBkYXRlIHRoZSB2YWx1ZSBvZiBudW0KICAgICAgICBhc3NlcnQobnVtID09IDApOwogICAgfQoKICAgIC8vIGN1c3RvbSBlcnJvcgogICAgZXJyb3IgSW5zdWZmaWNpZW50QmFsYW5jZSh1aW50MjU2IGJhbGFuY2UsIHVpbnQyNTYgd2l0aGRyYXdBbW91bnQpOwoKICAgIGZ1bmN0aW9uIHRlc3RDdXN0b21FcnJvcih1aW50MjU2IF93aXRoZHJhd0Ftb3VudCkgcHVibGljIHZpZXcgewogICAgICAgIHVpbnQyNTYgYmFsID0gYWRkcmVzcyh0aGlzKS5iYWxhbmNlOwogICAgICAgIGlmIChiYWwgPCBfd2l0aGRyYXdBbW91bnQpIHsKICAgICAgICAgICAgcmV2ZXJ0IEluc3VmZmljaWVudEJhbGFuY2UoewogICAgICAgICAgICAgICAgYmFsYW5jZTogYmFsLAogICAgICAgICAgICAgICAgd2l0aGRyYXdBbW91bnQ6IF93aXRoZHJhd0Ftb3VudAogICAgICAgICAgICB9KTsKICAgICAgICB9CiAgICB9Cn0K",
+    },
 ]
 
 const html = `<p>An error will undo all changes made to the state during a transaction.</p>
@@ -26,7 +32,7 @@ assertion probably means that there is a bug.</li>
 </ul>
 <p>Use custom error to save gas.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title"><span class="hljs-built_in">Error</span></span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testRequire</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> </span>{
@@ -71,7 +77,7 @@ assertion probably means that there is a bug.</li>
 }
 </code></pre><p>Here is another example</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.20;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Account</span> </span>{
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> balance;

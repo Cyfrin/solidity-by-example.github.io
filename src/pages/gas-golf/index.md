@@ -1,6 +1,6 @@
 ---
 title: Gas Saving Techniques
-version: 0.8.20
+version: 0.8.24
 description: Some gas saving techniques
 keywords: [gas, golf]
 ---

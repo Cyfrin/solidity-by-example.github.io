@@ -1,6 +1,6 @@
 ---
 title: Function Modifier
-version: 0.8.20
+version: 0.8.24
 description: Example of how to write function modifier in Solidity
 keywords: [function, functions, modifier, modifiers, _]
 ---

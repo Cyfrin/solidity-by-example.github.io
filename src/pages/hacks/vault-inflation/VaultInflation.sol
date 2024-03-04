@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.20;
+pragma solidity 0.8.24;
 
 import {Test, console2} from "forge-std/Test.sol";
 import {IERC20, Vault, Token} from "../../../src/hacks/vault-inflation/VaultInflation.sol";
