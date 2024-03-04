@@ -3,28 +3,21 @@ export const version = "0.8.24"
 export const title = "Enum"
 export const description = "Example of enums in Solidity"
 
-export const keywords = [
-    "data",
-    "variable",
-    "variables",
-    "enum",
-    "import",
-    "imports",
-]
+export const keywords = ["data", "variable", "variables", "enum", "import", "imports"]
 
 export const codes = [
-    {
-        fileName: "Enum.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEVudW0gewogICAgLy8gRW51bSByZXByZXNlbnRpbmcgc2hpcHBpbmcgc3RhdHVzCiAgICBlbnVtIFN0YXR1cyB7CiAgICAgICAgUGVuZGluZywKICAgICAgICBTaGlwcGVkLAogICAgICAgIEFjY2VwdGVkLAogICAgICAgIFJlamVjdGVkLAogICAgICAgIENhbmNlbGVkCiAgICB9CgogICAgLy8gRGVmYXVsdCB2YWx1ZSBpcyB0aGUgZmlyc3QgZWxlbWVudCBsaXN0ZWQgaW4KICAgIC8vIGRlZmluaXRpb24gb2YgdGhlIHR5cGUsIGluIHRoaXMgY2FzZSAiUGVuZGluZyIKICAgIFN0YXR1cyBwdWJsaWMgc3RhdHVzOwoKICAgIC8vIFJldHVybnMgdWludAogICAgLy8gUGVuZGluZyAgLSAwCiAgICAvLyBTaGlwcGVkICAtIDEKICAgIC8vIEFjY2VwdGVkIC0gMgogICAgLy8gUmVqZWN0ZWQgLSAzCiAgICAvLyBDYW5jZWxlZCAtIDQKICAgIGZ1bmN0aW9uIGdldCgpIHB1YmxpYyB2aWV3IHJldHVybnMgKFN0YXR1cykgewogICAgICAgIHJldHVybiBzdGF0dXM7CiAgICB9CgogICAgLy8gVXBkYXRlIHN0YXR1cyBieSBwYXNzaW5nIHVpbnQgaW50byBpbnB1dAogICAgZnVuY3Rpb24gc2V0KFN0YXR1cyBfc3RhdHVzKSBwdWJsaWMgewogICAgICAgIHN0YXR1cyA9IF9zdGF0dXM7CiAgICB9CgogICAgLy8gWW91IGNhbiB1cGRhdGUgdG8gYSBzcGVjaWZpYyBlbnVtIGxpa2UgdGhpcwogICAgZnVuY3Rpb24gY2FuY2VsKCkgcHVibGljIHsKICAgICAgICBzdGF0dXMgPSBTdGF0dXMuQ2FuY2VsZWQ7CiAgICB9CgogICAgLy8gZGVsZXRlIHJlc2V0cyB0aGUgZW51bSB0byBpdHMgZmlyc3QgdmFsdWUsIDAKICAgIGZ1bmN0aW9uIHJlc2V0KCkgcHVibGljIHsKICAgICAgICBkZWxldGUgc3RhdHVzOwogICAgfQp9Cg==",
-    },
-    {
-        fileName: "EnumDeclaration.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKLy8gVGhpcyBpcyBzYXZlZCAnRW51bURlY2xhcmF0aW9uLnNvbCcKCmVudW0gU3RhdHVzIHsKICAgIFBlbmRpbmcsCiAgICBTaGlwcGVkLAogICAgQWNjZXB0ZWQsCiAgICBSZWplY3RlZCwKICAgIENhbmNlbGVkCn0K",
-    },
-    {
-        fileName: "EnumImport.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiLi9FbnVtRGVjbGFyYXRpb24uc29sIjsKCmNvbnRyYWN0IEVudW0gewogICAgU3RhdHVzIHB1YmxpYyBzdGF0dXM7Cn0K",
-    },
+  {
+    fileName: "Enum.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEVudW0gewogICAgLy8gRW51bSByZXByZXNlbnRpbmcgc2hpcHBpbmcgc3RhdHVzCiAgICBlbnVtIFN0YXR1cyB7CiAgICAgICAgUGVuZGluZywKICAgICAgICBTaGlwcGVkLAogICAgICAgIEFjY2VwdGVkLAogICAgICAgIFJlamVjdGVkLAogICAgICAgIENhbmNlbGVkCiAgICB9CgogICAgLy8gRGVmYXVsdCB2YWx1ZSBpcyB0aGUgZmlyc3QgZWxlbWVudCBsaXN0ZWQgaW4KICAgIC8vIGRlZmluaXRpb24gb2YgdGhlIHR5cGUsIGluIHRoaXMgY2FzZSAiUGVuZGluZyIKICAgIFN0YXR1cyBwdWJsaWMgc3RhdHVzOwoKICAgIC8vIFJldHVybnMgdWludAogICAgLy8gUGVuZGluZyAgLSAwCiAgICAvLyBTaGlwcGVkICAtIDEKICAgIC8vIEFjY2VwdGVkIC0gMgogICAgLy8gUmVqZWN0ZWQgLSAzCiAgICAvLyBDYW5jZWxlZCAtIDQKICAgIGZ1bmN0aW9uIGdldCgpIHB1YmxpYyB2aWV3IHJldHVybnMgKFN0YXR1cykgewogICAgICAgIHJldHVybiBzdGF0dXM7CiAgICB9CgogICAgLy8gVXBkYXRlIHN0YXR1cyBieSBwYXNzaW5nIHVpbnQgaW50byBpbnB1dAogICAgZnVuY3Rpb24gc2V0KFN0YXR1cyBfc3RhdHVzKSBwdWJsaWMgewogICAgICAgIHN0YXR1cyA9IF9zdGF0dXM7CiAgICB9CgogICAgLy8gWW91IGNhbiB1cGRhdGUgdG8gYSBzcGVjaWZpYyBlbnVtIGxpa2UgdGhpcwogICAgZnVuY3Rpb24gY2FuY2VsKCkgcHVibGljIHsKICAgICAgICBzdGF0dXMgPSBTdGF0dXMuQ2FuY2VsZWQ7CiAgICB9CgogICAgLy8gZGVsZXRlIHJlc2V0cyB0aGUgZW51bSB0byBpdHMgZmlyc3QgdmFsdWUsIDAKICAgIGZ1bmN0aW9uIHJlc2V0KCkgcHVibGljIHsKICAgICAgICBkZWxldGUgc3RhdHVzOwogICAgfQp9Cg==",
+  },
+  {
+    fileName: "EnumDeclaration.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKLy8gVGhpcyBpcyBzYXZlZCAnRW51bURlY2xhcmF0aW9uLnNvbCcKCmVudW0gU3RhdHVzIHsKICAgIFBlbmRpbmcsCiAgICBTaGlwcGVkLAogICAgQWNjZXB0ZWQsCiAgICBSZWplY3RlZCwKICAgIENhbmNlbGVkCn0K",
+  },
+  {
+    fileName: "EnumImport.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiLi9FbnVtRGVjbGFyYXRpb24uc29sIjsKCmNvbnRyYWN0IEVudW0gewogICAgU3RhdHVzIHB1YmxpYyBzdGF0dXM7Cn0K",
+  },
 ]
 
 const html = `<p>Solidity supports enumerables and they are useful to model choice and keep track of state.</p>
