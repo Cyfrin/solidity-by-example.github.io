@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 import {Test, console2} from "forge-std/Test.sol";
-import {UniswapV3Flash, IERC20}"../../../src/defi/uniswap-v3-flash/UniswapV3Flash.sol";
+import "../../../src/defi/uniswap-v3-flash/UniswapV3Flash.sol";
 
 contract UniswapV3FlashTest is Test {
     address constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
@@ -13,18 +13,18 @@ contract UniswapV3FlashTest is Test {
 
     IERC20 private constant weth = IERC20(WETH);
     IERC20 private constant dai = IERC20(DAI);
-    UniswapV3FlashSwap private uni;
+    UniswapV3Flash private uni;
     address constant user = address(11);
 
     function setUp() public {
-        uni = new UniswapV3FlashSwap(POOL);
+        uni = new UniswapV3Flash(POOL);
 
         deal(DAI, user, 1e6 * 1e18);
         vm.prank(user);
         dai.approve(address(uni), type(uint256).max);
     }
 
-    function test_flash_swap() public {
+    function test_flash() public {
         uint256 dai_before = dai.balanceOf(user);
         vm.prank(user);
         uni.flash(1e6 * 1e18, 0);
