@@ -30,11 +30,8 @@ contract EchidnaTestTimeAndCaller {
 
     // Default senders
     // Change the addresses to see the test fail
-    address[3] private senders = [
-        address(0x10000),
-        address(0x20000),
-        address(0x00a329C0648769a73afAC7F9381e08fb43DBEA70)
-    ];
+    address[3] private senders =
+        [address(0x10000), address(0x20000), address(0x00a329C0648769a73afAC7F9381e08fb43DBEA70)];
 
     address private sender = msg.sender;
 

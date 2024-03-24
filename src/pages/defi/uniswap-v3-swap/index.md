@@ -5,22 +5,28 @@ description: Uniswap V3 swap examples
 keywords: [defi, uniswap, v3, swap, amm]
 ---
 
-### Uniswap V3 Swap Examples
+### Uniswap V3 Single Hop Swap
 
 ```solidity
-{{{UniswapV3SwapExamples}}}
+{{{UniswapV3SingleHopSwap}}}
+```
+
+### Uniswap V3 Multi Hop Swap
+
+```solidity
+{{{UniswapV3MultiHopSwap}}}
 ```
 
 ### Test with Foundry
 
+Single hop test
+
 ```solidity
-{{{UniswapV3SwapExamplesTest}}}
+{{{UniswapV3SingleHopSwapTest}}}
 ```
 
-### Links
+Multi hop test
 
-<a href="https://docs.uniswap.org/protocol/guides/swaps/single-swaps" target="__blank">Uniswap V3</a>
-
-<a href="https://github.com/foundry-rs/foundry" target="__blank">Foundry</a>
-
-<a href="https://github.com/t4sk/defi-notes" target="__blank">Uniswap V3 Foundry example</a>
+```solidity
+{{{UniswapV3MultiHopSwapTest}}}
+```

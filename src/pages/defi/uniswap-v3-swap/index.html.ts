@@ -7,6 +7,22 @@ export const keywords = ["defi", "uniswap", "v3", "swap", "amm"]
 
 export const codes = [
   {
+    fileName: "UniswapV3MultiHopSwap.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI0OwoKYWRkcmVzcyBjb25zdGFudCBTV0FQX1JPVVRFUl8wMiA9IDB4NjhiMzQ2NTgzM2ZiNzJBNzBlY0RGNDg1RTBlNEM3YkQ4NjY1RmM0NTsKYWRkcmVzcyBjb25zdGFudCBXRVRIID0gMHhDMDJhYUEzOWIyMjNGRThEMEEwZTVDNEYyN2VBRDkwODNDNzU2Q2MyOwphZGRyZXNzIGNvbnN0YW50IFVTREMgPSAweEEwYjg2OTkxYzYyMThiMzZjMWQxOUQ0YTJlOUViMGNFMzYwNmVCNDg7CmFkZHJlc3MgY29uc3RhbnQgREFJID0gMHg2QjE3NTQ3NEU4OTA5NEM0NERhOThiOTU0RWVkZUFDNDk1MjcxZDBGOwoKY29udHJhY3QgVW5pc3dhcFYzTXVsdGlIb3BTd2FwIHsKICAgIElTd2FwUm91dGVyMDIgcHJpdmF0ZSBjb25zdGFudCByb3V0ZXIgPSBJU3dhcFJvdXRlcjAyKFNXQVBfUk9VVEVSXzAyKTsKICAgIElFUkMyMCBwcml2YXRlIGNvbnN0YW50IHdldGggPSBJRVJDMjAoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBjb25zdGFudCBkYWkgPSBJRVJDMjAoREFJKTsKCiAgICBmdW5jdGlvbiBzd2FwRXhhY3RJbnB1dE11bHRpSG9wKHVpbnQyNTYgYW1vdW50SW4sIHVpbnQyNTYgYW1vdW50T3V0TWluKQogICAgICAgIGV4dGVybmFsCiAgICB7CiAgICAgICAgd2V0aC50cmFuc2ZlckZyb20obXNnLnNlbmRlciwgYWRkcmVzcyh0aGlzKSwgYW1vdW50SW4pOwogICAgICAgIHdldGguYXBwcm92ZShhZGRyZXNzKHJvdXRlciksIGFtb3VudEluKTsKCiAgICAgICAgYnl0ZXMgbWVtb3J5IHBhdGggPQogICAgICAgICAgICBhYmkuZW5jb2RlUGFja2VkKFdFVEgsIHVpbnQyNCgzMDAwKSwgVVNEQywgdWludDI0KDEwMCksIERBSSk7CgogICAgICAgIElTd2FwUm91dGVyMDIuRXhhY3RJbnB1dFBhcmFtcyBtZW1vcnkgcGFyYW1zID0gSVN3YXBSb3V0ZXIwMgogICAgICAgICAgICAuRXhhY3RJbnB1dFBhcmFtcyh7CiAgICAgICAgICAgIHBhdGg6IHBhdGgsCiAgICAgICAgICAgIHJlY2lwaWVudDogbXNnLnNlbmRlciwKICAgICAgICAgICAgYW1vdW50SW46IGFtb3VudEluLAogICAgICAgICAgICBhbW91bnRPdXRNaW5pbXVtOiBhbW91bnRPdXRNaW4KICAgICAgICB9KTsKCiAgICAgICAgcm91dGVyLmV4YWN0SW5wdXQocGFyYW1zKTsKICAgIH0KCiAgICBmdW5jdGlvbiBzd2FwRXhhY3RPdXRwdXRNdWx0aUhvcCh1aW50MjU2IGFtb3VudE91dCwgdWludDI1NiBhbW91bnRJbk1heCkKICAgICAgICBleHRlcm5hbAogICAgewogICAgICAgIHdldGgudHJhbnNmZXJGcm9tKG1zZy5zZW5kZXIsIGFkZHJlc3ModGhpcyksIGFtb3VudEluTWF4KTsKICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyhyb3V0ZXIpLCBhbW91bnRJbk1heCk7CgogICAgICAgIGJ5dGVzIG1lbW9yeSBwYXRoID0KICAgICAgICAgICAgYWJpLmVuY29kZVBhY2tlZChEQUksIHVpbnQyNCgxMDApLCBVU0RDLCB1aW50MjQoMzAwMCksIFdFVEgpOwoKICAgICAgICBJU3dhcFJvdXRlcjAyLkV4YWN0T3V0cHV0UGFyYW1zIG1lbW9yeSBwYXJhbXMgPSBJU3dhcFJvdXRlcjAyCiAgICAgICAgICAgIC5FeGFjdE91dHB1dFBhcmFtcyh7CiAgICAgICAgICAgIHBhdGg6IHBhdGgsCiAgICAgICAgICAgIHJlY2lwaWVudDogbXNnLnNlbmRlciwKICAgICAgICAgICAgYW1vdW50T3V0OiBhbW91bnRPdXQsCiAgICAgICAgICAgIGFtb3VudEluTWF4aW11bTogYW1vdW50SW5NYXgKICAgICAgICB9KTsKCiAgICAgICAgdWludDI1NiBhbW91bnRJbiA9IHJvdXRlci5leGFjdE91dHB1dChwYXJhbXMpOwoKICAgICAgICBpZiAoYW1vdW50SW4gPCBhbW91bnRJbk1heCkgewogICAgICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyhyb3V0ZXIpLCAwKTsKICAgICAgICAgICAgd2V0aC50cmFuc2Zlcihtc2cuc2VuZGVyLCBhbW91bnRJbk1heCAtIGFtb3VudEluKTsKICAgICAgICB9CiAgICB9Cn0KCmludGVyZmFjZSBJU3dhcFJvdXRlcjAyIHsKICAgIHN0cnVjdCBFeGFjdElucHV0UGFyYW1zIHsKICAgICAgICBieXRlcyBwYXRoOwogICAgICAgIGFkZHJlc3MgcmVjaXBpZW50OwogICAgICAgIHVpbnQyNTYgYW1vdW50SW47CiAgICAgICAgdWludDI1NiBhbW91bnRPdXRNaW5pbXVtOwogICAgfQoKICAgIGZ1bmN0aW9uIGV4YWN0SW5wdXQoRXhhY3RJbnB1dFBhcmFtcyBjYWxsZGF0YSBwYXJhbXMpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICBwYXlhYmxlCiAgICAgICAgcmV0dXJucyAodWludDI1NiBhbW91bnRPdXQpOwoKICAgIHN0cnVjdCBFeGFjdE91dHB1dFBhcmFtcyB7CiAgICAgICAgYnl0ZXMgcGF0aDsKICAgICAgICBhZGRyZXNzIHJlY2lwaWVudDsKICAgICAgICB1aW50MjU2IGFtb3VudE91dDsKICAgICAgICB1aW50MjU2IGFtb3VudEluTWF4aW11bTsKICAgIH0KCiAgICBmdW5jdGlvbiBleGFjdE91dHB1dChFeGFjdE91dHB1dFBhcmFtcyBjYWxsZGF0YSBwYXJhbXMpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICBwYXlhYmxlCiAgICAgICAgcmV0dXJucyAodWludDI1NiBhbW91bnRJbik7Cn0KCmludGVyZmFjZSBJRVJDMjAgewogICAgZnVuY3Rpb24gdG90YWxTdXBwbHkoKSBleHRlcm5hbCB2aWV3IHJldHVybnMgKHVpbnQyNTYpOwogICAgZnVuY3Rpb24gYmFsYW5jZU9mKGFkZHJlc3MgYWNjb3VudCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50MjU2KTsKICAgIGZ1bmN0aW9uIHRyYW5zZmVyKGFkZHJlc3MgcmVjaXBpZW50LCB1aW50MjU2IGFtb3VudCkKICAgICAgICBleHRlcm5hbAogICAgICAgIHJldHVybnMgKGJvb2wpOwogICAgZnVuY3Rpb24gYWxsb3dhbmNlKGFkZHJlc3Mgb3duZXIsIGFkZHJlc3Mgc3BlbmRlcikKICAgICAgICBleHRlcm5hbAogICAgICAgIHZpZXcKICAgICAgICByZXR1cm5zICh1aW50MjU2KTsKICAgIGZ1bmN0aW9uIGFwcHJvdmUoYWRkcmVzcyBzcGVuZGVyLCB1aW50MjU2IGFtb3VudCkgZXh0ZXJuYWwgcmV0dXJucyAoYm9vbCk7CiAgICBmdW5jdGlvbiB0cmFuc2ZlckZyb20oYWRkcmVzcyBzZW5kZXIsIGFkZHJlc3MgcmVjaXBpZW50LCB1aW50MjU2IGFtb3VudCkKICAgICAgICBleHRlcm5hbAogICAgICAgIHJldHVybnMgKGJvb2wpOwp9CgppbnRlcmZhY2UgSVdFVEggaXMgSUVSQzIwIHsKICAgIGZ1bmN0aW9uIGRlcG9zaXQoKSBleHRlcm5hbCBwYXlhYmxlOwogICAgZnVuY3Rpb24gd2l0aGRyYXcodWludDI1NiBhbW91bnQpIGV4dGVybmFsOwp9Cg==",
+  },
+  {
+    fileName: "UniswapV3MultiHopSwapTest.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCAiLi4vLi4vLi4vc3JjL2RlZmkvdW5pc3dhcC12My1zd2FwL1VuaXN3YXBWM011bHRpSG9wU3dhcC5zb2wiOwoKY29udHJhY3QgVW5pc3dhcFYzTXVsdGlIb3BTd2FwVGVzdCBpcyBUZXN0IHsKICAgIGFkZHJlc3MgcHJpdmF0ZSBjb25zdGFudCBTV0FQX1JPVVRFUl8wMiA9CiAgICAgICAgMHg2OGIzNDY1ODMzZmI3MkE3MGVjREY0ODVFMGU0QzdiRDg2NjVGYzQ1OwogICAgYWRkcmVzcyBwcml2YXRlIGNvbnN0YW50IFdFVEggPSAweEMwMmFhQTM5YjIyM0ZFOEQwQTBlNUM0RjI3ZUFEOTA4M0M3NTZDYzI7CiAgICBhZGRyZXNzIHByaXZhdGUgY29uc3RhbnQgREFJID0gMHg2QjE3NTQ3NEU4OTA5NEM0NERhOThiOTU0RWVkZUFDNDk1MjcxZDBGOwogICAgYWRkcmVzcyBwcml2YXRlIGNvbnN0YW50IFVTREMgPSAweEEwYjg2OTkxYzYyMThiMzZjMWQxOUQ0YTJlOUViMGNFMzYwNmVCNDg7CgogICAgSVdFVEggcHJpdmF0ZSBjb25zdGFudCB3ZXRoID0gSVdFVEgoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBjb25zdGFudCBkYWkgPSBJRVJDMjAoREFJKTsKICAgIElFUkMyMCBwcml2YXRlIGNvbnN0YW50IHVzZGMgPSBJRVJDMjAoVVNEQyk7CgogICAgVW5pc3dhcFYzTXVsdGlIb3BTd2FwIHByaXZhdGUgc3dhcDsKCiAgICB1aW50MjU2IHByaXZhdGUgY29uc3RhbnQgQU1PVU5UX0lOID0gMTAgKiAxZTE4OwogICAgdWludDI1NiBwcml2YXRlIGNvbnN0YW50IEFNT1VOVF9PVVQgPSAyMCAqIDFlMTg7CiAgICB1aW50MjU2IHByaXZhdGUgY29uc3RhbnQgTUFYX0FNT1VOVF9JTiA9IDFlMTg7CgogICAgZnVuY3Rpb24gc2V0VXAoKSBwdWJsaWMgewogICAgICAgIHN3YXAgPSBuZXcgVW5pc3dhcFYzTXVsdGlIb3BTd2FwKCk7CiAgICAgICAgd2V0aC5kZXBvc2l0e3ZhbHVlOiBBTU9VTlRfSU4gKyBNQVhfQU1PVU5UX0lOfSgpOwogICAgICAgIHdldGguYXBwcm92ZShhZGRyZXNzKHN3YXApLCB0eXBlKHVpbnQyNTYpLm1heCk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF9zd2FwRXhhY3RJbnB1dE11bHRpSG9wKCkgcHVibGljIHsKICAgICAgICBzd2FwLnN3YXBFeGFjdElucHV0TXVsdGlIb3AoQU1PVU5UX0lOLCAxKTsKICAgICAgICB1aW50MjU2IGQxID0gZGFpLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKICAgICAgICBhc3NlcnRHdChkMSwgMCwgIkRBSSBiYWxhbmNlID0gMCIpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3Rfc3dhcEV4YWN0T3V0cHV0TXVsdGlIb3AoKSBwdWJsaWMgewogICAgICAgIHVpbnQyNTYgdzAgPSB3ZXRoLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKICAgICAgICB1aW50MjU2IGQwID0gZGFpLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKICAgICAgICBzd2FwLnN3YXBFeGFjdE91dHB1dE11bHRpSG9wKEFNT1VOVF9PVVQsIE1BWF9BTU9VTlRfSU4pOwogICAgICAgIHVpbnQyNTYgdzEgPSB3ZXRoLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKICAgICAgICB1aW50MjU2IGQxID0gZGFpLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKCiAgICAgICAgYXNzZXJ0THQodzEsIHcwLCAiV0VUSCBiYWxhbmNlIGRpZG4ndCBkZWNyZWFzZSIpOwogICAgICAgIGFzc2VydEd0KGQxLCBkMCwgIkRBSSBiYWxhbmNlIGRpZG4ndCBpbmNyZWFzZSIpOwogICAgICAgIGFzc2VydEVxKHdldGguYmFsYW5jZU9mKGFkZHJlc3Moc3dhcCkpLCAwLCAiV0VUSCBiYWxhbmNlIG9mIHN3YXAgIT0gMCIpOwogICAgICAgIGFzc2VydEVxKGRhaS5iYWxhbmNlT2YoYWRkcmVzcyhzd2FwKSksIDAsICJEQUkgYmFsYW5jZSBvZiBzd2FwICE9IDAiKTsKICAgIH0KfQo=",
+  },
+  {
+    fileName: "UniswapV3SingleHopSwap.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmFkZHJlc3MgY29uc3RhbnQgU1dBUF9ST1VURVJfMDIgPSAweDY4YjM0NjU4MzNmYjcyQTcwZWNERjQ4NUUwZTRDN2JEODY2NUZjNDU7CmFkZHJlc3MgY29uc3RhbnQgV0VUSCA9IDB4QzAyYWFBMzliMjIzRkU4RDBBMGU1QzRGMjdlQUQ5MDgzQzc1NkNjMjsKYWRkcmVzcyBjb25zdGFudCBEQUkgPSAweDZCMTc1NDc0RTg5MDk0QzQ0RGE5OGI5NTRFZWRlQUM0OTUyNzFkMEY7Cgpjb250cmFjdCBVbmlzd2FwVjNTaW5nbGVIb3BTd2FwIHsKICAgIElTd2FwUm91dGVyMDIgcHJpdmF0ZSBjb25zdGFudCByb3V0ZXIgPSBJU3dhcFJvdXRlcjAyKFNXQVBfUk9VVEVSXzAyKTsKICAgIElFUkMyMCBwcml2YXRlIGNvbnN0YW50IHdldGggPSBJRVJDMjAoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBjb25zdGFudCBkYWkgPSBJRVJDMjAoREFJKTsKCiAgICBmdW5jdGlvbiBzd2FwRXhhY3RJbnB1dFNpbmdsZUhvcCh1aW50MjU2IGFtb3VudEluLCB1aW50MjU2IGFtb3VudE91dE1pbikKICAgICAgICBleHRlcm5hbAogICAgewogICAgICAgIHdldGgudHJhbnNmZXJGcm9tKG1zZy5zZW5kZXIsIGFkZHJlc3ModGhpcyksIGFtb3VudEluKTsKICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyhyb3V0ZXIpLCBhbW91bnRJbik7CgogICAgICAgIElTd2FwUm91dGVyMDIuRXhhY3RJbnB1dFNpbmdsZVBhcmFtcyBtZW1vcnkgcGFyYW1zID0gSVN3YXBSb3V0ZXIwMgogICAgICAgICAgICAuRXhhY3RJbnB1dFNpbmdsZVBhcmFtcyh7CiAgICAgICAgICAgIHRva2VuSW46IFdFVEgsCiAgICAgICAgICAgIHRva2VuT3V0OiBEQUksCiAgICAgICAgICAgIGZlZTogMzAwMCwKICAgICAgICAgICAgcmVjaXBpZW50OiBtc2cuc2VuZGVyLAogICAgICAgICAgICBhbW91bnRJbjogYW1vdW50SW4sCiAgICAgICAgICAgIGFtb3VudE91dE1pbmltdW06IGFtb3VudE91dE1pbiwKICAgICAgICAgICAgc3FydFByaWNlTGltaXRYOTY6IDAKICAgICAgICB9KTsKCiAgICAgICAgcm91dGVyLmV4YWN0SW5wdXRTaW5nbGUocGFyYW1zKTsKICAgIH0KCiAgICBmdW5jdGlvbiBzd2FwRXhhY3RPdXRwdXRTaW5nbGVIb3AodWludDI1NiBhbW91bnRPdXQsIHVpbnQyNTYgYW1vdW50SW5NYXgpCiAgICAgICAgZXh0ZXJuYWwKICAgIHsKICAgICAgICB3ZXRoLnRyYW5zZmVyRnJvbShtc2cuc2VuZGVyLCBhZGRyZXNzKHRoaXMpLCBhbW91bnRJbk1heCk7CiAgICAgICAgd2V0aC5hcHByb3ZlKGFkZHJlc3Mocm91dGVyKSwgYW1vdW50SW5NYXgpOwoKICAgICAgICBJU3dhcFJvdXRlcjAyLkV4YWN0T3V0cHV0U2luZ2xlUGFyYW1zIG1lbW9yeSBwYXJhbXMgPSBJU3dhcFJvdXRlcjAyCiAgICAgICAgICAgIC5FeGFjdE91dHB1dFNpbmdsZVBhcmFtcyh7CiAgICAgICAgICAgIHRva2VuSW46IFdFVEgsCiAgICAgICAgICAgIHRva2VuT3V0OiBEQUksCiAgICAgICAgICAgIGZlZTogMzAwMCwKICAgICAgICAgICAgcmVjaXBpZW50OiBtc2cuc2VuZGVyLAogICAgICAgICAgICBhbW91bnRPdXQ6IGFtb3VudE91dCwKICAgICAgICAgICAgYW1vdW50SW5NYXhpbXVtOiBhbW91bnRJbk1heCwKICAgICAgICAgICAgc3FydFByaWNlTGltaXRYOTY6IDAKICAgICAgICB9KTsKCiAgICAgICAgdWludDI1NiBhbW91bnRJbiA9IHJvdXRlci5leGFjdE91dHB1dFNpbmdsZShwYXJhbXMpOwoKICAgICAgICBpZiAoYW1vdW50SW4gPCBhbW91bnRJbk1heCkgewogICAgICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyhyb3V0ZXIpLCAwKTsKICAgICAgICAgICAgd2V0aC50cmFuc2Zlcihtc2cuc2VuZGVyLCBhbW91bnRJbk1heCAtIGFtb3VudEluKTsKICAgICAgICB9CiAgICB9Cn0KCmludGVyZmFjZSBJU3dhcFJvdXRlcjAyIHsKICAgIHN0cnVjdCBFeGFjdElucHV0U2luZ2xlUGFyYW1zIHsKICAgICAgICBhZGRyZXNzIHRva2VuSW47CiAgICAgICAgYWRkcmVzcyB0b2tlbk91dDsKICAgICAgICB1aW50MjQgZmVlOwogICAgICAgIGFkZHJlc3MgcmVjaXBpZW50OwogICAgICAgIHVpbnQyNTYgYW1vdW50SW47CiAgICAgICAgdWludDI1NiBhbW91bnRPdXRNaW5pbXVtOwogICAgICAgIHVpbnQxNjAgc3FydFByaWNlTGltaXRYOTY7CiAgICB9CgogICAgZnVuY3Rpb24gZXhhY3RJbnB1dFNpbmdsZShFeGFjdElucHV0U2luZ2xlUGFyYW1zIGNhbGxkYXRhIHBhcmFtcykKICAgICAgICBleHRlcm5hbAogICAgICAgIHBheWFibGUKICAgICAgICByZXR1cm5zICh1aW50MjU2IGFtb3VudE91dCk7CgogICAgc3RydWN0IEV4YWN0T3V0cHV0U2luZ2xlUGFyYW1zIHsKICAgICAgICBhZGRyZXNzIHRva2VuSW47CiAgICAgICAgYWRkcmVzcyB0b2tlbk91dDsKICAgICAgICB1aW50MjQgZmVlOwogICAgICAgIGFkZHJlc3MgcmVjaXBpZW50OwogICAgICAgIHVpbnQyNTYgYW1vdW50T3V0OwogICAgICAgIHVpbnQyNTYgYW1vdW50SW5NYXhpbXVtOwogICAgICAgIHVpbnQxNjAgc3FydFByaWNlTGltaXRYOTY7CiAgICB9CgogICAgZnVuY3Rpb24gZXhhY3RPdXRwdXRTaW5nbGUoRXhhY3RPdXRwdXRTaW5nbGVQYXJhbXMgY2FsbGRhdGEgcGFyYW1zKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcGF5YWJsZQogICAgICAgIHJldHVybnMgKHVpbnQyNTYgYW1vdW50SW4pOwp9CgppbnRlcmZhY2UgSUVSQzIwIHsKICAgIGZ1bmN0aW9uIHRvdGFsU3VwcGx5KCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50MjU2KTsKICAgIGZ1bmN0aW9uIGJhbGFuY2VPZihhZGRyZXNzIGFjY291bnQpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1Nik7CiAgICBmdW5jdGlvbiB0cmFuc2ZlcihhZGRyZXNzIHJlY2lwaWVudCwgdWludDI1NiBhbW91bnQpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICByZXR1cm5zIChib29sKTsKICAgIGZ1bmN0aW9uIGFsbG93YW5jZShhZGRyZXNzIG93bmVyLCBhZGRyZXNzIHNwZW5kZXIpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICB2aWV3CiAgICAgICAgcmV0dXJucyAodWludDI1Nik7CiAgICBmdW5jdGlvbiBhcHByb3ZlKGFkZHJlc3Mgc3BlbmRlciwgdWludDI1NiBhbW91bnQpIGV4dGVybmFsIHJldHVybnMgKGJvb2wpOwogICAgZnVuY3Rpb24gdHJhbnNmZXJGcm9tKGFkZHJlc3Mgc2VuZGVyLCBhZGRyZXNzIHJlY2lwaWVudCwgdWludDI1NiBhbW91bnQpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICByZXR1cm5zIChib29sKTsKfQoKaW50ZXJmYWNlIElXRVRIIGlzIElFUkMyMCB7CiAgICBmdW5jdGlvbiBkZXBvc2l0KCkgZXh0ZXJuYWwgcGF5YWJsZTsKICAgIGZ1bmN0aW9uIHdpdGhkcmF3KHVpbnQyNTYgYW1vdW50KSBleHRlcm5hbDsKfQo=",
+  },
+  {
+    fileName: "UniswapV3SingleHopSwapTest.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCAiLi4vLi4vLi4vc3JjL2RlZmkvdW5pc3dhcC12My1zd2FwL1VuaXN3YXBWM1NpbmdsZUhvcFN3YXAuc29sIjsKCmNvbnRyYWN0IFVuaXN3YXBWM1NpbmdsZUhvcFN3YXBUZXN0IGlzIFRlc3QgewogICAgYWRkcmVzcyBwcml2YXRlIGNvbnN0YW50IFNXQVBfUk9VVEVSXzAyID0KICAgICAgICAweDY4YjM0NjU4MzNmYjcyQTcwZWNERjQ4NUUwZTRDN2JEODY2NUZjNDU7CiAgICBhZGRyZXNzIHByaXZhdGUgY29uc3RhbnQgV0VUSCA9IDB4QzAyYWFBMzliMjIzRkU4RDBBMGU1QzRGMjdlQUQ5MDgzQzc1NkNjMjsKICAgIGFkZHJlc3MgcHJpdmF0ZSBjb25zdGFudCBEQUkgPSAweDZCMTc1NDc0RTg5MDk0QzQ0RGE5OGI5NTRFZWRlQUM0OTUyNzFkMEY7CiAgICBhZGRyZXNzIHByaXZhdGUgY29uc3RhbnQgREFJX1dFVEhfUE9PTF8zMDAwID0KICAgICAgICAweEMyZTlGMjVCZTYyNTdjMjEwZDdBZGYwRDRDZDZFM0U4ODFiYTI1Zjg7CgogICAgSVdFVEggcHJpdmF0ZSBjb25zdGFudCB3ZXRoID0gSVdFVEgoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBjb25zdGFudCBkYWkgPSBJRVJDMjAoREFJKTsKCiAgICBVbmlzd2FwVjNTaW5nbGVIb3BTd2FwIHByaXZhdGUgc3dhcDsKCiAgICB1aW50MjU2IHByaXZhdGUgY29uc3RhbnQgQU1PVU5UX0lOID0gMWUxODsKICAgIHVpbnQyNTYgcHJpdmF0ZSBjb25zdGFudCBBTU9VTlRfT1VUID0gNTAgKiAxZTE4OwogICAgdWludDI1NiBwcml2YXRlIGNvbnN0YW50IE1BWF9BTU9VTlRfSU4gPSAxZTE4OwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHsKICAgICAgICBzd2FwID0gbmV3IFVuaXN3YXBWM1NpbmdsZUhvcFN3YXAoKTsKICAgICAgICB3ZXRoLmRlcG9zaXR7dmFsdWU6IEFNT1VOVF9JTiArIE1BWF9BTU9VTlRfSU59KCk7CiAgICAgICAgd2V0aC5hcHByb3ZlKGFkZHJlc3Moc3dhcCksIHR5cGUodWludDI1NikubWF4KTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0X3N3YXBFeGFjdElucHV0U2luZ2xlSG9wKCkgcHVibGljIHsKICAgICAgICBzd2FwLnN3YXBFeGFjdElucHV0U2luZ2xlSG9wKEFNT1VOVF9JTiwgMSk7CiAgICAgICAgdWludDI1NiBkMSA9IGRhaS5iYWxhbmNlT2YoYWRkcmVzcyh0aGlzKSk7CiAgICAgICAgYXNzZXJ0R3QoZDEsIDAsICJEQUkgYmFsYW5jZSA9IDAiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0X3N3YXBFeGFjdE91dHB1dFNpbmdsZUhvcCgpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiB3MCA9IHdldGguYmFsYW5jZU9mKGFkZHJlc3ModGhpcykpOwogICAgICAgIHVpbnQyNTYgZDAgPSBkYWkuYmFsYW5jZU9mKGFkZHJlc3ModGhpcykpOwogICAgICAgIHN3YXAuc3dhcEV4YWN0T3V0cHV0U2luZ2xlSG9wKEFNT1VOVF9PVVQsIE1BWF9BTU9VTlRfSU4pOwogICAgICAgIHVpbnQyNTYgdzEgPSB3ZXRoLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKICAgICAgICB1aW50MjU2IGQxID0gZGFpLmJhbGFuY2VPZihhZGRyZXNzKHRoaXMpKTsKCiAgICAgICAgYXNzZXJ0THQodzEsIHcwLCAiV0VUSCBiYWxhbmNlIGRpZG4ndCBkZWNyZWFzZSIpOwogICAgICAgIGFzc2VydEd0KGQxLCBkMCwgIkRBSSBiYWxhbmNlIGRpZG4ndCBpbmNyZWFzZSIpOwogICAgICAgIGFzc2VydEVxKHdldGguYmFsYW5jZU9mKGFkZHJlc3Moc3dhcCkpLCAwLCAiV0VUSCBiYWxhbmNlIG9mIHN3YXAgIT0gMCIpOwogICAgICAgIGFzc2VydEVxKGRhaS5iYWxhbmNlT2YoYWRkcmVzcyhzd2FwKSksIDAsICJEQUkgYmFsYW5jZSBvZiBzd2FwICE9IDAiKTsKICAgIH0KfQo=",
+  },
+  {
     fileName: "UniswapV3SwapExamples.sol",
     code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IFVuaXN3YXBWM1N3YXBFeGFtcGxlcyB7CiAgICBJU3dhcFJvdXRlciBjb25zdGFudCByb3V0ZXIgPQogICAgICAgIElTd2FwUm91dGVyKDB4RTU5MjQyN0EwQUVjZTkyRGUzRWRlZTFGMThFMDE1N0MwNTg2MTU2NCk7CgogICAgZnVuY3Rpb24gc3dhcEV4YWN0SW5wdXRTaW5nbGVIb3AoCiAgICAgICAgYWRkcmVzcyB0b2tlbkluLAogICAgICAgIGFkZHJlc3MgdG9rZW5PdXQsCiAgICAgICAgdWludDI0IHBvb2xGZWUsCiAgICAgICAgdWludDI1NiBhbW91bnRJbgogICAgKSBleHRlcm5hbCByZXR1cm5zICh1aW50MjU2IGFtb3VudE91dCkgewogICAgICAgIElFUkMyMCh0b2tlbkluKS50cmFuc2ZlckZyb20obXNnLnNlbmRlciwgYWRkcmVzcyh0aGlzKSwgYW1vdW50SW4pOwogICAgICAgIElFUkMyMCh0b2tlbkluKS5hcHByb3ZlKGFkZHJlc3Mocm91dGVyKSwgYW1vdW50SW4pOwoKICAgICAgICBJU3dhcFJvdXRlci5FeGFjdElucHV0U2luZ2xlUGFyYW1zIG1lbW9yeSBwYXJhbXMgPSBJU3dhcFJvdXRlcgogICAgICAgICAgICAuRXhhY3RJbnB1dFNpbmdsZVBhcmFtcyh7CiAgICAgICAgICAgIHRva2VuSW46IHRva2VuSW4sCiAgICAgICAgICAgIHRva2VuT3V0OiB0b2tlbk91dCwKICAgICAgICAgICAgZmVlOiBwb29sRmVlLAogICAgICAgICAgICByZWNpcGllbnQ6IG1zZy5zZW5kZXIsCiAgICAgICAgICAgIGRlYWRsaW5lOiBibG9jay50aW1lc3RhbXAsCiAgICAgICAgICAgIGFtb3VudEluOiBhbW91bnRJbiwKICAgICAgICAgICAgYW1vdW50T3V0TWluaW11bTogMCwKICAgICAgICAgICAgc3FydFByaWNlTGltaXRYOTY6IDAKICAgICAgICB9KTsKCiAgICAgICAgYW1vdW50T3V0ID0gcm91dGVyLmV4YWN0SW5wdXRTaW5nbGUocGFyYW1zKTsKICAgIH0KCiAgICBmdW5jdGlvbiBzd2FwRXhhY3RJbnB1dE11bHRpSG9wKAogICAgICAgIGJ5dGVzIGNhbGxkYXRhIHBhdGgsCiAgICAgICAgYWRkcmVzcyB0b2tlbkluLAogICAgICAgIHVpbnQyNTYgYW1vdW50SW4KICAgICkgZXh0ZXJuYWwgcmV0dXJucyAodWludDI1NiBhbW91bnRPdXQpIHsKICAgICAgICBJRVJDMjAodG9rZW5JbikudHJhbnNmZXJGcm9tKG1zZy5zZW5kZXIsIGFkZHJlc3ModGhpcyksIGFtb3VudEluKTsKICAgICAgICBJRVJDMjAodG9rZW5JbikuYXBwcm92ZShhZGRyZXNzKHJvdXRlciksIGFtb3VudEluKTsKCiAgICAgICAgSVN3YXBSb3V0ZXIuRXhhY3RJbnB1dFBhcmFtcyBtZW1vcnkgcGFyYW1zID0gSVN3YXBSb3V0ZXIKICAgICAgICAgICAgLkV4YWN0SW5wdXRQYXJhbXMoewogICAgICAgICAgICBwYXRoOiBwYXRoLAogICAgICAgICAgICByZWNpcGllbnQ6IG1zZy5zZW5kZXIsCiAgICAgICAgICAgIGRlYWRsaW5lOiBibG9jay50aW1lc3RhbXAsCiAgICAgICAgICAgIGFtb3VudEluOiBhbW91bnRJbiwKICAgICAgICAgICAgYW1vdW50T3V0TWluaW11bTogMAogICAgICAgIH0pOwogICAgICAgIGFtb3VudE91dCA9IHJvdXRlci5leGFjdElucHV0KHBhcmFtcyk7CiAgICB9Cn0KCmludGVyZmFjZSBJU3dhcFJvdXRlciB7CiAgICBzdHJ1Y3QgRXhhY3RJbnB1dFNpbmdsZVBhcmFtcyB7CiAgICAgICAgYWRkcmVzcyB0b2tlbkluOwogICAgICAgIGFkZHJlc3MgdG9rZW5PdXQ7CiAgICAgICAgdWludDI0IGZlZTsKICAgICAgICBhZGRyZXNzIHJlY2lwaWVudDsKICAgICAgICB1aW50MjU2IGRlYWRsaW5lOwogICAgICAgIHVpbnQyNTYgYW1vdW50SW47CiAgICAgICAgdWludDI1NiBhbW91bnRPdXRNaW5pbXVtOwogICAgICAgIHVpbnQxNjAgc3FydFByaWNlTGltaXRYOTY7CiAgICB9CgogICAgLy8vIEBub3RpY2UgU3dhcHMgYW1vdW50SW4gb2Ygb25lIHRva2VuIGZvciBhcyBtdWNoIGFzIHBvc3NpYmxlIG9mIGFub3RoZXIgdG9rZW4KICAgIC8vLyBAcGFyYW0gcGFyYW1zIFRoZSBwYXJhbWV0ZXJzIG5lY2Vzc2FyeSBmb3IgdGhlIHN3YXAsIGVuY29kZWQgYXMgRXhhY3RJbnB1dFNpbmdsZVBhcmFtcyBpbiBjYWxsZGF0YQogICAgLy8vIEByZXR1cm4gYW1vdW50T3V0IFRoZSBhbW91bnQgb2YgdGhlIHJlY2VpdmVkIHRva2VuCiAgICBmdW5jdGlvbiBleGFjdElucHV0U2luZ2xlKEV4YWN0SW5wdXRTaW5nbGVQYXJhbXMgY2FsbGRhdGEgcGFyYW1zKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcGF5YWJsZQogICAgICAgIHJldHVybnMgKHVpbnQyNTYgYW1vdW50T3V0KTsKCiAgICBzdHJ1Y3QgRXhhY3RJbnB1dFBhcmFtcyB7CiAgICAgICAgYnl0ZXMgcGF0aDsKICAgICAgICBhZGRyZXNzIHJlY2lwaWVudDsKICAgICAgICB1aW50MjU2IGRlYWRsaW5lOwogICAgICAgIHVpbnQyNTYgYW1vdW50SW47CiAgICAgICAgdWludDI1NiBhbW91bnRPdXRNaW5pbXVtOwogICAgfQoKICAgIC8vLyBAbm90aWNlIFN3YXBzIGFtb3VudEluIG9mIG9uZSB0b2tlbiBmb3IgYXMgbXVjaCBhcyBwb3NzaWJsZSBvZiBhbm90aGVyIGFsb25nIHRoZSBzcGVjaWZpZWQgcGF0aAogICAgLy8vIEBwYXJhbSBwYXJhbXMgVGhlIHBhcmFtZXRlcnMgbmVjZXNzYXJ5IGZvciB0aGUgbXVsdGktaG9wIHN3YXAsIGVuY29kZWQgYXMgRXhhY3RJbnB1dFBhcmFtcyBpbiBjYWxsZGF0YQogICAgLy8vIEByZXR1cm4gYW1vdW50T3V0IFRoZSBhbW91bnQgb2YgdGhlIHJlY2VpdmVkIHRva2VuCiAgICBmdW5jdGlvbiBleGFjdElucHV0KEV4YWN0SW5wdXRQYXJhbXMgY2FsbGRhdGEgcGFyYW1zKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcGF5YWJsZQogICAgICAgIHJldHVybnMgKHVpbnQyNTYgYW1vdW50T3V0KTsKfQoKaW50ZXJmYWNlIElFUkMyMCB7CiAgICBmdW5jdGlvbiB0b3RhbFN1cHBseSgpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1Nik7CiAgICBmdW5jdGlvbiBiYWxhbmNlT2YoYWRkcmVzcyBhY2NvdW50KSBleHRlcm5hbCB2aWV3IHJldHVybnMgKHVpbnQyNTYpOwogICAgZnVuY3Rpb24gdHJhbnNmZXIoYWRkcmVzcyByZWNpcGllbnQsIHVpbnQyNTYgYW1vdW50KQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcmV0dXJucyAoYm9vbCk7CiAgICBmdW5jdGlvbiBhbGxvd2FuY2UoYWRkcmVzcyBvd25lciwgYWRkcmVzcyBzcGVuZGVyKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgdmlldwogICAgICAgIHJldHVybnMgKHVpbnQyNTYpOwogICAgZnVuY3Rpb24gYXBwcm92ZShhZGRyZXNzIHNwZW5kZXIsIHVpbnQyNTYgYW1vdW50KSBleHRlcm5hbCByZXR1cm5zIChib29sKTsKICAgIGZ1bmN0aW9uIHRyYW5zZmVyRnJvbShhZGRyZXNzIHNlbmRlciwgYWRkcmVzcyByZWNpcGllbnQsIHVpbnQyNTYgYW1vdW50KQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcmV0dXJucyAoYm9vbCk7Cn0KCmludGVyZmFjZSBJV0VUSCBpcyBJRVJDMjAgewogICAgZnVuY3Rpb24gZGVwb3NpdCgpIGV4dGVybmFsIHBheWFibGU7CiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50MjU2IGFtb3VudCkgZXh0ZXJuYWw7Cn0K",
   },
@@ -16,93 +32,201 @@ export const codes = [
   },
 ]
 
-const html = `<h3>Uniswap V3 Swap Examples</h3>
+const html = `<h3>Uniswap V3 Single Hop Swap</h3>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3SwapExamples</span> </span>{
-    ISwapRouter <span class="hljs-keyword">constant</span> router <span class="hljs-operator">=</span>
-        ISwapRouter(<span class="hljs-number">0xE592427A0AEce92De3Edee1F18E0157C05861564</span>);
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> SWAP_ROUTER_02 <span class="hljs-operator">=</span> <span class="hljs-number">0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45</span>;
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactInputSingleHop</span>(<span class="hljs-params">
-        <span class="hljs-keyword">address</span> tokenIn,
-        <span class="hljs-keyword">address</span> tokenOut,
-        <span class="hljs-keyword">uint24</span> poolFee,
-        <span class="hljs-keyword">uint256</span> amountIn
-    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut</span>) </span>{
-        IERC20(tokenIn).transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountIn);
-        IERC20(tokenIn).approve(<span class="hljs-keyword">address</span>(router), amountIn);
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3SingleHopSwap</span> </span>{
+    ISwapRouter02 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> router <span class="hljs-operator">=</span> ISwapRouter02(SWAP_ROUTER_02);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> weth <span class="hljs-operator">=</span> IERC20(WETH);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
 
-        ISwapRouter.ExactInputSingleParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> ISwapRouter
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactInputSingleHop</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountIn, <span class="hljs-keyword">uint256</span> amountOutMin</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+    </span>{
+        weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountIn);
+        weth.approve(<span class="hljs-keyword">address</span>(router), amountIn);
+
+        ISwapRouter02.ExactInputSingleParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> ISwapRouter02
             .ExactInputSingleParams({
-            tokenIn: tokenIn,
-            tokenOut: tokenOut,
-            fee: poolFee,
+            tokenIn: WETH,
+            tokenOut: DAI,
+            fee: <span class="hljs-number">3000</span>,
             recipient: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
-            deadline: <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>,
             amountIn: amountIn,
-            amountOutMinimum: <span class="hljs-number">0</span>,
+            amountOutMinimum: amountOutMin,
             sqrtPriceLimitX96: <span class="hljs-number">0</span>
         });
 
-        amountOut <span class="hljs-operator">=</span> router.exactInputSingle(params);
+        router.exactInputSingle(params);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactInputMultiHop</span>(<span class="hljs-params">
-        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">calldata</span> path,
-        <span class="hljs-keyword">address</span> tokenIn,
-        <span class="hljs-keyword">uint256</span> amountIn
-    </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut</span>) </span>{
-        IERC20(tokenIn).transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountIn);
-        IERC20(tokenIn).approve(<span class="hljs-keyword">address</span>(router), amountIn);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactOutputSingleHop</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut, <span class="hljs-keyword">uint256</span> amountInMax</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+    </span>{
+        weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountInMax);
+        weth.approve(<span class="hljs-keyword">address</span>(router), amountInMax);
 
-        ISwapRouter.ExactInputParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> ISwapRouter
-            .ExactInputParams({
-            path: path,
+        ISwapRouter02.ExactOutputSingleParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> ISwapRouter02
+            .ExactOutputSingleParams({
+            tokenIn: WETH,
+            tokenOut: DAI,
+            fee: <span class="hljs-number">3000</span>,
             recipient: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
-            deadline: <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>,
-            amountIn: amountIn,
-            amountOutMinimum: <span class="hljs-number">0</span>
+            amountOut: amountOut,
+            amountInMaximum: amountInMax,
+            sqrtPriceLimitX96: <span class="hljs-number">0</span>
         });
-        amountOut <span class="hljs-operator">=</span> router.exactInput(params);
+
+        <span class="hljs-keyword">uint256</span> amountIn <span class="hljs-operator">=</span> router.exactOutputSingle(params);
+
+        <span class="hljs-keyword">if</span> (amountIn <span class="hljs-operator">&lt;</span> amountInMax) {
+            weth.approve(<span class="hljs-keyword">address</span>(router), <span class="hljs-number">0</span>);
+            weth.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amountInMax <span class="hljs-operator">-</span> amountIn);
+        }
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ISwapRouter</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ISwapRouter02</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">ExactInputSingleParams</span> {
         <span class="hljs-keyword">address</span> tokenIn;
         <span class="hljs-keyword">address</span> tokenOut;
         <span class="hljs-keyword">uint24</span> fee;
         <span class="hljs-keyword">address</span> recipient;
-        <span class="hljs-keyword">uint256</span> deadline;
         <span class="hljs-keyword">uint256</span> amountIn;
         <span class="hljs-keyword">uint256</span> amountOutMinimum;
         <span class="hljs-keyword">uint160</span> sqrtPriceLimitX96;
     }
 
-    <span class="hljs-comment">/// @notice Swaps amountIn of one token for as much as possible of another token</span>
-    <span class="hljs-comment">/// @param params The parameters necessary for the swap, encoded as ExactInputSingleParams in calldata</span>
-    <span class="hljs-comment">/// @return amountOut The amount of the received token</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exactInputSingle</span>(<span class="hljs-params">ExactInputSingleParams <span class="hljs-keyword">calldata</span> params</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut</span>)</span>;
 
+    <span class="hljs-keyword">struct</span> <span class="hljs-title">ExactOutputSingleParams</span> {
+        <span class="hljs-keyword">address</span> tokenIn;
+        <span class="hljs-keyword">address</span> tokenOut;
+        <span class="hljs-keyword">uint24</span> fee;
+        <span class="hljs-keyword">address</span> recipient;
+        <span class="hljs-keyword">uint256</span> amountOut;
+        <span class="hljs-keyword">uint256</span> amountInMaximum;
+        <span class="hljs-keyword">uint160</span> sqrtPriceLimitX96;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exactOutputSingle</span>(<span class="hljs-params">ExactOutputSingleParams <span class="hljs-keyword">calldata</span> params</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountIn</span>)</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IERC20</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">totalSupply</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balanceOf</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> account</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">view</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">allowance</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> owner, <span class="hljs-keyword">address</span> spender</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">view</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">approve</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> spender, <span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transferFrom</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> sender, <span class="hljs-keyword">address</span> recipient, <span class="hljs-keyword">uint256</span> amount</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IWETH</span> <span class="hljs-keyword">is</span> <span class="hljs-title">IERC20</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deposit</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
+}
+</code></pre><h3>Uniswap V3 Multi Hop Swap</h3>
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> 0.8.24;</span>
+
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> SWAP_ROUTER_02 <span class="hljs-operator">=</span> <span class="hljs-number">0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45</span>;
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> USDC <span class="hljs-operator">=</span> <span class="hljs-number">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</span>;
+<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3MultiHopSwap</span> </span>{
+    ISwapRouter02 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> router <span class="hljs-operator">=</span> ISwapRouter02(SWAP_ROUTER_02);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> weth <span class="hljs-operator">=</span> IERC20(WETH);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactInputMultiHop</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountIn, <span class="hljs-keyword">uint256</span> amountOutMin</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+    </span>{
+        weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountIn);
+        weth.approve(<span class="hljs-keyword">address</span>(router), amountIn);
+
+        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> path <span class="hljs-operator">=</span>
+            <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(WETH, <span class="hljs-keyword">uint24</span>(<span class="hljs-number">3000</span>), USDC, <span class="hljs-keyword">uint24</span>(<span class="hljs-number">100</span>), DAI);
+
+        ISwapRouter02.ExactInputParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> ISwapRouter02
+            .ExactInputParams({
+            path: path,
+            recipient: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
+            amountIn: amountIn,
+            amountOutMinimum: amountOutMin
+        });
+
+        router.exactInput(params);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swapExactOutputMultiHop</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut, <span class="hljs-keyword">uint256</span> amountInMax</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+    </span>{
+        weth.transferFrom(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amountInMax);
+        weth.approve(<span class="hljs-keyword">address</span>(router), amountInMax);
+
+        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> path <span class="hljs-operator">=</span>
+            <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(DAI, <span class="hljs-keyword">uint24</span>(<span class="hljs-number">100</span>), USDC, <span class="hljs-keyword">uint24</span>(<span class="hljs-number">3000</span>), WETH);
+
+        ISwapRouter02.ExactOutputParams <span class="hljs-keyword">memory</span> params <span class="hljs-operator">=</span> ISwapRouter02
+            .ExactOutputParams({
+            path: path,
+            recipient: <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>,
+            amountOut: amountOut,
+            amountInMaximum: amountInMax
+        });
+
+        <span class="hljs-keyword">uint256</span> amountIn <span class="hljs-operator">=</span> router.exactOutput(params);
+
+        <span class="hljs-keyword">if</span> (amountIn <span class="hljs-operator">&lt;</span> amountInMax) {
+            weth.approve(<span class="hljs-keyword">address</span>(router), <span class="hljs-number">0</span>);
+            weth.<span class="hljs-built_in">transfer</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, amountInMax <span class="hljs-operator">-</span> amountIn);
+        }
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ISwapRouter02</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">ExactInputParams</span> {
         <span class="hljs-keyword">bytes</span> path;
         <span class="hljs-keyword">address</span> recipient;
-        <span class="hljs-keyword">uint256</span> deadline;
         <span class="hljs-keyword">uint256</span> amountIn;
         <span class="hljs-keyword">uint256</span> amountOutMinimum;
     }
 
-    <span class="hljs-comment">/// @notice Swaps amountIn of one token for as much as possible of another along the specified path</span>
-    <span class="hljs-comment">/// @param params The parameters necessary for the multi-hop swap, encoded as ExactInputParams in calldata</span>
-    <span class="hljs-comment">/// @return amountOut The amount of the received token</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exactInput</span>(<span class="hljs-params">ExactInputParams <span class="hljs-keyword">calldata</span> params</span>)
         <span class="hljs-title"><span class="hljs-keyword">external</span></span>
         <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountOut</span>)</span>;
+
+    <span class="hljs-keyword">struct</span> <span class="hljs-title">ExactOutputParams</span> {
+        <span class="hljs-keyword">bytes</span> path;
+        <span class="hljs-keyword">address</span> recipient;
+        <span class="hljs-keyword">uint256</span> amountOut;
+        <span class="hljs-keyword">uint256</span> amountInMaximum;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exactOutput</span>(<span class="hljs-params">ExactOutputParams <span class="hljs-keyword">calldata</span> params</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">payable</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">uint256</span> amountIn</span>)</span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IERC20</span> </span>{
@@ -126,50 +250,104 @@ const html = `<h3>Uniswap V3 Swap Examples</h3>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 </code></pre><h3>Test with Foundry</h3>
+<p>Single hop test</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>, <span class="hljs-title">console2</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/uniswap-v3-swap/UniswapV3SwapExamples.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/uniswap-v3-swap/UniswapV3SingleHopSwap.sol"</span>;
 
-<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
-<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
-<span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> USDC <span class="hljs-operator">=</span> <span class="hljs-number">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</span>;
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3SingleHopSwapTest</span> <span class="hljs-keyword">is</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> SWAP_ROUTER_02 <span class="hljs-operator">=</span>
+        <span class="hljs-number">0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> DAI_WETH_POOL_3000 <span class="hljs-operator">=</span>
+        <span class="hljs-number">0xC2e9F25Be6257c210d7Adf0D4Cd6E3E881ba25f8</span>;
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniV3SwapTest</span> <span class="hljs-keyword">is</span> <span class="hljs-title">Test</span> </span>{
-    IWETH <span class="hljs-keyword">private</span> weth <span class="hljs-operator">=</span> IWETH(WETH);
-    IERC20 <span class="hljs-keyword">private</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
-    IERC20 <span class="hljs-keyword">private</span> usdc <span class="hljs-operator">=</span> IERC20(USDC);
+    IWETH <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> weth <span class="hljs-operator">=</span> IWETH(WETH);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
 
-    UniswapV3SwapExamples <span class="hljs-keyword">private</span> uni <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> UniswapV3SwapExamples();
+    UniswapV3SingleHopSwap <span class="hljs-keyword">private</span> swap;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{}
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> AMOUNT_IN <span class="hljs-operator">=</span> <span class="hljs-number">1e18</span>;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> AMOUNT_OUT <span class="hljs-operator">=</span> <span class="hljs-number">50</span> <span class="hljs-operator">*</span> <span class="hljs-number">1e18</span>;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> MAX_AMOUNT_IN <span class="hljs-operator">=</span> <span class="hljs-number">1e18</span>;
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testSingleHop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        weth.deposit{<span class="hljs-built_in">value</span>: <span class="hljs-number">1e18</span>}();
-        weth.approve(<span class="hljs-keyword">address</span>(uni), <span class="hljs-number">1e18</span>);
-
-        <span class="hljs-keyword">uint256</span> amountOut <span class="hljs-operator">=</span> uni.swapExactInputSingleHop(WETH, DAI, <span class="hljs-number">3000</span>, <span class="hljs-number">1e18</span>);
-
-        console2.log(<span class="hljs-string">"DAI"</span>, amountOut);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        swap <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> UniswapV3SingleHopSwap();
+        weth.deposit{<span class="hljs-built_in">value</span>: AMOUNT_IN <span class="hljs-operator">+</span> MAX_AMOUNT_IN}();
+        weth.approve(<span class="hljs-keyword">address</span>(swap), <span class="hljs-keyword">type</span>(<span class="hljs-keyword">uint256</span>).<span class="hljs-built_in">max</span>);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testMultiHop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        weth.deposit{<span class="hljs-built_in">value</span>: <span class="hljs-number">1e18</span>}();
-        weth.approve(<span class="hljs-keyword">address</span>(uni), <span class="hljs-number">1e18</span>);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_swapExactInputSingleHop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        swap.swapExactInputSingleHop(AMOUNT_IN, <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">uint256</span> d1 <span class="hljs-operator">=</span> dai.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        assertGt(d1, <span class="hljs-number">0</span>, <span class="hljs-string">"DAI balance = 0"</span>);
+    }
 
-        <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> path <span class="hljs-operator">=</span>
-            <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(WETH, <span class="hljs-keyword">uint24</span>(<span class="hljs-number">3000</span>), USDC, <span class="hljs-keyword">uint24</span>(<span class="hljs-number">100</span>), DAI);
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_swapExactOutputSingleHop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint256</span> w0 <span class="hljs-operator">=</span> weth.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint256</span> d0 <span class="hljs-operator">=</span> dai.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        swap.swapExactOutputSingleHop(AMOUNT_OUT, MAX_AMOUNT_IN);
+        <span class="hljs-keyword">uint256</span> w1 <span class="hljs-operator">=</span> weth.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint256</span> d1 <span class="hljs-operator">=</span> dai.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
 
-        <span class="hljs-keyword">uint256</span> amountOut <span class="hljs-operator">=</span> uni.swapExactInputMultiHop(path, WETH, <span class="hljs-number">1e18</span>);
-
-        console2.log(<span class="hljs-string">"DAI"</span>, amountOut);
+        assertLt(w1, w0, <span class="hljs-string">"WETH balance didn&#x27;t decrease"</span>);
+        assertGt(d1, d0, <span class="hljs-string">"DAI balance didn&#x27;t increase"</span>);
+        assertEq(weth.balanceOf(<span class="hljs-keyword">address</span>(swap)), <span class="hljs-number">0</span>, <span class="hljs-string">"WETH balance of swap != 0"</span>);
+        assertEq(dai.balanceOf(<span class="hljs-keyword">address</span>(swap)), <span class="hljs-number">0</span>, <span class="hljs-string">"DAI balance of swap != 0"</span>);
     }
 }
-</code></pre><h3>Links</h3>
-<p><a href="https://docs.uniswap.org/protocol/guides/swaps/single-swaps" target="__blank">Uniswap V3</a></p>
-<p><a href="https://github.com/foundry-rs/foundry" target="__blank">Foundry</a></p>
-<p><a href="https://github.com/t4sk/defi-notes" target="__blank">Uniswap V3 Foundry example</a></p>
-`
+</code></pre><p>Multi hop test</p>
+<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
+
+<span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>, <span class="hljs-title">console2</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/uniswap-v3-swap/UniswapV3MultiHopSwap.sol"</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3MultiHopSwapTest</span> <span class="hljs-keyword">is</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> SWAP_ROUTER_02 <span class="hljs-operator">=</span>
+        <span class="hljs-number">0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
+    <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> USDC <span class="hljs-operator">=</span> <span class="hljs-number">0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</span>;
+
+    IWETH <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> weth <span class="hljs-operator">=</span> IWETH(WETH);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
+    IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> usdc <span class="hljs-operator">=</span> IERC20(USDC);
+
+    UniswapV3MultiHopSwap <span class="hljs-keyword">private</span> swap;
+
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> AMOUNT_IN <span class="hljs-operator">=</span> <span class="hljs-number">10</span> <span class="hljs-operator">*</span> <span class="hljs-number">1e18</span>;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> AMOUNT_OUT <span class="hljs-operator">=</span> <span class="hljs-number">20</span> <span class="hljs-operator">*</span> <span class="hljs-number">1e18</span>;
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> MAX_AMOUNT_IN <span class="hljs-operator">=</span> <span class="hljs-number">1e18</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        swap <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> UniswapV3MultiHopSwap();
+        weth.deposit{<span class="hljs-built_in">value</span>: AMOUNT_IN <span class="hljs-operator">+</span> MAX_AMOUNT_IN}();
+        weth.approve(<span class="hljs-keyword">address</span>(swap), <span class="hljs-keyword">type</span>(<span class="hljs-keyword">uint256</span>).<span class="hljs-built_in">max</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_swapExactInputMultiHop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        swap.swapExactInputMultiHop(AMOUNT_IN, <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">uint256</span> d1 <span class="hljs-operator">=</span> dai.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        assertGt(d1, <span class="hljs-number">0</span>, <span class="hljs-string">"DAI balance = 0"</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_swapExactOutputMultiHop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+        <span class="hljs-keyword">uint256</span> w0 <span class="hljs-operator">=</span> weth.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint256</span> d0 <span class="hljs-operator">=</span> dai.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        swap.swapExactOutputMultiHop(AMOUNT_OUT, MAX_AMOUNT_IN);
+        <span class="hljs-keyword">uint256</span> w1 <span class="hljs-operator">=</span> weth.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+        <span class="hljs-keyword">uint256</span> d1 <span class="hljs-operator">=</span> dai.balanceOf(<span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>));
+
+        assertLt(w1, w0, <span class="hljs-string">"WETH balance didn&#x27;t decrease"</span>);
+        assertGt(d1, d0, <span class="hljs-string">"DAI balance didn&#x27;t increase"</span>);
+        assertEq(weth.balanceOf(<span class="hljs-keyword">address</span>(swap)), <span class="hljs-number">0</span>, <span class="hljs-string">"WETH balance of swap != 0"</span>);
+        assertEq(dai.balanceOf(<span class="hljs-keyword">address</span>(swap)), <span class="hljs-number">0</span>, <span class="hljs-string">"DAI balance of swap != 0"</span>);
+    }
+}
+</code></pre>`
 
 export default html

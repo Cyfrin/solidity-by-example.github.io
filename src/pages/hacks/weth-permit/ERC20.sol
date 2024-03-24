@@ -3,9 +3,7 @@ pragma solidity 0.8.24;
 
 abstract contract ERC20 {
     event Transfer(address indexed from, address indexed to, uint256 amount);
-    event Approval(
-        address indexed owner, address indexed spender, uint256 amount
-    );
+    event Approval(address indexed owner, address indexed spender, uint256 amount);
 
     string public name;
     string public symbol;
@@ -21,21 +19,13 @@ abstract contract ERC20 {
         decimals = _decimals;
     }
 
-    function approve(address spender, uint256 amount)
-        public
-        virtual
-        returns (bool)
-    {
+    function approve(address spender, uint256 amount) public virtual returns (bool) {
         allowance[msg.sender][spender] = amount;
         emit Approval(msg.sender, spender, amount);
         return true;
     }
 
-    function transfer(address to, uint256 amount)
-        public
-        virtual
-        returns (bool)
-    {
+    function transfer(address to, uint256 amount) public virtual returns (bool) {
         balanceOf[msg.sender] -= amount;
         unchecked {
             balanceOf[to] += amount;
@@ -44,11 +34,7 @@ abstract contract ERC20 {
         return true;
     }
 
-    function transferFrom(address from, address to, uint256 amount)
-        public
-        virtual
-        returns (bool)
-    {
+    function transferFrom(address from, address to, uint256 amount) public virtual returns (bool) {
         uint256 allowed = allowance[from][msg.sender];
         if (allowed != type(uint256).max) {
             allowance[from][msg.sender] = allowed - amount;

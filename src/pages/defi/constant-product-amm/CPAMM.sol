@@ -31,21 +31,13 @@ contract CPAMM {
         reserve1 = _reserve1;
     }
 
-    function swap(address _tokenIn, uint256 _amountIn)
-        external
-        returns (uint256 amountOut)
-    {
-        require(
-            _tokenIn == address(token0) || _tokenIn == address(token1),
-            "invalid token"
-        );
+    function swap(address _tokenIn, uint256 _amountIn) external returns (uint256 amountOut) {
+        require(_tokenIn == address(token0) || _tokenIn == address(token1), "invalid token");
         require(_amountIn > 0, "amount in = 0");
 
         bool isToken0 = _tokenIn == address(token0);
-        (IERC20 tokenIn, IERC20 tokenOut, uint256 reserveIn, uint256 reserveOut)
-        = isToken0
-            ? (token0, token1, reserve0, reserve1)
-            : (token1, token0, reserve1, reserve0);
+        (IERC20 tokenIn, IERC20 tokenOut, uint256 reserveIn, uint256 reserveOut) =
+            isToken0 ? (token0, token1, reserve0, reserve1) : (token1, token0, reserve1, reserve0);
 
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
 
@@ -62,20 +54,14 @@ contract CPAMM {
         */
         // 0.3% fee
         uint256 amountInWithFee = (_amountIn * 997) / 1000;
-        amountOut =
-            (reserveOut * amountInWithFee) / (reserveIn + amountInWithFee);
+        amountOut = (reserveOut * amountInWithFee) / (reserveIn + amountInWithFee);
 
         tokenOut.transfer(msg.sender, amountOut);
 
-        _update(
-            token0.balanceOf(address(this)), token1.balanceOf(address(this))
-        );
+        _update(token0.balanceOf(address(this)), token1.balanceOf(address(this)));
     }
 
-    function addLiquidity(uint256 _amount0, uint256 _amount1)
-        external
-        returns (uint256 shares)
-    {
+    function addLiquidity(uint256 _amount0, uint256 _amount1) external returns (uint256 shares) {
         token0.transferFrom(msg.sender, address(this), _amount0);
         token1.transferFrom(msg.sender, address(this), _amount1);
 
@@ -95,9 +81,7 @@ contract CPAMM {
         dy = y / x * dx
         */
         if (reserve0 > 0 || reserve1 > 0) {
-            require(
-                reserve0 * _amount1 == reserve1 * _amount0, "x / y != dx / dy"
-            );
+            require(reserve0 * _amount1 == reserve1 * _amount0, "x / y != dx / dy");
         }
 
         /*
@@ -153,23 +137,15 @@ contract CPAMM {
         if (totalSupply == 0) {
             shares = _sqrt(_amount0 * _amount1);
         } else {
-            shares = _min(
-                (_amount0 * totalSupply) / reserve0,
-                (_amount1 * totalSupply) / reserve1
-            );
+            shares = _min((_amount0 * totalSupply) / reserve0, (_amount1 * totalSupply) / reserve1);
         }
         require(shares > 0, "shares = 0");
         _mint(msg.sender, shares);
 
-        _update(
-            token0.balanceOf(address(this)), token1.balanceOf(address(this))
-        );
+        _update(token0.balanceOf(address(this)), token1.balanceOf(address(this)));
     }
 
-    function removeLiquidity(uint256 _shares)
-        external
-        returns (uint256 amount0, uint256 amount1)
-    {
+    function removeLiquidity(uint256 _shares) external returns (uint256 amount0, uint256 amount1) {
         /*
         Claim
         dx, dy = amount of liquidity to remove
@@ -241,15 +217,8 @@ contract CPAMM {
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount)
-        external
-        returns (bool);
-    function allowance(address owner, address spender)
-        external
-        view
-        returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 }

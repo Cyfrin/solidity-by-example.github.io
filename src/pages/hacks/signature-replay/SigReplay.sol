@@ -14,9 +14,7 @@ contract MultiSigWallet {
 
     function deposit() external payable {}
 
-    function transfer(address _to, uint256 _amount, bytes[2] memory _sigs)
-        external
-    {
+    function transfer(address _to, uint256 _amount, bytes[2] memory _sigs) external {
         bytes32 txHash = getTxHash(_to, _amount);
         require(_checkSigs(_sigs, txHash), "invalid sig");
 
@@ -24,19 +22,11 @@ contract MultiSigWallet {
         require(sent, "Failed to send Ether");
     }
 
-    function getTxHash(address _to, uint256 _amount)
-        public
-        view
-        returns (bytes32)
-    {
+    function getTxHash(address _to, uint256 _amount) public view returns (bytes32) {
         return keccak256(abi.encodePacked(_to, _amount));
     }
 
-    function _checkSigs(bytes[2] memory _sigs, bytes32 _txHash)
-        private
-        view
-        returns (bool)
-    {
+    function _checkSigs(bytes[2] memory _sigs, bytes32 _txHash) private view returns (bool) {
         bytes32 ethSignedHash = _txHash.toEthSignedMessageHash();
 
         for (uint256 i = 0; i < _sigs.length; i++) {

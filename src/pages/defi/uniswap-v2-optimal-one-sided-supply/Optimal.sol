@@ -2,8 +2,7 @@
 pragma solidity ^0.8.24;
 
 contract TestUniswapOptimalOneSidedSupply {
-    address private constant FACTORY =
-        0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f;
+    address private constant FACTORY = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f;
     address private constant ROUTER = 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D;
     address private constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
 
@@ -27,11 +26,7 @@ contract TestUniswapOptimalOneSidedSupply {
     f = swap fee percent
     s = (sqrt(((2 - f)r)^2 + 4(1 - f)ar) - (2 - f)r) / (2(1 - f))
     */
-    function getSwapAmount(uint256 r, uint256 a)
-        public
-        pure
-        returns (uint256)
-    {
+    function getSwapAmount(uint256 r, uint256 a) public pure returns (uint256) {
         return (sqrt(r * (r * 3988009 + a * 3988000)) - r * 1997) / 1994;
     }
 
@@ -45,8 +40,7 @@ contract TestUniswapOptimalOneSidedSupply {
         IERC20(_tokenA).transferFrom(msg.sender, address(this), _amountA);
 
         address pair = IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
-        (uint256 reserve0, uint256 reserve1,) =
-            IUniswapV2Pair(pair).getReserves();
+        (uint256 reserve0, uint256 reserve1,) = IUniswapV2Pair(pair).getReserves();
 
         uint256 swapAmount;
         if (IUniswapV2Pair(pair).token0() == _tokenA) {
@@ -69,9 +63,7 @@ contract TestUniswapOptimalOneSidedSupply {
         path[0] = _from;
         path[1] = _to;
 
-        IUniswapV2Router(ROUTER).swapExactTokensForTokens(
-            _amount, 1, path, address(this), block.timestamp
-        );
+        IUniswapV2Router(ROUTER).swapExactTokensForTokens(_amount, 1, path, address(this), block.timestamp);
     }
 
     function _addLiquidity(address _tokenA, address _tokenB) internal {
@@ -80,9 +72,7 @@ contract TestUniswapOptimalOneSidedSupply {
         IERC20(_tokenA).approve(ROUTER, balA);
         IERC20(_tokenB).approve(ROUTER, balB);
 
-        IUniswapV2Router(ROUTER).addLiquidity(
-            _tokenA, _tokenB, balA, balB, 0, 0, address(this), block.timestamp
-        );
+        IUniswapV2Router(ROUTER).addLiquidity(_tokenA, _tokenB, balA, balB, 0, 0, address(this), block.timestamp);
     }
 }
 
@@ -108,10 +98,7 @@ interface IUniswapV2Router {
 }
 
 interface IUniswapV2Factory {
-    function getPair(address token0, address token1)
-        external
-        view
-        returns (address);
+    function getPair(address token0, address token1) external view returns (address);
 }
 
 interface IUniswapV2Pair {
@@ -119,10 +106,7 @@ interface IUniswapV2Pair {
 
     function token1() external view returns (address);
 
-    function getReserves()
-        external
-        view
-        returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);
+    function getReserves() external view returns (uint112 reserve0, uint112 reserve1, uint32 blockTimestampLast);
 }
 
 interface IERC20 {
@@ -130,18 +114,11 @@ interface IERC20 {
 
     function balanceOf(address account) external view returns (uint256);
 
-    function transfer(address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transfer(address recipient, uint256 amount) external returns (bool);
 
-    function allowance(address owner, address spender)
-        external
-        view
-        returns (uint256);
+    function allowance(address owner, address spender) external view returns (uint256);
 
     function approve(address spender, uint256 amount) external returns (bool);
 
-    function transferFrom(address sender, address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 }

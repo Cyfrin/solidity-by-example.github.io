@@ -2,12 +2,7 @@
 pragma solidity ^0.8.24;
 
 contract MerkleProof {
-    function verify(
-        bytes32[] memory proof,
-        bytes32 root,
-        bytes32 leaf,
-        uint256 index
-    ) public pure returns (bool) {
+    function verify(bytes32[] memory proof, bytes32 root, bytes32 leaf, uint256 index) public pure returns (bool) {
         bytes32 hash = leaf;
 
         for (uint256 i = 0; i < proof.length; i++) {
@@ -30,8 +25,7 @@ contract TestMerkleProof is MerkleProof {
     bytes32[] public hashes;
 
     constructor() {
-        string[4] memory transactions =
-            ["alice -> bob", "bob -> dave", "carol -> alice", "dave -> bob"];
+        string[4] memory transactions = ["alice -> bob", "bob -> dave", "carol -> alice", "dave -> bob"];
 
         for (uint256 i = 0; i < transactions.length; i++) {
             hashes.push(keccak256(abi.encodePacked(transactions[i])));
@@ -42,13 +36,7 @@ contract TestMerkleProof is MerkleProof {
 
         while (n > 0) {
             for (uint256 i = 0; i < n - 1; i += 2) {
-                hashes.push(
-                    keccak256(
-                        abi.encodePacked(
-                            hashes[offset + i], hashes[offset + i + 1]
-                        )
-                    )
-                );
+                hashes.push(keccak256(abi.encodePacked(hashes[offset + i], hashes[offset + i + 1])));
             }
             offset += n;
             n = n / 2;

@@ -7,13 +7,7 @@ interface IERC20 {
 }
 
 contract CrowdFund {
-    event Launch(
-        uint256 id,
-        address indexed creator,
-        uint256 goal,
-        uint32 startAt,
-        uint32 endAt
-    );
+    event Launch(uint256 id, address indexed creator, uint256 goal, uint32 startAt, uint32 endAt);
     event Cancel(uint256 id);
     event Pledge(uint256 indexed id, address indexed caller, uint256 amount);
     event Unpledge(uint256 indexed id, address indexed caller, uint256 amount);
@@ -54,14 +48,8 @@ contract CrowdFund {
         require(_endAt <= block.timestamp + 90 days, "end at > max duration");
 
         count += 1;
-        campaigns[count] = Campaign({
-            creator: msg.sender,
-            goal: _goal,
-            pledged: 0,
-            startAt: _startAt,
-            endAt: _endAt,
-            claimed: false
-        });
+        campaigns[count] =
+            Campaign({creator: msg.sender, goal: _goal, pledged: 0, startAt: _startAt, endAt: _endAt, claimed: false});
 
         emit Launch(count, msg.sender, _goal, _startAt, _endAt);
     }

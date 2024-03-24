@@ -30,8 +30,7 @@ contract UniV3SwapTest is Test {
         weth.deposit{value: 1e18}();
         weth.approve(address(uni), 1e18);
 
-        bytes memory path =
-            abi.encodePacked(WETH, uint24(3000), USDC, uint24(100), DAI);
+        bytes memory path = abi.encodePacked(WETH, uint24(3000), USDC, uint24(100), DAI);
 
         uint256 amountOut = uni.swapExactInputMultiHop(path, WETH, 1e18);
 

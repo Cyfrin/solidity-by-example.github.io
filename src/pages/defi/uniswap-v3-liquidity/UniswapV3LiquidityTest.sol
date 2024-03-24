@@ -8,8 +8,7 @@ contract UniswapV3LiquidityTest is Test {
     IWETH private constant weth = IWETH(WETH);
     IERC20 private constant dai = IERC20(DAI);
 
-    address private constant DAI_WHALE =
-        0xe81D6f03028107A20DBc83176DA82aE8099E9C42;
+    address private constant DAI_WHALE = 0xe81D6f03028107A20DBc83176DA82aE8099E9C42;
 
     UniswapV3Liquidity private uni = new UniswapV3Liquidity();
 
@@ -31,12 +30,8 @@ contract UniswapV3LiquidityTest is Test {
         uint256 daiAmount = 10 * 1e18;
         uint256 wethAmount = 1e18;
 
-        (
-            uint256 tokenId,
-            uint128 liquidityDelta,
-            uint256 amount0,
-            uint256 amount1
-        ) = uni.mintNewPosition(daiAmount, wethAmount);
+        (uint256 tokenId, uint128 liquidityDelta, uint256 amount0, uint256 amount1) =
+            uni.mintNewPosition(daiAmount, wethAmount);
         liquidity += liquidityDelta;
 
         console2.log("--- Mint new position ---");
@@ -56,9 +51,7 @@ contract UniswapV3LiquidityTest is Test {
         uint256 daiAmountToAdd = 5 * 1e18;
         uint256 wethAmountToAdd = 0.5 * 1e18;
 
-        (liquidityDelta, amount0, amount1) = uni.increaseLiquidityCurrentRange(
-            tokenId, daiAmountToAdd, wethAmountToAdd
-        );
+        (liquidityDelta, amount0, amount1) = uni.increaseLiquidityCurrentRange(tokenId, daiAmountToAdd, wethAmountToAdd);
         liquidity += liquidityDelta;
 
         console2.log("--- Increase liquidity ---");
@@ -67,8 +60,7 @@ contract UniswapV3LiquidityTest is Test {
         console2.log("amount 1", amount1);
 
         // Decrease liquidity
-        (amount0, amount1) =
-            uni.decreaseLiquidityCurrentRange(tokenId, liquidity);
+        (amount0, amount1) = uni.decreaseLiquidityCurrentRange(tokenId, liquidity);
         console2.log("--- Decrease liquidity ---");
         console2.log("amount 0", amount0);
         console2.log("amount 1", amount1);

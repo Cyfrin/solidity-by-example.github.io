@@ -35,10 +35,7 @@ contract Error {
     function testCustomError(uint256 _withdrawAmount) public view {
         uint256 bal = address(this).balance;
         if (bal < _withdrawAmount) {
-            revert InsufficientBalance({
-                balance: bal,
-                withdrawAmount: _withdrawAmount
-            });
+            revert InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
         }
     }
 }

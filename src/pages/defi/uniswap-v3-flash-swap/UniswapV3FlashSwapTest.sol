@@ -49,13 +49,7 @@ contract UniswapV3FlashTest is Test {
 
     function test_flashSwap() public {
         uint256 bal0 = dai.balanceOf(address(this));
-        flashSwap.flashSwap({
-            pool0: address(pool0),
-            fee1: FEE_1,
-            tokenIn: DAI,
-            tokenOut: WETH,
-            amountIn: DAI_AMOUNT_IN
-        });
+        flashSwap.flashSwap({pool0: address(pool0), fee1: FEE_1, tokenIn: DAI, tokenOut: WETH, amountIn: DAI_AMOUNT_IN});
         uint256 bal1 = dai.balanceOf(address(this));
         uint256 profit = bal1 - bal0;
         assertGt(profit, 0, "profit = 0");

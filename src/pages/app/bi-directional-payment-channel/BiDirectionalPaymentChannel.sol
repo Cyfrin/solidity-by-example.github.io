@@ -89,8 +89,9 @@ contract BiDirectionalPaymentChannel {
                   agains replay attack on other contracts
             */
             bool valid = _signers[i]
-                == keccak256(abi.encodePacked(_contract, _balances, _nonce))
-                    .toEthSignedMessageHash().recover(_signatures[i]);
+                == keccak256(abi.encodePacked(_contract, _balances, _nonce)).toEthSignedMessageHash().recover(
+                    _signatures[i]
+                );
 
             if (!valid) {
                 return false;
@@ -100,21 +101,14 @@ contract BiDirectionalPaymentChannel {
         return true;
     }
 
-    modifier checkSignatures(
-        bytes[2] memory _signatures,
-        uint256[2] memory _balances,
-        uint256 _nonce
-    ) {
+    modifier checkSignatures(bytes[2] memory _signatures, uint256[2] memory _balances, uint256 _nonce) {
         // Note: copy storage array to memory
         address[2] memory signers;
         for (uint256 i = 0; i < users.length; i++) {
             signers[i] = users[i];
         }
 
-        require(
-            verify(_signatures, address(this), signers, _balances, _nonce),
-            "Invalid signature"
-        );
+        require(verify(_signatures, address(this), signers, _balances, _nonce), "Invalid signature");
 
         _;
     }
@@ -124,11 +118,7 @@ contract BiDirectionalPaymentChannel {
         _;
     }
 
-    function challengeExit(
-        uint256[2] memory _balances,
-        uint256 _nonce,
-        bytes[2] memory _signatures
-    )
+    function challengeExit(uint256[2] memory _balances, uint256 _nonce, bytes[2] memory _signatures)
         public
         onlyUser
         checkSignatures(_signatures, _balances, _nonce)
@@ -148,9 +138,7 @@ contract BiDirectionalPaymentChannel {
     }
 
     function withdraw() public onlyUser {
-        require(
-            block.timestamp >= expiresAt, "Challenge period has not expired yet"
-        );
+        require(block.timestamp >= expiresAt, "Challenge period has not expired yet");
 
         uint256 amount = balances[msg.sender];
         balances[msg.sender] = 0;

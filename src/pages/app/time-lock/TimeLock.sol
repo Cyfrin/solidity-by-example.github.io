@@ -11,20 +11,10 @@ contract TimeLock {
     error TxFailedError();
 
     event Queue(
-        bytes32 indexed txId,
-        address indexed target,
-        uint256 value,
-        string func,
-        bytes data,
-        uint256 timestamp
+        bytes32 indexed txId, address indexed target, uint256 value, string func, bytes data, uint256 timestamp
     );
     event Execute(
-        bytes32 indexed txId,
-        address indexed target,
-        uint256 value,
-        string func,
-        bytes data,
-        uint256 timestamp
+        bytes32 indexed txId, address indexed target, uint256 value, string func, bytes data, uint256 timestamp
     );
     event Cancel(bytes32 indexed txId);
 
@@ -49,13 +39,11 @@ contract TimeLock {
 
     receive() external payable {}
 
-    function getTxId(
-        address _target,
-        uint256 _value,
-        string calldata _func,
-        bytes calldata _data,
-        uint256 _timestamp
-    ) public pure returns (bytes32) {
+    function getTxId(address _target, uint256 _value, string calldata _func, bytes calldata _data, uint256 _timestamp)
+        public
+        pure
+        returns (bytes32)
+    {
         return keccak256(abi.encode(_target, _value, _func, _data, _timestamp));
     }
 
@@ -66,23 +54,18 @@ contract TimeLock {
      * @param _data ABI encoded data send.
      * @param _timestamp Timestamp after which the transaction can be executed.
      */
-    function queue(
-        address _target,
-        uint256 _value,
-        string calldata _func,
-        bytes calldata _data,
-        uint256 _timestamp
-    ) external onlyOwner returns (bytes32 txId) {
+    function queue(address _target, uint256 _value, string calldata _func, bytes calldata _data, uint256 _timestamp)
+        external
+        onlyOwner
+        returns (bytes32 txId)
+    {
         txId = getTxId(_target, _value, _func, _data, _timestamp);
         if (queued[txId]) {
             revert AlreadyQueuedError(txId);
         }
         // ---|------------|---------------|-------
         //  block    block + min     block + max
-        if (
-            _timestamp < block.timestamp + MIN_DELAY
-                || _timestamp > block.timestamp + MAX_DELAY
-        ) {
+        if (_timestamp < block.timestamp + MIN_DELAY || _timestamp > block.timestamp + MAX_DELAY) {
             revert TimestampNotInRangeError(block.timestamp, _timestamp);
         }
 
@@ -91,13 +74,12 @@ contract TimeLock {
         emit Queue(txId, _target, _value, _func, _data, _timestamp);
     }
 
-    function execute(
-        address _target,
-        uint256 _value,
-        string calldata _func,
-        bytes calldata _data,
-        uint256 _timestamp
-    ) external payable onlyOwner returns (bytes memory) {
+    function execute(address _target, uint256 _value, string calldata _func, bytes calldata _data, uint256 _timestamp)
+        external
+        payable
+        onlyOwner
+        returns (bytes memory)
+    {
         bytes32 txId = getTxId(_target, _value, _func, _data, _timestamp);
         if (!queued[txId]) {
             revert NotQueuedError(txId);
@@ -108,9 +90,7 @@ contract TimeLock {
             revert TimestampNotPassedError(block.timestamp, _timestamp);
         }
         if (block.timestamp > _timestamp + GRACE_PERIOD) {
-            revert TimestampExpiredError(
-                block.timestamp, _timestamp + GRACE_PERIOD
-            );
+            revert TimestampExpiredError(block.timestamp, _timestamp + GRACE_PERIOD);
         }
 
         queued[txId] = false;

@@ -33,21 +33,13 @@ contract CSAMM {
         reserve1 = _res1;
     }
 
-    function swap(address _tokenIn, uint256 _amountIn)
-        external
-        returns (uint256 amountOut)
-    {
-        require(
-            _tokenIn == address(token0) || _tokenIn == address(token1),
-            "invalid token"
-        );
+    function swap(address _tokenIn, uint256 _amountIn) external returns (uint256 amountOut) {
+        require(_tokenIn == address(token0) || _tokenIn == address(token1), "invalid token");
 
         bool isToken0 = _tokenIn == address(token0);
 
         (IERC20 tokenIn, IERC20 tokenOut, uint256 resIn, uint256 resOut) =
-        isToken0
-            ? (token0, token1, reserve0, reserve1)
-            : (token1, token0, reserve1, reserve0);
+            isToken0 ? (token0, token1, reserve0, reserve1) : (token1, token0, reserve1, reserve0);
 
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
         uint256 amountIn = tokenIn.balanceOf(address(this)) - resIn;
@@ -55,18 +47,14 @@ contract CSAMM {
         // 0.3% fee
         amountOut = (amountIn * 997) / 1000;
 
-        (uint256 res0, uint256 res1) = isToken0
-            ? (resIn + amountIn, resOut - amountOut)
-            : (resOut - amountOut, resIn + amountIn);
+        (uint256 res0, uint256 res1) =
+            isToken0 ? (resIn + amountIn, resOut - amountOut) : (resOut - amountOut, resIn + amountIn);
 
         _update(res0, res1);
         tokenOut.transfer(msg.sender, amountOut);
     }
 
-    function addLiquidity(uint256 _amount0, uint256 _amount1)
-        external
-        returns (uint256 shares)
-    {
+    function addLiquidity(uint256 _amount0, uint256 _amount1) external returns (uint256 shares) {
         token0.transferFrom(msg.sender, address(this), _amount0);
         token1.transferFrom(msg.sender, address(this), _amount1);
 
@@ -99,10 +87,7 @@ contract CSAMM {
         _update(bal0, bal1);
     }
 
-    function removeLiquidity(uint256 _shares)
-        external
-        returns (uint256 d0, uint256 d1)
-    {
+    function removeLiquidity(uint256 _shares) external returns (uint256 d0, uint256 d1) {
         /*
         a = amount out
         L = total liquidity
@@ -132,15 +117,8 @@ contract CSAMM {
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount)
-        external
-        returns (bool);
-    function allowance(address owner, address spender)
-        external
-        view
-        returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 }

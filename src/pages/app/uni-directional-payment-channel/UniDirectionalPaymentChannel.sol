@@ -40,35 +40,19 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
         return _getHash(_amount);
     }
 
-    function _getEthSignedHash(uint256 _amount)
-        private
-        view
-        returns (bytes32)
-    {
+    function _getEthSignedHash(uint256 _amount) private view returns (bytes32) {
         return _getHash(_amount).toEthSignedMessageHash();
     }
 
-    function getEthSignedHash(uint256 _amount)
-        external
-        view
-        returns (bytes32)
-    {
+    function getEthSignedHash(uint256 _amount) external view returns (bytes32) {
         return _getEthSignedHash(_amount);
     }
 
-    function _verify(uint256 _amount, bytes memory _sig)
-        private
-        view
-        returns (bool)
-    {
+    function _verify(uint256 _amount, bytes memory _sig) private view returns (bool) {
         return _getEthSignedHash(_amount).recover(_sig) == sender;
     }
 
-    function verify(uint256 _amount, bytes memory _sig)
-        external
-        view
-        returns (bool)
-    {
+    function verify(uint256 _amount, bytes memory _sig) external view returns (bool) {
         return _verify(_amount, _sig);
     }
 

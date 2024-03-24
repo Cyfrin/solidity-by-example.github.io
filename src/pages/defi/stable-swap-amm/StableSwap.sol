@@ -132,11 +132,7 @@ contract StableSwap {
      * @param x New balance of token i
      * @param xp Current precision-adjusted balances
      */
-    function _getY(uint256 i, uint256 j, uint256 x, uint256[N] memory xp)
-        private
-        pure
-        returns (uint256)
-    {
+    function _getY(uint256 i, uint256 j, uint256 x, uint256[N] memory xp) private pure returns (uint256) {
         /*
         Newton's method to compute y
         -----------------------------
@@ -198,11 +194,7 @@ contract StableSwap {
      * @param d Liquidity d
      * @return New balance of token i
      */
-    function _getYD(uint256 i, uint256[N] memory xp, uint256 d)
-        private
-        pure
-        returns (uint256)
-    {
+    function _getYD(uint256 i, uint256[N] memory xp, uint256 d) private pure returns (uint256) {
         uint256 a = A * N;
         uint256 s;
         uint256 c = d;
@@ -253,10 +245,7 @@ contract StableSwap {
      * @param dx Token in amount
      * @param minDy Minimum token out
      */
-    function swap(uint256 i, uint256 j, uint256 dx, uint256 minDy)
-        external
-        returns (uint256 dy)
-    {
+    function swap(uint256 i, uint256 j, uint256 dx, uint256 minDy) external returns (uint256 dy) {
         require(i != j, "i = j");
 
         IERC20(tokens[i]).transferFrom(msg.sender, address(this), dx);
@@ -282,10 +271,7 @@ contract StableSwap {
         IERC20(tokens[j]).transfer(msg.sender, dy);
     }
 
-    function addLiquidity(uint256[N] calldata amounts, uint256 minShares)
-        external
-        returns (uint256 shares)
-    {
+    function addLiquidity(uint256[N] calldata amounts, uint256 minShares) external returns (uint256 shares) {
         // calculate current liquidity d0
         uint256 _totalSupply = totalSupply;
         uint256 d0;
@@ -299,9 +285,7 @@ contract StableSwap {
         for (uint256 i; i < N; ++i) {
             uint256 amount = amounts[i];
             if (amount > 0) {
-                IERC20(tokens[i]).transferFrom(
-                    msg.sender, address(this), amount
-                );
+                IERC20(tokens[i]).transferFrom(msg.sender, address(this), amount);
                 new_xs[i] = old_xs[i] + amount * multipliers[i];
             } else {
                 new_xs[i] = old_xs[i];
@@ -369,11 +353,7 @@ contract StableSwap {
      * @return dy Amount of token i to receive
      *         fee Fee for withdraw. Fee already included in dy
      */
-    function _calcWithdrawOneToken(uint256 shares, uint256 i)
-        private
-        view
-        returns (uint256 dy, uint256 fee)
-    {
+    function _calcWithdrawOneToken(uint256 shares, uint256 i) private view returns (uint256 dy, uint256 fee) {
         uint256 _totalSupply = totalSupply;
         uint256[N] memory xp = _xp();
 
@@ -405,11 +385,7 @@ contract StableSwap {
         fee = dy0 - dy;
     }
 
-    function calcWithdrawOneToken(uint256 shares, uint256 i)
-        external
-        view
-        returns (uint256 dy, uint256 fee)
-    {
+    function calcWithdrawOneToken(uint256 shares, uint256 i) external view returns (uint256 dy, uint256 fee) {
         return _calcWithdrawOneToken(shares, i);
     }
 
@@ -419,11 +395,10 @@ contract StableSwap {
      * @param i Token to withdraw
      * @param minAmountOut Minimum amount of token i that must be withdrawn
      */
-    function removeLiquidityOneToken(
-        uint256 shares,
-        uint256 i,
-        uint256 minAmountOut
-    ) external returns (uint256 amountOut) {
+    function removeLiquidityOneToken(uint256 shares, uint256 i, uint256 minAmountOut)
+        external
+        returns (uint256 amountOut)
+    {
         (amountOut,) = _calcWithdrawOneToken(shares, i);
         require(amountOut >= minAmountOut, "out < min");
 
@@ -437,15 +412,8 @@ contract StableSwap {
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount)
-        external
-        returns (bool);
-    function allowance(address owner, address spender)
-        external
-        view
-        returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
+    function allowance(address owner, address spender) external view returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount)
-        external
-        returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 }

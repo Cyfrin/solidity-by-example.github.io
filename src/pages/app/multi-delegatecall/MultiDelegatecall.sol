@@ -4,11 +4,7 @@ pragma solidity ^0.8.24;
 contract MultiDelegatecall {
     error DelegatecallFailed();
 
-    function multiDelegatecall(bytes[] memory data)
-        external
-        payable
-        returns (bytes[] memory results)
-    {
+    function multiDelegatecall(bytes[] memory data) external payable returns (bytes[] memory results) {
         results = new bytes[](data.length);
 
         for (uint256 i; i < data.length; i++) {
@@ -48,13 +44,8 @@ contract TestMultiDelegatecall is MultiDelegatecall {
 }
 
 contract Helper {
-    function getFunc1Data(uint256 x, uint256 y)
-        external
-        pure
-        returns (bytes memory)
-    {
-        return
-            abi.encodeWithSelector(TestMultiDelegatecall.func1.selector, x, y);
+    function getFunc1Data(uint256 x, uint256 y) external pure returns (bytes memory) {
+        return abi.encodeWithSelector(TestMultiDelegatecall.func1.selector, x, y);
     }
 
     function getFunc2Data() external pure returns (bytes memory) {
