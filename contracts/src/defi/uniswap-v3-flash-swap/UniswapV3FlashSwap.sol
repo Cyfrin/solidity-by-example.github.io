@@ -1,17 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-contract UniswapV3FlashSwap {
-    ISwapRouter constant router =
-        ISwapRouter(0xE592427A0AEce92De3Edee1F18E0157C05861564);
+address constant SWAP_ROUTER_02 = 0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45;
 
-    uint160 internal constant MIN_SQRT_RATIO = 4295128739;
-    uint160 internal constant MAX_SQRT_RATIO =
+contract UniswapV3FlashSwap {
+    ISwapRouter02 constant router = ISwapRouter02(SWAP_ROUTER_02);
+
+    uint160 private constant MIN_SQRT_RATIO = 4295128739;
+    uint160 private constant MAX_SQRT_RATIO =
         1461446703485210103287273052203988822378723970342;
 
-    // Example WETH/USDC
-    // Sell WETH high      -> Buy WETH low        -> WETH profit
-    // WETH in -> USDC out -> USDC in -> WETH out -> WETH profit
     function flashSwap(
         address pool0,
         uint24 fee1,
@@ -31,6 +29,29 @@ contract UniswapV3FlashSwap {
         );
     }
 
+    function _swap(
+        address tokenIn,
+        address tokenOut,
+        uint24 fee,
+        uint256 amountIn,
+        uint256 amountOutMin
+    ) private returns (uint256 amountOut) {
+        IERC20(tokenIn).approve(address(router), amountIn);
+
+        ISwapRouter02.ExactInputSingleParams memory params = ISwapRouter02
+            .ExactInputSingleParams({
+            tokenIn: tokenIn,
+            tokenOut: tokenOut,
+            fee: fee,
+            recipient: address(this),
+            amountIn: amountIn,
+            amountOutMinimum: amountOutMin,
+            sqrtPriceLimitX96: 0
+        });
+
+        amountOut = router.exactInputSingle(params);
+    }
+
     function uniswapV3SwapCallback(
         int256 amount0,
         int256 amount1,
@@ -48,59 +69,30 @@ contract UniswapV3FlashSwap {
             data, (address, address, uint24, address, address, uint256, bool)
         );
 
-        require(msg.sender == address(pool0), "not authorized");
+        uint256 amountOut = zeroForOne ? uint256(-amount1) : uint256(-amount0);
 
-        uint256 amountOut;
-        if (zeroForOne) {
-            amountOut = uint256(-amount1);
-        } else {
-            amountOut = uint256(-amount0);
-        }
-
-        uint256 buyBackAmount = _swap(tokenOut, tokenIn, fee1, amountOut);
-
-        if (buyBackAmount >= amountIn) {
-            uint256 profit = buyBackAmount - amountIn;
-            IERC20(tokenIn).transfer(address(pool0), amountIn);
-            IERC20(tokenIn).transfer(caller, profit);
-        } else {
-            uint256 loss = amountIn - buyBackAmount;
-            IERC20(tokenIn).transferFrom(caller, address(this), loss);
-            IERC20(tokenIn).transfer(address(pool0), amountIn);
-        }
-    }
-
-    function _swap(
-        address tokenIn,
-        address tokenOut,
-        uint24 fee,
-        uint256 amountIn
-    ) private returns (uint256 amountOut) {
-        IERC20(tokenIn).approve(address(router), amountIn);
-
-        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
-            .ExactInputSingleParams({
-            tokenIn: tokenIn,
-            tokenOut: tokenOut,
-            fee: fee,
-            recipient: address(this),
-            deadline: block.timestamp,
-            amountIn: amountIn,
-            amountOutMinimum: 0,
-            sqrtPriceLimitX96: 0
+        uint256 buyBackAmount = _swap({
+            tokenIn: tokenOut,
+            tokenOut: tokenIn,
+            fee: fee1,
+            amountIn: amountOut,
+            amountOutMin: amountIn
         });
 
-        amountOut = router.exactInputSingle(params);
+        uint256 profit = buyBackAmount - amountIn;
+        require(profit > 0, "0 profit");
+
+        IERC20(tokenIn).transfer(pool0, amountIn);
+        IERC20(tokenIn).transfer(caller, profit);
     }
 }
 
-interface ISwapRouter {
+interface ISwapRouter02 {
     struct ExactInputSingleParams {
         address tokenIn;
         address tokenOut;
         uint24 fee;
         address recipient;
-        uint256 deadline;
         uint256 amountIn;
         uint256 amountOutMinimum;
         uint160 sqrtPriceLimitX96;
