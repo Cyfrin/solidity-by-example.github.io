@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "UniswapV2FlashSwapTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiZm9yZ2Utc3RkL1Rlc3Quc29sIjsKaW1wb3J0ICJmb3JnZS1zdGQvY29uc29sZS5zb2wiOwoKaW1wb3J0ICIuLi9zcmMvVW5pc3dhcFYyRmxhc2hTd2FwLnNvbCI7CgphZGRyZXNzIGNvbnN0YW50IFdFVEggPSAweEMwMmFhQTM5YjIyM0ZFOEQwQTBlNUM0RjI3ZUFEOTA4M0M3NTZDYzI7CmFkZHJlc3MgY29uc3RhbnQgREFJID0gMHg2QjE3NTQ3NEU4OTA5NEM0NERhOThiOTU0RWVkZUFDNDk1MjcxZDBGOwphZGRyZXNzIGNvbnN0YW50IFVTREMgPSAweEEwYjg2OTkxYzYyMThiMzZjMWQxOUQ0YTJlOUViMGNFMzYwNmVCNDg7Cgpjb250cmFjdCBVbmlzd2FwVjJGbGFzaFN3YXBUZXN0IGlzIFRlc3QgewogICAgSVdFVEggcHJpdmF0ZSB3ZXRoID0gSVdFVEgoV0VUSCk7CgogICAgVW5pc3dhcFYyRmxhc2hTd2FwIHByaXZhdGUgdW5pID0gbmV3IFVuaXN3YXBWMkZsYXNoU3dhcCgpOwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHt9CgogICAgZnVuY3Rpb24gdGVzdEZsYXNoU3dhcCgpIHB1YmxpYyB7CiAgICAgICAgd2V0aC5kZXBvc2l0e3ZhbHVlOiAxZTE4fSgpOwogICAgICAgIC8vIEFwcHJvdmUgZmxhc2ggc3dhcCBmZWUKICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyh1bmkpLCAxZTE4KTsKCiAgICAgICAgdWludDI1NiBhbW91bnRUb0JvcnJvdyA9IDEwICogMWUxODsKICAgICAgICB1bmkuZmxhc2hTd2FwKGFtb3VudFRvQm9ycm93KTsKCiAgICAgICAgYXNzZXJ0R3QodW5pLmFtb3VudFRvUmVwYXkoKSwgYW1vdW50VG9Cb3Jyb3cpOwogICAgfQp9Cg==",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdH0gZnJvbSAiZm9yZ2Utc3RkL1Rlc3Quc29sIjsKaW1wb3J0ICIuLi8uLi8uLi9zcmMvZGVmaS91bmlzd2FwLXYyLWZsYXNoLXN3YXAvVW5pc3dhcFYyRmxhc2hTd2FwLnNvbCI7CgphZGRyZXNzIGNvbnN0YW50IFdFVEggPSAweEMwMmFhQTM5YjIyM0ZFOEQwQTBlNUM0RjI3ZUFEOTA4M0M3NTZDYzI7CmFkZHJlc3MgY29uc3RhbnQgREFJID0gMHg2QjE3NTQ3NEU4OTA5NEM0NERhOThiOTU0RWVkZUFDNDk1MjcxZDBGOwphZGRyZXNzIGNvbnN0YW50IFVTREMgPSAweEEwYjg2OTkxYzYyMThiMzZjMWQxOUQ0YTJlOUViMGNFMzYwNmVCNDg7Cgpjb250cmFjdCBVbmlzd2FwVjJGbGFzaFN3YXBUZXN0IGlzIFRlc3QgewogICAgSVdFVEggcHJpdmF0ZSB3ZXRoID0gSVdFVEgoV0VUSCk7CgogICAgVW5pc3dhcFYyRmxhc2hTd2FwIHByaXZhdGUgdW5pID0gbmV3IFVuaXN3YXBWMkZsYXNoU3dhcCgpOwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHt9CgogICAgZnVuY3Rpb24gdGVzdEZsYXNoU3dhcCgpIHB1YmxpYyB7CiAgICAgICAgd2V0aC5kZXBvc2l0e3ZhbHVlOiAxZTE4fSgpOwogICAgICAgIC8vIEFwcHJvdmUgZmxhc2ggc3dhcCBmZWUKICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyh1bmkpLCAxZTE4KTsKCiAgICAgICAgdWludDI1NiBhbW91bnRUb0JvcnJvdyA9IDEwICogMWUxODsKICAgICAgICB1bmkuZmxhc2hTd2FwKGFtb3VudFRvQm9ycm93KTsKCiAgICAgICAgYXNzZXJ0R3QodW5pLmFtb3VudFRvUmVwYXkoKSwgYW1vdW50VG9Cb3Jyb3cpOwogICAgfQp9Cg==",
   },
 ]
 
@@ -123,16 +123,11 @@ const html = `<h3>Uniswap V2 Flash Swap Example</h3>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 </code></pre><h3>Test with Foundry</h3>
-<ol>
-<li>Copy and paste this into <code>test</code> folder in your foundry project</li>
-</ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
-<span class="hljs-keyword">import</span> <span class="hljs-string">"forge-std/Test.sol"</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">"forge-std/console.sol"</span>;
-
-<span class="hljs-keyword">import</span> <span class="hljs-string">"../src/UniswapV2FlashSwap.sol"</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/uniswap-v2-flash-swap/UniswapV2FlashSwap.sol"</span>;
 
 <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
 <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
@@ -156,11 +151,6 @@ const html = `<h3>Uniswap V2 Flash Swap Example</h3>
         assertGt(uni.amountToRepay(), amountToBorrow);
     }
 }
-</code></pre><ol start="2">
-<li>Execute the following commands to run the test</li>
-</ol>
-<pre><code class="language-shell">FORK_URL=https://eth-mainnet.g.alchemy.com/v2/613t3mfjTevdrCwDl28CVvuk6wSIxRPi
-forge test -vv --gas-report --fork-url $FORK_URL --match-path test/UniswapV2FlashSwap.test.sol
 </code></pre><h3>Links</h3>
 <p><a href="https://github.com/foundry-rs/foundry" target="__blank">Foundry</a></p>
 <p><a href="https://github.com/t4sk/defi-notes" target="__blank">Uniswap V3 Foundry example</a></p>

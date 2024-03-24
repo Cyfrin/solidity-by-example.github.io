@@ -10,7 +10,6 @@ import {
 
 uint8 constant DECIMALS = 18;
 
-// forge test -vvv --match-path Vault.test.sol
 contract VaultTest is Test {
     Vault private vault;
     Token private token;

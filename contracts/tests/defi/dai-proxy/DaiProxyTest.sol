@@ -13,7 +13,6 @@ uint256 constant RAD = 1e45;
 uint256 constant ETH_AMOUNT = 100 * 1e18;
 uint256 constant DAI_AMOUNT = 10000 * 1e18;
 
-// forge test --fork-url $FORK_URL --match-path test/dai/DaiProxy.test.sol -vvv
 contract DaiProxyTest is Test {
     IERC20 private constant dai = IERC20(DAI);
     ICdpManager private constant cdpManager = ICdpManager(CDP_MANAGER);

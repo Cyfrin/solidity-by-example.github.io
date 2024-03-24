@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "UniswapV3FlashTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCB7VW5pc3dhcFYzRmxhc2gsIElFUkMyMH0iLi4vLi4vLi4vc3JjL2RlZmkvdW5pc3dhcC12My1mbGFzaC9Vbmlzd2FwVjNGbGFzaC5zb2wiOwoKY29udHJhY3QgVW5pc3dhcFYzRmxhc2hUZXN0IGlzIFRlc3QgewogICAgYWRkcmVzcyBjb25zdGFudCBEQUkgPSAweDZCMTc1NDc0RTg5MDk0QzQ0RGE5OGI5NTRFZWRlQUM0OTUyNzFkMEY7CiAgICBhZGRyZXNzIGNvbnN0YW50IFdFVEggPSAweEMwMmFhQTM5YjIyM0ZFOEQwQTBlNUM0RjI3ZUFEOTA4M0M3NTZDYzI7CiAgICAvLyBEQUkgLyBXRVRIIDAuMyUgZmVlCiAgICBhZGRyZXNzIGNvbnN0YW50IFBPT0wgPSAweEMyZTlGMjVCZTYyNTdjMjEwZDdBZGYwRDRDZDZFM0U4ODFiYTI1Zjg7CiAgICB1aW50MjQgY29uc3RhbnQgUE9PTF9GRUUgPSAzMDAwOwoKICAgIElFUkMyMCBwcml2YXRlIGNvbnN0YW50IHdldGggPSBJRVJDMjAoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBjb25zdGFudCBkYWkgPSBJRVJDMjAoREFJKTsKICAgIFVuaXN3YXBWM0ZsYXNoU3dhcCBwcml2YXRlIHVuaTsKICAgIGFkZHJlc3MgY29uc3RhbnQgdXNlciA9IGFkZHJlc3MoMTEpOwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHsKICAgICAgICB1bmkgPSBuZXcgVW5pc3dhcFYzRmxhc2hTd2FwKFBPT0wpOwoKICAgICAgICBkZWFsKERBSSwgdXNlciwgMWU2ICogMWUxOCk7CiAgICAgICAgdm0ucHJhbmsodXNlcik7CiAgICAgICAgZGFpLmFwcHJvdmUoYWRkcmVzcyh1bmkpLCB0eXBlKHVpbnQyNTYpLm1heCk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF9mbGFzaF9zd2FwKCkgcHVibGljIHsKICAgICAgICB1aW50MjU2IGRhaV9iZWZvcmUgPSBkYWkuYmFsYW5jZU9mKHVzZXIpOwogICAgICAgIHZtLnByYW5rKHVzZXIpOwogICAgICAgIHVuaS5mbGFzaCgxZTYgKiAxZTE4LCAwKTsKICAgICAgICB1aW50MjU2IGRhaV9hZnRlciA9IGRhaS5iYWxhbmNlT2YodXNlcik7CgogICAgICAgIHVpbnQyNTYgZmVlID0gZGFpX2JlZm9yZSAtIGRhaV9hZnRlcjsKICAgICAgICBjb25zb2xlMi5sb2coIkRBSSBmZWUiLCBmZWUpOwogICAgfQp9",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCAiLi4vLi4vLi4vc3JjL2RlZmkvdW5pc3dhcC12My1mbGFzaC9Vbmlzd2FwVjNGbGFzaC5zb2wiOwoKY29udHJhY3QgVW5pc3dhcFYzRmxhc2hUZXN0IGlzIFRlc3QgewogICAgYWRkcmVzcyBjb25zdGFudCBEQUkgPSAweDZCMTc1NDc0RTg5MDk0QzQ0RGE5OGI5NTRFZWRlQUM0OTUyNzFkMEY7CiAgICBhZGRyZXNzIGNvbnN0YW50IFdFVEggPSAweEMwMmFhQTM5YjIyM0ZFOEQwQTBlNUM0RjI3ZUFEOTA4M0M3NTZDYzI7CiAgICAvLyBEQUkgLyBXRVRIIDAuMyUgZmVlCiAgICBhZGRyZXNzIGNvbnN0YW50IFBPT0wgPSAweEMyZTlGMjVCZTYyNTdjMjEwZDdBZGYwRDRDZDZFM0U4ODFiYTI1Zjg7CiAgICB1aW50MjQgY29uc3RhbnQgUE9PTF9GRUUgPSAzMDAwOwoKICAgIElFUkMyMCBwcml2YXRlIGNvbnN0YW50IHdldGggPSBJRVJDMjAoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBjb25zdGFudCBkYWkgPSBJRVJDMjAoREFJKTsKICAgIFVuaXN3YXBWM0ZsYXNoIHByaXZhdGUgdW5pOwogICAgYWRkcmVzcyBjb25zdGFudCB1c2VyID0gYWRkcmVzcygxMSk7CgogICAgZnVuY3Rpb24gc2V0VXAoKSBwdWJsaWMgewogICAgICAgIHVuaSA9IG5ldyBVbmlzd2FwVjNGbGFzaChQT09MKTsKCiAgICAgICAgZGVhbChEQUksIHVzZXIsIDFlNiAqIDFlMTgpOwogICAgICAgIHZtLnByYW5rKHVzZXIpOwogICAgICAgIGRhaS5hcHByb3ZlKGFkZHJlc3ModW5pKSwgdHlwZSh1aW50MjU2KS5tYXgpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3RfZmxhc2goKSBwdWJsaWMgewogICAgICAgIHVpbnQyNTYgZGFpX2JlZm9yZSA9IGRhaS5iYWxhbmNlT2YodXNlcik7CiAgICAgICAgdm0ucHJhbmsodXNlcik7CiAgICAgICAgdW5pLmZsYXNoKDFlNiAqIDFlMTgsIDApOwogICAgICAgIHVpbnQyNTYgZGFpX2FmdGVyID0gZGFpLmJhbGFuY2VPZih1c2VyKTsKCiAgICAgICAgdWludDI1NiBmZWUgPSBkYWlfYmVmb3JlIC0gZGFpX2FmdGVyOwogICAgICAgIGNvbnNvbGUyLmxvZygiREFJIGZlZSIsIGZlZSk7CiAgICB9Cn0K",
   },
 ]
 
@@ -107,7 +107,7 @@ const html = `<h3>Uniswap V3 Flash Loan Example</h3>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>, <span class="hljs-title">console2</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title">UniswapV3Flash</span>, <span class="hljs-title">IERC20</span>}<span class="hljs-string">"../../../src/defi/uniswap-v3-flash/UniswapV3Flash.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/uniswap-v3-flash/UniswapV3Flash.sol"</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">UniswapV3FlashTest</span> <span class="hljs-keyword">is</span> <span class="hljs-title">Test</span> </span>{
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
@@ -118,18 +118,18 @@ const html = `<h3>Uniswap V3 Flash Loan Example</h3>
 
     IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> weth <span class="hljs-operator">=</span> IERC20(WETH);
     IERC20 <span class="hljs-keyword">private</span> <span class="hljs-keyword">constant</span> dai <span class="hljs-operator">=</span> IERC20(DAI);
-    UniswapV3FlashSwap <span class="hljs-keyword">private</span> uni;
+    UniswapV3Flash <span class="hljs-keyword">private</span> uni;
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> user <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">11</span>);
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        uni <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> UniswapV3FlashSwap(POOL);
+        uni <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> UniswapV3Flash(POOL);
 
         deal(DAI, user, <span class="hljs-number">1e6</span> <span class="hljs-operator">*</span> <span class="hljs-number">1e18</span>);
         vm.prank(user);
         dai.approve(<span class="hljs-keyword">address</span>(uni), <span class="hljs-keyword">type</span>(<span class="hljs-keyword">uint256</span>).<span class="hljs-built_in">max</span>);
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_flash_swap</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_flash</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">uint256</span> dai_before <span class="hljs-operator">=</span> dai.balanceOf(user);
         vm.prank(user);
         uni.flash(<span class="hljs-number">1e6</span> <span class="hljs-operator">*</span> <span class="hljs-number">1e18</span>, <span class="hljs-number">0</span>);

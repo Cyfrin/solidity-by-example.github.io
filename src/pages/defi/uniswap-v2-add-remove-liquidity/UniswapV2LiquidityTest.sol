@@ -1,10 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "forge-std/Test.sol";
-import "forge-std/console.sol";
-
-import "../src/UniswapV2Liquidity.sol";
+import {Test} from "forge-std/Test.sol";
+import
+    "../../../src/defi/uniswap-v2-add-remove-liquidity/UniswapV2Liquidity.sol";
 
 IERC20 constant WETH = IERC20(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2);
 IERC20 constant USDT = IERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7);

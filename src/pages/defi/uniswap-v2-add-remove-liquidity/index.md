@@ -13,8 +13,6 @@ keywords: [defi, uniswap, v2, add, remove, liquidity, amm]
 
 ### Test with Foundry
 
-`forge test --fork-url <ethereum-mainnet-rpc>`
-
 ```solidity
 {{{UniswapV2LiquidityTest}}}
 ```

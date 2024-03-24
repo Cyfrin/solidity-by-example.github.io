@@ -17,11 +17,6 @@ Examples of minting new position, collect fees, increase and decrease liquidity.
 {{{UniswapV3LiquidityTest}}}
 ```
 
-```shell
-FORK_URL=https://eth-mainnet.g.alchemy.com/v2/613t3mfjTevdrCwDl28CVvuk6wSIxRPi
-forge test -vv --gas-report --fork-url $FORK_URL --match-path test/UniswapV3Liquidity.test.sol
-```
-
 ### Links
 
 <a href="https://docs.uniswap.org/protocol/guides/providing-liquidity/setting-up" target="__blank">Uniswap V3</a>

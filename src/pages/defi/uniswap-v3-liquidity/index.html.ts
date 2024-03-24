@@ -317,8 +317,6 @@ const html = `<p>Examples of minting new position, collect fees, increase and de
         console2.log(<span class="hljs-string">"amount 1"</span>, amount1);
     }
 }
-</code></pre><pre><code class="language-shell">FORK_URL=https://eth-mainnet.g.alchemy.com/v2/613t3mfjTevdrCwDl28CVvuk6wSIxRPi
-forge test -vv --gas-report --fork-url $FORK_URL --match-path test/UniswapV3Liquidity.test.sol
 </code></pre><h3>Links</h3>
 <p><a href="https://docs.uniswap.org/protocol/guides/providing-liquidity/setting-up" target="__blank">Uniswap V3</a></p>
 <p><a href="https://github.com/foundry-rs/foundry" target="__blank">Foundry</a></p>

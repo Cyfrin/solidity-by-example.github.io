@@ -10,6 +10,13 @@ contract UniswapV3FlashSwap {
     uint160 private constant MAX_SQRT_RATIO =
         1461446703485210103287273052203988822378723970342;
 
+    // DAI / WETH 0.3% swap fee (2000 DAI / WETH)
+    // DAI / WETH 0.05% swap fee (2100 DAI / WETH)
+    // 1. Flash swap on pool0 (receive WETH)
+    // 2. Swap on pool1 (WETH -> DAI)
+    // 3. Send DAI to pool0
+    // profit = DAI received from pool1 - DAI repaid to pool0
+
     function flashSwap(
         address pool0,
         uint24 fee1,
@@ -18,15 +25,22 @@ contract UniswapV3FlashSwap {
         uint256 amountIn
     ) external {
         bool zeroForOne = tokenIn < tokenOut;
+        // 0 -> 1 => sqrt price decrease
+        // 1 -> 0 => sqrt price increase
         uint160 sqrtPriceLimitX96 =
             zeroForOne ? MIN_SQRT_RATIO + 1 : MAX_SQRT_RATIO - 1;
+
         bytes memory data = abi.encode(
             msg.sender, pool0, fee1, tokenIn, tokenOut, amountIn, zeroForOne
         );
 
-        IUniswapV3Pool(pool0).swap(
-            address(this), zeroForOne, int256(amountIn), sqrtPriceLimitX96, data
-        );
+        IUniswapV3Pool(pool0).swap({
+            recipient: address(this),
+            zeroForOne: zeroForOne,
+            amountSpecified: int256(amountIn),
+            sqrtPriceLimitX96: sqrtPriceLimitX96,
+            data: data
+        });
     }
 
     function _swap(
@@ -57,6 +71,7 @@ contract UniswapV3FlashSwap {
         int256 amount1,
         bytes calldata data
     ) external {
+        // Decode data
         (
             address caller,
             address pool0,
@@ -71,6 +86,8 @@ contract UniswapV3FlashSwap {
 
         uint256 amountOut = zeroForOne ? uint256(-amount1) : uint256(-amount0);
 
+        // pool0 -> tokenIn -> tokenOut (amountOut)
+        // Swap on pool 1 (swap tokenOut -> tokenIn)
         uint256 buyBackAmount = _swap({
             tokenIn: tokenOut,
             tokenOut: tokenIn,
@@ -79,8 +96,9 @@ contract UniswapV3FlashSwap {
             amountOutMin: amountIn
         });
 
+        // Repay pool 0
         uint256 profit = buyBackAmount - amountIn;
-        require(profit > 0, "0 profit");
+        require(profit > 0, "profit = 0");
 
         IERC20(tokenIn).transfer(pool0, amountIn);
         IERC20(tokenIn).transfer(caller, profit);

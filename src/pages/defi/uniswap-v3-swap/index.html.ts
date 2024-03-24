@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "UniswapV3SwapExamplesTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCB7VW5pc3dhcFYzU3dhcEV4YW1wbGVzfSBmcm9tICIuLi8uLi8uLi9zcmMvZGVmaS91bmlzd2FwLXYzLXN3YXAvVW5pc3dhcFYzU3dhcEV4YW1wbGVzLnNvbCI7CgphZGRyZXNzIGNvbnN0YW50IFdFVEggPSAweEMwMmFhQTM5YjIyM0ZFOEQwQTBlNUM0RjI3ZUFEOTA4M0M3NTZDYzI7CmFkZHJlc3MgY29uc3RhbnQgREFJID0gMHg2QjE3NTQ3NEU4OTA5NEM0NERhOThiOTU0RWVkZUFDNDk1MjcxZDBGOwphZGRyZXNzIGNvbnN0YW50IFVTREMgPSAweEEwYjg2OTkxYzYyMThiMzZjMWQxOUQ0YTJlOUViMGNFMzYwNmVCNDg7Cgpjb250cmFjdCBVbmlWM1N3YXBUZXN0IGlzIFRlc3QgewogICAgSVdFVEggcHJpdmF0ZSB3ZXRoID0gSVdFVEgoV0VUSCk7CiAgICBJRVJDMjAgcHJpdmF0ZSBkYWkgPSBJRVJDMjAoREFJKTsKICAgIElFUkMyMCBwcml2YXRlIHVzZGMgPSBJRVJDMjAoVVNEQyk7CgogICAgVW5pc3dhcFYzU3dhcEV4YW1wbGVzIHByaXZhdGUgdW5pID0gbmV3IFVuaXN3YXBWM1N3YXBFeGFtcGxlcygpOwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHt9CgogICAgZnVuY3Rpb24gdGVzdFNpbmdsZUhvcCgpIHB1YmxpYyB7CiAgICAgICAgd2V0aC5kZXBvc2l0e3ZhbHVlOiAxZTE4fSgpOwogICAgICAgIHdldGguYXBwcm92ZShhZGRyZXNzKHVuaSksIDFlMTgpOwoKICAgICAgICB1aW50MjU2IGFtb3VudE91dCA9IHVuaS5zd2FwRXhhY3RJbnB1dFNpbmdsZUhvcChXRVRILCBEQUksIDMwMDAsIDFlMTgpOwoKICAgICAgICBjb25zb2xlMi5sb2coIkRBSSIsIGFtb3VudE91dCk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdE11bHRpSG9wKCkgcHVibGljIHsKICAgICAgICB3ZXRoLmRlcG9zaXR7dmFsdWU6IDFlMTh9KCk7CiAgICAgICAgd2V0aC5hcHByb3ZlKGFkZHJlc3ModW5pKSwgMWUxOCk7CgogICAgICAgIGJ5dGVzIG1lbW9yeSBwYXRoID0KICAgICAgICAgICAgYWJpLmVuY29kZVBhY2tlZChXRVRILCB1aW50MjQoMzAwMCksIFVTREMsIHVpbnQyNCgxMDApLCBEQUkpOwoKICAgICAgICB1aW50MjU2IGFtb3VudE91dCA9IHVuaS5zd2FwRXhhY3RJbnB1dE11bHRpSG9wKHBhdGgsIFdFVEgsIDFlMTgpOwoKICAgICAgICBjb25zb2xlMi5sb2coIkRBSSIsIGFtb3VudE91dCk7CiAgICB9Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCAiLi4vLi4vLi4vc3JjL2RlZmkvdW5pc3dhcC12My1zd2FwL1VuaXN3YXBWM1N3YXBFeGFtcGxlcy5zb2wiOwoKYWRkcmVzcyBjb25zdGFudCBXRVRIID0gMHhDMDJhYUEzOWIyMjNGRThEMEEwZTVDNEYyN2VBRDkwODNDNzU2Q2MyOwphZGRyZXNzIGNvbnN0YW50IERBSSA9IDB4NkIxNzU0NzRFODkwOTRDNDREYTk4Yjk1NEVlZGVBQzQ5NTI3MWQwRjsKYWRkcmVzcyBjb25zdGFudCBVU0RDID0gMHhBMGI4Njk5MWM2MjE4YjM2YzFkMTlENGEyZTlFYjBjRTM2MDZlQjQ4OwoKY29udHJhY3QgVW5pVjNTd2FwVGVzdCBpcyBUZXN0IHsKICAgIElXRVRIIHByaXZhdGUgd2V0aCA9IElXRVRIKFdFVEgpOwogICAgSUVSQzIwIHByaXZhdGUgZGFpID0gSUVSQzIwKERBSSk7CiAgICBJRVJDMjAgcHJpdmF0ZSB1c2RjID0gSUVSQzIwKFVTREMpOwoKICAgIFVuaXN3YXBWM1N3YXBFeGFtcGxlcyBwcml2YXRlIHVuaSA9IG5ldyBVbmlzd2FwVjNTd2FwRXhhbXBsZXMoKTsKCiAgICBmdW5jdGlvbiBzZXRVcCgpIHB1YmxpYyB7fQoKICAgIGZ1bmN0aW9uIHRlc3RTaW5nbGVIb3AoKSBwdWJsaWMgewogICAgICAgIHdldGguZGVwb3NpdHt2YWx1ZTogMWUxOH0oKTsKICAgICAgICB3ZXRoLmFwcHJvdmUoYWRkcmVzcyh1bmkpLCAxZTE4KTsKCiAgICAgICAgdWludDI1NiBhbW91bnRPdXQgPSB1bmkuc3dhcEV4YWN0SW5wdXRTaW5nbGVIb3AoV0VUSCwgREFJLCAzMDAwLCAxZTE4KTsKCiAgICAgICAgY29uc29sZTIubG9nKCJEQUkiLCBhbW91bnRPdXQpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3RNdWx0aUhvcCgpIHB1YmxpYyB7CiAgICAgICAgd2V0aC5kZXBvc2l0e3ZhbHVlOiAxZTE4fSgpOwogICAgICAgIHdldGguYXBwcm92ZShhZGRyZXNzKHVuaSksIDFlMTgpOwoKICAgICAgICBieXRlcyBtZW1vcnkgcGF0aCA9CiAgICAgICAgICAgIGFiaS5lbmNvZGVQYWNrZWQoV0VUSCwgdWludDI0KDMwMDApLCBVU0RDLCB1aW50MjQoMTAwKSwgREFJKTsKCiAgICAgICAgdWludDI1NiBhbW91bnRPdXQgPSB1bmkuc3dhcEV4YWN0SW5wdXRNdWx0aUhvcChwYXRoLCBXRVRILCAxZTE4KTsKCiAgICAgICAgY29uc29sZTIubG9nKCJEQUkiLCBhbW91bnRPdXQpOwogICAgfQp9Cg==",
   },
 ]
 
@@ -126,14 +126,11 @@ const html = `<h3>Uniswap V3 Swap Examples</h3>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 </code></pre><h3>Test with Foundry</h3>
-<ol>
-<li>Copy and paste this into <code>test</code> folder in your foundry project</li>
-</ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-keyword">import</span> {<span class="hljs-title">Test</span>, <span class="hljs-title">console2</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"forge-std/Test.sol"</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title">UniswapV3SwapExamples</span>} <span class="hljs-title"><span class="hljs-keyword">from</span></span> <span class="hljs-string">"../../../src/defi/uniswap-v3-swap/UniswapV3SwapExamples.sol"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"../../../src/defi/uniswap-v3-swap/UniswapV3SwapExamples.sol"</span>;
 
 <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> WETH <span class="hljs-operator">=</span> <span class="hljs-number">0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2</span>;
 <span class="hljs-keyword">address</span> <span class="hljs-keyword">constant</span> DAI <span class="hljs-operator">=</span> <span class="hljs-number">0x6B175474E89094C44Da98b954EedeAC495271d0F</span>;
@@ -169,11 +166,6 @@ const html = `<h3>Uniswap V3 Swap Examples</h3>
         console2.log(<span class="hljs-string">"DAI"</span>, amountOut);
     }
 }
-</code></pre><ol start="2">
-<li>Execute the following commands to run the test</li>
-</ol>
-<pre><code class="language-shell">FORK_URL=https://eth-mainnet.g.alchemy.com/v2/613t3mfjTevdrCwDl28CVvuk6wSIxRPi
-forge test -vv --gas-report --fork-url $FORK_URL --match-path test/UniswapV3SwapExamples.test.sol
 </code></pre><h3>Links</h3>
 <p><a href="https://docs.uniswap.org/protocol/guides/swaps/single-swaps" target="__blank">Uniswap V3</a></p>
 <p><a href="https://github.com/foundry-rs/foundry" target="__blank">Foundry</a></p>
