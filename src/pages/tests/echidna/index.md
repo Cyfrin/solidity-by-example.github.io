@@ -14,9 +14,9 @@ Examples of fuzzing with [Echidna](https://github.com/crytic/echidna).
 docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
 ```
 
-Inside docker, your code will be stored at `/code`
+Inside docker, your code will be stored at `/code`, in the root directory.
 
-3. See the comments below and execute `echidna-test` commands.
+3. See the comments below and execute `echidna` commands.
 
 ```solidity
 {{{TestEchidna}}}
@@ -30,7 +30,7 @@ Contract callers can also be set in the configuration. Default accounts are
 
 - `0x10000`
 - `0x20000`
-- `0x00a329C0648769a73afAC7F9381e08fb43DBEA70`
+- `0x30000`
 
 ```solidity
 {{{EchidnaTestTimeAndCaller}}}
