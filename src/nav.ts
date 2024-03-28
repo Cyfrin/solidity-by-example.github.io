@@ -95,6 +95,10 @@ export const SOL_ROUTES: Route[] = [
     path: "data-locations",
     title: "Data Locations - Storage, Memory and Calldata",
   },
+  {
+    path: "transient-storage",
+    title: "Transient Storage",
+  },
   // function
   {
     path: "function",
