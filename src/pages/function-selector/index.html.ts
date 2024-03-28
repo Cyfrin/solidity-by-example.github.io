@@ -3,13 +3,18 @@ export const version = "0.8.24"
 export const title = "Function Selector"
 export const description = "Example of how function selectors are computed"
 
-export const keywords = ["function", "functions", "selector", "selectors"]
+export const keywords = [
+    "function",
+    "functions",
+    "selector",
+    "selectors",
+]
 
 export const codes = [
-  {
-    fileName: "FunctionSelector.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEZ1bmN0aW9uU2VsZWN0b3IgewogICAgLyoKICAgICJ0cmFuc2ZlcihhZGRyZXNzLHVpbnQyNTYpIgogICAgMHhhOTA1OWNiYgogICAgInRyYW5zZmVyRnJvbShhZGRyZXNzLGFkZHJlc3MsdWludDI1NikiCiAgICAweDIzYjg3MmRkCiAgICAqLwogICAgZnVuY3Rpb24gZ2V0U2VsZWN0b3Ioc3RyaW5nIGNhbGxkYXRhIF9mdW5jKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJ5dGVzNCkKICAgIHsKICAgICAgICByZXR1cm4gYnl0ZXM0KGtlY2NhazI1NihieXRlcyhfZnVuYykpKTsKICAgIH0KfQo=",
-  },
+    {
+        fileName: "FunctionSelector.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEZ1bmN0aW9uU2VsZWN0b3IgewogICAgLyoKICAgICJ0cmFuc2ZlcihhZGRyZXNzLHVpbnQyNTYpIgogICAgMHhhOTA1OWNiYgogICAgInRyYW5zZmVyRnJvbShhZGRyZXNzLGFkZHJlc3MsdWludDI1NikiCiAgICAweDIzYjg3MmRkCiAgICAqLwogICAgZnVuY3Rpb24gZ2V0U2VsZWN0b3Ioc3RyaW5nIGNhbGxkYXRhIF9mdW5jKQogICAgICAgIGV4dGVybmFsCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJ5dGVzNCkKICAgIHsKICAgICAgICByZXR1cm4gYnl0ZXM0KGtlY2NhazI1NihieXRlcyhfZnVuYykpKTsKICAgIH0KfQo=",
+    },
 ]
 
 const html = `<p>When a function is called, the first 4 bytes of <code>calldata</code> specifies which function to call.</p>

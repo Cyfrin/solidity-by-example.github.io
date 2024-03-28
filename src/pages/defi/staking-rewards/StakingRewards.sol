@@ -59,7 +59,9 @@ contract StakingRewards {
             return rewardPerTokenStored;
         }
 
-        return rewardPerTokenStored + (rewardRate * (lastTimeRewardApplicable() - updatedAt) * 1e18) / totalSupply;
+        return rewardPerTokenStored
+            + (rewardRate * (lastTimeRewardApplicable() - updatedAt) * 1e18)
+                / totalSupply;
     }
 
     function stake(uint256 _amount) external updateReward(msg.sender) {
@@ -77,8 +79,12 @@ contract StakingRewards {
     }
 
     function earned(address _account) public view returns (uint256) {
-        return
-            ((balanceOf[_account] * (rewardPerToken() - userRewardPerTokenPaid[_account])) / 1e18) + rewards[_account];
+        return (
+            (
+                balanceOf[_account]
+                    * (rewardPerToken() - userRewardPerTokenPaid[_account])
+            ) / 1e18
+        ) + rewards[_account];
     }
 
     function getReward() external updateReward(msg.sender) {
@@ -94,7 +100,11 @@ contract StakingRewards {
         duration = _duration;
     }
 
-    function notifyRewardAmount(uint256 _amount) external onlyOwner updateReward(address(0)) {
+    function notifyRewardAmount(uint256 _amount)
+        external
+        onlyOwner
+        updateReward(address(0))
+    {
         if (block.timestamp >= finishAt) {
             rewardRate = _amount / duration;
         } else {
@@ -103,7 +113,10 @@ contract StakingRewards {
         }
 
         require(rewardRate > 0, "reward rate = 0");
-        require(rewardRate * duration <= rewardsToken.balanceOf(address(this)), "reward amount > balance");
+        require(
+            rewardRate * duration <= rewardsToken.balanceOf(address(this)),
+            "reward amount > balance"
+        );
 
         finishAt = block.timestamp + duration;
         updatedAt = block.timestamp;
@@ -117,8 +130,15 @@ contract StakingRewards {
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount) external returns (bool);
-    function allowance(address owner, address spender) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }

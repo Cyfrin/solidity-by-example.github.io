@@ -7,7 +7,11 @@ library StorageSlot {
         address value;
     }
 
-    function getAddressSlot(bytes32 slot) internal pure returns (AddressSlot storage pointer) {
+    function getAddressSlot(bytes32 slot)
+        internal
+        pure
+        returns (AddressSlot storage pointer)
+    {
         assembly {
             // Get the pointer to AddressSlot stored at slot
             pointer.slot := slot
@@ -19,12 +23,14 @@ contract TestSlot {
     bytes32 public constant TEST_SLOT = keccak256("TEST_SLOT");
 
     function write(address _addr) external {
-        StorageSlot.AddressSlot storage data = StorageSlot.getAddressSlot(TEST_SLOT);
+        StorageSlot.AddressSlot storage data =
+            StorageSlot.getAddressSlot(TEST_SLOT);
         data.value = _addr;
     }
 
     function get() external view returns (address) {
-        StorageSlot.AddressSlot storage data = StorageSlot.getAddressSlot(TEST_SLOT);
+        StorageSlot.AddressSlot storage data =
+            StorageSlot.getAddressSlot(TEST_SLOT);
         return data.value;
     }
 }

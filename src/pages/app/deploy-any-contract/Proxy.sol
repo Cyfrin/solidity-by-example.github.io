@@ -6,7 +6,11 @@ contract Proxy {
 
     receive() external payable {}
 
-    function deploy(bytes memory _code) external payable returns (address addr) {
+    function deploy(bytes memory _code)
+        external
+        payable
+        returns (address addr)
+    {
         assembly {
             // create(v, p, n)
             // v = amount of ETH to send
@@ -53,7 +57,11 @@ contract Helper {
         return bytecode;
     }
 
-    function getBytecode2(uint256 _x, uint256 _y) external pure returns (bytes memory) {
+    function getBytecode2(uint256 _x, uint256 _y)
+        external
+        pure
+        returns (bytes memory)
+    {
         bytes memory bytecode = type(TestContract2).creationCode;
         return abi.encodePacked(bytecode, abi.encode(_x, _y));
     }

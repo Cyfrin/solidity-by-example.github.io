@@ -3,13 +3,20 @@ export const version = "0.8.24"
 export const title = "Ether and Wei"
 export const description = "An example of Ether and Wei in Solidity"
 
-export const keywords = ["data", "variables", "variable", "ether", "wei", "units"]
+export const keywords = [
+    "data",
+    "variables",
+    "variable",
+    "ether",
+    "wei",
+    "units",
+]
 
 export const codes = [
-  {
-    fileName: "EtherUnits.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEV0aGVyVW5pdHMgewogICAgdWludDI1NiBwdWJsaWMgb25lV2VpID0gMSB3ZWk7CiAgICAvLyAxIHdlaSBpcyBlcXVhbCB0byAxCiAgICBib29sIHB1YmxpYyBpc09uZVdlaSA9IDEgd2VpID09IDE7CgogICAgdWludDI1NiBwdWJsaWMgb25lRXRoZXIgPSAxIGV0aGVyOwogICAgLy8gMSBldGhlciBpcyBlcXVhbCB0byAxMF4xOCB3ZWkKICAgIGJvb2wgcHVibGljIGlzT25lRXRoZXIgPSAxIGV0aGVyID09IDFlMTg7Cn0K",
-  },
+    {
+        fileName: "EtherUnits.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEV0aGVyVW5pdHMgewogICAgdWludDI1NiBwdWJsaWMgb25lV2VpID0gMSB3ZWk7CiAgICAvLyAxIHdlaSBpcyBlcXVhbCB0byAxCiAgICBib29sIHB1YmxpYyBpc09uZVdlaSA9IDEgd2VpID09IDE7CgogICAgdWludDI1NiBwdWJsaWMgb25lRXRoZXIgPSAxIGV0aGVyOwogICAgLy8gMSBldGhlciBpcyBlcXVhbCB0byAxMF4xOCB3ZWkKICAgIGJvb2wgcHVibGljIGlzT25lRXRoZXIgPSAxIGV0aGVyID09IDFlMTg7Cn0K",
+    },
 ]
 
 const html = `<p>Transactions are paid with <code>ether</code>.</p>

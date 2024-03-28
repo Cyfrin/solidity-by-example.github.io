@@ -3,7 +3,11 @@ pragma solidity ^0.8.24;
 
 contract MostSignificantBitFunction {
     // Find most significant bit using binary search
-    function mostSignificantBit(uint256 x) external pure returns (uint256 msb) {
+    function mostSignificantBit(uint256 x)
+        external
+        pure
+        returns (uint256 msb)
+    {
         // x >= 2 ** 128
         if (x >= 0x100000000000000000000000000000000) {
             x >>= 128;

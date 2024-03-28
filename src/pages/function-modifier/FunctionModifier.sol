@@ -30,7 +30,11 @@ contract FunctionModifier {
         _;
     }
 
-    function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
+    function changeOwner(address _newOwner)
+        public
+        onlyOwner
+        validAddress(_newOwner)
+    {
         owner = _newOwner;
     }
 

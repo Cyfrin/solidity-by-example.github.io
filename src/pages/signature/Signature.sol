@@ -30,11 +30,12 @@ contract VerifySignature {
 
     hash = "0xcf36ac4f97dc10d91fc2cbb20d718e94a8cbfe0f82eaedc6a4aa38946fb797cd"
     */
-    function getMessageHash(address _to, uint256 _amount, string memory _message, uint256 _nonce)
-        public
-        pure
-        returns (bytes32)
-    {
+    function getMessageHash(
+        address _to,
+        uint256 _amount,
+        string memory _message,
+        uint256 _nonce
+    ) public pure returns (bytes32) {
         return keccak256(abi.encodePacked(_to, _amount, _message, _nonce));
     }
 
@@ -49,12 +50,18 @@ contract VerifySignature {
     Signature will be different for different accounts
     0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
     */
-    function getEthSignedMessageHash(bytes32 _messageHash) public pure returns (bytes32) {
+    function getEthSignedMessageHash(bytes32 _messageHash)
+        public
+        pure
+        returns (bytes32)
+    {
         /*
         Signature is produced by signing a keccak256 hash with the following format:
         "\x19Ethereum Signed Message\n" + len(msg) + msg
         */
-        return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", _messageHash));
+        return keccak256(
+            abi.encodePacked("\x19Ethereum Signed Message:\n32", _messageHash)
+        );
     }
 
     /* 4. Verify signature
@@ -80,13 +87,20 @@ contract VerifySignature {
         return recoverSigner(ethSignedMessageHash, signature) == _signer;
     }
 
-    function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature) public pure returns (address) {
+    function recoverSigner(
+        bytes32 _ethSignedMessageHash,
+        bytes memory _signature
+    ) public pure returns (address) {
         (bytes32 r, bytes32 s, uint8 v) = splitSignature(_signature);
 
         return ecrecover(_ethSignedMessageHash, v, r, s);
     }
 
-    function splitSignature(bytes memory sig) public pure returns (bytes32 r, bytes32 s, uint8 v) {
+    function splitSignature(bytes memory sig)
+        public
+        pure
+        returns (bytes32 r, bytes32 s, uint8 v)
+    {
         require(sig.length == 65, "invalid signature length");
 
         assembly {

@@ -10,11 +10,14 @@ contract UniswapV3SingleHopSwap {
     IERC20 private constant weth = IERC20(WETH);
     IERC20 private constant dai = IERC20(DAI);
 
-    function swapExactInputSingleHop(uint256 amountIn, uint256 amountOutMin) external {
+    function swapExactInputSingleHop(uint256 amountIn, uint256 amountOutMin)
+        external
+    {
         weth.transferFrom(msg.sender, address(this), amountIn);
         weth.approve(address(router), amountIn);
 
-        ISwapRouter02.ExactInputSingleParams memory params = ISwapRouter02.ExactInputSingleParams({
+        ISwapRouter02.ExactInputSingleParams memory params = ISwapRouter02
+            .ExactInputSingleParams({
             tokenIn: WETH,
             tokenOut: DAI,
             fee: 3000,
@@ -27,11 +30,14 @@ contract UniswapV3SingleHopSwap {
         router.exactInputSingle(params);
     }
 
-    function swapExactOutputSingleHop(uint256 amountOut, uint256 amountInMax) external {
+    function swapExactOutputSingleHop(uint256 amountOut, uint256 amountInMax)
+        external
+    {
         weth.transferFrom(msg.sender, address(this), amountInMax);
         weth.approve(address(router), amountInMax);
 
-        ISwapRouter02.ExactOutputSingleParams memory params = ISwapRouter02.ExactOutputSingleParams({
+        ISwapRouter02.ExactOutputSingleParams memory params = ISwapRouter02
+            .ExactOutputSingleParams({
             tokenIn: WETH,
             tokenOut: DAI,
             fee: 3000,
@@ -61,7 +67,10 @@ interface ISwapRouter02 {
         uint160 sqrtPriceLimitX96;
     }
 
-    function exactInputSingle(ExactInputSingleParams calldata params) external payable returns (uint256 amountOut);
+    function exactInputSingle(ExactInputSingleParams calldata params)
+        external
+        payable
+        returns (uint256 amountOut);
 
     struct ExactOutputSingleParams {
         address tokenIn;
@@ -73,16 +82,26 @@ interface ISwapRouter02 {
         uint160 sqrtPriceLimitX96;
     }
 
-    function exactOutputSingle(ExactOutputSingleParams calldata params) external payable returns (uint256 amountIn);
+    function exactOutputSingle(ExactOutputSingleParams calldata params)
+        external
+        payable
+        returns (uint256 amountIn);
 }
 
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount) external returns (bool);
-    function allowance(address owner, address spender) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }
 
 interface IWETH is IERC20 {

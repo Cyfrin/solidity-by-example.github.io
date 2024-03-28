@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 /*
 docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
-echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
+echidna EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
 */
 contract EchidnaTestTimeAndCaller {
     bool private pass = true;
@@ -30,11 +30,8 @@ contract EchidnaTestTimeAndCaller {
 
     // Default senders
     // Change the addresses to see the test fail
-    address[3] private senders = [
-        address(0x10000),
-        address(0x20000),
-        address(0x00a329C0648769a73afAC7F9381e08fb43DBEA70)
-    ];
+    address[3] private senders =
+        [address(0x10000), address(0x20000), address(0x30000)];
 
     address private sender = msg.sender;
 

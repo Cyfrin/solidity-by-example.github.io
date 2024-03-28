@@ -2,7 +2,11 @@
 pragma solidity 0.8.24;
 
 import {Test, console2} from "forge-std/Test.sol";
-import {IERC20, Vault, Token} from "../../../src/hacks/vault-inflation/VaultInflation.sol";
+import {
+    IERC20,
+    Vault,
+    Token
+} from "../../../src/hacks/vault-inflation/VaultInflation.sol";
 
 uint8 constant DECIMALS = 18;
 

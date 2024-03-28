@@ -38,7 +38,8 @@ contract SecuredFindThisHash {
     }
 
     // The hash that is needed to be solved
-    bytes32 public hash = 0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
+    bytes32 public hash =
+        0x564ccaf7594d66b1eaaea24fe01f0585bf52ee70852af4eac0cc4b04711cd0e2;
 
     // Address of the winner
     address public winner;
@@ -78,7 +79,12 @@ contract SecuredFindThisHash {
         Function to get the commit details. It returns a tuple of (solutionHash, commitTime, revealStatus);  
         Users can get solution only if the game is active and they have committed a solutionHash
     */
-    function getMySolution() public view gameActive returns (bytes32, uint256, bool) {
+    function getMySolution()
+        public
+        view
+        gameActive
+        returns (bytes32, uint256, bool)
+    {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
         return (commit.solutionHash, commit.commitTime, commit.revealed);
@@ -92,16 +98,25 @@ contract SecuredFindThisHash {
         the game is ended and the reward amount is sent to the winner.
     */
 
-    function revealSolution(string memory _solution, string memory _secret) public gameActive {
+    function revealSolution(string memory _solution, string memory _secret)
+        public
+        gameActive
+    {
         Commit storage commit = commits[msg.sender];
         require(commit.commitTime != 0, "Not committed yet");
-        require(commit.commitTime < block.timestamp, "Cannot reveal in the same block");
+        require(
+            commit.commitTime < block.timestamp,
+            "Cannot reveal in the same block"
+        );
         require(!commit.revealed, "Already commited and revealed");
 
-        bytes32 solutionHash = keccak256(abi.encodePacked(msg.sender, _solution, _secret));
+        bytes32 solutionHash =
+            keccak256(abi.encodePacked(msg.sender, _solution, _secret));
         require(solutionHash == commit.solutionHash, "Hash doesn't match");
 
-        require(keccak256(abi.encodePacked(_solution)) == hash, "Incorrect answer");
+        require(
+            keccak256(abi.encodePacked(_solution)) == hash, "Incorrect answer"
+        );
 
         winner = msg.sender;
         ended = true;

@@ -3,17 +3,19 @@ export const version = "0.8.24"
 export const title = "Import"
 export const description = "Learn how to import other Solidity files"
 
-export const keywords = ["import"]
+export const keywords = [
+    "import",
+]
 
 export const codes = [
-  {
-    fileName: "Foo.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCnN0cnVjdCBQb2ludCB7CiAgICB1aW50MjU2IHg7CiAgICB1aW50MjU2IHk7Cn0KCmVycm9yIFVuYXV0aG9yaXplZChhZGRyZXNzIGNhbGxlcik7CgpmdW5jdGlvbiBhZGQodWludDI1NiB4LCB1aW50MjU2IHkpIHB1cmUgcmV0dXJucyAodWludDI1NikgewogICAgcmV0dXJuIHggKyB5Owp9Cgpjb250cmFjdCBGb28gewogICAgc3RyaW5nIHB1YmxpYyBuYW1lID0gIkZvbyI7Cn0K",
-  },
-  {
-    fileName: "Import.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCi8vIGltcG9ydCBGb28uc29sIGZyb20gY3VycmVudCBkaXJlY3RvcnkKaW1wb3J0ICIuL0Zvby5zb2wiOwoKLy8gaW1wb3J0IHtzeW1ib2wxIGFzIGFsaWFzLCBzeW1ib2wyfSBmcm9tICJmaWxlbmFtZSI7CmltcG9ydCB7VW5hdXRob3JpemVkLCBhZGQgYXMgZnVuYywgUG9pbnR9IGZyb20gIi4vRm9vLnNvbCI7Cgpjb250cmFjdCBJbXBvcnQgewogICAgLy8gSW5pdGlhbGl6ZSBGb28uc29sCiAgICBGb28gcHVibGljIGZvbyA9IG5ldyBGb28oKTsKCiAgICAvLyBUZXN0IEZvby5zb2wgYnkgZ2V0dGluZyBpdCdzIG5hbWUuCiAgICBmdW5jdGlvbiBnZXRGb29OYW1lKCkgcHVibGljIHZpZXcgcmV0dXJucyAoc3RyaW5nIG1lbW9yeSkgewogICAgICAgIHJldHVybiBmb28ubmFtZSgpOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Foo.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCnN0cnVjdCBQb2ludCB7CiAgICB1aW50MjU2IHg7CiAgICB1aW50MjU2IHk7Cn0KCmVycm9yIFVuYXV0aG9yaXplZChhZGRyZXNzIGNhbGxlcik7CgpmdW5jdGlvbiBhZGQodWludDI1NiB4LCB1aW50MjU2IHkpIHB1cmUgcmV0dXJucyAodWludDI1NikgewogICAgcmV0dXJuIHggKyB5Owp9Cgpjb250cmFjdCBGb28gewogICAgc3RyaW5nIHB1YmxpYyBuYW1lID0gIkZvbyI7Cn0K",
+    },
+    {
+        fileName: "Import.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCi8vIGltcG9ydCBGb28uc29sIGZyb20gY3VycmVudCBkaXJlY3RvcnkKaW1wb3J0ICIuL0Zvby5zb2wiOwoKLy8gaW1wb3J0IHtzeW1ib2wxIGFzIGFsaWFzLCBzeW1ib2wyfSBmcm9tICJmaWxlbmFtZSI7CmltcG9ydCB7VW5hdXRob3JpemVkLCBhZGQgYXMgZnVuYywgUG9pbnR9IGZyb20gIi4vRm9vLnNvbCI7Cgpjb250cmFjdCBJbXBvcnQgewogICAgLy8gSW5pdGlhbGl6ZSBGb28uc29sCiAgICBGb28gcHVibGljIGZvbyA9IG5ldyBGb28oKTsKCiAgICAvLyBUZXN0IEZvby5zb2wgYnkgZ2V0dGluZyBpdCdzIG5hbWUuCiAgICBmdW5jdGlvbiBnZXRGb29OYW1lKCkgcHVibGljIHZpZXcgcmV0dXJucyAoc3RyaW5nIG1lbW9yeSkgewogICAgICAgIHJldHVybiBmb28ubmFtZSgpOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>You can import local and external files in Solidity.</p>

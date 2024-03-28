@@ -11,13 +11,17 @@ contract UniswapV3MultiHopSwap {
     IERC20 private constant weth = IERC20(WETH);
     IERC20 private constant dai = IERC20(DAI);
 
-    function swapExactInputMultiHop(uint256 amountIn, uint256 amountOutMin) external {
+    function swapExactInputMultiHop(uint256 amountIn, uint256 amountOutMin)
+        external
+    {
         weth.transferFrom(msg.sender, address(this), amountIn);
         weth.approve(address(router), amountIn);
 
-        bytes memory path = abi.encodePacked(WETH, uint24(3000), USDC, uint24(100), DAI);
+        bytes memory path =
+            abi.encodePacked(WETH, uint24(3000), USDC, uint24(100), DAI);
 
-        ISwapRouter02.ExactInputParams memory params = ISwapRouter02.ExactInputParams({
+        ISwapRouter02.ExactInputParams memory params = ISwapRouter02
+            .ExactInputParams({
             path: path,
             recipient: msg.sender,
             amountIn: amountIn,
@@ -27,13 +31,17 @@ contract UniswapV3MultiHopSwap {
         router.exactInput(params);
     }
 
-    function swapExactOutputMultiHop(uint256 amountOut, uint256 amountInMax) external {
+    function swapExactOutputMultiHop(uint256 amountOut, uint256 amountInMax)
+        external
+    {
         weth.transferFrom(msg.sender, address(this), amountInMax);
         weth.approve(address(router), amountInMax);
 
-        bytes memory path = abi.encodePacked(DAI, uint24(100), USDC, uint24(3000), WETH);
+        bytes memory path =
+            abi.encodePacked(DAI, uint24(100), USDC, uint24(3000), WETH);
 
-        ISwapRouter02.ExactOutputParams memory params = ISwapRouter02.ExactOutputParams({
+        ISwapRouter02.ExactOutputParams memory params = ISwapRouter02
+            .ExactOutputParams({
             path: path,
             recipient: msg.sender,
             amountOut: amountOut,
@@ -57,7 +65,10 @@ interface ISwapRouter02 {
         uint256 amountOutMinimum;
     }
 
-    function exactInput(ExactInputParams calldata params) external payable returns (uint256 amountOut);
+    function exactInput(ExactInputParams calldata params)
+        external
+        payable
+        returns (uint256 amountOut);
 
     struct ExactOutputParams {
         bytes path;
@@ -66,16 +77,26 @@ interface ISwapRouter02 {
         uint256 amountInMaximum;
     }
 
-    function exactOutput(ExactOutputParams calldata params) external payable returns (uint256 amountIn);
+    function exactOutput(ExactOutputParams calldata params)
+        external
+        payable
+        returns (uint256 amountIn);
 }
 
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount) external returns (bool);
-    function allowance(address owner, address spender) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }
 
 interface IWETH is IERC20 {

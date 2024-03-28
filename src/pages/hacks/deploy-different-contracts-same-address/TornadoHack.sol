@@ -38,7 +38,9 @@ contract DAO {
     function approve(address target) external {
         require(msg.sender == owner, "not authorized");
 
-        proposals.push(Proposal({target: target, approved: true, executed: false}));
+        proposals.push(
+            Proposal({target: target, approved: true, executed: false})
+        );
     }
 
     function execute(uint256 proposalId) external payable {
@@ -48,7 +50,9 @@ contract DAO {
 
         proposal.executed = true;
 
-        (bool ok,) = proposal.target.delegatecall(abi.encodeWithSignature("executeProposal()"));
+        (bool ok,) = proposal.target.delegatecall(
+            abi.encodeWithSignature("executeProposal()")
+        );
         require(ok, "delegatecall failed");
     }
 }

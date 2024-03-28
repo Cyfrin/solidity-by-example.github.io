@@ -5,10 +5,12 @@ import {Test, console2} from "forge-std/Test.sol";
 import "../../../src/defi/uniswap-v3-swap/UniswapV3SingleHopSwap.sol";
 
 contract UniswapV3SingleHopSwapTest is Test {
-    address private constant SWAP_ROUTER_02 = 0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45;
+    address private constant SWAP_ROUTER_02 =
+        0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45;
     address private constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
     address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
-    address private constant DAI_WETH_POOL_3000 = 0xC2e9F25Be6257c210d7Adf0D4Cd6E3E881ba25f8;
+    address private constant DAI_WETH_POOL_3000 =
+        0xC2e9F25Be6257c210d7Adf0D4Cd6E3E881ba25f8;
 
     IWETH private constant weth = IWETH(WETH);
     IERC20 private constant dai = IERC20(DAI);

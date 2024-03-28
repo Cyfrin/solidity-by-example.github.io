@@ -21,7 +21,11 @@ contract AssemblyMath {
     }
 
     // Round to nearest multiple of b
-    function yul_fixed_point_round(uint256 x, uint256 b) public pure returns (uint256 z) {
+    function yul_fixed_point_round(uint256 x, uint256 b)
+        public
+        pure
+        returns (uint256 z)
+    {
         assembly {
             // b = 100
             // x = 90

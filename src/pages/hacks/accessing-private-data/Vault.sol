@@ -61,11 +61,20 @@ contract Vault {
         idToUser[user.id] = user;
     }
 
-    function getArrayLocation(uint256 slot, uint256 index, uint256 elementSize) public pure returns (uint256) {
-        return uint256(keccak256(abi.encodePacked(slot))) + (index * elementSize);
+    function getArrayLocation(uint256 slot, uint256 index, uint256 elementSize)
+        public
+        pure
+        returns (uint256)
+    {
+        return
+            uint256(keccak256(abi.encodePacked(slot))) + (index * elementSize);
     }
 
-    function getMapLocation(uint256 slot, uint256 key) public pure returns (uint256) {
+    function getMapLocation(uint256 slot, uint256 key)
+        public
+        pure
+        returns (uint256)
+    {
         return uint256(keccak256(abi.encodePacked(key, slot)));
     }
 }

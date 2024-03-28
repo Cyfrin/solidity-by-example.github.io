@@ -31,6 +31,10 @@ contract ERC20BankExploitTest is Test {
         vm.stopPrank();
 
         assertEq(weth.balanceOf(user), 0, "WETH balance of user");
-        assertEq(weth.balanceOf(address(attacker)), 99 * 1e18, "WETH balance of attacker");
+        assertEq(
+            weth.balanceOf(address(attacker)),
+            99 * 1e18,
+            "WETH balance of attacker"
+        );
     }
 }

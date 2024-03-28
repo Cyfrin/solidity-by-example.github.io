@@ -11,9 +11,9 @@ import youTube from "../components/youtube.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2024/03/28 - Github PR wildanvin",
   "2024/03/24 - Update Uniswap V3 examples",
   "2024/03/04 - Solidity 0.8.24",
-  "2024/02/14 - Github PR erfanHosseinPanahi",
 ]
 
 export default function HomePage() {

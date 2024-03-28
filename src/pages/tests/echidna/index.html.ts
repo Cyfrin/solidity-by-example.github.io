@@ -3,17 +3,20 @@ export const version = "0.8.24"
 export const title = "Echidna"
 export const description = "An example of testing contracts with Echidna"
 
-export const keywords = ["test", "echidna"]
+export const keywords = [
+    "test",
+    "echidna",
+]
 
 export const codes = [
-  {
-    fileName: "EchidnaTestTimeAndCaller.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCi8qCmRvY2tlciBydW4gLWl0IC0tcm0gLXYgJFBXRDovY29kZSB0cmFpbG9mYml0cy9ldGgtc2VjdXJpdHktdG9vbGJveAplY2hpZG5hLXRlc3QgRWNoaWRuYVRlc3RUaW1lQW5kQ2FsbGVyLnNvbCAtLWNvbnRyYWN0IEVjaGlkbmFUZXN0VGltZUFuZENhbGxlcgoqLwpjb250cmFjdCBFY2hpZG5hVGVzdFRpbWVBbmRDYWxsZXIgewogICAgYm9vbCBwcml2YXRlIHBhc3MgPSB0cnVlOwogICAgdWludDI1NiBwcml2YXRlIGNyZWF0ZWRBdCA9IGJsb2NrLnRpbWVzdGFtcDsKCiAgICAvKgogICAgdGVzdCB3aWxsIGZhaWwgaWYgRWNoaWRuYSBjYW4gY2FsbCBzZXRGYWlsKCkKICAgIHRlc3Qgd2lsbCBwYXNzIG90aGVyd2lzZQogICAgKi8KICAgIGZ1bmN0aW9uIGVjaGlkbmFfdGVzdF9wYXNzKCkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIHJldHVybiBwYXNzOwogICAgfQoKICAgIGZ1bmN0aW9uIHNldEZhaWwoKSBleHRlcm5hbCB7CiAgICAgICAgLyoKICAgICAgICBFY2hpZG5hIGNhbiBjYWxsIHRoaXMgZnVuY3Rpb24gaWYgZGVsYXkgPD0gbWF4IGJsb2NrIGRlbGF5CiAgICAgICAgT3RoZXJ3aXNlIEVjaGlkbmEgd2lsbCBub3QgYmUgYWJsZSB0byBjYWxsIHRoaXMgZnVuY3Rpb24uCiAgICAgICAgTWF4IGJsb2NrIGRlbGF5IGNhbiBiZSBleHRlbmRlZCBieSBzcGVjaWZ5aW5nIGl0IGluIGEgY29uZmlndXJhdGlvbiBmaWxlLgogICAgICAgICovCiAgICAgICAgdWludDI1NiBkZWxheSA9IDcgZGF5czsKICAgICAgICByZXF1aXJlKGJsb2NrLnRpbWVzdGFtcCA+PSBjcmVhdGVkQXQgKyBkZWxheSk7CiAgICAgICAgcGFzcyA9IGZhbHNlOwogICAgfQoKICAgIC8vIERlZmF1bHQgc2VuZGVycwogICAgLy8gQ2hhbmdlIHRoZSBhZGRyZXNzZXMgdG8gc2VlIHRoZSB0ZXN0IGZhaWwKICAgIGFkZHJlc3NbM10gcHJpdmF0ZSBzZW5kZXJzID0gWwogICAgICAgIGFkZHJlc3MoMHgxMDAwMCksCiAgICAgICAgYWRkcmVzcygweDIwMDAwKSwKICAgICAgICBhZGRyZXNzKDB4MDBhMzI5QzA2NDg3NjlhNzNhZkFDN0Y5MzgxZTA4ZmI0M0RCRUE3MCkKICAgIF07CgogICAgYWRkcmVzcyBwcml2YXRlIHNlbmRlciA9IG1zZy5zZW5kZXI7CgogICAgLy8gUGFzcyBfc2VuZGVyIGFzIGlucHV0IGFuZCByZXF1aXJlIG1zZy5zZW5kZXIgPT0gX3NlbmRlcgogICAgLy8gdG8gc2VlIF9zZW5kZXIgZm9yIGNvdW50ZXIgZXhhbXBsZQogICAgZnVuY3Rpb24gc2V0U2VuZGVyKGFkZHJlc3MgX3NlbmRlcikgZXh0ZXJuYWwgewogICAgICAgIHJlcXVpcmUoX3NlbmRlciA9PSBtc2cuc2VuZGVyKTsKICAgICAgICBzZW5kZXIgPSBtc2cuc2VuZGVyOwogICAgfQoKICAgIC8vIENoZWNrIGRlZmF1bHQgc2VuZGVycy4gU2VuZGVyIHNob3VsZCBiZSBvbmUgb2YgdGhlIDMgZGVmYXVsdCBhY2NvdW50cy4KICAgIGZ1bmN0aW9uIGVjaGlkbmFfdGVzdF9zZW5kZXIoKSBwdWJsaWMgdmlldyByZXR1cm5zIChib29sKSB7CiAgICAgICAgZm9yICh1aW50MjU2IGk7IGkgPCAzOyBpKyspIHsKICAgICAgICAgICAgaWYgKHNlbmRlciA9PSBzZW5kZXJzW2ldKSB7CiAgICAgICAgICAgICAgICByZXR1cm4gdHJ1ZTsKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICByZXR1cm4gZmFsc2U7CiAgICB9Cn0K",
-  },
-  {
-    fileName: "TestEchidna.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCi8qCmVjaGlkbmEtdGVzdCBUZXN0RWNoaWRuYS5zb2wgLS1jb250cmFjdCBUZXN0Q291bnRlcgoqLwpjb250cmFjdCBDb3VudGVyIHsKICAgIHVpbnQyNTYgcHVibGljIGNvdW50OwoKICAgIGZ1bmN0aW9uIGluYygpIGV4dGVybmFsIHsKICAgICAgICBjb3VudCArPSAxOwogICAgfQoKICAgIGZ1bmN0aW9uIGRlYygpIGV4dGVybmFsIHsKICAgICAgICBjb3VudCAtPSAxOwogICAgfQp9Cgpjb250cmFjdCBUZXN0Q291bnRlciBpcyBDb3VudGVyIHsKICAgIGZ1bmN0aW9uIGVjaGlkbmFfdGVzdF90cnVlKCkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIHJldHVybiB0cnVlOwogICAgfQoKICAgIGZ1bmN0aW9uIGVjaGlkbmFfdGVzdF9mYWxzZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKGJvb2wpIHsKICAgICAgICByZXR1cm4gZmFsc2U7CiAgICB9CgogICAgZnVuY3Rpb24gZWNoaWRuYV90ZXN0X2NvdW50KCkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIC8vIEhlcmUgd2UgYXJlIHRlc3RpbmcgdGhhdCBDb3VudGVyLmNvdW50IHNob3VsZCBhbHdheXMgYmUgPD0gNS4KICAgICAgICAvLyBUZXN0IHdpbGwgZmFpbC4gRWNoaWRuYSBpcyBzbWFydCBlbm91Z2ggdG8gY2FsbCBDb3VudGVyLmluYygpIG1vcmUKICAgICAgICAvLyB0aGFuIDUgdGltZXMuCiAgICAgICAgcmV0dXJuIGNvdW50IDw9IDU7CiAgICB9Cn0KCi8qCmVjaGlkbmEtdGVzdCBUZXN0RWNoaWRuYS5zb2wgLS1jb250cmFjdCBUZXN0QXNzZXJ0IC0tY2hlY2stYXNzZXJ0cwoqLwpjb250cmFjdCBUZXN0QXNzZXJ0IHsKICAgIC8vIEFzc2VydHMgbm90IGRldGVjdGVkIGluIDAuOC4KICAgIC8vIFN3aXRjaCB0byAwLjcgdG8gdGVzdCBhc3NlcnRpb25zCiAgICBmdW5jdGlvbiB0ZXN0X2Fzc2VydCh1aW50MjU2IF9pKSBleHRlcm5hbCB7CiAgICAgICAgYXNzZXJ0KF9pIDwgMTApOwogICAgfQoKICAgIC8vIE1vcmUgY29tcGxleCBleGFtcGxlCiAgICBmdW5jdGlvbiBhYnModWludDI1NiB4LCB1aW50MjU2IHkpIHByaXZhdGUgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgaWYgKHggPj0geSkgewogICAgICAgICAgICByZXR1cm4geCAtIHk7CiAgICAgICAgfQogICAgICAgIHJldHVybiB5IC0geDsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0X2Ficyh1aW50MjU2IHgsIHVpbnQyNTYgeSkgZXh0ZXJuYWwgewogICAgICAgIHVpbnQyNTYgeiA9IGFicyh4LCB5KTsKICAgICAgICBpZiAoeCA+PSB5KSB7CiAgICAgICAgICAgIGFzc2VydCh6IDw9IHgpOwogICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgIGFzc2VydCh6IDw9IHkpOwogICAgICAgIH0KICAgIH0KfQo=",
-  },
+    {
+        fileName: "EchidnaTestTimeAndCaller.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCi8qCmRvY2tlciBydW4gLWl0IC0tcm0gLXYgJFBXRDovY29kZSB0cmFpbG9mYml0cy9ldGgtc2VjdXJpdHktdG9vbGJveAplY2hpZG5hIEVjaGlkbmFUZXN0VGltZUFuZENhbGxlci5zb2wgLS1jb250cmFjdCBFY2hpZG5hVGVzdFRpbWVBbmRDYWxsZXIKKi8KY29udHJhY3QgRWNoaWRuYVRlc3RUaW1lQW5kQ2FsbGVyIHsKICAgIGJvb2wgcHJpdmF0ZSBwYXNzID0gdHJ1ZTsKICAgIHVpbnQyNTYgcHJpdmF0ZSBjcmVhdGVkQXQgPSBibG9jay50aW1lc3RhbXA7CgogICAgLyoKICAgIHRlc3Qgd2lsbCBmYWlsIGlmIEVjaGlkbmEgY2FuIGNhbGwgc2V0RmFpbCgpCiAgICB0ZXN0IHdpbGwgcGFzcyBvdGhlcndpc2UKICAgICovCiAgICBmdW5jdGlvbiBlY2hpZG5hX3Rlc3RfcGFzcygpIHB1YmxpYyB2aWV3IHJldHVybnMgKGJvb2wpIHsKICAgICAgICByZXR1cm4gcGFzczsKICAgIH0KCiAgICBmdW5jdGlvbiBzZXRGYWlsKCkgZXh0ZXJuYWwgewogICAgICAgIC8qCiAgICAgICAgRWNoaWRuYSBjYW4gY2FsbCB0aGlzIGZ1bmN0aW9uIGlmIGRlbGF5IDw9IG1heCBibG9jayBkZWxheQogICAgICAgIE90aGVyd2lzZSBFY2hpZG5hIHdpbGwgbm90IGJlIGFibGUgdG8gY2FsbCB0aGlzIGZ1bmN0aW9uLgogICAgICAgIE1heCBibG9jayBkZWxheSBjYW4gYmUgZXh0ZW5kZWQgYnkgc3BlY2lmeWluZyBpdCBpbiBhIGNvbmZpZ3VyYXRpb24gZmlsZS4KICAgICAgICAqLwogICAgICAgIHVpbnQyNTYgZGVsYXkgPSA3IGRheXM7CiAgICAgICAgcmVxdWlyZShibG9jay50aW1lc3RhbXAgPj0gY3JlYXRlZEF0ICsgZGVsYXkpOwogICAgICAgIHBhc3MgPSBmYWxzZTsKICAgIH0KCiAgICAvLyBEZWZhdWx0IHNlbmRlcnMKICAgIC8vIENoYW5nZSB0aGUgYWRkcmVzc2VzIHRvIHNlZSB0aGUgdGVzdCBmYWlsCiAgICBhZGRyZXNzWzNdIHByaXZhdGUgc2VuZGVycyA9CiAgICAgICAgW2FkZHJlc3MoMHgxMDAwMCksIGFkZHJlc3MoMHgyMDAwMCksIGFkZHJlc3MoMHgzMDAwMCldOwoKICAgIGFkZHJlc3MgcHJpdmF0ZSBzZW5kZXIgPSBtc2cuc2VuZGVyOwoKICAgIC8vIFBhc3MgX3NlbmRlciBhcyBpbnB1dCBhbmQgcmVxdWlyZSBtc2cuc2VuZGVyID09IF9zZW5kZXIKICAgIC8vIHRvIHNlZSBfc2VuZGVyIGZvciBjb3VudGVyIGV4YW1wbGUKICAgIGZ1bmN0aW9uIHNldFNlbmRlcihhZGRyZXNzIF9zZW5kZXIpIGV4dGVybmFsIHsKICAgICAgICByZXF1aXJlKF9zZW5kZXIgPT0gbXNnLnNlbmRlcik7CiAgICAgICAgc2VuZGVyID0gbXNnLnNlbmRlcjsKICAgIH0KCiAgICAvLyBDaGVjayBkZWZhdWx0IHNlbmRlcnMuIFNlbmRlciBzaG91bGQgYmUgb25lIG9mIHRoZSAzIGRlZmF1bHQgYWNjb3VudHMuCiAgICBmdW5jdGlvbiBlY2hpZG5hX3Rlc3Rfc2VuZGVyKCkgcHVibGljIHZpZXcgcmV0dXJucyAoYm9vbCkgewogICAgICAgIGZvciAodWludDI1NiBpOyBpIDwgMzsgaSsrKSB7CiAgICAgICAgICAgIGlmIChzZW5kZXIgPT0gc2VuZGVyc1tpXSkgewogICAgICAgICAgICAgICAgcmV0dXJuIHRydWU7CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgcmV0dXJuIGZhbHNlOwogICAgfQp9Cg==",
+    },
+    {
+        fileName: "TestEchidna.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCi8qCmVjaGlkbmEgVGVzdEVjaGlkbmEuc29sIC0tY29udHJhY3QgVGVzdENvdW50ZXIKKi8KY29udHJhY3QgQ291bnRlciB7CiAgICB1aW50MjU2IHB1YmxpYyBjb3VudDsKCiAgICBmdW5jdGlvbiBpbmMoKSBleHRlcm5hbCB7CiAgICAgICAgY291bnQgKz0gMTsKICAgIH0KCiAgICBmdW5jdGlvbiBkZWMoKSBleHRlcm5hbCB7CiAgICAgICAgY291bnQgLT0gMTsKICAgIH0KfQoKY29udHJhY3QgVGVzdENvdW50ZXIgaXMgQ291bnRlciB7CiAgICBmdW5jdGlvbiBlY2hpZG5hX3Rlc3RfdHJ1ZSgpIHB1YmxpYyB2aWV3IHJldHVybnMgKGJvb2wpIHsKICAgICAgICByZXR1cm4gdHJ1ZTsKICAgIH0KCiAgICBmdW5jdGlvbiBlY2hpZG5hX3Rlc3RfZmFsc2UoKSBwdWJsaWMgdmlldyByZXR1cm5zIChib29sKSB7CiAgICAgICAgcmV0dXJuIGZhbHNlOwogICAgfQoKICAgIGZ1bmN0aW9uIGVjaGlkbmFfdGVzdF9jb3VudCgpIHB1YmxpYyB2aWV3IHJldHVybnMgKGJvb2wpIHsKICAgICAgICAvLyBIZXJlIHdlIGFyZSB0ZXN0aW5nIHRoYXQgQ291bnRlci5jb3VudCBzaG91bGQgYWx3YXlzIGJlIDw9IDUuCiAgICAgICAgLy8gVGVzdCB3aWxsIGZhaWwuIEVjaGlkbmEgaXMgc21hcnQgZW5vdWdoIHRvIGNhbGwgQ291bnRlci5pbmMoKSBtb3JlCiAgICAgICAgLy8gdGhhbiA1IHRpbWVzLgogICAgICAgIHJldHVybiBjb3VudCA8PSA1OwogICAgfQp9CgovKgplY2hpZG5hIFRlc3RFY2hpZG5hLnNvbCAtLWNvbnRyYWN0IFRlc3RBc3NlcnQgLS10ZXN0LW1vZGUgYXNzZXJ0aW9uCiovCmNvbnRyYWN0IFRlc3RBc3NlcnQgewogICAgZnVuY3Rpb24gdGVzdF9hc3NlcnQodWludDI1NiBfaSkgZXh0ZXJuYWwgewogICAgICAgIGFzc2VydChfaSA8IDEwKTsKICAgIH0KCiAgICAvLyBNb3JlIGNvbXBsZXggZXhhbXBsZQogICAgZnVuY3Rpb24gYWJzKHVpbnQyNTYgeCwgdWludDI1NiB5KSBwcml2YXRlIHB1cmUgcmV0dXJucyAodWludDI1NikgewogICAgICAgIGlmICh4ID49IHkpIHsKICAgICAgICAgICAgcmV0dXJuIHggLSB5OwogICAgICAgIH0KICAgICAgICByZXR1cm4geSAtIHg7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF9hYnModWludDI1NiB4LCB1aW50MjU2IHkpIGV4dGVybmFsIHsKICAgICAgICB1aW50MjU2IHogPSBhYnMoeCwgeSk7CiAgICAgICAgaWYgKHggPj0geSkgewogICAgICAgICAgICBhc3NlcnQoeiA8PSB4KTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICBhc3NlcnQoeiA8PSB5KTsKICAgICAgICB9CiAgICB9Cn0K",
+    },
 ]
 
 const html = `<p>Examples of fuzzing with <a href="https://github.com/crytic/echidna">Echidna</a>.</p>
@@ -22,15 +25,15 @@ const html = `<p>Examples of fuzzing with <a href="https://github.com/crytic/ech
 <li>In the folder where your contract is stored execute the following command.</li>
 </ol>
 <pre><code class="language-shell">docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
-</code></pre><p>Inside docker, your code will be stored at <code>/code</code></p>
+</code></pre><p>Inside docker, your code will be stored at <code>/code</code>, in the root directory.</p>
 <ol start="3">
-<li>See the comments below and execute <code>echidna-test</code> commands.</li>
+<li>See the comments below and execute <code>echidna</code> commands.</li>
 </ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-comment">/*
-echidna-test TestEchidna.sol --contract TestCounter
+echidna TestEchidna.sol --contract TestCounter
 */</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Counter</span> </span>{
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> count;
@@ -62,11 +65,9 @@ echidna-test TestEchidna.sol --contract TestCounter
 }
 
 <span class="hljs-comment">/*
-echidna-test TestEchidna.sol --contract TestAssert --check-asserts
+echidna TestEchidna.sol --contract TestAssert --test-mode assertion
 */</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">TestAssert</span> </span>{
-    <span class="hljs-comment">// Asserts not detected in 0.8.</span>
-    <span class="hljs-comment">// Switch to 0.7 to test assertions</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_assert</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _i</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-built_in">assert</span>(_i <span class="hljs-operator">&lt;</span> <span class="hljs-number">10</span>);
     }
@@ -94,14 +95,14 @@ echidna-test TestEchidna.sol --contract TestAssert --check-asserts
 <ul>
 <li><code>0x10000</code></li>
 <li><code>0x20000</code></li>
-<li><code>0x00a329C0648769a73afAC7F9381e08fb43DBEA70</code></li>
+<li><code>0x30000</code></li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
 <span class="hljs-comment">/*
 docker run -it --rm -v $PWD:/code trailofbits/eth-security-toolbox
-echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
+echidna EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
 */</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EchidnaTestTimeAndCaller</span> </span>{
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">private</span> pass <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
@@ -128,11 +129,8 @@ echidna-test EchidnaTestTimeAndCaller.sol --contract EchidnaTestTimeAndCaller
 
     <span class="hljs-comment">// Default senders</span>
     <span class="hljs-comment">// Change the addresses to see the test fail</span>
-    <span class="hljs-keyword">address</span>[<span class="hljs-number">3</span>] <span class="hljs-keyword">private</span> senders <span class="hljs-operator">=</span> [
-        <span class="hljs-keyword">address</span>(<span class="hljs-number">0x10000</span>),
-        <span class="hljs-keyword">address</span>(<span class="hljs-number">0x20000</span>),
-        <span class="hljs-keyword">address</span>(<span class="hljs-number">0x00a329C0648769a73afAC7F9381e08fb43DBEA70</span>)
-    ];
+    <span class="hljs-keyword">address</span>[<span class="hljs-number">3</span>] <span class="hljs-keyword">private</span> senders <span class="hljs-operator">=</span>
+        [<span class="hljs-keyword">address</span>(<span class="hljs-number">0x10000</span>), <span class="hljs-keyword">address</span>(<span class="hljs-number">0x20000</span>), <span class="hljs-keyword">address</span>(<span class="hljs-number">0x30000</span>)];
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">private</span> sender <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
 

@@ -5,9 +5,12 @@ address constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
 address constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
 
 interface IERC721Receiver {
-    function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata data)
-        external
-        returns (bytes4);
+    function onERC721Received(
+        address operator,
+        address from,
+        uint256 tokenId,
+        bytes calldata data
+    ) external returns (bytes4);
 }
 
 contract UniswapV3Liquidity is IERC721Receiver {
@@ -21,16 +24,23 @@ contract UniswapV3Liquidity is IERC721Receiver {
     INonfungiblePositionManager public nonfungiblePositionManager =
         INonfungiblePositionManager(0xC36442b4a4522E871399CD717aBDD847Ab11FE88);
 
-    function onERC721Received(address operator, address from, uint256 tokenId, bytes calldata)
-        external
-        returns (bytes4)
-    {
+    function onERC721Received(
+        address operator,
+        address from,
+        uint256 tokenId,
+        bytes calldata
+    ) external returns (bytes4) {
         return IERC721Receiver.onERC721Received.selector;
     }
 
     function mintNewPosition(uint256 amount0ToAdd, uint256 amount1ToAdd)
         external
-        returns (uint256 tokenId, uint128 liquidity, uint256 amount0, uint256 amount1)
+        returns (
+            uint256 tokenId,
+            uint128 liquidity,
+            uint256 amount0,
+            uint256 amount1
+        )
     {
         dai.transferFrom(msg.sender, address(this), amount0ToAdd);
         weth.transferFrom(msg.sender, address(this), amount1ToAdd);
@@ -38,7 +48,8 @@ contract UniswapV3Liquidity is IERC721Receiver {
         dai.approve(address(nonfungiblePositionManager), amount0ToAdd);
         weth.approve(address(nonfungiblePositionManager), amount1ToAdd);
 
-        INonfungiblePositionManager.MintParams memory params = INonfungiblePositionManager.MintParams({
+        INonfungiblePositionManager.MintParams memory params =
+        INonfungiblePositionManager.MintParams({
             token0: DAI,
             token1: WETH,
             fee: 3000,
@@ -52,7 +63,8 @@ contract UniswapV3Liquidity is IERC721Receiver {
             deadline: block.timestamp
         });
 
-        (tokenId, liquidity, amount0, amount1) = nonfungiblePositionManager.mint(params);
+        (tokenId, liquidity, amount0, amount1) =
+            nonfungiblePositionManager.mint(params);
 
         if (amount0 < amount0ToAdd) {
             dai.approve(address(nonfungiblePositionManager), 0);
@@ -66,8 +78,12 @@ contract UniswapV3Liquidity is IERC721Receiver {
         }
     }
 
-    function collectAllFees(uint256 tokenId) external returns (uint256 amount0, uint256 amount1) {
-        INonfungiblePositionManager.CollectParams memory params = INonfungiblePositionManager.CollectParams({
+    function collectAllFees(uint256 tokenId)
+        external
+        returns (uint256 amount0, uint256 amount1)
+    {
+        INonfungiblePositionManager.CollectParams memory params =
+        INonfungiblePositionManager.CollectParams({
             tokenId: tokenId,
             recipient: address(this),
             amount0Max: type(uint128).max,
@@ -77,18 +93,19 @@ contract UniswapV3Liquidity is IERC721Receiver {
         (amount0, amount1) = nonfungiblePositionManager.collect(params);
     }
 
-    function increaseLiquidityCurrentRange(uint256 tokenId, uint256 amount0ToAdd, uint256 amount1ToAdd)
-        external
-        returns (uint128 liquidity, uint256 amount0, uint256 amount1)
-    {
+    function increaseLiquidityCurrentRange(
+        uint256 tokenId,
+        uint256 amount0ToAdd,
+        uint256 amount1ToAdd
+    ) external returns (uint128 liquidity, uint256 amount0, uint256 amount1) {
         dai.transferFrom(msg.sender, address(this), amount0ToAdd);
         weth.transferFrom(msg.sender, address(this), amount1ToAdd);
 
         dai.approve(address(nonfungiblePositionManager), amount0ToAdd);
         weth.approve(address(nonfungiblePositionManager), amount1ToAdd);
 
-        INonfungiblePositionManager.IncreaseLiquidityParams memory params = INonfungiblePositionManager
-            .IncreaseLiquidityParams({
+        INonfungiblePositionManager.IncreaseLiquidityParams memory params =
+        INonfungiblePositionManager.IncreaseLiquidityParams({
             tokenId: tokenId,
             amount0Desired: amount0ToAdd,
             amount1Desired: amount1ToAdd,
@@ -97,15 +114,16 @@ contract UniswapV3Liquidity is IERC721Receiver {
             deadline: block.timestamp
         });
 
-        (liquidity, amount0, amount1) = nonfungiblePositionManager.increaseLiquidity(params);
+        (liquidity, amount0, amount1) =
+            nonfungiblePositionManager.increaseLiquidity(params);
     }
 
     function decreaseLiquidityCurrentRange(uint256 tokenId, uint128 liquidity)
         external
         returns (uint256 amount0, uint256 amount1)
     {
-        INonfungiblePositionManager.DecreaseLiquidityParams memory params = INonfungiblePositionManager
-            .DecreaseLiquidityParams({
+        INonfungiblePositionManager.DecreaseLiquidityParams memory params =
+        INonfungiblePositionManager.DecreaseLiquidityParams({
             tokenId: tokenId,
             liquidity: liquidity,
             amount0Min: 0,
@@ -113,7 +131,8 @@ contract UniswapV3Liquidity is IERC721Receiver {
             deadline: block.timestamp
         });
 
-        (amount0, amount1) = nonfungiblePositionManager.decreaseLiquidity(params);
+        (amount0, amount1) =
+            nonfungiblePositionManager.decreaseLiquidity(params);
     }
 }
 
@@ -135,7 +154,12 @@ interface INonfungiblePositionManager {
     function mint(MintParams calldata params)
         external
         payable
-        returns (uint256 tokenId, uint128 liquidity, uint256 amount0, uint256 amount1);
+        returns (
+            uint256 tokenId,
+            uint128 liquidity,
+            uint256 amount0,
+            uint256 amount1
+        );
 
     struct IncreaseLiquidityParams {
         uint256 tokenId;
@@ -171,16 +195,26 @@ interface INonfungiblePositionManager {
         uint128 amount1Max;
     }
 
-    function collect(CollectParams calldata params) external payable returns (uint256 amount0, uint256 amount1);
+    function collect(CollectParams calldata params)
+        external
+        payable
+        returns (uint256 amount0, uint256 amount1);
 }
 
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
-    function transfer(address recipient, uint256 amount) external returns (bool);
-    function allowance(address owner, address spender) external view returns (uint256);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
     function approve(address spender, uint256 amount) external returns (bool);
-    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount)
+        external
+        returns (bool);
 }
 
 interface IWETH is IERC20 {

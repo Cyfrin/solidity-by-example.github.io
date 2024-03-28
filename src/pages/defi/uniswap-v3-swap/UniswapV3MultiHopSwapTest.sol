@@ -5,7 +5,8 @@ import {Test, console2} from "forge-std/Test.sol";
 import "../../../src/defi/uniswap-v3-swap/UniswapV3MultiHopSwap.sol";
 
 contract UniswapV3MultiHopSwapTest is Test {
-    address private constant SWAP_ROUTER_02 = 0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45;
+    address private constant SWAP_ROUTER_02 =
+        0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45;
     address private constant WETH = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
     address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
     address private constant USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;

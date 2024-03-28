@@ -22,6 +22,8 @@ contract A {
 
     function setVars(address _contract, uint256 _num) public payable {
         // A's storage is set, B is not modified.
-        (bool success, bytes memory data) = _contract.delegatecall(abi.encodeWithSignature("setVars(uint256)", _num));
+        (bool success, bytes memory data) = _contract.delegatecall(
+            abi.encodeWithSignature("setVars(uint256)", _num)
+        );
     }
 }

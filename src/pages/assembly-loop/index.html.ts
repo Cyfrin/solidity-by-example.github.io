@@ -3,13 +3,19 @@ export const version = "0.8.24"
 export const title = "Assembly Loop"
 export const description = "Example of loop in assembly"
 
-export const keywords = ["assembly", "loop", "yul", "while", "for"]
+export const keywords = [
+    "assembly",
+    "loop",
+    "yul",
+    "while",
+    "for",
+]
 
 export const codes = [
-  {
-    fileName: "AssemblyLoop.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEFzc2VtYmx5TG9vcCB7CiAgICBmdW5jdGlvbiB5dWxfZm9yX2xvb3AoKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2IHopIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIGZvciB7IGxldCBpIDo9IDAgfSBsdChpLCAxMCkgeyBpIDo9IGFkZChpLCAxKSB9IHsgeiA6PSBhZGQoeiwgMSkgfQogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiB5dWxfd2hpbGVfbG9vcCgpIHB1YmxpYyBwdXJlIHJldHVybnMgKHVpbnQyNTYgeikgewogICAgICAgIGFzc2VtYmx5IHsKICAgICAgICAgICAgbGV0IGkgOj0gMAogICAgICAgICAgICBmb3Ige30gbHQoaSwgNSkge30gewogICAgICAgICAgICAgICAgaSA6PSBhZGQoaSwgMSkKICAgICAgICAgICAgICAgIHogOj0gYWRkKHosIDEpCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0K",
-  },
+    {
+        fileName: "AssemblyLoop.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEFzc2VtYmx5TG9vcCB7CiAgICBmdW5jdGlvbiB5dWxfZm9yX2xvb3AoKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2IHopIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIGZvciB7IGxldCBpIDo9IDAgfSBsdChpLCAxMCkgeyBpIDo9IGFkZChpLCAxKSB9IHsgeiA6PSBhZGQoeiwgMSkgfQogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiB5dWxfd2hpbGVfbG9vcCgpIHB1YmxpYyBwdXJlIHJldHVybnMgKHVpbnQyNTYgeikgewogICAgICAgIGFzc2VtYmx5IHsKICAgICAgICAgICAgbGV0IGkgOj0gMAogICAgICAgICAgICBmb3Ige30gbHQoaSwgNSkge30gewogICAgICAgICAgICAgICAgaSA6PSBhZGQoaSwgMSkKICAgICAgICAgICAgICAgIHogOj0gYWRkKHosIDEpCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0K",
+    },
 ]
 
 const html = `<p>Example of loop in assembly</p>

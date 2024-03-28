@@ -34,7 +34,11 @@ contract BitwiseOps {
     // 1 << 2 = 0001 --> 0100 = 4
     // 1 << 3 = 0001 --> 1000 = 8
     // 3 << 2 = 0011 --> 1100 = 12
-    function shiftLeft(uint256 x, uint256 bits) external pure returns (uint256) {
+    function shiftLeft(uint256 x, uint256 bits)
+        external
+        pure
+        returns (uint256)
+    {
         return x << bits;
     }
 
@@ -44,12 +48,20 @@ contract BitwiseOps {
     // 8  >> 3 = 1000 --> 0001 = 1
     // 8  >> 4 = 1000 --> 0000 = 0
     // 12 >> 1 = 1100 --> 0110 = 6
-    function shiftRight(uint256 x, uint256 bits) external pure returns (uint256) {
+    function shiftRight(uint256 x, uint256 bits)
+        external
+        pure
+        returns (uint256)
+    {
         return x >> bits;
     }
 
     // Get last n bits from x
-    function getLastNBits(uint256 x, uint256 n) external pure returns (uint256) {
+    function getLastNBits(uint256 x, uint256 n)
+        external
+        pure
+        returns (uint256)
+    {
         // Example, last 3 bits
         // x        = 1101 = 13
         // mask     = 0111 = 7
@@ -59,7 +71,11 @@ contract BitwiseOps {
     }
 
     // Get last n bits from x using mod operator
-    function getLastNBitsUsingMod(uint256 x, uint256 n) external pure returns (uint256) {
+    function getLastNBitsUsingMod(uint256 x, uint256 n)
+        external
+        pure
+        returns (uint256)
+    {
         // 1 << n = 2 ** n
         return x % (1 << n);
     }
@@ -76,7 +92,11 @@ contract BitwiseOps {
 
     // Get first n bits from x
     // len = length of bits in x = position of most significant bit of x, + 1
-    function getFirstNBits(uint256 x, uint256 n, uint256 len) external pure returns (uint256) {
+    function getFirstNBits(uint256 x, uint256 n, uint256 len)
+        external
+        pure
+        returns (uint256)
+    {
         // Example
         // x        = 1110 = 14, n = 2, len = 4
         // mask     = 1100 = 12

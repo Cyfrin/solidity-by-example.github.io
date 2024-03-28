@@ -2,7 +2,7 @@
 pragma solidity ^0.8.24;
 
 /*
-echidna-test TestEchidna.sol --contract TestCounter
+echidna TestEchidna.sol --contract TestCounter
 */
 contract Counter {
     uint256 public count;
@@ -34,11 +34,9 @@ contract TestCounter is Counter {
 }
 
 /*
-echidna-test TestEchidna.sol --contract TestAssert --check-asserts
+echidna TestEchidna.sol --contract TestAssert --test-mode assertion
 */
 contract TestAssert {
-    // Asserts not detected in 0.8.
-    // Switch to 0.7 to test assertions
     function test_assert(uint256 _i) external {
         assert(_i < 10);
     }

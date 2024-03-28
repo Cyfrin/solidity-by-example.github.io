@@ -14,7 +14,11 @@ library IterableMapping {
         return map.values[key];
     }
 
-    function getKeyAtIndex(Map storage map, uint256 index) public view returns (address) {
+    function getKeyAtIndex(Map storage map, uint256 index)
+        public
+        view
+        returns (address)
+    {
         return map.keys[index];
     }
 

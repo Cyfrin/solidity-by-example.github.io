@@ -3,13 +3,19 @@ export const version = "0.8.24"
 export const title = "For and While Loop"
 export const description = "Example of for and while loop in Solidity"
 
-export const keywords = ["for", "loop", "loops", "while", "do"]
+export const keywords = [
+    "for",
+    "loop",
+    "loops",
+    "while",
+    "do",
+]
 
 export const codes = [
-  {
-    fileName: "Loop.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyB7CiAgICAgICAgLy8gZm9yIGxvb3AKICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCAxMDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChpID09IDMpIHsKICAgICAgICAgICAgICAgIC8vIFNraXAgdG8gbmV4dCBpdGVyYXRpb24gd2l0aCBjb250aW51ZQogICAgICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGkgPT0gNSkgewogICAgICAgICAgICAgICAgLy8gRXhpdCBsb29wIHdpdGggYnJlYWsKICAgICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICAvLyB3aGlsZSBsb29wCiAgICAgICAgdWludDI1NiBqOwogICAgICAgIHdoaWxlIChqIDwgMTApIHsKICAgICAgICAgICAgaisrOwogICAgICAgIH0KICAgIH0KfQo=",
-  },
+    {
+        fileName: "Loop.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyB7CiAgICAgICAgLy8gZm9yIGxvb3AKICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCAxMDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChpID09IDMpIHsKICAgICAgICAgICAgICAgIC8vIFNraXAgdG8gbmV4dCBpdGVyYXRpb24gd2l0aCBjb250aW51ZQogICAgICAgICAgICAgICAgY29udGludWU7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgaWYgKGkgPT0gNSkgewogICAgICAgICAgICAgICAgLy8gRXhpdCBsb29wIHdpdGggYnJlYWsKICAgICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICAvLyB3aGlsZSBsb29wCiAgICAgICAgdWludDI1NiBqOwogICAgICAgIHdoaWxlIChqIDwgMTApIHsKICAgICAgICAgICAgaisrOwogICAgICAgIH0KICAgIH0KfQo=",
+    },
 ]
 
 const html = `<p>Solidity supports <code>for</code>, <code>while</code>, and <code>do while</code> loops.</p>
