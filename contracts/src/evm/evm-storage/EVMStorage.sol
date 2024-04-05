@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-contract EVMStorage {
+// Yul - language used for Solidity inline assembly
+contract YulIntro {
     // Intro (list topics)
     // NOTE: Yul syntax
 
@@ -21,15 +22,6 @@ contract EVMStorage {
         return s;
     }
 
-    // NOTE: Yul if
-    function test_if_(uint256 x) public pure returns (uint256) {
-        uint256 z;
-        assembly {
-            if x { z := 11 }
-        }
-        return z;
-    }
-
     // NOTE: Yul types (everything is bytes32)
     function test_yul_types() public pure returns (bool, uint256, bytes32) {
         bool x;
@@ -46,7 +38,7 @@ contract EVMStorage {
     }
 }
 
-contract YulStorageSingleSlot {
+contract EVMStorageSingleSlot {
     // NOTE:
     // 2**256 slots, each slot can store 32 bytes
     // Slots are assigned in the order they are declared
@@ -80,11 +72,11 @@ contract YulStorageSingleSlot {
         }
     }
 
-    function test_sload() public view returns (uint256, uint256, bytes32) {
-        uint256 x;
-        uint256 y;
-        bytes32 z;
-
+    function test_sload()
+        public
+        view
+        returns (uint256 x, uint256 y, bytes32 z)
+    {
         assembly {
             x := sload(0)
             y := sload(1)
@@ -97,12 +89,8 @@ contract YulStorageSingleSlot {
     function test_sload_again()
         public
         view
-        returns (uint256, uint256, bytes32)
+        returns (uint256 x, uint256 y, bytes32 z)
     {
-        uint256 x;
-        uint256 y;
-        bytes32 z;
-
         assembly {
             x := sload(s_x.slot)
             y := sload(s_y.slot)
@@ -113,9 +101,39 @@ contract YulStorageSingleSlot {
     }
 }
 
-// TODO: bit masking
+contract BitMasking {
+    function test_mask() public pure returns (bytes32 mask) {
+        assembly {
+            // |       256 bits        |
+            // 000 ... 000 | 111 ... 111
+            //             | 16 bits
+            // 0x000000000000000000000000000000000000000000000000000000000000ffff
+            mask := sub(shl(16, 1), 1)
+        }
+    }
 
-contract YulStoragePackedSlot {
+    function test_shift_mask() public pure returns (bytes32 mask) {
+        assembly {
+            // |               256 bits                |
+            // 000 ... 000 | 111 ... 111 | 000 ... 000 |
+            //             | 16 bits     | 32 bits
+            // 0x0000000000000000000000000000000000000000000000000000ffff00000000
+            mask := shl(32, sub(shl(16, 1), 1))
+        }
+    }
+
+    function test_not_mask() public pure returns (bytes32 mask) {
+        assembly {
+            // |               256 bits                |
+            // 111 ... 111 | 000 ... 000 | 111 ... 111 |
+            //             | 16 bits     | 32 bits
+            // 0xffffffffffffffffffffffffffffffffffffffffffffffffffff0000ffffffff
+            mask := not(shl(32, sub(shl(16, 1), 1)))
+        }
+    }
+}
+
+contract EVMStoragePackedSlot {
     // Data < 32 bytes are packed into a slot
     // Bit masking (how to create 111...111)
     // slot, offset
@@ -133,11 +151,9 @@ contract YulStoragePackedSlot {
     uint32 public s_y;
 
     function test_sstore() public {
-        bytes32 v;
-
         assembly {
             // Load 32 bytes from slot0
-            v := sload(0)
+            let v := sload(0)
 
             // s_d | s_c | s_b | s_a
             // 32  | 32  | 64  | 128 bits
@@ -181,14 +197,52 @@ contract YulStoragePackedSlot {
         }
     }
 
-    // TODO: offset
-    // slot and offset
-    function test_sstore_again() public {
-        bytes32 v;
+    function test_slot_0_offset()
+        public
+        view
+        returns (
+            uint256 a_offset,
+            uint256 b_offset,
+            uint256 c_offset,
+            uint256 d_offset
+        )
+    {
+        // a_offset =  0 =  0 * 8 =   0 bits
+        // b_offset = 16 = 16 * 8 = 128 bits
+        // c_offset = 24 = 24 * 8 = 192 bits
+        // d_offset = 28 = 28 * 8 = 224 bits
+        assembly {
+            a_offset := s_a.offset
+            b_offset := s_b.offset
+            c_offset := s_c.offset
+            d_offset := s_d.offset
+        }
+    }
 
+    function test_slot_1_offset()
+        public
+        view
+        returns (uint256 addr_offset, uint256 x_offset, uint256 y_offset)
+    {
+        // addr_offset = 0
+        // x_offset = 20
+        // y_offset = 28
+        assembly {
+            addr_offset := s_addr.offset
+            x_offset := s_x.offset
+            y_offset := s_y.offset
+        }
+    }
+
+    // slot and offset
+    function test_sstore_using_offset() public {
+        // a_offset =  0 =  0 * 8 =   0 bits
+        // b_offset = 16 = 16 * 8 = 128 bits
+        // c_offset = 24 = 24 * 8 = 192 bits
+        // d_offset = 28 = 28 * 8 = 224 bits
         assembly {
             // Load 32 bytes from slot0
-            v := sload(s_a.slot)
+            let v := sload(s_a.slot)
 
             // s_d | s_c | s_b | s_a
             // 32  | 32  | 64  | 128 bits
@@ -206,26 +260,26 @@ contract YulStoragePackedSlot {
             // Set s_b = 22
             // mask = 111...111 | 000 ... 000 | 111 ... 111
             //                  |     64 bits |    128 bits
-            let mask_b := not(shl(128, sub(shl(64, 1), 1)))
+            let mask_b := not(shl(s_b.offset, sub(shl(64, 1), 1)))
             // Clear previous value of s_b by setting bits (128 to 191 bits) to 0
             v := and(v, mask_b)
-            v := or(v, shl(128, 22))
+            v := or(v, shl(s_b.offset, 22))
 
             // Set s_c = 33
             // mask = 111...111 | 000...000 | 111 ... 111 | 111 ... 111
             //                  |   32 bits |     64 bits |    128 bits
-            let mask_c := not(shl(192, sub(shl(32, 1), 1)))
+            let mask_c := not(shl(s_c.offset, sub(shl(32, 1), 1)))
             // Clear previous value of s_c by setting bits (192 to 223 bits) to 0
             v := and(v, mask_c)
-            v := or(v, shl(192, 33))
+            v := or(v, shl(s_c.offset, 33))
 
             // Set s_d = 44
             // mask = 000...000 | 111...111 | 111 ... 111 | 111 ... 111
             //                  |   32 bits |     64 bits |    128 bits
-            let mask_d := not(shl(224, sub(shl(32, 1), 1)))
+            let mask_d := not(shl(s_d.offset, sub(shl(32, 1), 1)))
             // Clear previous value of s_d by setting bits (224 to 255 bits) to 0
             v := and(v, mask_d)
-            v := or(v, shl(224, 44))
+            v := or(v, shl(s_d.offset, 44))
 
             // Store new value to slot0
             sstore(s_a.slot, v)
@@ -388,10 +442,3 @@ contract YulStorageStruct {
 //         console2.log("v", val);
 //     }
 // }
-
-// TODO:
-// - return func output
-// - revert
-// - create contract
-// - keccak256
-contract YulMem {}
