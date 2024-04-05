@@ -45,7 +45,6 @@ contract EVMStorageSingleSlot {
     // TODO: how is data packed for bytes?
     // Data < 32 bytes are packed into a slot (right to left?)
     // Struct
-    // TODO: Constants don't use storage
     // sstore, sload
 
     // Single variable stored in one slot
@@ -288,7 +287,7 @@ contract EVMStoragePackedSlot {
 }
 
 // Struct
-contract YulStorageStruct {
+contract EVMStorageStruct {
     struct SingleSlot {
         uint128 x;
         uint64 y;
@@ -302,11 +301,61 @@ contract YulStorageStruct {
     }
 
     // slot 0
-    SingleSlot public single;
+    SingleSlot public single = SingleSlot({x: 1, y: 2, z: 3});
     // slot 1, 2, 3
-    MultipleSlots public multi;
+    MultipleSlots public multi = MultipleSlots({a: 11, b: 22, c: 33});
 
-    // TODO: access
+    function test_get_single_slot_struct()
+        public
+        view
+        returns (uint128 x, uint64 y, uint64 z)
+    {
+        assembly {
+            let s := sload(0)
+            // left 128 bits will be cut off when casted to uint128
+            x := s
+
+            // 000 ... 000 | 111 ... 111
+            //             | 64 bits
+            let mask_64 := sub(shl(64, 1), 1)
+
+            y := and(mask_64, shr(128, s))
+            z := and(mask_64, shr(192, s))
+        }
+    }
+
+    function test_get_multiple_slots_struct()
+        public
+        view
+        returns (uint256 a, uint256 b, uint256 c)
+    {
+        assembly {
+            a := sload(1)
+            b := sload(2)
+            c := sload(3)
+        }
+    }
+}
+
+contract EVMStorageConstants {
+    // slot 0
+    uint256 public s0 = 1;
+    // Constants and immutables don't use storage
+    uint256 public constant X = 123;
+    address public immutable owner;
+    // slot 1
+    uint256 public s1 = 2;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function test_get_slots() public view returns (uint256 v0, uint256 v1) {
+        assembly {
+            v0 := sload(0)
+            v1 := sload(1)
+        }
+    }
 }
 
 // contract YulStorageFixedArray {
