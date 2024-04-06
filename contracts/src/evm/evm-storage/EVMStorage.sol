@@ -400,7 +400,7 @@ contract EVMStorageFixedArray {
     }
 }
 
-contract EVMStorageDynamicArrays {
+contract EVMStorageDynamicArray {
     // slot of element = keccak256(slot where this array is declared) + index of element
     // keccak256(0) + index
     uint256[] private arr = [11, 22, 33];
@@ -504,4 +504,46 @@ contract EVMStorageMappingArray {
     }
 }
 
-// TODO: dynamice array of structs
+contract EVMStorageDynamicArrayStruct {
+    struct Point {
+        uint256 x;
+        uint128 y;
+        uint128 z;
+    }
+
+    // slot of element = keccak256(slot where this array is declared) + index of element
+    // keccak256(0) + index * size of struct
+    Point[] private arr;
+
+    constructor() {
+        arr.push(Point(11, 22, 33));
+        arr.push(Point(44, 55, 66));
+        arr.push(Point(77, 88, 99));
+    }
+
+    function test_struct_arr(uint256 i)
+        public
+        view
+        returns (uint256 x, uint128 y, uint128 z, uint256 len)
+    {
+        uint256 slot = 0;
+        bytes32 start = keccak256(abi.encode(slot));
+
+        assembly {
+            len := sload(slot)
+            // s0 = keccak256(0)
+            // index | slot        | values
+            //     0 | slot s0 + 0 | arr[0].x
+            //     0 | slot s0 + 1 | arr[0].z | arr[0].y
+            //     1 | slot s0 + 2 | arr[1].x
+            //     1 | slot s0 + 3 | arr[1].z | arr[1].y
+            //     2 | slot s0 + 4 | arr[2].x
+            //     2 | slot s0 + 5 | arr[2].z | arr[2].y
+            x := sload(add(start, mul(i, 2)))
+            let zy := sload(add(start, add(mul(i, 2), 1)))
+            // uint128 cuts off left most 128 bits from 32 bytes
+            y := zy
+            z := shr(128, zy)
+        }
+    }
+}
