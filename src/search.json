@@ -40,6 +40,7 @@
     "/primitives",
     "/mapping",
     "/immutable",
+    "/evm/storage",
     "/ether-units",
     "/enum",
     "/constants",
@@ -61,7 +62,12 @@
   ],
   "local": ["/variables"],
   "global": ["/variables"],
-  "state": ["/variables", "/state-variables", "/shadowing-inherited-state-variables"],
+  "state": [
+    "/variables",
+    "/state-variables",
+    "/shadowing-inherited-state-variables",
+    "/evm/storage"
+  ],
   "data": [
     "/variables",
     "/structs",
@@ -69,6 +75,7 @@
     "/mapping",
     "/immutable",
     "/hacks/accessing-private-data",
+    "/evm/storage",
     "/ether-units",
     "/enum",
     "/data-locations",
@@ -89,6 +96,7 @@
   "storage": [
     "/transient-storage",
     "/hacks/accessing-private-data",
+    "/evm/storage",
     "/data-locations",
     "/app/write-to-any-slot"
   ],
@@ -378,6 +386,26 @@
   "_": ["/function-modifier"],
   "first": ["/first-app"],
   "counter": ["/first-app"],
+  "evm": ["/evm/storage"],
+  "yul": [
+    "/evm/storage",
+    "/assembly-variable",
+    "/assembly-math",
+    "/assembly-loop",
+    "/assembly-if",
+    "/assembly-error",
+    "/app/assembly-bin-exp"
+  ],
+  "assembly": [
+    "/evm/storage",
+    "/bitwise",
+    "/assembly-variable",
+    "/assembly-math",
+    "/assembly-loop",
+    "/assembly-if",
+    "/assembly-error",
+    "/app/assembly-bin-exp"
+  ],
   "event": ["/events"],
   "events": ["/events"],
   "wei": ["/ether-units"],
@@ -482,23 +510,6 @@
   "most": ["/bitwise"],
   "significant": ["/bitwise"],
   "bit": ["/bitwise"],
-  "assembly": [
-    "/bitwise",
-    "/assembly-variable",
-    "/assembly-math",
-    "/assembly-loop",
-    "/assembly-if",
-    "/assembly-error",
-    "/app/assembly-bin-exp"
-  ],
-  "yul": [
-    "/assembly-variable",
-    "/assembly-math",
-    "/assembly-loop",
-    "/assembly-if",
-    "/assembly-error",
-    "/app/assembly-bin-exp"
-  ],
   "mul": ["/assembly-math"],
   "switch": ["/assembly-if"],
   "array": ["/array"],

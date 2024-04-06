@@ -410,6 +410,13 @@ const HACK_ROUTES: Route[] = [
   },
 ]
 
+export const EVM_ROUTES: Route[] = [
+  {
+    path: "storage",
+    title: "EVM Storage Layout",
+  },
+]
+
 export const TEST_ROUTES: Route[] = [
   {
     path: "echidna",
@@ -504,6 +511,13 @@ export const ROUTES_BY_CATEGORY = [
     routes: HACK_ROUTES.map((route) => ({
       ...route,
       path: `/hacks/${route.path}`,
+    })),
+  },
+  {
+    title: "EVM",
+    routes: EVM_ROUTES.map((route) => ({
+      ...route,
+      path: `/evm/${route.path}`,
     })),
   },
   {
