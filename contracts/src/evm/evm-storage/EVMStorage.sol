@@ -358,33 +358,47 @@ contract EVMStorageConstants {
     }
 }
 
-// contract YulStorageFixedArray {
-//     // slot + index
-//     uint256[3] private arr_0 = [1, 2, 3];
-//     // slot + packed index
-//     uint128[3] private arr_1 = [4, 5, 6];
+contract EVMStorageFixedArray {
+    // Fixed array with elements <= 32 bytes, slot of element = slot of array declaration + index of array element
+    // slots 0, 1, 2
+    uint256[3] private arr_0 = [1, 2, 3];
+    // slots 3, 4, 5
+    uint256[3] private arr_1 = [4, 5, 6];
+    // slot + packed index
+    // slots 6, 6, 7, 7, 8
+    uint128[5] private arr_2 = [7, 8, 9, 10, 11];
 
-//     function test_arr_0() public {
-//         uint256 v;
-//         assembly {
-//             let i := 1
-//             v := sload(add(0, i))
-//         }
+    function test_arr_0(uint256 i) public view returns (uint256 v) {
+        assembly {
+            // arr_0 starts from slot 0
+            v := sload(add(0, i))
+        }
+    }
 
-//         console2.log("v", v);
-//     }
+    function test_arr_1(uint256 i) public view returns (uint256 v) {
+        assembly {
+            // arr_1 starts from slot 3
+            v := sload(add(3, i))
+        }
+    }
 
-//     function test_arr_1() public {
-//         bytes32 b32;
-//         assembly {
-//             let i := 0
-//             // slots 0, 1, 2 used by arr_0
-//             b32 := sload(add(3, i))
-//         }
+    function test_arr_2(uint256 i) public view returns (uint128 v) {
+        assembly {
+            // arr_2 starts from slot 6
+            let b32 := sload(add(6, div(i, 2)))
+            // slot 6 = 1st element | 0th element
+            // slot 7 = 3rd element | 2nd element
+            // slot 8 = 000 ... 000 | 4th element
 
-//         console2.logBytes32(b32);
-//     }
-// }
+            // i is even => get right 128 bits => cast bytes32 to uint128 (cut off left 128 bits)
+            // i is odd  => get left 128 bits  => shift right 128 bits
+
+            switch mod(i, 2)
+            case 1 { v := shr(128, b32) }
+            default { v := b32 }
+        }
+    }
+}
 
 // storage dynamic array
 // mapping
