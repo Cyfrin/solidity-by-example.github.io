@@ -400,33 +400,21 @@ contract EVMStorageFixedArray {
     }
 }
 
-// storage dynamic array
-// mapping
-// nested mapping
-// memory
-// - keccack256 in memory
+contract EVMStorageDynamicArrays {
+    // slot of element = keccak256(slot where this array is declared) + index of element
+    // keccak256(0) + index
+    uint256[] private arr = [11, 22, 33];
 
-// contract YulStorageDynamicArrays {
-//     // slot = keccak256(slot) + index
-//     uint256[] private arr = [1, 2, 3];
+    function test_arr(uint256 i) public view returns (uint256 v, uint256 len) {
+        uint256 slot = 0;
+        bytes32 start = keccak256(abi.encode(slot));
 
-// TODO: where is length stored?
-//     function test_arr() public {
-//         uint256 slot = 0;
-//         bytes32 start = keccak256(abi.encode(slot));
-//         uint256 v;
-
-//         assembly {
-//             sstore(add(start, 1), 22)
-//         }
-
-//         assembly {
-//             v := sload(add(start, 1))
-//         }
-
-//         console2.log("v", v, arr[1]);
-//     }
-// }
+        assembly {
+            len := sload(slot)
+            v := sload(add(start, i))
+        }
+    }
+}
 
 // contract Mapping {
 //     // location = keccack256(key, slot)
