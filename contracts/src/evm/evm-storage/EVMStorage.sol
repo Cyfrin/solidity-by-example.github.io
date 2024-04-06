@@ -416,7 +416,7 @@ contract EVMStorageDynamicArrays {
     }
 }
 
-contract Mapping {
+contract EVMStorageMapping {
     // slot of value = keccack256(key, slot where mapping is declared)
     mapping(address => uint256) public map;
 
@@ -440,29 +440,31 @@ contract Mapping {
     }
 }
 
-// contract NestedMapping {
-//     // key0 => key1 => val
-//     // location = keccak256(key1, keccack256(key0, slot))
-//     mapping(address => mapping(address => uint256)) public map;
+contract EVMStorageNestedMapping {
+    // key0 => key1 => val
+    // slot of value = keccak256(key1, keccack256(key0, slot where nested mapping is declared))
+    mapping(address => mapping(address => uint256)) public map;
 
-//     function test() public {
-//         map[address(1)][address(2)] = 3;
+    address public constant ADDR_1 = address(1);
+    address public constant ADDR_2 = address(2);
+    address public constant ADDR_3 = address(3);
 
-//         uint256 key0 = uint256(uint160(address(1)));
-//         uint256 key1 = uint256(uint160(address(2)));
-//         uint256 slot = 0;
+    constructor() {
+        map[ADDR_1][ADDR_2] = 11;
+        map[ADDR_2][ADDR_3] = 22;
+        map[ADDR_3][ADDR_1] = 33;
+    }
 
-//         bytes32 loc =
-//             keccak256(abi.encode(key1, keccak256(abi.encode(key0, slot))));
-//         uint256 val;
+    function test_nested_mapping(address key_0, address key_1) public view returns (uint256 v) {
+        uint256 slot = 0;
+        bytes32 s0 = keccak256(abi.encode(key_0, slot));
+        bytes32 s1 = keccak256(abi.encode(key_1, s0));
 
-//         assembly {
-//             val := sload(loc)
-//         }
-
-//         console2.log("v", val);
-//     }
-// }
+        assembly {
+            v := sload(s1)
+        }
+    }
+}
 
 // contract MappingArray {
 //     // mapping -> keccak256(key, slot)
