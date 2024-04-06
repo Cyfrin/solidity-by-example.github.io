@@ -416,25 +416,29 @@ contract EVMStorageDynamicArrays {
     }
 }
 
-// contract Mapping {
-//     // location = keccack256(key, slot)
-//     mapping(address => uint256) public map;
+contract Mapping {
+    // slot of value = keccack256(key, slot where mapping is declared)
+    mapping(address => uint256) public map;
 
-//     function test() public {
-//         map[address(1)] = 2;
+    address public constant ADDR_1 = address(1);
+    address public constant ADDR_2 = address(2);
+    address public constant ADDR_3 = address(3);
 
-//         uint256 key = uint256(uint160(address(1)));
-//         uint256 slot = 0;
-//         bytes32 loc = keccak256(abi.encode(key, slot));
-//         uint256 val;
+    constructor() {
+        map[ADDR_1] = 11;
+        map[ADDR_2] = 22;
+        map[ADDR_3] = 33;
+    }
 
-//         assembly {
-//             val := sload(loc)
-//         }
+    function test_mapping(address key) public view returns (uint256 v) {
+        uint256 slot = 0;
+        bytes32 slot_v = keccak256(abi.encode(key, slot));
 
-//         console2.log("v", val);
-//     }
-// }
+        assembly {
+            v := sload(slot_v)
+        }
+    }
+}
 
 // contract NestedMapping {
 //     // key0 => key1 => val
