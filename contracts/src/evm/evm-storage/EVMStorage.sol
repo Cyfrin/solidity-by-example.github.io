@@ -455,7 +455,11 @@ contract EVMStorageNestedMapping {
         map[ADDR_3][ADDR_1] = 33;
     }
 
-    function test_nested_mapping(address key_0, address key_1) public view returns (uint256 v) {
+    function test_nested_mapping(address key_0, address key_1)
+        public
+        view
+        returns (uint256 v)
+    {
         uint256 slot = 0;
         bytes32 s0 = keccak256(abi.encode(key_0, slot));
         bytes32 s1 = keccak256(abi.encode(key_1, s0));
@@ -466,36 +470,38 @@ contract EVMStorageNestedMapping {
     }
 }
 
-// contract MappingArray {
-//     // mapping -> keccak256(key, slot)
-//     // array -> keccak256(slot) + index
-//     // mapping -> array -> keccak256(keccak256(key, 0)) + index
+contract EVMStorageMappingArray {
+    // slot of value in a mapping = keccak256(key, slot)
+    // slot of array element = keccak256(slot) + index
+    // mapping -> array -> keccak256(keccak256(key, slot of map declaration)) + index
+    mapping(address => uint256[]) public map;
 
-//     mapping(address => uint256[]) public map;
+    address public constant ADDR_1 = address(1);
+    address public constant ADDR_2 = address(2);
 
-//     function test() public {
-//         map[address(0xa)].push(1);
-//         map[address(0xa)].push(2);
-//         map[address(0xa)].push(3);
-//         map[address(0xa)].push(4);
-//         map[address(0xa)].push(5);
+    constructor() {
+        map[ADDR_1].push(11);
+        map[ADDR_1].push(22);
+        map[ADDR_1].push(33);
+        map[ADDR_2].push(44);
+        map[ADDR_2].push(55);
+        map[ADDR_2].push(66);
+    }
 
-//         address map_key = address(0xa);
-//         uint256 arr_index = 1;
+    function test_map_arr(address addr, uint256 i)
+        public
+        view
+        returns (uint256 v, uint256 len)
+    {
+        uint256 map_slot = 0;
+        bytes32 map_hash = keccak256(abi.encode(addr, map_slot));
+        bytes32 arr_hash = keccak256(abi.encode(map_hash));
 
-//         uint256 map_slot = 0;
-//         bytes32 map_hash = keccak256(abi.encode(map_key, map_slot));
-//         bytes32 arr_hash = keccak256(abi.encode(map_hash));
+        assembly {
+            len := sload(map_hash)
+            v := sload(add(arr_hash, i))
+        }
+    }
+}
 
-//         uint256 val;
-//         uint256 len;
-
-//         assembly {
-//             len := sload(map_hash)
-//             val := sload(add(arr_hash, arr_index))
-//         }
-
-//         console2.log("len", len);
-//         console2.log("v", val);
-//     }
-// }
+// TODO: dynamice array of structs
