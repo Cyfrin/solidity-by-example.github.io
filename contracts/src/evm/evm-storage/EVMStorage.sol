@@ -20,7 +20,11 @@ contract YulIntro {
     }
 
     // Yul types (everything is bytes32)
-    function test_yul_types() public pure returns (bool x, uint256 y, bytes32 z) {
+    function test_yul_types()
+        public
+        pure
+        returns (bool x, uint256 y, bytes32 z)
+    {
         assembly {
             x := 1
             y := 0xaaa
@@ -93,6 +97,18 @@ contract EVMStorageSingleSlot {
     }
 }
 
+contract EVMStoratePackedSlotBytes {
+    // slot 0 (packed right to left)
+    bytes4 public b4 = 0xabababab;
+    bytes2 public b2 = 0xcdcd;
+
+    function get() public view returns (bytes32 b32) {
+        assembly {
+            b32 := sload(0)
+        }
+    }
+}
+
 contract BitMasking {
     function test_mask() public pure returns (bytes32 mask) {
         assembly {
@@ -123,18 +139,6 @@ contract BitMasking {
             mask := not(shl(32, sub(shl(16, 1), 1)))
         }
     }
-}
-
-contract EVMStoratePackedSlotBytes {
-    // slot 0 (packed right to left)
-    bytes4 public b4 = 0xabababab;
-    bytes2 public b2 = 0xcdcd;
-
-    function get() public view returns (bytes32 b32) {
-        assembly {
-            b32 := sload(0)
-        }
-    } 
 }
 
 contract EVMStoragePackedSlot {
@@ -203,7 +207,7 @@ contract EVMStoragePackedSlot {
 
     function test_slot_0_offset()
         public
-        view
+        pure
         returns (
             uint256 a_offset,
             uint256 b_offset,
@@ -225,7 +229,7 @@ contract EVMStoragePackedSlot {
 
     function test_slot_1_offset()
         public
-        view
+        pure
         returns (uint256 addr_offset, uint256 x_offset, uint256 y_offset)
     {
         // addr_offset = 0
@@ -291,7 +295,6 @@ contract EVMStoragePackedSlot {
     }
 }
 
-// Struct
 contract EVMStorageStruct {
     struct SingleSlot {
         uint128 x;
@@ -364,12 +367,12 @@ contract EVMStorageConstants {
 }
 
 contract EVMStorageFixedArray {
-    // Fixed array with elements <= 32 bytes, slot of element = slot of array declaration + index of array element
+    // Fixed array with elements <= 32 bytes, slot of element = slot where array is declared + index of array element
     // slots 0, 1, 2
     uint256[3] private arr_0 = [1, 2, 3];
     // slots 3, 4, 5
     uint256[3] private arr_1 = [4, 5, 6];
-    // slot + packed index
+    // slot + index of packed data
     // slots 6, 6, 7, 7, 8
     uint128[5] private arr_2 = [7, 8, 9, 10, 11];
 
