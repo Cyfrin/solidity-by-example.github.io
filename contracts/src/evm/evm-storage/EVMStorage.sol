@@ -3,10 +3,7 @@ pragma solidity ^0.8.24;
 
 // Yul - language used for Solidity inline assembly
 contract YulIntro {
-    // Intro (list topics)
-    // NOTE: Yul syntax
-
-    // NOTE: Yul assignment
+    // Yul assignment
     function test_yul_var() public pure returns (uint256) {
         uint256 s = 0;
 
@@ -22,12 +19,8 @@ contract YulIntro {
         return s;
     }
 
-    // NOTE: Yul types (everything is bytes32)
-    function test_yul_types() public pure returns (bool, uint256, bytes32) {
-        bool x;
-        uint256 y;
-        bytes32 z;
-
+    // Yul types (everything is bytes32)
+    function test_yul_types() public pure returns (bool x, uint256 y, bytes32 z) {
         assembly {
             x := 1
             y := 0xaaa
@@ -39,13 +32,12 @@ contract YulIntro {
 }
 
 contract EVMStorageSingleSlot {
-    // NOTE:
-    // 2**256 slots, each slot can store 32 bytes
-    // Slots are assigned in the order they are declared
-    // TODO: how is data packed for bytes?
-    // Data < 32 bytes are packed into a slot (right to left?)
-    // Struct
-    // sstore, sload
+    // EVM storage
+    // 2**256 slots, each slot can store up to 32 bytes
+    // Slots are assigned in the order the state variables are declared
+    // Data < 32 bytes are packed into a slot (right to left)
+    // sstore(k, v) = store v to slot k
+    // sload(k) = load 32 bytes from slot k
 
     // Single variable stored in one slot
     // slot 0
@@ -64,6 +56,7 @@ contract EVMStorageSingleSlot {
     }
 
     function test_sstore_again() public {
+        // Access slot using .slot
         assembly {
             sstore(s_x.slot, 123)
             sstore(s_y.slot, 456)
@@ -132,6 +125,18 @@ contract BitMasking {
     }
 }
 
+contract EVMStoratePackedSlotBytes {
+    // slot 0 (packed right to left)
+    bytes4 public b4 = 0xabababab;
+    bytes2 public b2 = 0xcdcd;
+
+    function get() public view returns (bytes32 b32) {
+        assembly {
+            b32 := sload(0)
+        }
+    } 
+}
+
 contract EVMStoragePackedSlot {
     // Data < 32 bytes are packed into a slot
     // Bit masking (how to create 111...111)
@@ -157,7 +162,7 @@ contract EVMStoragePackedSlot {
             // s_d | s_c | s_b | s_a
             // 32  | 32  | 64  | 128 bits
 
-            // Set s_a = 1
+            // Set s_a = 11
             // mask = all 1s at and to the left of 128 bit counting from right
             //        111 ... 111 | 000 ... 000
             //                    |    128 bits
@@ -165,31 +170,31 @@ contract EVMStoragePackedSlot {
             // Set left most 128 bits to 0
             v := and(v, mask_a)
             // Set s_a = 1
-            v := or(v, 1)
+            v := or(v, 11)
 
-            // Set s_b = 2
+            // Set s_b = 22
             // mask = 111...111 | 000 ... 000 | 111 ... 111
             //                  |     64 bits |    128 bits
             let mask_b := not(shl(128, sub(shl(64, 1), 1)))
             // Clear previous value of s_b by setting bits (128 to 191 bits) to 0
             v := and(v, mask_b)
-            v := or(v, shl(128, 2))
+            v := or(v, shl(128, 22))
 
-            // Set s_c = 3
+            // Set s_c = 33
             // mask = 111...111 | 000...000 | 111 ... 111 | 111 ... 111
             //                  |   32 bits |     64 bits |    128 bits
             let mask_c := not(shl(192, sub(shl(32, 1), 1)))
             // Clear previous value of s_c by setting bits (192 to 223 bits) to 0
             v := and(v, mask_c)
-            v := or(v, shl(192, 3))
+            v := or(v, shl(192, 33))
 
-            // Set s_d = 4
+            // Set s_d = 44
             // mask = 000...000 | 111...111 | 111 ... 111 | 111 ... 111
             //                  |   32 bits |     64 bits |    128 bits
             let mask_d := not(shl(224, sub(shl(32, 1), 1)))
             // Clear previous value of s_d by setting bits (224 to 255 bits) to 0
             v := and(v, mask_d)
-            v := or(v, shl(224, 4))
+            v := or(v, shl(224, 44))
 
             // Store new value to slot0
             sstore(0, v)
@@ -246,7 +251,7 @@ contract EVMStoragePackedSlot {
             // s_d | s_c | s_b | s_a
             // 32  | 32  | 64  | 128 bits
 
-            // Set s_a = 11
+            // Set s_a = 111
             // mask = all 1s at and to the left of 128 bit counting from right
             //        111 ... 111 | 000 ... 000
             //                    |    128 bits
@@ -254,31 +259,31 @@ contract EVMStoragePackedSlot {
             // Set left most 128 bits to 0
             v := and(v, mask_a)
             // Set s_a = 1
-            v := or(v, 11)
+            v := or(v, 111)
 
-            // Set s_b = 22
+            // Set s_b = 222
             // mask = 111...111 | 000 ... 000 | 111 ... 111
             //                  |     64 bits |    128 bits
-            let mask_b := not(shl(s_b.offset, sub(shl(64, 1), 1)))
+            let mask_b := not(shl(mul(s_b.offset, 8), sub(shl(64, 1), 1)))
             // Clear previous value of s_b by setting bits (128 to 191 bits) to 0
             v := and(v, mask_b)
-            v := or(v, shl(s_b.offset, 22))
+            v := or(v, shl(mul(s_b.offset, 8), 222))
 
-            // Set s_c = 33
+            // Set s_c = 333
             // mask = 111...111 | 000...000 | 111 ... 111 | 111 ... 111
             //                  |   32 bits |     64 bits |    128 bits
-            let mask_c := not(shl(s_c.offset, sub(shl(32, 1), 1)))
+            let mask_c := not(shl(mul(s_c.offset, 8), sub(shl(32, 1), 1)))
             // Clear previous value of s_c by setting bits (192 to 223 bits) to 0
             v := and(v, mask_c)
-            v := or(v, shl(s_c.offset, 33))
+            v := or(v, shl(mul(s_c.offset, 8), 333))
 
-            // Set s_d = 44
+            // Set s_d = 444
             // mask = 000...000 | 111...111 | 111 ... 111 | 111 ... 111
             //                  |   32 bits |     64 bits |    128 bits
-            let mask_d := not(shl(s_d.offset, sub(shl(32, 1), 1)))
+            let mask_d := not(shl(mul(s_d.offset, 8), sub(shl(32, 1), 1)))
             // Clear previous value of s_d by setting bits (224 to 255 bits) to 0
             v := and(v, mask_d)
-            v := or(v, shl(s_d.offset, 44))
+            v := or(v, shl(mul(s_d.offset, 8), 444))
 
             // Store new value to slot0
             sstore(s_a.slot, v)
