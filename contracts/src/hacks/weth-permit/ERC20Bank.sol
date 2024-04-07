@@ -18,16 +18,16 @@ contract ERC20Bank {
 
     function depositWithPermit(
         address owner,
-        address spender,
+        address recipient,
         uint256 amount,
         uint256 deadline,
         uint8 v,
         bytes32 r,
         bytes32 s
     ) external {
-        token.permit(owner, spender, amount, deadline, v, r, s);
+        token.permit(owner, address(this), amount, deadline, v, r, s);
         token.transferFrom(owner, address(this), amount);
-        balanceOf[spender] += amount;
+        balanceOf[recipient] += amount;
     }
 
     function withdraw(uint256 _amount) external {

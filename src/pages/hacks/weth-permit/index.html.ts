@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "ERC20Bank.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiLi9JRVJDMjBQZXJtaXQuc29sIjsKCmNvbnRyYWN0IEVSQzIwQmFuayB7CiAgICBJRVJDMjBQZXJtaXQgcHVibGljIGltbXV0YWJsZSB0b2tlbjsKICAgIG1hcHBpbmcoYWRkcmVzcyA9PiB1aW50MjU2KSBwdWJsaWMgYmFsYW5jZU9mOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX3Rva2VuKSB7CiAgICAgICAgdG9rZW4gPSBJRVJDMjBQZXJtaXQoX3Rva2VuKTsKICAgIH0KCiAgICBmdW5jdGlvbiBkZXBvc2l0KHVpbnQyNTYgX2Ftb3VudCkgZXh0ZXJuYWwgewogICAgICAgIHRva2VuLnRyYW5zZmVyRnJvbShtc2cuc2VuZGVyLCBhZGRyZXNzKHRoaXMpLCBfYW1vdW50KTsKICAgICAgICBiYWxhbmNlT2ZbbXNnLnNlbmRlcl0gKz0gX2Ftb3VudDsKICAgIH0KCiAgICBmdW5jdGlvbiBkZXBvc2l0V2l0aFBlcm1pdCgKICAgICAgICBhZGRyZXNzIG93bmVyLAogICAgICAgIGFkZHJlc3Mgc3BlbmRlciwKICAgICAgICB1aW50MjU2IGFtb3VudCwKICAgICAgICB1aW50MjU2IGRlYWRsaW5lLAogICAgICAgIHVpbnQ4IHYsCiAgICAgICAgYnl0ZXMzMiByLAogICAgICAgIGJ5dGVzMzIgcwogICAgKSBleHRlcm5hbCB7CiAgICAgICAgdG9rZW4ucGVybWl0KG93bmVyLCBzcGVuZGVyLCBhbW91bnQsIGRlYWRsaW5lLCB2LCByLCBzKTsKICAgICAgICB0b2tlbi50cmFuc2ZlckZyb20ob3duZXIsIGFkZHJlc3ModGhpcyksIGFtb3VudCk7CiAgICAgICAgYmFsYW5jZU9mW3NwZW5kZXJdICs9IGFtb3VudDsKICAgIH0KCiAgICBmdW5jdGlvbiB3aXRoZHJhdyh1aW50MjU2IF9hbW91bnQpIGV4dGVybmFsIHsKICAgICAgICBiYWxhbmNlT2ZbbXNnLnNlbmRlcl0gLT0gX2Ftb3VudDsKICAgICAgICB0b2tlbi50cmFuc2Zlcihtc2cuc2VuZGVyLCBfYW1vdW50KTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiLi9JRVJDMjBQZXJtaXQuc29sIjsKCmNvbnRyYWN0IEVSQzIwQmFuayB7CiAgICBJRVJDMjBQZXJtaXQgcHVibGljIGltbXV0YWJsZSB0b2tlbjsKICAgIG1hcHBpbmcoYWRkcmVzcyA9PiB1aW50MjU2KSBwdWJsaWMgYmFsYW5jZU9mOwoKICAgIGNvbnN0cnVjdG9yKGFkZHJlc3MgX3Rva2VuKSB7CiAgICAgICAgdG9rZW4gPSBJRVJDMjBQZXJtaXQoX3Rva2VuKTsKICAgIH0KCiAgICBmdW5jdGlvbiBkZXBvc2l0KHVpbnQyNTYgX2Ftb3VudCkgZXh0ZXJuYWwgewogICAgICAgIHRva2VuLnRyYW5zZmVyRnJvbShtc2cuc2VuZGVyLCBhZGRyZXNzKHRoaXMpLCBfYW1vdW50KTsKICAgICAgICBiYWxhbmNlT2ZbbXNnLnNlbmRlcl0gKz0gX2Ftb3VudDsKICAgIH0KCiAgICBmdW5jdGlvbiBkZXBvc2l0V2l0aFBlcm1pdCgKICAgICAgICBhZGRyZXNzIG93bmVyLAogICAgICAgIGFkZHJlc3MgcmVjaXBpZW50LAogICAgICAgIHVpbnQyNTYgYW1vdW50LAogICAgICAgIHVpbnQyNTYgZGVhZGxpbmUsCiAgICAgICAgdWludDggdiwKICAgICAgICBieXRlczMyIHIsCiAgICAgICAgYnl0ZXMzMiBzCiAgICApIGV4dGVybmFsIHsKICAgICAgICB0b2tlbi5wZXJtaXQob3duZXIsIGFkZHJlc3ModGhpcyksIGFtb3VudCwgZGVhZGxpbmUsIHYsIHIsIHMpOwogICAgICAgIHRva2VuLnRyYW5zZmVyRnJvbShvd25lciwgYWRkcmVzcyh0aGlzKSwgYW1vdW50KTsKICAgICAgICBiYWxhbmNlT2ZbcmVjaXBpZW50XSArPSBhbW91bnQ7CiAgICB9CgogICAgZnVuY3Rpb24gd2l0aGRyYXcodWludDI1NiBfYW1vdW50KSBleHRlcm5hbCB7CiAgICAgICAgYmFsYW5jZU9mW21zZy5zZW5kZXJdIC09IF9hbW91bnQ7CiAgICAgICAgdG9rZW4udHJhbnNmZXIobXNnLnNlbmRlciwgX2Ftb3VudCk7CiAgICB9Cn0K",
   },
   {
     fileName: "ERC20BankExploitTest.sol",
@@ -64,16 +64,16 @@ const html = `<h3>Vulnerability</h3>
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">depositWithPermit</span>(<span class="hljs-params">
         <span class="hljs-keyword">address</span> owner,
-        <span class="hljs-keyword">address</span> spender,
+        <span class="hljs-keyword">address</span> recipient,
         <span class="hljs-keyword">uint256</span> amount,
         <span class="hljs-keyword">uint256</span> deadline,
         <span class="hljs-keyword">uint8</span> v,
         <span class="hljs-keyword">bytes32</span> r,
         <span class="hljs-keyword">bytes32</span> s
     </span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        token.permit(owner, spender, amount, deadline, v, r, s);
+        token.permit(owner, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amount, deadline, v, r, s);
         token.transferFrom(owner, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), amount);
-        balanceOf[spender] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> amount;
+        balanceOf[recipient] <span class="hljs-operator">+</span><span class="hljs-operator">=</span> amount;
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">withdraw</span>(<span class="hljs-params"><span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
