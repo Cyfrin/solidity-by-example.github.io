@@ -173,7 +173,7 @@ contract EVMStoragePackedSlot {
             let mask_a := not(sub(shl(128, 1), 1))
             // Set left most 128 bits to 0
             v := and(v, mask_a)
-            // Set s_a = 1
+            // Set s_a = 11
             v := or(v, 11)
 
             // Set s_b = 22
@@ -320,15 +320,12 @@ contract EVMStorageStruct {
     {
         assembly {
             let s := sload(0)
-            // left 128 bits will be cut off when casted to uint128
+            //  z |  y | x
+            // 64 | 64 | 128 bits
+            // Casting cuts off bits to the left
             x := s
-
-            // 000 ... 000 | 111 ... 111
-            //             | 64 bits
-            let mask_64 := sub(shl(64, 1), 1)
-
-            y := and(mask_64, shr(128, s))
-            z := and(mask_64, shr(192, s))
+            y := shr(128, s)
+            z := shr(192, s)
         }
     }
 
