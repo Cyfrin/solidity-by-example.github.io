@@ -199,6 +199,7 @@
     "transfer"
   ],
   "/evm/storage": ["data", "evm", "storage", "state", "variable", "yul", "assembly"],
+  "/evm/memory": ["data", "evm", "memory", "yul", "assembly"],
   "/events": ["event", "events"],
   "/ether-units": ["data", "variables", "variable", "ether", "wei", "units"],
   "/error": ["error", "errors", "require", "revert", "assert"],

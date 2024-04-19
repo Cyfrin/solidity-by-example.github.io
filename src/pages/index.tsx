@@ -11,9 +11,9 @@ import youTube from "../components/youtube.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2024/04/19 - EVM memory",
   "2024/04/07 - Fix WETH permit hack",
   "2024/04/06 - EVM storage",
-  "2024/03/28 - Transient storage",
 ]
 
 export default function HomePage() {

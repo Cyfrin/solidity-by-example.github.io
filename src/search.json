@@ -76,6 +76,7 @@
     "/immutable",
     "/hacks/accessing-private-data",
     "/evm/storage",
+    "/evm/memory",
     "/ether-units",
     "/enum",
     "/data-locations",
@@ -386,9 +387,10 @@
   "_": ["/function-modifier"],
   "first": ["/first-app"],
   "counter": ["/first-app"],
-  "evm": ["/evm/storage"],
+  "evm": ["/evm/storage", "/evm/memory"],
   "yul": [
     "/evm/storage",
+    "/evm/memory",
     "/assembly-variable",
     "/assembly-math",
     "/assembly-loop",
@@ -398,6 +400,7 @@
   ],
   "assembly": [
     "/evm/storage",
+    "/evm/memory",
     "/bitwise",
     "/assembly-variable",
     "/assembly-math",
@@ -406,6 +409,7 @@
     "/assembly-error",
     "/app/assembly-bin-exp"
   ],
+  "memory": ["/evm/memory", "/data-locations"],
   "event": ["/events"],
   "events": ["/events"],
   "wei": ["/ether-units"],
@@ -501,7 +505,6 @@
   "oracles": ["/defi/chainlink-price-oracle"],
   "location": ["/data-locations"],
   "locations": ["/data-locations"],
-  "memory": ["/data-locations"],
   "calldata": ["/data-locations"],
   "constructor": ["/constructor"],
   "constructors": ["/constructor"],

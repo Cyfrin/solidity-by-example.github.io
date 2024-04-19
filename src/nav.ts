@@ -415,6 +415,10 @@ export const EVM_ROUTES: Route[] = [
     path: "storage",
     title: "EVM Storage Layout",
   },
+  {
+    path: "memory",
+    title: "EVM Memory Layout",
+  },
 ]
 
 export const TEST_ROUTES: Route[] = [
