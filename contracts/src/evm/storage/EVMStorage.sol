@@ -364,7 +364,7 @@ contract EVMStorageConstants {
 }
 
 contract EVMStorageFixedArray {
-    // Fixed array with elements <= 32 bytes, slot of element = slot where array is declared + index of array element
+    // Fixed array with elements = 32 bytes, slot of element = slot where array is declared + index of array element
     // slots 0, 1, 2
     uint256[3] private arr_0 = [1, 2, 3];
     // slots 3, 4, 5
@@ -406,17 +406,23 @@ contract EVMStorageFixedArray {
 }
 
 contract EVMStorageDynamicArray {
-    // slot of element = keccak256(slot where this array is declared) + index of element
-    // keccak256(0) + index
+    // slot of element = keccak256(slot where this array is declared) + size of element * index of element
+    // keccak256(0) + 1 * index
     uint256[] private arr = [11, 22, 33];
+    // keccak256(1) + 1 / 2 * index
+    uint128[] private arr_2 = [1, 2, 3];
 
-    function test_arr(uint256 i) public view returns (uint256 v, uint256 len) {
-        uint256 slot = 0;
+    function test_arr(uint256 slot, uint256 i)
+        public
+        view
+        returns (uint256 v, bytes32 b32, uint256 len)
+    {
         bytes32 start = keccak256(abi.encode(slot));
 
         assembly {
             len := sload(slot)
             v := sload(add(start, i))
+            b32 := v
         }
     }
 }
