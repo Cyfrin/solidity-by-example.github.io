@@ -3,12 +3,12 @@ pragma solidity 0.8.24;
 
 // Memory layout
 // array of length 2**256 (32 bytes), each element stores 1 byte (0x00 to 0xff)
+// index     0    1    2   ...   0xfff...fff = 2*256 - 1
 // memory | 00 | 00 | 00 | ... | 00 |
-// index    00   01   02   ...   0xfff...fff (32 bytes)
 
 // Reserved slots
 // 0x00 - 0x3f (64 bytes): scratch space for hashing methods
-// 0x40 - 0x5f (32 bytes): pointer to next available location in memory to store data (free memory pointer)
+// 0x40 - 0x5f (32 bytes): free memory pointer - pointer to next available location in memory to store data
 // 0x60 - 0x7f (32 bytes): zero slot - used as initial value for dynamic memory arrays and should never be written to
 
 // Free memory pointer (0x40)
@@ -16,13 +16,33 @@ pragma solidity 0.8.24;
 contract MemBasic {
     // mstore(p, v) = store 32 bytes to memory starting at memory location p
     // mload(p) = load 32 bytes from memory starting at memory location p
-    function test() public pure returns (bytes32 b32) {
+    function test_1() public pure returns (bytes32 b32) {
         assembly {
             // Free memory pointer
             // p = 0x80
             let p := mload(0x40)
             mstore(p, 0xababab)
             b32 := mload(p)
+        }
+    }
+
+    function test_2() public pure {
+        assembly {
+            mstore(0, 0x11)
+            // index: 32 bytes of data stored in memory from index
+            //  0x00: 0x0000000000000000000000000000000000000000000000000000000000000011
+            mstore(1, 0x22)
+            //           0 1
+            //  0x00: 0x0000000000000000000000000000000000000000000000000000000000000000
+            //  0x20: 0x2200000000000000000000000000000000000000000000000000000000000000
+            mstore(2, 0x33)
+            //           0 1 2
+            //  0x00: 0x0000000000000000000000000000000000000000000000000000000000000000
+            //  0x20: 0x0033000000000000000000000000000000000000000000000000000000000000
+            mstore(3, 0x44)
+            //           0 1 2 3
+            //  0x00: 0x0000000000000000000000000000000000000000000000000000000000000000
+            //  0x20: 0x0000440000000000000000000000000000000000000000000000000000000000
         }
     }
 }
