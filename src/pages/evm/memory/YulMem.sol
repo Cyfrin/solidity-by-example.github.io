@@ -3,7 +3,7 @@ pragma solidity 0.8.24;
 
 // Memory layout
 // array of length 2**256 (32 bytes), each element stores 1 byte (0x00 to 0xff)
-// index     0    1    2   ...   0xfff...fff = 2*256 - 1
+// index     0    1    2   ...   0xfff...fff = 2**256 - 1
 // memory | 00 | 00 | 00 | ... | 00 |
 
 // Reserved slots
