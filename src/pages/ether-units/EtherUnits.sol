@@ -11,6 +11,6 @@ contract EtherUnits {
     bool public isOneGwei = (oneGwei == 1e9);
 
     uint256 public oneEther = 1 ether;
-    // 1 ether is equal to 10^18 wei
+    // 1 ether is equal to 10^18
     bool public isOneEther = (oneEther == 1e18);
 }
