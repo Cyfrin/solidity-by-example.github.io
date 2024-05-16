@@ -18,6 +18,10 @@ export const TRANSLATIONS: Translation[] = [
     url: "https://solidifa.ir/solidity-by-example/",
   },
   {
+    lang: "Persian",
+    url: "https://siblearn.dev/solidity-by-example",
+  },
+  {
     lang: "Spanish",
     url: "https://github.com/lcadafalch/solidity_attacks",
   },
