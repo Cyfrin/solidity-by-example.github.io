@@ -250,7 +250,7 @@ contract ABIEncode {
     // 0x0000000000000000000000000000000000000000000000000000000000000020
     //   0000000000000000000000000000000000000000000000000000000000000003
     //   ababab0000000000000000000000000000000000000000000000000000000000
-    function enode_bytes() public pure returns (bytes memory) {
+    function encode_bytes() public pure returns (bytes memory) {
         bytes memory b = new bytes(3);
         b[0] = 0xab;
         b[1] = 0xab;
@@ -263,7 +263,7 @@ contract ABIEncode {
     //   0000000000000000000000000000000000000000000000000000000000000001
     //   0000000000000000000000000000000000000000000000000000000000000002
     //   0000000000000000000000000000000000000000000000000000000000000003
-    function enode_uint8_arr() public pure returns (bytes memory) {
+    function encode_uint8_arr() public pure returns (bytes memory) {
         uint8[] memory a = new uint8[](3);
         a[0] = 1;
         a[1] = 2;
@@ -275,7 +275,7 @@ contract ABIEncode {
     // 0x0000000000000000000000000000000000000000000000000000000000000001
     //   0000000000000000000000000000000000000000000000000000000000000002
     //   0000000000000000000000000000000000000000000000000000000000000003
-    function enode_uint256_fixed_size_arr()
+    function encode_uint256_fixed_size_arr()
         public
         pure
         returns (bytes memory)
@@ -360,7 +360,7 @@ contract MemReturn {
 
 contract MemRevert {
     function test_revert() public pure {
-        // revert(start, len) - Revert executin and return data store in memory from start to start + len
+        // revert(start, len) - Revert execution and return data store in memory from start to start + len
         assembly {
             mstore(0x80, "ERROR HERE")
             revert(0x80, 0x20)
@@ -427,8 +427,6 @@ contract YulStaticCall {
             let p := mload(0x40)
             // Copy calldata to memory
             calldatacopy(p, data.offset, data.length)
-            // No need to update free memory pointer?
-            // mstore(0x40, add(p, data.length))
 
             let ok := staticcall(gas(), a, p, data.length, 0, 0)
 
@@ -482,13 +480,12 @@ contract YulStaticCall {
 
             if iszero(ok) { revert(0, 0) }
 
-            // return_data_size = 32  for calling Target.f -> uint256
-            //                  = 96  for calling Target.g -> bytes[] (32 offset, 32 length, 3 bytes padded to 32)
-            //                  = 160 for calling Target.h -> uint256[] (32 offset, 32 length, 32 x 3 elements)
+            // return_data_size = 32  for calling Target.return_uint256 -> uint256
+            //                  = 96  for calling Target.return_bytes -> bytes[] (32 offset, 32 length, 3 bytes padded to 32)
+            //                  = 160 for calling Target.return_uint256_arr -> uint256[] (32 offset, 32 length, 32 x 3 elements)
             return_data_size := returndatasize()
             // Store length of return data to out
             // pointer to out = 0x60 (zero slot)
-            // TODO: safe to write to zero slot?
             mstore(out, return_data_size)
             // Copy return data to out
             returndatacopy(add(out, 0x20), 0, return_data_size)
@@ -513,13 +510,11 @@ contract YulCall {
         payable
         returns (bytes memory out)
     {
-        bytes32 data_ptr;
-        bytes32 out_ptr;
         assembly {
             // 0x80
-            data_ptr := data
+            let data_ptr := data
             // 0x60
-            out_ptr := out
+            let out_ptr := out
 
             let data_size := mload(data)
             let data_start := add(data, 0x20)
