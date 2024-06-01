@@ -8,7 +8,7 @@ export const keywords = ["data", "variables", "variable", "ether", "wei", "units
 export const codes = [
   {
     fileName: "EtherUnits.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEV0aGVyVW5pdHMgewogICAgdWludDI1NiBwdWJsaWMgb25lV2VpID0gMSB3ZWk7CiAgICAvLyAxIHdlaSBpcyBlcXVhbCB0byAxCiAgICBib29sIHB1YmxpYyBpc09uZVdlaSA9IChvbmVXZWkgPT0gMSk7CgogICAgdWludDI1NiBwdWJsaWMgb25lR3dlaSA9IDEgZ3dlaTsKICAgIC8vIDEgZ3dlaSBpcyBlcXVhbCB0byAxMF45IGd3ZWkKICAgIGJvb2wgcHVibGljIGlzT25lR3dlaSA9IChvbmVHd2VpID09IDFlOSk7CgogICAgdWludDI1NiBwdWJsaWMgb25lRXRoZXIgPSAxIGV0aGVyOwogICAgLy8gMSBldGhlciBpcyBlcXVhbCB0byAxMF4xOCB3ZWkKICAgIGJvb2wgcHVibGljIGlzT25lRXRoZXIgPSAob25lRXRoZXIgPT0gMWUxOCk7Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEV0aGVyVW5pdHMgewogICAgdWludDI1NiBwdWJsaWMgb25lV2VpID0gMSB3ZWk7CiAgICAvLyAxIHdlaSBpcyBlcXVhbCB0byAxCiAgICBib29sIHB1YmxpYyBpc09uZVdlaSA9IChvbmVXZWkgPT0gMSk7CgogICAgdWludDI1NiBwdWJsaWMgb25lR3dlaSA9IDEgZ3dlaTsKICAgIC8vIDEgZ3dlaSBpcyBlcXVhbCB0byAxMF45IHdlaQogICAgYm9vbCBwdWJsaWMgaXNPbmVHd2VpID0gKG9uZUd3ZWkgPT0gMWU5KTsKCiAgICB1aW50MjU2IHB1YmxpYyBvbmVFdGhlciA9IDEgZXRoZXI7CiAgICAvLyAxIGV0aGVyIGlzIGVxdWFsIHRvIDEwXjE4IHdlaQogICAgYm9vbCBwdWJsaWMgaXNPbmVFdGhlciA9IChvbmVFdGhlciA9PSAxZTE4KTsKfQo=",
   },
 ]
 
@@ -23,7 +23,7 @@ const html = `<p>Transactions are paid with <code>ether</code>.</p>
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isOneWei <span class="hljs-operator">=</span> (oneWei <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>);
 
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> oneGwei <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">gwei</span>;
-    <span class="hljs-comment">// 1 gwei is equal to 10^9 gwei</span>
+    <span class="hljs-comment">// 1 gwei is equal to 10^9 wei</span>
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">public</span> isOneGwei <span class="hljs-operator">=</span> (oneGwei <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1e9</span>);
 
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> oneEther <span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-literal">ether</span>;
