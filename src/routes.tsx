@@ -56,6 +56,7 @@ import component_enum from "./pages/enum"
 import component_error from "./pages/error"
 import component_ether_units from "./pages/ether-units"
 import component_events from "./pages/events"
+import component_events_advanced from "./pages/events-advanced"
 import component_evm_memory from "./pages/evm/memory"
 import component_evm_storage from "./pages/evm/storage"
 import component_fallback from "./pages/fallback"
@@ -358,6 +359,10 @@ const routes: Route[] = [
   {
     path: "/events",
     component: component_events,
+  },
+  {
+    path: "/events-advanced",
+    component: component_events_advanced,
   },
   {
     path: "/evm/memory",
