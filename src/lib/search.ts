@@ -10,8 +10,8 @@ for (const key of Object.keys(KEYWORDS)) {
 }
 
 const tree: Tree = {}
-for (const keyword of keywords) {
-  insert(tree, keyword)
+for (let i = 0; i < keywords.length; i++) {
+  insert(tree, keywords[i])
 }
 
 export function unique(words: string[]): string[] {
@@ -19,16 +19,17 @@ export function unique(words: string[]): string[] {
 }
 
 export function search(word: string): string[] {
-  const pages: string[] = []
+  const ids: string[] = []
 
   const keywords = _search(tree, word.toLowerCase())
-  for (const keyword of keywords) {
+  for (let i = 0; i < keywords.length; i++) {
+    const keyword = keywords[i]
     // @ts-ignore
     if (INDEX[keyword]) {
       // @ts-ignore
-      pages.push(...INDEX[keyword])
+      ids.push(...INDEX[keyword])
     }
   }
 
-  return pages
+  return ids
 }

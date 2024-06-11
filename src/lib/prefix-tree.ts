@@ -6,15 +6,16 @@ export function insert(tree: Tree, word: string) {
   let t = tree
   for (let i = 0; i < word.length; i++) {
     const c = word[i]
-    const prev = word[i - 1] || null
 
-    if (!t[c] || prev == c) {
+    if (!t[c]) {
       t[c] = {}
     }
-    if (i == word.length - 1) {
-      t[c] = { ...t[c], "": {} }
+
+    if (i < word.length - 1) {
+      t = t[c]
+    } else {
+      t[c][""] = {}
     }
-    t = t[c]
   }
 }
 
@@ -23,7 +24,7 @@ function collect(tree: Tree): string[] {
     return []
   }
 
-  const q = []
+  const q: Array<[string, number, Tree]> = []
   const paths = []
 
   let path = ""
