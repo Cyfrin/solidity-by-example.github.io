@@ -17,7 +17,7 @@ npm start
 
 ```shell
 npm run build
-# Preview produciton
+# Preview production
 npm run preview
 # Deploy
 npm run deploy
