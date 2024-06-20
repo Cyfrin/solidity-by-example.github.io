@@ -144,7 +144,7 @@ contract MemDynamicArray {
     function test_read()
         public
         pure
-        returns (uint256 len, uint256 a0, uint256 a1, uint256 a2)
+        returns (bytes32 p, uint256 len, uint256 a0, uint256 a1, uint256 a2)
     {
         uint256[] memory arr = new uint256[](5);
         arr[0] = uint256(11);
@@ -154,6 +154,7 @@ contract MemDynamicArray {
         arr[4] = uint256(55);
 
         assembly {
+            p := arr
             // 0x80
             len := mload(arr)
             // 0xa0
@@ -165,10 +166,11 @@ contract MemDynamicArray {
         }
     }
 
-    function test_write() public pure returns (uint256[] memory) {
-        uint256[] memory arr;
+    function test_write() public pure returns (bytes32 p, uint256[] memory) {
+        uint256[] memory arr = new uint256[](0);
 
         assembly {
+            p := arr
             // Store length of arr
             mstore(arr, 3)
             // Store 1, 2, 3
@@ -180,7 +182,7 @@ contract MemDynamicArray {
         }
 
         // Data will be ABI encoded when arr is returned to caller
-        return arr;
+        return (p, arr);
     }
 }
 
