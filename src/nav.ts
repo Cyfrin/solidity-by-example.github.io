@@ -124,6 +124,10 @@ export const SOL_ROUTES: Route[] = [
     path: "events",
     title: "Events",
   },
+  {
+    path: "events-advanced",
+    title: "Events Advanced",
+  },
   // inheritance
   {
     path: "constructor",
