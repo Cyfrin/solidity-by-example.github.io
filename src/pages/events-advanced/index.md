@@ -1,6 +1,6 @@
 ---
 title: Events Advanced
-version: 0.8.0
+version: 0.8.24
 description: Advanced topics and concepts related to Solidity events
 keywords: [events, advanced, event-driven, monitoring, filtering, security]
 ---
@@ -27,6 +27,7 @@ The `EventSubscription` contract showcases how to implement event subscriptions,
 ```
 
 ## Best Practices and Recommendations
+
 - Index the right event parameters to enable efficient filtering and searching. Addresses should typically be indexed, while amounts generally should not.
 - Avoid redundant events by not emitting events that are already covered by underlying libraries or contracts.
 - Events cannot be used in `view` or `pure` functions, as they alter the state of the blockchain by storing logs.

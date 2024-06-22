@@ -334,7 +334,8 @@
     "/hacks/delegatecall",
     "/hacks/contract-size",
     "/hacks/block-timestamp-manipulation",
-    "/hacks/accessing-private-data"
+    "/hacks/accessing-private-data",
+    "/events-advanced"
   ],
   "weth": ["/hacks/weth-permit"],
   "permit": ["/hacks/weth-permit", "/app/gasless-token-transfer"],
@@ -412,8 +413,12 @@
     "/app/assembly-bin-exp"
   ],
   "memory": ["/evm/memory", "/data-locations"],
+  "events": ["/events-advanced", "/events"],
+  "advanced": ["/events-advanced"],
+  "event-driven": ["/events-advanced"],
+  "monitoring": ["/events-advanced"],
+  "filtering": ["/events-advanced"],
   "event": ["/events"],
-  "events": ["/events"],
   "wei": ["/ether-units"],
   "units": ["/ether-units"],
   "require": ["/error"],

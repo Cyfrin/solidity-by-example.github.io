@@ -1,22 +1,22 @@
 // metadata
-export const version = "0.8.0"
+export const version = "0.8.24"
 export const title = "Events Advanced"
 export const description = "Advanced topics and concepts related to Solidity events"
 
 export const keywords = [
-    "events",
-    "advanced",
-    "event-driven",
-    "monitoring",
-    "filtering",
-    "security",
+  "events",
+  "advanced",
+  "event-driven",
+  "monitoring",
+  "filtering",
+  "security",
 ]
 
 export const codes = [
-    {
-        fileName: "EventsAdvanced.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNDsKCi8vIEV2ZW50LURyaXZlbiBBcmNoaXRlY3R1cmUKY29udHJhY3QgRXZlbnREcml2ZW5BcmNoaXRlY3R1cmUgewogICAgZXZlbnQgVHJhbnNmZXJJbml0aWF0ZWQoYWRkcmVzcyBpbmRleGVkIGZyb20sIGFkZHJlc3MgaW5kZXhlZCB0bywgdWludDI1NiB2YWx1ZSk7CiAgICBldmVudCBUcmFuc2ZlckNvbmZpcm1lZChhZGRyZXNzIGluZGV4ZWQgZnJvbSwgYWRkcmVzcyBpbmRleGVkIHRvLCB1aW50MjU2IHZhbHVlKTsKCiAgICBtYXBwaW5nKGJ5dGVzMzIgPT4gYm9vbCkgcHVibGljIHRyYW5zZmVyQ29uZmlybWF0aW9uczsKCiAgICBmdW5jdGlvbiBpbml0aWF0ZVRyYW5zZmVyKGFkZHJlc3MgdG8sIHVpbnQyNTYgdmFsdWUpIHB1YmxpYyB7CiAgICAgICAgZW1pdCBUcmFuc2ZlckluaXRpYXRlZChtc2cuc2VuZGVyLCB0bywgdmFsdWUpOwogICAgICAgIC8vIC4uLiAoaW5pdGlhdGUgdHJhbnNmZXIgbG9naWMpCiAgICB9CgogICAgZnVuY3Rpb24gY29uZmlybVRyYW5zZmVyKGJ5dGVzMzIgdHJhbnNmZXJJZCkgcHVibGljIHsKICAgICAgICByZXF1aXJlKCF0cmFuc2ZlckNvbmZpcm1hdGlvbnNbdHJhbnNmZXJJZF0sICJUcmFuc2ZlciBhbHJlYWR5IGNvbmZpcm1lZCIpOwogICAgICAgIHRyYW5zZmVyQ29uZmlybWF0aW9uc1t0cmFuc2ZlcklkXSA9IHRydWU7CiAgICAgICAgZW1pdCBUcmFuc2ZlckNvbmZpcm1lZChtc2cuc2VuZGVyLCBhZGRyZXNzKHRoaXMpLCAwKTsKICAgICAgICAvLyAuLi4gKGNvbmZpcm0gdHJhbnNmZXIgbG9naWMpCiAgICB9Cn0KCi8vIEV2ZW50IFN1YnNjcmlwdGlvbiBhbmQgUmVhbC1UaW1lIFVwZGF0ZXMKaW50ZXJmYWNlIElFdmVudFN1YnNjcmliZXIgewogICAgZnVuY3Rpb24gaGFuZGxlVHJhbnNmZXJFdmVudChhZGRyZXNzIGZyb20sIGFkZHJlc3MgdG8sIHVpbnQyNTYgdmFsdWUpIGV4dGVybmFsOwp9Cgpjb250cmFjdCBFdmVudFN1YnNjcmlwdGlvbiB7CiAgICBldmVudCBMb2dUcmFuc2ZlcihhZGRyZXNzIGluZGV4ZWQgZnJvbSwgYWRkcmVzcyBpbmRleGVkIHRvLCB1aW50MjU2IHZhbHVlKTsKCiAgICBtYXBwaW5nKGFkZHJlc3MgPT4gYm9vbCkgcHVibGljIHN1YnNjcmliZXJzOwogICAgYWRkcmVzc1tdIHB1YmxpYyBzdWJzY3JpYmVyTGlzdDsKCiAgICBmdW5jdGlvbiBzdWJzY3JpYmUoKSBwdWJsaWMgewogICAgICAgIHJlcXVpcmUoIXN1YnNjcmliZXJzW21zZy5zZW5kZXJdLCAiQWxyZWFkeSBzdWJzY3JpYmVkIik7CiAgICAgICAgc3Vic2NyaWJlcnNbbXNnLnNlbmRlcl0gPSB0cnVlOwogICAgICAgIHN1YnNjcmliZXJMaXN0LnB1c2gobXNnLnNlbmRlcik7CiAgICB9CgogICAgZnVuY3Rpb24gdW5zdWJzY3JpYmUoKSBwdWJsaWMgewogICAgICAgIHJlcXVpcmUoc3Vic2NyaWJlcnNbbXNnLnNlbmRlcl0sICJOb3Qgc3Vic2NyaWJlZCIpOwogICAgICAgIHN1YnNjcmliZXJzW21zZy5zZW5kZXJdID0gZmFsc2U7CiAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgc3Vic2NyaWJlckxpc3QubGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgaWYgKHN1YnNjcmliZXJMaXN0W2ldID09IG1zZy5zZW5kZXIpIHsKICAgICAgICAgICAgICAgIHN1YnNjcmliZXJMaXN0W2ldID0gc3Vic2NyaWJlckxpc3Rbc3Vic2NyaWJlckxpc3QubGVuZ3RoIC0gMV07CiAgICAgICAgICAgICAgICBzdWJzY3JpYmVyTGlzdC5wb3AoKTsKICAgICAgICAgICAgICAgIGJyZWFrOwogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQoKICAgIGZ1bmN0aW9uIHRyYW5zZmVyKGFkZHJlc3MgdG8sIHVpbnQyNTYgdmFsdWUpIHB1YmxpYyB7CiAgICAgICAgZW1pdCBMb2dUcmFuc2Zlcihtc2cuc2VuZGVyLCB0bywgdmFsdWUpOwogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IHN1YnNjcmliZXJMaXN0Lmxlbmd0aDsgaSsrKSB7CiAgICAgICAgICAgIElFdmVudFN1YnNjcmliZXIoc3Vic2NyaWJlckxpc3RbaV0pLmhhbmRsZVRyYW5zZmVyRXZlbnQobXNnLnNlbmRlciwgdG8sIHZhbHVlKTsKICAgICAgICB9CiAgICB9Cn0K",
-    },
+  {
+    fileName: "EventsAdvanced.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4xNDsKCi8vIEV2ZW50LURyaXZlbiBBcmNoaXRlY3R1cmUKY29udHJhY3QgRXZlbnREcml2ZW5BcmNoaXRlY3R1cmUgewogICAgZXZlbnQgVHJhbnNmZXJJbml0aWF0ZWQoCiAgICAgICAgYWRkcmVzcyBpbmRleGVkIGZyb20sIGFkZHJlc3MgaW5kZXhlZCB0bywgdWludDI1NiB2YWx1ZQogICAgKTsKICAgIGV2ZW50IFRyYW5zZmVyQ29uZmlybWVkKAogICAgICAgIGFkZHJlc3MgaW5kZXhlZCBmcm9tLCBhZGRyZXNzIGluZGV4ZWQgdG8sIHVpbnQyNTYgdmFsdWUKICAgICk7CgogICAgbWFwcGluZyhieXRlczMyID0+IGJvb2wpIHB1YmxpYyB0cmFuc2ZlckNvbmZpcm1hdGlvbnM7CgogICAgZnVuY3Rpb24gaW5pdGlhdGVUcmFuc2ZlcihhZGRyZXNzIHRvLCB1aW50MjU2IHZhbHVlKSBwdWJsaWMgewogICAgICAgIGVtaXQgVHJhbnNmZXJJbml0aWF0ZWQobXNnLnNlbmRlciwgdG8sIHZhbHVlKTsKICAgICAgICAvLyAuLi4gKGluaXRpYXRlIHRyYW5zZmVyIGxvZ2ljKQogICAgfQoKICAgIGZ1bmN0aW9uIGNvbmZpcm1UcmFuc2ZlcihieXRlczMyIHRyYW5zZmVySWQpIHB1YmxpYyB7CiAgICAgICAgcmVxdWlyZSgKICAgICAgICAgICAgIXRyYW5zZmVyQ29uZmlybWF0aW9uc1t0cmFuc2ZlcklkXSwgIlRyYW5zZmVyIGFscmVhZHkgY29uZmlybWVkIgogICAgICAgICk7CiAgICAgICAgdHJhbnNmZXJDb25maXJtYXRpb25zW3RyYW5zZmVySWRdID0gdHJ1ZTsKICAgICAgICBlbWl0IFRyYW5zZmVyQ29uZmlybWVkKG1zZy5zZW5kZXIsIGFkZHJlc3ModGhpcyksIDApOwogICAgICAgIC8vIC4uLiAoY29uZmlybSB0cmFuc2ZlciBsb2dpYykKICAgIH0KfQoKLy8gRXZlbnQgU3Vic2NyaXB0aW9uIGFuZCBSZWFsLVRpbWUgVXBkYXRlcwppbnRlcmZhY2UgSUV2ZW50U3Vic2NyaWJlciB7CiAgICBmdW5jdGlvbiBoYW5kbGVUcmFuc2ZlckV2ZW50KGFkZHJlc3MgZnJvbSwgYWRkcmVzcyB0bywgdWludDI1NiB2YWx1ZSkKICAgICAgICBleHRlcm5hbDsKfQoKY29udHJhY3QgRXZlbnRTdWJzY3JpcHRpb24gewogICAgZXZlbnQgTG9nVHJhbnNmZXIoYWRkcmVzcyBpbmRleGVkIGZyb20sIGFkZHJlc3MgaW5kZXhlZCB0bywgdWludDI1NiB2YWx1ZSk7CgogICAgbWFwcGluZyhhZGRyZXNzID0+IGJvb2wpIHB1YmxpYyBzdWJzY3JpYmVyczsKICAgIGFkZHJlc3NbXSBwdWJsaWMgc3Vic2NyaWJlckxpc3Q7CgogICAgZnVuY3Rpb24gc3Vic2NyaWJlKCkgcHVibGljIHsKICAgICAgICByZXF1aXJlKCFzdWJzY3JpYmVyc1ttc2cuc2VuZGVyXSwgIkFscmVhZHkgc3Vic2NyaWJlZCIpOwogICAgICAgIHN1YnNjcmliZXJzW21zZy5zZW5kZXJdID0gdHJ1ZTsKICAgICAgICBzdWJzY3JpYmVyTGlzdC5wdXNoKG1zZy5zZW5kZXIpOwogICAgfQoKICAgIGZ1bmN0aW9uIHVuc3Vic2NyaWJlKCkgcHVibGljIHsKICAgICAgICByZXF1aXJlKHN1YnNjcmliZXJzW21zZy5zZW5kZXJdLCAiTm90IHN1YnNjcmliZWQiKTsKICAgICAgICBzdWJzY3JpYmVyc1ttc2cuc2VuZGVyXSA9IGZhbHNlOwogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IHN1YnNjcmliZXJMaXN0Lmxlbmd0aDsgaSsrKSB7CiAgICAgICAgICAgIGlmIChzdWJzY3JpYmVyTGlzdFtpXSA9PSBtc2cuc2VuZGVyKSB7CiAgICAgICAgICAgICAgICBzdWJzY3JpYmVyTGlzdFtpXSA9IHN1YnNjcmliZXJMaXN0W3N1YnNjcmliZXJMaXN0Lmxlbmd0aCAtIDFdOwogICAgICAgICAgICAgICAgc3Vic2NyaWJlckxpc3QucG9wKCk7CiAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiB0cmFuc2ZlcihhZGRyZXNzIHRvLCB1aW50MjU2IHZhbHVlKSBwdWJsaWMgewogICAgICAgIGVtaXQgTG9nVHJhbnNmZXIobXNnLnNlbmRlciwgdG8sIHZhbHVlKTsKICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCBzdWJzY3JpYmVyTGlzdC5sZW5ndGg7IGkrKykgewogICAgICAgICAgICBJRXZlbnRTdWJzY3JpYmVyKHN1YnNjcmliZXJMaXN0W2ldKS5oYW5kbGVUcmFuc2ZlckV2ZW50KAogICAgICAgICAgICAgICAgbXNnLnNlbmRlciwgdG8sIHZhbHVlCiAgICAgICAgICAgICk7CiAgICAgICAgfQogICAgfQp9Cg==",
+  },
 ]
 
 const html = `<p>This page covers advanced topics and use cases related to events in Solidity, building upon the basics covered in the <a href="../events">Events</a> page.</p>
@@ -36,8 +36,12 @@ const html = `<p>This page covers advanced topics and use cases related to event
 
 <span class="hljs-comment">// Event-Driven Architecture</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EventDrivenArchitecture</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TransferInitiated</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint256</span> value</span>)</span>;
-    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TransferConfirmed</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint256</span> value</span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TransferInitiated</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint256</span> value
+    </span>)</span>;
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">TransferConfirmed</span>(<span class="hljs-params">
+        <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> <span class="hljs-keyword">indexed</span> to, <span class="hljs-keyword">uint256</span> value
+    </span>)</span>;
 
     <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">bytes32</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">bool</span>) <span class="hljs-keyword">public</span> transferConfirmations;
 
@@ -47,7 +51,9 @@ const html = `<p>This page covers advanced topics and use cases related to event
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">confirmTransfer</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> transferId</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>transferConfirmations[transferId], <span class="hljs-string">"Transfer already confirmed"</span>);
+        <span class="hljs-built_in">require</span>(
+            <span class="hljs-operator">!</span>transferConfirmations[transferId], <span class="hljs-string">"Transfer already confirmed"</span>
+        );
         transferConfirmations[transferId] <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;
         <span class="hljs-keyword">emit</span> TransferConfirmed(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, <span class="hljs-keyword">address</span>(<span class="hljs-built_in">this</span>), <span class="hljs-number">0</span>);
         <span class="hljs-comment">// ... (confirm transfer logic)</span>
@@ -56,7 +62,8 @@ const html = `<p>This page covers advanced topics and use cases related to event
 
 <span class="hljs-comment">// Event Subscription and Real-Time Updates</span>
 <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IEventSubscriber</span> </span>{
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleTransferEvent</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> to, <span class="hljs-keyword">uint256</span> value</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleTransferEvent</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">from</span>, <span class="hljs-keyword">address</span> to, <span class="hljs-keyword">uint256</span> value</span>)
+        <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EventSubscription</span> </span>{
@@ -86,7 +93,9 @@ const html = `<p>This page covers advanced topics and use cases related to event
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> to, <span class="hljs-keyword">uint256</span> value</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">emit</span> LogTransfer(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, to, value);
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> subscriberList.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
-            IEventSubscriber(subscriberList[i]).handleTransferEvent(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, to, value);
+            IEventSubscriber(subscriberList[i]).handleTransferEvent(
+                <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, to, value
+            );
         }
     }
 }
