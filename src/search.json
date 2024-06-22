@@ -172,7 +172,8 @@
     "/app/deploy-any-contract",
     "/app/crowd-fund",
     "/app/create2",
-    "/app/bi-directional-payment-channel"
+    "/app/bi-directional-payment-channel",
+    "/app/airdrop"
   ],
   "application": [
     "/state-variables",
@@ -199,7 +200,8 @@
     "/app/deploy-any-contract",
     "/app/crowd-fund",
     "/app/create2",
-    "/app/bi-directional-payment-channel"
+    "/app/bi-directional-payment-channel",
+    "/app/airdrop"
   ],
   "cryptography": [
     "/signature",
@@ -539,7 +541,7 @@
   "wallet": ["/app/multi-sig-wallet", "/app/ether-wallet"],
   "staticcall": ["/app/multi-call"],
   "minimal": ["/app/minimal-proxy"],
-  "merkle": ["/app/merkle-tree"],
+  "merkle": ["/app/merkle-tree", "/app/airdrop"],
   "tree": ["/app/merkle-tree"],
   "iterable": ["/app/iterable-mapping"],
   "gasless": ["/app/gasless-token-transfer"],
@@ -563,6 +565,7 @@
   "bi-directional": ["/app/bi-directional-payment-channel"],
   "binary": ["/app/assembly-bin-exp"],
   "exponentiation": ["/app/assembly-bin-exp"],
+  "airdrop": ["/app/airdrop"],
   "abi": ["/abi-encode", "/abi-decode"],
   "encode": ["/abi-encode"],
   "bytes": ["/abi-encode", "/abi-decode"],

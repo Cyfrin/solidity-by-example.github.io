@@ -1,5 +1,6 @@
 import component_abi_decode from "./pages/abi-decode"
 import component_abi_encode from "./pages/abi-encode"
+import component_app_airdrop from "./pages/app/airdrop"
 import component_app_assembly_bin_exp from "./pages/app/assembly-bin-exp"
 import component_app_bi_directional_payment_channel from "./pages/app/bi-directional-payment-channel"
 import component_app_create2 from "./pages/app/create2"
@@ -134,6 +135,10 @@ const routes: Route[] = [
   {
     path: "/abi-encode",
     component: component_abi_encode,
+  },
+  {
+    path: "/app/airdrop",
+    component: component_app_airdrop,
   },
   {
     path: "/app/assembly-bin-exp",

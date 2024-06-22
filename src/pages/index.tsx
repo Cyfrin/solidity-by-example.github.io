@@ -11,9 +11,9 @@ import youTube from "../components/youtube.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2024/06/22 - Merkle airdrop",
   "2024/06/02 - GitHub PR by kiajro",
   "2024/05/15 - GitHub PR by FarrukhTahir5",
-  "2024/05/14 - GitHub PR by open-dev-top",
 ]
 
 export default function HomePage() {

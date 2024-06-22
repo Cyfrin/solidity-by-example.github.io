@@ -341,6 +341,10 @@ export const APP_ROUTES: Route[] = [
     path: "assembly-bin-exp",
     title: "Assembly Binary Exponentiation",
   },
+  {
+    path: "airdrop",
+    title: "Merkle Airdrop",
+  },
 ]
 
 const HACK_ROUTES: Route[] = [

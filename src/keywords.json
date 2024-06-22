@@ -344,6 +344,7 @@
     "cryptography"
   ],
   "/app/assembly-bin-exp": ["assembly", "yul", "binary", "exponentiation", "math"],
+  "/app/airdrop": ["app", "application", "merkle", "airdrop"],
   "/abi-encode": [
     "abi",
     "encode",
