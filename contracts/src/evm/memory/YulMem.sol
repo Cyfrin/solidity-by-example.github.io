@@ -368,6 +368,27 @@ contract MemRevert {
             revert(0x80, 0x20)
         }
     }
+
+    function test_revert_with_error_msg() public pure {
+        assembly {
+            let p := mload(0x40)
+            // function selector of Error(string)
+            // 0x08c379a000000000000000000000000000000000000000000000000000000000
+            // 0x08c379a0 is 32 bits, shift left by 224 to make it 256 bits
+            // 255 - 31 = 224
+            mstore(p, shl(224, 0x08c379a0))
+            // String offset
+            mstore(add(p, 0x04), 0x20)
+            // String length
+            mstore(add(p, 0x24), 5)
+            // Message (must be less than 32 bytes)
+            mstore(add(p, 0x44), "ERROR")
+            // function selector + offset + string length + string message
+            // = 0x04 + 0x20 + 0x20 + 0x20
+            // = 0x64
+            revert(p, 0x64)
+        }
+    }
 }
 
 contract MemKeccak {
