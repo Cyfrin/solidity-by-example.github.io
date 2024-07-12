@@ -14,7 +14,7 @@ contract Primitives {
     */
     uint8 public u8 = 1;
     uint256 public u256 = 456;
-    uint256 public u = 123; // uint is an alias for uint256
+    uint public u = 123; // uint is an alias for uint256
 
     /*
     Negative numbers are allowed for int types.
@@ -25,7 +25,7 @@ contract Primitives {
     */
     int8 public i8 = -1;
     int256 public i256 = 456;
-    int256 public i = -123; // int is same as int256
+    int public i = -123; // int is same as int256
 
     // minimum and maximum of int
     int256 public minInt = type(int256).min;
