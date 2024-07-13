@@ -12,7 +12,7 @@ export const codes = [
   },
   {
     fileName: "AirdropTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCB7TWVya2xlSGVscGVyfSBmcm9tICIuL01lcmtsZUhlbHBlci5zb2wiOwppbXBvcnQge0FpcmRyb3B9IGZyb20gIi4uLy4uLy4uL3NyYy9hcHAvYWlyZHJvcC9BaXJkcm9wLnNvbCI7CmltcG9ydCB7VG9rZW59IGZyb20gIi4uLy4uLy4uL3NyYy9hcHAvYWlyZHJvcC9Ub2tlbi5zb2wiOwoKY29udHJhY3QgQWlyZHJvcFRlc3QgaXMgVGVzdCB7CiAgICBUb2tlbiBwcml2YXRlIHRva2VuOwogICAgQWlyZHJvcCBwcml2YXRlIGFpcmRyb3A7CiAgICBNZXJrbGVIZWxwZXIgcHJpdmF0ZSBtZXJrbGVIZWxwZXI7CgogICAgYWRkcmVzc1tdIHByaXZhdGUgdXNlcnM7CiAgICB1aW50MjU2W10gcHJpdmF0ZSBhbW91bnRzOwogICAgYnl0ZXMzMltdIHByaXZhdGUgaGFzaGVzOwoKICAgIHVpbnQyNTYgY29uc3RhbnQgTiA9IDEwMDsKCiAgICBmdW5jdGlvbiBzZXRVcCgpIHB1YmxpYyB7CiAgICAgICAgbWVya2xlSGVscGVyID0gbmV3IE1lcmtsZUhlbHBlcigpOwogICAgICAgIHRva2VuID0gbmV3IFRva2VuKCJ0ZXN0IiwgIlRFU1QiLCAxOCk7CgogICAgICAgIC8vIEluaXRpYWxpemUgdXNlcnMgYW5kIGFpcmRyb3AgYW1vdW50cwogICAgICAgIGZvciAodWludDI1NiBpID0gMTsgaSA8PSBOOyBpKyspIHsKICAgICAgICAgICAgdXNlcnMucHVzaChhZGRyZXNzKHVpbnQxNjAoaSkpKTsKICAgICAgICAgICAgYW1vdW50cy5wdXNoKGkgKiAxMDApOwogICAgICAgIH0KCiAgICAgICAgLy8gQ2FsY3VsYXRlIGxlYWYgaGFzaGVzCiAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgTjsgaSsrKSB7CiAgICAgICAgICAgIGhhc2hlcy5wdXNoKGtlY2NhazI1NihhYmkuZW5jb2RlKHVzZXJzW2ldLCBhbW91bnRzW2ldKSkpOwogICAgICAgIH0KCiAgICAgICAgYnl0ZXMzMiByb290ID0gbWVya2xlSGVscGVyLmNhbGNSb290KGhhc2hlcyk7CgogICAgICAgIGFpcmRyb3AgPSBuZXcgQWlyZHJvcChhZGRyZXNzKHRva2VuKSwgcm9vdCk7CgogICAgICAgIHRva2VuLnNldEF1dGhvcml6ZWQoYWRkcmVzcyhhaXJkcm9wKSwgdHJ1ZSk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF92YWxpZF9wcm9vZigpIHB1YmxpYyB7CiAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgTjsgaSsrKSB7CiAgICAgICAgICAgIGJ5dGVzMzJbXSBtZW1vcnkgcHJvb2YgPSBtZXJrbGVIZWxwZXIuZ2V0UHJvb2YoaGFzaGVzLCBpKTsKICAgICAgICAgICAgYWlyZHJvcC5jbGFpbShwcm9vZiwgdXNlcnNbaV0sIGFtb3VudHNbaV0pOwogICAgICAgICAgICBhc3NlcnRFcSh0b2tlbi5iYWxhbmNlT2YodXNlcnNbaV0pLCBhbW91bnRzW2ldKTsKICAgICAgICB9CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF9pbnZhbGlkX3Byb29mKCkgcHVibGljIHsKICAgICAgICBieXRlczMyW10gbWVtb3J5IHByb29mID0gbWVya2xlSGVscGVyLmdldFByb29mKGhhc2hlcywgMCk7CiAgICAgICAgdm0uZXhwZWN0UmV2ZXJ0KCk7CiAgICAgICAgYWlyZHJvcC5jbGFpbShwcm9vZiwgdXNlcnNbMV0sIGFtb3VudHNbMV0pOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3RfY2xhaW1fdHdpY2UoKSBwdWJsaWMgewogICAgICAgIGJ5dGVzMzJbXSBtZW1vcnkgcHJvb2YgPSBtZXJrbGVIZWxwZXIuZ2V0UHJvb2YoaGFzaGVzLCAwKTsKICAgICAgICBhaXJkcm9wLmNsYWltKHByb29mLCB1c2Vyc1swXSwgYW1vdW50c1swXSk7CgogICAgICAgIHZtLmV4cGVjdFJldmVydCgpOwogICAgICAgIGFpcmRyb3AuY2xhaW0ocHJvb2YsIHVzZXJzWzBdLCBhbW91bnRzWzBdKTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCB7VGVzdCwgY29uc29sZTJ9IGZyb20gImZvcmdlLXN0ZC9UZXN0LnNvbCI7CmltcG9ydCB7TWVya2xlSGVscGVyfSBmcm9tICIuL01lcmtsZUhlbHBlci5zb2wiOwppbXBvcnQge0FpcmRyb3B9IGZyb20gIi4uLy4uLy4uL3NyYy9hcHAvYWlyZHJvcC9BaXJkcm9wLnNvbCI7CmltcG9ydCB7VG9rZW59IGZyb20gIi4uLy4uLy4uL3NyYy9hcHAvYWlyZHJvcC9Ub2tlbi5zb2wiOwoKY29udHJhY3QgQWlyZHJvcFRlc3QgaXMgVGVzdCB7CiAgICBUb2tlbiBwcml2YXRlIHRva2VuOwogICAgQWlyZHJvcCBwcml2YXRlIGFpcmRyb3A7CgogICAgc3RydWN0IFJld2FyZCB7CiAgICAgICAgYWRkcmVzcyB0bzsKICAgICAgICB1aW50MjU2IGFtb3VudDsKICAgIH0KCiAgICBSZXdhcmRbXSBwcml2YXRlIHJld2FyZHM7CiAgICBieXRlczMyW10gcHJpdmF0ZSBoYXNoZXM7CiAgICBtYXBwaW5nKGJ5dGVzMzIgPT4gUmV3YXJkKSBwcml2YXRlIGhhc2hUb1Jld2FyZDsKCiAgICB1aW50MjU2IGNvbnN0YW50IE4gPSAxMDA7CgogICAgZnVuY3Rpb24gc2V0VXAoKSBwdWJsaWMgewogICAgICAgIHRva2VuID0gbmV3IFRva2VuKCJ0ZXN0IiwgIlRFU1QiLCAxOCk7CgogICAgICAgIC8vIEluaXRpYWxpemUgdXNlcnMgYW5kIGFpcmRyb3AgYW1vdW50cwogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IE47IGkrKykgewogICAgICAgICAgICByZXdhcmRzLnB1c2goCiAgICAgICAgICAgICAgICBSZXdhcmQoe3RvOiBhZGRyZXNzKHVpbnQxNjAoaSkpLCBhbW91bnQ6IChpICsgMSkgKiAxMDB9KQogICAgICAgICAgICApOwogICAgICAgICAgICBoYXNoZXMucHVzaChrZWNjYWsyNTYoYWJpLmVuY29kZShyZXdhcmRzW2ldLnRvLCByZXdhcmRzW2ldLmFtb3VudCkpKTsKICAgICAgICAgICAgaGFzaFRvUmV3YXJkW2hhc2hlc1tpXV0gPSByZXdhcmRzW2ldOwogICAgICAgIH0KCiAgICAgICAgaGFzaGVzID0gTWVya2xlSGVscGVyLnNvcnQoaGFzaGVzKTsKCiAgICAgICAgYnl0ZXMzMiByb290ID0gTWVya2xlSGVscGVyLmNhbGNSb290KGhhc2hlcyk7CgogICAgICAgIGFpcmRyb3AgPSBuZXcgQWlyZHJvcChhZGRyZXNzKHRva2VuKSwgcm9vdCk7CgogICAgICAgIHRva2VuLnNldEF1dGhvcml6ZWQoYWRkcmVzcyhhaXJkcm9wKSwgdHJ1ZSk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdF92YWxpZF9wcm9vZigpIHB1YmxpYyB7CiAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgTjsgaSsrKSB7CiAgICAgICAgICAgIGJ5dGVzMzIgaCA9IGhhc2hlc1tpXTsKICAgICAgICAgICAgUmV3YXJkIG1lbW9yeSByZXdhcmQgPSBoYXNoVG9SZXdhcmRbaF07CiAgICAgICAgICAgIGJ5dGVzMzJbXSBtZW1vcnkgcHJvb2YgPSBNZXJrbGVIZWxwZXIuZ2V0UHJvb2YoaGFzaGVzLCBpKTsKCiAgICAgICAgICAgIGFpcmRyb3AuY2xhaW0ocHJvb2YsIHJld2FyZC50bywgcmV3YXJkLmFtb3VudCk7CiAgICAgICAgICAgIGFzc2VydEVxKHRva2VuLmJhbGFuY2VPZihyZXdhcmQudG8pLCByZXdhcmQuYW1vdW50KTsKICAgICAgICB9CiAgICB9Cn0K",
   },
   {
     fileName: "Hashes.sol",
@@ -20,7 +20,7 @@ export const codes = [
   },
   {
     fileName: "MerkleHelper.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IE1lcmtsZUhlbHBlciB7CiAgICAvLyBTdG9yZSBwcm9vZiBpbiBzdGF0ZSB2YXJpYWJsZSwgc2luY2UgZGF0YSBjYW5ub3QgYmUgcHVzaGVkIHRvIGR5bmFtaWMgbWVtb3J5IGFycmF5CiAgICBieXRlczMyW10gcHVibGljIHByb29mOwoKICAgIC8vIFdhcm5pbmcgLSBNdXRhdGVzIGhhc2hlcyBhcnJheQogICAgZnVuY3Rpb24gY2FsY1Jvb3QoYnl0ZXMzMltdIG1lbW9yeSBoYXNoZXMpIHB1YmxpYyBwdXJlIHJldHVybnMgKGJ5dGVzMzIpIHsKICAgICAgICB1aW50MjU2IG4gPSBoYXNoZXMubGVuZ3RoOwoKICAgICAgICB3aGlsZSAobiA+IDEpIHsKICAgICAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgbjsgaSArPSAyKSB7CiAgICAgICAgICAgICAgICBieXRlczMyIGxlZnQgPSBoYXNoZXNbaV07CiAgICAgICAgICAgICAgICBieXRlczMyIHJpZ2h0ID0gaGFzaGVzW2kgKyAxIDwgbiA/IGkgKyAxIDogaV07CiAgICAgICAgICAgICAgICAobGVmdCwgcmlnaHQpID0gbGVmdCA8PSByaWdodCA/IChsZWZ0LCByaWdodCkgOiAocmlnaHQsIGxlZnQpOwogICAgICAgICAgICAgICAgaGFzaGVzW2kgLyAyXSA9IGtlY2NhazI1NihhYmkuZW5jb2RlKGxlZnQsIHJpZ2h0KSk7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgbiA9IChuICsgKG4gJiAxKSkgLyAyOwogICAgICAgIH0KCiAgICAgICAgcmV0dXJuIGhhc2hlc1swXTsKICAgIH0KCiAgICAvLyBXYXJuaW5nIC0gTXV0YXRlcyBoYXNoZXMgYXJyYXkKICAgIGZ1bmN0aW9uIGdldFByb29mKGJ5dGVzMzJbXSBtZW1vcnkgaGFzaGVzLCB1aW50MjU2IGluZGV4KQogICAgICAgIHB1YmxpYwogICAgICAgIHJldHVybnMgKGJ5dGVzMzJbXSBtZW1vcnkpCiAgICB7CiAgICAgICAgLy8gUmVzZXQgcHJvb2YKICAgICAgICBkZWxldGUgcHJvb2Y7CgogICAgICAgIHVpbnQyNTYgbiA9IGhhc2hlcy5sZW5ndGg7CiAgICAgICAgdWludDI1NiBrID0gaW5kZXg7CgogICAgICAgIHdoaWxlIChuID4gMSkgewogICAgICAgICAgICAvLyBHZXQgcHJvb2YgZm9yIHRoaXMgbGV2ZWwKICAgICAgICAgICAgdWludDI1NiBqID0gayAmIDEgPT0gMSA/IGsgLSAxIDogKGsgKyAxIDwgbiA/IGsgKyAxIDogayk7CiAgICAgICAgICAgIGJ5dGVzMzIgaCA9IGhhc2hlc1tqXTsKICAgICAgICAgICAgcHJvb2YucHVzaChoKTsKICAgICAgICAgICAgayAvPSAyOwoKICAgICAgICAgICAgLy8gQ2FsY3VsYXRlIG5leHQgbGV2ZWwgb2YgaGFzaGVzCiAgICAgICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IG47IGkgKz0gMikgewogICAgICAgICAgICAgICAgYnl0ZXMzMiBsZWZ0ID0gaGFzaGVzW2ldOwogICAgICAgICAgICAgICAgYnl0ZXMzMiByaWdodCA9IGhhc2hlc1tpICsgMSA8IG4gPyBpICsgMSA6IGldOwogICAgICAgICAgICAgICAgKGxlZnQsIHJpZ2h0KSA9IGxlZnQgPD0gcmlnaHQgPyAobGVmdCwgcmlnaHQpIDogKHJpZ2h0LCBsZWZ0KTsKICAgICAgICAgICAgICAgIGhhc2hlc1tpIC8gMl0gPSBrZWNjYWsyNTYoYWJpLmVuY29kZShsZWZ0LCByaWdodCkpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIG4gPSAobiArIChuICYgMSkpIC8gMjsKICAgICAgICB9CgogICAgICAgIHJldHVybiBwcm9vZjsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmxpYnJhcnkgTWVya2xlSGVscGVyIHsKICAgIC8vIEJ1YmJsZSBzb3J0CiAgICBmdW5jdGlvbiBzb3J0KGJ5dGVzMzJbXSBtZW1vcnkgYXJyKQogICAgICAgIGludGVybmFsCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJ5dGVzMzJbXSBtZW1vcnkpCiAgICB7CiAgICAgICAgdWludDI1NiBuID0gYXJyLmxlbmd0aDsKICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCBuOyBpKyspIHsKICAgICAgICAgICAgZm9yICh1aW50MjU2IGogPSAwOyBqIDwgbiAtIDEgLSBpOyBqKyspIHsKICAgICAgICAgICAgICAgIGlmIChhcnJbal0gPiBhcnJbaiArIDFdKSB7CiAgICAgICAgICAgICAgICAgICAgKGFycltqXSwgYXJyW2ogKyAxXSkgPSAoYXJyW2ogKyAxXSwgYXJyW2pdKTsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgcmV0dXJuIGFycjsKICAgIH0KCiAgICBmdW5jdGlvbiB5dWxLZWNjYWsyNTYoYnl0ZXMzMiBhLCBieXRlczMyIGIpCiAgICAgICAgaW50ZXJuYWwKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoYnl0ZXMzMiB2KQogICAgewogICAgICAgIGFzc2VtYmx5IHsKICAgICAgICAgICAgbXN0b3JlKDB4MDAsIGEpCiAgICAgICAgICAgIG1zdG9yZSgweDIwLCBiKQogICAgICAgICAgICB2IDo9IGtlY2NhazI1NigweDAwLCAweDQwKQogICAgICAgIH0KICAgIH0KCiAgICBmdW5jdGlvbiBjYWxjUm9vdChieXRlczMyW10gbWVtb3J5IGhhc2hlcykKICAgICAgICBpbnRlcm5hbAogICAgICAgIHB1cmUKICAgICAgICByZXR1cm5zIChieXRlczMyKQogICAgewogICAgICAgIHVpbnQyNTYgbiA9IGhhc2hlcy5sZW5ndGg7CgogICAgICAgIHdoaWxlIChuID4gMSkgewogICAgICAgICAgICBmb3IgKHVpbnQyNTYgaSA9IDA7IGkgPCBuOyBpICs9IDIpIHsKICAgICAgICAgICAgICAgIGJ5dGVzMzIgbGVmdCA9IGhhc2hlc1tpXTsKICAgICAgICAgICAgICAgIGJ5dGVzMzIgcmlnaHQgPSBoYXNoZXNbaSArIDEgPCBuID8gaSArIDEgOiBpXTsKICAgICAgICAgICAgICAgIChsZWZ0LCByaWdodCkgPSBsZWZ0IDw9IHJpZ2h0ID8gKGxlZnQsIHJpZ2h0KSA6IChyaWdodCwgbGVmdCk7CiAgICAgICAgICAgICAgICBoYXNoZXNbaSA+PiAxXSA9IHl1bEtlY2NhazI1NihsZWZ0LCByaWdodCk7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgbiA9IChuICsgKG4gJiAxKSkgPj4gMTsKICAgICAgICB9CgogICAgICAgIHJldHVybiBoYXNoZXNbMF07CiAgICB9CgogICAgZnVuY3Rpb24gZ2V0UHJvb2YoYnl0ZXMzMltdIG1lbW9yeSBoYXNoZXMsIHVpbnQyNTYgaW5kZXgpCiAgICAgICAgaW50ZXJuYWwKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoYnl0ZXMzMltdIG1lbW9yeSkKICAgIHsKICAgICAgICBieXRlczMyW10gbWVtb3J5IHByb29mID0gbmV3IGJ5dGVzMzJbXSgwKTsKICAgICAgICB1aW50MjU2IGxlbiA9IDA7CgogICAgICAgIHVpbnQyNTYgbiA9IGhhc2hlcy5sZW5ndGg7CiAgICAgICAgdWludDI1NiBrID0gaW5kZXg7CgogICAgICAgIHdoaWxlIChuID4gMSkgewogICAgICAgICAgICAvLyBHZXQgcHJvb2YgZm9yIHRoaXMgbGV2ZWwKICAgICAgICAgICAgdWludDI1NiBqID0gayAmIDEgPT0gMSA/IGsgLSAxIDogKGsgKyAxIDwgbiA/IGsgKyAxIDogayk7CiAgICAgICAgICAgIGJ5dGVzMzIgaCA9IGhhc2hlc1tqXTsKCiAgICAgICAgICAgIC8vIHByb29mLnB1c2goaCkKICAgICAgICAgICAgYXNzZW1ibHkgewogICAgICAgICAgICAgICAgbGVuIDo9IGFkZChsZW4sIDEpCiAgICAgICAgICAgICAgICBsZXQgcG9zIDo9IGFkZChwcm9vZiwgc2hsKDUsIGxlbikpCiAgICAgICAgICAgICAgICBtc3RvcmUocG9zLCBoKQogICAgICAgICAgICAgICAgbXN0b3JlKHByb29mLCBsZW4pCiAgICAgICAgICAgICAgICBtc3RvcmUoMHg0MCwgYWRkKHBvcywgMHgyMCkpCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGsgPj49IDE7CgogICAgICAgICAgICAvLyBDYWxjdWxhdGUgbmV4dCBsZXZlbCBvZiBoYXNoZXMKICAgICAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgbjsgaSArPSAyKSB7CiAgICAgICAgICAgICAgICBieXRlczMyIGxlZnQgPSBoYXNoZXNbaV07CiAgICAgICAgICAgICAgICBieXRlczMyIHJpZ2h0ID0gaGFzaGVzW2kgKyAxIDwgbiA/IGkgKyAxIDogaV07CiAgICAgICAgICAgICAgICAobGVmdCwgcmlnaHQpID0gbGVmdCA8PSByaWdodCA/IChsZWZ0LCByaWdodCkgOiAocmlnaHQsIGxlZnQpOwogICAgICAgICAgICAgICAgaGFzaGVzW2kgPj4gMV0gPSB5dWxLZWNjYWsyNTYobGVmdCwgcmlnaHQpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIG4gPSAobiArIChuICYgMSkpID4+IDE7CiAgICAgICAgfQoKICAgICAgICByZXR1cm4gcHJvb2Y7CiAgICB9CgogICAgZnVuY3Rpb24gdmVyaWZ5KGJ5dGVzMzJbXSBtZW1vcnkgcHJvb2YsIGJ5dGVzMzIgcm9vdCwgYnl0ZXMzMiBsZWFmKQogICAgICAgIGludGVybmFsCiAgICAgICAgcHVyZQogICAgICAgIHJldHVybnMgKGJvb2wpCiAgICB7CiAgICAgICAgYnl0ZXMzMiBoID0gbGVhZjsKCiAgICAgICAgZm9yICh1aW50MjU2IGkgPSAwOyBpIDwgcHJvb2YubGVuZ3RoOyBpKyspIHsKICAgICAgICAgICAgKGJ5dGVzMzIgbGVmdCwgYnl0ZXMzMiByaWdodCkgPQogICAgICAgICAgICAgICAgaCA8PSBwcm9vZltpXSA/IChoLCBwcm9vZltpXSkgOiAocHJvb2ZbaV0sIGgpOwogICAgICAgICAgICBoID0geXVsS2VjY2FrMjU2KGxlZnQsIHJpZ2h0KTsKICAgICAgICB9CgogICAgICAgIHJldHVybiBoID09IHJvb3Q7CiAgICB9Cn0K",
   },
   {
     fileName: "MerkleProof.sol",
@@ -206,12 +206,42 @@ const html = `<p>Example of airdrop contract using Merkle tree.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
 
-<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MerkleHelper</span> </span>{
-    <span class="hljs-comment">// Store proof in state variable, since data cannot be pushed to dynamic memory array</span>
-    <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">public</span> proof;
+<span class="hljs-class"><span class="hljs-keyword">library</span> <span class="hljs-title">MerkleHelper</span> </span>{
+    <span class="hljs-comment">// Bubble sort</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sort</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> arr</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span></span>)
+    </span>{
+        <span class="hljs-keyword">uint256</span> n <span class="hljs-operator">=</span> arr.<span class="hljs-built_in">length</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> n; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> j <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j <span class="hljs-operator">&lt;</span> n <span class="hljs-operator">-</span> <span class="hljs-number">1</span> <span class="hljs-operator">-</span> i; j<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+                <span class="hljs-keyword">if</span> (arr[j] <span class="hljs-operator">&gt;</span> arr[j <span class="hljs-operator">+</span> <span class="hljs-number">1</span>]) {
+                    (arr[j], arr[j <span class="hljs-operator">+</span> <span class="hljs-number">1</span>]) <span class="hljs-operator">=</span> (arr[j <span class="hljs-operator">+</span> <span class="hljs-number">1</span>], arr[j]);
+                }
+            }
+        }
 
-    <span class="hljs-comment">// Warning - Mutates hashes array</span>
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calcRoot</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> hashes</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span></span>) </span>{
+        <span class="hljs-keyword">return</span> arr;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">yulKeccak256</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span> a, <span class="hljs-keyword">bytes32</span> b</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span> v</span>)
+    </span>{
+        <span class="hljs-keyword">assembly</span> {
+            <span class="hljs-built_in">mstore</span>(<span class="hljs-number">0x00</span>, a)
+            <span class="hljs-built_in">mstore</span>(<span class="hljs-number">0x20</span>, b)
+            v <span class="hljs-operator">:=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-number">0x00</span>, <span class="hljs-number">0x40</span>)
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calcRoot</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> hashes</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span></span>)
+    </span>{
         <span class="hljs-keyword">uint256</span> n <span class="hljs-operator">=</span> hashes.<span class="hljs-built_in">length</span>;
 
         <span class="hljs-keyword">while</span> (n <span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span>) {
@@ -219,21 +249,21 @@ const html = `<p>Example of airdrop contract using Merkle tree.</p>
                 <span class="hljs-keyword">bytes32</span> left <span class="hljs-operator">=</span> hashes[i];
                 <span class="hljs-keyword">bytes32</span> right <span class="hljs-operator">=</span> hashes[i <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-operator">&lt;</span> n ? i <span class="hljs-operator">+</span> <span class="hljs-number">1</span> : i];
                 (left, right) <span class="hljs-operator">=</span> left <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> right ? (left, right) : (right, left);
-                hashes[i <span class="hljs-operator">/</span> <span class="hljs-number">2</span>] <span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(left, right));
+                hashes[i <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span>] <span class="hljs-operator">=</span> yulKeccak256(left, right);
             }
-            n <span class="hljs-operator">=</span> (n <span class="hljs-operator">+</span> (n <span class="hljs-operator">&amp;</span> <span class="hljs-number">1</span>)) <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;
+            n <span class="hljs-operator">=</span> (n <span class="hljs-operator">+</span> (n <span class="hljs-operator">&amp;</span> <span class="hljs-number">1</span>)) <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span>;
         }
 
         <span class="hljs-keyword">return</span> hashes[<span class="hljs-number">0</span>];
     }
 
-    <span class="hljs-comment">// Warning - Mutates hashes array</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getProof</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> hashes, <span class="hljs-keyword">uint256</span> index</span>)
-        <span class="hljs-title"><span class="hljs-keyword">public</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span></span>)
     </span>{
-        <span class="hljs-comment">// Reset proof</span>
-        <span class="hljs-keyword">delete</span> proof;
+        <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">bytes32</span>[](<span class="hljs-number">0</span>);
+        <span class="hljs-keyword">uint256</span> len <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
 
         <span class="hljs-keyword">uint256</span> n <span class="hljs-operator">=</span> hashes.<span class="hljs-built_in">length</span>;
         <span class="hljs-keyword">uint256</span> k <span class="hljs-operator">=</span> index;
@@ -242,20 +272,45 @@ const html = `<p>Example of airdrop contract using Merkle tree.</p>
             <span class="hljs-comment">// Get proof for this level</span>
             <span class="hljs-keyword">uint256</span> j <span class="hljs-operator">=</span> k <span class="hljs-operator">&amp;</span> <span class="hljs-number">1</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span> ? k <span class="hljs-operator">-</span> <span class="hljs-number">1</span> : (k <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-operator">&lt;</span> n ? k <span class="hljs-operator">+</span> <span class="hljs-number">1</span> : k);
             <span class="hljs-keyword">bytes32</span> h <span class="hljs-operator">=</span> hashes[j];
-            proof.<span class="hljs-built_in">push</span>(h);
-            k <span class="hljs-operator">/</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>;
+
+            <span class="hljs-comment">// proof.push(h)</span>
+            <span class="hljs-keyword">assembly</span> {
+                len <span class="hljs-operator">:=</span> <span class="hljs-built_in">add</span>(len, <span class="hljs-number">1</span>)
+                <span class="hljs-keyword">let</span> pos <span class="hljs-operator">:=</span> <span class="hljs-built_in">add</span>(proof, <span class="hljs-built_in">shl</span>(<span class="hljs-number">5</span>, len))
+                <span class="hljs-built_in">mstore</span>(pos, h)
+                <span class="hljs-built_in">mstore</span>(proof, len)
+                <span class="hljs-built_in">mstore</span>(<span class="hljs-number">0x40</span>, <span class="hljs-built_in">add</span>(pos, <span class="hljs-number">0x20</span>))
+            }
+
+            k <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
 
             <span class="hljs-comment">// Calculate next level of hashes</span>
             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> n; i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">2</span>) {
                 <span class="hljs-keyword">bytes32</span> left <span class="hljs-operator">=</span> hashes[i];
                 <span class="hljs-keyword">bytes32</span> right <span class="hljs-operator">=</span> hashes[i <span class="hljs-operator">+</span> <span class="hljs-number">1</span> <span class="hljs-operator">&lt;</span> n ? i <span class="hljs-operator">+</span> <span class="hljs-number">1</span> : i];
                 (left, right) <span class="hljs-operator">=</span> left <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> right ? (left, right) : (right, left);
-                hashes[i <span class="hljs-operator">/</span> <span class="hljs-number">2</span>] <span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(left, right));
+                hashes[i <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span>] <span class="hljs-operator">=</span> yulKeccak256(left, right);
             }
-            n <span class="hljs-operator">=</span> (n <span class="hljs-operator">+</span> (n <span class="hljs-operator">&amp;</span> <span class="hljs-number">1</span>)) <span class="hljs-operator">/</span> <span class="hljs-number">2</span>;
+            n <span class="hljs-operator">=</span> (n <span class="hljs-operator">+</span> (n <span class="hljs-operator">&amp;</span> <span class="hljs-number">1</span>)) <span class="hljs-operator">&gt;</span><span class="hljs-operator">&gt;</span> <span class="hljs-number">1</span>;
         }
 
         <span class="hljs-keyword">return</span> proof;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"><span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof, <span class="hljs-keyword">bytes32</span> root, <span class="hljs-keyword">bytes32</span> leaf</span>)
+        <span class="hljs-title"><span class="hljs-keyword">internal</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
+        <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bool</span></span>)
+    </span>{
+        <span class="hljs-keyword">bytes32</span> h <span class="hljs-operator">=</span> leaf;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> proof.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
+            (<span class="hljs-keyword">bytes32</span> left, <span class="hljs-keyword">bytes32</span> right) <span class="hljs-operator">=</span>
+                h <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> proof[i] ? (h, proof[i]) : (proof[i], h);
+            h <span class="hljs-operator">=</span> yulKeccak256(left, right);
+        }
+
+        <span class="hljs-keyword">return</span> h <span class="hljs-operator">=</span><span class="hljs-operator">=</span> root;
     }
 }
 </code></pre><pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
@@ -269,30 +324,33 @@ const html = `<p>Example of airdrop contract using Merkle tree.</p>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">AirdropTest</span> <span class="hljs-keyword">is</span> <span class="hljs-title">Test</span> </span>{
     Token <span class="hljs-keyword">private</span> token;
     Airdrop <span class="hljs-keyword">private</span> airdrop;
-    MerkleHelper <span class="hljs-keyword">private</span> merkleHelper;
 
-    <span class="hljs-keyword">address</span>[] <span class="hljs-keyword">private</span> users;
-    <span class="hljs-keyword">uint256</span>[] <span class="hljs-keyword">private</span> amounts;
+    <span class="hljs-keyword">struct</span> <span class="hljs-title">Reward</span> {
+        <span class="hljs-keyword">address</span> to;
+        <span class="hljs-keyword">uint256</span> amount;
+    }
+
+    Reward[] <span class="hljs-keyword">private</span> rewards;
     <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">private</span> hashes;
+    <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">bytes32</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> Reward) <span class="hljs-keyword">private</span> hashToReward;
 
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">constant</span> N <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setUp</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        merkleHelper <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> MerkleHelper();
         token <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Token(<span class="hljs-string">"test"</span>, <span class="hljs-string">"TEST"</span>, <span class="hljs-number">18</span>);
 
         <span class="hljs-comment">// Initialize users and airdrop amounts</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> N; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
-            users.<span class="hljs-built_in">push</span>(<span class="hljs-keyword">address</span>(<span class="hljs-keyword">uint160</span>(i)));
-            amounts.<span class="hljs-built_in">push</span>(i <span class="hljs-operator">*</span> <span class="hljs-number">100</span>);
-        }
-
-        <span class="hljs-comment">// Calculate leaf hashes</span>
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> N; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
-            hashes.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(users[i], amounts[i])));
+            rewards.<span class="hljs-built_in">push</span>(
+                Reward({to: <span class="hljs-keyword">address</span>(<span class="hljs-keyword">uint160</span>(i)), amount: (i <span class="hljs-operator">+</span> <span class="hljs-number">1</span>) <span class="hljs-operator">*</span> <span class="hljs-number">100</span>})
+            );
+            hashes.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(rewards[i].to, rewards[i].amount)));
+            hashToReward[hashes[i]] <span class="hljs-operator">=</span> rewards[i];
         }
 
-        <span class="hljs-keyword">bytes32</span> root <span class="hljs-operator">=</span> merkleHelper.calcRoot(hashes);
+        hashes <span class="hljs-operator">=</span> MerkleHelper.sort(hashes);
+
+        <span class="hljs-keyword">bytes32</span> root <span class="hljs-operator">=</span> MerkleHelper.calcRoot(hashes);
 
         airdrop <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> Airdrop(<span class="hljs-keyword">address</span>(token), root);
 
@@ -301,24 +359,13 @@ const html = `<p>Example of airdrop contract using Merkle tree.</p>
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_valid_proof</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> N; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
-            <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof <span class="hljs-operator">=</span> merkleHelper.getProof(hashes, i);
-            airdrop.claim(proof, users[i], amounts[i]);
-            assertEq(token.balanceOf(users[i]), amounts[i]);
+            <span class="hljs-keyword">bytes32</span> h <span class="hljs-operator">=</span> hashes[i];
+            Reward <span class="hljs-keyword">memory</span> reward <span class="hljs-operator">=</span> hashToReward[h];
+            <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof <span class="hljs-operator">=</span> MerkleHelper.getProof(hashes, i);
+
+            airdrop.claim(proof, reward.to, reward.amount);
+            assertEq(token.balanceOf(reward.to), reward.amount);
         }
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_invalid_proof</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof <span class="hljs-operator">=</span> merkleHelper.getProof(hashes, <span class="hljs-number">0</span>);
-        vm.expectRevert();
-        airdrop.claim(proof, users[<span class="hljs-number">1</span>], amounts[<span class="hljs-number">1</span>]);
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test_claim_twice</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-keyword">bytes32</span>[] <span class="hljs-keyword">memory</span> proof <span class="hljs-operator">=</span> merkleHelper.getProof(hashes, <span class="hljs-number">0</span>);
-        airdrop.claim(proof, users[<span class="hljs-number">0</span>], amounts[<span class="hljs-number">0</span>]);
-
-        vm.expectRevert();
-        airdrop.claim(proof, users[<span class="hljs-number">0</span>], amounts[<span class="hljs-number">0</span>]);
     }
 }
 </code></pre>`

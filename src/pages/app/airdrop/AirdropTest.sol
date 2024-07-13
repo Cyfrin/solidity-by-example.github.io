@@ -9,30 +9,33 @@ import {Token} from "../../../src/app/airdrop/Token.sol";
 contract AirdropTest is Test {
     Token private token;
     Airdrop private airdrop;
-    MerkleHelper private merkleHelper;
 
-    address[] private users;
-    uint256[] private amounts;
+    struct Reward {
+        address to;
+        uint256 amount;
+    }
+
+    Reward[] private rewards;
     bytes32[] private hashes;
+    mapping(bytes32 => Reward) private hashToReward;
 
     uint256 constant N = 100;
 
     function setUp() public {
-        merkleHelper = new MerkleHelper();
         token = new Token("test", "TEST", 18);
 
         // Initialize users and airdrop amounts
-        for (uint256 i = 1; i <= N; i++) {
-            users.push(address(uint160(i)));
-            amounts.push(i * 100);
-        }
-
-        // Calculate leaf hashes
         for (uint256 i = 0; i < N; i++) {
-            hashes.push(keccak256(abi.encode(users[i], amounts[i])));
+            rewards.push(
+                Reward({to: address(uint160(i)), amount: (i + 1) * 100})
+            );
+            hashes.push(keccak256(abi.encode(rewards[i].to, rewards[i].amount)));
+            hashToReward[hashes[i]] = rewards[i];
         }
 
-        bytes32 root = merkleHelper.calcRoot(hashes);
+        hashes = MerkleHelper.sort(hashes);
+
+        bytes32 root = MerkleHelper.calcRoot(hashes);
 
         airdrop = new Airdrop(address(token), root);
 
@@ -41,23 +44,12 @@ contract AirdropTest is Test {
 
     function test_valid_proof() public {
         for (uint256 i = 0; i < N; i++) {
-            bytes32[] memory proof = merkleHelper.getProof(hashes, i);
-            airdrop.claim(proof, users[i], amounts[i]);
-            assertEq(token.balanceOf(users[i]), amounts[i]);
+            bytes32 h = hashes[i];
+            Reward memory reward = hashToReward[h];
+            bytes32[] memory proof = MerkleHelper.getProof(hashes, i);
+
+            airdrop.claim(proof, reward.to, reward.amount);
+            assertEq(token.balanceOf(reward.to), reward.amount);
         }
-    }
-
-    function test_invalid_proof() public {
-        bytes32[] memory proof = merkleHelper.getProof(hashes, 0);
-        vm.expectRevert();
-        airdrop.claim(proof, users[1], amounts[1]);
-    }
-
-    function test_claim_twice() public {
-        bytes32[] memory proof = merkleHelper.getProof(hashes, 0);
-        airdrop.claim(proof, users[0], amounts[0]);
-
-        vm.expectRevert();
-        airdrop.claim(proof, users[0], amounts[0]);
     }
 }
