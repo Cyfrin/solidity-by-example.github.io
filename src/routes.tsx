@@ -107,6 +107,7 @@ import component_tests_echidna from "./pages/tests/echidna"
 import component_transient_storage from "./pages/transient-storage"
 import component_try_catch from "./pages/try-catch"
 import component_unchecked_math from "./pages/unchecked-math"
+import component_user_defined_value_types from "./pages/user-defined-value-types"
 import component_variables from "./pages/variables"
 import component_view_and_pure_functions from "./pages/view-and-pure-functions"
 import component_visibility from "./pages/visibility"
@@ -564,6 +565,10 @@ const routes: Route[] = [
   {
     path: "/unchecked-math",
     component: component_unchecked_math,
+  },
+  {
+    path: "/user-defined-value-types",
+    component: component_user_defined_value_types,
   },
   {
     path: "/variables",

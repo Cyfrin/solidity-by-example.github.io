@@ -92,6 +92,10 @@ export const SOL_ROUTES: Route[] = [
     title: "Enum",
   },
   {
+    path: "user-defined-value-types",
+    title: "User Defined Value Types",
+  },
+  {
     path: "structs",
     title: "Structs",
   },

@@ -10,6 +10,7 @@
   ],
   "/view-and-pure-functions": ["view", "pure", "function", "functions"],
   "/variables": ["variable", "variables", "local", "global", "state", "data"],
+  "/user-defined-value-types": ["data", "user", "defined", "value", "types", "udvt"],
   "/unchecked-math": ["gas", "unchecked", "math", "overflow", "underflow"],
   "/try-catch": ["try", "catch", "error", "errors"],
   "/transient-storage": ["transient", "storage"],

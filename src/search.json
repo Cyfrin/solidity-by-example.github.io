@@ -70,6 +70,7 @@
   ],
   "data": [
     "/variables",
+    "/user-defined-value-types",
     "/structs",
     "/primitives",
     "/mapping",
@@ -84,6 +85,11 @@
     "/array",
     "/app/iterable-mapping"
   ],
+  "user": ["/user-defined-value-types"],
+  "defined": ["/user-defined-value-types"],
+  "value": ["/user-defined-value-types"],
+  "types": ["/user-defined-value-types", "/structs", "/primitives"],
+  "udvt": ["/user-defined-value-types"],
   "gas": ["/unchecked-math", "/gas-golf", "/gas"],
   "unchecked": ["/unchecked-math"],
   "math": ["/unchecked-math", "/assembly-math", "/app/assembly-bin-exp"],
@@ -144,7 +150,6 @@
   "struct": ["/structs"],
   "structs": ["/structs"],
   "type": ["/structs", "/primitives"],
-  "types": ["/structs", "/primitives"],
   "reading": ["/state-variables"],
   "writing": ["/state-variables"],
   "app": [
