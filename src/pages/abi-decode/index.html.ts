@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.24"
+export const version = "0.8.26"
 export const title = "ABI Decode"
 export const description = "ABI decode bytes"
 
@@ -8,14 +8,14 @@ export const keywords = ["abi", "decode", "bytes"]
 export const codes = [
   {
     fileName: "AbiDecode.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IEFiaURlY29kZSB7CiAgICBzdHJ1Y3QgTXlTdHJ1Y3QgewogICAgICAgIHN0cmluZyBuYW1lOwogICAgICAgIHVpbnQyNTZbMl0gbnVtczsKICAgIH0KCiAgICBmdW5jdGlvbiBlbmNvZGUoCiAgICAgICAgdWludDI1NiB4LAogICAgICAgIGFkZHJlc3MgYWRkciwKICAgICAgICB1aW50MjU2W10gY2FsbGRhdGEgYXJyLAogICAgICAgIE15U3RydWN0IGNhbGxkYXRhIG15U3RydWN0CiAgICApIGV4dGVybmFsIHB1cmUgcmV0dXJucyAoYnl0ZXMgbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuIGFiaS5lbmNvZGUoeCwgYWRkciwgYXJyLCBteVN0cnVjdCk7CiAgICB9CgogICAgZnVuY3Rpb24gZGVjb2RlKGJ5dGVzIGNhbGxkYXRhIGRhdGEpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoCiAgICAgICAgICAgIHVpbnQyNTYgeCwKICAgICAgICAgICAgYWRkcmVzcyBhZGRyLAogICAgICAgICAgICB1aW50MjU2W10gbWVtb3J5IGFyciwKICAgICAgICAgICAgTXlTdHJ1Y3QgbWVtb3J5IG15U3RydWN0CiAgICAgICAgKQogICAgewogICAgICAgIC8vICh1aW50IHgsIGFkZHJlc3MgYWRkciwgdWludFtdIG1lbW9yeSBhcnIsIE15U3RydWN0IG15U3RydWN0KSA9IC4uLgogICAgICAgICh4LCBhZGRyLCBhcnIsIG15U3RydWN0KSA9CiAgICAgICAgICAgIGFiaS5kZWNvZGUoZGF0YSwgKHVpbnQyNTYsIGFkZHJlc3MsIHVpbnQyNTZbXSwgTXlTdHJ1Y3QpKTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEFiaURlY29kZSB7CiAgICBzdHJ1Y3QgTXlTdHJ1Y3QgewogICAgICAgIHN0cmluZyBuYW1lOwogICAgICAgIHVpbnQyNTZbMl0gbnVtczsKICAgIH0KCiAgICBmdW5jdGlvbiBlbmNvZGUoCiAgICAgICAgdWludDI1NiB4LAogICAgICAgIGFkZHJlc3MgYWRkciwKICAgICAgICB1aW50MjU2W10gY2FsbGRhdGEgYXJyLAogICAgICAgIE15U3RydWN0IGNhbGxkYXRhIG15U3RydWN0CiAgICApIGV4dGVybmFsIHB1cmUgcmV0dXJucyAoYnl0ZXMgbWVtb3J5KSB7CiAgICAgICAgcmV0dXJuIGFiaS5lbmNvZGUoeCwgYWRkciwgYXJyLCBteVN0cnVjdCk7CiAgICB9CgogICAgZnVuY3Rpb24gZGVjb2RlKGJ5dGVzIGNhbGxkYXRhIGRhdGEpCiAgICAgICAgZXh0ZXJuYWwKICAgICAgICBwdXJlCiAgICAgICAgcmV0dXJucyAoCiAgICAgICAgICAgIHVpbnQyNTYgeCwKICAgICAgICAgICAgYWRkcmVzcyBhZGRyLAogICAgICAgICAgICB1aW50MjU2W10gbWVtb3J5IGFyciwKICAgICAgICAgICAgTXlTdHJ1Y3QgbWVtb3J5IG15U3RydWN0CiAgICAgICAgKQogICAgewogICAgICAgIC8vICh1aW50IHgsIGFkZHJlc3MgYWRkciwgdWludFtdIG1lbW9yeSBhcnIsIE15U3RydWN0IG15U3RydWN0KSA9IC4uLgogICAgICAgICh4LCBhZGRyLCBhcnIsIG15U3RydWN0KSA9CiAgICAgICAgICAgIGFiaS5kZWNvZGUoZGF0YSwgKHVpbnQyNTYsIGFkZHJlc3MsIHVpbnQyNTZbXSwgTXlTdHJ1Y3QpKTsKICAgIH0KfQo=",
   },
 ]
 
 const html = `<p><code>abi.encode</code> encodes data into <code>bytes</code>.</p>
 <p><code>abi.decode</code> decodes <code>bytes</code> back into data.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">AbiDecode</span> </span>{
     <span class="hljs-keyword">struct</span> <span class="hljs-title">MyStruct</span> {

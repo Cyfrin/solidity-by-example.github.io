@@ -1,6 +1,6 @@
 ---
 title: Assembly Conditional Statements
-version: 0.8.24
+version: 0.8.26
 description: Example of conditional statements in assembly
 keywords: [assembly, yul, if, switch]
 ---

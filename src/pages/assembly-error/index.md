@@ -1,6 +1,6 @@
 ---
 title: Assembly Error
-version: 0.8.24
+version: 0.8.26
 description: Example of error in assembly
 keywords: [assembly, yul, error, revert]
 ---

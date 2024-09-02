@@ -1,6 +1,6 @@
 ---
 title: Shadowing Inherited State Variables
-version: 0.8.24
+version: 0.8.26
 description: An example of shadowing state variables by inheritance
 keywords: [state, variables, variable, shadow, shadowing, inheritance]
 ---

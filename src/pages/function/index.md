@@ -1,6 +1,6 @@
 ---
 title: Function
-version: 0.8.24
+version: 0.8.26
 description: Example of how to write functions in Solidity
 keywords: [function, functions]
 ---

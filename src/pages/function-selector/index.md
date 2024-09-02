@@ -1,6 +1,6 @@
 ---
 title: Function Selector
-version: 0.8.24
+version: 0.8.26
 description: Example of how function selectors are computed
 keywords: [function, functions, selector, selectors]
 ---

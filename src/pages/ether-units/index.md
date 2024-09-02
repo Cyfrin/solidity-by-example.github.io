@@ -1,6 +1,6 @@
 ---
 title: Ether and Wei
-version: 0.8.24
+version: 0.8.26
 description: An example of Ether and Wei in Solidity
 keywords: [data, variables, variable, ether, wei, units]
 ---

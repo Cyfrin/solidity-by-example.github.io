@@ -1,6 +1,6 @@
 ---
 title: ABI Encode
-version: 0.8.24
+version: 0.8.26
 description: ABI encode
 keywords: [abi, encode, bytes, encodeWithSelector, encodeWithSignature, encodeCall]
 ---

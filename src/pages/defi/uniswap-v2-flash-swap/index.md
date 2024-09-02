@@ -1,6 +1,6 @@
 ---
 title: Uniswap V2 Flash Swap
-version: 0.8.24
+version: 0.8.26
 description: Uniswap V2 flash swap
 keywords: [defi, uniswap, v2, flash, swap, amm]
 ---

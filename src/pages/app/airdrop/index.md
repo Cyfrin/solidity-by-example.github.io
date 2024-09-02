@@ -1,6 +1,6 @@
 ---
 title: Merkle Airdrop
-version: 0.8.24
+version: 0.8.26
 description: Airdrop contract using Merkle tree
 keywords: [app, application, merkle, airdrop]
 ---

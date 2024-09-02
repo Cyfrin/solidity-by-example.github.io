@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.26;
 
 contract AssemblyIf {
     function yul_if(uint256 x) public pure returns (uint256 z) {

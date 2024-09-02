@@ -1,6 +1,6 @@
 ---
 title: Try Catch
-version: 0.8.24
+version: 0.8.26
 description: An example of try / catch in Solidity
 keywords: [try, catch, error, errors]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Uniswap V3 Flash Loan
-version: 0.8.24
+version: 0.8.26
 description: Uniswap V3 Flash Loan
 keywords: [defi, uniswap, v3, flash, loan, amm]
 ---

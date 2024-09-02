@@ -1,6 +1,6 @@
 ---
 title: Visibility
-version: 0.8.24
+version: 0.8.26
 description: An example of external, internal, private and public functions in Solidity
 keywords: [visibility, function, functions, internal, private, public, external]
 ---

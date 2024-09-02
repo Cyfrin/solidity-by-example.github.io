@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.26;
 
 contract TestMultiCall {
     function test(uint256 _i) external pure returns (uint256) {

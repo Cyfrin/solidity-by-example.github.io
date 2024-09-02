@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.24"
+export const version = "0.8.26"
 export const title = "Variables"
 export const description = "Local, state and global variables"
 
@@ -8,7 +8,7 @@ export const keywords = ["variable", "variables", "local", "global", "state", "d
 export const codes = [
   {
     fileName: "Variables.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmNvbnRyYWN0IFZhcmlhYmxlcyB7CiAgICAvLyBTdGF0ZSB2YXJpYWJsZXMgYXJlIHN0b3JlZCBvbiB0aGUgYmxvY2tjaGFpbi4KICAgIHN0cmluZyBwdWJsaWMgdGV4dCA9ICJIZWxsbyI7CiAgICB1aW50MjU2IHB1YmxpYyBudW0gPSAxMjM7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcoKSBwdWJsaWMgewogICAgICAgIC8vIExvY2FsIHZhcmlhYmxlcyBhcmUgbm90IHNhdmVkIHRvIHRoZSBibG9ja2NoYWluLgogICAgICAgIHVpbnQyNTYgaSA9IDQ1NjsKCiAgICAgICAgLy8gSGVyZSBhcmUgc29tZSBnbG9iYWwgdmFyaWFibGVzCiAgICAgICAgdWludDI1NiB0aW1lc3RhbXAgPSBibG9jay50aW1lc3RhbXA7IC8vIEN1cnJlbnQgYmxvY2sgdGltZXN0YW1wCiAgICAgICAgYWRkcmVzcyBzZW5kZXIgPSBtc2cuc2VuZGVyOyAvLyBhZGRyZXNzIG9mIHRoZSBjYWxsZXIKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IFZhcmlhYmxlcyB7CiAgICAvLyBTdGF0ZSB2YXJpYWJsZXMgYXJlIHN0b3JlZCBvbiB0aGUgYmxvY2tjaGFpbi4KICAgIHN0cmluZyBwdWJsaWMgdGV4dCA9ICJIZWxsbyI7CiAgICB1aW50MjU2IHB1YmxpYyBudW0gPSAxMjM7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcoKSBwdWJsaWMgewogICAgICAgIC8vIExvY2FsIHZhcmlhYmxlcyBhcmUgbm90IHNhdmVkIHRvIHRoZSBibG9ja2NoYWluLgogICAgICAgIHVpbnQyNTYgaSA9IDQ1NjsKCiAgICAgICAgLy8gSGVyZSBhcmUgc29tZSBnbG9iYWwgdmFyaWFibGVzCiAgICAgICAgdWludDI1NiB0aW1lc3RhbXAgPSBibG9jay50aW1lc3RhbXA7IC8vIEN1cnJlbnQgYmxvY2sgdGltZXN0YW1wCiAgICAgICAgYWRkcmVzcyBzZW5kZXIgPSBtc2cuc2VuZGVyOyAvLyBhZGRyZXNzIG9mIHRoZSBjYWxsZXIKICAgIH0KfQo=",
   },
 ]
 
@@ -27,7 +27,7 @@ const html = `<p>There are 3 types of variables in Solidity</p>
 <li><strong>global</strong> (provides information about the blockchain)</li>
 </ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
-<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.24;</span>
+<span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Variables</span> </span>{
     <span class="hljs-comment">// State variables are stored on the blockchain.</span>

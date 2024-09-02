@@ -1,6 +1,6 @@
 ---
 title: Echidna
-version: 0.8.24
+version: 0.8.26
 description: An example of testing contracts with Echidna
 keywords: [test, echidna]
 ---

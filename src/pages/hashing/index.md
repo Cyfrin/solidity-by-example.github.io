@@ -1,6 +1,6 @@
 ---
 title: Hashing with Keccak256
-version: 0.8.24
+version: 0.8.26
 description: Example of hashing using Keccak256 in Solidity
 keywords: [hash, hashing, function, functions, keccak256, cryptography]
 ---

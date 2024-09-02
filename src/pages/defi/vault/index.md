@@ -1,6 +1,6 @@
 ---
 title: Vault
-version: 0.8.24
+version: 0.8.26
 description: Vault
 keywords: [defi, vault]
 ---

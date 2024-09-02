@@ -1,6 +1,6 @@
 ---
 title: Sending Ether (transfer, send, call)
-version: 0.8.24
+version: 0.8.26
 description: An example of sending Ether in Solidity
 keywords:
   [

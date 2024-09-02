@@ -1,5 +1,5 @@
 // metadata
-export const version = "0.8.24"
+export const version = "0.8.26"
 export const title = "Events Advanced"
 export const description = "Advanced topics and concepts related to Solidity events"
 

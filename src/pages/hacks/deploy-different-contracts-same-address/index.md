@@ -1,6 +1,6 @@
 ---
 title: Deploy Different Contracts at the Same Address
-version: 0.8.24
+version: 0.8.26
 description: An example of a Solidity contract vulnerable to deploy different contracts at the same address
 keywords:
   [hack, security, deploy, salt, create, create2, different, contract, same, address]

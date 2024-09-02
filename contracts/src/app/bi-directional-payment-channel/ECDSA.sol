@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.26;
 
 // OpenZeppelin Contracts (last updated v4.5.0) (utils/cryptography/ECDSA.sol)
 

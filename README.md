@@ -44,8 +44,8 @@ npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
 npx ts-node --project ./scripts/tsconfig.json scripts/build-search-index.ts
 
 ## Compile Solidity ##
-solc-select install 0.8.24
-solc-select use 0.8.24
+solc-select install 0.8.26
+solc-select use 0.8.26
 
 # compile single file
 solc src/pages/hello-world/HelloWorld.sol

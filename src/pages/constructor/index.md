@@ -1,6 +1,6 @@
 ---
 title: Constructor
-version: 0.8.24
+version: 0.8.26
 description: Learn how to initialize smart contracts in Solidity using a constructor
 keywords: [constructor, constructors, contract, inheritance]
 ---
