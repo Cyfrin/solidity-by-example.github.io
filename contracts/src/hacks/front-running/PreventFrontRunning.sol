@@ -10,7 +10,7 @@ pragma solidity ^0.8.26;
 2. Bob finds the correct string that will hash to the target hash. ("Ethereum").
 3. Bob then finds the keccak256(Address in lowercase + Solution + Secret). 
    Address is his wallet address in lowercase, solution is "Ethereum", Secret is like an password ("mysecret") 
-   that only Bob knows whic Bob uses to commit and reveal the solution.
+   that only Bob knows which Bob uses to commit and reveal the solution.
    keccak2566("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266Ethereummysecret") = '0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36'
 3. Bob then calls commitSolution("0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36"), 
    where he commits the calculated solution hash with gas price set to 15 gwei.
@@ -92,7 +92,7 @@ contract SecuredFindThisHash {
     /* 
         Function to reveal the commit and get the reward. 
         Users can get reveal solution only if the game is active and they have committed a solutionHash before this block and not revealed yet.
-        It generates an keccak256(msg.sender + solution + secret) and checks it with the previously commited hash.  
+        It generates an keccak256(msg.sender + solution + secret) and checks it with the previously committed hash.  
         Assuming that a commit was already included on chain, front runners will not be able to pass this check since the msg.sender is different.
         Then the actual solution is checked using keccak256(solution), if the solution matches, the winner is declared, 
         the game is ended and the reward amount is sent to the winner.
