@@ -10,9 +10,8 @@ function Footer() {
   return (
     <div className={styles.component}>
       <div className={styles.row}>
-        <img src={sce} alt="smart contract engineer" className={styles.sce} />
-        <a href="https://www.smartcontract.engineer" target="__blank">
-          Smart Contract Engineer
+        <a href="https://updraft.cyfrin.io" target="__blank">
+          Cyfrin Updraft
         </a>
       </div>
       <div className={styles.social}>

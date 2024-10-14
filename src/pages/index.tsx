@@ -142,6 +142,12 @@ export default function HomePage() {
           </a>
         </div>
 
+        <div className={styles.cryptoJobsList}>
+          <a href="https://updraft.cyfrin.io/" target="__blank">
+            Learn Solidity at Cyfrin Updraft
+          </a>
+        </div>
+
         <div className={styles.updates}>
           {UPDATES.map((text, i) => (
             <div key={i}>{text}</div>
