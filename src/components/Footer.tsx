@@ -1,15 +1,22 @@
 import React from "react"
-import { CRYPTO_JOBS_LIST_URL } from "../config"
+import { useAppContext } from "../contexts/AppContext"
 import styles from "./Footer.module.css"
-import sce from "./sce.png"
+import updraftDark from "./updraft-dark.png"
+import updraftLight from "./updraft-light.png"
 import youTube from "./youtube.png"
 import telegram from "./telegram.png"
 import discord from "./discord.png"
 
 function Footer() {
+  const app = useAppContext()
   return (
     <div className={styles.component}>
       <div className={styles.row}>
+        <img
+          src={app.state.theme == "dark" ? updraftLight : updraftDark}
+          alt="cyfrin"
+          className={styles.updraft}
+        />
         <a href="https://updraft.cyfrin.io" target="__blank">
           Cyfrin Updraft
         </a>
@@ -44,21 +51,17 @@ function Footer() {
       </div>
       <div className={styles.row}>
         <a
-          href="https://github.com/solidity-by-example/solidity-by-example.github.io"
+          href="https://github.com/Cyfrin/solidity-by-example.github.io"
           target="__blank"
         >
           Source
         </a>
         <div className={styles.bar}>|</div>
         <a
-          href="https://github.com/solidity-by-example/solidity-by-example.github.io/blob/gh-pages/LICENSE"
+          href="https://github.com/Cyfrin/solidity-by-example.github.io/blob/gh-pages/LICENSE"
           target="__blank"
         >
           License
-        </a>
-        <div className={styles.bar}>|</div>
-        <a href={CRYPTO_JOBS_LIST_URL} target="__blank">
-          Solidity jobs
         </a>
       </div>
     </div>

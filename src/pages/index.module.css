@@ -41,12 +41,13 @@
   width: 30px;
   padding-right: 10px;
 }
-.cryptoJobsList {
+.updraft {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 10px 0 10px 0;
 }
-.cryptoJobsListLogo {
-  margin: 0 10px 0 0;
+.updraftLogo {
+  width: 24px;
+  padding-right: 10px;
 }

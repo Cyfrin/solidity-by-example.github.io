@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { CRYPTO_JOBS_LIST_URL } from "../config"
 import SEO from "../components/SEO"
 import SearchBar from "../components/SearchBar"
-import CryptoJobsList from "../components/svg/CryptoJobsList"
+import { useAppContext } from "../contexts/AppContext"
 import useDebounce from "../hooks/useDebounce"
 import { search, unique } from "../lib/search"
 import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
+import updraftDark from "../components/updraft-dark.png"
+import updraftLight from "../components/updraft-light.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
@@ -17,6 +18,7 @@ const UPDATES = [
 ]
 
 export default function HomePage() {
+  const app = useAppContext()
   const [query, setQuery] = useState("")
   const [searchParams, setSearchParams] = useSearchParams()
   const [searchResults, setSearchResults] = useState<{
@@ -135,14 +137,12 @@ export default function HomePage() {
           </a>
         </div>
 
-        <div className={styles.cryptoJobsList}>
-          <CryptoJobsList size={24} className={styles.cryptoJobsListLogo} />
-          <a href={CRYPTO_JOBS_LIST_URL} target="__blank">
-            Looking for Solidity jobs?
-          </a>
-        </div>
-
-        <div className={styles.cryptoJobsList}>
+        <div className={styles.updraft}>
+          <img
+            src={app.state.theme == "dark" ? updraftLight : updraftDark}
+            alt="logo"
+            className={styles.updraftLogo}
+          />
           <a href="https://updraft.cyfrin.io/" target="__blank">
             Learn Solidity at Cyfrin Updraft
           </a>
