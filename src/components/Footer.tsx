@@ -1,22 +1,15 @@
 import React from "react"
-import { useAppContext } from "../contexts/AppContext"
 import styles from "./Footer.module.css"
-import updraftDark from "./updraft-dark.png"
-import updraftLight from "./updraft-light.png"
+import updraft from "./updraft.png"
 import youTube from "./youtube.png"
 import telegram from "./telegram.png"
 import discord from "./discord.png"
 
 function Footer() {
-  const app = useAppContext()
   return (
     <div className={styles.component}>
       <div className={styles.row}>
-        <img
-          src={app.state.theme == "dark" ? updraftLight : updraftDark}
-          alt="cyfrin"
-          className={styles.updraft}
-        />
+        <img src={updraft} alt="cyfrin" className={styles.updraft} />
         <a href="https://updraft.cyfrin.io" target="__blank">
           Cyfrin Updraft
         </a>
