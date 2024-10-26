@@ -31,7 +31,7 @@ contract UniDirectionalPaymentChannel is ReentrancyGuard {
     }
 
     function _getHash(uint256 _amount) private view returns (bytes32) {
-        // NOTE: sign with address of this contract to protect agains
+        // NOTE: sign with address of this contract to protect against
         // replay attack on other contracts
         return keccak256(abi.encodePacked(address(this), _amount));
     }
