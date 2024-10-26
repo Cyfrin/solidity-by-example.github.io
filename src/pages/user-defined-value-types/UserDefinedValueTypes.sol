@@ -58,7 +58,7 @@ library LibClockBasic {
 }
 
 contract Examples {
-    function example_no_uvdt() external {
+    function example_no_uvdt() external view {
         // Without UDVT
         uint128 clock;
         uint64 d = 1;
@@ -68,7 +68,7 @@ contract Examples {
         clock = LibClockBasic.wrap(t, d);
     }
 
-    function example_uvdt() external {
+    function example_uvdt() external view {
         // Turn value type into user defined value type
         Duration d = Duration.wrap(1);
         Timestamp t = Timestamp.wrap(uint64(block.timestamp));
