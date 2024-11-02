@@ -47,14 +47,14 @@ function Footer() {
           href="https://github.com/Cyfrin/solidity-by-example.github.io"
           target="__blank"
         >
-          Source
+          source
         </a>
         <div className={styles.bar}>|</div>
         <a
           href="https://github.com/Cyfrin/solidity-by-example.github.io/blob/gh-pages/LICENSE"
           target="__blank"
         >
-          License
+          license
         </a>
       </div>
     </div>
