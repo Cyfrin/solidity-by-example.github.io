@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "English Auction"
 export const description = "An example of English auction in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "english", "auction", "auctions"]
 

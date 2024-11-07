@@ -2,6 +2,8 @@
 export const version = "0.8.26"
 export const title = "Gas Saving Techniques"
 export const description = "Some gas saving techniques"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/gas-saving-techniques-code-example"
 
 export const keywords = ["gas", "golf"]
 

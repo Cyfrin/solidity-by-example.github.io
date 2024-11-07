@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Uniswap V3 Liquidity Examples"
 export const description = "Uniswap V3 liquidity examples"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "uniswap", "v3", "liquidity", "amm"]
 

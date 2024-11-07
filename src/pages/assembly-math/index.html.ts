@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Assembly Math"
 export const description = "Example of math in assembly"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/assembly-math-code-example"
 
 export const keywords = ["assembly", "yul", "math", "add", "mul"]
 

@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Crowd Fund"
 export const description = "An example of crowd funding contract"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "crowd", "fund", "funding"]
 

@@ -2,11 +2,11 @@ import fs from "fs"
 import assert from "assert"
 import path from "path"
 
-import { copy, get_files } from "./lib"
+import { copy, getFiles } from "./lib"
 
 async function cp(src: string) {
   const dst = path.join(__dirname, "..", "src/pages")
-  const files = await get_files(src, /\.sol$/)
+  const files = await getFiles(src, /\.sol$/)
 
   for (const file of files) {
     const [_, relative_path] = file.split(src)

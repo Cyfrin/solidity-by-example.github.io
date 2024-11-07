@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Front Running"
 export const description =
   "An example of a Solidity contract vulnerable to front running"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "front", "running"]
 

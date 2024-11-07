@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "ERC1155"
 export const description = "Example of ERC1155 multi token in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "erc1155", "nft", "ierc1155"]
 

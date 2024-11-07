@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Enum"
 export const description = "Example of enums in Solidity"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/enum-code-example"
 
 export const keywords = ["data", "variable", "variables", "enum", "import", "imports"]
 

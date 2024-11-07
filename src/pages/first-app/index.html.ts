@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "First Application"
 export const description = "Example of smart contract in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = [
   "contract",

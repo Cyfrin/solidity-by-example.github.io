@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Array"
 export const description = "Learn about arrays in Solidity"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/array-code-example"
 
 export const keywords = ["data", "variable", "variables", "array", "arrays"]
 

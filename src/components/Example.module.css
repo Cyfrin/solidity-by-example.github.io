@@ -5,6 +5,9 @@
 .content {
   margin: 15px 10px 15px 10px;
 }
+.cyfrinLink {
+  font-style: italic;
+}
 .prevNext {
   margin: 20px;
   display: flex;

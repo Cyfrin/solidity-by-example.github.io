@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Deploy Any Contract"
 export const description = "Deploy Any Contract"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "deploy", "any", "contract"]
 

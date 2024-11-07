@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Chainlink Price Oracle"
 export const description = "Chainlink Price Oracle"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "chainlink", "price", "oracle", "oracles"]
 

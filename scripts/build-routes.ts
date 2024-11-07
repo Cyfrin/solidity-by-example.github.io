@@ -2,7 +2,7 @@ import fs from "fs"
 import assert from "assert"
 import path from "path"
 import mustache from "mustache"
-import { buildRoute, get_files } from "./lib"
+import { buildRoute, getFiles } from "./lib"
 
 const { readdir, stat, readFile, writeFile } = fs.promises
 
@@ -39,7 +39,7 @@ function getComponentName(routePath: string): string {
 async function main() {
   const dir = path.join(__dirname, "..", "src")
 
-  const files = await get_files(
+  const files = await getFiles(
     path.join(__dirname, "..", "src/pages"),
     new RegExp("index.tsx"),
   )

@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "WETH Permit"
 export const description = "An example of WETH permit hack"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "weth", "permit"]
 

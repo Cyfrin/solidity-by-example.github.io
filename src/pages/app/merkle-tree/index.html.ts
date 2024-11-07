@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Merkle Tree"
 export const description = "Learn about Merkle tree in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "merkle", "tree", "cryptography"]
 

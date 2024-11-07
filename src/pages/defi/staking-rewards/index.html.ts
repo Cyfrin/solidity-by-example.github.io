@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Staking Rewards"
 export const description =
   "Staking rewards contract based on Synthetix StakingRewards.sol"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "staking", "reward", "rewards"]
 

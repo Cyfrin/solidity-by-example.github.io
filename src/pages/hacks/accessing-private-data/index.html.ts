@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Accessing Private Data"
 export const description =
   "An example of accessing private data from a Solidity smart contract"
+export const cyfrinLink = ""
 
 export const keywords = [
   "hack",

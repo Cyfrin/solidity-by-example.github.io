@@ -2,6 +2,8 @@
 export const version = "0.8.26"
 export const title = "View and Pure Functions"
 export const description = "An example of view and pure functions in Solidity"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/view-and-pure-functions-code-example"
 
 export const keywords = ["view", "pure", "function", "functions"]
 

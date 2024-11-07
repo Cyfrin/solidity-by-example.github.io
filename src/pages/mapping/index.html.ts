@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Mapping"
 export const description = "Example of using mapping in Solidity"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/mapping-code-example"
 
 export const keywords = ["data", "variable", "variables", "mapping"]
 

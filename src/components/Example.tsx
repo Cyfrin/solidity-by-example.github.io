@@ -39,17 +39,18 @@ const Example: React.FC<Props> = ({
       <SEO
         title={`${title} | Solidity by Example | ${version}`}
         description={description}
+        cyfrinLink={cyfrinLink}
       />
       <div className={styles.content}>
         <h2>{title}</h2>
 
         {cyfrinLink ? (
-          <div>
+          <div className={styles.cyfrinLink}>
             For the most up to date version of this content, please see{" "}
             <a href={cyfrinLink} target="__blank">
               {title} (Code Example)
             </a>{" "}
-            Cyfrin.io
+            on Cyfrin.io
           </div>
         ) : null}
 

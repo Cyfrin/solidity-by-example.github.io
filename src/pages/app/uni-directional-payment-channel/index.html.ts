@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Uni-Directional Payment Channel"
 export const description = "An example of uni-directional payment channels in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = [
   "app",

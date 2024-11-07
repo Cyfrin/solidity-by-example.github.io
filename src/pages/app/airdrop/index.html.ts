@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Merkle Airdrop"
 export const description = "Airdrop contract using Merkle tree"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "merkle", "airdrop"]
 

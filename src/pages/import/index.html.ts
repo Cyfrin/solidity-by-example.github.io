@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Import"
 export const description = "Learn how to import other Solidity files"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/import-code-example"
 
 export const keywords = ["import"]
 

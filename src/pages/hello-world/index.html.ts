@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Hello World"
 export const description = "Hello world in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["contract", "app", "application", "hello", "world"]
 

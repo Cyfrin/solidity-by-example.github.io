@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Minimal Proxy Contract"
 export const description = "Deploy contracts cheaply with minimal proxy contract"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "minimal", "proxy", "contract"]
 

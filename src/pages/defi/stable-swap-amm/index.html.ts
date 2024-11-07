@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Stable Swap AMM"
 export const description = "Curve's stable swap AMM"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "curve", "stable", "swap", "amm"]
 

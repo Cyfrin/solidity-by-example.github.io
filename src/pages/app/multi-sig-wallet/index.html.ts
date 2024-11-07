@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Multi-Sig Wallet"
 export const description = "An example of multi-sig wallet in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "multi", "sig", "signature", "wallet"]
 

@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Deploy Different Contracts at the Same Address"
 export const description =
   "An example of a Solidity contract vulnerable to deploy different contracts at the same address"
+export const cyfrinLink = ""
 
 export const keywords = [
   "hack",

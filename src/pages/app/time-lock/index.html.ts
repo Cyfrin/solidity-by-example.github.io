@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Time Lock"
 export const description = "Time Lock"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "time", "lock"]
 

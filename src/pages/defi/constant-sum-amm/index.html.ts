@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Constant Sum AMM"
 export const description = "Constant sum AMM"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "constant", "sum", "amm"]
 

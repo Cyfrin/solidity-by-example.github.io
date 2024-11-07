@@ -7,13 +7,16 @@ import path from "path"
 
 const { readFile, writeFile } = fs.promises
 
-import { get_files } from "./lib"
+import { getFiles } from "./lib"
 
 async function main() {
   const BUILD_DIR = path.join(__dirname, "..", "build")
   const index = (await readFile(path.join(BUILD_DIR, "index.html"))).toString()
 
-  const files = await get_files(path.join(__dirname, "..", "src/pages"), new RegExp("index.tsx"))
+  const files = await getFiles(
+    path.join(__dirname, "..", "src/pages"),
+    new RegExp("index.tsx"),
+  )
 
   const routes = []
   for (const file of files) {

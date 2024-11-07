@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "EVM Memory Layout in Solidity"
 export const description = "Example of EVM memory in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["data", "evm", "memory", "yul", "assembly"]
 

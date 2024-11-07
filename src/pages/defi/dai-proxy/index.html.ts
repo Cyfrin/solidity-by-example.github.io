@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "DAI Proxy Examples"
 export const description = "Borrow and repay DAI using DssProxy"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "dai", "proxy"]
 

@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Variables"
 export const description = "Local, state and global variables"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/variables-code-example"
 
 export const keywords = ["variable", "variables", "local", "global", "state", "data"]
 

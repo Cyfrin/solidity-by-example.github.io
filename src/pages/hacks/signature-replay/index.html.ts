@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Signature Replay"
 export const description =
   "An example of a contract vulnerable to signature replay attack"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "cryptography", "signature", "replay"]
 

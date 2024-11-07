@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Echidna"
 export const description = "An example of testing contracts with Echidna"
+export const cyfrinLink = ""
 
 export const keywords = ["test", "echidna"]
 

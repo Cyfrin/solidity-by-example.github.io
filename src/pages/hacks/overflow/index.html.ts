@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Arithmetic Overflow and Underflow"
 export const description =
   "An example of hacking Solidity with arithmetic overflow / underflow"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "arithmetic", "overflow", "underflow"]
 

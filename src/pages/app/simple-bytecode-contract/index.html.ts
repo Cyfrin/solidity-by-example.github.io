@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Simple Bytecode Contract"
 export const description = "Simple example of contract written in bytecode"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "simple", "bytecode", "contract"]
 

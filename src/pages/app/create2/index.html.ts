@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Precompute Contract Address with Create2"
 export const description = "Precompute contract address with create2"
+export const cyfrinLink = ""
 
 export const keywords = [
   "app",

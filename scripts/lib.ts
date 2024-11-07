@@ -53,7 +53,7 @@ export async function renderTemplateToFile(
   console.log(`Created ${writeToPath}`)
 }
 
-export async function get_files(root: string, reg_exp: RegExp): Promise<string[]> {
+export async function getFiles(root: string, reg_exp: RegExp): Promise<string[]> {
   // traverse
   const queue = [root]
 
@@ -107,11 +107,15 @@ function getMetadata(lines: string[]): Metadata {
   assert(lines[0] === "---", "Invalid front matter")
   assert(lines[lines.length - 1] === "---", "Invalid front matter")
 
-  const { title, description, version, keywords } = yaml.parse(
-    lines.slice(1, -1).join("\n"),
-  )
+  const {
+    title,
+    description,
+    version,
+    keywords,
+    cyfrinLink = "",
+  } = yaml.parse(lines.slice(1, -1).join("\n"))
 
-  return { title, description, version, keywords }
+  return { title, description, version, keywords, cyfrinLink }
 }
 
 export async function parseYaml(filePath: string): Promise<{

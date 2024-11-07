@@ -2,6 +2,8 @@
 export const version = "0.8.26"
 export const title = "Data Locations - Storage, Memory and Calldata"
 export const description = "Data locations - storage, memory and calldata"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/data-locations-storage-memory-and-calldata-code-example"
 
 export const keywords = [
   "data",

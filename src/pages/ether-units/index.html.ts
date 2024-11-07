@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Ether and Wei"
 export const description = "An example of Ether and Wei in Solidity"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/ether-and-wei-code-example"
 
 export const keywords = ["data", "variables", "variable", "ether", "wei", "units"]
 

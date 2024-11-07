@@ -1,6 +1,6 @@
 import React from "react"
 import Example from "../../components/Example"
-import html, { version, title, description, codes } from "./index.html"
+import html, { version, title, description, cyfrinLink, codes } from "./index.html"
 
 interface Path {
   path: string
@@ -18,6 +18,7 @@ const ExamplePage: React.FC<Props> = ({ prev, next }) => {
       version={version}
       title={title}
       description={description}
+      cyfrinLink={cyfrinLink}
       html={html}
       prev={prev}
       next={next}

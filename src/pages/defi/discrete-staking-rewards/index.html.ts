@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Discrete Staking Rewards"
 export const description = "Discrete staking rewards"
+export const cyfrinLink = ""
 
 export const keywords = ["defi", "discrete", "staking", "reward", "rewards"]
 

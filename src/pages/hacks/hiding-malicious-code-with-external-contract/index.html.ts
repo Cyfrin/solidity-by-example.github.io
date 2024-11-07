@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Hiding Malicious Code with External Contract"
 export const description =
   "An example of exploit where malicious code is hidden in an external contract in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = [
   "hack",

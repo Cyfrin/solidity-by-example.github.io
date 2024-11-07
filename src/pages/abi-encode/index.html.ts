@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "ABI Encode"
 export const description = "ABI encode"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/abi-encode-code-example"
 
 export const keywords = [
   "abi",

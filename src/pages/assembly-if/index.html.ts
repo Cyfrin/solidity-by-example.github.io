@@ -2,6 +2,8 @@
 export const version = "0.8.26"
 export const title = "Assembly Conditional Statements"
 export const description = "Example of conditional statements in assembly"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/assembly-conditional-statements-code-example"
 
 export const keywords = ["assembly", "yul", "if", "switch"]
 

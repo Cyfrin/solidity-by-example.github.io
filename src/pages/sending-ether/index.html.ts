@@ -2,6 +2,8 @@
 export const version = "0.8.26"
 export const title = "Sending Ether (transfer, send, call)"
 export const description = "An example of sending Ether in Solidity"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/sending-ether-transfer-send-call-code-example"
 
 export const keywords = [
   "sending",

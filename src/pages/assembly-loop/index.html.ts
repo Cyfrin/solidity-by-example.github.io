@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Assembly Loop"
 export const description = "Example of loop in assembly"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/assembly-loop-code-example"
 
 export const keywords = ["assembly", "loop", "yul", "while", "for"]
 

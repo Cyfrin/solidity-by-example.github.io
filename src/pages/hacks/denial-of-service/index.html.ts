@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Denial of Service"
 export const description = "An example of denial of service hack in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "denial", "service"]
 

@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "EVM Storage"
 export const description = "Example of EVM storage in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = [
   "data",

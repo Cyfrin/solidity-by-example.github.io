@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Phishing with tx.origin"
 export const description = "An example of phishing with tx.origin in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "phishing", "tx.origin"]
 

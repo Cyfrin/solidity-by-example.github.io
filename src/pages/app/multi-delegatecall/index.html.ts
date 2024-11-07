@@ -3,6 +3,7 @@ export const version = "0.8.26"
 export const title = "Multi Delegatecall"
 export const description =
   "An example of contract to call multiple functions in a single transaction"
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "multi", "delegatecall"]
 

@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Multi Call"
 export const description = "An example of contract to aggregate multiple calls."
+export const cyfrinLink = ""
 
 export const keywords = ["app", "application", "multi", "call", "staticcall"]
 

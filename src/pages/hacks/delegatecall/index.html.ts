@@ -2,6 +2,7 @@
 export const version = "0.8.26"
 export const title = "Delegatecall"
 export const description = "An example of exploits using delegatecall in Solidity"
+export const cyfrinLink = ""
 
 export const keywords = ["hack", "security", "delegatecall"]
 
