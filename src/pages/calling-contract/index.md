@@ -3,6 +3,7 @@ title: Calling Other Contract
 version: 0.8.26
 description: In Solidity, contract can call other contracts in several ways
 keywords: [calling, other, contract, contracts, call, function, functions]
+cyfrinLink: https://www.cyfrin.io/glossary/calling-other-contract-code-example
 ---
 
 Contract can call other contracts in 2 ways.

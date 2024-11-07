@@ -18,6 +18,7 @@ keywords:
     uint,
     int,
   ]
+cyfrinLink: https://www.cyfrin.io/glossary/primitive-data-types-code-example
 ---
 
 Here we introduce you to some primitive data types available in Solidity.

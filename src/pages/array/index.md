@@ -3,6 +3,7 @@ title: Array
 version: 0.8.26
 description: Learn about arrays in Solidity
 keywords: [data, variable, variables, array, arrays]
+cyfrinLink: https://www.cyfrin.io/glossary/array-code-example
 ---
 
 Array can have a compile-time fixed size or a dynamic size.

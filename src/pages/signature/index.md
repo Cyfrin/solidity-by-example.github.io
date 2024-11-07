@@ -3,6 +3,7 @@ title: Verifying Signature
 version: 0.8.26
 description: An example of how to verify signatures in Solidity
 keywords: [cryptography, verify, verifying, signature, signatures, ecrecover]
+cyfrinLink: https://www.cyfrin.io/glossary/verifying-signature-code-example
 ---
 
 Messages can be signed off chain and then verified on chain using a smart contract.

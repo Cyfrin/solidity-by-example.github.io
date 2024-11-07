@@ -3,6 +3,7 @@ title: Interface
 version: 0.8.26
 description: An example of interface in Solidity
 keywords: [interface, interfaces, contract, contracts]
+cyfrinLink: https://www.cyfrin.io/glossary/interface-code-example
 ---
 
 You can interact with other contracts by declaring an `Interface`.

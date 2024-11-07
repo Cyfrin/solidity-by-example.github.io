@@ -18,6 +18,7 @@ interface Props {
   description: string
   version: "0.8.26"
   html: string
+  cyfrinLink?: string
   prev: Path | null
   next: Path | null
   codes: Code[]
@@ -27,6 +28,7 @@ const Example: React.FC<Props> = ({
   title,
   version,
   description,
+  cyfrinLink,
   html,
   prev,
   next,
@@ -40,6 +42,16 @@ const Example: React.FC<Props> = ({
       />
       <div className={styles.content}>
         <h2>{title}</h2>
+
+        {cyfrinLink ? (
+          <div>
+            For the most up to date version of this content, please see{" "}
+            <a href={cyfrinLink} target="__blank">
+              {title} (Code Example)
+            </a>{" "}
+            Cyfrin.io
+          </div>
+        ) : null}
 
         <Html html={html} />
 

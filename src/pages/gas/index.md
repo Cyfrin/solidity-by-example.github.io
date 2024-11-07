@@ -3,6 +3,7 @@ title: Gas
 version: 0.8.26
 description: Example of gas and gas limit in Solidity
 keywords: [gas]
+cyfrinLink: https://www.cyfrin.io/glossary/gas-and-gas-price-code-example
 ---
 
 ### How much `ether` do you need to pay for a transaction?

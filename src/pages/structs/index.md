@@ -3,6 +3,7 @@ title: Structs
 version: 0.8.26
 description: An example of how to use structs in Solidity
 keywords: [struct, structs, data, type, types, variable, variables]
+cyfrinLink: https://www.cyfrin.io/glossary/structs-code-example
 ---
 
 You can define your own type by creating a `struct`.

@@ -3,6 +3,7 @@ title: Error
 version: 0.8.26
 description: Example of how to throw errors in Solidity
 keywords: [error, errors, require, revert, assert]
+cyfrinLink: https://www.cyfrin.io/glossary/error-code-example
 ---
 
 An error will undo all changes made to the state during a transaction.

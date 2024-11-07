@@ -73,6 +73,7 @@ async function mdToHtml(filePath: string) {
       version: metadata.version,
       description: metadata.description,
       keywords: metadata.keywords,
+      cyfrinLink: metadata.cyfrinLink || "",
       codes: Object.entries(codes).map(([key, val]) => ({
         key: `${key}.sol`,
         val: Buffer.from(val).toString("base64"),

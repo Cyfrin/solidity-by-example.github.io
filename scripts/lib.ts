@@ -88,6 +88,7 @@ export interface Metadata {
   description: string
   version: string
   keywords: string[]
+  cyfrinLink?: string
 }
 
 function findIndexOfFrontMatter(lines: string[]): number {

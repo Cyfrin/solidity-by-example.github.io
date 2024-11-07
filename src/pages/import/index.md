@@ -3,6 +3,7 @@ title: Import
 version: 0.8.26
 description: Learn how to import other Solidity files
 keywords: [import]
+cyfrinLink: https://www.cyfrin.io/glossary/import-code-example
 ---
 
 You can import local and external files in Solidity.
