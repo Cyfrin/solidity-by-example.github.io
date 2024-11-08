@@ -19,7 +19,7 @@ contract Auth {
 contract AuthTest is Test {
 	Auth private auth;
 
-	function setUp() pubilc {
+	function setUp() public {
 		// owner = this contract
 		auth = new Auth();
 	}
