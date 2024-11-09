@@ -5,7 +5,7 @@ description: An example of contract to aggregate multiple calls.
 keywords: [app, application, multi, call, staticcall]
 ---
 
-An example of contract that aggregates multiple queries using a for loop and `staticcall`.
+An example of contract that aggregates multiple queries using a `for` loop and `staticcall`.
 
 ```solidity
 {{{MultiCall}}}

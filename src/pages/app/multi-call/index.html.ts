@@ -17,7 +17,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>An example of contract that aggregates multiple queries using a for loop and <code>staticcall</code>.</p>
+const html = `<p>An example of contract that aggregates multiple queries using a <code>for</code> loop and <code>staticcall</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
