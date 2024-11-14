@@ -54,7 +54,7 @@ solc src/pages/hello-world/HelloWorld.sol
 find src/pages/hacks -name "*.sol" solc {} \;
 find src/pages -type f -name "*.sol" -exec sh -c 'solc "$0"' {} \;
 
-## Mics ##
+## Misc ##
 # rename files
 find . -type f -name "index.test.js" -exec sh -c 'mv "$0" "${0%.test.js}.test.tsx"' {} \;
 ```
