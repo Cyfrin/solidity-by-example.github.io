@@ -6,7 +6,7 @@ keywords: [data, variable, variables, enum, import, imports]
 cyfrinLink: https://www.cyfrin.io/glossary/enum-code-example
 ---
 
-Solidity supports enumerables and they are useful to model choice and keep track of state.
+Solidity supports enums and they are useful to model choice and keep track of state.
 
 Enums can be declared outside of a contract.
 
