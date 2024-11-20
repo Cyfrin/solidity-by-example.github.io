@@ -3,6 +3,7 @@ title: English Auction
 version: 0.8.26
 description: An example of English auction in Solidity
 keywords: [app, application, english, auction, auctions]
+cyfrinLink: https://www.cyfrin.io/glossary/english-auction-solidity-code-example
 ---
 
 English auction for NFT.

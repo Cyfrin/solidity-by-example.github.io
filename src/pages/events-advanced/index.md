@@ -3,7 +3,7 @@ title: Events Advanced
 version: 0.8.26
 description: Advanced topics and concepts related to Solidity events
 keywords: [events, advanced, event-driven, monitoring, filtering, security]
-cyfrinLink: https://www.cyfrin.io/glossary/events-advanced-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/events-advanced-solidity-code-example
 ---
 
 This page covers advanced topics and use cases related to events in Solidity, building upon the basics covered in the [Events](../events) page.

@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/gas-and-gas-price-code-example"
+  "https://www.cyfrin.io/glossary/gas-and-gas-price-solidity-code-example"
 
 export const keywords = ["gas"]
 

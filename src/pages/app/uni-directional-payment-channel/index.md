@@ -3,6 +3,7 @@ title: Uni-Directional Payment Channel
 version: 0.8.26
 description: An example of uni-directional payment channels in Solidity
 keywords: [app, application, uni-directional, payment, channel, signature, cryptography]
+cyfrinLink: https://www.cyfrin.io/glossary/unidirectional-payment-channel-solidity-code-example
 ---
 
 Payment channels allow participants to repeatedly transfer Ether off chain.

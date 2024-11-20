@@ -3,7 +3,7 @@ title: Mapping
 version: 0.8.26
 description: Example of using mapping in Solidity
 keywords: [data, variable, variables, mapping]
-cyfrinLink: https://www.cyfrin.io/glossary/mapping-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/mapping-solidity-code-example
 ---
 
 Maps are created with the syntax `mapping(keyType => valueType)`.

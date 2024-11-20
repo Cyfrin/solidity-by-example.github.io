@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Primitive Data Types"
 export const description = "Primitive data types"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/primitive-data-types-code-example"
+  "https://www.cyfrin.io/glossary/primitive-data-types-solidity-code-example"
 
 export const keywords = [
   "primitive",

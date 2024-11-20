@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Events Advanced"
 export const description = "Advanced topics and concepts related to Solidity events"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/events-advanced-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/events-advanced-solidity-code-example"
 
 export const keywords = [
   "events",

@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Reading and Writing to a State Variable"
 export const description = "Reading and Writing to a State Variable"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/reading-and-writing-to-a-state-variable-code-example"
+  "https://www.cyfrin.io/glossary/reading-and-writing-to-a-state-variable-solidity-code-example"
 
 export const keywords = [
   "reading",

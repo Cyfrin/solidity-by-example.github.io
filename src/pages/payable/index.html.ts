@@ -2,7 +2,7 @@
 export const version = "0.8.26"
 export const title = "Payable"
 export const description = "An example of how to use the keyword payable in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/payable-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/payable-solidity-code-example"
 
 export const keywords = ["payable", "eth", "send", "ether"]
 

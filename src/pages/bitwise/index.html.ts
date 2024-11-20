@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Bitwise Operators"
 export const description = "Learn about bitwise operators in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/bitwise-operators-code-example"
+  "https://www.cyfrin.io/glossary/bitwise-operators-solidity-code-example"
 
 export const keywords = ["bitwise", "most", "significant", "bit", "assembly"]
 

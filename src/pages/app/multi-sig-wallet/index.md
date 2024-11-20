@@ -3,6 +3,7 @@ title: Multi-Sig Wallet
 version: 0.8.26
 description: An example of multi-sig wallet in Solidity
 keywords: [app, application, multi, sig, signature, wallet]
+cyfrinLink: https://www.cyfrin.io/glossary/multisig-wallet-solidity-code-example
 ---
 
 Let's create an multi-sig wallet. Here are the specifications.

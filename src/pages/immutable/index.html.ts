@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Immutable"
 export const description = "Immutable variables"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/immutable-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/immutable-solidity-code-example"
 
 export const keywords = [
   "constant",

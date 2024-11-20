@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Gasless Token Transfer"
 export const description = "Gasless ERC20 token transfer with Meta transaction"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/gasless-token-transfer-solidity-code-example"
 
 export const keywords = [
   "app",

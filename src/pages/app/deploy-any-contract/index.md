@@ -3,6 +3,7 @@ title: Deploy Any Contract
 version: 0.8.26
 description: Deploy Any Contract
 keywords: [app, application, deploy, any, contract]
+cyfrinLink: https://www.cyfrin.io/glossary/deploy-any-contract-solidity-code-example
 ---
 
 Deploy any contract by calling `Proxy.deploy(bytes memory _code)`

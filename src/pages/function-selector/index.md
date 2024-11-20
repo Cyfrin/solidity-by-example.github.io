@@ -3,7 +3,7 @@ title: Function Selector
 version: 0.8.26
 description: Example of how function selectors are computed
 keywords: [function, functions, selector, selectors]
-cyfrinLink: https://www.cyfrin.io/glossary/function-selector-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/function-selector-solidity-code-example
 ---
 
 When a function is called, the first 4 bytes of `calldata` specifies which function to call.

@@ -2,7 +2,7 @@
 export const version = "0.8.26"
 export const title = "If / Else"
 export const description = "If / Else conditional statement in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/if-else-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/if-else-solidity-code-example"
 
 export const keywords = ["if", "else", "conditional", "statement", "statements"]
 

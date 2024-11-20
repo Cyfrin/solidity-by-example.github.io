@@ -17,7 +17,7 @@ keywords:
     function,
     functions,
   ]
-cyfrinLink: https://www.cyfrin.io/glossary/sending-ether-transfer-send-call-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/sending-ether-transfer-send-call-solidity-code-example
 ---
 
 ### How to send Ether?

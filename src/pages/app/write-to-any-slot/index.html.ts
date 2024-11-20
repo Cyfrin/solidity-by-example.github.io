@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Write to Any Slot"
 export const description = "Write to Any Slot"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/write-to-any-slot-solidity-code-example"
 
 export const keywords = ["app", "application", "write", "any", "slot", "storage"]
 

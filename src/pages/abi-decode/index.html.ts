@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "ABI Decode"
 export const description = "ABI decode bytes"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/abi-decode-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/abi-decode-solidity-code-example"
 
 export const keywords = ["abi", "decode", "bytes"]
 

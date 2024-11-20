@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Function Selector"
 export const description = "Example of how function selectors are computed"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/function-selector-code-example"
+  "https://www.cyfrin.io/glossary/function-selector-solidity-code-example"
 
 export const keywords = ["function", "functions", "selector", "selectors"]
 

@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Interface"
 export const description = "An example of interface in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/interface-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/interface-solidity-code-example"
 
 export const keywords = ["interface", "interfaces", "contract", "contracts"]
 

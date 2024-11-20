@@ -3,7 +3,7 @@ title: Call
 version: 0.8.26
 description: In Solidity call is a low level function to interact with other contracts
 keywords: [contract, contracts, call, function, functions]
-cyfrinLink: https://www.cyfrin.io/glossary/call-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/call-solidity-code-example
 ---
 
 `call` is a low level function to interact with other contracts.

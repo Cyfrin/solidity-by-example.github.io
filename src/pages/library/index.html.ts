@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Library"
 export const description =
   "Example of how to write and use libraries in your Solidity code"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/library-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/library-solidity-code-example"
 
 export const keywords = ["library"]
 

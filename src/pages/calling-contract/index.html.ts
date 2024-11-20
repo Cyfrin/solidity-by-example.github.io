@@ -4,7 +4,7 @@ export const title = "Calling Other Contract"
 export const description =
   "In Solidity, contract can call other contracts in several ways"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/calling-other-contract-code-example"
+  "https://www.cyfrin.io/glossary/calling-other-contract-solidity-code-example"
 
 export const keywords = [
   "calling",

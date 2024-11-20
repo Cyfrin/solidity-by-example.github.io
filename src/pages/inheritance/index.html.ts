@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Inheritance"
 export const description = "Example of inheritance in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/inheritance-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/inheritance-solidity-code-example"
 
 export const keywords = [
   "inheritance",

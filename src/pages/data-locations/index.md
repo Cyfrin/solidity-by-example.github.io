@@ -3,7 +3,7 @@ title: Data Locations - Storage, Memory and Calldata
 version: 0.8.26
 description: Data locations - storage, memory and calldata
 keywords: [data, location, locations, storage, memory, calldata]
-cyfrinLink: https://www.cyfrin.io/glossary/data-locations-storage-memory-and-calldata-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/data-locations-storage-memory-and-calldata-solidity-code-example
 ---
 
 Variables are declared as either `storage`, `memory` or `calldata` to explicitly

@@ -4,7 +4,7 @@ export const title = "Contract that Creates other Contracts"
 export const description =
   "Learn how to create new contracts from inside of a contract with Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/contract-that-creates-other-contracts-code-example"
+  "https://www.cyfrin.io/glossary/contract-that-creates-other-contracts-solidity-code-example"
 
 export const keywords = [
   "new",

@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Calling Parent Contracts"
 export const description = "An example of calling parent contracts in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/calling-parent-contracts-code-example"
+  "https://www.cyfrin.io/glossary/calling-parent-contracts-solidity-code-example"
 
 export const keywords = [
   "calling",

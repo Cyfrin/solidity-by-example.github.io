@@ -2,7 +2,7 @@
 export const version = "0.8.26"
 export const title = "ERC721"
 export const description = "Example of ERC721 non fungible token in Solidity"
-export const cyfrinLink = ""
+export const cyfrinLink = "https://www.cyfrin.io/glossary/erc-721-solidity-code-example"
 
 export const keywords = ["app", "application", "erc721", "ierc721", "nft"]
 

@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Assembly Error"
 export const description = "Example of error in assembly"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/assembly-error-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/assembly-error-solidity-code-example"
 
 export const keywords = ["assembly", "yul", "error", "revert"]
 

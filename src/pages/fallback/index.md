@@ -3,7 +3,7 @@ title: Fallback
 version: 0.8.26
 description: Example of how to use fallback in Solidity
 keywords: [fallback, function, functions, receive, payable, send, ether, eth, transfer]
-cyfrinLink: https://www.cyfrin.io/glossary/fallback-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/fallback-solidity-code-example
 ---
 
 `fallback` is a special function that is executed either when

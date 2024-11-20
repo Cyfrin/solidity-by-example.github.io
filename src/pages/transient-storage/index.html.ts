@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Transient Storage"
 export const description = "transient storage"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/transient-storage-code-example"
+  "https://www.cyfrin.io/glossary/transient-storage-solidity-code-example"
 
 export const keywords = ["transient", "storage"]
 

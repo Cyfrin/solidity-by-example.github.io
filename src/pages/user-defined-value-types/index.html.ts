@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "User Defined Value Types"
 export const description = "User defined value types"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/user-defined-value-types-code-example"
+  "https://www.cyfrin.io/glossary/user-defined-value-types-solidity-code-example"
 
 export const keywords = ["data", "user", "defined", "value", "types", "udvt"]
 

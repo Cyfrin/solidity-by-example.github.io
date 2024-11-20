@@ -3,7 +3,7 @@ title: Enum
 version: 0.8.26
 description: Example of enums in Solidity
 keywords: [data, variable, variables, enum, import, imports]
-cyfrinLink: https://www.cyfrin.io/glossary/enum-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/enum-solidity-code-example
 ---
 
 Solidity supports enumerables and they are useful to model choice and keep track of state.

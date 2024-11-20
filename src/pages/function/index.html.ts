@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Function"
 export const description = "Example of how to write functions in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/function-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/function-solidity-code-example"
 
 export const keywords = ["function", "functions"]
 

@@ -3,6 +3,7 @@ title: Write to Any Slot
 version: 0.8.26
 description: Write to Any Slot
 keywords: [app, application, write, any, slot, storage]
+cyfrinLink: https://www.cyfrin.io/glossary/write-to-any-slot-solidity-code-example
 ---
 
 Solidity storage is like an array of length 2^256.

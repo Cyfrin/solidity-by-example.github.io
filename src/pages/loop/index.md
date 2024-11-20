@@ -3,7 +3,7 @@ title: For and While Loop
 version: 0.8.26
 description: Example of for and while loop in Solidity
 keywords: [for, loop, loops, while, do]
-cyfrinLink: https://www.cyfrin.io/glossary/for-and-while-loop-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/for-and-while-loop-solidity-code-example
 ---
 
 Solidity supports `for`, `while`, and `do while` loops.

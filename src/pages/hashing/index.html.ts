@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Hashing with Keccak256"
 export const description = "Example of hashing using Keccak256 in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/hashing-with-keccak256-code-example"
+  "https://www.cyfrin.io/glossary/hashing-with-keccak256-solidity-code-example"
 
 export const keywords = [
   "hash",

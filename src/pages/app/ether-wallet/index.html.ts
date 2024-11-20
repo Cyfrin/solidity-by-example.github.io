@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Ether Wallet"
 export const description = "Simple example of wallet in Solidity"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/ether-wallet-solidity-code-example"
 
 export const keywords = ["app", "application", "ether", "eth", "wallet"]
 

@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Function Modifier"
 export const description = "Example of how to write function modifier in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/function-modifier-code-example"
+  "https://www.cyfrin.io/glossary/function-modifier-solidity-code-example"
 
 export const keywords = ["function", "functions", "modifier", "modifiers", "_"]
 

@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Try Catch"
 export const description = "An example of try / catch in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/try-catch-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/try-catch-solidity-code-example"
 
 export const keywords = ["try", "catch", "error", "errors"]
 

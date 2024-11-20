@@ -3,7 +3,8 @@ export const version = "0.8.26"
 export const title = "Constructor"
 export const description =
   "Learn how to initialize smart contracts in Solidity using a constructor"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/constructor-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/constructor-solidity-code-example"
 
 export const keywords = ["constructor", "constructors", "contract", "inheritance"]
 

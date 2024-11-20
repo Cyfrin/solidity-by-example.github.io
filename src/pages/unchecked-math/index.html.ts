@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Unchecked Math"
 export const description = "An example of unchecked math in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/unchecked-math-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/unchecked-math-solidity-code-example"
 
 export const keywords = ["gas", "unchecked", "math", "overflow", "underflow"]
 

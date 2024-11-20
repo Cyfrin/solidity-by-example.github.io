@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Deploy Any Contract"
 export const description = "Deploy Any Contract"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/deploy-any-contract-solidity-code-example"
 
 export const keywords = ["app", "application", "deploy", "any", "contract"]
 

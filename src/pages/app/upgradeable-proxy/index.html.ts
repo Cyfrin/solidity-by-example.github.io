@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Upgradeable Proxy"
 export const description = "Example of upgradeable proxy"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/upgradeable-proxy-solidity-code-example"
 
 export const keywords = ["app", "application", "delegatecall", "upgradeable", "proxy"]
 

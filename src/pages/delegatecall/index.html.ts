@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Delegatecall"
 export const description = "Example of how to use deletegatecall in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/delegatecall-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/delegatecall-solidity-code-example"
 
 export const keywords = [
   "delegatecall",

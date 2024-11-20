@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Assembly Binary Exponentiation"
 export const description = "Example of binary exponentiation in assembly"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/assembly-binary-exponentiation-solidity-code-example"
 
 export const keywords = ["assembly", "yul", "binary", "exponentiation", "math"]
 

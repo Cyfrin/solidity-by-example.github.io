@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Constants"
 export const description = "Constant variables"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/constants-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/constants-solidity-code-example"
 
 export const keywords = ["constant", "constants", "data", "variable", "variables"]
 

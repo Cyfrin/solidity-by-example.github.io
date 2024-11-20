@@ -3,7 +3,7 @@ title: Variables
 version: 0.8.26
 description: Local, state and global variables
 keywords: [variable, variables, local, global, state, data]
-cyfrinLink: https://www.cyfrin.io/glossary/variables-code-example
+cyfrinLink: https://www.cyfrin.io/glossary/variables-solidity-code-example
 ---
 
 There are 3 types of variables in Solidity

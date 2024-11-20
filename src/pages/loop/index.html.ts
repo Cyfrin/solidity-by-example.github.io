@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "For and While Loop"
 export const description = "Example of for and while loop in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/for-and-while-loop-code-example"
+  "https://www.cyfrin.io/glossary/for-and-while-loop-solidity-code-example"
 
 export const keywords = ["for", "loop", "loops", "while", "do"]
 

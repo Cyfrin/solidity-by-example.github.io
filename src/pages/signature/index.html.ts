@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Verifying Signature"
 export const description = "An example of how to verify signatures in Solidity"
 export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/verifying-signature-code-example"
+  "https://www.cyfrin.io/glossary/verifying-signature-solidity-code-example"
 
 export const keywords = [
   "cryptography",

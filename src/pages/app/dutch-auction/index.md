@@ -3,6 +3,7 @@ title: Dutch Auction
 version: 0.8.26
 description: An example of Dutch auction in Solidity
 keywords: [app, application, dutch, auction, auctions]
+cyfrinLink: https://www.cyfrin.io/glossary/dutch-auction-solidity-code-example
 ---
 
 Dutch auction for NFT.

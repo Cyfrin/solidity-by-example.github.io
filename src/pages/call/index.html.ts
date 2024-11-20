@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Call"
 export const description =
   "In Solidity call is a low level function to interact with other contracts"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/call-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/call-solidity-code-example"
 
 export const keywords = ["contract", "contracts", "call", "function", "functions"]
 
