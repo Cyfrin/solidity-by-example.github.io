@@ -19,8 +19,9 @@ contract EtherGame {
 
     function claimReward() public {
         require(msg.sender == winner, "Not winner");
+        uint256 amount = balance;
         balance = 0;
-        (bool sent,) = msg.sender.call{value: balance}("");
+        (bool sent,) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
     }
 }
