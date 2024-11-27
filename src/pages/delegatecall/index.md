@@ -1,7 +1,7 @@
 ---
 title: Delegatecall
 version: 0.8.26
-description: Example of how to use deletegatecall in Solidity
+description: Example of how to use delegatecall in Solidity
 keywords: [delegatecall, call, contract, contracts, function, functions]
 cyfrinLink: https://www.cyfrin.io/glossary/delegatecall-solidity-code-example
 ---
