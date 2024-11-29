@@ -11,7 +11,7 @@ Most vaults on the mainnet are more complex. Here we will focus on the math for 
 
 ### How the contract works
 
-1. Some amount of shares are minted when an user deposits.
+1. Some amount of shares are minted when a user deposits.
 2. The DeFi protocol would use the users' deposits to generate yield (somehow).
 3. User burn shares to withdraw his tokens + yield.
 
