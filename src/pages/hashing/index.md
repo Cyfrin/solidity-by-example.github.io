@@ -10,7 +10,7 @@ cyfrinLink: https://www.cyfrin.io/glossary/hashing-with-keccak256-solidity-code-
 
 Some use cases are:
 
-- Creating a deterministic unique ID from a input
+- Creating a deterministic unique ID from an input
 - Commit-Reveal scheme
 - Compact cryptographic signature (by signing the hash instead of a larger input)
 
