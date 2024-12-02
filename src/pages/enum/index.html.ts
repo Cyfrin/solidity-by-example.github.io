@@ -21,7 +21,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>Solidity supports enumerables and they are useful to model choice and keep track of state.</p>
+const html = `<p>Solidity supports enums and they are useful to model choice and keep track of state.</p>
 <p>Enums can be declared outside of a contract.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>

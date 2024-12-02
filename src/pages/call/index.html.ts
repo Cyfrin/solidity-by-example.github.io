@@ -16,7 +16,7 @@ export const codes = [
 
 const html = `<p><code>call</code> is a low level function to interact with other contracts.</p>
 <p>This is the recommended method to use when you&#39;re just sending Ether via calling the <code>fallback</code> function.</p>
-<p>However it is not the recommend way to call existing functions.</p>
+<p>However it is not the recommended way to call existing functions.</p>
 <h3>Few reasons why low-level call is not recommended</h3>
 <ul>
 <li>Reverts are not bubbled up</li>
