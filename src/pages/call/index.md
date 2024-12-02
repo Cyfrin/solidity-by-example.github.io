@@ -10,7 +10,7 @@ cyfrinLink: https://www.cyfrin.io/glossary/call-solidity-code-example
 
 This is the recommended method to use when you're just sending Ether via calling the `fallback` function.
 
-However it is not the recommend way to call existing functions.
+However it is not the recommended way to call existing functions.
 
 ### Few reasons why low-level call is not recommended
 
