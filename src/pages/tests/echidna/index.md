@@ -24,7 +24,7 @@ Inside docker, your code will be stored at `/code`, in the root directory.
 
 ### Testing Time and Sender
 
-Echidna can fuzz timestamp. Range of timestamp is set in the configuration. Default is 7 days.
+Echidna can fuzz timestamps. Range of timestamp is set in the configuration. Default is 7 days.
 
 Contract callers can also be set in the configuration. Default accounts are
 
