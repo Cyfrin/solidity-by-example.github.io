@@ -13,7 +13,7 @@ Most vaults on the mainnet are more complex. Here we will focus on the math for 
 
 1. Some amount of shares are minted when a user deposits.
 2. The DeFi protocol would use the users' deposits to generate yield (somehow).
-3. User burn shares to withdraw his tokens + yield.
+3. User burns shares to withdraw his tokens + yield.
 
 ```solidity
 {{{Vault}}}
