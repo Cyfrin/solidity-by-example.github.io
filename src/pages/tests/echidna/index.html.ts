@@ -88,7 +88,7 @@ echidna TestEchidna.sol --contract TestAssert --test-mode assertion
     }
 }
 </code></pre><h3>Testing Time and Sender</h3>
-<p>Echidna can fuzz timestamp. Range of timestamp is set in the configuration. Default is 7 days.</p>
+<p>Echidna can fuzz timestamps. Range of timestamp is set in the configuration. Default is 7 days.</p>
 <p>Contract callers can also be set in the configuration. Default accounts are</p>
 <ul>
 <li><code>0x10000</code></li>

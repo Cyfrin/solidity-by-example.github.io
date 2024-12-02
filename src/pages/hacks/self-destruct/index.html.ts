@@ -14,7 +14,7 @@ export const codes = [
   },
   {
     fileName: "PreventForceEther.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEV0aGVyR2FtZSB7CiAgICB1aW50MjU2IHB1YmxpYyBjb25zdGFudCBUQVJHRVRfQU1PVU5UID0gNyBldGhlcjsKICAgIHVpbnQyNTYgcHVibGljIGJhbGFuY2U7CiAgICBhZGRyZXNzIHB1YmxpYyB3aW5uZXI7CgogICAgZnVuY3Rpb24gZGVwb3NpdCgpIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICByZXF1aXJlKG1zZy52YWx1ZSA9PSAxIGV0aGVyLCAiWW91IGNhbiBvbmx5IHNlbmQgMSBFdGhlciIpOwoKICAgICAgICBiYWxhbmNlICs9IG1zZy52YWx1ZTsKICAgICAgICByZXF1aXJlKGJhbGFuY2UgPD0gVEFSR0VUX0FNT1VOVCwgIkdhbWUgaXMgb3ZlciIpOwoKICAgICAgICBpZiAoYmFsYW5jZSA9PSBUQVJHRVRfQU1PVU5UKSB7CiAgICAgICAgICAgIHdpbm5lciA9IG1zZy5zZW5kZXI7CiAgICAgICAgfQogICAgfQoKICAgIGZ1bmN0aW9uIGNsYWltUmV3YXJkKCkgcHVibGljIHsKICAgICAgICByZXF1aXJlKG1zZy5zZW5kZXIgPT0gd2lubmVyLCAiTm90IHdpbm5lciIpOwogICAgICAgIGJhbGFuY2UgPSAwOwogICAgICAgIChib29sIHNlbnQsKSA9IG1zZy5zZW5kZXIuY2FsbHt2YWx1ZTogYmFsYW5jZX0oIiIpOwogICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CiAgICB9Cn0K",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEV0aGVyR2FtZSB7CiAgICB1aW50MjU2IHB1YmxpYyBjb25zdGFudCBUQVJHRVRfQU1PVU5UID0gNyBldGhlcjsKICAgIHVpbnQyNTYgcHVibGljIGJhbGFuY2U7CiAgICBhZGRyZXNzIHB1YmxpYyB3aW5uZXI7CgogICAgZnVuY3Rpb24gZGVwb3NpdCgpIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICByZXF1aXJlKG1zZy52YWx1ZSA9PSAxIGV0aGVyLCAiWW91IGNhbiBvbmx5IHNlbmQgMSBFdGhlciIpOwoKICAgICAgICBiYWxhbmNlICs9IG1zZy52YWx1ZTsKICAgICAgICByZXF1aXJlKGJhbGFuY2UgPD0gVEFSR0VUX0FNT1VOVCwgIkdhbWUgaXMgb3ZlciIpOwoKICAgICAgICBpZiAoYmFsYW5jZSA9PSBUQVJHRVRfQU1PVU5UKSB7CiAgICAgICAgICAgIHdpbm5lciA9IG1zZy5zZW5kZXI7CiAgICAgICAgfQogICAgfQoKICAgIGZ1bmN0aW9uIGNsYWltUmV3YXJkKCkgcHVibGljIHsKICAgICAgICByZXF1aXJlKG1zZy5zZW5kZXIgPT0gd2lubmVyLCAiTm90IHdpbm5lciIpOwogICAgICAgIHVpbnQyNTYgYW1vdW50ID0gYmFsYW5jZTsKICAgICAgICBiYWxhbmNlID0gMDsKICAgICAgICAoYm9vbCBzZW50LCkgPSBtc2cuc2VuZGVyLmNhbGx7dmFsdWU6IGFtb3VudH0oIiIpOwogICAgICAgIHJlcXVpcmUoc2VudCwgIkZhaWxlZCB0byBzZW5kIEV0aGVyIik7CiAgICB9Cn0K",
   },
 ]
 
@@ -105,8 +105,9 @@ Now no one can deposit and the winner cannot be set.
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">claimReward</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> winner, <span class="hljs-string">"Not winner"</span>);
+        <span class="hljs-keyword">uint256</span> amount <span class="hljs-operator">=</span> balance;
         balance <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
-        (<span class="hljs-keyword">bool</span> sent,) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: balance}(<span class="hljs-string">""</span>);
+        (<span class="hljs-keyword">bool</span> sent,) <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>.<span class="hljs-built_in">call</span>{<span class="hljs-built_in">value</span>: amount}(<span class="hljs-string">""</span>);
         <span class="hljs-built_in">require</span>(sent, <span class="hljs-string">"Failed to send Ether"</span>);
     }
 }

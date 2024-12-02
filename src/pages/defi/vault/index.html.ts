@@ -17,9 +17,9 @@ const html = `<p>Simple example of vault contract, commonly used in DeFi protoco
 <p>Most vaults on the mainnet are more complex. Here we will focus on the math for calculating shares to mint on deposit and the amount of token to withdraw.</p>
 <h3>How the contract works</h3>
 <ol>
-<li>Some amount of shares are minted when an user deposits.</li>
+<li>Some amount of shares are minted when a user deposits.</li>
 <li>The DeFi protocol would use the users&#39; deposits to generate yield (somehow).</li>
-<li>User burn shares to withdraw his tokens + yield.</li>
+<li>User burns shares to withdraw his tokens + yield.</li>
 </ol>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
