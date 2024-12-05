@@ -10,26 +10,39 @@
   min-width: var(--min-main-width);
   white-space: nowrap;
 }
+
 .a {
   text-decoration: none;
 }
+
 .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerInner {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .logo {
   margin: 0 5px 0 5px;
 }
+
 .header {
   margin: 0;
   margin-right: auto;
 }
+
 .mode {
   background-color: transparent;
   border: 0px;
   cursor: pointer;
 }
+
 .hamburger {
   cursor: pointer;
 }
