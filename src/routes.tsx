@@ -62,6 +62,15 @@ import component_evm_memory from "./pages/evm/memory"
 import component_evm_storage from "./pages/evm/storage"
 import component_fallback from "./pages/fallback"
 import component_first_app from "./pages/first-app"
+import component_foundry_auth from "./pages/foundry/auth"
+import component_foundry_basic from "./pages/foundry/basic"
+import component_foundry_error from "./pages/foundry/error"
+import component_foundry_event from "./pages/foundry/event"
+import component_foundry_label from "./pages/foundry/label"
+import component_foundry_mock_call from "./pages/foundry/mock-call"
+import component_foundry_send from "./pages/foundry/send"
+import component_foundry_sign from "./pages/foundry/sign"
+import component_foundry_time from "./pages/foundry/time"
 import component_function from "./pages/function"
 import component_function_modifier from "./pages/function-modifier"
 import component_function_selector from "./pages/function-selector"
@@ -385,6 +394,42 @@ const routes: Route[] = [
   {
     path: "/first-app",
     component: component_first_app,
+  },
+  {
+    path: "/foundry/auth",
+    component: component_foundry_auth,
+  },
+  {
+    path: "/foundry/basic",
+    component: component_foundry_basic,
+  },
+  {
+    path: "/foundry/error",
+    component: component_foundry_error,
+  },
+  {
+    path: "/foundry/event",
+    component: component_foundry_event,
+  },
+  {
+    path: "/foundry/label",
+    component: component_foundry_label,
+  },
+  {
+    path: "/foundry/mock-call",
+    component: component_foundry_mock_call,
+  },
+  {
+    path: "/foundry/send",
+    component: component_foundry_send,
+  },
+  {
+    path: "/foundry/sign",
+    component: component_foundry_sign,
+  },
+  {
+    path: "/foundry/time",
+    component: component_foundry_time,
   },
   {
     path: "/function",

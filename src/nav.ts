@@ -444,6 +444,45 @@ export const TEST_ROUTES: Route[] = [
   },
 ]
 
+export const FOUNDRY_ROUTES: Route[] = [
+  {
+    path: "basic",
+    title: "Basic",
+  },
+  {
+    path: "auth",
+    title: "Authorization",
+  },
+  {
+    path: "error",
+    title: "Error",
+  },
+  {
+    path: "event",
+    title: "Event",
+  },
+  {
+    path: "send",
+    title: "Send",
+  },
+  {
+    path: "time",
+    title: "Time",
+  },
+  {
+    path: "sign",
+    title: "Sign",
+  },
+  {
+    path: "label",
+    title: "Label",
+  },
+  {
+    path: "mock-call",
+    title: "Mock Call",
+  },
+]
+
 export const DEFI_ROUTES = [
   {
     path: "uniswap-v2",
@@ -545,6 +584,13 @@ export const ROUTES_BY_CATEGORY = [
     routes: TEST_ROUTES.map((route) => ({
       ...route,
       path: `/tests/${route.path}`,
+    })),
+  },
+  {
+    title: "Foundry",
+    routes: FOUNDRY_ROUTES.map((route) => ({
+      ...route,
+      path: `/foundry/${route.path}`,
     })),
   },
   {
