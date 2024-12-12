@@ -108,7 +108,7 @@ contract SecuredFindThisHash {
             commit.commitTime < block.timestamp,
             "Cannot reveal in the same block"
         );
-        require(!commit.revealed, "Already commited and revealed");
+        require(!commit.revealed, "Already committed and revealed");
 
         bytes32 solutionHash =
             keccak256(abi.encodePacked(msg.sender, _solution, _secret));

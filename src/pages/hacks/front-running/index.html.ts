@@ -182,7 +182,7 @@ before the original.
             commit.commitTime <span class="hljs-operator">&lt;</span> <span class="hljs-built_in">block</span>.<span class="hljs-built_in">timestamp</span>,
             <span class="hljs-string">"Cannot reveal in the same block"</span>
         );
-        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>commit.revealed, <span class="hljs-string">"Already commited and revealed"</span>);
+        <span class="hljs-built_in">require</span>(<span class="hljs-operator">!</span>commit.revealed, <span class="hljs-string">"Already committed and revealed"</span>);
 
         <span class="hljs-keyword">bytes32</span> solutionHash <span class="hljs-operator">=</span>
             <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>, _solution, _secret));

@@ -61,7 +61,7 @@ contract Proposal {
     event Log(string message);
 
     function executeProposal() external {
-        emit Log("Excuted code approved by DAO");
+        emit Log("Executed code approved by DAO");
     }
 
     function emergencyStop() external {
@@ -75,7 +75,7 @@ contract Attack {
     address public owner;
 
     function executeProposal() external {
-        emit Log("Excuted code not approved by DAO :)");
+        emit Log("Executed code not approved by DAO :)");
         // For example - set DAO's owner to attacker
         owner = msg.sender;
     }

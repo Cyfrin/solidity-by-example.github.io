@@ -258,7 +258,7 @@ const html = `<p>Examples of</p>
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encode</span>(addr);
     }
 
-    <span class="hljs-comment">// Fixed sized bytes -&gt; zero padded on the righ side</span>
+    <span class="hljs-comment">// Fixed sized bytes -&gt; zero padded on the right side</span>
     <span class="hljs-comment">// 0xaabbccdd00000000000000000000000000000000000000000000000000000000</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">encode_bytes4</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>) </span>{
         <span class="hljs-keyword">bytes4</span> b4 <span class="hljs-operator">=</span> <span class="hljs-number">0xaabbccdd</span>;

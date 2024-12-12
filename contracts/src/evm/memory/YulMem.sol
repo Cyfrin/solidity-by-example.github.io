@@ -237,7 +237,7 @@ contract ABIEncode {
         return abi.encode(addr);
     }
 
-    // Fixed sized bytes -> zero padded on the righ side
+    // Fixed sized bytes -> zero padded on the right side
     // 0xaabbccdd00000000000000000000000000000000000000000000000000000000
     function encode_bytes4() public pure returns (bytes memory) {
         bytes4 b4 = 0xaabbccdd;

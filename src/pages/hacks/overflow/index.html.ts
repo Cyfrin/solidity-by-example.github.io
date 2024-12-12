@@ -23,7 +23,7 @@ const html = `<h3>Vulnerability</h3>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.7.6;</span>
 
 <span class="hljs-comment">// This contract is designed to act as a time vault.</span>
-<span class="hljs-comment">// User can deposit into this contract but cannot withdraw for atleast a week.</span>
+<span class="hljs-comment">// User can deposit into this contract but cannot withdraw for at least a week.</span>
 <span class="hljs-comment">// User can also extend the wait time beyond the 1 week waiting period.</span>
 
 <span class="hljs-comment">/*
