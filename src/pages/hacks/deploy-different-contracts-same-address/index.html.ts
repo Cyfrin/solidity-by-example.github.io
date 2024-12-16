@@ -93,7 +93,7 @@ DeployerDeployer -- create2 --&gt; Deployer -- create --&gt; Attack
     <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">Log</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> message</span>)</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">executeProposal</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-keyword">emit</span> Log(<span class="hljs-string">"Excuted code approved by DAO"</span>);
+        <span class="hljs-keyword">emit</span> Log(<span class="hljs-string">"Executed code approved by DAO"</span>);
     }
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">emergencyStop</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
@@ -107,7 +107,7 @@ DeployerDeployer -- create2 --&gt; Deployer -- create --&gt; Attack
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> owner;
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">executeProposal</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
-        <span class="hljs-keyword">emit</span> Log(<span class="hljs-string">"Excuted code not approved by DAO :)"</span>);
+        <span class="hljs-keyword">emit</span> Log(<span class="hljs-string">"Executed code not approved by DAO :)"</span>);
         <span class="hljs-comment">// For example - set DAO&#x27;s owner to attacker</span>
         owner <span class="hljs-operator">=</span> <span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>;
     }
