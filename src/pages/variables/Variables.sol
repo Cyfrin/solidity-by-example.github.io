@@ -6,7 +6,7 @@ contract Variables {
     string public text = "Hello";
     uint256 public num = 123;
 
-    function doSomething() public {
+    function doSomething() public view {
         // Local variables are not saved to the blockchain.
         uint256 i = 456;
 
