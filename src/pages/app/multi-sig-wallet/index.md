@@ -6,7 +6,7 @@ keywords: [app, application, multi, sig, signature, wallet]
 cyfrinLink: https://www.cyfrin.io/glossary/multisig-wallet-solidity-code-example
 ---
 
-Let's create an multi-sig wallet. Here are the specifications.
+Let's create a multi-sig wallet. Here are the specifications.
 
 The wallet owners can
 
