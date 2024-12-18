@@ -11,7 +11,7 @@ cyfrinLink: https://www.cyfrin.io/glossary/fallback-solidity-code-example
 - a function that does not exist is called or
 - Ether is sent directly to a contract but `receive()` does not exist or `msg.data` is not empty
 
-To better understand the conditions under which Solidity calls the receive or fallback function, refer to the flowchart below:
+To better understand the conditions under which Solidity calls the `receive` or `fallback` function, refer to the flowchart below:
 
 ```
                  send Ether
