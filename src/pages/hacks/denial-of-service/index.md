@@ -19,7 +19,7 @@ One exploit we introduce here is denial of service by making the function to sen
 
 One way to prevent this is to allow the users to withdraw their Ether instead of sending it.
 
-Here is a example.
+Here is an example.
 
 ```solidity
 {{{PreventDenialOfService}}}

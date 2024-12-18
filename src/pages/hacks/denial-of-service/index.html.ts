@@ -80,7 +80,7 @@ Ether sent from KingOfEther before the new king is set.
 }
 </code></pre><h3>Preventative Techniques</h3>
 <p>One way to prevent this is to allow the users to withdraw their Ether instead of sending it.</p>
-<p>Here is a example.</p>
+<p>Here is an example.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 

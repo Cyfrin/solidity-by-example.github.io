@@ -104,7 +104,7 @@ Here is how the functions were called
 <li>Ensure all state changes happen before calling external contracts</li>
 <li>Use function modifiers that prevent re-entrancy</li>
 </ul>
-<p>Here is a example of a re-entracy guard</p>
+<p>Here is an example of a re-entracy guard</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
