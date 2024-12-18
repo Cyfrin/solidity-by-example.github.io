@@ -18,7 +18,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>Let&#39;s create an multi-sig wallet. Here are the specifications.</p>
+const html = `<p>Let&#39;s create a multi-sig wallet. Here are the specifications.</p>
 <p>The wallet owners can</p>
 <ul>
 <li>submit a transaction</li>
