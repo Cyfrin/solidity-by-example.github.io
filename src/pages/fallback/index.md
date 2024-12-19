@@ -26,7 +26,7 @@ To better understand the conditions under which Solidity calls the `receive` or 
       |            |
   receive()     fallback()
 ```
-  
+
 `fallback` has a 2300 gas limit when called by `transfer` or `send`.
 
 ```solidity

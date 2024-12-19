@@ -33,7 +33,19 @@ const html = `<p><code>fallback</code> is a special function that is executed ei
 <li>a function that does not exist is called or</li>
 <li>Ether is sent directly to a contract but <code>receive()</code> does not exist or <code>msg.data</code> is not empty</li>
 </ul>
-<p><code>fallback</code> has a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
+<p>To better understand the conditions under which Solidity calls the <code>receive</code> or <code>fallback</code> function, refer to the flowchart below:</p>
+<pre><code>                 send Ether
+                      |
+           msg.data is empty?
+                /           \\
+            yes             no
+             |                |
+    receive() exists?     fallback()
+        /        \\
+     yes          no
+      |            |
+  receive()     fallback()
+</code></pre><p><code>fallback</code> has a 2300 gas limit when called by <code>transfer</code> or <code>send</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
