@@ -20,10 +20,14 @@ contract A {
     address public sender;
     uint256 public value;
 
+    event DelegateResponse(bool success, bytes data);
+
     function setVars(address _contract, uint256 _num) public payable {
         // A's storage is set, B is not modified.
         (bool success, bytes memory data) = _contract.delegatecall(
             abi.encodeWithSignature("setVars(uint256)", _num)
         );
+
+        emit DelegateResponse(success, data);
     }
 }
