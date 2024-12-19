@@ -12,7 +12,7 @@ interface ITest {
     function test() external;
 }
 
-// Contract for testing TestStorage and TestTransientStorage 
+// Contract for testing TestStorage and TestTransientStorage
 // Shows the difference between normal storage and transient storage
 contract Callback {
     uint256 public val;

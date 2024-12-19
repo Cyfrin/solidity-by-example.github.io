@@ -17,7 +17,7 @@ export const keywords = [
 export const codes = [
   {
     fileName: "Delegatecall.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCi8vIE5PVEU6IERlcGxveSB0aGlzIGNvbnRyYWN0IGZpcnN0CmNvbnRyYWN0IEIgewogICAgLy8gTk9URTogc3RvcmFnZSBsYXlvdXQgbXVzdCBiZSB0aGUgc2FtZSBhcyBjb250cmFjdCBBCiAgICB1aW50MjU2IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50MjU2IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKHVpbnQyNTYgX251bSkgcHVibGljIHBheWFibGUgewogICAgICAgIG51bSA9IF9udW07CiAgICAgICAgc2VuZGVyID0gbXNnLnNlbmRlcjsKICAgICAgICB2YWx1ZSA9IG1zZy52YWx1ZTsKICAgIH0KfQoKY29udHJhY3QgQSB7CiAgICB1aW50MjU2IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50MjU2IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKGFkZHJlc3MgX2NvbnRyYWN0LCB1aW50MjU2IF9udW0pIHB1YmxpYyBwYXlhYmxlIHsKICAgICAgICAvLyBBJ3Mgc3RvcmFnZSBpcyBzZXQsIEIgaXMgbm90IG1vZGlmaWVkLgogICAgICAgIChib29sIHN1Y2Nlc3MsIGJ5dGVzIG1lbW9yeSBkYXRhKSA9IF9jb250cmFjdC5kZWxlZ2F0ZWNhbGwoCiAgICAgICAgICAgIGFiaS5lbmNvZGVXaXRoU2lnbmF0dXJlKCJzZXRWYXJzKHVpbnQyNTYpIiwgX251bSkKICAgICAgICApOwogICAgfQp9Cg==",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCi8vIE5PVEU6IERlcGxveSB0aGlzIGNvbnRyYWN0IGZpcnN0CmNvbnRyYWN0IEIgewogICAgLy8gTk9URTogc3RvcmFnZSBsYXlvdXQgbXVzdCBiZSB0aGUgc2FtZSBhcyBjb250cmFjdCBBCiAgICB1aW50MjU2IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50MjU2IHB1YmxpYyB2YWx1ZTsKCiAgICBmdW5jdGlvbiBzZXRWYXJzKHVpbnQyNTYgX251bSkgcHVibGljIHBheWFibGUgewogICAgICAgIG51bSA9IF9udW07CiAgICAgICAgc2VuZGVyID0gbXNnLnNlbmRlcjsKICAgICAgICB2YWx1ZSA9IG1zZy52YWx1ZTsKICAgIH0KfQoKY29udHJhY3QgQSB7CiAgICB1aW50MjU2IHB1YmxpYyBudW07CiAgICBhZGRyZXNzIHB1YmxpYyBzZW5kZXI7CiAgICB1aW50MjU2IHB1YmxpYyB2YWx1ZTsKCiAgICBldmVudCBEZWxlZ2F0ZVJlc3BvbnNlKGJvb2wgc3VjY2VzcywgYnl0ZXMgZGF0YSk7CgogICAgZnVuY3Rpb24gc2V0VmFycyhhZGRyZXNzIF9jb250cmFjdCwgdWludDI1NiBfbnVtKSBwdWJsaWMgcGF5YWJsZSB7CiAgICAgICAgLy8gQSdzIHN0b3JhZ2UgaXMgc2V0LCBCIGlzIG5vdCBtb2RpZmllZC4KICAgICAgICAoYm9vbCBzdWNjZXNzLCBieXRlcyBtZW1vcnkgZGF0YSkgPSBfY29udHJhY3QuZGVsZWdhdGVjYWxsKAogICAgICAgICAgICBhYmkuZW5jb2RlV2l0aFNpZ25hdHVyZSgic2V0VmFycyh1aW50MjU2KSIsIF9udW0pCiAgICAgICAgKTsKCiAgICAgICAgZW1pdCBEZWxlZ2F0ZVJlc3BvbnNlKHN1Y2Nlc3MsIGRhdGEpOwogICAgfQp9Cg==",
   },
 ]
 
@@ -46,11 +46,15 @@ const html = `<p><code>delegatecall</code> is a low level function similar to <c
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> sender;
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> value;
 
+    <span class="hljs-function"><span class="hljs-keyword">event</span> <span class="hljs-title">DelegateResponse</span>(<span class="hljs-params"><span class="hljs-keyword">bool</span> success, <span class="hljs-keyword">bytes</span> data</span>)</span>;
+
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVars</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _contract, <span class="hljs-keyword">uint256</span> _num</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">payable</span></span> </span>{
         <span class="hljs-comment">// A&#x27;s storage is set, B is not modified.</span>
         (<span class="hljs-keyword">bool</span> success, <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> data) <span class="hljs-operator">=</span> _contract.<span class="hljs-built_in">delegatecall</span>(
             <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"setVars(uint256)"</span>, _num)
         );
+
+        <span class="hljs-keyword">emit</span> DelegateResponse(success, data);
     }
 }
 </code></pre>`

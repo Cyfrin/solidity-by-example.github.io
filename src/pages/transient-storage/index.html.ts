@@ -10,7 +10,7 @@ export const keywords = ["transient", "storage"]
 export const codes = [
   {
     fileName: "TransientStorage.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCi8vIE1ha2Ugc3VyZSBFVk0gdmVyc2lvbiBhbmQgVk0gc2V0IHRvIENhbmN1bgoKLy8gU3RvcmFnZSAtIGRhdGEgaXMgc3RvcmVkIG9uIHRoZSBibG9ja2NoYWluCi8vIE1lbW9yeSAtIGRhdGEgaXMgY2xlYXJlZCBvdXQgYWZ0ZXIgYSBmdW5jdGlvbiBjYWxsCi8vIFRyYW5zaWVudCBzdG9yYWdlIC0gZGF0YSBpcyBjbGVhcmVkIG91dCBhZnRlciBhIHRyYW5zYWN0aW9uCgppbnRlcmZhY2UgSVRlc3QgewogICAgZnVuY3Rpb24gdmFsKCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50MjU2KTsKICAgIGZ1bmN0aW9uIHRlc3QoKSBleHRlcm5hbDsKfQoKY29udHJhY3QgQ2FsbGJhY2sgewogICAgdWludDI1NiBwdWJsaWMgdmFsOwoKICAgIGZhbGxiYWNrKCkgZXh0ZXJuYWwgewogICAgICAgIHZhbCA9IElUZXN0KG1zZy5zZW5kZXIpLnZhbCgpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3QoYWRkcmVzcyB0YXJnZXQpIGV4dGVybmFsIHsKICAgICAgICBJVGVzdCh0YXJnZXQpLnRlc3QoKTsKICAgIH0KfQoKY29udHJhY3QgVGVzdFN0b3JhZ2UgewogICAgdWludDI1NiBwdWJsaWMgdmFsOwoKICAgIGZ1bmN0aW9uIHRlc3QoKSBwdWJsaWMgewogICAgICAgIHZhbCA9IDEyMzsKICAgICAgICBieXRlcyBtZW1vcnkgYiA9ICIiOwogICAgICAgIG1zZy5zZW5kZXIuY2FsbChiKTsKICAgIH0KfQoKY29udHJhY3QgVGVzdFRyYW5zaWVudFN0b3JhZ2UgewogICAgYnl0ZXMzMiBjb25zdGFudCBTTE9UID0gMDsKCiAgICBmdW5jdGlvbiB0ZXN0KCkgcHVibGljIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIHRzdG9yZShTTE9ULCAzMjEpCiAgICAgICAgfQogICAgICAgIGJ5dGVzIG1lbW9yeSBiID0gIiI7CiAgICAgICAgbXNnLnNlbmRlci5jYWxsKGIpOwogICAgfQoKICAgIGZ1bmN0aW9uIHZhbCgpIHB1YmxpYyB2aWV3IHJldHVybnMgKHVpbnQyNTYgdikgewogICAgICAgIGFzc2VtYmx5IHsKICAgICAgICAgICAgdiA6PSB0bG9hZChTTE9UKQogICAgICAgIH0KICAgIH0KfQoKY29udHJhY3QgUmVlbnRyYW5jeUd1YXJkIHsKICAgIGJvb2wgcHJpdmF0ZSBsb2NrZWQ7CgogICAgbW9kaWZpZXIgbG9jaygpIHsKICAgICAgICByZXF1aXJlKCFsb2NrZWQpOwogICAgICAgIGxvY2tlZCA9IHRydWU7CiAgICAgICAgXzsKICAgICAgICBsb2NrZWQgPSBmYWxzZTsKICAgIH0KCiAgICAvLyAzNTMxMyBnYXMKICAgIGZ1bmN0aW9uIHRlc3QoKSBwdWJsaWMgbG9jayB7CiAgICAgICAgLy8gSWdub3JlIGNhbGwgZXJyb3IKICAgICAgICBieXRlcyBtZW1vcnkgYiA9ICIiOwogICAgICAgIG1zZy5zZW5kZXIuY2FsbChiKTsKICAgIH0KfQoKY29udHJhY3QgUmVlbnRyYW5jeUd1YXJkVHJhbnNpZW50IHsKICAgIGJ5dGVzMzIgY29uc3RhbnQgU0xPVCA9IDA7CgogICAgbW9kaWZpZXIgbG9jaygpIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIGlmIHRsb2FkKFNMT1QpIHsgcmV2ZXJ0KDAsIDApIH0KICAgICAgICAgICAgdHN0b3JlKFNMT1QsIDEpCiAgICAgICAgfQogICAgICAgIF87CiAgICAgICAgYXNzZW1ibHkgewogICAgICAgICAgICB0c3RvcmUoU0xPVCwgMCkKICAgICAgICB9CiAgICB9CgogICAgLy8gMjE4ODcgZ2FzCiAgICBmdW5jdGlvbiB0ZXN0KCkgZXh0ZXJuYWwgbG9jayB7CiAgICAgICAgLy8gSWdub3JlIGNhbGwgZXJyb3IKICAgICAgICBieXRlcyBtZW1vcnkgYiA9ICIiOwogICAgICAgIG1zZy5zZW5kZXIuY2FsbChiKTsKICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCi8vIE1ha2Ugc3VyZSBFVk0gdmVyc2lvbiBhbmQgVk0gc2V0IHRvIENhbmN1bgoKLy8gU3RvcmFnZSAtIGRhdGEgaXMgc3RvcmVkIG9uIHRoZSBibG9ja2NoYWluCi8vIE1lbW9yeSAtIGRhdGEgaXMgY2xlYXJlZCBvdXQgYWZ0ZXIgYSBmdW5jdGlvbiBjYWxsCi8vIFRyYW5zaWVudCBzdG9yYWdlIC0gZGF0YSBpcyBjbGVhcmVkIG91dCBhZnRlciBhIHRyYW5zYWN0aW9uCgppbnRlcmZhY2UgSVRlc3QgewogICAgZnVuY3Rpb24gdmFsKCkgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50MjU2KTsKICAgIGZ1bmN0aW9uIHRlc3QoKSBleHRlcm5hbDsKfQoKLy8gQ29udHJhY3QgZm9yIHRlc3RpbmcgVGVzdFN0b3JhZ2UgYW5kIFRlc3RUcmFuc2llbnRTdG9yYWdlCi8vIFNob3dzIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gbm9ybWFsIHN0b3JhZ2UgYW5kIHRyYW5zaWVudCBzdG9yYWdlCmNvbnRyYWN0IENhbGxiYWNrIHsKICAgIHVpbnQyNTYgcHVibGljIHZhbDsKCiAgICBmYWxsYmFjaygpIGV4dGVybmFsIHsKICAgICAgICB2YWwgPSBJVGVzdChtc2cuc2VuZGVyKS52YWwoKTsKICAgIH0KCiAgICBmdW5jdGlvbiB0ZXN0KGFkZHJlc3MgdGFyZ2V0KSBleHRlcm5hbCB7CiAgICAgICAgSVRlc3QodGFyZ2V0KS50ZXN0KCk7CiAgICB9Cn0KCmNvbnRyYWN0IFRlc3RTdG9yYWdlIHsKICAgIHVpbnQyNTYgcHVibGljIHZhbDsKCiAgICBmdW5jdGlvbiB0ZXN0KCkgcHVibGljIHsKICAgICAgICB2YWwgPSAxMjM7CiAgICAgICAgYnl0ZXMgbWVtb3J5IGIgPSAiIjsKICAgICAgICBtc2cuc2VuZGVyLmNhbGwoYik7CiAgICB9Cn0KCmNvbnRyYWN0IFRlc3RUcmFuc2llbnRTdG9yYWdlIHsKICAgIGJ5dGVzMzIgY29uc3RhbnQgU0xPVCA9IDA7CgogICAgZnVuY3Rpb24gdGVzdCgpIHB1YmxpYyB7CiAgICAgICAgYXNzZW1ibHkgewogICAgICAgICAgICB0c3RvcmUoU0xPVCwgMzIxKQogICAgICAgIH0KICAgICAgICBieXRlcyBtZW1vcnkgYiA9ICIiOwogICAgICAgIG1zZy5zZW5kZXIuY2FsbChiKTsKICAgIH0KCiAgICBmdW5jdGlvbiB2YWwoKSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50MjU2IHYpIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIHYgOj0gdGxvYWQoU0xPVCkKICAgICAgICB9CiAgICB9Cn0KCi8vIENvbnRyYWN0IGZvciB0ZXN0aW5nIHJlZW50cmFuY3kgcHJvdGVjdGlvbgpjb250cmFjdCBNYWxpY2lvdXNDYWxsYmFjayB7CiAgICB1aW50MjU2IHB1YmxpYyBjb3VudCA9IDA7CgogICAgLy8gVHJ5IHRvIHJlZW50ZXIgdGhlIHRhcmdldCBjb250cmFjdCBtdWx0aXBsZSB0aW1lcwogICAgZmFsbGJhY2soKSBleHRlcm5hbCB7CiAgICAgICAgSVRlc3QobXNnLnNlbmRlcikudGVzdCgpOwogICAgfQoKICAgIC8vIFRlc3QgZnVuY3Rpb24gdG8gaW5pdGlhdGUgcmVlbnRyYW5jZSBhdHRhY2sKICAgIGZ1bmN0aW9uIGF0dGFjayhhZGRyZXNzIF90YXJnZXQpIGV4dGVybmFsIHsKICAgICAgICAvLyBGaXJzdCBjYWxsIHRvIHRlc3QoKQogICAgICAgIElUZXN0KF90YXJnZXQpLnRlc3QoKTsKICAgIH0KfQoKY29udHJhY3QgUmVlbnRyYW5jeUd1YXJkIHsKICAgIGJvb2wgcHJpdmF0ZSBsb2NrZWQ7CgogICAgbW9kaWZpZXIgbG9jaygpIHsKICAgICAgICByZXF1aXJlKCFsb2NrZWQpOwogICAgICAgIGxvY2tlZCA9IHRydWU7CiAgICAgICAgXzsKICAgICAgICBsb2NrZWQgPSBmYWxzZTsKICAgIH0KCiAgICAvLyAyNzU4NyBnYXMKICAgIGZ1bmN0aW9uIHRlc3QoKSBwdWJsaWMgbG9jayB7CiAgICAgICAgLy8gSWdub3JlIGNhbGwgZXJyb3IKICAgICAgICBieXRlcyBtZW1vcnkgYiA9ICIiOwogICAgICAgIG1zZy5zZW5kZXIuY2FsbChiKTsKICAgIH0KfQoKY29udHJhY3QgUmVlbnRyYW5jeUd1YXJkVHJhbnNpZW50IHsKICAgIGJ5dGVzMzIgY29uc3RhbnQgU0xPVCA9IDA7CgogICAgbW9kaWZpZXIgbG9jaygpIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIGlmIHRsb2FkKFNMT1QpIHsgcmV2ZXJ0KDAsIDApIH0KICAgICAgICAgICAgdHN0b3JlKFNMT1QsIDEpCiAgICAgICAgfQogICAgICAgIF87CiAgICAgICAgYXNzZW1ibHkgewogICAgICAgICAgICB0c3RvcmUoU0xPVCwgMCkKICAgICAgICB9CiAgICB9CgogICAgLy8gNDkwOSBnYXMKICAgIGZ1bmN0aW9uIHRlc3QoKSBleHRlcm5hbCBsb2NrIHsKICAgICAgICAvLyBJZ25vcmUgY2FsbCBlcnJvcgogICAgICAgIGJ5dGVzIG1lbW9yeSBiID0gIiI7CiAgICAgICAgbXNnLnNlbmRlci5jYWxsKGIpOwogICAgfQp9Cg==",
   },
 ]
 
@@ -29,6 +29,8 @@ const html = `<p>Data stored in transient storage is cleared out after transacti
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span></span>;
 }
 
+<span class="hljs-comment">// Contract for testing TestStorage and TestTransientStorage</span>
+<span class="hljs-comment">// Shows the difference between normal storage and transient storage</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">Callback</span> </span>{
     <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> val;
 
@@ -69,6 +71,22 @@ const html = `<p>Data stored in transient storage is cleared out after transacti
     }
 }
 
+<span class="hljs-comment">// Contract for testing reentrancy protection</span>
+<span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">MaliciousCallback</span> </span>{
+    <span class="hljs-keyword">uint256</span> <span class="hljs-keyword">public</span> count <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// Try to reenter the target contract multiple times</span>
+    <span class="hljs-function"><span class="hljs-keyword">fallback</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
+        ITest(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span>).test();
+    }
+
+    <span class="hljs-comment">// Test function to initiate reentrance attack</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attack</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _target</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
+        <span class="hljs-comment">// First call to test()</span>
+        ITest(_target).test();
+    }
+}
+
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">ReentrancyGuard</span> </span>{
     <span class="hljs-keyword">bool</span> <span class="hljs-keyword">private</span> locked;
 
@@ -79,7 +97,7 @@ const html = `<p>Data stored in transient storage is cleared out after transacti
         locked <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;
     }
 
-    <span class="hljs-comment">// 35313 gas</span>
+    <span class="hljs-comment">// 27587 gas</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title">lock</span> </span>{
         <span class="hljs-comment">// Ignore call error</span>
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> b <span class="hljs-operator">=</span> <span class="hljs-string">""</span>;
@@ -101,7 +119,7 @@ const html = `<p>Data stored in transient storage is cleared out after transacti
         }
     }
 
-    <span class="hljs-comment">// 21887 gas</span>
+    <span class="hljs-comment">// 4909 gas</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> <span class="hljs-title">lock</span> </span>{
         <span class="hljs-comment">// Ignore call error</span>
         <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span> b <span class="hljs-operator">=</span> <span class="hljs-string">""</span>;
