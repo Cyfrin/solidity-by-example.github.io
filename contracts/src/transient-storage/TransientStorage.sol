@@ -12,6 +12,8 @@ interface ITest {
     function test() external;
 }
 
+// Contract for testing TestStorage and TestTransientStorage 
+// Shows the difference between normal storage and transient storage
 contract Callback {
     uint256 public val;
 
@@ -52,6 +54,22 @@ contract TestTransientStorage {
     }
 }
 
+// Contract for testing reentrancy protection
+contract MaliciousCallback {
+    uint256 public count = 0;
+
+    // Try to reenter the target contract multiple times
+    fallback() external {
+        ITest(msg.sender).test();
+    }
+
+    // Test function to initiate reentrance attack
+    function attack(address _target) external {
+        // First call to test()
+        ITest(_target).test();
+    }
+}
+
 contract ReentrancyGuard {
     bool private locked;
 
@@ -62,7 +80,7 @@ contract ReentrancyGuard {
         locked = false;
     }
 
-    // 35313 gas
+    // 27587 gas
     function test() public lock {
         // Ignore call error
         bytes memory b = "";
@@ -84,7 +102,7 @@ contract ReentrancyGuardTransient {
         }
     }
 
-    // 21887 gas
+    // 4909 gas
     function test() external lock {
         // Ignore call error
         bytes memory b = "";
