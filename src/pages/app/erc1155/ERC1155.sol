@@ -157,7 +157,7 @@ contract ERC1155 is IERC1155 {
     // ERC165
     function supportsInterface(bytes4 interfaceId)
         external
-        view
+        pure
         returns (bool)
     {
         return interfaceId == 0x01ffc9a7 // ERC165 Interface ID for ERC165

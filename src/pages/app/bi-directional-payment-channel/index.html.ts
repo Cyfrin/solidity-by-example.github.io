@@ -116,7 +116,7 @@ Closing a channel when Alice and Bob do not agree on the final balances
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint256</span> i <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i <span class="hljs-operator">&lt;</span> _signatures.<span class="hljs-built_in">length</span>; i<span class="hljs-operator">+</span><span class="hljs-operator">+</span>) {
             <span class="hljs-comment">/*
             <span class="hljs-doctag">NOTE:</span> sign with address of this contract to protect
-                  against replay attack on other contracts
+                  agains replay attack on other contracts
             */</span>
             <span class="hljs-keyword">bool</span> valid <span class="hljs-operator">=</span> _signers[i]
                 <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-built_in">keccak256</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodePacked</span>(_contract, _balances, _nonce))
