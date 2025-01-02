@@ -10,7 +10,7 @@ export const keywords = ["gas"]
 export const codes = [
   {
     fileName: "Gas.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50MjU2IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgYXJlIG5vdCByZWZ1bmRlZC4KICAgIGZ1bmN0aW9uIGZvcmV2ZXIoKSBwdWJsaWMgewogICAgICAgIC8vIEhlcmUgd2UgcnVuIGEgbG9vcCB1bnRpbCBhbGwgb2YgdGhlIGdhcyBhcmUgc3BlbnQKICAgICAgICAvLyBhbmQgdGhlIHRyYW5zYWN0aW9uIGZhaWxzCiAgICAgICAgd2hpbGUgKHRydWUpIHsKICAgICAgICAgICAgaSArPSAxOwogICAgICAgIH0KICAgIH0KfQo=",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50MjU2IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgaXMgbm90IHJlZnVuZGVkLgogICAgZnVuY3Rpb24gZm9yZXZlcigpIHB1YmxpYyB7CiAgICAgICAgLy8gSGVyZSB3ZSBydW4gYSBsb29wIHVudGlsIGFsbCBvZiB0aGUgZ2FzIGFyZSBzcGVudAogICAgICAgIC8vIGFuZCB0aGUgdHJhbnNhY3Rpb24gZmFpbHMKICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICBpICs9IDE7CiAgICAgICAgfQogICAgfQp9Cg==",
   },
 ]
 
@@ -37,7 +37,7 @@ const html = `<h3>How much <code>ether</code> do you need to pay for a transacti
 
     <span class="hljs-comment">// Using up all of the gas that you send causes your transaction to fail.</span>
     <span class="hljs-comment">// State changes are undone.</span>
-    <span class="hljs-comment">// Gas spent are not refunded.</span>
+    <span class="hljs-comment">// Gas spent is not refunded.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forever</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
         <span class="hljs-comment">// Here we run a loop until all of the gas are spent</span>
         <span class="hljs-comment">// and the transaction fails</span>
