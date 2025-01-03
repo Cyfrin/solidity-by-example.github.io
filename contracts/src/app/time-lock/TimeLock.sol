@@ -6,7 +6,7 @@ contract TimeLock {
     error AlreadyQueuedError(bytes32 txId);
     error TimestampNotInRangeError(uint256 blockTimestamp, uint256 timestamp);
     error NotQueuedError(bytes32 txId);
-    error TimestampNotPassedError(uint256 blockTimestmap, uint256 timestamp);
+    error TimestampNotPassedError(uint256 blockTimestamp, uint256 timestamp);
     error TimestampExpiredError(uint256 blockTimestamp, uint256 expiresAt);
     error TxFailedError();
 
