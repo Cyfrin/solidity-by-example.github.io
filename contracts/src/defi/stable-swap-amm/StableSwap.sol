@@ -312,7 +312,7 @@ contract StableSwap {
         uint256 d1 = _getD(new_xs);
         require(d1 > d0, "liquidity didn't increase");
 
-        // Reccalcuate D accounting for fee on imbalance
+        // Recalculate D accounting for fee on imbalance
         uint256 d2;
         if (_totalSupply > 0) {
             for (uint256 i; i < N; ++i) {
