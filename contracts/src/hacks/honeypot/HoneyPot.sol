@@ -5,7 +5,7 @@ pragma solidity ^0.8.26;
 Bank is a contract that calls Logger to log events.
 Bank.withdraw() is vulnerable to the reentrancy attack.
 So a hacker tries to drain Ether from Bank.
-But actually the reentracy exploit is a bait for hackers.
+But actually the reentrancy exploit is a bait for hackers.
 By deploying Bank with HoneyPot in place of the Logger, this contract becomes
 a trap for hackers. Let's see how.
 
