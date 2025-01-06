@@ -97,7 +97,7 @@ contract EVMStorageSingleSlot {
     }
 }
 
-contract EVMStoratePackedSlotBytes {
+contract EVMStoragePackedSlotBytes {
     // slot 0 (packed right to left)
     bytes4 public b4 = 0xabababab;
     bytes2 public b2 = 0xcdcd;
