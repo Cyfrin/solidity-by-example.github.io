@@ -86,7 +86,7 @@ contract BiDirectionalPaymentChannel {
         for (uint256 i = 0; i < _signatures.length; i++) {
             /*
             NOTE: sign with address of this contract to protect
-                  agains replay attack on other contracts
+                  against replay attack on other contracts
             */
             bool valid = _signers[i]
                 == keccak256(abi.encodePacked(_contract, _balances, _nonce))
