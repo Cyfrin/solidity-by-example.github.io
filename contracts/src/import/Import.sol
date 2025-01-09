@@ -11,7 +11,7 @@ contract Import {
     // Initialize Foo.sol
     Foo public foo = new Foo();
 
-    // Test Foo.sol by getting it's name.
+    // Test Foo.sol by getting its name.
     function getFooName() public view returns (string memory) {
         return foo.name();
     }
