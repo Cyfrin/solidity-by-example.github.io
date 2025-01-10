@@ -1,7 +1,7 @@
 ---
 title: Crowd Fund
 version: 0.8.26
-description: An example of crowd funding contract
+description: An example of crowdfunding contract
 keywords: [app, application, crowd, fund, funding]
 cyfrinLink: https://www.cyfrin.io/glossary/crowd-fund-solidity-code-example
 ---
