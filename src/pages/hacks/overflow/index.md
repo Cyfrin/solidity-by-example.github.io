@@ -3,7 +3,7 @@ title: Arithmetic Overflow and Underflow
 version: 0.8.26
 description: An example of hacking Solidity with arithmetic overflow / underflow
 keywords: [hack, security, arithmetic, overflow, underflow]
-cyfrinLink: https://solidity-by-example.org/hacks/overflow/
+cyfrinLink: https://www.cyfrin.io/glossary/arithmetic-overflow-and-underflow-hack-solidity-code-example
 ---
 
 ### Vulnerability

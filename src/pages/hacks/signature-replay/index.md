@@ -3,7 +3,7 @@ title: Signature Replay
 version: 0.8.26
 description: An example of a contract vulnerable to signature replay attack
 keywords: [hack, security, cryptography, signature, replay]
-cyfrinLink: https://solidity-by-example.org/hacks/signature-replay/
+cyfrinLink: https://www.cyfrin.io/glossary/signature-replay-hack-solidity-code-example
 ---
 
 Signing messages off-chain and having a contract that requires that signature before executing

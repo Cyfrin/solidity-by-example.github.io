@@ -4,7 +4,7 @@ export const title = "Block Timestamp Manipulation"
 export const description =
   "An example of a Solidity contract vulnerable to block timestamp manipulation"
 export const cyfrinLink =
-  "https://solidity-by-example.org/hacks/block-timestamp-manipulation/"
+  "https://www.cyfrin.io/glossary/block-timestamp-manipulation-hack-solidity-code-example"
 
 export const keywords = ["hack", "security", "block", "timestamp", "manipulation"]
 

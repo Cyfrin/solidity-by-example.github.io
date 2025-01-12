@@ -4,7 +4,7 @@ export const title = "Hiding Malicious Code with External Contract"
 export const description =
   "An example of exploit where malicious code is hidden in an external contract in Solidity"
 export const cyfrinLink =
-  "https://solidity-by-example.org/hacks/hiding-malicious-code-with-external-contract/"
+  "https://www.cyfrin.io/glossary/hiding-malicious-code-with-external-contract-hack-solidity-code-example"
 
 export const keywords = [
   "hack",

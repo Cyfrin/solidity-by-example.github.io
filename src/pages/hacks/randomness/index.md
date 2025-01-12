@@ -3,7 +3,7 @@ title: Source of Randomness
 version: 0.8.26
 description: Blockchain is not a reliable source of randomness in Solidity
 keywords: [hack, security, source, random, randomness, blockhash, block, timestamp]
-cyfrinLink: https://solidity-by-example.org/hacks/randomness/
+cyfrinLink: https://www.cyfrin.io/glossary/source-of-randomness-hack-solidity-code-example
 ---
 
 ### Vulnerability

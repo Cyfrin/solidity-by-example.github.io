@@ -4,7 +4,7 @@ export const title = "Accessing Private Data"
 export const description =
   "An example of accessing private data from a Solidity smart contract"
 export const cyfrinLink =
-  "https://solidity-by-example.org/hacks/accessing-private-data/"
+  "https://www.cyfrin.io/glossary/accessing-private-data-hack-solidity-code-example"
 
 export const keywords = [
   "hack",

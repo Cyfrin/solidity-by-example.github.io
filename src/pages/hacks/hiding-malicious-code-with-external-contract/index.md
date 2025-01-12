@@ -3,7 +3,7 @@ title: Hiding Malicious Code with External Contract
 version: 0.8.26
 description: An example of exploit where malicious code is hidden in an external contract in Solidity
 keywords: [hack, security, hide, hiding, malicious, code, external, contract]
-cyfrinLink: https://solidity-by-example.org/hacks/hiding-malicious-code-with-external-contract/
+cyfrinLink: https://www.cyfrin.io/glossary/hiding-malicious-code-with-external-contract-hack-solidity-code-example
 ---
 
 ### Vulnerability

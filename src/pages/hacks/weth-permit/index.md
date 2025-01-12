@@ -3,7 +3,7 @@ title: WETH Permit
 version: 0.8.26
 description: An example of WETH permit hack
 keywords: [hack, security, weth, permit]
-cyfrinLink: https://solidity-by-example.org/hacks/weth-permit/
+cyfrinLink: https://www.cyfrin.io/glossary/weth-permit-hack-solidity-code-example
 ---
 
 ### Vulnerability

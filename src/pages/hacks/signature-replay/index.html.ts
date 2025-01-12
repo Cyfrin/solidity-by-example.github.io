@@ -3,7 +3,8 @@ export const version = "0.8.26"
 export const title = "Signature Replay"
 export const description =
   "An example of a contract vulnerable to signature replay attack"
-export const cyfrinLink = "https://solidity-by-example.org/hacks/signature-replay/"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/signature-replay-hack-solidity-code-example"
 
 export const keywords = ["hack", "security", "cryptography", "signature", "replay"]
 

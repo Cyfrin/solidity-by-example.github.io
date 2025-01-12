@@ -3,7 +3,7 @@ title: Delegatecall
 version: 0.8.26
 description: An example of exploits using delegatecall in Solidity
 keywords: [hack, security, delegatecall]
-cyfrinLink: https://solidity-by-example.org/hacks/delegatecall/
+cyfrinLink: https://www.cyfrin.io/glossary/delegatecall-hack-solidity-code-example
 ---
 
 ### Vulnerability

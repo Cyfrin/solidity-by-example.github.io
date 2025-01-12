@@ -3,7 +3,7 @@ title: Self Destruct
 version: 0.8.26
 description: An example of how to delete your smart contract by calling selfdestruct in Solidity
 keywords: [hack, security, selfdestruct]
-cyfrinLink: https://solidity-by-example.org/hacks/self-destruct/
+cyfrinLink: https://www.cyfrin.io/glossary/self-destruct-hack-solidity-code-example
 ---
 
 Contracts can be deleted from the blockchain by calling `selfdestruct`.

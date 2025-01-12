@@ -3,7 +3,7 @@ title: Re-Entrancy
 version: 0.8.26
 description: An example of re-entrancy attack in Solidity
 keywords: [hack, security, re-entrancy]
-cyfrinLink: https://solidity-by-example.org/hacks/re-entrancy/
+cyfrinLink: https://www.cyfrin.io/glossary/re-entrancy-hack-solidity-code-example
 ---
 
 ### Vulnerability

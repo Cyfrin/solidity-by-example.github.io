@@ -3,7 +3,7 @@ title: Accessing Private Data
 version: 0.8.26
 description: An example of accessing private data from a Solidity smart contract
 keywords: [hack, security, access, accessing, private, data, storage]
-cyfrinLink: https://solidity-by-example.org/hacks/accessing-private-data/
+cyfrinLink: https://www.cyfrin.io/glossary/accessing-private-data-hack-solidity-code-example
 ---
 
 ### Vulnerability

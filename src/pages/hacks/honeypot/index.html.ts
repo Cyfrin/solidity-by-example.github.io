@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Honeypot"
 export const description = "An example of honeypot in Solidity"
-export const cyfrinLink = "https://solidity-by-example.org/hacks/honeypot/"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/honeypot-hack-solidity-code-example"
 
 export const keywords = ["hack", "security", "honeypot"]
 

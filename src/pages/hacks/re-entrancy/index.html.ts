@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Re-Entrancy"
 export const description = "An example of re-entrancy attack in Solidity"
-export const cyfrinLink = "https://solidity-by-example.org/hacks/re-entrancy/"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/re-entrancy-hack-solidity-code-example"
 
 export const keywords = ["hack", "security", "re-entrancy"]
 

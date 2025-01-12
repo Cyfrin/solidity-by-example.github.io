@@ -3,7 +3,8 @@ export const version = "0.8.26"
 export const title = "Source of Randomness"
 export const description =
   "Blockchain is not a reliable source of randomness in Solidity"
-export const cyfrinLink = "https://solidity-by-example.org/hacks/randomness/"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/source-of-randomness-hack-solidity-code-example"
 
 export const keywords = [
   "hack",

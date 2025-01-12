@@ -3,7 +3,7 @@ title: Denial of Service
 version: 0.8.26
 description: An example of denial of service hack in Solidity
 keywords: [hack, security, denial, service]
-cyfrinLink: https://solidity-by-example.org/hacks/denial-of-service/
+cyfrinLink: https://www.cyfrin.io/glossary/denial-of-service-hack-solidity-code-example
 ---
 
 ### Vulnerability

@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Bypass Contract Size Check"
 export const description = "An example of bypassing contract size check"
-export const cyfrinLink = "https://solidity-by-example.org/hacks/contract-size/"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/bypass-contract-size-check-hack-solidity-code-example"
 
 export const keywords = [
   "hack",

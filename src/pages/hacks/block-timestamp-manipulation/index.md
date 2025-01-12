@@ -3,7 +3,7 @@ title: Block Timestamp Manipulation
 version: 0.8.26
 description: An example of a Solidity contract vulnerable to block timestamp manipulation
 keywords: [hack, security, block, timestamp, manipulation]
-cyfrinLink: https://solidity-by-example.org/hacks/block-timestamp-manipulation/
+cyfrinLink: https://www.cyfrin.io/glossary/block-timestamp-manipulation-hack-solidity-code-example
 ---
 
 ### Vulnerability
