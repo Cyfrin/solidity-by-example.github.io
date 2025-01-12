@@ -3,6 +3,7 @@ title: Vault Inflation
 version: 0.8.26
 description: An example of vault inflation
 keywords: [hack, security, inflation, erc4626, vault]
+cyfrinLink: https://solidity-by-example.org/hacks/vault-inflation/
 ---
 
 ### Vulnerability

@@ -3,7 +3,7 @@ export const version = "0.8.26"
 export const title = "Self Destruct"
 export const description =
   "An example of how to delete your smart contract by calling selfdestruct in Solidity"
-export const cyfrinLink = ""
+export const cyfrinLink = "https://solidity-by-example.org/hacks/self-destruct/"
 
 export const keywords = ["hack", "security", "selfdestruct"]
 

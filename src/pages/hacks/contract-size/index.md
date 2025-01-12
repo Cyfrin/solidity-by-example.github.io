@@ -3,6 +3,7 @@ title: Bypass Contract Size Check
 version: 0.8.26
 description: An example of bypassing contract size check
 keywords: [hack, security, bypass, contract, size, check, extcodesize]
+cyfrinLink: https://solidity-by-example.org/hacks/contract-size/
 ---
 
 ### Vulnerability

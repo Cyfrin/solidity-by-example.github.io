@@ -3,6 +3,7 @@ title: Honeypot
 version: 0.8.26
 description: An example of honeypot in Solidity
 keywords: [hack, security, honeypot]
+cyfrinLink: https://solidity-by-example.org/hacks/honeypot/
 ---
 
 A honeypot is a trap to catch hackers.

@@ -2,7 +2,7 @@
 export const version = "0.8.26"
 export const title = "Vault Inflation"
 export const description = "An example of vault inflation"
-export const cyfrinLink = ""
+export const cyfrinLink = "https://solidity-by-example.org/hacks/vault-inflation/"
 
 export const keywords = ["hack", "security", "inflation", "erc4626", "vault"]
 

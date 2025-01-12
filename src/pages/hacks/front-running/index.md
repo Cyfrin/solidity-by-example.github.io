@@ -3,6 +3,7 @@ title: Front Running
 version: 0.8.26
 description: An example of a Solidity contract vulnerable to front running
 keywords: [hack, security, front, running]
+cyfrinLink: https://solidity-by-example.org/hacks/front-running/
 ---
 
 ### Vulnerability
