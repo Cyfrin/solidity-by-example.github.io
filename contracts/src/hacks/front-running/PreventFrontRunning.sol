@@ -12,21 +12,21 @@ pragma solidity ^0.8.26;
    Address is his wallet address in lowercase, solution is "Ethereum", Secret is like a password ("mysecret") 
    that only Bob knows which Bob uses to commit and reveal the solution.
    keccak2566("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266Ethereummysecret") = '0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36'
-3. Bob then calls commitSolution("0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36"), 
+4. Bob then calls commitSolution("0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36"), 
    where he commits the calculated solution hash with gas price set to 15 gwei.
-4. Eve is watching the transaction pool for the answer to be submitted.
-5. Eve sees Bob's answer and he also calls commitSolution("0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36")
+5. Eve is watching the transaction pool for the answer to be submitted.
+6. Eve sees Bob's answer and he also calls commitSolution("0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36")
    with a higher gas price than Bob (100 gwei).
-6. Eve's transaction was mined before Bob's transaction, but Eve has not got the reward yet.
+7. Eve's transaction was mined before Bob's transaction, but Eve has not got the reward yet.
    He needs to call revealSolution() with exact secret and solution, so lets say he is watching the transaction pool
    to front run Bob as he did previously
-7. Then Bob calls the revealSolution("Ethereum", "mysecret") with gas price set to 15 gwei;
-8. Let's consider that Eve's who's watching the transaction pool, find's Bob's reveal solution transaction and he also calls 
+8. Then Bob calls the revealSolution("Ethereum", "mysecret") with gas price set to 15 gwei;
+9. Let's consider that Eve's who's watching the transaction pool, find's Bob's reveal solution transaction and he also calls 
    revealSolution("Ethereum", "mysecret") with higher gas price than Bob (100 gwei)
-9. Let's consider that this time also Eve's reveal transaction was mined before Bob's transaction, but Eve will be
+10. Let's consider that this time also Eve's reveal transaction was mined before Bob's transaction, but Eve will be
    reverted with "Hash doesn't match" error. Since the revealSolution() function checks the hash using 
    keccak256(msg.sender + solution + secret). So this time eve fails to win the reward.
-10.But Bob's revealSolution("Ethereum", "mysecret") passes the hash check and gets the reward of 10 ether.
+11.But Bob's revealSolution("Ethereum", "mysecret") passes the hash check and gets the reward of 10 ether.
 */
 
 contract SecuredFindThisHash {
