@@ -74,7 +74,7 @@ contract Examples {
         Timestamp t = Timestamp.wrap(uint64(block.timestamp));
         // Turn user defined value type back into primitive value type
         uint64 d_u64 = Duration.unwrap(d);
-        uint64 t_u54 = Timestamp.unwrap(t);
+        uint64 t_u64 = Timestamp.unwrap(t);
 
         // LibClock example
         Clock clock = Clock.wrap(0);
