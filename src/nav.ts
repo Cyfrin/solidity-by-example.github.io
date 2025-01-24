@@ -424,6 +424,10 @@ const HACK_ROUTES: Route[] = [
     path: "weth-permit",
     title: "WETH Permit",
   },
+  {
+    path: "63-64-gas-rule",
+    title: "63 / 64 Gas Rule",
+  },
 ]
 
 export const EVM_ROUTES: Route[] = [

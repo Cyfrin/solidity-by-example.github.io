@@ -182,6 +182,7 @@
     "data",
     "storage"
   ],
+  "/hacks/63-64-gas-rule": ["hack", "security", 63, 64, "gas"],
   "/gas-golf": ["gas", "golf"],
   "/gas": ["gas"],
   "/function-selector": ["function", "functions", "selector", "selectors"],

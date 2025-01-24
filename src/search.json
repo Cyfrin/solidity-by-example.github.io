@@ -1,4 +1,6 @@
 {
+  "63": ["/hacks/63-64-gas-rule"],
+  "64": ["/hacks/63-64-gas-rule"],
   "visibility": ["/visibility"],
   "function": [
     "/visibility",
@@ -90,7 +92,7 @@
   "value": ["/user-defined-value-types"],
   "types": ["/user-defined-value-types", "/structs", "/primitives"],
   "udvt": ["/user-defined-value-types"],
-  "gas": ["/unchecked-math", "/gas-golf", "/gas"],
+  "gas": ["/unchecked-math", "/hacks/63-64-gas-rule", "/gas-golf", "/gas"],
   "unchecked": ["/unchecked-math"],
   "math": ["/unchecked-math", "/assembly-math", "/app/assembly-bin-exp"],
   "overflow": ["/unchecked-math", "/hacks/overflow"],
@@ -328,7 +330,8 @@
     "/hacks/delegatecall",
     "/hacks/contract-size",
     "/hacks/block-timestamp-manipulation",
-    "/hacks/accessing-private-data"
+    "/hacks/accessing-private-data",
+    "/hacks/63-64-gas-rule"
   ],
   "security": [
     "/hacks/weth-permit",
@@ -348,6 +351,7 @@
     "/hacks/contract-size",
     "/hacks/block-timestamp-manipulation",
     "/hacks/accessing-private-data",
+    "/hacks/63-64-gas-rule",
     "/events-advanced"
   ],
   "weth": ["/hacks/weth-permit"],

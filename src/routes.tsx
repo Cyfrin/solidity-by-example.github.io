@@ -76,6 +76,7 @@ import component_function_modifier from "./pages/function-modifier"
 import component_function_selector from "./pages/function-selector"
 import component_gas from "./pages/gas"
 import component_gas_golf from "./pages/gas-golf"
+import component_hacks_63_64_gas_rule from "./pages/hacks/63-64-gas-rule"
 import component_hacks_accessing_private_data from "./pages/hacks/accessing-private-data"
 import component_hacks_block_timestamp_manipulation from "./pages/hacks/block-timestamp-manipulation"
 import component_hacks_contract_size from "./pages/hacks/contract-size"
@@ -450,6 +451,10 @@ const routes: Route[] = [
   {
     path: "/gas-golf",
     component: component_gas_golf,
+  },
+  {
+    path: "/hacks/63-64-gas-rule",
+    component: component_hacks_63_64_gas_rule,
   },
   {
     path: "/hacks/accessing-private-data",
