@@ -35,7 +35,7 @@ contract Primitives {
 
     /*
     In Solidity, the data type byte represent a sequence of bytes. 
-    Solidity presents two type of bytes types :
+    Solidity presents two types of bytes :
 
      - fixed-sized byte arrays
      - dynamically-sized byte arrays.
