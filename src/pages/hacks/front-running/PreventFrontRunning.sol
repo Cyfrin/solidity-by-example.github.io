@@ -11,7 +11,7 @@ pragma solidity ^0.8.26;
 3. Bob then finds the keccak256(Address in lowercase + Solution + Secret). 
    Address is his wallet address in lowercase, solution is "Ethereum", Secret is like a password ("mysecret") 
    that only Bob knows which Bob uses to commit and reveal the solution.
-   keccak256("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266Ethereummysecret") = '0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36'
+   keccak2566("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266Ethereummysecret") = '0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36'
 4. Bob then calls commitSolution("0xf95b1dd61edc3bd962cdea3987c6f55bcb714a02a2c3eb73bd960d6b4387fc36"), 
    where he commits the calculated solution hash with gas price set to 15 gwei.
 5. Eve is watching the transaction pool for the answer to be submitted.
