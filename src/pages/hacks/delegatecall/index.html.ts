@@ -106,7 +106,7 @@ and HackMe. This means that calling Lib.doSomething() will change the first
 state variable inside HackMe, which happens to be the address of lib.
 
 Inside attack(), the first call to doSomething() changes the address of lib
-store in HackMe. Address of lib is now set to Attack.
+stored in HackMe. Address of lib is now set to Attack.
 The second call to doSomething() calls Attack.doSomething() and here we
 change the owner.
 */</span>
