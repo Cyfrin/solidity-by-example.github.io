@@ -28,6 +28,23 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
 <li>Commit-Reveal scheme</li>
 <li>Compact cryptographic signature (by signing the hash instead of a larger input)</li>
 </ul>
+<p>Solidity provides two methods for encoding data:</p>
+<ul>
+<li><code>abi.encode</code>: <ul>
+<li>Encodes data into bytes with padding</li>
+<li>Preserves all data information</li>
+<li>Safer when dealing with dynamic types</li>
+<li>Produces a longer output due to padding</li>
+</ul>
+</li>
+<li><code>abi.encodePacked</code>:<ul>
+<li>Performs packed encoding (compressed)</li>
+<li>Produces a shorter output than <code>abi.encode</code></li>
+<li>More gas efficient</li>
+<li>Risk of hash collisions with dynamic types (<code>collision</code> function)</li>
+</ul>
+</li>
+</ul>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 

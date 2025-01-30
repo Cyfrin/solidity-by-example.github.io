@@ -14,19 +14,18 @@ Some use cases are:
 - Commit-Reveal scheme
 - Compact cryptographic signature (by signing the hash instead of a larger input)
 
-
 Solidity provides two methods for encoding data:
 
-- `abi.encode`: 
-   - Encodes data into bytes with padding
-   - Preserves all data information
-   - Safer when dealing with dynamic types
-   - Produces a longer output due to padding
+- `abi.encode`:
+  - Encodes data into bytes with padding
+  - Preserves all data information
+  - Safer when dealing with dynamic types
+  - Produces a longer output due to padding
 - `abi.encodePacked`:
-   - Performs packed encoding (compressed)
-   - Produces a shorter output than `abi.encode`
-   - More gas efficient
-   - Risk of hash collisions with dynamic types (`collision` function)
+  - Performs packed encoding (compressed)
+  - Produces a shorter output than `abi.encode`
+  - More gas efficient
+  - Risk of hash collisions with dynamic types (`collision` function)
 
 ```solidity
 {{{Keccak256}}}
