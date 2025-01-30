@@ -50,7 +50,7 @@ const html = `<h3>Vulnerability</h3>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">FailedAttack</span> </span>{
     <span class="hljs-comment">// Attempting to call Target.protected will fail,</span>
-    <span class="hljs-comment">// Target block calls from contract</span>
+    <span class="hljs-comment">// Target blocks calls from contracts</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pwn</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> _target</span>) <span class="hljs-title"><span class="hljs-keyword">external</span></span> </span>{
         <span class="hljs-comment">// This will fail</span>
         Target(_target).protected();
