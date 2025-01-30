@@ -26,7 +26,7 @@ contract Todos {
         todos.push(todo);
     }
 
-    // Solidity automatically created a getter for 'todos' so
+    // Solidity automatically creates a getter for 'todos' so
     // you don't actually need this function.
     function get(uint256 _index)
         public
