@@ -16,6 +16,17 @@ Messages can be signed off chain and then verified on chain using a smart contra
 
 ### Using Verify Signature in Remix
 
+> **Important Note**: When using Remix to test signature verification, be aware that Remix handles message hashing differently from the contract. Remix will hash the message hash again before creating the ETH signed message hash, while the contract uses the message hash directly. This means the final ETH signed message hash will be different between Remix and the contract:
+> 
+> ```solidity
+> // Example with same input parameters:
+> Message hash:    0x56f00a5093efc595178316938b3e9ab51b37610ca57b1b471aa4ce801f05251d
+> Remix output:   0xd3445702e9995d1b351adf2606d88910d12dd95554f0bbdaa8d02061933c6363
+> Contract output: 0xed08430382ce60ae9e2b032b99a36b2c5c5c5a3fa1d293926ce87c723f2fce84
+> ```
+> 
+> For proper testing, you may want to use ethers.js or web3.js instead, as shown in the example link above.
+
 1. Get messageHash:
    - Call `getMessageHash` with these example parameters:
 
