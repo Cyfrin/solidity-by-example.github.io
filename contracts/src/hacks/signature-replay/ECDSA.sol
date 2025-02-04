@@ -106,7 +106,7 @@ library ECDSA {
         //
         // If your library generates malleable signatures, such as s-values in the upper range, calculate a new s-value
         // with 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141 - s1 and flip v from 27 to 28 or
-        // vice versa. If your library also generates signatures with 0/1 for v instead 27/28, add 27 to v to accept
+        // vice versa. If your library also generates signatures with 0/1 for v instead of 27/28, add 27 to v to accept
         // these malleable signatures as well.
         if (
             uint256(s)
