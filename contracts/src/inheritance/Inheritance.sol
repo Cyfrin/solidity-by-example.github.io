@@ -34,7 +34,7 @@ contract C is A {
 // Contracts can inherit from multiple parent contracts.
 // When a function is called that is defined multiple times in
 // different contracts, parent contracts are searched from
-// right to left, and in depth-first manner.
+// right to left, and in a depth-first manner.
 
 contract D is B, C {
     // D.foo() returns "C"
