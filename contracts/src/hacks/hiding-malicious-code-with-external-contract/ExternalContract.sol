@@ -13,7 +13,7 @@ will actually execute the code at Mal.
 2. Eve deploys Foo with the address of Mal
 3. Alice calls Foo.callBar() after reading the code and judging that it is
    safe to call.
-4. Although Alice expected Bar.log() to be execute, Mal.log() was executed.
+4. Although Alice expected Bar.log() to be executed, Mal.log() was executed.
 */
 
 contract Foo {
