@@ -7,8 +7,8 @@ import "./ECDSA.sol";
 Opening a channel
 1. Alice and Bob fund a multi-sig wallet
 2. Precompute payment channel address
-3. Alice and Bob exchange signatures of initial balances
-4. Alice and Bob create a transaction that can deploy a payment channel from
+3. Alice and Bob exchanges signatures of initial balances
+4. Alice and Bob creates a transaction that can deploy a payment channel from
    the multi-sig wallet
 
 Update channel balances

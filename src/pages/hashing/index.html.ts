@@ -30,7 +30,7 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
 </ul>
 <p>Solidity provides two methods for encoding data:</p>
 <ul>
-<li><code>abi.encode</code>: <ul>
+<li><code>abi.encode</code>:<ul>
 <li>Encodes data into bytes with padding</li>
 <li>Preserves all data information</li>
 <li>Safer when dealing with dynamic types</li>
