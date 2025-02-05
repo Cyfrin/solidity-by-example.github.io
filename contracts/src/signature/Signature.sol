@@ -40,8 +40,8 @@ contract VerifySignature {
     }
 
     /* 3. Sign message hash
-    # using browser
-    account = "copy paste account of signer here"
+    # using a browser
+    account = "copy and paste account of signer here"
     ethereum.request({ method: "personal_sign", params: [account, hash]}).then(console.log)
 
     # using web3

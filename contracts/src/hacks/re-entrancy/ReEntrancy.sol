@@ -10,7 +10,7 @@ Let's see why.
 2. Deposit 1 Ether each from Account 1 (Alice) and Account 2 (Bob) into EtherStore
 3. Deploy Attack with address of EtherStore
 4. Call Attack.attack sending 1 ether (using Account 3 (Eve)).
-   You will get 3 Ethers back (2 Ether stolen from Alice and Bob,
+   You will get 3 Ether back (2 Ether stolen from Alice and Bob,
    plus 1 Ether sent from this contract).
 
 What happened?
