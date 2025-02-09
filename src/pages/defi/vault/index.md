@@ -3,6 +3,7 @@ title: Vault
 version: 0.8.26
 description: Vault
 keywords: [defi, vault]
+cyfrinLink: https://www.cyfrin.io/glossary/vault-contract-solidity-code-example
 ---
 
 Simple example of vault contract, commonly used in DeFi protocols.

@@ -3,6 +3,7 @@ title: Uniswap V3 Liquidity Examples
 version: 0.8.26
 description: Uniswap V3 liquidity examples
 keywords: [defi, uniswap, v3, liquidity, amm]
+cyfrinLink: https://www.cyfrin.io/glossary/uniswap-v3-liquidity-solidity-code-examples
 ---
 
 Examples of minting new position, collect fees, increase and decrease liquidity.

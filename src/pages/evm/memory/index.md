@@ -3,6 +3,7 @@ title: EVM Memory Layout in Solidity
 version: 0.8.26
 description: Example of EVM memory in Solidity
 keywords: [data, evm, memory, yul, assembly]
+cyfrinLink: https://www.cyfrin.io/glossary/evm-memory-layout-solidity-code-example
 ---
 
 Examples of

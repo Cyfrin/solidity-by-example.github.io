@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Foundry Time"
 export const description = "Foundry time"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/call-solidity-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-time-solidity-code-example"
 
 export const keywords = ["foundry", "time", "warp", "skip", "roll", "unwind"]
 

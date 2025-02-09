@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Uniswap V2 Add Remove Liquidity"
 export const description = "Uniswap V2 add remove liquidity"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/uniswap-v2-add-remove-liquidity-solidity-code-example"
 
 export const keywords = ["defi", "uniswap", "v2", "add", "remove", "liquidity", "amm"]
 

@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Echidna"
 export const description = "An example of testing contracts with Echidna"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/echidna-fuzz-testing-solidity-code-example"
 
 export const keywords = ["test", "echidna"]
 

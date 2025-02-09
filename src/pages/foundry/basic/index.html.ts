@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Foundry Basic"
 export const description = "Foundry basic example"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-basic-solidity-code-example"
 
 export const keywords = ["foundry", "basic", "counter"]
 

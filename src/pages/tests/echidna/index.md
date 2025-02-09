@@ -3,6 +3,7 @@ title: Echidna
 version: 0.8.26
 description: An example of testing contracts with Echidna
 keywords: [test, echidna]
+cyfrinLink: https://www.cyfrin.io/glossary/echidna-fuzz-testing-solidity-code-example
 ---
 
 Examples of fuzzing with [Echidna](https://github.com/crytic/echidna).

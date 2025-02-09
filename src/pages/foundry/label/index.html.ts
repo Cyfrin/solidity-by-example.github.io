@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Foundry Label"
 export const description = "Foundry label"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-label-solidity-code-example"
 
 export const keywords = ["foundry", "label"]
 

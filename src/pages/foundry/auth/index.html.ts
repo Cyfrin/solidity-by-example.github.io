@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Foundry Authorization"
 export const description = "Foundry authorization example"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-authorization-solidity-code-example"
 
 export const keywords = ["foundry", "auth", "authorization", "prank"]
 

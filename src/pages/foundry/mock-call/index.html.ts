@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Foundry Mock Call"
 export const description = "Foudry mock call"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-mock-call-solidity-code-example"
 
 export const keywords = ["foundry", "mock", "call"]
 

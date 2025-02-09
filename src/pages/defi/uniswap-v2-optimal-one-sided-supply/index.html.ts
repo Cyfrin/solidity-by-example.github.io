@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Uniswap V2 Optimal One Sided Supply"
 export const description = "Uniswap V2 Optimal One Sided Supply"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/uniswap-v2-optimal-one-sided-supply-solidity-code-example"
 
 export const keywords = [
   "defi",

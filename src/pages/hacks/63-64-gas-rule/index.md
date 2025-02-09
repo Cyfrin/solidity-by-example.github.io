@@ -3,6 +3,7 @@ title: 63 / 64 Gas Rule
 version: 0.8.26
 description: An example of 63 / 64 gas rule
 keywords: [hack, security, 63, 64, gas]
+cyfrinLink: https://www.cyfrin.io/glossary/63-64-gas-rule-solidity-code-example
 ---
 
 According to 63 / 64 gas rule, external calls receive at most 63 / 64 of remaining gas in the calling contract.

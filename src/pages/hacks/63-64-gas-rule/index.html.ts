@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "63 / 64 Gas Rule"
 export const description = "An example of 63 / 64 gas rule"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/63-64-gas-rule-solidity-code-example"
 
 export const keywords = ["hack", "security", "63", "64", "gas"]
 

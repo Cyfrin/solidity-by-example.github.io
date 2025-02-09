@@ -2,7 +2,8 @@
 export const version = "0.8.26"
 export const title = "Foundry Sign"
 export const description = "Foundry sign"
-export const cyfrinLink = ""
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-sign-solidity-code-example"
 
 export const keywords = ["foundry", "sign", "signature", "ecrecover"]
 
