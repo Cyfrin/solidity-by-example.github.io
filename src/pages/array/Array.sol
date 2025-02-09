@@ -45,5 +45,18 @@ contract Array {
     function examples() external pure {
         // create array in memory, only fixed size can be created
         uint256[] memory a = new uint256[](5);
+
+        // create a nested array in memory
+        // b = [[1, 2, 3], [4, 5, 6]]
+        uint256[][] memory b = new uint256[][](2);
+        for (uint256 i = 0; i < b.length; i++) {
+            b[i] = new uint256[](3);
+        }
+        b[0][0] = 1;
+        b[0][1] = 2;
+        b[0][2] = 3;
+        b[1][0] = 4;
+        b[1][1] = 5;
+        b[1][2] = 6;
     }
 }
