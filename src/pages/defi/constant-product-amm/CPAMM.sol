@@ -101,7 +101,7 @@ contract CPAMM {
         }
 
         /*
-        How much shares to mint?
+        How many shares to mint?
 
         f(x, y) = value of liquidity
         We will define f(x, y) = sqrt(xy)
