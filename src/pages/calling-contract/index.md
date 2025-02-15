@@ -8,7 +8,7 @@ cyfrinLink: https://www.cyfrin.io/glossary/calling-other-contract-solidity-code-
 
 Contract can call other contracts in 2 ways.
 
-The easiest way to is to just call it, like `A.foo(x, y, z)`.
+The easiest way is to just call it, like `A.foo(x, y, z)`.
 
 Another way to call other contracts is to use the low-level `call`.
 
