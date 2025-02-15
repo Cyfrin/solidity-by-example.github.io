@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.8.26"
 export const title = "Simple Bytecode Contract"
-export const description = "Simple example of contract written in bytecode"
+export const description = "Simple example of a contract written in bytecode"
 export const cyfrinLink =
   "https://www.cyfrin.io/glossary/simple-bytecode-contract-solidity-code-example"
 
@@ -14,7 +14,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>Simple example of contract written in bytecode</p>
+const html = `<p>Simple example of a contract written in bytecode</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
