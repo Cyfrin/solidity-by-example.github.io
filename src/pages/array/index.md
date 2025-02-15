@@ -20,7 +20,7 @@ Remove array element by shifting elements from right to left
 {{{ArrayRemoveByShifting}}}
 ```
 
-Remove array element by copying last element into to the place to remove
+Remove array element by copying last element into the place to remove
 
 ```solidity
 {{{ArrayReplaceFromEnd}}}
