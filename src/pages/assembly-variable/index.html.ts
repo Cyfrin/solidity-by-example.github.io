@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.8.26"
 export const title = "Assembly Variable"
-export const description = "Example of how to declare variable inside assembly"
+export const description = "Example of how to declare variables inside assembly"
 export const cyfrinLink =
   "https://www.cyfrin.io/glossary/assembly-variable-solidity-code-example"
 

@@ -98,7 +98,7 @@ contract Proxy {
 
     function _setImplementation(address _implementation) private {
         require(
-            _implementation.code.length > 0, "implementation is not contract"
+            _implementation.code.length > 0, "implementation is not a contract"
         );
         StorageSlot.getAddressSlot(IMPLEMENTATION_SLOT).value = _implementation;
     }
