@@ -10,9 +10,9 @@ import updraft from "../components/updraft.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
+  "2025/02/18 - GitHub PR by eeemmmmmm",
   "2025/02/17 - GitHub PR by PixelPil0t1",
   "2025/02/10 - GitHub PR by beskay",
-  "2025/02/06 - GitHub PR by comfsrt",
 ]
 
 export default function HomePage() {

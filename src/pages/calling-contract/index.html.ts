@@ -24,7 +24,7 @@ export const codes = [
 ]
 
 const html = `<p>Contract can call other contracts in 2 ways.</p>
-<p>The easiest way to is to just call it, like <code>A.foo(x, y, z)</code>.</p>
+<p>The easiest way is to just call it, like <code>A.foo(x, y, z)</code>.</p>
 <p>Another way to call other contracts is to use the low-level <code>call</code>.</p>
 <p>This method is not recommended.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>

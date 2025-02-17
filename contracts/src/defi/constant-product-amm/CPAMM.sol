@@ -50,7 +50,7 @@ contract CPAMM {
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
 
         /*
-        How much dy for dx?
+        How many dy for dx?
 
         xy = k
         (x + dx)(y - dy) = k
@@ -80,7 +80,7 @@ contract CPAMM {
         token1.transferFrom(msg.sender, address(this), _amount1);
 
         /*
-        How much dx, dy to add?
+        How many dx, dy to add?
 
         xy = k
         (x + dx)(y + dy) = k'
@@ -101,7 +101,7 @@ contract CPAMM {
         }
 
         /*
-        How much shares to mint?
+        How many shares to mint?
 
         f(x, y) = value of liquidity
         We will define f(x, y) = sqrt(xy)
@@ -116,7 +116,7 @@ contract CPAMM {
 
         L1 * T = L0 * (T + s)
 
-        (L1 - L0) * T / L0 = s 
+        (L1 - L0) * T / L0 = s
         */
 
         /*
@@ -126,7 +126,7 @@ contract CPAMM {
         Proof
         --- Equation 1 ---
         (L1 - L0) / L0 = (sqrt((x + dx)(y + dy)) - sqrt(xy)) / sqrt(xy)
-        
+
         dx / dy = x / y so replace dy = dx * y / x
 
         --- Equation 2 ---
@@ -135,12 +135,12 @@ contract CPAMM {
         Multiply by sqrt(x) / sqrt(x)
         Equation 2 = (sqrt(x^2y + 2xydx + dx^2 * y) - sqrt(x^2y)) / sqrt(x^2y)
                    = (sqrt(y)(sqrt(x^2 + 2xdx + dx^2) - sqrt(x^2)) / (sqrt(y)sqrt(x^2))
-        
+
         sqrt(y) on top and bottom cancels out
 
         --- Equation 3 ---
         Equation 2 = (sqrt(x^2 + 2xdx + dx^2) - sqrt(x^2)) / (sqrt(x^2)
-        = (sqrt((x + dx)^2) - sqrt(x^2)) / sqrt(x^2)  
+        = (sqrt((x + dx)^2) - sqrt(x^2)) / sqrt(x^2)
         = ((x + dx) - x) / x
         = dx / x
 
@@ -179,7 +179,7 @@ contract CPAMM {
         Proof
         Let's find dx, dy such that
         v / L = s / T
-        
+
         where
         v = f(dx, dy) = sqrt(dxdy)
         L = total liquidity = sqrt(xy)
@@ -190,7 +190,7 @@ contract CPAMM {
         v = s / T * L
         sqrt(dxdy) = s / T * sqrt(xy)
 
-        Amount of liquidity to remove must not change price so 
+        Amount of liquidity to remove must not change price so
         dx / dy = x / y
 
         replace dy = dx * y / x

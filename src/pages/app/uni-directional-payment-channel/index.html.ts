@@ -32,7 +32,7 @@ const html = `<p>Payment channels allow participants to repeatedly transfer Ethe
 <li><code>Alice</code> deploys the contract, funding it with some Ether.</li>
 <li><code>Alice</code> authorizes a payment by signing a message (off chain) and sends the signature to <code>Bob</code>.</li>
 <li><code>Bob</code> claims his payment by presenting the signed message to the smart contract.</li>
-<li>If <code>Bob</code> does not claim his payment, <code>Alice</code> get her Ether back after the contract expires</li>
+<li>If <code>Bob</code> does not claim his payment, <code>Alice</code> gets her Ether back after the contract expires</li>
 </ul>
 <p>This is called a uni-directional payment channel since the payment can go only in a single direction from <code>Alice</code> to <code>Bob</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
