@@ -39,7 +39,7 @@ const html = `<h3>How much <code>ether</code> do you need to pay for a transacti
     <span class="hljs-comment">// State changes are undone.</span>
     <span class="hljs-comment">// Gas spent is not refunded.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forever</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
-        <span class="hljs-comment">// Here we run a loop until all of the gas is spent</span>
+        <span class="hljs-comment">// Here we run a loop until all of the gas are spent</span>
         <span class="hljs-comment">// and the transaction fails</span>
         <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
             i <span class="hljs-operator">+</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span>;
