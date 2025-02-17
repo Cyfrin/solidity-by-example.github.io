@@ -6,21 +6,21 @@ keywords: [data, variable, variables, array, arrays]
 cyfrinLink: https://www.cyfrin.io/glossary/array-solidity-code-example
 ---
 
-Array can have a compile-time fixed size or a dynamic size.
+An array can have a compile-time fixed size or a dynamic size.
 
 ```solidity
 {{{Array}}}
 ```
 
-### Examples of removing array element
+### Examples of removing an array element
 
-Remove array element by shifting elements from right to left
+Remove an array element by shifting elements from right to left
 
 ```solidity
 {{{ArrayRemoveByShifting}}}
 ```
 
-Remove array element by copying last element into to the place to remove
+Remove an array element by copying last element into to the place to remove
 
 ```solidity
 {{{ArrayReplaceFromEnd}}}

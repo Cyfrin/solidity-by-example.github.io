@@ -10,7 +10,7 @@ contract GasGolf {
     // loop increments - 48244 gas
     // cache array length - 48209 gas
     // load array elements to memory - 48047 gas
-    // uncheck i overflow/underflow - 47309 gas
+    // unchecked i overflow/underflow - 47309 gas
 
     uint256 public total;
 
