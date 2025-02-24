@@ -15,7 +15,7 @@ export const codes = [
 ]
 
 const html = `<p>Transactions are paid with <code>ether</code>.</p>
-<p>Similar to how one dollar is equal to 100 cent, one <code>ether</code> is equal to 10<sup>18</sup> <code>wei</code>.</p>
+<p>Similar to how one dollar is equal to 100 cents, one <code>ether</code> is equal to 10<sup>18</sup> <code>wei</code>.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 

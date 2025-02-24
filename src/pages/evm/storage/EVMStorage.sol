@@ -428,7 +428,7 @@ contract EVMStorageDynamicArray {
 }
 
 contract EVMStorageMapping {
-    // slot of value = keccak256(key, slot where mapping is declared)
+    // slot of value = keccack256(key, slot where mapping is declared)
     mapping(address => uint256) public map;
 
     address public constant ADDR_1 = address(1);
@@ -453,7 +453,7 @@ contract EVMStorageMapping {
 
 contract EVMStorageNestedMapping {
     // key0 => key1 => val
-    // slot of value = keccak256(key1, keccak256(key0, slot where nested mapping is declared))
+    // slot of value = keccak256(key1, keccack256(key0, slot where nested mapping is declared))
     mapping(address => mapping(address => uint256)) public map;
 
     address public constant ADDR_1 = address(1);

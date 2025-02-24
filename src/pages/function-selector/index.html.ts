@@ -16,7 +16,7 @@ export const codes = [
 
 const html = `<p>When a function is called, the first 4 bytes of <code>calldata</code> specifies which function to call.</p>
 <p>This 4 bytes is called a function selector.</p>
-<p>Take for example, this code below. It uses <code>call</code> to execute <code>transfer</code> on a contract at the address <code>addr</code>.</p>
+<p>Take, for example, this code below. It uses <code>call</code> to execute <code>transfer</code> on a contract at the address <code>addr</code>.</p>
 <pre><code class="language-solidity">addr.<span class="hljs-built_in">call</span>(<span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"transfer(address,uint256)"</span>, 0xSomeAddress, <span class="hljs-number">123</span>))
 </code></pre><p>The first 4 bytes returned from <code>abi.encodeWithSignature(....)</code> is the function selector.</p>
 <p>Perhaps you can save a tiny amount of gas if you precompute and inline the function selector in your code?</p>

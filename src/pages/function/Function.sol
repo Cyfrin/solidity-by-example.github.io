@@ -12,7 +12,7 @@ contract Function {
         return (1, true, 2);
     }
 
-    // Return values can be assigned to their names.
+    // Return values can be assigned to their name.
     // In this case the return statement can be omitted.
     function assigned() public pure returns (uint256 x, bool b, uint256 y) {
         x = 1;

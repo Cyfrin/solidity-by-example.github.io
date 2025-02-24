@@ -639,7 +639,7 @@ const html = `<p>Examples of</p>
 <span class="hljs-comment">//    19000 | 819621</span>
 <span class="hljs-comment">//    20000 | 901812</span>
 </code></pre><h3>References</h3>
-<p><a href="https://docs.soliditylang.org/en/latest/internals/layout_in_memory.html">Solidity document</a></p>
+<p><a href="https://docs.soliditylang.org/en/latest/internals/layout_in_memory.html">Solidity documentation</a></p>
 <p><a href="https://www.evm.codes/">EVM Codes</a></p>
 `
 
