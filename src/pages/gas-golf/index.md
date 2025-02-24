@@ -9,7 +9,7 @@ cyfrinLink: https://www.cyfrin.io/glossary/gas-saving-techniques-solidity-code-e
 Some gas saving techniques.
 
 - Replacing `memory` with `calldata`
-- Loading state variable to memory
+- Loading state variables to memory
 - Replace for loop `i++` with `++i`
 - Caching array elements
 - Short circuit
