@@ -14,7 +14,7 @@ pragma solidity 0.8.26;
 // Free memory pointer (0x40)
 // 0x80 = Free memory pointer initially points here
 contract MemBasic {
-    // mstore(p, v) = store 32 bytes to memory starting at memory location p
+    // mstore(p, v) = stored 32 bytes to memory starting at memory location p
     // mload(p) = load 32 bytes from memory starting at memory location p
     function test_1() public pure returns (bytes32 b32) {
         assembly {

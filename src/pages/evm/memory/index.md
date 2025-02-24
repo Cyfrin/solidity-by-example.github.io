@@ -18,6 +18,6 @@ Examples of
 
 ### References
 
-[Solidity document](https://docs.soliditylang.org/en/latest/internals/layout_in_memory.html)
+[Solidity documentation](https://docs.soliditylang.org/en/latest/internals/layout_in_memory.html)
 
 [EVM Codes](https://www.evm.codes/)
