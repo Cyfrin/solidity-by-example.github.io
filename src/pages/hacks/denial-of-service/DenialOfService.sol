@@ -17,7 +17,7 @@ he sent.
 6. Current king is the Attack contract and no one can become the new king.
 
 What happened?
-Attack became the king. All new challenge to claim the throne will be rejected
+Attack became the king. All new challenges to claim the throne will be rejected
 since Attack contract does not have a fallback function, denying to accept the
 Ether sent from KingOfEther before the new king is set.
 */

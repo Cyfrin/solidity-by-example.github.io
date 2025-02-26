@@ -7,7 +7,7 @@ pragma solidity ^0.8.26;
 
 /*
 1. Deploy EtherGame
-2. Players (say Alice and Bob) decides to play, deposits 1 Ether each.
+2. Players (say Alice and Bob) decide to play, deposits 1 Ether each.
 2. Deploy Attack with address of EtherGame
 3. Call Attack.attack sending 5 ether. This will break the game
    No one can become the winner.
