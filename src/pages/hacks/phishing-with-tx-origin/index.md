@@ -19,7 +19,7 @@ function that only the owner should be able to call.
 {{{TxOrigin}}}
 ```
 
-### Preventative Techniques
+### Preventive Techniques
 
 Use `msg.sender` instead of `tx.origin`
 
