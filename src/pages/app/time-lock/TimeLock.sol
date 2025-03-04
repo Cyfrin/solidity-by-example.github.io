@@ -63,7 +63,7 @@ contract TimeLock {
      * @param _target Address of contract or account to call
      * @param _value Amount of ETH to send
      * @param _func Function signature, for example "foo(address,uint256)"
-     * @param _data ABI encoded data send.
+     * @param _data ABI-encoded data to send.
      * @param _timestamp Timestamp after which the transaction can be executed.
      */
     function queue(
