@@ -10,7 +10,7 @@ cyfrinLink: https://www.cyfrin.io/glossary/re-entrancy-hack-solidity-code-exampl
 
 Let's say that contract `A` calls contract `B`.
 
-Reentracy exploit allows `B` to call back into `A` before `A` finishes execution.
+Reentrancy exploit allows `B` to call back into `A` before `A` finishes execution.
 
 ```solidity
 {{{ReEntrancy}}}
