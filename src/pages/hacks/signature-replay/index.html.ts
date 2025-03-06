@@ -27,7 +27,7 @@ const html = `<p>Signing messages off-chain and having a contract that requires 
 a function is a useful technique.</p>
 <p>For example this technique is used to:</p>
 <ul>
-<li>reduce number of transaction on chain</li>
+<li>reduce the number of transaction on chain</li>
 <li>gas-less transaction, called <code>meta transaction</code></li>
 </ul>
 <h3>Vulnerability</h3>

@@ -20,7 +20,7 @@ export const codes = [
 
 const html = `<h3>Vulnerability</h3>
 <p>Let&#39;s say that contract <code>A</code> calls contract <code>B</code>.</p>
-<p>Reentracy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
+<p>Reentrancy exploit allows <code>B</code> to call back into <code>A</code> before <code>A</code> finishes execution.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
