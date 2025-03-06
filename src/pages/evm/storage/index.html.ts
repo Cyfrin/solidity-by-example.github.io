@@ -457,7 +457,7 @@ const html = `<p>Examples of</p>
 }
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EVMStorageMapping</span> </span>{
-    <span class="hljs-comment">// slot of value = keccack256(key, slot where mapping is declared)</span>
+    <span class="hljs-comment">// slot of value = keccak256(key, slot where mapping is declared)</span>
     <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint256</span>) <span class="hljs-keyword">public</span> map;
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> ADDR_1 <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">1</span>);
@@ -482,7 +482,7 @@ const html = `<p>Examples of</p>
 
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">EVMStorageNestedMapping</span> </span>{
     <span class="hljs-comment">// key0 =&gt; key1 =&gt; val</span>
-    <span class="hljs-comment">// slot of value = keccak256(key1, keccack256(key0, slot where nested mapping is declared))</span>
+    <span class="hljs-comment">// slot of value = keccak256(key1, keccak256(key0, slot where nested mapping is declared))</span>
     <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">mapping</span>(<span class="hljs-keyword">address</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">uint256</span>)) <span class="hljs-keyword">public</span> map;
 
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> <span class="hljs-keyword">constant</span> ADDR_1 <span class="hljs-operator">=</span> <span class="hljs-keyword">address</span>(<span class="hljs-number">1</span>);
