@@ -42,7 +42,7 @@ GuessTheRandomNumber is a game where you win 1 Ether if you can guess the
 pseudo random number generated from block hash and timestamp.
 
 At first glance, it seems impossible to guess the correct number.
-But let&#x27;s see how easy it is to win.
+But let&#x27;s see how easy it is win.
 
 1. Alice deploys GuessTheRandomNumber with 1 Ether
 2. Eve deploys Attack

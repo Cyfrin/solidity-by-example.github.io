@@ -69,7 +69,7 @@ it authorized the transfer. The wallet transferred all Ether to Eve.
         wallet.<span class="hljs-built_in">transfer</span>(owner, <span class="hljs-keyword">address</span>(wallet).<span class="hljs-built_in">balance</span>);
     }
 }
-</code></pre><h3>Preventative Techniques</h3>
+</code></pre><h3>Preventive Techniques</h3>
 <p>Use <code>msg.sender</code> instead of <code>tx.origin</code></p>
 <pre><code class="language-solidity"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transfer</span>(<span class="hljs-params"><span class="hljs-keyword">address</span> <span class="hljs-keyword">payable</span> _to, <span class="hljs-keyword">uint256</span> _amount</span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> </span>{
   <span class="hljs-built_in">require</span>(<span class="hljs-built_in">msg</span>.<span class="hljs-built_in">sender</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> owner, <span class="hljs-string">"Not owner"</span>);
