@@ -12,7 +12,7 @@ Most ERC20 have the `permit` function to approve a spender if a valid signature 
 
 However `WETH` does not. Surprisingly, when `permit` is called on `WETH`, the function call will execute without any errors.
 
-This is because the `fallback` inside `WETH` is execute when `permit` is called.
+This is because the `fallback` inside `WETH` is executed when `permit` is called.
 
 ### Example
 
