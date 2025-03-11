@@ -37,7 +37,7 @@ export const codes = [
 const html = `<h3>Vulnerability</h3>
 <p>Most ERC20 have the <code>permit</code> function to approve a spender if a valid signature is provided.</p>
 <p>However <code>WETH</code> does not. Surprisingly, when <code>permit</code> is called on <code>WETH</code>, the function call will execute without any errors.</p>
-<p>This is because the <code>fallback</code> inside <code>WETH</code> is execute when <code>permit</code> is called.</p>
+<p>This is because the <code>fallback</code> inside <code>WETH</code> is executed when <code>permit</code> is called.</p>
 <h3>Example</h3>
 <ol start="0">
 <li>Alice gives infinite approval for <code>ERC20Bank</code> to spend <code>WETH</code></li>
