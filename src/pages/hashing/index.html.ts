@@ -59,7 +59,7 @@ const html = `<p><code>keccak256</code> computes the Keccak-256 hash of the inpu
 
     <span class="hljs-comment">// Example of hash collision</span>
     <span class="hljs-comment">// Hash collision can occur when you pass more than one dynamic data type</span>
-    <span class="hljs-comment">// to abi.encodePacked. In such case, you should use abi.encode instead.</span>
+    <span class="hljs-comment">// to abi.encodePacked. In such a case, you should use abi.encode instead.</span>
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">collision</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _text, <span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span> _anotherText</span>)
         <span class="hljs-title"><span class="hljs-keyword">public</span></span>
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
