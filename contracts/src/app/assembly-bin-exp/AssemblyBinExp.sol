@@ -11,19 +11,19 @@ contract AssemblyBinExp {
             switch x
             case 0 {
                 switch n
-                case 0 { z := b } // 0**0 = 1
-                default { revert(0, 0) } // 0**n (n > 0) має одразу ревертнутись
+                case 0 { z := b } 
+                default { revert(0, 0) } 
             }
             default {
                 z := b
-                if mod(n, 2) { z := x } // Оптимізовано перевірку парності
+                if mod(n, 2) { z := x } 
                 
-                let half := div(b, 2) // Для округлення
+                let half := div(b, 2) 
                 
                 for { n := div(n, 2) } n { n := div(n, 2) } {
                     let xx := mul(x, x)
                     if and(iszero(iszero(x)), iszero(eq(div(xx, x), x))) {
-                        revert(0, 0) // Захист від переповнення
+                        revert(0, 0)
                     }
                     let xxRound := add(xx, half)
                     if lt(xxRound, xx) { revert(0, 0) }
