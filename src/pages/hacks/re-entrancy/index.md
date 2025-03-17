@@ -21,7 +21,7 @@ Reentrancy exploit allows `B` to call back into `A` before `A` finishes executio
 - Ensure all state changes happen before calling external contracts
 - Use function modifiers that prevent re-entrancy
 
-Here is an example of a re-entracy guard
+Here is an example of a re-entrancy guard
 
 ```solidity
 {{{ReEntrancyGuard}}}
