@@ -43,7 +43,7 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>)
     </span>{
-        <span class="hljs-comment">// Typo is not checked - "transfer(address, uint)"</span>
+        <span class="hljs-comment">// Correct function signature encoding; typos here are not caught at compile time</span>
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSignature</span>(<span class="hljs-string">"transfer(address,uint256)"</span>, to, amount);
     }
 
@@ -52,7 +52,7 @@ const html = `<pre><code class="language-solidity"><span class="hljs-comment">//
         <span class="hljs-title"><span class="hljs-keyword">pure</span></span>
         <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">bytes</span> <span class="hljs-keyword">memory</span></span>)
     </span>{
-        <span class="hljs-comment">// Type is not checked - (IERC20.transfer.selector, true, amount)</span>
+        <span class="hljs-comment">// Selector is used; types are not checked at compile-time</span>
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">abi</span>.<span class="hljs-built_in">encodeWithSelector</span>(IERC20.<span class="hljs-built_in">transfer</span>.<span class="hljs-built_in">selector</span>, to, amount);
     }
 
