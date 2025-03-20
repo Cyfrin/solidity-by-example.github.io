@@ -203,10 +203,10 @@ body.dark .hljs-variable.language_ {
   color: #ff7b72;
 }
 
-body.dak .hljs-title,
-body.dak .hljs-title.class_,
-body.dak .hljs-title.class_.inherited__,
-body.dak .hljs-title.function_ {
+body.dark .hljs-title,
+body.dark .hljs-title.class_,
+body.dark .hljs-title.class_.inherited__,
+body.dark .hljs-title.function_ {
   color: #d2a8ff;
 }
 
@@ -234,9 +234,9 @@ body.dark .hljs-symbol {
   color: #ffa657;
 }
 
-body.dary .hljs-comment,
-body.dary .hljs-code,
-body.dary .hljs-formula {
+body.dark .hljs-comment,
+body.dark .hljs-code,
+body.dark .hljs-formula {
   color: #8b949e;
 }
 
