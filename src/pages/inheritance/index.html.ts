@@ -26,7 +26,7 @@ const html = `<p>Solidity supports multiple inheritance. Contracts can inherit o
 <p>Function that is going to be overridden by a child contract must be declared as <code>virtual</code>.</p>
 <p>Function that is going to override a parent function must use the keyword <code>override</code>.</p>
 <p>Order of inheritance is important.</p>
-<p>You have to list the parent contracts in the order from “most base-like” to “most derived”.</p>
+<p>You have to list the parent contracts in the order from "most base-like" to "most derived".</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 
@@ -81,7 +81,7 @@ F  D,E
     }
 }
 
-<span class="hljs-comment">// Inheritance must be ordered from “most base-like” to “most derived”.</span>
+<span class="hljs-comment">// Inheritance must be ordered from "most base-like" to "most derived".</span>
 <span class="hljs-comment">// Swapping the order of A and B will throw a compilation error.</span>
 <span class="hljs-class"><span class="hljs-keyword">contract</span> <span class="hljs-title">F</span> <span class="hljs-keyword">is</span> <span class="hljs-title">A</span>, <span class="hljs-title">B</span> </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) <span class="hljs-title"><span class="hljs-keyword">public</span></span> <span class="hljs-title"><span class="hljs-keyword">pure</span></span> <span class="hljs-title"><span class="hljs-keyword">override</span></span>(<span class="hljs-params">A, B</span>) <span class="hljs-title"><span class="hljs-keyword">returns</span></span> (<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-keyword">memory</span></span>) </span>{

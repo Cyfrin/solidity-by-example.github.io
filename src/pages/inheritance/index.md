@@ -14,7 +14,7 @@ Function that is going to override a parent function must use the keyword `overr
 
 Order of inheritance is important.
 
-You have to list the parent contracts in the order from “most base-like” to “most derived”.
+You have to list the parent contracts in the order from "most base-like" to "most derived".
 
 ```solidity
 {{{Inheritance}}}
