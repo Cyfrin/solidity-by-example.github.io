@@ -71,7 +71,7 @@ const html = `<p>Here we introduce you to some primitive data types available in
     <span class="hljs-keyword">address</span> <span class="hljs-keyword">public</span> addr <span class="hljs-operator">=</span> <span class="hljs-number">0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c</span>;
 
     <span class="hljs-comment">/*
-    In Solidity, the data type byte represents a sequence of bytes. 
+    In Solidity, the data type byte represent a sequence of bytes. 
     Solidity presents two types of bytes :
 
      - fixed-sized byte arrays

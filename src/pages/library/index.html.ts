@@ -14,7 +14,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>Libraries are similar to contracts, but you can&#39;t declare any state variable and
+const html = `<p>Libraries are similar to contracts, but you can&#39;t declare any state variables and
 you can&#39;t send ether.</p>
 <p>A library is embedded into the contract if all library functions are internal.</p>
 <p>Otherwise the library must be deployed and then linked before the contract is deployed.</p>
