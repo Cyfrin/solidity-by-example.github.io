@@ -18,7 +18,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>Examples of minting new position, collect fees, increase and decrease liquidity.</p>
+const html = `<p>Examples of minting new position, collecting fees, increasing and decreasing liquidity.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>
 

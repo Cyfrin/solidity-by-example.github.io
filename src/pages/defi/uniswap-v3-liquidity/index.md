@@ -6,7 +6,7 @@ keywords: [defi, uniswap, v3, liquidity, amm]
 cyfrinLink: https://www.cyfrin.io/glossary/uniswap-v3-liquidity-solidity-code-examples
 ---
 
-Examples of minting new position, collect fees, increase and decrease liquidity.
+Examples of minting new position, collecting fees, increasing and decreasing liquidity.
 
 ```solidity
 {{{UniswapV3Liquidity}}}

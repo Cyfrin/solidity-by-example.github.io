@@ -25,8 +25,8 @@ export const codes = [
 ]
 
 const html = `<h3>Vulnerability</h3>
-<p>In Solidity, any address can be casted into specific contract,
-even if the contract at the address is not the one being casted.</p>
+<p>In Solidity, any address can be cast into specific contract,
+even if the contract at the address is not the one being cast.</p>
 <p>This can be exploited to hide malicious code. Let&#39;s see how.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
 <span class="hljs-meta"><span class="hljs-keyword">pragma</span> <span class="hljs-keyword">solidity</span> ^0.8.26;</span>

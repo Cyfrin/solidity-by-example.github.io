@@ -8,8 +8,8 @@ cyfrinLink: https://www.cyfrin.io/glossary/hiding-malicious-code-with-external-c
 
 ### Vulnerability
 
-In Solidity, any address can be casted into specific contract,
-even if the contract at the address is not the one being casted.
+In Solidity, any address can be cast into specific contract,
+even if the contract at the address is not the one being cast.
 
 This can be exploited to hide malicious code. Let's see how.
 
