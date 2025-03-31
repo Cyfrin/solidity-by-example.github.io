@@ -1,10 +1,10 @@
 // metadata
 export const version = "0.8.26"
-export const title = "ERC20"
+export const title = "ERC20 Token Example and Swap in Solidity"
 export const description = "Example of ERC20 token in Solidity"
 export const cyfrinLink = "https://www.cyfrin.io/glossary/erc-20-solidity-code-example"
 
-export const keywords = ["app", "application", "erc20", "ierc20", "token"]
+export const keywords = ["erc20", "solidity", "smart contract", "mint", "burn", "token swap", "ierc20", "token", "dapp"]
 
 export const codes = [
   {

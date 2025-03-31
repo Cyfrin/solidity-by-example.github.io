@@ -20,7 +20,7 @@ contract AbiEncode {
         pure
         returns (bytes memory)
     {
-        // Typo is not checked - "transfer(address, uint)"
+        // Example with correct signature: "transfer(address,uint256)"
         return abi.encodeWithSignature("transfer(address,uint256)", to, amount);
     }
 
@@ -29,7 +29,7 @@ contract AbiEncode {
         pure
         returns (bytes memory)
     {
-        // Type is not checked - (IERC20.transfer.selector, true, amount)
+        // Types are not checked at compile-time
         return abi.encodeWithSelector(IERC20.transfer.selector, to, amount);
     }
 
