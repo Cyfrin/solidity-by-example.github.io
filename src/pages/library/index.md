@@ -6,7 +6,7 @@ keywords: [library]
 cyfrinLink: https://www.cyfrin.io/glossary/library-solidity-code-example
 ---
 
-Libraries are similar to contracts, but you can't declare any state variable and
+Libraries are similar to contracts, but you can't declare any state variables and
 you can't send ether.
 
 A library is embedded into the contract if all library functions are internal.
