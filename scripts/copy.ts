@@ -9,9 +9,9 @@ async function cp(src: string) {
   const files = await getFiles(src, /\.sol$/)
 
   for (const file of files) {
-    const [_, relative_path] = file.split(src)
-    assert(relative_path, "empty relative path")
-    await copy(file, path.join(dst, relative_path))
+    const [_, relativePath] = file.split(src)
+    assert(relativePath, "empty relative path")
+    await copy(file, path.join(dst, relativePath))
   }
 }
 
