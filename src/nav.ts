@@ -541,6 +541,10 @@ export const DEFI_ROUTES = [
     title: "Vault",
   },
   {
+    path: "token-lock",
+    title: "Token Lock",
+  },
+  {
     path: "constant-sum-amm",
     title: "Constant Sum AMM",
   },

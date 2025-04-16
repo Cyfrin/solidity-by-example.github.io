@@ -43,6 +43,7 @@ import component_defi_dai_proxy from "./pages/defi/dai-proxy"
 import component_defi_discrete_staking_rewards from "./pages/defi/discrete-staking-rewards"
 import component_defi_stable_swap_amm from "./pages/defi/stable-swap-amm"
 import component_defi_staking_rewards from "./pages/defi/staking-rewards"
+import component_defi_token_lock from "./pages/defi/token-lock"
 import component_defi_uniswap_v2 from "./pages/defi/uniswap-v2"
 import component_defi_uniswap_v2_add_remove_liquidity from "./pages/defi/uniswap-v2-add-remove-liquidity"
 import component_defi_uniswap_v2_flash_swap from "./pages/defi/uniswap-v2-flash-swap"
@@ -319,6 +320,10 @@ const routes: Route[] = [
   {
     path: "/defi/staking-rewards",
     component: component_defi_staking_rewards,
+  },
+  {
+    path: "/defi/token-lock",
+    component: component_defi_token_lock,
   },
   {
     path: "/defi/uniswap-v2",

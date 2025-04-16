@@ -257,6 +257,7 @@
     "amm"
   ],
   "/defi/uniswap-v2": ["defi", "uniswap", "v2", "swap", "amm"],
+  "/defi/token-lock": ["defi", "token", "lock"],
   "/defi/staking-rewards": ["defi", "staking", "reward", "rewards"],
   "/defi/stable-swap-amm": ["defi", "curve", "stable", "swap", "amm"],
   "/defi/discrete-staking-rewards": [
