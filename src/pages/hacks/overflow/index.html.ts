@@ -89,7 +89,7 @@ before the 1 week waiting period.
 }
 </code></pre><h3>Preventative Techniques</h3>
 <ul>
-<li><p>Use <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol" target="__blank">SafeMath</a> to will prevent arithmetic overflow and underflow</p>
+<li><p>Use <a href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.9.3/contracts/utils/math/SafeMath.sol" target="__blank">SafeMath</a> to will prevent arithmetic overflow and underflow</p>
 </li>
 <li><p>Solidity 0.8 defaults to throwing an error for overflow / underflow</p>
 </li>
