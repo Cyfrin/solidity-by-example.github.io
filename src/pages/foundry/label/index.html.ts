@@ -2,18 +2,16 @@
 export const version = "0.8.26"
 export const title = "Foundry Label"
 export const description = "Foundry label"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/foundry-label-solidity-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/foundry-label-solidity-code-example"
 
-export const keywords = [
-    "foundry",
-    "label",
-]
+export const keywords = ["foundry", "label"]
 
 export const codes = [
-    {
-        fileName: "LabelTest.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI2OwoKaW1wb3J0ICJmb3JnZS1zdGQvVGVzdC5zb2wiOwoKYWRkcmVzcyBjb25zdGFudCBXRVRIID0gMHhDMDJhYUEzOWIyMjNGRThEMEEwZTVDNEYyN2VBRDkwODNDNzU2Q2MyOwoKaW50ZXJmYWNlIElFUkMyMCB7CiAgICBmdW5jdGlvbiBiYWxhbmNlT2YoYWRkcmVzcykgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50MjU2KTsKfQoKY29udHJhY3QgTGFiZWxUZXN0IGlzIFRlc3QgewogICAgSUVSQzIwIHdldGg7CgogICAgZnVuY3Rpb24gc2V0VXAoKSBwdWJsaWMgewogICAgICAgIHdldGggPSBJRVJDMjAoV0VUSCk7CiAgICAgICAgLy8gTGFiZWwgYWRkcmVzcyB3aXRoICJXRVRIIiwgdGhpcyB3aWxsIGJlIGRpc3BsYXllZCBpbiBzdGFjayB0cmFjZXMKICAgICAgICB2bS5sYWJlbChXRVRILCAiV0VUSCIpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3QoKSBwdWJsaWMgewogICAgICAgIGNvbnNvbGUubG9nKCIlZSIsIHdldGguYmFsYW5jZU9mKGFkZHJlc3ModGhpcykpKTsKICAgIH0KfQo=",
-    },
+  {
+    fileName: "LabelTest.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI2OwoKaW1wb3J0ICJmb3JnZS1zdGQvVGVzdC5zb2wiOwoKYWRkcmVzcyBjb25zdGFudCBXRVRIID0gMHhDMDJhYUEzOWIyMjNGRThEMEEwZTVDNEYyN2VBRDkwODNDNzU2Q2MyOwoKaW50ZXJmYWNlIElFUkMyMCB7CiAgICBmdW5jdGlvbiBiYWxhbmNlT2YoYWRkcmVzcykgZXh0ZXJuYWwgdmlldyByZXR1cm5zICh1aW50MjU2KTsKfQoKY29udHJhY3QgTGFiZWxUZXN0IGlzIFRlc3QgewogICAgSUVSQzIwIHdldGg7CgogICAgZnVuY3Rpb24gc2V0VXAoKSBwdWJsaWMgewogICAgICAgIHdldGggPSBJRVJDMjAoV0VUSCk7CiAgICAgICAgLy8gTGFiZWwgYWRkcmVzcyB3aXRoICJXRVRIIiwgdGhpcyB3aWxsIGJlIGRpc3BsYXllZCBpbiBzdGFjayB0cmFjZXMKICAgICAgICB2bS5sYWJlbChXRVRILCAiV0VUSCIpOwogICAgfQoKICAgIGZ1bmN0aW9uIHRlc3QoKSBwdWJsaWMgewogICAgICAgIGNvbnNvbGUubG9nKCIlZSIsIHdldGguYmFsYW5jZU9mKGFkZHJlc3ModGhpcykpKTsKICAgIH0KfQo=",
+  },
 ]
 
 const html = `<p>Use <code>vm.label</code> to put a label on contracts</p>

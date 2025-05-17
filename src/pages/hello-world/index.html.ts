@@ -4,19 +4,13 @@ export const title = "Hello World"
 export const description = "Hello world in Solidity"
 export const cyfrinLink = ""
 
-export const keywords = [
-    "contract",
-    "app",
-    "application",
-    "hello",
-    "world",
-]
+export const keywords = ["contract", "app", "application", "hello", "world"]
 
 export const codes = [
-    {
-        fileName: "HelloWorld.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVAovLyBjb21waWxlciB2ZXJzaW9uIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIDAuOC4yNiBhbmQgbGVzcyB0aGFuIDAuOS4wCnByYWdtYSBzb2xpZGl0eSBeMC44LjI2OwoKY29udHJhY3QgSGVsbG9Xb3JsZCB7CiAgICBzdHJpbmcgcHVibGljIGdyZWV0ID0gIkhlbGxvIFdvcmxkISI7Cn0K",
-    },
+  {
+    fileName: "HelloWorld.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVAovLyBjb21waWxlciB2ZXJzaW9uIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvIDAuOC4yNiBhbmQgbGVzcyB0aGFuIDAuOS4wCnByYWdtYSBzb2xpZGl0eSBeMC44LjI2OwoKY29udHJhY3QgSGVsbG9Xb3JsZCB7CiAgICBzdHJpbmcgcHVibGljIGdyZWV0ID0gIkhlbGxvIFdvcmxkISI7Cn0K",
+  },
 ]
 
 const html = `<p><code>pragma</code> specifies the compiler version of Solidity.</p>

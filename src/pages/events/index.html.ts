@@ -4,16 +4,13 @@ export const title = "Events"
 export const description = "Example of how to emit events in Solidity"
 export const cyfrinLink = "https://www.cyfrin.io/glossary/events-solidity-code-example"
 
-export const keywords = [
-    "event",
-    "events",
-]
+export const keywords = ["event", "events"]
 
 export const codes = [
-    {
-        fileName: "Events.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEV2ZW50IHsKICAgIC8vIEV2ZW50IGRlY2xhcmF0aW9uCiAgICAvLyBVcCB0byAzIHBhcmFtZXRlcnMgY2FuIGJlIGluZGV4ZWQuCiAgICAvLyBJbmRleGVkIHBhcmFtZXRlcnMgaGVscCB5b3UgZmlsdGVyIHRoZSBsb2dzIGJ5IHRoZSBpbmRleGVkIHBhcmFtZXRlcgogICAgZXZlbnQgTG9nKGFkZHJlc3MgaW5kZXhlZCBzZW5kZXIsIHN0cmluZyBtZXNzYWdlKTsKICAgIGV2ZW50IEFub3RoZXJMb2coKTsKCiAgICBmdW5jdGlvbiB0ZXN0KCkgcHVibGljIHsKICAgICAgICBlbWl0IExvZyhtc2cuc2VuZGVyLCAiSGVsbG8gV29ybGQhIik7CiAgICAgICAgZW1pdCBMb2cobXNnLnNlbmRlciwgIkhlbGxvIEVWTSEiKTsKICAgICAgICBlbWl0IEFub3RoZXJMb2coKTsKICAgIH0KfQo=",
-    },
+  {
+    fileName: "Events.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEV2ZW50IHsKICAgIC8vIEV2ZW50IGRlY2xhcmF0aW9uCiAgICAvLyBVcCB0byAzIHBhcmFtZXRlcnMgY2FuIGJlIGluZGV4ZWQuCiAgICAvLyBJbmRleGVkIHBhcmFtZXRlcnMgaGVscCB5b3UgZmlsdGVyIHRoZSBsb2dzIGJ5IHRoZSBpbmRleGVkIHBhcmFtZXRlcgogICAgZXZlbnQgTG9nKGFkZHJlc3MgaW5kZXhlZCBzZW5kZXIsIHN0cmluZyBtZXNzYWdlKTsKICAgIGV2ZW50IEFub3RoZXJMb2coKTsKCiAgICBmdW5jdGlvbiB0ZXN0KCkgcHVibGljIHsKICAgICAgICBlbWl0IExvZyhtc2cuc2VuZGVyLCAiSGVsbG8gV29ybGQhIik7CiAgICAgICAgZW1pdCBMb2cobXNnLnNlbmRlciwgIkhlbGxvIEVWTSEiKTsKICAgICAgICBlbWl0IEFub3RoZXJMb2coKTsKICAgIH0KfQo=",
+  },
 ]
 
 const html = `<p><code>Events</code> allow logging to the Ethereum blockchain. Some use cases for events are:</p>

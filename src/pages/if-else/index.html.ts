@@ -4,19 +4,13 @@ export const title = "If / Else"
 export const description = "If / Else conditional statement in Solidity"
 export const cyfrinLink = "https://www.cyfrin.io/glossary/if-else-solidity-code-example"
 
-export const keywords = [
-    "if",
-    "else",
-    "conditional",
-    "statement",
-    "statements",
-]
+export const keywords = ["if", "else", "conditional", "statement", "statements"]
 
 export const codes = [
-    {
-        fileName: "IfElse.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IElmRWxzZSB7CiAgICBmdW5jdGlvbiBmb28odWludDI1NiB4KSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgaWYgKHggPCAxMCkgewogICAgICAgICAgICByZXR1cm4gMDsKICAgICAgICB9IGVsc2UgaWYgKHggPCAyMCkgewogICAgICAgICAgICByZXR1cm4gMTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICByZXR1cm4gMjsKICAgICAgICB9CiAgICB9CgogICAgZnVuY3Rpb24gdGVybmFyeSh1aW50MjU2IF94KSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgLy8gaWYgKF94IDwgMTApIHsKICAgICAgICAvLyAgICAgcmV0dXJuIDE7CiAgICAgICAgLy8gfQogICAgICAgIC8vIHJldHVybiAyOwoKICAgICAgICAvLyBzaG9ydGhhbmQgd2F5IHRvIHdyaXRlIGlmIC8gZWxzZSBzdGF0ZW1lbnQKICAgICAgICAvLyB0aGUgIj8iIG9wZXJhdG9yIGlzIGNhbGxlZCB0aGUgdGVybmFyeSBvcGVyYXRvcgogICAgICAgIHJldHVybiBfeCA8IDEwID8gMSA6IDI7CiAgICB9Cn0K",
-    },
+  {
+    fileName: "IfElse.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IElmRWxzZSB7CiAgICBmdW5jdGlvbiBmb28odWludDI1NiB4KSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgaWYgKHggPCAxMCkgewogICAgICAgICAgICByZXR1cm4gMDsKICAgICAgICB9IGVsc2UgaWYgKHggPCAyMCkgewogICAgICAgICAgICByZXR1cm4gMTsKICAgICAgICB9IGVsc2UgewogICAgICAgICAgICByZXR1cm4gMjsKICAgICAgICB9CiAgICB9CgogICAgZnVuY3Rpb24gdGVybmFyeSh1aW50MjU2IF94KSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgLy8gaWYgKF94IDwgMTApIHsKICAgICAgICAvLyAgICAgcmV0dXJuIDE7CiAgICAgICAgLy8gfQogICAgICAgIC8vIHJldHVybiAyOwoKICAgICAgICAvLyBzaG9ydGhhbmQgd2F5IHRvIHdyaXRlIGlmIC8gZWxzZSBzdGF0ZW1lbnQKICAgICAgICAvLyB0aGUgIj8iIG9wZXJhdG9yIGlzIGNhbGxlZCB0aGUgdGVybmFyeSBvcGVyYXRvcgogICAgICAgIHJldHVybiBfeCA8IDEwID8gMSA6IDI7CiAgICB9Cn0K",
+  },
 ]
 
 const html = `<p>Solidity supports conditional statements <code>if</code>, <code>else if</code> and <code>else</code>.</p>

@@ -2,20 +2,16 @@
 export const version = "0.8.26"
 export const title = "Assembly Error"
 export const description = "Example of error in assembly"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/assembly-error-solidity-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/assembly-error-solidity-code-example"
 
-export const keywords = [
-    "assembly",
-    "yul",
-    "error",
-    "revert",
-]
+export const keywords = ["assembly", "yul", "error", "revert"]
 
 export const codes = [
-    {
-        fileName: "AssemblyError.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEFzc2VtYmx5RXJyb3IgewogICAgZnVuY3Rpb24geXVsX3JldmVydCh1aW50MjU2IHgpIHB1YmxpYyBwdXJlIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIC8vIHJldmVydChwLCBzKSAtIGVuZCBleGVjdXRpb24KICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgcmV2ZXJ0IHN0YXRlIGNoYW5nZXMKICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgcmV0dXJuIGRhdGEgbWVtW3DigKYocCtzKSkKICAgICAgICAgICAgaWYgZ3QoeCwgMTApIHsgcmV2ZXJ0KDAsIDApIH0KICAgICAgICB9CiAgICB9Cn0K",
-    },
+  {
+    fileName: "AssemblyError.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEFzc2VtYmx5RXJyb3IgewogICAgZnVuY3Rpb24geXVsX3JldmVydCh1aW50MjU2IHgpIHB1YmxpYyBwdXJlIHsKICAgICAgICBhc3NlbWJseSB7CiAgICAgICAgICAgIC8vIHJldmVydChwLCBzKSAtIGVuZCBleGVjdXRpb24KICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgcmV2ZXJ0IHN0YXRlIGNoYW5nZXMKICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgcmV0dXJuIGRhdGEgbWVtW3DigKYocCtzKSkKICAgICAgICAgICAgaWYgZ3QoeCwgMTApIHsgcmV2ZXJ0KDAsIDApIH0KICAgICAgICB9CiAgICB9Cn0K",
+  },
 ]
 
 const html = `<p>Example of error in <code>assembly</code></p>

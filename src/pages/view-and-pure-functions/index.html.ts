@@ -2,20 +2,16 @@
 export const version = "0.8.26"
 export const title = "View and Pure Functions"
 export const description = "An example of view and pure functions in Solidity"
-export const cyfrinLink = "https://www.cyfrin.io/glossary/view-and-pure-functions-solidity-code-example"
+export const cyfrinLink =
+  "https://www.cyfrin.io/glossary/view-and-pure-functions-solidity-code-example"
 
-export const keywords = [
-    "view",
-    "pure",
-    "function",
-    "functions",
-]
+export const keywords = ["view", "pure", "function", "functions"]
 
 export const codes = [
-    {
-        fileName: "ViewAndPureFunctions.sol",
-        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IFZpZXdBbmRQdXJlIHsKICAgIHVpbnQyNTYgcHVibGljIHggPSAxOwoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSB0aGUgc3RhdGUuCiAgICBmdW5jdGlvbiBhZGRUb1godWludDI1NiB5KSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgcmV0dXJuIHggKyB5OwogICAgfQoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSBvciByZWFkIGZyb20gdGhlIHN0YXRlLgogICAgZnVuY3Rpb24gYWRkKHVpbnQyNTYgaSwgdWludDI1NiBqKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgcmV0dXJuIGkgKyBqOwogICAgfQp9Cg==",
-    },
+  {
+    fileName: "ViewAndPureFunctions.sol",
+    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IFZpZXdBbmRQdXJlIHsKICAgIHVpbnQyNTYgcHVibGljIHggPSAxOwoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSB0aGUgc3RhdGUuCiAgICBmdW5jdGlvbiBhZGRUb1godWludDI1NiB5KSBwdWJsaWMgdmlldyByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgcmV0dXJuIHggKyB5OwogICAgfQoKICAgIC8vIFByb21pc2Ugbm90IHRvIG1vZGlmeSBvciByZWFkIGZyb20gdGhlIHN0YXRlLgogICAgZnVuY3Rpb24gYWRkKHVpbnQyNTYgaSwgdWludDI1NiBqKSBwdWJsaWMgcHVyZSByZXR1cm5zICh1aW50MjU2KSB7CiAgICAgICAgcmV0dXJuIGkgKyBqOwogICAgfQp9Cg==",
+  },
 ]
 
 const html = `<p>Getter functions can be declared <code>view</code> or <code>pure</code>.</p>
