@@ -2,16 +2,19 @@
 export const version = "0.8.26"
 export const title = "Foundry Mock Call"
 export const description = "Foundry mock call"
-export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/foundry-mock-call-solidity-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/foundry-mock-call-solidity-code-example"
 
-export const keywords = ["foundry", "mock", "call"]
+export const keywords = [
+    "foundry",
+    "mock",
+    "call",
+]
 
 export const codes = [
-  {
-    fileName: "MockCallTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI2OwoKaW1wb3J0ICJmb3JnZS1zdGQvVGVzdC5zb2wiOwoKY29udHJhY3QgVGFyZ2V0IHsKICAgIGZ1bmN0aW9uIGYodWludDI1NiB4LCB1aW50MjU2IHkpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1NikgewogICAgICAgIHJldHVybiBnKCk7CiAgICB9CgogICAgZnVuY3Rpb24gZygpIGludGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1NikgewogICAgICAgIHJldHVybiAxOwogICAgfQp9Cgpjb250cmFjdCBNb2NrQ2FsbFRlc3QgaXMgVGVzdCB7CiAgICBUYXJnZXQgdGFyZ2V0OwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHsKICAgICAgICB0YXJnZXQgPSBuZXcgVGFyZ2V0KCk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdCgpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiB4ID0gMTsKICAgICAgICB1aW50MjU2IHkgPSAxOwogICAgICAgIHZtLm1vY2tDYWxsKAogICAgICAgICAgICBhZGRyZXNzKHRhcmdldCksCiAgICAgICAgICAgIGFiaS5lbmNvZGVDYWxsKFRhcmdldC5mLCAoeCwgeSkpLAogICAgICAgICAgICBhYmkuZW5jb2RlKHVpbnQyNTYoOTkpKQogICAgICAgICk7CgogICAgICAgIC8vIFJldHVybnMgOTkKICAgICAgICB1aW50MjU2IHJlcyA9IHRhcmdldC5mKHgsIHkpOwogICAgICAgIGNvbnNvbGUubG9nKCJyZXMiLCByZXMpOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "MockCallTest.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI2OwoKaW1wb3J0ICJmb3JnZS1zdGQvVGVzdC5zb2wiOwoKY29udHJhY3QgVGFyZ2V0IHsKICAgIGZ1bmN0aW9uIGYodWludDI1NiB4LCB1aW50MjU2IHkpIGV4dGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1NikgewogICAgICAgIHJldHVybiBnKCk7CiAgICB9CgogICAgZnVuY3Rpb24gZygpIGludGVybmFsIHZpZXcgcmV0dXJucyAodWludDI1NikgewogICAgICAgIHJldHVybiAxOwogICAgfQp9Cgpjb250cmFjdCBNb2NrQ2FsbFRlc3QgaXMgVGVzdCB7CiAgICBUYXJnZXQgdGFyZ2V0OwoKICAgIGZ1bmN0aW9uIHNldFVwKCkgcHVibGljIHsKICAgICAgICB0YXJnZXQgPSBuZXcgVGFyZ2V0KCk7CiAgICB9CgogICAgZnVuY3Rpb24gdGVzdCgpIHB1YmxpYyB7CiAgICAgICAgdWludDI1NiB4ID0gMTsKICAgICAgICB1aW50MjU2IHkgPSAxOwogICAgICAgIHZtLm1vY2tDYWxsKAogICAgICAgICAgICBhZGRyZXNzKHRhcmdldCksCiAgICAgICAgICAgIGFiaS5lbmNvZGVDYWxsKFRhcmdldC5mLCAoeCwgeSkpLAogICAgICAgICAgICBhYmkuZW5jb2RlKHVpbnQyNTYoOTkpKQogICAgICAgICk7CgogICAgICAgIC8vIFJldHVybnMgOTkKICAgICAgICB1aW50MjU2IHJlcyA9IHRhcmdldC5mKHgsIHkpOwogICAgICAgIGNvbnNvbGUubG9nKCJyZXMiLCByZXMpOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>Set return values from a function call with <code>mockCall</code>.</p>

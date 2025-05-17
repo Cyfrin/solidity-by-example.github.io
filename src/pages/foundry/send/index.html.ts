@@ -2,16 +2,20 @@
 export const version = "0.8.26"
 export const title = "Foundry Send"
 export const description = "Foundry send"
-export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/foundry-send-solidity-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/foundry-send-solidity-code-example"
 
-export const keywords = ["foundry", "send", "deal", "hoax"]
+export const keywords = [
+    "foundry",
+    "send",
+    "deal",
+    "hoax",
+]
 
 export const codes = [
-  {
-    fileName: "SendTest.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI2OwoKaW1wb3J0ICJmb3JnZS1zdGQvVGVzdC5zb2wiOwoKLy8gRXhhbXBsZXMgb2YgZGVhbCBhbmQgaG9heAovLyBkZWFsKGFkZHJlc3MsIHVpbnQpIC0gU2V0IEVUSCBiYWxhbmNlIG9mIGFkZHJlc3MKLy8gZGVhbChhZGRyZXNzLCBhZGRyZXNzLCB1aW50MjU2KSAtIFNldHMgRVJDMjAgdG9rZW4gYmFsYW5jZSAod29ya3MgZm9yIG1vc3QgdG9rZW5zKQovLyBob2F4KGFkZHJlc3MsIHVpbnQpIC0gZGVhbCArIHByYW5rCgpjb250cmFjdCBFUkMyMCB7CiAgICB1aW50MjU2IHB1YmxpYyB0b3RhbFN1cHBseTsKICAgIG1hcHBpbmcoYWRkcmVzcyA9PiB1aW50MjU2KSBwdWJsaWMgYmFsYW5jZU9mOwp9Cgpjb250cmFjdCBTZW5kVGVzdCBpcyBUZXN0IHsKICAgIEVSQzIwIHRva2VuID0gbmV3IEVSQzIwKCk7CgogICAgZnVuY3Rpb24gdGVzdFNlbmRFdGgoKSBwdWJsaWMgewogICAgICAgIC8vIFNldCBFVEggYmFsYW5jZQogICAgICAgIGRlYWwoYWRkcmVzcygxKSwgMTAwKTsKICAgICAgICBhc3NlcnRFcShhZGRyZXNzKDEpLmJhbGFuY2UsIDEwMCk7CgogICAgICAgIC8vIFNldCBFUkMyMCBiYWxhbmNlCiAgICAgICAgZGVhbChhZGRyZXNzKHRva2VuKSwgYWRkcmVzcygxKSwgMTApOwogICAgICAgIGFzc2VydEVxKHRva2VuLmJhbGFuY2VPZihhZGRyZXNzKDEpKSwgMTApOwogICAgfQp9Cg==",
-  },
+    {
+        fileName: "SendTest.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgMC44LjI2OwoKaW1wb3J0ICJmb3JnZS1zdGQvVGVzdC5zb2wiOwoKLy8gRXhhbXBsZXMgb2YgZGVhbCBhbmQgaG9heAovLyBkZWFsKGFkZHJlc3MsIHVpbnQpIC0gU2V0IEVUSCBiYWxhbmNlIG9mIGFkZHJlc3MKLy8gZGVhbChhZGRyZXNzLCBhZGRyZXNzLCB1aW50MjU2KSAtIFNldHMgRVJDMjAgdG9rZW4gYmFsYW5jZSAod29ya3MgZm9yIG1vc3QgdG9rZW5zKQovLyBob2F4KGFkZHJlc3MsIHVpbnQpIC0gZGVhbCArIHByYW5rCgpjb250cmFjdCBFUkMyMCB7CiAgICB1aW50MjU2IHB1YmxpYyB0b3RhbFN1cHBseTsKICAgIG1hcHBpbmcoYWRkcmVzcyA9PiB1aW50MjU2KSBwdWJsaWMgYmFsYW5jZU9mOwp9Cgpjb250cmFjdCBTZW5kVGVzdCBpcyBUZXN0IHsKICAgIEVSQzIwIHRva2VuID0gbmV3IEVSQzIwKCk7CgogICAgZnVuY3Rpb24gdGVzdFNlbmRFdGgoKSBwdWJsaWMgewogICAgICAgIC8vIFNldCBFVEggYmFsYW5jZQogICAgICAgIGRlYWwoYWRkcmVzcygxKSwgMTAwKTsKICAgICAgICBhc3NlcnRFcShhZGRyZXNzKDEpLmJhbGFuY2UsIDEwMCk7CgogICAgICAgIC8vIFNldCBFUkMyMCBiYWxhbmNlCiAgICAgICAgZGVhbChhZGRyZXNzKHRva2VuKSwgYWRkcmVzcygxKSwgMTApOwogICAgICAgIGFzc2VydEVxKHRva2VuLmJhbGFuY2VPZihhZGRyZXNzKDEpKSwgMTApOwogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>

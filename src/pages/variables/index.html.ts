@@ -2,16 +2,22 @@
 export const version = "0.8.26"
 export const title = "Variables"
 export const description = "Local, state and global variables"
-export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/variables-solidity-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/variables-solidity-code-example"
 
-export const keywords = ["variable", "variables", "local", "global", "state", "data"]
+export const keywords = [
+    "variable",
+    "variables",
+    "local",
+    "global",
+    "state",
+    "data",
+]
 
 export const codes = [
-  {
-    fileName: "Variables.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IFZhcmlhYmxlcyB7CiAgICAvLyBTdGF0ZSB2YXJpYWJsZXMgYXJlIHN0b3JlZCBvbiB0aGUgYmxvY2tjaGFpbi4KICAgIHN0cmluZyBwdWJsaWMgdGV4dCA9ICJIZWxsbyI7CiAgICB1aW50MjU2IHB1YmxpYyBudW0gPSAxMjM7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcoKSBwdWJsaWMgdmlldyB7CiAgICAgICAgLy8gTG9jYWwgdmFyaWFibGVzIGFyZSBub3Qgc2F2ZWQgdG8gdGhlIGJsb2NrY2hhaW4uCiAgICAgICAgdWludDI1NiBpID0gNDU2OwoKICAgICAgICAvLyBIZXJlIGFyZSBzb21lIGdsb2JhbCB2YXJpYWJsZXMKICAgICAgICB1aW50MjU2IHRpbWVzdGFtcCA9IGJsb2NrLnRpbWVzdGFtcDsgLy8gQ3VycmVudCBibG9jayB0aW1lc3RhbXAKICAgICAgICBhZGRyZXNzIHNlbmRlciA9IG1zZy5zZW5kZXI7IC8vIGFkZHJlc3Mgb2YgdGhlIGNhbGxlcgogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Variables.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IFZhcmlhYmxlcyB7CiAgICAvLyBTdGF0ZSB2YXJpYWJsZXMgYXJlIHN0b3JlZCBvbiB0aGUgYmxvY2tjaGFpbi4KICAgIHN0cmluZyBwdWJsaWMgdGV4dCA9ICJIZWxsbyI7CiAgICB1aW50MjU2IHB1YmxpYyBudW0gPSAxMjM7CgogICAgZnVuY3Rpb24gZG9Tb21ldGhpbmcoKSBwdWJsaWMgdmlldyB7CiAgICAgICAgLy8gTG9jYWwgdmFyaWFibGVzIGFyZSBub3Qgc2F2ZWQgdG8gdGhlIGJsb2NrY2hhaW4uCiAgICAgICAgdWludDI1NiBpID0gNDU2OwoKICAgICAgICAvLyBIZXJlIGFyZSBzb21lIGdsb2JhbCB2YXJpYWJsZXMKICAgICAgICB1aW50MjU2IHRpbWVzdGFtcCA9IGJsb2NrLnRpbWVzdGFtcDsgLy8gQ3VycmVudCBibG9jayB0aW1lc3RhbXAKICAgICAgICBhZGRyZXNzIHNlbmRlciA9IG1zZy5zZW5kZXI7IC8vIGFkZHJlc3Mgb2YgdGhlIGNhbGxlcgogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>There are 3 types of variables in Solidity</p>

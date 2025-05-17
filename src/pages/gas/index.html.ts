@@ -2,16 +2,17 @@
 export const version = "0.8.26"
 export const title = "Gas"
 export const description = "Example of gas and gas limit in Solidity"
-export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/gas-and-gas-price-solidity-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/gas-and-gas-price-solidity-code-example"
 
-export const keywords = ["gas"]
+export const keywords = [
+    "gas",
+]
 
 export const codes = [
-  {
-    fileName: "Gas.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50MjU2IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgaXMgbm90IHJlZnVuZGVkLgogICAgZnVuY3Rpb24gZm9yZXZlcigpIHB1YmxpYyB7CiAgICAgICAgLy8gSGVyZSB3ZSBydW4gYSBsb29wIHVudGlsIGFsbCBvZiB0aGUgZ2FzIGFyZSBzcGVudAogICAgICAgIC8vIGFuZCB0aGUgdHJhbnNhY3Rpb24gZmFpbHMKICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICBpICs9IDE7CiAgICAgICAgfQogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Gas.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IEdhcyB7CiAgICB1aW50MjU2IHB1YmxpYyBpID0gMDsKCiAgICAvLyBVc2luZyB1cCBhbGwgb2YgdGhlIGdhcyB0aGF0IHlvdSBzZW5kIGNhdXNlcyB5b3VyIHRyYW5zYWN0aW9uIHRvIGZhaWwuCiAgICAvLyBTdGF0ZSBjaGFuZ2VzIGFyZSB1bmRvbmUuCiAgICAvLyBHYXMgc3BlbnQgaXMgbm90IHJlZnVuZGVkLgogICAgZnVuY3Rpb24gZm9yZXZlcigpIHB1YmxpYyB7CiAgICAgICAgLy8gSGVyZSB3ZSBydW4gYSBsb29wIHVudGlsIGFsbCBvZiB0aGUgZ2FzIGFyZSBzcGVudAogICAgICAgIC8vIGFuZCB0aGUgdHJhbnNhY3Rpb24gZmFpbHMKICAgICAgICB3aGlsZSAodHJ1ZSkgewogICAgICAgICAgICBpICs9IDE7CiAgICAgICAgfQogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<h3>How much <code>ether</code> do you need to pay for a transaction?</h3>

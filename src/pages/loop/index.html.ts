@@ -2,16 +2,21 @@
 export const version = "0.8.26"
 export const title = "For and While Loop"
 export const description = "Example of for and while loop in Solidity"
-export const cyfrinLink =
-  "https://www.cyfrin.io/glossary/for-and-while-loop-solidity-code-example"
+export const cyfrinLink = "https://www.cyfrin.io/glossary/for-and-while-loop-solidity-code-example"
 
-export const keywords = ["for", "loop", "loops", "while", "do"]
+export const keywords = [
+    "for",
+    "loop",
+    "loops",
+    "while",
+    "do",
+]
 
 export const codes = [
-  {
-    fileName: "Loop.sol",
-    code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBmb3IgbG9vcAogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IDEwOyBpKyspIHsKICAgICAgICAgICAgaWYgKGkgPT0gMykgewogICAgICAgICAgICAgICAgLy8gU2tpcCB0byBuZXh0IGl0ZXJhdGlvbiB3aXRoIGNvbnRpbnVlCiAgICAgICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAoaSA9PSA1KSB7CiAgICAgICAgICAgICAgICAvLyBFeGl0IGxvb3Agd2l0aCBicmVhawogICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIC8vIHdoaWxlIGxvb3AKICAgICAgICB1aW50MjU2IGo7CiAgICAgICAgd2hpbGUgKGogPCAxMCkgewogICAgICAgICAgICBqKys7CiAgICAgICAgfQogICAgfQp9Cg==",
-  },
+    {
+        fileName: "Loop.sol",
+        code: "Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNjsKCmNvbnRyYWN0IExvb3AgewogICAgZnVuY3Rpb24gbG9vcCgpIHB1YmxpYyBwdXJlIHsKICAgICAgICAvLyBmb3IgbG9vcAogICAgICAgIGZvciAodWludDI1NiBpID0gMDsgaSA8IDEwOyBpKyspIHsKICAgICAgICAgICAgaWYgKGkgPT0gMykgewogICAgICAgICAgICAgICAgLy8gU2tpcCB0byBuZXh0IGl0ZXJhdGlvbiB3aXRoIGNvbnRpbnVlCiAgICAgICAgICAgICAgICBjb250aW51ZTsKICAgICAgICAgICAgfQogICAgICAgICAgICBpZiAoaSA9PSA1KSB7CiAgICAgICAgICAgICAgICAvLyBFeGl0IGxvb3Agd2l0aCBicmVhawogICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIC8vIHdoaWxlIGxvb3AKICAgICAgICB1aW50MjU2IGo7CiAgICAgICAgd2hpbGUgKGogPCAxMCkgewogICAgICAgICAgICBqKys7CiAgICAgICAgfQogICAgfQp9Cg==",
+    },
 ]
 
 const html = `<p>Solidity supports <code>for</code>, <code>while</code>, and <code>do while</code> loops.</p>

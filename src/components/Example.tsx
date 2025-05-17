@@ -85,6 +85,20 @@ const Example: React.FC<Props> = ({
             </li>
           ))}
         </ul>
+        <h3>Try on ByteAtATime</h3>
+        <ul>
+          {codes.map(({ fileName, code }, i) => (
+            <li key={i}>
+              <a
+                href={`https://remix.byteatatime.dev/?#code=${code}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {fileName}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   )
