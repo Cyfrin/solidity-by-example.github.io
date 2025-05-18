@@ -85,7 +85,7 @@ const Example: React.FC<Props> = ({
             </li>
           ))}
         </ul>
-        <h3>Try on ByteAtATime</h3>
+        <h3>Try on Remix Lite</h3>
         <ul>
           {codes.map(({ fileName, code }, i) => (
             <li key={i}>
