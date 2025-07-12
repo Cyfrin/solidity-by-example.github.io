@@ -485,6 +485,7 @@
     "/defi/dai-proxy",
     "/defi/constant-sum-amm",
     "/defi/constant-product-amm",
+    "/defi/chronicle-price-oracle",
     "/defi/chainlink-price-oracle"
   ],
   "uniswap": [
@@ -551,10 +552,11 @@
   "proxy": ["/defi/dai-proxy", "/app/upgradeable-proxy", "/app/minimal-proxy"],
   "sum": ["/defi/constant-sum-amm"],
   "product": ["/defi/constant-product-amm"],
+  "chronicle": ["/defi/chronicle-price-oracle"],
+  "price": ["/defi/chronicle-price-oracle", "/defi/chainlink-price-oracle"],
+  "oracle": ["/defi/chronicle-price-oracle", "/defi/chainlink-price-oracle"],
+  "oracles": ["/defi/chronicle-price-oracle", "/defi/chainlink-price-oracle"],
   "chainlink": ["/defi/chainlink-price-oracle"],
-  "price": ["/defi/chainlink-price-oracle"],
-  "oracle": ["/defi/chainlink-price-oracle"],
-  "oracles": ["/defi/chainlink-price-oracle"],
   "location": ["/data-locations"],
   "locations": ["/data-locations"],
   "calldata": ["/data-locations"],

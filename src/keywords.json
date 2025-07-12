@@ -270,6 +270,7 @@
   "/defi/dai-proxy": ["defi", "dai", "proxy"],
   "/defi/constant-sum-amm": ["defi", "constant", "sum", "amm"],
   "/defi/constant-product-amm": ["defi", "constant", "product", "amm"],
+  "/defi/chronicle-price-oracle": ["defi", "chronicle", "price", "oracle", "oracles"],
   "/defi/chainlink-price-oracle": ["defi", "chainlink", "price", "oracle", "oracles"],
   "/data-locations": ["data", "location", "locations", "storage", "memory", "calldata"],
   "/constructor": ["constructor", "constructors", "contract", "inheritance"],

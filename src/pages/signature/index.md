@@ -40,7 +40,6 @@ uint256 _nonce: 1
 - Copy the returned messageHash
 
 2. Sign the messageHash:
-
    - In "Deploy & Run Transactions" tab (which you're supposed to be on already)
    - Select the first account
    - Click on the icon after the `+` which is to sign a message, it will open a popup
