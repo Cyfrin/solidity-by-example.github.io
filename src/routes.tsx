@@ -37,6 +37,7 @@ import component_constants from "./pages/constants"
 import component_constructor from "./pages/constructor"
 import component_data_locations from "./pages/data-locations"
 import component_defi_chainlink_price_oracle from "./pages/defi/chainlink-price-oracle"
+import component_defi_chronicle_price_oracle from "./pages/defi/chronicle-price-oracle"
 import component_defi_constant_product_amm from "./pages/defi/constant-product-amm"
 import component_defi_constant_sum_amm from "./pages/defi/constant-sum-amm"
 import component_defi_dai_proxy from "./pages/defi/dai-proxy"
@@ -296,6 +297,10 @@ const routes: Route[] = [
   {
     path: "/defi/chainlink-price-oracle",
     component: component_defi_chainlink_price_oracle,
+  },
+  {
+    path: "/defi/chronicle-price-oracle",
+    component: component_defi_chronicle_price_oracle,
   },
   {
     path: "/defi/constant-product-amm",

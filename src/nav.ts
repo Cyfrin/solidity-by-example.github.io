@@ -525,6 +525,10 @@ export const DEFI_ROUTES = [
     title: "Chainlink Price Oracle",
   },
   {
+    path: "chronicle-price-oracle",
+    title: "Chronicle Price Oracle",
+  },
+  {
     path: "dai-proxy",
     title: "DAI Proxy",
   },
