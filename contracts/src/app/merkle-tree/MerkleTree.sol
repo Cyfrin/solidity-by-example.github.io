@@ -42,23 +42,17 @@ contract TestMerkleProof is MerkleProof {
 
         while (n > 1) {
             for (uint256 i = 0; i < n; i += 2) {
-                bytes32 left = hashes[offset+i];
+                bytes32 left = hashes[offset + i];
                 bytes32 right;
-                if (i+1 < n) {
+                if (i + 1 < n) {
                     right = hashes[offset + i + 1];
                 } else {
                     right = left;
                 }
-                hashes.push(
-                    keccak256(
-                        abi.encodePacked(
-                            left, right
-                        )
-                    )
-                );
+                hashes.push(keccak256(abi.encodePacked(left, right)));
             }
             offset += n;
-            n = (n+1) / 2;
+            n = (n + 1) / 2;
         }
     }
 

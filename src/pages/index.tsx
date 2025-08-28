@@ -10,9 +10,9 @@ import updraft from "../components/updraft.png"
 import { ROUTES, ROUTES_BY_CATEGORY, TRANSLATIONS } from "../nav"
 
 const UPDATES = [
-  "2025/04/17 - TokenLock",
-  "2025/04/14 - GitHub PR by kiajro",
-  "2025/04/07 - GitHub PR by maximevtush",
+  "2025/08/28 - GitHub PR vtjl10",
+  "2025/08/28 - GitHub PR Ayush-Dutt-Sharma",
+  "2025/08/28 - GitHub PR biancabuzea200",
 ]
 
 export default function HomePage() {

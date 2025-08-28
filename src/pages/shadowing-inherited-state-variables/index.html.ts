@@ -21,7 +21,7 @@ export const codes = [
   },
 ]
 
-const html = `<p>Unlike functions, state variables cannot be overridden by re-declaring it
+const html = `<p>Unlike functions, state variables cannot be overridden by redeclaring it
 in the child contract.</p>
 <p>Let&#39;s learn how to correctly override inherited state variables.</p>
 <pre><code class="language-solidity"><span class="hljs-comment">// SPDX-License-Identifier: MIT</span>
