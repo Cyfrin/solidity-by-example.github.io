@@ -485,6 +485,10 @@ export const FOUNDRY_ROUTES: Route[] = [
     path: "mock-call",
     title: "Mock Call",
   },
+  {
+    path: "vm-store",
+    title: "Store",
+  },
 ]
 
 export const DEFI_ROUTES = [
@@ -519,6 +523,18 @@ export const DEFI_ROUTES = [
   {
     path: "uniswap-v3-flash-swap",
     title: "Uniswap V3 Flash Swap Arbitrage",
+  },
+  {
+    path: "uniswap-v4-swap",
+    title: "Uniswap V4 Swap",
+  },
+  {
+    path: "uniswap-v4-flash",
+    title: "Uniswap V4 Flash Loan",
+  },
+  {
+    path: "uniswap-v4-limit-order",
+    title: "Uniswap V4 Limit Order",
   },
   {
     path: "chainlink-price-oracle",
