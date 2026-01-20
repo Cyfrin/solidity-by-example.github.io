@@ -105,6 +105,7 @@
   "storage": [
     "/transient-storage",
     "/hacks/accessing-private-data",
+    "/foundry/vm-store",
     "/evm/storage",
     "/data-locations",
     "/app/write-to-any-slot"
@@ -406,6 +407,7 @@
   "modifiers": ["/function-modifier"],
   "_": ["/function-modifier"],
   "foundry": [
+    "/foundry/vm-store",
     "/foundry/time",
     "/foundry/sign",
     "/foundry/send",
@@ -416,6 +418,9 @@
     "/foundry/basic",
     "/foundry/auth"
   ],
+  "vm.store": ["/foundry/vm-store"],
+  "cheatcode": ["/foundry/vm-store"],
+  "testing": ["/foundry/vm-store"],
   "time": ["/foundry/time", "/app/time-lock"],
   "warp": ["/foundry/time"],
   "skip": ["/foundry/time"],
@@ -470,6 +475,9 @@
   "imports": ["/enum"],
   "defi": [
     "/defi/vault",
+    "/defi/uniswap-v4-swap",
+    "/defi/uniswap-v4-limit-order",
+    "/defi/uniswap-v4-flash",
     "/defi/uniswap-v3-swap",
     "/defi/uniswap-v3-liquidity",
     "/defi/uniswap-v3-flash-swap",
@@ -489,6 +497,9 @@
     "/defi/chainlink-price-oracle"
   ],
   "uniswap": [
+    "/defi/uniswap-v4-swap",
+    "/defi/uniswap-v4-limit-order",
+    "/defi/uniswap-v4-flash",
     "/defi/uniswap-v3-swap",
     "/defi/uniswap-v3-liquidity",
     "/defi/uniswap-v3-flash-swap",
@@ -498,13 +509,13 @@
     "/defi/uniswap-v2-add-remove-liquidity",
     "/defi/uniswap-v2"
   ],
-  "v3": [
-    "/defi/uniswap-v3-swap",
-    "/defi/uniswap-v3-liquidity",
-    "/defi/uniswap-v3-flash-swap",
-    "/defi/uniswap-v3-flash"
+  "v4": [
+    "/defi/uniswap-v4-swap",
+    "/defi/uniswap-v4-limit-order",
+    "/defi/uniswap-v4-flash"
   ],
   "swap": [
+    "/defi/uniswap-v4-swap",
     "/defi/uniswap-v3-swap",
     "/defi/uniswap-v3-flash-swap",
     "/defi/uniswap-v2-flash-swap",
@@ -512,6 +523,9 @@
     "/defi/stable-swap-amm"
   ],
   "amm": [
+    "/defi/uniswap-v4-swap",
+    "/defi/uniswap-v4-limit-order",
+    "/defi/uniswap-v4-flash",
     "/defi/uniswap-v3-swap",
     "/defi/uniswap-v3-liquidity",
     "/defi/uniswap-v3-flash-swap",
@@ -524,10 +538,24 @@
     "/defi/constant-sum-amm",
     "/defi/constant-product-amm"
   ],
+  "poolmanager": ["/defi/uniswap-v4-swap", "/defi/uniswap-v4-flash"],
+  "limit": ["/defi/uniswap-v4-limit-order"],
+  "order": ["/defi/uniswap-v4-limit-order"],
+  "hook": ["/defi/uniswap-v4-limit-order"],
+  "flash": [
+    "/defi/uniswap-v4-flash",
+    "/defi/uniswap-v3-flash",
+    "/defi/uniswap-v2-flash-swap"
+  ],
+  "loan": ["/defi/uniswap-v4-flash", "/defi/uniswap-v3-flash"],
+  "v3": [
+    "/defi/uniswap-v3-swap",
+    "/defi/uniswap-v3-liquidity",
+    "/defi/uniswap-v3-flash-swap",
+    "/defi/uniswap-v3-flash"
+  ],
   "liquidity": ["/defi/uniswap-v3-liquidity", "/defi/uniswap-v2-add-remove-liquidity"],
   "arbitrage": ["/defi/uniswap-v3-flash-swap"],
-  "flash": ["/defi/uniswap-v3-flash", "/defi/uniswap-v2-flash-swap"],
-  "loan": ["/defi/uniswap-v3-flash"],
   "v2": [
     "/defi/uniswap-v2-optimal-one-sided-supply",
     "/defi/uniswap-v2-flash-swap",

@@ -188,6 +188,7 @@
   "/function-selector": ["function", "functions", "selector", "selectors"],
   "/function-modifier": ["function", "functions", "modifier", "modifiers", "_"],
   "/function": ["function", "functions"],
+  "/foundry/vm-store": ["foundry", "vm.store", "storage", "cheatcode", "testing"],
   "/foundry/time": ["foundry", "time", "warp", "skip", "roll", "unwind"],
   "/foundry/sign": ["foundry", "sign", "signature", "ecrecover"],
   "/foundry/send": ["foundry", "send", "deal", "hoax"],
@@ -232,6 +233,25 @@
     "functions"
   ],
   "/defi/vault": ["defi", "vault"],
+  "/defi/uniswap-v4-swap": ["defi", "uniswap", "v4", "swap", "amm", "poolmanager"],
+  "/defi/uniswap-v4-limit-order": [
+    "defi",
+    "uniswap",
+    "v4",
+    "limit",
+    "order",
+    "hook",
+    "amm"
+  ],
+  "/defi/uniswap-v4-flash": [
+    "defi",
+    "uniswap",
+    "v4",
+    "flash",
+    "loan",
+    "amm",
+    "poolmanager"
+  ],
   "/defi/uniswap-v3-swap": ["defi", "uniswap", "v3", "swap", "amm"],
   "/defi/uniswap-v3-liquidity": ["defi", "uniswap", "v3", "liquidity", "amm"],
   "/defi/uniswap-v3-flash-swap": ["defi", "uniswap", "v3", "swap", "arbitrage", "amm"],
